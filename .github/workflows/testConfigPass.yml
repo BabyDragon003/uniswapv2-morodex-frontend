@@ -1,0 +1,10 @@
+name: Test Config Pass
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'apps/web/src/config/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest

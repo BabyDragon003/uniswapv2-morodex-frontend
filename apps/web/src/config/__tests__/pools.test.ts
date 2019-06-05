@@ -1,0 +1,45 @@
+import { formatUnits } from '@ethersproject/units'
+import pools from 'config/constants/pools'
+import { getSouschefContract, getSouschefV2Contract } from 'utils/contractHelpers'
+
+// Pool 0 is special (cake pool)
+// Pool 78 is a broken pool, not used, and break the tests
+const idsToRemove = [0, 78]
+// Test only against the last 10 pools, for performance concern
+const poolsToTest = pools.filter((pool) => !idsToRemove.includes(pool.sousId)).slice(0, 10)
+
+  )
+  it.each(poolsToTest.filter((pool) => pool.earningToken.symbol !== 'BNB'))(
+    'Pool %p has the correct earning token',
+    async (pool) => {
+      const contract = getSouschefContract(pool.sousId)
+      const rewardTokenAddress = await contract.rewardToken()
+      expect(rewardTokenAddress.toLowerCase()).toBe(pool.earningToken.address.toLowerCase())
+    },
+  )
+  it.each(poolsToTest.filter((pool) => pool.stakingToken.symbol !== 'BNB'))(
+    'Pool %p has the correct staking token',
+    async (pool) => {
+      let stakingTokenAddress = null
+      try {
+        const contract = getSouschefV2Contract(pool.sousId)
+        stakingTokenAddress = await contract.stakedToken()
+      } catch (error) {
+        const contract = getSouschefContract(pool.sousId)
+        stakingTokenAddress = await contract.syrup()
+      }
+
+      expect(stakingTokenAddress.toLowerCase()).toBe(pool.stakingToken.address.toLowerCase())
+    },
+  )
+
+  it.each(poolsToTest.filter((pool) => pool.stakingToken.symbol !== 'BNB'))(
+    'Pool %p has the correct tokenPerBlock',
+    async (pool) => {
+      const contract = getSouschefContract(pool.sousId)
+      const rewardPerBlock = await contract.rewardPerBlock()
+
+      expect(String(parseFloat(formatUnits(rewardPerBlock, pool.earningToken.decimals)))).toBe(pool.tokenPerBlock)
+    },
+  )
+})

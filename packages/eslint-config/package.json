@@ -1,0 +1,19 @@
+{
+  "name": "@pancakeswap/eslint-config-pancake",
+  "version": "1.2.0",
+  "description": "Eslint config for PancakeSwap",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/eslint-config-pancake",
+  "license": "MIT",
+  },
+  "peerDependencies": {
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

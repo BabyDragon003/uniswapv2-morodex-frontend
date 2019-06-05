@@ -1,0 +1,208 @@
+import { atoms } from "@pancakeswap/ui/css/atoms";
+import { vars } from "@pancakeswap/ui/css/vars.css";
+import { responsiveStyle } from "@pancakeswap/ui/css/responsiveStyle";
+import { style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+
+export const switchButtonClass = style([
+  atoms({}),
+  style({
+    backgroundColor: "primary",
+      borderRadius: "50%",
+      boxShadow: "0 0 0 2px rgba(255, 255, 255, 0.7)",
+      color: "rgba(255, 255, 255, 0.7)",
+      width: "2.5em",
+    },
+  },
+});
+
+export const iconUpDownClass = style({
+  display: "none",
+  color: "rgb(0, 233, 177)",
+  fill: "rgb(0, 233, 177) !important",
+  width: "2.5em",
+  selectors: {
+    [`${switchButtonClass}:hover &`]: {
+      display: "block",
+      // fill: "white",
+      fill: "rgba(255, 255, 255, 0.7)",
+      borderRadius: "50%",
+      boxShadow: "0 0 0 2px rgba(255, 255, 255, 0.7)",
+      color: "rgba(255, 255, 255, 0.7)",
+      width: "2.5em",
+    },
+  },
+});
+
+export const inputVariants = recipe({
+  base: {
+    width: 0,
+    position: "relative",
+    fontWeight: 500,
+    outline: "none",
+    border: "none",
+    flex: "1 1 auto",
+    backgroundColor: "transparent",
+    fontSize: 16,
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    padding: 0,
+    WebkitAppearance: "textfield",
+    color: vars.colors.text,
+    selectors: {
+      "&::-webkit-search-decoration": {
+        WebkitAppearance: "none",
+      },
+      '&[type="number"]': {
+        MozAppearance: "textfield",
+      },
+      "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
+        WebkitAppearance: "none",
+      },
+      "&::placeholder": {
+        color: vars.colors.textSubtle,
+      },
+    },
+  },
+  variants: {
+    error: {
+      true: {
+        color: vars.colors.failure,
+      },
+    },
+    align: {
+      left: {
+        textAlign: "left",
+      },
+      right: {
+        textAlign: "right",
+      },
+    },
+  },
+  defaultVariants: {
+    align: "right",
+    error: false,
+  },
+});
+
+export const inputRowVariants = recipe({
+  base: {
+    display: "flex",
+    flexFlow: "row nowrap",
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
+  variants: {
+    selected: {
+      true: {
+        padding: "0.75rem 0.5rem 0.75rem 1rem",
+      },
+      false: {
+        padding: "0.75rem 0.75rem 0.75rem 1rem",
+      },
+    },
+  },
+});
+
+export const inputContainerVariants = recipe({
+  base: style([
+    atoms({
+      borderRadius: "default",
+      backgroundColor: "input",
+    }),
+  ]),
+  variants: {
+    error: {
+      true: atoms({
+        boxShadow: "danger",
+      }),
+      false: atoms({
+        boxShadow: "inset",
+      }),
+    },
+    hasZapStyle: {
+      true: {
+        borderRadius: "0px 16px 16px 16px",
+      },
+    },
+    showBridgeWarning: {
+      true: atoms({
+        boxShadow: "warning",
+      }),
+    },
+  },
+});
+
+export const pageVariants = recipe({
+  base: style([
+    atoms({
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100%",
+      height: "100%",
+      // background: "gradientBubblegum",
+      padding: "16px",
+      paddingBottom: "0",
+    }),
+    style({
+      backgroundSize: "auto",
+    }),
+    responsiveStyle({
+      sm: {
+        padding: "24px",
+        paddingBottom: "0",
+      },
+      lg: {
+        padding: "32px",
+        paddingBottom: "0",
+      },
+    }),
+  ]),
+  variants: {
+    removePadding: {
+      true: {
+        padding: "0!important",
+      },
+    },
+    noMinHeight: {
+      true: responsiveStyle({
+        xs: {
+          minHeight: "initial!important",
+        },
+      }),
+    },
+  },
+});
+
+export const balanceMaxMiniClass = style([
+  atoms({
+    backgroundColor: "background",
+    borderRadius: "circle",
+    cursor: "pointer",
+    color: "text",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }),
+  style({
+    padding: "0.2rem",
+    fontSize: "0.875rem",
+    border: "none",
+    height: "22px",
+    width: "22px",
+    fontWeight: 400,
+    marginLeft: "0.4rem",
+    float: "right",
+    selectors: {
+      "&:hover": {
+        backgroundColor: vars.colors.dropdown,
+      },
+      "&:focus": {
+        backgroundColor: vars.colors.dropdown,
+        outline: "none",
+      },
+    },
+  }),
+]);
