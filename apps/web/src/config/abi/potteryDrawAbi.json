@@ -8,26 +8,16 @@
       },
       {
         "internalType": "contract ICakePool",
-        "indexed": true,
-        "internalType": "address",
-        "name": "vault",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "totalPrize",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "admin",
+        "name": "_cakePool",
         "type": "address"
       }
     ],
-    "name": "CancelPottery",
-    "type": "event"
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
   },
   {
     "anonymous": false,

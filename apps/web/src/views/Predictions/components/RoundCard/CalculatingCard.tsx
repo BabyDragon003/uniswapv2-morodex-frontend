@@ -8,6 +8,17 @@ import CardHeader, { getBorderBackground } from './CardHeader'
 
 interface CalculatingCardProps {
   round: NodeRound
+  hasEnteredUp: boolean
+  hasEnteredDown: boolean
+}
+
+const CalculatingCard: React.FC<React.PropsWithChildren<CalculatingCardProps>> = ({
+  round,
+  hasEnteredUp,
+  hasEnteredDown,
+}) => {
+  const { t } = useTranslation()
+  const { theme } = useTheme()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t('This round’s closing transaction has been submitted to the blockchain, and is awaiting confirmation.'),
     { placement: 'bottom' },

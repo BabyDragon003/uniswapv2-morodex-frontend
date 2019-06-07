@@ -18,27 +18,6 @@ const PotteryContainer = styled(Box)`
   &:: before {
     content: '';
     width: 100%;
-    height: 48px;
-    position: absolute;
-    top: -48px;
-    left: 0;
-    z-index: 1;
-    clip-path: polygon(0 0%, 0% 100%, 100% 100%);
-    background: linear-gradient(
-      90deg,
-      rgba(168, 129, 252, 1) 0%,
-      rgb(160 121 244) 15%,
-      rgb(145 104 226) 30%,
-      rgb(136 95 216) 45%,
-      rgb(139 98 219) 65%,
-      rgb(148 108 230) 80%,
-      rgba(168, 129, 252, 1) 100%
-    );
-  }
-`
-
-const PotImage = styled.div`
-  width: 260px;
   height: 228.77px;
   align-self: center;
   background: url(/images/pottery/honeypot.png);

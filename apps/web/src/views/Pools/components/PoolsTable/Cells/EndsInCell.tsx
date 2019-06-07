@@ -18,27 +18,6 @@ const EndsInCell: React.FC<React.PropsWithChildren<FinishCellProps>> = ({ pool }
   const { sousId, totalStaked, startBlock, endBlock, isFinished } = pool
   const currentBlock = useCurrentBlock()
   const { t } = useTranslation()
-
-  const { shouldShowBlockCountdown, blocksUntilStart, blocksRemaining, hasPoolStarted, blocksToDisplay } =
-    getPoolBlockInfo(pool, currentBlock)
-
-  const isCakePool = sousId === 0
-
-  const renderBlocks = shouldShowBlockCountdown ? (
-    <Flex alignItems="center">
-      <Flex flex="1.3">
-        <Balance fontSize="16px" value={blocksToDisplay} decimals={0} />
-        <Text ml="4px" textTransform="lowercase">
-          {t('Blocks')}
-        </Text>
-      </Flex>
-      <Flex flex="1">
-        <Link
-          external
-          href={getBlockExploreLink(hasPoolStarted ? endBlock : startBlock, 'countdown')}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <TimerIcon ml="4px" />
         </Link>
       </Flex>
     </Flex>

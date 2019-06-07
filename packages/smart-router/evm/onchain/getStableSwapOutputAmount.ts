@@ -8,6 +8,17 @@ import { getOutputToken } from '../utils/pair'
 import IStableSwapABI from '../abis/StableSwapPair.json'
 
 interface Options {
+  provider: Provider
+}
+
+export async function getStableSwapOutputAmount(
+  pair: StableSwapPair,
+  inputAmount: CurrencyAmount<Currency>,
+  { provider }: Options,
+): Promise<CurrencyAmount<Currency>> {
+  const { multicallv2 } = createMulticall(provider)
+
+  const wrappedInputAmount = wrappedCurrencyAmount(inputAmount, inputAmount.currency.chainId)
   if (!wrappedInputAmount) {
     throw new Error(`No wrapped token amount found for input amount: ${inputAmount.currency.name}`)
   }

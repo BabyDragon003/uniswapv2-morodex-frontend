@@ -8,6 +8,17 @@ import useSWR from 'swr'
 import _toNumber from 'lodash/toNumber'
 import { useAccount } from 'wagmi'
 import { YieldBoosterState } from './useYieldBoosterState'
+
+const PRECISION_FACTOR = FixedNumber.from('1000000000000') // 1e12
+
+async function getPublicMultiplier({ farmBoosterContract }): Promise<number> {
+  const calls = [
+    {
+      address: farmBoosterContract.address,
+      name: 'cA',
+    },
+    {
+      address: farmBoosterContract.address,
       name: 'CA_PRECISION',
     },
     {

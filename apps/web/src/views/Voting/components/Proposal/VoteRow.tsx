@@ -8,6 +8,17 @@ import TextEllipsis from '../TextEllipsis'
 import Row, { AddressColumn, ChoiceColumn, VotingPowerColumn } from './Row'
 
 interface VoteRowProps {
+  vote: Vote
+  isVoter: boolean
+}
+
+const VoteRow: React.FC<React.PropsWithChildren<VoteRowProps>> = ({ vote, isVoter }) => {
+  const { t } = useTranslation()
+  const hasVotingPower = !!vote.metadata?.votingPower
+
+  const votingPower = hasVotingPower
+    ? parseFloat(vote.metadata.votingPower).toLocaleString(undefined, {
+        minimumFractionDigits: 0,
         maximumFractionDigits: 3,
       })
     : '--'

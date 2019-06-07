@@ -8,6 +8,17 @@ import SunburstSvg from './SunburstSvg'
 import CompositeImage from './CompositeImage'
 
 const BgWrapper = styled.div`
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+`
+
+const StyledSunburst = styled(SunburstSvg)`
+  height: 350%;
+  width: 350%;
 
   ${({ theme }) => theme.mediaQueries.xl} {
     height: 400%;

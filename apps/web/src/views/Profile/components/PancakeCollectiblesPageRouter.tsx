@@ -8,3 +8,8 @@ const PancakeCollectiblesPageRouter = () => {
   if (router.isFallback) {
     return <PageLoader />
   }
+
+  return <PancakeCollectibles />
+}
+
+export default PancakeCollectiblesPageRouter

@@ -18,27 +18,6 @@ interface CollectionTraitsProps {
 const CollectionTraits: React.FC<React.PropsWithChildren<CollectionTraitsProps>> = ({ collectionAddress }) => {
   const { data, isFetching } = useGetCollectionDistribution(collectionAddress)
   const [raritySort, setRaritySort] = useState<Record<string, SortType>>({})
-  const { t } = useTranslation()
-
-  if (isFetching) {
-    return (
-      <CollapsibleCard title={t('Loading...')}>
-        <Table>
-          <thead>
-            <tr>
-              <Th textAlign="left">{t('Name')}</Th>
-              <Th width="100px">{t('Count')}</Th>
-              <Th width="160px">{t('Rarity')}</Th>
-            </tr>
-          </thead>
-          <tbody>
-            {times(19).map((bunnyCnt) => (
-              <tr key={bunnyCnt}>
-                <Td>
-                  <Skeleton width="100px" />
-                </Td>
-                <Td>
-                  <Skeleton />
                 </Td>
                 <Td>
                   <Skeleton />

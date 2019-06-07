@@ -8,6 +8,17 @@ import {
   RowBetween,
   RowFixed,
   Text,
+  TransactionErrorContent,
+  ConfirmationModalContent,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
+import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
+import { useUserSlippage } from 'state/user'
+import formatAmountDisplay from 'utils/formatAmountDisplay'
+
+import { Field } from '../type'
+
 interface ConfirmRemoveLiquidityModalProps {
   title: string
   customOnDismiss: () => void

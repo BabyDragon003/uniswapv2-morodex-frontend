@@ -8,26 +8,16 @@ import { ActionContainer, ActionTitles, ActionContent } from "./styles";
 import { HarvestActionsProps } from "../types";
 
 export const withStakeActionContainer =
-          </ActionTitles>
-          <ActionContent>{createElement(connectWalletButtonElement, { width: "100%" })}</ActionContent>
-        </ActionContainer>
-      );
-    }
+  (StakeActionsComp: any, connectWalletButtonElement: any) =>
+  ({ account, stakingTokenSymbol, ...props }: { account?: string; stakingTokenSymbol?: string }) => {
+    const { t } = useTranslation();
 
-    return (
-      <ActionContainer>
-        <ActionTitles>
-          <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-            {stakingTokenSymbol}{" "}
-          </Text>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
-            {t("Staked")}
-          </Text>
-        </ActionTitles>
-        <StakeActionsComp {...props} />
-      </ActionContainer>
-    );
-  };
+    if (!account) {
+      return (
+        <ActionContainer>
+          <ActionTitles>
+            <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+              {t("Start staking")}
 
 export function HarvestAction({
   earningTokenPrice,

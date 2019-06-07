@@ -8,26 +8,16 @@ import { Text } from "../Text";
 
 const Row = styled.div`
   margin-bottom: 32px;
-      <Row>
-        <Alert title="Info">
-          <Text as="p">This is a description</Text>
-        </Alert>
-      </Row>
-      <Row>
-        <Alert title="Success" variant="success">
-          <Text as="p">This is a description</Text>
-        </Alert>
-      </Row>
-      <Row>
-        <Alert title="Warning" variant="warning">
-          <Text as="p">This is a description</Text>
-        </Alert>
-      </Row>
-      <Row>
-        <Alert title="Danger" variant="danger">
-          <Text as="p">This is a description</Text>
-        </Alert>
-      </Row>
+`;
+
+export default {
+  title: "Components/Alert",
+  component: Alert,
+  argTypes: {},
+} as Meta;
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  return (
     </div>
   );
 };

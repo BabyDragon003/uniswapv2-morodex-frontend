@@ -8,26 +8,16 @@ import { FarmWithStakedValue } from '@pancakeswap/farms'
 import { HarvestActionContainer, ProxyHarvestActionContainer } from '../FarmTable/Actions/HarvestAction'
 import { ProxyStakedContainer, StakedContainer } from '../FarmTable/Actions/StakedAction'
 import BoostedAction from '../YieldBooster/components/BoostedAction'
-  justify-content: space-between;
-  align-items: center;
+import { YieldBoosterStateContext } from '../YieldBooster/components/ProxyFarmContainer'
+import HarvestAction from './HarvestAction'
+import StakeAction from './StakeAction'
+
+const Action = styled.div`
+  padding-top: 16px;
 `
 
-interface FarmCardActionsProps {
-  farm: FarmWithStakedValue
-  account?: string
-  addLiquidityUrl?: string
-  lpLabel?: string
-  displayApr?: string
-}
-
-const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
-  farm,
-  account,
-  addLiquidityUrl,
-  lpLabel,
-  displayApr,
-}) => {
-  const { t } = useTranslation()
+const ActionContainer = styled.div`
+  margin-bottom: 8px;
   const { pid, token, quoteToken, vaultPid, lpSymbol, lpAddress } = farm
   const { earnings } = farm.userData || {}
   const { shouldUseProxyFarm } = useContext(YieldBoosterStateContext)

@@ -8,6 +8,17 @@ describe('deserialize', () => {
       JSON.stringify({
         some: 'complex',
         object: {
+          that: 'has',
+          many: [
+            { many: 'many', manymany: 'many' },
+            { many: 'many' },
+            { many: 'many' },
+            {
+              many: {
+                properties: {
+                  ones: {
+                    that: {
+                      have: {
                         functions: () => null,
                       },
                     },

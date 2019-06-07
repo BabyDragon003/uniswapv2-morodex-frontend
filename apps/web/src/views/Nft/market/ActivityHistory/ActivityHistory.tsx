@@ -8,26 +8,16 @@ import TableLoader from 'components/TableLoader'
 import { Activity, Collection, NftToken } from 'state/nftMarket/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-const MAX_PER_QUERY = 100
+import useTheme from 'hooks/useTheme'
+import { useLastUpdated } from '@pancakeswap/hooks'
+import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
+import NoNftsImage from '../components/Activity/NoNftsImage'
+import ActivityFilters from './ActivityFilters'
+import ActivityRow from '../components/Activity/ActivityRow'
+import { sortActivity } from './utils/sortActivity'
+import { fetchActivityNftMetadata } from './utils/fetchActivityNftMetadata'
 
-interface ActivityHistoryProps {
-  collection?: Collection
-}
-
-const ActivityHistory: React.FC<React.PropsWithChildren<ActivityHistoryProps>> = ({ collection }) => {
-  const dispatch = useAppDispatch()
-  const { address: collectionAddress } = collection || { address: '' }
-  const nftActivityFilters = useGetNftActivityFilters(collectionAddress)
-  const { theme } = useTheme()
-  const { t } = useTranslation()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [maxPage, setMaxPages] = useState(1)
-  const [activityData, setActivityData] = useState<Activity[]>([])
-  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
-  const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [isInitialized, setIsInitialized] = useState(false)
-  const [queryPage, setQueryPage] = useState(1)
+const MAX_PER_PAGE = 8
   const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
   const bnbBusdPrice = useBNBBusdPrice()
   const { isXs, isSm, isMd } = useMatchBreakpoints()

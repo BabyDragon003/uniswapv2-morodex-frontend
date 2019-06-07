@@ -8,6 +8,17 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import ConfirmationPendingContent from './ConfirmationPendingContent'
 import TransactionConfirmSwapContent from './TransactionConfirmSwapContent'
 import ConfirmSwapModalContainer from './ConfirmSwapModalContainer'
+import { StableTrade } from '../StableSwap/hooks/useStableTradeExactIn'
+
+const PancakeRouterSlippageErrorMsg =
+  'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
+
+const SwapTransactionErrorContent = ({ onDismiss, message, openSettingModal }) => {
+  const isSlippagedErrorMsg = message?.includes(PancakeRouterSlippageErrorMsg)
+
+  const handleErrorDismiss = useCallback(() => {
+    onDismiss?.()
+    if (isSlippagedErrorMsg && openSettingModal) {
       openSettingModal()
     }
   }, [isSlippagedErrorMsg, onDismiss, openSettingModal])

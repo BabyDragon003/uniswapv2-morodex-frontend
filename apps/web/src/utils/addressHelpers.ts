@@ -8,6 +8,17 @@ export const getAddress = (address: Pool.Address, chainId?: number): string => {
 }
 
 export const getMasterChefAddress = (chainId?: number) => {
+  return getAddress(addresses.masterChef, chainId)
+}
+export const getMasterChefV1Address = () => {
+  return getAddress(addresses.masterChefV1)
+}
+export const getMulticallAddress = (chainId?: number) => {
+  return getAddress(addresses.multiCall, chainId)
+}
+export const getLotteryV2Address = () => {
+  return getAddress(addresses.lotteryV2)
+}
 export const getPancakeProfileAddress = () => {
   return getAddress(addresses.pancakeProfile)
 }

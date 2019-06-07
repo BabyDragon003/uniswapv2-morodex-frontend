@@ -8,6 +8,17 @@ import Staked from '../../Farm/Cells/Staked'
 import Earned from '../../Farm/Cells/Earned'
 import Multiplier from '../../Farm/Cells/Multiplier'
 import Liquidity from '../../Farm/Cells/Liquidity'
+import Unstake from './Cells/Unstake'
+import ActionPanel from './ActionPanel/ActionPanel'
+import { RowProps } from '../../types'
+import ExpandActionCell from '../../Cells/ExpandActionCell'
+
+const StyledRow = styled.div`
+  display: flex;
+  background-color: transparent;
+  cursor: pointer;
+  ${({ theme }) => theme.mediaQueries.lg} {
+    cursor: initial;
   }
 `
 

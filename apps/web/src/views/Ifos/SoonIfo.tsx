@@ -8,3 +8,8 @@ const SoonIfo = () => (
     ifoSection={<ComingSoonSection />}
     ifoSteps={
       <IfoSteps isLive={false} hasClaimed={false} isCommitted={false} ifoCurrencyAddress={bscTokens.cake.address} />
+    }
+  />
+)
+
+export default SoonIfo

@@ -8,26 +8,16 @@ import { useAppDispatch } from 'state'
 import { useNftStorage } from 'state/nftMarket/storage'
 import { RoundedImage } from '../Collection/IndividualNFTPage/shared/styles'
 
-const NFTMedia: React.FC<
-  React.PropsWithChildren<
-    {
-      nft?: NftToken
-      as?: any
-      width: number
-      height: number
-    } & Omit<BoxProps, 'width' | 'height' | 'as'>
-  >
-> = ({ width, height, nft, borderRadius = 'default', as, ...props }) => {
-  const dispatch = useAppDispatch()
-  const { setTryVideoNftMedia } = useNftStorage()
-  const tryVideoNftMedia = useTryVideoNftMedia()
-  const vidRef = useRef(null)
-  const { observerRef, isIntersecting } = useIntersectionObserver()
+const StyledAspectRatio = styled(Box)`
+  position: absolute;
+  inset: 0;
+`
 
-  useEffect(() => {
-    if (vidRef.current) {
-      if (isIntersecting) {
-        vidRef.current.play().catch((error) => {
+export const AspectRatio = ({ ratio, children, ...props }) => (
+  <Box width="100%" height={0} pb={`${100 / ratio}%`} position="relative" {...props}>
+    <StyledAspectRatio>{children}</StyledAspectRatio>
+  </Box>
+)
           if (error instanceof DOMException && error.name === 'NotAllowedError') {
             setTryVideoNftMedia(false)
           }

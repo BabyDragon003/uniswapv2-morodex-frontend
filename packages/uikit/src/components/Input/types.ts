@@ -8,5 +8,13 @@ export const scales = {
 } as const;
 
 export type Scales = (typeof scales)[keyof typeof scales];
-  children: JSX.Element;
+
+export interface InputProps extends SpaceProps {
+  scale?: Scales;
+  isSuccess?: boolean;
+  isWarning?: boolean;
 }
+
+export interface InputGroupProps extends SpaceProps {
+  scale?: Scales;
+  startIcon?: ReactElement;

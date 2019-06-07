@@ -8,6 +8,17 @@ import StatCardContent from './StatCardContent'
 import GradientLogo from '../GradientLogoSvg'
 
 const Stats = () => {
+  const { t } = useTranslation()
+  const { theme } = useTheme()
+
+  const { data: tvl } = useSWRImmutable('tvl')
+  const { data: txCount } = useSWRImmutable('totalTx30Days')
+  const { data: addressCount } = useSWRImmutable('addressCount30Days')
+  const trades = formatLocalisedCompactNumber(txCount)
+  const users = formatLocalisedCompactNumber(addressCount)
+  const tvlString = tvl ? formatLocalisedCompactNumber(tvl) : '-'
+
+  const tvlText = t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: tvlString })
   const [entrusting, inFunds] = tvlText.split(tvlString)
 
   const UsersCardData: IconCardData = {

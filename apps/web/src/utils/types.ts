@@ -8,26 +8,16 @@ export type MultiCallResponse<T> = T | null
 export type PredictionsClaimableResponse = boolean
 
 export interface PredictionsLedgerResponse {
-  closePrice: BigNumber
-  lockOracleId: BigNumber
-  closeOracleId: BigNumber
-  totalAmount: BigNumber
-  bullAmount: BigNumber
-  bearAmount: BigNumber
-  rewardBaseCalAmount: BigNumber
-  rewardAmount: BigNumber
-  oracleCalled: boolean
+  position: 0 | 1
+  amount: BigNumber
+  claimed: boolean
 }
 
-// [rounds, ledgers, count]
-export type PredictionsGetUserRoundsResponse = [BigNumber[], PredictionsLedgerResponse[], BigNumber]
-
-export type PredictionsGetUserRoundsLengthResponse = BigNumber
-
-export interface PredictionsContract extends Omit<Predictions, 'getUserRounds' | 'ledger'> {
-  getUserRounds: ContractFunction<PredictionsGetUserRoundsResponse>
-  ledger: ContractFunction<PredictionsLedgerResponse>
-}
+export interface PredictionsRoundsResponse {
+  epoch: BigNumber
+  startTimestamp: BigNumber
+  lockTimestamp: BigNumber
+  closeTimestamp: BigNumber
 
 // Farm Auction
 

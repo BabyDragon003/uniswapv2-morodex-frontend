@@ -8,6 +8,17 @@ interface ProxyFarmContainerPropsType {
   children: ReactElement
   farm: FarmWithStakedValue
 }
+
+export const YieldBoosterStateContext = createContext({
+  boosterState: YieldBoosterState.UNCONNECTED,
+  refreshActivePool: _noop,
+  proxyFarm: {},
+  shouldUseProxyFarm: false,
+  refreshProxyAddress: _noop,
+  proxyAddress: '',
+})
+
+const ProxyFarmContainer: React.FC<ProxyFarmContainerPropsType> = ({ children, farm }) => {
   const {
     state: boosterState,
     refreshActivePool,

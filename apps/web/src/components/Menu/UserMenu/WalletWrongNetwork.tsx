@@ -8,6 +8,17 @@ const StyledLink = styled(Link)`
   width: 100%;
   &:hover {
     text-decoration: initial;
+  }
+`
+
+interface WalletWrongNetworkProps {
+  onDismiss: () => void
+}
+
+const WalletWrongNetwork: React.FC<React.PropsWithChildren<WalletWrongNetworkProps>> = ({ onDismiss }) => {
+  const { t } = useTranslation()
+  const { switchNetworkAsync, canSwitch } = useSwitchNetwork()
+
   const handleSwitchNetwork = async (): Promise<void> => {
     await switchNetworkAsync(ChainId.BSC)
     onDismiss?.()

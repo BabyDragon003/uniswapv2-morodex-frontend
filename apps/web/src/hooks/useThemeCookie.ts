@@ -8,3 +8,12 @@ const useThemeCookie = () => {
   const themeValue = theme.isDark ? 'dark' : 'dark'
 
   useEffect(() => {
+    // const getThemeCookie = Cookie.get(COOKIE_THEME_KEY)
+
+    // if (!getThemeCookie && getThemeCookie !== themeValue) {
+      Cookie.set(COOKIE_THEME_KEY, themeValue, { domain: THEME_DOMAIN })
+    // }
+  }, [themeValue])
+}
+
+export default useThemeCookie

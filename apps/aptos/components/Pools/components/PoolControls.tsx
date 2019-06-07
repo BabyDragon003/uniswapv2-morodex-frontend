@@ -18,7 +18,3 @@ export default function PoolControls(props) {
       viewMode={viewMode}
       setViewMode={setViewMode}
       account={account}
-      threshHold={threshHold}
-    />
-  )
-}

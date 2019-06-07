@@ -8,25 +8,15 @@ import { Rate } from 'state/limitOrders/types'
 import ExpiredDate from 'views/LimitOrders/components/ExpiredDate'
 import { getRatePercentageMessage, PercentageDirection } from '../utils/getRatePercentageMessage'
 
-  id: string
-  value: string
-  onUserInput: (value: string) => void
-  inputCurrency: Currency
-  outputCurrency: Currency
-  percentageRateDifference: Percent
-  rateType: Rate
-  handleRateType: (rateType: Rate, price?: Price<Currency, Currency>) => void
-  price: Price<Currency, Currency>
-  handleResetToMarketPrice: () => void
-  realExecutionPriceAsString: string
-  disabled: boolean
-}
+const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
-const DIRECTION_COLORS = {
-  [PercentageDirection.ABOVE]: 'success',
-  [PercentageDirection.BELOW]: 'failure',
-  [PercentageDirection.MARKET]: 'textSubtle',
-}
+const OrderPriceInput = styled(Input)`
+  text-align: right;
+`
+
+const LabelContainer = styled(Flex)`
+  cursor: pointer;
+`
 
 const LimitOrderPrice: React.FC<React.PropsWithChildren<LimitOrderPriceProps>> = ({
   id,

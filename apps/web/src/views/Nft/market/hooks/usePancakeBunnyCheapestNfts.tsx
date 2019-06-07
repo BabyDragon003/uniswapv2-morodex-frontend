@@ -8,26 +8,16 @@ import {
   combineApiAndSgResponseToNftToken,
 } from 'state/nftMarket/helpers'
 import { FAST_INTERVAL } from 'config/constants'
-  const nftsMarket = await getNftsMarketData(whereClause, 100, 'currentAskPrice', 'asc')
+import { FetchStatus } from 'config/constants/types'
+import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
+import { pancakeBunniesAddress } from '../constants'
+import { getLowestUpdatedToken } from './useGetLowestPrice'
 
-  if (!nftsMarket.length) return null
+type WhereClause = Record<string, string | number | boolean | string[]>
 
-  const nftsMarketTokenIds = nftsMarket.map((marketData) => marketData.tokenId)
-  const lowestPriceUpdatedBunny = await getLowestUpdatedToken(pancakeBunniesAddress.toLowerCase(), nftsMarketTokenIds)
-
-  const cheapestBunnyOfAccount = nftsMarket
-    .filter((marketData) => marketData.tokenId === lowestPriceUpdatedBunny?.tokenId)
-    .map((marketData) => {
-      const apiMetadata = getMetadataWithFallback(nftMetadata.data, marketData.otherId)
-      const attributes = getPancakeBunniesAttributesField(marketData.otherId)
-      const bunnyToken = combineApiAndSgResponseToNftToken(apiMetadata, marketData, attributes)
-      const updatedPrice = formatBigNumber(lowestPriceUpdatedBunny.currentAskPrice)
-      return {
-        ...bunnyToken,
-        marketData: { ...bunnyToken.marketData, ...lowestPriceUpdatedBunny, currentAskPrice: updatedPrice },
-      }
-    })
-  return cheapestBunnyOfAccount.length > 0 ? cheapestBunnyOfAccount[0] : null
+const fetchCheapestBunny = async (
+  whereClause: WhereClause = {},
+  nftMetadata: ApiResponseCollectionTokens,
 }
 
 export const usePancakeBunnyCheapestNft = (bunnyId: string, nftMetadata: ApiResponseCollectionTokens) => {

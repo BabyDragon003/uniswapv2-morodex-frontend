@@ -8,26 +8,16 @@ import confetti from 'canvas-confetti'
 import { LotteryTicketClaimData } from 'config/constants/types'
 import { useAppDispatch } from 'state'
 import { useLottery } from 'state/lottery/hooks'
+import { fetchUserLotteries } from 'state/lottery'
+import ClaimPrizesInner from './ClaimPrizesInner'
 
-const StyledModalHeader = styled(ModalHeader)`
-  background: ${({ theme }) => theme.colors.gradientCardHeader};
-  border-top-right-radius: 32px;
-  border-top-left-radius: 32px;
-`
+const StyledModal = styled(ModalContainer)`
+  position: relative;
+  overflow: visible;
 
-const BunnyDecoration = styled.div`
-  position: absolute;
-  top: -116px; // line up bunny at the top of the modal
-  left: 0px;
-  text-align: center;
-  width: 100%;
-`
-
-const showConfetti = () => {
-  confetti({
-    particleCount: 200,
-    startVelocity: 30,
-    gravity: 0.5,
+  ${({ theme }) => theme.mediaQueries.sm} {
+    min-width: 380px;
+  }
     spread: 350,
     origin: {
       x: 0.5,

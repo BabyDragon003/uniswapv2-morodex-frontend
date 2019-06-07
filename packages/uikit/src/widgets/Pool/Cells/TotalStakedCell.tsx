@@ -18,25 +18,4 @@ const StyledCell = styled(BaseCell)`
 export function TotalStakedCell({ stakingTokenSymbol, totalStaked, stakingTokenDecimals }: TotalStakedCellProps) {
   const { t } = useTranslation();
 
-  return (
-    <StyledCell role="cell">
-      <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {t("Total staked")}
-        </Text>
-        {totalStaked && totalStaked.gte(0) ? (
-          <Flex height="20px" alignItems="center">
-            <Balance
-              fontSize="16px"
-              value={getBalanceNumber(totalStaked, stakingTokenDecimals)}
-              decimals={3}
-              unit={` ${stakingTokenSymbol}`}
-            />
-          </Flex>
-        ) : (
-          <Skeleton width="80px" height="16px" />
-        )}
-      </CellContent>
-    </StyledCell>
-  );
 }

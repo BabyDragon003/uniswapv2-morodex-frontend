@@ -8,26 +8,16 @@ class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage
 
     try {
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
+      // eslint-disable-next-line no-param-reassign
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+        })
 
-  render() {
-    return (
-      <Html translate="no">
-        <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link rel="preconnect" href="https://tokens.dapp-frontend-prince.web.app" />
-          <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&amp;display=swap" rel="stylesheet" />
-          <link rel="shortcut icon" href="https://dapp-frontend-prince.web.app/favicon.ico" />
-          <link rel="apple-touch-icon" href="https://dapp-frontend-prince.web.app/logo.png" />
-        </Head>
+      const initialProps = await Document.getInitialProps(ctx)
+      return {
+        ...initialProps,
+        styles: (
         <body>
           <Main />
           <NextScript />

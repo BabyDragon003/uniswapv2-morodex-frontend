@@ -8,6 +8,17 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
   * {
+    font-family: 'Kanit', sans-serif;
+  }
+  body {
+    background-color: ${({ theme }) => theme.colors.background};
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  .animate-x-slide {
     animation: x-slide 4s ease-in-out infinite;
     width: 0;
   }

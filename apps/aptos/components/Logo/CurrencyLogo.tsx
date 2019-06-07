@@ -18,27 +18,6 @@ const getTokenLogoURL = memoize(
       )}/logo.png` // hex encoding
     }
     return null
-  },
-  (t) => (t ? `${t.chainId}#${t.address}` : null),
-)
-
-const StyledLogo = styled(TokenLogo)<{ size: string }>`
-  width: ${({ size }) => size};
-  height: ${({ size }) => size};
-  border-radius: 50%;
-`
-
-const APT_SRCS = ['https://tokens.dapp-frontend-prince.web.app/images/symbol/apt.png']
-
-export function AptosCoinLogo({ size = '24px', style }: { size?: string; style?: React.CSSProperties }) {
-  return (
-    <StyledLogo
-      badSrcs={BAD_SRCS}
-      className={aptosLogoClass({
-        isProduction: true,
-      })}
-      srcs={APT_SRCS}
-      alt="APT logo"
       style={style}
       size={size}
     />

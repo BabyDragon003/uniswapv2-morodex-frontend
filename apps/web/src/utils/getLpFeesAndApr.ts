@@ -8,3 +8,10 @@ export const getLpFeesAndApr = (volumeUSD: number, volumeUSDWeek: number, liquid
 
   const lpApr7d = liquidityUSD > 0 ? (volumeUSDWeek * LP_HOLDERS_FEE * WEEKS_IN_YEAR * 100) / liquidityUSD : 0
   return {
+    totalFees24h,
+    totalFees7d,
+    lpFees24h,
+    lpFees7d,
+    lpApr7d: lpApr7d !== Infinity ? lpApr7d : 0,
+  }
+}

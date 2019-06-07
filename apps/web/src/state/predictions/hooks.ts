@@ -8,6 +8,17 @@ import { PredictionsState, PredictionUser } from '../types'
 import { fetchAddressResult } from '.'
 import {
   getRoundsByCloseOracleIdSelector,
+  getSortedRoundsSelector,
+  makeGetBetByEpochSelector,
+  makeGetIsClaimableSelector,
+  getMinBetAmountSelector,
+  getSortedRoundsCurrentEpochSelector,
+  getCurrentRoundCloseTimestampSelector,
+} from './selectors'
+
+export const useGetRoundsByCloseOracleId = () => {
+  return useSelector(getRoundsByCloseOracleIdSelector)
+}
 
 export const useGetSortedRounds = () => {
   return useSelector(getSortedRoundsSelector)

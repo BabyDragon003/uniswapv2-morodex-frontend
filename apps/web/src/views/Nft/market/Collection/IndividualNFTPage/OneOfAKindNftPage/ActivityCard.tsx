@@ -8,6 +8,17 @@ import { useAppDispatch } from '../../../../../../state'
 import NoNftsImage from '../../../components/Activity/NoNftsImage'
 import TableLoader from '../../../../../../components/TableLoader'
 import { getTokenActivity } from '../../../../../../state/nftMarket/helpers'
+import { sortActivity } from '../../../ActivityHistory/utils/sortActivity'
+import ActivityRow from '../../../components/Activity/ActivityRow'
+
+interface ActivityCardProps {
+  nft: NftToken
+}
+
+const MAX_PER_PAGE = 5
+
+const ActivityCard: React.FC<React.PropsWithChildren<ActivityCardProps>> = ({ nft }) => {
+  const dispatch = useAppDispatch()
   const { theme } = useTheme()
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)

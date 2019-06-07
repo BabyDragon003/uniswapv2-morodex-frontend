@@ -18,27 +18,6 @@ import {
   fetchPoolsUserDataAsync,
   fetchCakeVaultPublicData,
   fetchCakeVaultUserData,
-  fetchCakeVaultFees,
-  fetchPoolsStakingLimitsAsync,
-  fetchUserIfoCreditDataAsync,
-  fetchIfoPublicDataAsync,
-  fetchCakeFlexibleSideVaultPublicData,
-  fetchCakeFlexibleSideVaultUserData,
-  fetchCakeFlexibleSideVaultFees,
-  fetchCakePoolUserDataAsync,
-  fetchCakePoolPublicDataAsync,
-} from '.'
-import { VaultKey } from '../types'
-import { fetchFarmsPublicDataAsync } from '../farms'
-import {
-  makePoolWithUserDataLoadingSelector,
-  makeVaultPoolByKey,
-  poolsWithVaultSelector,
-  ifoCreditSelector,
-  ifoCeilingSelector,
-  makeVaultPoolWithKeySelector,
-} from './selectors'
-
 const lPoolAddresses = livePools.filter(({ sousId }) => sousId !== 0).map(({ earningToken }) => earningToken.address)
 
 // Only fetch farms for live pools

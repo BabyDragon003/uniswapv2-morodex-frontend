@@ -8,6 +8,17 @@ interface SearchBarArticle {
 }
 
 const useSearchBarArticle = (searchKey: string): SearchBarArticle => {
+  const { data: articlesData, isLoading } = useSWR(searchKey && [`/searchBarArticles`, searchKey], async () => {
+    const result = await getArticle({
+      url: '/articles',
+      urlParamsObject: {
+        ...(searchKey && { _q: searchKey }),
+        locale: 'all',
+        populate: 'categories,image',
+        sort: 'createAt:desc',
+        pagination: {
+          limit: 10,
+        },
       },
     })
 

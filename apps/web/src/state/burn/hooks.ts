@@ -8,6 +8,17 @@ import useTotalSupply from 'hooks/useTotalSupply'
 
 import { useTranslation } from '@pancakeswap/localization'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
+import { AppState, useAppDispatch } from '../index'
+import { useTokenBalances } from '../wallet/hooks'
+import { Field, typeInput } from './actions'
+
+export function useBurnState(): AppState['burn'] {
+  return useSelector<AppState, AppState['burn']>((state) => state.burn)
+}
+
+export function useDerivedBurnInfo(
+  currencyA: Currency | undefined,
+  currencyB: Currency | undefined,
   removalCheckedA?: boolean,
   removalCheckedB?: boolean,
   zapMode?: boolean,

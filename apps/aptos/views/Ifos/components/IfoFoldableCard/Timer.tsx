@@ -8,26 +8,16 @@ import { getStatus } from 'views/Ifos/hooks/helpers'
 interface Props {
   publicIfoData: PublicIfoData
 }
+
+const GradientText = styled(Heading)`
+  background: -webkit-linear-gradient(#ffd800, #eb8c00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
 `
 
-export const SoonTimer: React.FC<React.PropsWithChildren<Props>> = ({ publicIfoData }) => {
-  const { t } = useTranslation()
-  const { startTime, endTime } = publicIfoData
-
-  const currentTime = Date.now() / 1000
-
-  const secondsUntilStart = startTime - currentTime
-
-  const timeUntil = getTimePeriods(secondsUntilStart)
-
-  const status = getStatus(currentTime, startTime, endTime)
-
-  return (
-    <Flex justifyContent="center" position="relative">
-      {status === 'idle' ? (
-        <Skeleton animation="pulse" variant="rect" width="100%" height="48px" />
-      ) : (
-        <Link external href="/" color="secondary">
+const FlexGap = styled(Flex)<{ gap: string }>`
           <FlexGap gap="8px" alignItems="center">
             <Heading as="h3" scale="lg" color="secondary">
               {t('Start in')}

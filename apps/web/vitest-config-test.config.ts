@@ -8,3 +8,5 @@ export default mergeConfig(
     test: {
       include: ['src/config/__tests__/**'],
     },
+  }),
+)

@@ -8,6 +8,17 @@ import { ClaimButton } from './ClaimButton'
 import ContributeButton from './ContributeButton'
 import { SkeletonCardActions } from './Skeletons'
 
+interface Props {
+  poolId: PoolIds
+  ifo: Ifo
+  publicIfoData: PublicIfoData
+  walletIfoData: WalletIfoData
+  isLoading: boolean
+}
+
+const IfoCardActions: React.FC<React.PropsWithChildren<Props>> = ({
+  poolId,
+  ifo,
   publicIfoData,
   walletIfoData,
   isLoading,

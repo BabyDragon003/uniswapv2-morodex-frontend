@@ -18,27 +18,6 @@ export type UseBalanceConfig<TData> = QueryConfig<UseBalanceResult, Error, TData
 export const queryKey = ({ address, networkName, coin }: Partial<FetchBalanceArgs>) =>
   [{ entity: 'balance', address, networkName, coin }] as const
 
-export function useBalance<TData = UseBalanceResult>({
-  address,
-  cacheTime = 1_000,
-  networkName: networkName_,
-  enabled = true,
-  keepPreviousData,
-  staleTime,
-  suspense,
-  coin,
-  watch,
-  onError,
-  onSettled,
-  onSuccess,
-  select,
-}: UseBalanceArgs & UseBalanceConfig<TData> = {}) {
-  const { chain } = useNetwork()
-  const networkName = networkName_ ?? chain?.network
-  const { data: coinData } = useCoin({ coin, networkName })
-
-  const balanceQuery = useQuery(
-    queryKey({ address, networkName, coin }),
     async ({ queryKey: [{ address: address_, networkName: networkName__, coin: coin_ }] }) => {
       if (!address_) throw new Error('address is required')
       if (!coinData) throw new Error('coin data is missing')

@@ -8,15 +8,13 @@ import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useCake } from 'hooks/useContract'
 
 export const useApprovePottery = (potteryVaultAddress: string) => {
-    if (receipt?.status) {
-      toastSuccess(
-        t('Success!'),
-        <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-          {t('Please progress to the next step.')}
-        </ToastDescriptionWithTx>,
-      )
-    }
-  }, [potteryVaultAddress, cakeContract, t, callWithGasPrice, fetchWithCatchTxError, toastSuccess])
+  const { t } = useTranslation()
+  const { toastSuccess } = useToast()
+  const { fetchWithCatchTxError, loading: isPending } = useCatchTxError()
+  const { callWithGasPrice } = useCallWithGasPrice()
+  const { signer: cakeContract } = useCake()
 
-  return { isPending, onApprove }
-}
+  const onApprove = useCallback(async () => {
+    const receipt = await fetchWithCatchTxError(() => {
+      return callWithGasPrice(cakeContract, 'approve', [potteryVaultAddress, MaxUint256])
+    })

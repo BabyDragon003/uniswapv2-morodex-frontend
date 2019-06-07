@@ -8,26 +8,16 @@ import { formatNumber } from '@pancakeswap/utils/formatBalance'
 import { multiplyPriceByAmount } from 'utils/prices'
 import useNftOwner from 'views/Nft/market/hooks/useNftOwner'
 import BuyModal from '../../../components/BuySellModals/BuyModal'
+import SellModal from '../../../components/BuySellModals/SellModal'
+import ProfileCell from '../../../components/ProfileCell'
+import { ButtonContainer, TableHeading } from '../shared/styles'
 
-const OwnerRow = styled(Grid)`
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-row-gap: 16px;
-  margin-top: 16px;
-  margin-bottom: 8px;
-  align-items: center;
-`
-
-interface OwnerCardProps {
-  nft: NftToken
-  isOwnNft: boolean
-  nftIsProfilePic: boolean
-  onSuccess: () => void
-}
-
-const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
-  nft,
-  isOwnNft,
-  nftIsProfilePic,
+const StyledCard = styled(Card)`
+  width: 100%;
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
   onSuccess,
 }) => {
   const { t } = useTranslation()

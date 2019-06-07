@@ -8,6 +8,17 @@ import { useAppDispatch } from 'state'
 import { updateUserBalance, updateUserPendingReward, updateUserStakedBalance } from 'state/pools'
 import useHarvestPool from '../../hooks/useHarvestPool'
 
+export const CollectModalContainer = ({
+  earningTokenSymbol,
+  sousId,
+  isBnbPool,
+  onDismiss,
+  ...rest
+}: React.PropsWithChildren<Pool.CollectModalProps>) => {
+  const { t } = useTranslation()
+  const { toastSuccess } = useToast()
+  const { address: account } = useAccount()
+  const dispatch = useAppDispatch()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { onReward } = useHarvestPool(sousId, isBnbPool)
 

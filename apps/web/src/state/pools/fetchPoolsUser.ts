@@ -8,26 +8,16 @@ import uniq from 'lodash/uniq'
 import fromPairs from 'lodash/fromPairs'
 import multiCallAbi from 'config/abi/Multicall.json'
 
-    name: 'allowance',
-    params: [account, getAddress(pool.contractAddress)],
-  }))
+// Pool 0, Cake / Cake is a different kind of contract (master chef)
+// BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
+const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'BNB')
+const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'BNB')
+const nonMasterPools = poolsConfig.filter((pool) => pool.sousId !== 0)
 
-  const allowances = await multicall(erc20ABI, calls)
-  return fromPairs(nonBnbPools.map((pool, index) => [pool.sousId, new BigNumber(allowances[index]).toJSON()]))
-}
+const multicallAddress = getMulticallAddress()
 
-export const fetchUserBalances = async (account) => {
-  // Non BNB pools
-  const tokens = uniq(nonBnbPools.map((pool) => pool.stakingToken.address))
-  const tokenBalanceCalls = tokens.map((token) => ({
-    abi: erc20ABI,
-    address: token,
-    name: 'balanceOf',
-    params: [account],
-  }))
-  const bnbBalanceCall = {
-    abi: multiCallAbi,
-    address: multicallAddress,
+export const fetchPoolsAllowance = async (account) => {
+  const calls = nonBnbPools.map((pool) => ({
     name: 'getEthBalance',
     params: [account],
   }

@@ -8,26 +8,16 @@ import Text from "../Text/Text";
 import BackgroundImage from "./BackgroundImage";
 import Img from "./Image";
 import TokenImage from "./TokenImage";
-    <div>
-      <Img src="https://via.placeholder.com/800x400" width={800} height={400} alt="test" />
-      <div>Image</div>
-    </div>
-  );
+import TokenPairImage from "./TokenPairImage";
+import ProfileAvatarComponent from "./ProfileAvatar";
+import tokenList from "./tokens";
+
+export default {
+  title: "Components/Image",
+  argTypes: {},
 };
 
-export const Background: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <div>
-      <BackgroundImage src="https://via.placeholder.com/800x400" width={800} height={400} mr="16px" />
-      <div>Background Image</div>
-    </div>
-  );
-};
-
-export const LazyImages: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <Flex flexWrap="wrap">
-      {times(40, (index) => (
+export const Image: React.FC<React.PropsWithChildren> = () => {
         <Img
           key={index}
           src={`https://via.placeholder.com/${150 + index}`}

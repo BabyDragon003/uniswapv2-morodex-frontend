@@ -8,6 +8,17 @@
       },
       {
         "internalType": "address",
+        "name": "_adminAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_operatorAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_intervalBlocks",
         "type": "uint256"
       },
       {

@@ -8,3 +8,9 @@ const WithdrawalFeeTimer: React.FC<React.PropsWithChildren<{ secondsRemaining: n
 
   return (
     <Text bold fontSize="14px">
+      {t('%day%d:%hour%h:%minute%m', { day: days, hour: hours, minute: minutes })}
+    </Text>
+  )
+}
+
+export default WithdrawalFeeTimer

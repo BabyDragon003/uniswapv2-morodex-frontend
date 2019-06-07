@@ -8,6 +8,17 @@ const Container = styled(Flex)`
   border-bottom: solid 1px ${({ theme }) => theme.colors.cardBorder};
 `
 
+interface CardHeaderProps {
+  title: string
+  subTitle: string
+  primarySrc: string
+  secondarySrc: string
+}
+
+const CardHeader: React.FC<React.PropsWithChildren<CardHeaderProps>> = ({
+  title,
+  subTitle,
+  primarySrc,
   secondarySrc,
 }) => {
   return (

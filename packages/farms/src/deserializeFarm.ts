@@ -8,26 +8,16 @@ import { deserializeFarmUserData } from './deserializeFarmUserData'
 import { FARM_AUCTION_HOSTING_IN_SECONDS } from './const'
 
 export const deserializeFarm = (
-    auctionHostingStartSeconds,
-    quoteTokenPriceBusd,
-    tokenPriceBusd,
-    boosted,
-    infoStableSwapAddress,
-    stableSwapAddress,
-    stableLpFee,
-    stableLpFeeRateOfTotalFee,
-  } = farm
-
-  const auctionHostingStartDate = !isUndefinedOrNull(auctionHostingStartSeconds)
-    ? new Date((auctionHostingStartSeconds as number) * 1000)
-    : null
-  const auctionHostingEndDate = auctionHostingStartDate
-    ? addSeconds(auctionHostingStartDate, auctionHostingInSeconds)
-    : null
-  const now = Date.now()
-  const isFarmCommunity =
-    isCommunity ||
-    !!(
+  farm: SerializedFarm,
+  auctionHostingInSeconds: number = FARM_AUCTION_HOSTING_IN_SECONDS,
+): DeserializedFarm => {
+  const {
+    lpAddress,
+    lpSymbol,
+    pid,
+    vaultPid,
+    dual,
+    multiplier,
       auctionHostingStartDate &&
       auctionHostingEndDate &&
       auctionHostingStartDate.getTime() < now &&

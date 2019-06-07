@@ -8,26 +8,16 @@ import PancakeSwapSmartRouterABI from 'config/abi/pancakeSwapSmartRouter.json'
 import { PancakeSwapSmartRouter } from 'config/abi/types/PancakeSwapSmartRouter'
 import { useContract } from 'hooks/useContract'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-  return useContract<PancakeSwapSmartRouter>(SMART_ROUTER_ADDRESS[chainId], PancakeSwapSmartRouterABI, true)
+import { ChainMap } from 'config/constants/types'
+
+export const SMART_ROUTER_ADDRESS: ChainMap<string> = {
+  [ChainId.ETHEREUM]: '',
+  [ChainId.GOERLI]: '',
+  [ChainId.BSC]: '0xC6665d98Efd81f47B03801187eB46cbC63F328B0',
+  [ChainId.BSC_TESTNET]: '0xCF457465fC0E98a50Bc3E1b3DDAAF1373622f059',
 }
 
-export function calculateSlippageAmount(value: CurrencyAmount<Currency>, slippage: number): [JSBI, JSBI] {
-  if (slippage < 0 || slippage > 10000) {
-    throw Error(`Unexpected slippage value: ${slippage}`)
-  }
-  return [
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 - slippage)), BIPS_BASE),
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 + slippage)), BIPS_BASE),
-  ]
-}
-
-// computes price breakdown for the trade
-export function computeTradePriceBreakdown(trade?: TradeWithStableSwap<Currency, Currency, TradeType> | null): {
-  priceImpactWithoutFee: Percent | undefined
-  realizedLPFee: CurrencyAmount<Currency> | undefined | null
-} {
-  // for each hop in our trade, take away the x*y=k price impact from 0.3% fees
-  // e.g. for 3 tokens/2 hops: 1 - ((1 - .03) * (1-.03))
+export function useSmartRouterContract() {
   const realizedLPFee = !trade
     ? undefined
     : ONE_HUNDRED_PERCENT.subtract(

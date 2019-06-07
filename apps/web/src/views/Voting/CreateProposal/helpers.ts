@@ -8,6 +8,17 @@ export const combineDateAndTime = (date: Date, time: Date) => {
     return null
   }
 
+  const dateStr = format(date, 'yyyy-MM-dd')
+  const timeStr = format(time, 'HH:mm:ss')
+
+  return parseISO(`${dateStr}T${timeStr}`).getTime() / 1e3
+}
+
+export const getFormErrors = (formData: FormState, t: ContextApi['t']) => {
+  const { name, body, choices, startDate, startTime, endDate, endTime, snapshot } = formData
+  const errors: { [key: string]: string[] } = {}
+
+  if (!name) {
     errors.name = [t('%field% is required', { field: 'Title' })]
   }
 

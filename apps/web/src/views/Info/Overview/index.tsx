@@ -8,26 +8,16 @@ import {
   useProtocolDataSWR,
   useProtocolTransactionsSWR,
 } from 'state/info/hooks'
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
-  gap: 1em;
+import styled from 'styled-components'
+import BarChart from 'views/Info/components/InfoCharts/BarChart'
+import LineChart from 'views/Info/components/InfoCharts/LineChart'
+import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
+import TokenTable from 'views/Info/components/InfoTables/TokensTable'
+import TransactionTable from 'views/Info/components/InfoTables/TransactionsTable'
+import HoverableChart from '../components/InfoCharts/HoverableChart'
+import { usePoolsData } from '../hooks/usePoolsData'
 
-  & > * {
-    width: 100%;
-  }
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    flex-direction: row;
-  }
-`
-
-const Overview: React.FC<React.PropsWithChildren> = () => {
-  const {
-    t,
-    currentLanguage: { locale },
-  } = useTranslation()
-
+export const ChartCardsContainer = styled(Flex)`
   const protocolData = useProtocolDataSWR()
   const chartData = useProtocolChartDataSWR()
   const transactions = useProtocolTransactionsSWR()

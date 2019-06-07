@@ -8,6 +8,17 @@ const StyledCard = styled(Card)`
   ${({ theme }) => theme.mediaQueries.md} {
     margin-right: 40px;
     flex: 1;
+  }
+`
+
+const MoboxPrizesCard = () => {
+  const { t } = useTranslation()
+
+  return (
+    <StyledCard>
+      <CardHeader>
+        <Heading scale="lg" color="secondary">
+          {t('Prizes by Team')}
         </Heading>
         <Text color="textSubtle" fontSize="14px">
           {t('Higher trading volume = higher rank!')}

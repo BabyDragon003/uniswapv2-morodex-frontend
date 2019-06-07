@@ -8,6 +8,17 @@ import {
   StyledInput,
   SliderLabel,
   SliderLabelContainer,
+} from "./styles";
+import SliderProps from "./types";
+
+const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
+  name,
+  min,
+  max,
+  value,
+  onValueChanged,
+  valueLabel,
+  step = "any",
   disabled = false,
   ...props
 }) => {

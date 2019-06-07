@@ -8,6 +8,17 @@ import { useDebouncedChangeHandler } from "@pancakeswap/hooks";
 interface PercentSliderProps {
   onValueChanged: (value: string) => void;
   currentValue: number;
+}
+
+export function PercentSlider({ onValueChanged, currentValue }: PercentSliderProps) {
+  const { t } = useTranslation();
+
+  const liquidityPercentChangeCallback = useCallback(
+    (value: number) => {
+      onValueChanged(value.toString());
+    },
+    [onValueChanged]
+  );
 
   const [innerLiquidityPercentage, setInnerLiquidityPercentage] = useDebouncedChangeHandler(
     currentValue,

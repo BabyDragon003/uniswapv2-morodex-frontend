@@ -8,7 +8,13 @@ const SubMenuItemsMock = [
     href: "/",
   },
   {
+    label: "Syrup Pools",
+    href: "/",
   },
-];
-
-export default SubMenuItemsMock;
+  {
+    label: "Swap",
+    href: "/swap",
+    iconName: "Swap",
+  },
+  {
+    label: "Trading Competition",
