@@ -23,25 +23,3 @@ const TotalAvailableClaim: React.FC<React.PropsWithChildren<TotalAvailableClaimP
     () =>
       amountAvailableToClaim.gt(0)
         ? getFullDisplayBalance(amountAvailableToClaim, token.decimals, token.decimals)
-        : '0',
-    [token, amountAvailableToClaim],
-  )
-
-  return (
-    <LightGreyCard mt="24px" mb="8px">
-      <Flex>
-        <TokenImage mr="16px" width={32} height={32} token={token} style={{ alignSelf: 'flex-start' }} />
-        <Box>
-          <Text bold color="secondary" fontSize="12px">
-            {t('%symbol% available to claim', { symbol: token.symbol })}
-          </Text>
-          <Text as="span" bold fontSize="20px">
-            {amountAvailable}
-          </Text>
-        </Box>
-      </Flex>
-    </LightGreyCard>
-  )
-}
-
-export default TotalAvailableClaim

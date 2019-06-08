@@ -23,32 +23,6 @@ const RoiCardInner = styled(Box)`
   padding: 24px;
   border-radius: ${({ theme }) => theme.radii.default};
   background: ${({ theme }) => theme.colors.gradientBubblegum};
-`;
-
-const RoiInputContainer = styled(Box)`
-  position: relative;
-  & > input {
-    padding-left: 28px;
-    max-width: 70%;
-  }
-  &:before {
-    position: absolute;
-    content: "$";
-    color: ${({ theme }) => theme.colors.textSubtle};
-    left: 16px;
-    top: 8px;
-  }
-`;
-
-const RoiDisplayContainer = styled(Flex)`
-  max-width: 82%;
-  margin-right: 8px;
-`;
-
-const RoiDollarAmount = styled(Text)<{ fadeOut: boolean }>`
-  position: relative;
-  overflow-x: auto;
-  &::-webkit-scrollbar {
     height: 0px;
   }
 

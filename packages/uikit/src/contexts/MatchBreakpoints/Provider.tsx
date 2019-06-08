@@ -18,6 +18,27 @@ type MediaQueries = {
 
 /**
  * Can't use the media queries from "base.mediaQueries" because of how matchMedia works
+ * In order for the listener to trigger we need have the media query with a range, e.g.
+ * (min-width: 370px) and (max-width: 576px)
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList
+ */
+const mediaQueries: MediaQueries = (() => {
+  let prevMinWidth = 0;
+
+  return Object.keys(breakpoints).reduce((accum, size, index) => {
+    // Largest size is just a min-width of second highest max-width
+    if (index === Object.keys(breakpoints).length - 1) {
+      return { ...accum, [size]: `(min-width: ${prevMinWidth}px)` };
+    }
+
+    const minWidth = prevMinWidth;
+    // @ts-ignore
+    const breakpoint = breakpoints[size];
+
+    // Min width for next iteration
+    prevMinWidth = breakpoint;
+
+    return { ...accum, [size]: `(min-width: ${minWidth}px) and (max-width: ${breakpoint - 1}px)` };
   }, {});
 })();
 

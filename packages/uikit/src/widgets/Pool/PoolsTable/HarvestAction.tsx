@@ -18,16 +18,11 @@ export const withStakeActionContainer =
           <ActionTitles>
             <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
               {t("Start staking")}
-
-export function HarvestAction({
-  earningTokenPrice,
-  onPresentCollect,
-  account,
-  earningTokenBalance,
-  earningTokenDollarBalance,
-  earningTokenSymbol,
-  earnings,
-}: HarvestActionsProps & { account: string; earningTokenSymbol: string }) {
+            </Text>
+          </ActionTitles>
+          <ActionContent>{createElement(connectWalletButtonElement, { width: "100%" })}</ActionContent>
+        </ActionContainer>
+      );
   const { t } = useTranslation();
 
   const hasEarnings = earnings.gt(0);

@@ -18,16 +18,11 @@ const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const [state, setState] = useState({
     isInitialized: false,
     status: 'idle' as IfoStatus,
-        name: method,
-      }))
-
-      const [startBlock, endBlock, raisingAmount, totalAmount] = await multicallv2({ abi: ifoV1Abi, calls: ifoCalls })
-
-      const startBlockNum = startBlock ? startBlock[0].toNumber() : 0
-      const endBlockNum = endBlock ? endBlock[0].toNumber() : 0
-
-      const status = getStatus(currentBlock, startBlockNum, endBlockNum)
-      const totalBlocks = endBlockNum - startBlockNum
+    blocksRemaining: 0,
+    secondsUntilStart: 0,
+    progress: 5,
+    secondsUntilEnd: 0,
+    startBlockNum: 0,
       const blocksRemaining = endBlockNum - currentBlock
 
       // Calculate the total progress until finished or until start

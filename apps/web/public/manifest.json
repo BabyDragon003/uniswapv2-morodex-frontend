@@ -18,3 +18,7 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "256x256"
+    }
+  ],
+  "iconPath": "/images/cake.svg"
+}

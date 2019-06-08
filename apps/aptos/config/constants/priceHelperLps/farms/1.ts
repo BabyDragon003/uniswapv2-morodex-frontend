@@ -23,10 +23,3 @@ const priceHelperLps: Omit<SerializedFarmConfig, 'pid'>[] = [
     token: mainnetTokens.cebnb,
   },
 ].map((p) => ({
-  ...p,
-  token: p.token.serialize,
-  quoteToken: p.quoteToken.serialize,
-  lpAddress: Pair.getAddress(p.token, p.quoteToken),
-}))
-
-export default priceHelperLps

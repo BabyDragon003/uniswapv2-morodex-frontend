@@ -18,3 +18,19 @@ const useUnstakeFarms = (pid: number) => {
       if (pid === 0) {
         return masterChefContract.leaveStaking(value, {
           ...options,
+          gasPrice,
+        })
+      }
+
+      return masterChefContract.withdraw(pid, value, {
+        ...options,
+        gasPrice,
+      })
+    },
+    [masterChefContract, pid, gasPrice],
+  )
+
+  return { onUnstake: handleUnstake }
+}
+
+export default useUnstakeFarms

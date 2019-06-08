@@ -18,16 +18,11 @@ import orderBy from 'lodash/orderBy'
 import { useGetNftFilters } from 'state/nftMarket/hooks'
 import { useNftStorage } from 'state/nftMarket/storage'
 import styled from 'styled-components'
-const CloseButton = styled(IconButton)`
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-`
+import { Item } from './types'
+import { FilterButton, ListOrderState, SearchWrapper } from '../ListFilter/styles'
+import { TraitItemRow } from './styles'
 
-export const ListTraitFilter: React.FC<React.PropsWithChildren<ListTraitFilterProps>> = ({
-  title,
-  traitType,
-  items,
-  collectionAddress,
+interface ListTraitFilterProps {
 }) => {
   const { t } = useTranslation()
   const { updateItemFilters } = useNftStorage()

@@ -18,16 +18,11 @@ export const TOKEN_RISK = {
   VERY_HIGH: 4,
 } as const
 
-  })
-
-  const result = await response.json()
-  return result
-}
-
-export const fetchRiskToken = async (address: string, chainId: number): Promise<RiskTokenInfo> => {
-  const riskApi = await fetchRiskApi(address, chainId)
-  const data = zRiskTokenData.parse(riskApi.data)
-  // eslint-disable-next-line camelcase
+export const TOKEN_RISK_MAPPING = {
+  '5/5': TOKEN_RISK.VERY_LOW,
+  '4/5': TOKEN_RISK.LOW,
+  '3/5': TOKEN_RISK.MEDIUM,
+  '2/5': TOKEN_RISK.HIGH,
   const { band, scanned_ts } = data
 
   return {

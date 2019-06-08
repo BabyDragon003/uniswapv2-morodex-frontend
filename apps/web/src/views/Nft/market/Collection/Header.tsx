@@ -23,32 +23,6 @@ const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({ collection }) 
   const collectionAddress = router.query.collectionAddress as string
   const { totalSupply, numberTokensListed, totalVolumeBNB, banner, avatar } = collection
   const { t } = useTranslation()
-
-  const volume = totalVolumeBNB
-    ? parseFloat(totalVolumeBNB).toLocaleString(undefined, {
-        minimumFractionDigits: 3,
-        maximumFractionDigits: 3,
-      })
-    : '0'
-
-  const itemsConfig = [
-    {
-      label: t('Items'),
-      href: `${nftsBaseUrl}/collections/${collectionAddress}`,
-    },
-    {
-      label: t('Traits'),
-      href: `${nftsBaseUrl}/collections/${collectionAddress}#traits`,
-    },
-    {
-      label: t('Activity'),
-      href: `${nftsBaseUrl}/collections/${collectionAddress}#activity`,
-    },
-  ]
-
-  return (
-    <>
-      <MarketPageHeader>
         <TopBar />
         <BannerHeader bannerImage={banner.large} avatar={<AvatarImage src={avatar} />} />
         <MarketPageTitle

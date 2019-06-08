@@ -23,32 +23,6 @@ const useTokensDeposited = ({ pair, totalPoolTokens, userPoolBalance }) => {
       ? [
           pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
           pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
-        ]
-      : [undefined, undefined]
-  }, [totalPoolTokens, userPoolBalance, pair])
-}
-
-const useTotalUSDValue = ({ currency0, currency1, token0Deposited, token1Deposited }) => {
-  const token0Price = useBUSDPrice(currency0)
-  const token1Price = useBUSDPrice(currency1)
-
-  const token0USDValue =
-    token0Deposited && token0Price
-      ? multiplyPriceByAmount(token0Price, parseFloat(token0Deposited.toSignificant(8)))
-      : null
-  const token1USDValue =
-    token1Deposited && token1Price
-      ? multiplyPriceByAmount(token1Price, parseFloat(token1Deposited.toSignificant(8)))
-      : null
-  return token0USDValue && token1USDValue ? token0USDValue + token1USDValue : null
-}
-
-const usePoolTokenPercentage = ({ userPoolBalance, totalPoolTokens }) => {
-  return useMemo(
-    () =>
-      !!userPoolBalance &&
-      !!totalPoolTokens &&
-      JSBI.greaterThanOrEqual(totalPoolTokens.quotient, userPoolBalance.quotient)
         ? new Percent(userPoolBalance.quotient, totalPoolTokens.quotient)
         : undefined,
     [userPoolBalance, totalPoolTokens],

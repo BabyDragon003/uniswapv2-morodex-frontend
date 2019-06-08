@@ -23,10 +23,3 @@ const MakeProfile: React.FC<React.PropsWithChildren<CompetitionProps>> = ({ onDi
         {t('It looks like you’ve disabled your account by removing your Pancake Collectible (NFT) profile picture.')}
       </Text>
       <Button mt="24px" width="100%" onClick={handleClick}>
-        {t('Make a profile!')}
-      </Button>
-    </>
-  )
-}
-
-export default MakeProfile

@@ -18,6 +18,27 @@ export interface AprProps {
   quoteTokenAddress?: string
   cakePrice: BigNumber
   originalValue: number
+  hideButton?: boolean
+  strikethrough?: boolean
+  useTooltipText?: boolean
+  boosted?: boolean
+  stableSwapAddress?: string
+  stableLpFee?: number
+}
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.text};
+
+  button {
+    width: 20px;
+    height: 20px;
+
+    svg {
+      path {
+        fill: ${({ theme }) => theme.colors.textSubtle};
+      }
     }
   }
 `

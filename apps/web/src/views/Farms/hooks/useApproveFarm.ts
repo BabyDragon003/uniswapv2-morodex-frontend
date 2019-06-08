@@ -18,3 +18,12 @@ const useApproveFarm = (lpContract: Contract, chainId: number) => {
 }
 
 export default useApproveFarm
+
+export const useApproveBoostProxyFarm = (lpContract: Contract, proxyAddress?: string) => {
+  const { callWithGasPrice } = useCallWithGasPrice()
+  const handleApprove = useCallback(async () => {
+    return proxyAddress && callWithGasPrice(lpContract, 'approve', [proxyAddress, MaxUint256])
+  }, [lpContract, proxyAddress, callWithGasPrice])
+
+  return { onApprove: handleApprove }
+}

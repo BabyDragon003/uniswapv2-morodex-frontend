@@ -23,32 +23,6 @@ interface WalletInfoProps {
   onDismiss: InjectedModalProps['onDismiss']
 }
 
-const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss }) => {
-  const { t } = useTranslation()
-  const { account } = useAccount()
-  const chainId = useActiveChainId()
-  const native = useNativeCurrency()
-  const { data, isFetched } = useAccountBalance({ address: account?.address, coin: APTOS_COIN })
-
-  const { logout } = useAuth()
-
-  const handleLogout = () => {
-    onDismiss?.()
-    logout()
-  }
-
-  return (
-    <>
-      <Text color="secondary" fontSize="12px" textTransform="uppercase" fontWeight="bold" mb="8px">
-        {t('Your Address')}
-      </Text>
-      {account && <CopyAddress tooltipMessage={t('Copied')} account={account.address} mb="24px" />}
-      {hasLowNativeBalance && (
-        <Message variant="warning" mb="24px">
-          <Box>
-            <Text fontWeight="bold">
-              {t('%currency% Balance Low', {
-                currency: native.symbol,
               })}
             </Text>
             <Text as="p">

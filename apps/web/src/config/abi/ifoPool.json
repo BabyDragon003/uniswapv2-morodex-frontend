@@ -18,6 +18,27 @@
       },
       {
         "internalType": "address",
+        "name": "_admin",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_treasury",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_startBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_endBlock",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "anonymous": false,
