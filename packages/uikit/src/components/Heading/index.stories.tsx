@@ -3,12 +3,6 @@ import Heading from "./Heading";
 
 export default {
   title: "Components/Heading",
-  component: Heading,
-  argTypes: {},
-};
-
-export const Sizes: React.FC<React.PropsWithChildren> = () => {
-  return (
     <div>
       <Heading>Default</Heading>
       <Heading scale="md">Size md</Heading>

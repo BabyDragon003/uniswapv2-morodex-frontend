@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Button, Heading, Text, Flex, Checkbox, AutoRenewIcon, useToast } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractMoD } from 'hooks/useContract'
 import { useTranslation } from '@pancakeswap/localization'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useGetUsernameWithVisibility from 'hooks/useUsernameWithVisibility'
-import { CompetitionProps } from '../../types'
-
 const StyledCheckbox = styled(Checkbox)`
   min-width: 24px;
 `

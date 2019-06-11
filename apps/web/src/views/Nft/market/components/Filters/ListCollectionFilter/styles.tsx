@@ -3,12 +3,6 @@ import { StyledItemRow } from '../ListFilter/styles'
 
 interface CollectionItemRowProps {
   item: CollectionItem
-  isSelected: boolean
-  onClick: (evt) => void
-}
-
-interface CollectionItem {
-  label: string
   collectionAddress: string
 }
 

@@ -3,12 +3,6 @@ export enum Tiers {
   SILVER = 'Silver',
   BRONZE = 'Bronze',
   PURPLE = 'Purple',
-  TEAL = 'Teal',
-}
-
-export interface Rank {
-  group: string
-  rank: string
   tier: Tiers
   tokenPrizeInUsd: number
   achievements: {

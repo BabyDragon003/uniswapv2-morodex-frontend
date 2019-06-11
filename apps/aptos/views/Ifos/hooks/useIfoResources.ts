@@ -3,12 +3,6 @@ import { TxnBuilderTypes, TypeTagParser } from 'aptos'
 import splitTypeTag from 'utils/splitTypeTag'
 import {
   IFO_ADDRESS,
-  IFO_RESOURCE_ACCOUNT_TYPE_METADATA,
-  IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE,
-  IFO_RESOURCE_ACCOUNT_TYPE_VESTING_METADATA,
-} from 'views/Ifos/constants'
-import { RootObject as IFOMetadata } from 'views/Ifos/generated/IFOMetadata'
-import { RootObject as IFOPoolStore } from 'views/Ifos/generated/IFOPoolStore'
 import { RootObject as VestingMetadata } from 'views/Ifos/generated/VestingMetadata'
 import { Ifo } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

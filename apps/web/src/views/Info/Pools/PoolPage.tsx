@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Breadcrumbs,
-  Button,
-  ButtonMenu,
-  ButtonMenuItem,
-  Card,
-  Flex,
-  Heading,
   HelpIcon,
   LinkExternal,
   NextLinkFromReactRouter,

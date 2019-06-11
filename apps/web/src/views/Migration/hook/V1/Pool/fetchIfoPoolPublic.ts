@@ -3,12 +3,6 @@ import { convertSharesToCake } from 'views/Pools/helpers'
 import { multicallv2 } from 'utils/multicall'
 import ifoPoolAbi from 'config/abi/ifoPool.json'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-
-export const fetchPublicIfoPoolData = async (ifoPoolAddress: string) => {
-  try {
-    const calls = ['getPricePerFullShare', 'totalShares', 'startBlock', 'endBlock'].map((method) => ({
-      address: ifoPoolAddress,
-      name: method,
     }))
 
     const [[sharePrice], [shares], [startBlock], [endBlock]] = await multicallv2({ abi: ifoPoolAbi, calls })

@@ -3,12 +3,6 @@ import { Contract } from '@ethersproject/contracts'
 import {
   Currency,
   CurrencyAmount,
-  JSBI,
-  Percent,
-  SwapParameters,
-  TradeOptions,
-  TradeOptionsDeadline,
-  TradeType,
 } from '@pancakeswap/sdk'
 import { isStableSwapPair, Trade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants'
@@ -23,6 +17,32 @@ const NATIVE_CURRENCY_ADDRESS = getAddress('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeee
 
 export interface SwapCall {
   contract: Contract
+  parameters: SwapParameters
+}
+
+/**
+ * Returns the swap calls that can be used to make the trade
+ * @param trade trade to execute
+ * @param allowedSlippage user allowed slippage
+ * @param recipientAddressOrName
+ */
+export function useSwapCallArguments(
+  trade: TradeWithStableSwap<Currency, Currency, TradeType> | undefined, // trade to execute, required
+  allowedSlippage: number = INITIAL_ALLOWED_SLIPPAGE, // in bips
+  recipientAddress: string | null, // the address of the recipient of the trade, or null if swap should be returned to sender
+): SwapCall[] {
+  const { account, chainId } = useActiveWeb3React()
+
+  const recipient = recipientAddress === null ? account : recipientAddress
+  const deadline = useTransactionDeadline()
+  const contract = useSmartRouterContract()
+
+  return useMemo(() => {
+    if (!trade || !recipient || !account || !chainId || !deadline) return []
+
+    if (!contract) {
+      return []
+    }
 
     const swapMethods = []
     if (trade.tradeType === TradeType.EXACT_INPUT) {

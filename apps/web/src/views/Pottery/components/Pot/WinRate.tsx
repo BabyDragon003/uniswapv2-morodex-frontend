@@ -3,12 +3,6 @@ import { Flex, Box, Button, useModal, Text, Tag, CalculateIcon } from '@pancakes
 import { useTranslation } from '@pancakeswap/localization'
 import WinRateModal from 'views/Pottery/components/WinRateModal'
 import { usePotteryData } from 'state/pottery/hook'
-
-const WinRate: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-  const { publicData, userData } = usePotteryData()
-
-  const [openWinRateModal] = useModal(
     <WinRateModal stakingTokenBalance={userData.stakingTokenBalance} totalSupply={publicData.totalSupply} />,
   )
 

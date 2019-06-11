@@ -3,12 +3,6 @@ import { Flex, Text } from "@pancakeswap/uikit";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useTranslation } from "@pancakeswap/localization";
-import { NextLinkFromReactRouter } from "../../../components/NextLink";
-import { NotificationDot } from "../../../components/NotificationDot";
-import { ButtonMenu, ButtonMenuItem } from "../../../components/ButtonMenu";
-
-const Wrapper = styled.div`
-  display: flex;
   justify-content: center;
   align-items: center;
 

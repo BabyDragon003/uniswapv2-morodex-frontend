@@ -3,12 +3,6 @@ import BigNumber from 'bignumber.js'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import { CalculatorMode, EditingCurrency } from '../types'
 
-const TOKEN_PRECISION = 10
-const USD_PRECISION = 2
-
-export interface WinRateCalculatorState {
-  controls: {
-    multiply: number
     mode: CalculatorMode
     editingCurrency: EditingCurrency
   }
@@ -23,6 +17,32 @@ const defaultState = {
     multiply: 1,
     mode: CalculatorMode.WIN_RATE_BASED_ON_PRINCIPAL,
     editingCurrency: EditingCurrency.USD,
+  },
+  data: {
+    principalAsToken: '0.00',
+    principalAsUSD: '',
+  },
+}
+
+interface WinRateCalculatorProps {
+  cakePrice: BigNumber
+  totalSupply: BigNumber
+}
+
+const useWinRateCalculator = ({ cakePrice, totalSupply }: WinRateCalculatorProps) => {
+  const [state, setState] = useState<WinRateCalculatorState>(defaultState)
+
+  const totalLockValue = useMemo(() => {
+    const total = totalSupply.times(state.controls.multiply).dividedBy(DEFAULT_TOKEN_DECIMAL)
+    return total.toNumber()
+  }, [totalSupply, state])
+
+  const totalLockValueAsUSD = useMemo(() => {
+    return new BigNumber(totalLockValue).times(cakePrice).toNumber()
+  }, [totalLockValue, cakePrice])
+
+  const winRate = useMemo(() => {
+    const { principalAsToken } = state.data
     const percentage = new BigNumber(principalAsToken).div(totalLockValue).times(100).toNumber()
     return percentage >= 100 ? 100 : percentage
   }, [state, totalLockValue])

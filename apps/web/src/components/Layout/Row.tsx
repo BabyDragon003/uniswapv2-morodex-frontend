@@ -3,12 +3,6 @@ import { Box } from '@pancakeswap/uikit'
 
 const Row = styled(Box)<{
   width?: string
-  align?: string
-  justify?: string
-  padding?: string
-  border?: string
-  borderRadius?: string
-}>`
   width: ${({ width }) => width ?? '100%'};
   display: flex;
   align-items: ${({ align }) => align ?? 'center'};

@@ -3,12 +3,6 @@ import { Field } from 'components/Liquidity/type'
 import { atom } from 'jotai'
 import { resetMintState, typeInput } from './actions'
 
-export interface MintState {
-  readonly independentField: Field
-  readonly typedValue: string
-  readonly otherTypedValue: string // for the case when there's no liquidity
-}
-
 const initialState: MintState = {
   independentField: Field.CURRENCY_A,
   typedValue: '',

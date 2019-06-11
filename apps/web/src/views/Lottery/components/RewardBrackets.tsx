@@ -3,12 +3,6 @@ import BigNumber from 'bignumber.js'
 import { Flex, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { useTranslation } from '@pancakeswap/localization'
-import { LotteryRound } from 'state/types'
-import RewardBracketDetail from './RewardBracketDetail'
-
-const Wrapper = styled(Flex)`
-  width: 100%;
   flex-direction: column;
 `
 
@@ -23,6 +17,32 @@ const RewardsInner = styled.div`
 `
 
 interface RewardMatchesProps {
+  lotteryNodeData: LotteryRound
+  isHistoricRound?: boolean
+}
+
+interface RewardsState {
+  isLoading: boolean
+  cakeToBurn: BigNumber
+  rewardsLessTreasuryFee: BigNumber
+  rewardsBreakdown: string[]
+  countWinnersPerBracket: string[]
+}
+
+const RewardBrackets: React.FC<React.PropsWithChildren<RewardMatchesProps>> = ({
+  lotteryNodeData,
+  isHistoricRound,
+}) => {
+  const { t } = useTranslation()
+  const [state, setState] = useState<RewardsState>({
+    isLoading: true,
+    cakeToBurn: BIG_ZERO,
+    rewardsLessTreasuryFee: BIG_ZERO,
+    rewardsBreakdown: null,
+    countWinnersPerBracket: null,
+  })
+
+  useEffect(() => {
     if (lotteryNodeData) {
       const { treasuryFee, amountCollectedInCake, rewardsBreakdown, countWinnersPerBracket } = lotteryNodeData
 

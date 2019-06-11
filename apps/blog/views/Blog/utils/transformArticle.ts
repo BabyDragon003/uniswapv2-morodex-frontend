@@ -3,12 +3,6 @@ import { ResponseArticleDataType, PaginationType } from 'views/Blog/types'
 export interface ArticleDataType {
   id: number
   title: string
-  locale: string
-  imgUrl: string
-  content: string
-  createAt: string
-  publishedAt: string
-  description: string
   categories: Array<string>
 }
 

@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, CardFooter, ExpandableLabel, HelpIcon, useTooltip, Farm as FarmUI } from '@pancakeswap/uikit'
 
-interface FooterProps {
-  defaultExpanded?: boolean
-}
-
-const { ManualPoolTag } = FarmUI.Tags
-
 const ExpandableButtonWrapper = styled(Flex)`
   align-items: center;
   justify-content: space-between;

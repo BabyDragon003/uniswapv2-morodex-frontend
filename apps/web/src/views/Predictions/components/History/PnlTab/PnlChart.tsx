@@ -3,12 +3,6 @@ import { Text } from '@pancakeswap/uikit'
 import { SVG, WonSlice, LostSlice, Wrapper, Info } from './PnlChartStyles'
 
 /**
- * Bare minimum chart that doesn't require any external dependencies
- * For details read here - https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/
- */
-
-interface PnlChartProps {
-  won: number
   lost: number
 }
 

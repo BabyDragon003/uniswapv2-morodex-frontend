@@ -3,12 +3,6 @@ import { Box, PancakeTheme } from '@pancakeswap/uikit'
 import { darkTheme, lightTheme } from 'components/layerZero/theme'
 
 declare global {
-  interface Window {
-    aptosBridge?: any
-  }
-  interface Document {
-    querySelector?: any
-  }
 }
 
 export const LayerZeroWidget = ({ theme }: { theme: PancakeTheme }) => {
@@ -23,6 +17,32 @@ export const LayerZeroWidget = ({ theme }: { theme: PancakeTheme }) => {
 
     return () => {
       document.body.classList.remove(themeText)
+    }
+  }, [theme])
+
+  return (
+    <Box width="100%">
+      <style jsx global>{`
+        .aptos-bridge-container > div {
+          padding: 24px 0 !important;
+          border-radius: 18px;
+        }
+
+        .css-twekd7,
+        .css-iv85qm {
+          margin-top: 32px !important;
+        }
+
+        .aptos-bridge-container > div > .MuiContainer-root {
+          padding: 0 8px !important;
+        }
+
+        .dark [id^='radix-'] {
+          background-color: #27262c;
+        }
+
+        .light [id^='radix-'] {
+          background-color: #ffffff;
         }
 
         .css-11saint rect {

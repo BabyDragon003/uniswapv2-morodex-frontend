@@ -3,12 +3,6 @@ import { useTranslation } from "@pancakeswap/localization";
 import BigNumber from "bignumber.js";
 import { useCallback, useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
-import { getInterestBreakdown } from "@pancakeswap/utils/compoundApyHelpers";
-import { formatNumber, getDecimalAmount, getFullDisplayBalance } from "@pancakeswap/utils/formatBalance";
-import removeTrailingZeros from "@pancakeswap/utils/removeTrailingZeros";
-
-import PercentageButton from "./PercentageButton";
-import getThemeValue from "../../util/getThemeValue";
 
 import {
   AutoRenewIcon,
@@ -23,6 +17,32 @@ import {
   Slider,
   Text,
   RoiCalculatorModal,
+} from "../../components";
+import { Modal } from "../Modal";
+
+const StyledLink = styled((props) => <Link {...props} />)`
+  width: 100%;
+`;
+
+const AnnualRoiContainer = styled((props) => <Flex {...props} />)`
+  cursor: pointer;
+`;
+
+const AnnualRoiDisplay = styled((props) => <Text {...props} />)`
+  width: 72px;
+  max-width: 72px;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+`;
+
+interface StakeModalProps {
+  // Pool attributes
+  stakingTokenDecimals: number;
+  stakingTokenSymbol: string;
+  stakingTokenAddress: string;
+  earningTokenPrice: number;
+  apr: number;
   stakingLimit: BigNumber;
   earningTokenSymbol: string;
   userDataStakedBalance: BigNumber;

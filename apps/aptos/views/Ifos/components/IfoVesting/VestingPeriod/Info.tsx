@@ -3,12 +3,6 @@ import { Flex, Text, Progress, Tag } from '@pancakeswap/uikit'
 import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { PoolIds } from 'config/constants/types'
-import { useMemo } from 'react'
-import styled from 'styled-components'
-import type { VestingData } from 'views/Ifos/hooks/vesting/useFetchUserWalletIfoData'
-import Claim from './Claim'
-
-const WhiteCard = styled.div`
   background: ${({ theme }) => theme.colors.backgroundAlt};
   padding: 12px;
   border-radius: 12px;

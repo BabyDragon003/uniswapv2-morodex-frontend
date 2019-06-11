@@ -3,12 +3,6 @@ import Link from 'next/link'
 import { Button, Card, CommunityIcon, Flex, Heading, PrizeIcon, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Team } from 'config/constants/types'
-
-interface TeamCardProps {
-  rank: number
-  team: Team
-}
-
 const getBackground = (theme: DefaultTheme) => {
   if (theme.isDark) {
     return 'linear-gradient(139.73deg, #142339 0%, #24243D 47.4%, #37273F 100%)'

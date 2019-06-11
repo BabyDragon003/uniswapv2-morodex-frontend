@@ -3,12 +3,6 @@ import { MenuContext } from "../../widgets/Menu/context";
 import { Flex } from "../Box";
 import AnimatedIconComponent from "../Svg/AnimatedIconComponent";
 import { StyledBottomNavItem, StyledBottomNavText } from "./styles";
-import { BottomNavItemProps } from "./types";
-
-const BottomNavItem: React.FC<React.PropsWithChildren<BottomNavItemProps>> = ({
-  label,
-  icon,
-  fillIcon,
   href,
   showItemsOnMobile = false,
   isActive = false,

@@ -3,7 +3,12 @@ import { Skeleton, Table, Td } from '@pancakeswap/uikit'
 
 const LoadingTable = () => (
   <Table>
-    <tbody>
+          <Skeleton />
+        </Td>
+        <Td>
+          <Skeleton />
+        </Td>
+      </tr>
       <tr>
         <Td>
           <Skeleton />
@@ -23,3 +28,11 @@ const LoadingTable = () => (
           <Skeleton />
         </Td>
         <Td>
+          <Skeleton />
+        </Td>
+      </tr>
+    </tbody>
+  </Table>
+)
+
+export default memo(LoadingTable)

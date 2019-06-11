@@ -4,12 +4,6 @@
 
 ### Patch Changes
 
-- 5dda2c74f: Fix duplicate active list url issue
-
-## 0.0.3
-
-### Patch Changes
-
 - 64dbde8e2: Fix token list getting from indexeddb not updating when version bump
 
 ## 0.0.2

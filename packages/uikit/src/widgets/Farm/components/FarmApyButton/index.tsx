@@ -3,12 +3,6 @@ import { Flex } from "../../../../components/Box";
 import { CalculateIcon } from "../../../../components/Svg";
 import { IconButton } from "../../../../components/Button";
 
-const ApyLabelContainer = styled(Flex)`
-  cursor: pointer;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
 
 interface FarmApyButtonProps {
   hideButton?: boolean;

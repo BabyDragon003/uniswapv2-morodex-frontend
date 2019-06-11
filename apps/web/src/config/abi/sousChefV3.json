@@ -3,12 +3,6 @@
     "inputs": [
       { "internalType": "address", "name": "_pancakeProfile", "type": "address" },
       { "internalType": "bool", "name": "_pancakeProfileIsRequested", "type": "bool" },
-      { "internalType": "uint256", "name": "_pancakeProfileThresholdPoints", "type": "uint256" }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
     "anonymous": false,
     "inputs": [
       { "indexed": true, "internalType": "address", "name": "user", "type": "address" },

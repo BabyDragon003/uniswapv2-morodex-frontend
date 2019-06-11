@@ -3,12 +3,6 @@ import { Language } from '@pancakeswap/uikit'
 import translations from './config/translations.json'
 
 export type ContextData = {
-  [key: string]: string | number
-}
-
-export interface ProviderState {
-  isFetching: boolean
-  currentLanguage: Language
 }
 
 export interface ContextApi extends ProviderState {

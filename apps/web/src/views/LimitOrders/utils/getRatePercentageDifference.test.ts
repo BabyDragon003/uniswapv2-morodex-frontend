@@ -3,12 +3,6 @@ import getRatePercentageDifference from './getRatePercentageDifference'
 
 const CAKE = new ERC20Token(56, '0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9', 18, 'MDEX', 'MORODEX')
 const BUSD = new ERC20Token(56, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
-const DOGE = new ERC20Token(56, '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', 8, 'DOGE', 'Binance-Peg Dogecoin')
-
-const EIGHTEEN_DECIMALS = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))
-const FIVE = JSBI.multiply(JSBI.BigInt(5), EIGHTEEN_DECIMALS)
-const TEN = JSBI.multiply(JSBI.BigInt(10), EIGHTEEN_DECIMALS)
-const FIFTEEN = JSBI.multiply(JSBI.BigInt(15), EIGHTEEN_DECIMALS)
 
 describe('limitOrders/utils/getRatePercentageDifference', () => {
   describe('18 decimal tokens', () => {

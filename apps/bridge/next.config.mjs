@@ -3,12 +3,6 @@ import { withAxiom } from 'next-axiom'
 
 const withVanillaExtract = createVanillaExtractPlugin()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    transpilePackages: [
       '@pancakeswap/uikit',
       '@pancakeswap/ui',
       '@pancakeswap/hooks',

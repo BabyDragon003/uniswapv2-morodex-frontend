@@ -3,12 +3,6 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { MaxUint256 } from '@ethersproject/constants'
 import { ContextApi } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import { useCake, useNftSaleContract } from 'hooks/useContract'
-import { useContext, useEffect, useState } from 'react'
-import { DefaultTheme } from 'styled-components'
 import { requiresApproval } from 'utils/requiresApproval'
 import { PancakeSquadContext } from 'views/PancakeSquad/context'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
@@ -23,6 +17,32 @@ type BuyTicketsProps = {
   account: string
   saleStatus: SaleStatusEnum
   userStatus: UserStatusEnum
+  theme: DefaultTheme
+  canClaimForGen0: boolean
+  maxPerAddress: number
+  maxPerTransaction: number
+  numberTicketsOfUser: number
+  numberTicketsForGen0: number
+  numberTicketsUsedForGen0: number
+  cakeBalance: BigNumber
+  pricePerTicket: BigNumber
+  startTimestamp: number
+}
+
+const BuyTicketsButtons: React.FC<React.PropsWithChildren<BuyTicketsProps>> = ({
+  t,
+  account,
+  saleStatus,
+  userStatus,
+  theme,
+  canClaimForGen0,
+  maxPerAddress,
+  maxPerTransaction,
+  numberTicketsOfUser,
+  numberTicketsForGen0,
+  numberTicketsUsedForGen0,
+  cakeBalance,
+  pricePerTicket,
   startTimestamp,
 }) => {
   const [txHashEnablingResult, setTxHashEnablingResult] = useState(null)

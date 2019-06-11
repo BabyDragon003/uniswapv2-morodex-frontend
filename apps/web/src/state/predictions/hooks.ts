@@ -3,12 +3,6 @@ import { isAddress } from 'utils'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import useSelector from 'contexts/LocalRedux/useSelector'
 import { FetchStatus } from 'config/constants/types'
-
-import { PredictionsState, PredictionUser } from '../types'
-import { fetchAddressResult } from '.'
-import {
-  getRoundsByCloseOracleIdSelector,
-  getSortedRoundsSelector,
   makeGetBetByEpochSelector,
   makeGetIsClaimableSelector,
   getMinBetAmountSelector,
@@ -22,6 +16,32 @@ export const useGetRoundsByCloseOracleId = () => {
 
 export const useGetSortedRounds = () => {
   return useSelector(getSortedRoundsSelector)
+}
+
+export const useGetSortedRoundsCurrentEpoch = () => {
+  return useSelector(getSortedRoundsCurrentEpochSelector)
+}
+
+export const useGetBetByEpoch = (account: string, epoch: number) => {
+  const getBetByEpochSelector = useMemo(() => makeGetBetByEpochSelector(account, epoch), [account, epoch])
+  return useSelector(getBetByEpochSelector)
+}
+
+export const useGetIsClaimable = (epoch) => {
+  const getIsClaimableSelector = useMemo(() => makeGetIsClaimableSelector(epoch), [epoch])
+  return useSelector(getIsClaimableSelector)
+}
+
+export const useIsHistoryPaneOpen = () => {
+  return useSelector((state: PredictionsState) => state.isHistoryPaneOpen)
+}
+
+export const useIsChartPaneOpen = () => {
+  return useSelector((state: PredictionsState) => state.isChartPaneOpen)
+}
+
+export const useChartView = () => {
+  return useSelector((state: PredictionsState) => state.chartView)
 }
 
 export const useGetCurrentEpoch = () => {

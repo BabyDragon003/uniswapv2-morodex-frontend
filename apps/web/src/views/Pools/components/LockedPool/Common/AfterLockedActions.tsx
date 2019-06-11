@@ -3,12 +3,6 @@ import { Message, MessageText, Box, Flex, useMatchBreakpoints } from '@pancakesw
 import { useTranslation } from '@pancakeswap/localization'
 import Trans from 'components/Trans'
 import { VaultPosition } from 'utils/cakePool'
-
-import ConvertToFlexibleButton from '../Buttons/ConvertToFlexibleButton'
-import ExtendButton from '../Buttons/ExtendDurationButton'
-import { AfterLockedActionsPropsType } from '../types'
-
-const msg: Record<VaultPosition, ReactNode> = {
   [VaultPosition.None]: null,
   [VaultPosition.Flexible]: null,
   [VaultPosition.Locked]: null,

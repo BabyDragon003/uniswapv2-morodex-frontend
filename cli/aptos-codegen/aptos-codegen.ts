@@ -3,12 +3,6 @@
 // polyfill XMLHttpRequest
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 
-import { AptosClient, HexString, TxnBuilderTypes, TypeTagParser } from "aptos";
-import yargs from "yargs";
-import { type Arguments } from "https://deno.land/x/yargs@v17.5.1-deno/deno-types.ts";
-import { camelCase } from "camelcase";
-import { defaultChains } from "../../packages/awgmi/core/src/chain.ts";
-import { equalsIgnoreCase } from "../../packages/utils/equalsIgnoreCase.ts";
 
 const {
   TypeTagBool,

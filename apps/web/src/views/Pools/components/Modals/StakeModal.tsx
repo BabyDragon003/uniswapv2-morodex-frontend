@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallback, useState, useMemo } from 'react'
 import { useAppDispatch } from 'state'
-import { updateUserBalance, updateUserPendingReward, updateUserStakedBalance, updateUserAllowance } from 'state/pools'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { Token } from '@pancakeswap/sdk'
-import BigNumber from 'bignumber.js'
-import { useERC20 } from 'hooks/useContract'
 import { getDecimalAmount } from '@pancakeswap/utils/formatBalance'
 import { useApprovePool } from 'views/Pools/hooks/useApprove'
 import { usePool } from 'state/pools/hooks'
@@ -23,6 +17,32 @@ const StakeModalContainer = ({
   onDismiss,
   stakingTokenBalance,
   stakingTokenPrice,
+}: Pool.StakeModalPropsType<Token>) => {
+  const { t } = useTranslation()
+
+  const {
+    sousId,
+    earningToken,
+    stakingToken,
+    earningTokenPrice,
+    apr,
+    userData,
+    stakingLimit,
+    enableEmergencyWithdraw,
+  } = pool
+  const { address: account } = useAccount()
+  const { toastSuccess } = useToast()
+  const { pool: singlePool } = usePool(sousId)
+  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
+  const [amount, setAmount] = useState('')
+
+  const { onUnstake } = useUnstakePool(sousId, enableEmergencyWithdraw)
+  const { onStake } = useStakePool(sousId, isBnbPool)
+  const dispatch = useAppDispatch()
+
+  const stakingTokenContract = useERC20(stakingToken.address || '')
+  const { handleApprove, pendingTx: enablePendingTx } = useApprovePool(
+    stakingTokenContract,
     sousId,
     earningToken.symbol,
   )

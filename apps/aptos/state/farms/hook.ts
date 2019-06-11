@@ -3,12 +3,6 @@ import { ChainId, Coin, Pair, PAIR_RESERVE_TYPE_TAG } from '@pancakeswap/aptos-s
 import { DeserializedFarmsState, deserializeFarm } from '@pancakeswap/farms'
 import { useAccount, useAccountResource, useCoins, useQueries, useQuery } from '@pancakeswap/awgmi'
 import {
-  FetchCoinResult,
-  unwrapTypeArgFromString,
-  fetchTableItem,
-  FetchAccountResourceResult,
-} from '@pancakeswap/awgmi/core'
-import { getFarmsPrices } from '@pancakeswap/farms/farmPrices'
 import { BIG_TWO, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
 import BigNumber from 'bignumber.js'
@@ -23,6 +17,32 @@ import fromPairs from 'lodash/fromPairs'
 import { useMemo } from 'react'
 import { FARMS_ADDRESS, FARMS_NAME_TAG, FARMS_USER_INFO_RESOURCE, FARMS_USER_INFO } from 'state/farms/constants'
 import { FarmResource, FarmUserInfoResource } from 'state/farms/types'
+import { FARM_DEFAULT_DECIMALS } from 'components/Farms/constants'
+import priceHelperLpsMainnet from '../../config/constants/priceHelperLps/farms/1'
+import priceHelperLpsTestnet from '../../config/constants/priceHelperLps/farms/2'
+import { calcPendingRewardCake, calcRewardCakePerShare } from './utils/pendingCake'
+
+const farmsPriceHelpLpMap = {
+  [ChainId.MAINNET]: priceHelperLpsMainnet,
+  [ChainId.TESTNET]: priceHelperLpsTestnet,
+}
+
+export const useFarmsLength = (): number | undefined => {
+  const { data: farmsLength } = useMasterChefResource((s) => s.data.lps.length)
+  return farmsLength
+}
+
+export function useMasterChefResource<TData = FarmResource>(select?: ((data: FarmResource) => TData) | undefined) {
+  const { networkName } = useActiveNetwork()
+  return useAccountResource<TData>({
+    watch: true,
+    networkName,
+    address: FARMS_ADDRESS,
+    resourceType: FARMS_NAME_TAG,
+    // @ts-ignore
+    select,
+  })
+}
 
 export const useFarms = () => {
   const { chainId } = useActiveWeb3React()

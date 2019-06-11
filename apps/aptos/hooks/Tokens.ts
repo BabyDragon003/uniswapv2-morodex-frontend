@@ -3,12 +3,6 @@ import { Coin, Currency, CurrencyAmount, Token } from '@pancakeswap/aptos-swap-s
 import { APTOS_COIN, useAccount, useAccountResources, useCoin, useCoins as useCoins_ } from '@pancakeswap/awgmi'
 import { coinStoreResourcesFilter, unwrapTypeFromString } from '@pancakeswap/awgmi/core'
 import { useAtomValue } from 'jotai'
-import fromPairs from 'lodash/fromPairs'
-import { useCallback, useMemo } from 'react'
-import { combinedTokenMapFromActiveUrlsAtom, TokenAddressMap } from 'state/lists/hooks'
-import { useUserAddedTokens } from 'state/user'
-import useNativeCurrency from './useNativeCurrency'
-import { useActiveChainId, useActiveNetwork } from './useNetwork'
 
 export function useCurrency(coinId?: string): Currency | undefined {
   const native = useNativeCurrency()

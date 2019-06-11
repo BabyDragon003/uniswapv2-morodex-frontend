@@ -3,12 +3,6 @@ const SubMenuItemsMock = [
     label: "Overview",
     href: "/",
   },
-  {
-    label: "Farms",
-    href: "/",
-  },
-  {
-    label: "Syrup Pools",
     href: "/",
   },
   {

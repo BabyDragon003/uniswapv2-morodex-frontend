@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useAccount } from 'wagmi'
 import NoWalletConnected from './WalletNotConnected'
 import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
-import Mint from './Mint'
-import ProfilePicture from './ProfilePicture'
-import TeamSelection from './TeamSelection'
-import UserName from './UserName'
-
-const Steps = () => {
   const { t } = useTranslation()
   const { isInitialized, currentStep } = useContext(ProfileCreationContext)
   const { address: account } = useAccount()

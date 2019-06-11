@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
 import { NftToken } from 'state/nftMarket/types'
 import { getBscScanLinkForNft, isAddress } from 'utils'
-import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
-import { Divider, HorizontalDivider, RoundedImage } from '../shared/styles'
-
-interface EditStageProps {
-  nftToSell: NftToken
-  lowestPrice: number
   continueToAdjustPriceStage: () => void
   continueToRemoveFromMarketStage: () => void
 }

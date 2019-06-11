@@ -3,12 +3,6 @@ import {
   Trade,
   Currency,
   CurrencyAmount,
-  Fraction,
-  JSBI,
-  Percent,
-  TradeType,
-} from '@pancakeswap/aptos-swap-sdk'
-import {
   ALLOWED_PRICE_IMPACT_HIGH,
   ALLOWED_PRICE_IMPACT_LOW,
   ALLOWED_PRICE_IMPACT_MEDIUM,

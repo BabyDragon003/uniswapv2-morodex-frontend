@@ -3,12 +3,6 @@ import {
   Button,
   Flex,
   InjectedModalProps,
-  LinkExternal,
-  Message,
-  Skeleton,
-  Text,
-  CopyAddress,
-} from '@pancakeswap/uikit'
 import { ChainId, WNATIVE } from '@pancakeswap/sdk'
 import { FetchStatus } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

@@ -3,12 +3,6 @@ import { Flex, Box } from '@pancakeswap/uikit'
 import Image from 'next/image'
 import orderBy from 'lodash/orderBy'
 import { TeamRanksProps } from '../../types'
-import TopTradersCard from './TopTradersCard'
-import Podium from './Podium'
-
-const Wrapper = styled(Flex)`
-  flex-direction: column;
-
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
   }

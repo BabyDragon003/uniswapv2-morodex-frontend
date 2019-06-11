@@ -3,12 +3,6 @@ import { FetchStatus } from 'config/constants/types'
 import { useEffect, useMemo } from 'react'
 import { Contract } from '@ethersproject/contracts'
 import { FormatTypes } from '@ethersproject/abi'
-import useSWR, {
-  Middleware,
-  SWRConfiguration,
-  KeyedMutator,
-  // eslint-disable-next-line camelcase
-  unstable_serialize,
 } from 'swr'
 import { multicallv2, MulticallOptions, Call } from 'utils/multicall'
 import { MaybeContract, ContractMethodName, ContractMethodParams } from 'utils/types'

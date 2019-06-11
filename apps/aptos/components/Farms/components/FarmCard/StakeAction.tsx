@@ -3,12 +3,6 @@ import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm 
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { ToastDescriptionWithTx } from 'components/Toast'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { usePriceCakeUsdc } from 'hooks/useStablePrice'
-import type { DeserializedFarmUserData } from '@pancakeswap/farms'
-import { TransactionResponse } from '@pancakeswap/awgmi/core'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { FARM_DEFAULT_DECIMALS } from 'components/Farms/constants'
 import { FarmWithStakedValue } from '@pancakeswap/farms'
 

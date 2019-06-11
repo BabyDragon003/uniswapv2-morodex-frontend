@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { format } from 'date-fns'
 import { Proposal } from 'state/types'
 import { getBlockExploreLink } from 'utils'
-import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from '@pancakeswap/utils/truncateHash'
-import { IPFS_GATEWAY } from '../config'
-import { ProposalStateTag } from '../components/Proposals/tags'
-
-interface DetailsProps {
   proposal: Proposal
 }
 

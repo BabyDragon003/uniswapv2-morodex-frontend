@@ -3,12 +3,6 @@ import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
 import { TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { AutoRenewIcon, Button, QuestionHelper, Text, Link } from '@pancakeswap/uikit'
 import { AutoColumn } from 'components/Layout/Column'
-import { AutoRow, RowBetween, RowFixed } from 'components/Layout/Row'
-import { BUYBACK_FEE, LP_HOLDERS_FEE, TOTAL_FEE, TREASURY_FEE } from 'config/constants/info'
-import { useMemo, useState } from 'react'
-import { Field } from 'state/swap/actions'
-import styled from 'styled-components'
-import { warningSeverity } from 'utils/exchange'
 import FormattedPriceImpact from '../../components/FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from '../../components/styleds'
 import { formatExecutionPrice, computeTradePriceBreakdown } from '../utils/exchange'
@@ -23,6 +17,32 @@ const SwapModalFooterContainer = styled(AutoColumn)`
 
 export default function SwapModalFooter({
   trade,
+  slippageAdjustedAmounts,
+  isEnoughInputBalance,
+  onConfirm,
+  swapErrorMessage,
+  disabledConfirm,
+}: {
+  trade: TradeWithStableSwap<Currency, Currency, TradeType>
+  slippageAdjustedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
+  isEnoughInputBalance: boolean
+  onConfirm: () => void
+  swapErrorMessage?: string | undefined
+  disabledConfirm: boolean
+}) {
+  const { t } = useTranslation()
+  const [showInverted, setShowInverted] = useState<boolean>(false)
+  const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
+  const severity = warningSeverity(priceImpactWithoutFee)
+
+  const totalFeePercent = `${(TOTAL_FEE * 100).toFixed(2)}%`
+  const lpHoldersFeePercent = `${(LP_HOLDERS_FEE * 100).toFixed(2)}%`
+  const treasuryFeePercent = `${(TREASURY_FEE * 100).toFixed(4)}%`
+  const buyBackFeePercent = `${(BUYBACK_FEE * 100).toFixed(4)}%`
+
+  return (
+    <>
+      <SwapModalFooterContainer>
         <RowBetween align="center">
           <Text fontSize="14px">{t('Price')}</Text>
           <Text

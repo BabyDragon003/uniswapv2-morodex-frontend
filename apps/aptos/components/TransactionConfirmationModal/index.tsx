@@ -3,12 +3,6 @@ import { ChainId, Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   ArrowUpIcon,
-  AutoColumn,
-  Button,
-  ColumnCenter,
-  InjectedModalProps,
-  Link,
-  Modal,
   ModalProps,
   Spinner,
   Text,
@@ -23,6 +17,32 @@ const Wrapper = styled.div`
 `
 const Section = styled(AutoColumn)`
   padding: 24px;
+`
+
+const ConfirmedIcon = styled(ColumnCenter)`
+  padding: 24px 0;
+`
+
+function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
+  const { t } = useTranslation()
+  return (
+    <Wrapper>
+      <ConfirmedIcon>
+        <Spinner />
+      </ConfirmedIcon>
+      <AutoColumn gap="12px" justify="center">
+        <Text fontSize="20px">{t('Waiting For Confirmation')}</Text>
+        <AutoColumn gap="12px" justify="center">
+          <Text bold small textAlign="center">
+            {pendingText}
+          </Text>
+        </AutoColumn>
+        <Text small color="textSubtle" textAlign="center">
+          {t('Confirm this transaction in your wallet')}
+        </Text>
+      </AutoColumn>
+    </Wrapper>
+  )
 }
 
 export function TransactionSubmittedContent({

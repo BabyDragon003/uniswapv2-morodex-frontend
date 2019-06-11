@@ -3,12 +3,6 @@ import capitalize from "lodash/capitalize";
 import React, { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
-import Box from "../Box/Box";
-import Flex from "../Box/Flex";
-import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
-import IconButton from "./IconButton";
-import Button from "./Button";
-import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
 import { scales, variants } from "./types";
 
 export default {

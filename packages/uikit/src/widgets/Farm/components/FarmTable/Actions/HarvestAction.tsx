@@ -3,12 +3,6 @@ import BigNumber from "bignumber.js";
 import { Button } from "../../../../../components/Button";
 import { Heading } from "../../../../../components/Heading";
 import { Text, TooltipText } from "../../../../../components/Text";
-import { Balance } from "../../../../../components/Balance";
-import { Skeleton } from "../../../../../components/Skeleton";
-import { useTooltip } from "../../../../../hooks/useTooltip";
-import { ActionContainer, ActionContent, ActionTitles } from "./styles";
-import { FARMS_SMALL_AMOUNT_THRESHOLD } from "../../../constants";
-
 interface HarvestActionProps {
   earnings: BigNumber;
   earningsBusd: number;

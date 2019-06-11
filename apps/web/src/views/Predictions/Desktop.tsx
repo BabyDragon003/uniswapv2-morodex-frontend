@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import Split, { SplitInstance } from 'split-grid'
 import { Button, ChartIcon, Flex, Box, Link } from '@pancakeswap/uikit'
 import debounce from 'lodash/debounce'
-import delay from 'lodash/delay'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import {
-  useChartView,
-  useGetPredictionsStatus,
-  useIsChartPaneOpen,
   useIsHistoryPaneOpen,
 } from 'state/predictions/hooks'
 import { setChartPaneState, setChartView } from 'state/predictions'

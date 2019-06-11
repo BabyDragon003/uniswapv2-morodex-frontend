@@ -3,12 +3,6 @@ import { Message, MessageText, Button, Box, Flex, useToast } from '@pancakeswap/
 import { useTranslation } from '@pancakeswap/localization'
 
 interface ZapErrorMessagesProps {
-  isSingleToken: boolean
-  zapMode: boolean
-  toggleZapMode: (zapMode: boolean) => void
-  onModalDismiss: () => void
-}
-
 export const ZapErrorMessages: React.FC<React.PropsWithChildren<ZapErrorMessagesProps>> = memo(
   ({ isSingleToken, zapMode, toggleZapMode, onModalDismiss }) => {
     const { t } = useTranslation()

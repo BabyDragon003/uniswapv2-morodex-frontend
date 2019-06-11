@@ -3,12 +3,6 @@ import {
   Flex,
   Text,
   Td,
-  IconButton,
-  Link,
-  BscScanIcon,
-  useModal,
-  Skeleton,
-  useMatchBreakpoints,
   NextLinkFromReactRouter,
 } from '@pancakeswap/uikit'
 import { Activity, NftToken } from 'state/nftMarket/types'

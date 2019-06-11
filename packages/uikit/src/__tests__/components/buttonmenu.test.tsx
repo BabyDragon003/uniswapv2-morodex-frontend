@@ -3,12 +3,6 @@ import { renderWithProvider } from "../../testHelpers";
 import ButtonMenu from "../../components/ButtonMenu/ButtonMenu";
 import ButtonMenuItem from "../../components/ButtonMenu/ButtonMenuItem";
 
-const handleClick = vi.fn();
-
-it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(
-    <ButtonMenu activeIndex={0} onItemClick={handleClick}>
-      <ButtonMenuItem>Item 1</ButtonMenuItem>
       <ButtonMenuItem>Item 2</ButtonMenuItem>
     </ButtonMenu>
   );

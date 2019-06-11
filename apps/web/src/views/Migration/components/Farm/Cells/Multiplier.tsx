@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, HelpIcon, useTooltip, Pool, Link } from '@pancakeswap/uikit'
 
-const StyledCell = styled(Pool.BaseCell)`
-  display: none;
-  flex: 1 0 100px;
-  ${({ theme }) => theme.mediaQueries.md} {
-    display: flex;
-  }
 `
 
 const ReferenceElement = styled.div`

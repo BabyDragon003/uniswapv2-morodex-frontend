@@ -3,12 +3,6 @@ import React, { useRef } from "react";
 import { createPortal } from "react-dom";
 import { BoxProps } from "../../components/Box";
 import { Overlay } from "../../components/Overlay";
-import { animationHandler, animationMap, animationVariants } from "../../util/animationToolkit";
-import getPortalRoot from "../../util/getPortalRoot";
-import { StyledModalWrapper } from "./ModalContext";
-
-export interface ModalV2Props {
-  isOpen?: boolean;
   onDismiss?: () => void;
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;

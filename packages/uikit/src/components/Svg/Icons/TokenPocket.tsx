@@ -3,12 +3,6 @@ import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
-  return (
-    <Svg viewBox="0 0 1024 1024" {...props}>
-      <g>
-        <path d="M1041.52 0H-27V1024H1041.52V0Z" fill="#2980FE" />
-        <g clipPath="url(#clip0_408_225)">
-          <path d="M406.796 438.643H406.927C406.796 437.857 406.796 436.94 406.796 436.154V438.643Z" fill="#29AEFF" />
           <path
             d="M667.602 463.533H523.249V724.076C523.249 736.389 533.204 746.345 545.517 746.345H645.333C657.647 746.345 667.602 736.389 667.602 724.076V463.533Z"
             fill="white"

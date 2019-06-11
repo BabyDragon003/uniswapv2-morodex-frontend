@@ -3,12 +3,6 @@ import { renderWithProvider } from "../../testHelpers";
 import { Alert } from "../../components/Alert";
 
 it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(<Alert title="Alert title">Description</Alert>);
-
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      .c3 {
-      -webkit-align-self: center;
       -ms-flex-item-align: center;
       align-self: center;
       fill: currentColor;

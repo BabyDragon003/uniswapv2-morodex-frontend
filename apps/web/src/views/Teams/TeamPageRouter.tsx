@@ -3,12 +3,6 @@ import PageLoader from '../../components/Loader/PageLoader'
 import Team from './Team'
 
 const TeamPageRouter = () => {
-  const router = useRouter()
-
-  if (router.isFallback) {
-    return <PageLoader />
-  }
-
   return <Team />
 }
 

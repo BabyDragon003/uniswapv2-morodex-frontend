@@ -3,12 +3,6 @@ import { PairDataTimeWindowEnum } from 'state/swap/types'
 import HOUR_PAIR from './__fixtures__/hour-pair-data.json'
 import DAY_PAIR from './__fixtures__/day-pair-data.json'
 
-describe('getPairSequentialId', () => {
-  it('should get sequential id', () => {
-    // Given
-    const id = '0x00000cd505955c2aaefd16fc37a3fed35fd7b343-451496'
-    const pairId = '0x00000cd505955c2aaefd16fc37a3fed35fd7b343'
-    const expctedResult = '451496'
 
     // When
     const response = getPairSequentialId({ id, pairId })

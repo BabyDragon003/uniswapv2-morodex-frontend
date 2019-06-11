@@ -3,12 +3,6 @@ import { useMemo } from 'react'
 import { ifosConfig } from 'config/constants'
 import styled, { keyframes, css } from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
-import { Box, Text } from '@pancakeswap/uikit'
-import { VestingData } from 'views/Ifos/hooks/vesting/fetchUserWalletIfoData'
-import { PoolIds } from 'config/constants/types'
-import Info from './Info'
-
-const expandAnimation = keyframes`
   from {
     opacity: 0;
     max-height: 0px;

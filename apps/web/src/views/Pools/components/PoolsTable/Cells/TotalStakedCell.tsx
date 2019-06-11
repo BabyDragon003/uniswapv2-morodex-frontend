@@ -4,12 +4,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 
-interface TotalStakedCellProps {
-  totalStakedBalance: number
-  stakingToken: Token
-  totalStaked: BigNumber
-}
-
 const StyledCell = styled(Pool.BaseCell)`
   flex: 2 0 100px;
 `

@@ -3,12 +3,6 @@
     "inputs": [
       {
         "internalType": "contract IBEP20",
-        "name": "_cakeToken",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_pancakeProfileAddress",
         "type": "address"
       },
       {
@@ -23,6 +17,32 @@
       }
     ],
     "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "cakeToken",
+    "outputs": [
+      {
         "internalType": "contract IBEP20",
         "name": "",
         "type": "address"

@@ -3,12 +3,6 @@ import { Box, Flex, Skeleton, Text, ProfileAvatar, NextLinkFromReactRouter } fro
 import truncateHash from '@pancakeswap/utils/truncateHash'
 import { useProfileForAddress } from 'state/profile/hooks'
 
-const StyledFlex = styled(Flex)`
-  align-items: center;
-  transition: opacity 200ms ease-in;
-
-  &:hover {
-    opacity: 0.5;
   }
 `
 

@@ -3,12 +3,6 @@ import { Currency, Token } from '@pancakeswap/sdk'
 import {
   ModalContainer,
   ModalHeader,
-  ModalTitle,
-  ModalBackButton,
-  ModalCloseButton,
-  ModalBody,
-  InjectedModalProps,
-  Heading,
   Button,
   useMatchBreakpoints,
   MODAL_SWIPE_TO_CLOSE_VELOCITY,

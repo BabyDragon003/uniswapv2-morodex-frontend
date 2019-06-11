@@ -3,12 +3,6 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styled, { useTheme } from 'styled-components'
 import { Flex, Text, Box } from '@pancakeswap/uikit'
-import { STARGATE_JS } from '../components/stargate/config'
-import { StargateWidget } from '../components/stargate'
-
-const Page = styled.div`
-  height: 100%;
-  display: flex;
   justify-content: center;
   min-height: calc(100% - 56px);
   align-items: center;

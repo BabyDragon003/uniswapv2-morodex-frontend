@@ -3,12 +3,6 @@ import { Box } from '@pancakeswap/uikit'
 
 const floatingAnim = (x: string, y: string) => keyframes`
   from {
-    transform: translate(0,  0px);
-  }
-  50% {
-    transform: translate(${x}, ${y});
-  }
-  to {
     transform: translate(0, 0px);
   }
 `

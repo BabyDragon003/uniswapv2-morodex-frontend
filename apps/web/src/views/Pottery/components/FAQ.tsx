@@ -3,12 +3,6 @@ import { Card, CardBody, CardHeader, Heading, Text, Flex, Link } from '@pancakes
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
 
-const Wrapper = styled(Flex)`
-  width: 100%;
-  margin: auto;
-  padding: 0 24px 72px 24px;
-  flex-direction: column-reverse;
-  align-items: center;
 
   ${({ theme }) => theme.mediaQueries.xl} {
     flex-direction: row;
@@ -23,6 +17,32 @@ const HoneyImage = styled.div`
   background: url(/images/pottery/honey.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+
+  ${({ theme }) => theme.mediaQueries.xl} {
+    width: 291px;
+    min-width: 291px;
+    height: 326.89px;
+    min-height: 326.89px;
+    margin: 40px 40px 0 0;
+  }
+`
+
+const StyledCardbody = styled(CardBody)`
+  div:first-child {
+    margin-top: 0px;
+  }
+`
+
+const InlineLink = styled(Link)`
+  display: inline-block;
+  margin: 0 4px;
+`
+
+const FAQ = () => {
+  const { t } = useTranslation()
+
+  return (
     <Wrapper>
       <HoneyImage />
       <Card>

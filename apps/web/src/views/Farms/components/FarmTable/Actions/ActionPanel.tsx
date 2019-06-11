@@ -3,12 +3,6 @@ import {
   Farm as FarmUI,
   FarmTableLiquidityProps,
   FarmTableMultiplierProps,
-  LinkExternal,
-  Text,
-  useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-
-import { FarmWithStakedValue } from '@pancakeswap/farms'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useContext, useMemo } from 'react'
@@ -23,6 +17,32 @@ import Apr, { AprProps } from '../Apr'
 import { HarvestAction, HarvestActionContainer, ProxyHarvestActionContainer } from './HarvestAction'
 import StakedAction, { ProxyStakedContainer, StakedContainer } from './StakedAction'
 import { ActionContainer as ActionContainerSection, ActionContent, ActionTitles } from './styles'
+
+const { Multiplier, Liquidity } = FarmUI.FarmTable
+
+export interface ActionPanelProps {
+  apr: AprProps
+  multiplier: FarmTableMultiplierProps
+  liquidity: FarmTableLiquidityProps
+  details: FarmWithStakedValue
+  userDataReady: boolean
+  expanded: boolean
+}
+
+const expandAnimation = keyframes`
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 700px;
+  }
+`
+
+const collapseAnimation = keyframes`
+  from {
+    max-height: 700px;
+  }
+  to {
     max-height: 0px;
   }
 `

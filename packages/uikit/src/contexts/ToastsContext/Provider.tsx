@@ -3,12 +3,6 @@ import kebabCase from "lodash/kebabCase";
 import { ToastData, types as toastTypes } from "../../components/Toast";
 import { ToastContextApi } from "./types";
 
-export const ToastsContext = createContext<ToastContextApi | undefined>(undefined);
-
-export const ToastsProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [toasts, setToasts] = useState<ToastContextApi["toasts"]>([]);
-
-  const toast = useCallback(
     ({ title, description, type }: Omit<ToastData, "id">) => {
       setToasts((prevToasts) => {
         const id = kebabCase(title);
@@ -23,6 +17,32 @@ export const ToastsProvider: React.FC<React.PropsWithChildren> = ({ children }) 
             description,
             type,
           },
+          ...currentToasts,
+        ];
+      });
+    },
+    [setToasts]
+  );
+
+  const toastError = useCallback(
+    (title: ToastData["title"], description?: ToastData["description"]) => {
+      return toast({ title, description, type: toastTypes.DANGER });
+    },
+    [toast]
+  );
+
+  const toastInfo = useCallback(
+    (title: ToastData["title"], description?: ToastData["description"]) => {
+      return toast({ title, description, type: toastTypes.INFO });
+    },
+    [toast]
+  );
+
+  const toastSuccess = useCallback(
+    (title: ToastData["title"], description?: ToastData["description"]) => {
+      return toast({ title, description, type: toastTypes.SUCCESS });
+    },
+    [toast]
   );
 
   const toastWarning = useCallback(

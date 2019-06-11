@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import React from 'react'
 import { FormattedOrderData } from 'views/LimitOrders/hooks/useFormattedOrderData'
 
-export enum StatusElementType {
-  TAG = 'Tag',
-  TEXT = 'Text',
-}
-
-const StatusElement: React.FC<
   React.PropsWithChildren<{ element: StatusElementType; text: string; color: TagVariant }>
 > = ({ element, text, color }) => {
   if (element === StatusElementType.TAG) {

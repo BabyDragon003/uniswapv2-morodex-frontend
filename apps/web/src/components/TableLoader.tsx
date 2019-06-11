@@ -3,12 +3,6 @@ import { Flex, Skeleton, Td, useMatchBreakpoints } from '@pancakeswap/uikit'
 
 const GridItem = styled(Flex)`
   align-items: center;
-`
-
-const LoadingRow: React.FC<React.PropsWithChildren> = () => {
-  const { isXs, isSm } = useMatchBreakpoints()
-
-  return (
     <tr>
       <Td>
         <GridItem>

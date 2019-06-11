@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Box, Flex, Text, ChevronDownIcon, BalanceWithLoading } from '@pancakeswap/uikit'
 import { TokenImage } from 'components/TokenImage'
-import { VestingData } from 'views/Ifos/hooks/vesting/fetchUserWalletIfoData'
-import { PoolIds } from 'config/constants/types'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import useBUSDPrice from 'hooks/useBUSDPrice'
-import { multiplyPriceByAmount } from 'utils/prices'
-import { useDelayedUnmount } from '@pancakeswap/hooks'
 import Expand from './Expand'
 
 const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
@@ -23,6 +17,32 @@ interface TokenInfoProps {
 }
 
 const TokenInfo: React.FC<React.PropsWithChildren<TokenInfoProps>> = ({ index, data, fetchUserVestingData }) => {
+  const { vestingTitle, token } = data.ifo
+  const { vestingComputeReleasableAmount } = data.userVestingData[PoolIds.poolUnlimited]
+  const { vestingComputeReleasableAmount: basicReleaseAmount } = data.userVestingData[PoolIds.poolBasic]
+  const [expanded, setExpanded] = useState(false)
+  const shouldRenderExpand = useDelayedUnmount(expanded, 300)
+
+  useEffect(() => {
+    if (index === 0) {
+      setExpanded(true)
+    }
+  }, [index])
+
+  const toggleExpanded = () => {
+    setExpanded((prev) => !prev)
+  }
+
+  const amountAvailable = useMemo(() => {
+    const totalReleaseAmount = new BigNumber(vestingComputeReleasableAmount).plus(basicReleaseAmount)
+    return getBalanceNumber(totalReleaseAmount, token.decimals)
+  }, [token, vestingComputeReleasableAmount, basicReleaseAmount])
+
+  const price = useBUSDPrice(token)
+  const dollarValueOfToken = multiplyPriceByAmount(price, amountAvailable, token.decimals)
+
+  return (
+    <Box>
       <Flex p="24px" m="-24px -24px 0 -24px" style={{ cursor: 'pointer' }} onClick={toggleExpanded}>
         <TokenImage width={32} height={32} token={token} />
         <Flex flexDirection="column" ml="8px">

@@ -3,12 +3,6 @@ import { Token } from '@pancakeswap/sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { TokenList } from '@pancakeswap/token-lists'
-import { useTranslation } from '@pancakeswap/localization'
-import ManageLists from './ManageLists'
-import ManageTokens from './ManageTokens'
-import { CurrencyModalView } from './types'
-
-const StyledButtonMenu = styled(ButtonMenu)`
   width: 100%;
 `
 

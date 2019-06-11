@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import {
   ArrowUpIcon,
   ArrowDownIcon,
-  Flex,
-  FlexProps,
-  Text,
-  useTooltip,
-  TooltipText,
-  InfoIcon,
 } from '@pancakeswap/uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'

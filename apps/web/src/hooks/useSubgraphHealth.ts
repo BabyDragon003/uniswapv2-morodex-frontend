@@ -3,12 +3,6 @@ import { request, gql } from 'graphql-request'
 import { bscRpcProvider } from 'utils/providers'
 import { GRAPH_HEALTH } from 'config/constants/endpoints'
 import { useSlowRefreshEffect } from './useRefreshEffect'
-
-export enum SubgraphStatus {
-  OK,
-  WARNING,
-  NOT_OK,
-  UNKNOWN,
 }
 
 export type SubgraphHealthState = {

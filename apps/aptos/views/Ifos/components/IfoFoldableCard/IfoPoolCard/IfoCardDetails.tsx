@@ -3,12 +3,6 @@ import { Text, Flex, Box, Skeleton, TooltipText, useTooltip } from '@pancakeswap
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { Ifo, PoolIds } from 'config/constants/types'
-import BigNumber from 'bignumber.js'
-import { getBalanceNumber, formatNumber } from '@pancakeswap/utils/formatBalance'
-import useStablePrice from 'hooks/useStablePrice'
-import { DAY_IN_SECONDS } from '@pancakeswap/utils/getTimePeriods'
-import { getStatus } from 'views/Ifos/hooks/helpers'
-import { multiplyPriceByAmount } from 'utils/prices'
 import { SkeletonCardDetails } from './Skeletons'
 
 export interface IfoCardDetailsProps {

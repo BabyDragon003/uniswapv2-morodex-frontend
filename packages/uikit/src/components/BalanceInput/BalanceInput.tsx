@@ -3,12 +3,6 @@ import { Flex, Box } from "../Box";
 import { SwapVertIcon } from "../Svg";
 import Text from "../Text/Text";
 import { StyledBalanceInput, StyledInput, UnitContainer, SwitchUnitsButton } from "./styles";
-import { BalanceInputProps } from "./types";
-
-const BalanceInput: React.FC<React.PropsWithChildren<BalanceInputProps>> = ({
-  value,
-  placeholder = "0.0",
-  onUserInput,
   currencyValue,
   inputProps,
   innerRef,

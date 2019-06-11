@@ -3,12 +3,6 @@
 // Used for __tests__/testing-library.js
 // Learn more: https://github.com/testing-library/jest-dom
 import { vi } from 'vitest'
-import '@testing-library/jest-dom/extend-expect'
-import { TextDecoder, TextEncoder } from 'util'
-
-global.setImmediate = vi.useRealTimers
-global.TextDecoder = TextDecoder
-global.TextEncoder = TextEncoder
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

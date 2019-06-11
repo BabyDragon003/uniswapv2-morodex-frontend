@@ -3,12 +3,6 @@ import Message, { MessageText } from "./Message";
 import { HelpIcon } from "../Svg";
 
 export default {
-  title: "Components/Message",
-  component: Message,
-  argTypes: {},
-};
-
-export const Default: React.FC<React.PropsWithChildren> = () => {
   return (
     <>
       <Message variant="warning" mb="16px">

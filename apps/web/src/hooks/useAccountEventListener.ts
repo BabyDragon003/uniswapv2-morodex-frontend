@@ -3,12 +3,6 @@ import { ExtendEthereum } from 'global'
 import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
 import { ConnectorData } from 'wagmi'
 import { CHAIN_QUERY_NAME } from 'config/chains'
-import { useAppDispatch } from '../state'
-import { clearUserStates } from '../utils/clearUserStates'
-import useActiveWeb3React from './useActiveWeb3React'
-import { useSessionChainId } from './useSessionChainId'
-
-export const useAccountEventListener = () => {
   const { account, chainId, connector } = useActiveWeb3React()
   const [, setSessionChainId] = useSessionChainId()
   const dispatch = useAppDispatch()

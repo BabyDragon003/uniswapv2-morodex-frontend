@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useState, memo } from 'react'
 import { useFetchPairPrices } from 'state/swap/hooks'
 import dynamic from 'next/dynamic'
-import { PairDataTimeWindowEnum } from 'state/swap/types'
-import NoChartAvailable from './NoChartAvailable'
-import PairPriceDisplay from '../../../../components/PairPriceDisplay'
-import { getTimeWindowChange } from './utils'
-
-const SwapLineChart = dynamic(() => import('./SwapLineChart'), {
   ssr: false,
 })
 
@@ -23,6 +17,32 @@ const BasicChart = ({
 }) => {
   const [timeWindow, setTimeWindow] = useState<PairDataTimeWindowEnum>(0)
 
+  const { pairPrices = [], pairId } = useFetchPairPrices({
+    token0Address,
+    token1Address,
+    timeWindow,
+    currentSwapPrice,
+  })
+  const [hoverValue, setHoverValue] = useState<number | undefined>()
+  const [hoverDate, setHoverDate] = useState<string | undefined>()
+  const valueToDisplay = hoverValue || pairPrices[pairPrices.length - 1]?.value
+  const { changePercentage, changeValue } = getTimeWindowChange(pairPrices)
+  const isChangePositive = changeValue >= 0
+  const chartHeight = isChartExpanded ? 'calc(100vh - 220px)' : '378px'
+  const {
+    t,
+    currentLanguage: { locale },
+  } = useTranslation()
+  const currentDate = new Date().toLocaleString(locale, {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+
+  // Sometimes we might receive array full of zeros for obscure tokens while trying to derive data
+  // In that case chart is not useful to users
   const isBadData =
     pairPrices &&
     pairPrices.length > 0 &&

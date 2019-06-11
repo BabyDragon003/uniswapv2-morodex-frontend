@@ -3,12 +3,6 @@ import { SaleStatusEnum } from 'views/PancakeSquad/types'
 
 describe('PancakeSquad/EventStepsSection/utils/getStepperStatus', () => {
   it('Should return future text', () => {
-    // Given
-    const eventStatus = []
-    const saleStatus = SaleStatusEnum.Pending
-    const hasProfileActivated = false
-    const numberTicketsOfUser = 0
-    const isLastPhase = false
 
     // When
     const result = getStepperStatus({

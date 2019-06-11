@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Text } from '@pancakeswap/uikit'
 
 const Circle = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 32px;
-  min-width: 32px;
-  height: 32px;
   line-height: 32px;
   font-size: 21px;
   color: #ffffff;

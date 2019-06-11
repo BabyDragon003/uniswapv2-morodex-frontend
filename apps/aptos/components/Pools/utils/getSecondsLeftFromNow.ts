@@ -3,5 +3,3 @@ const getSecondsLeftFromNow = (timestamp: number, current?: number) => {
 
   return Number.isFinite(timestamp) && timestamp < now ? now - timestamp : 0
 }
-
-export default getSecondsLeftFromNow

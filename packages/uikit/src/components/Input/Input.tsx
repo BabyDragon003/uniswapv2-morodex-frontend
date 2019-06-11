@@ -3,12 +3,6 @@ import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {
   theme: DefaultTheme;
-}
-
-/**
- * Priority: Warning --> Success
- */
-const getBoxShadow = ({ isSuccess = false, isWarning = false, theme }: StyledInputProps) => {
   if (isWarning) {
     return theme.shadows.warning;
   }

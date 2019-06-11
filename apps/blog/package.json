@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3003",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@pancakeswap/localization": "*",
     "@pancakeswap/sdk": "*",

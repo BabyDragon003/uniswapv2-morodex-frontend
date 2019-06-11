@@ -3,12 +3,6 @@ import { DEFAULT_ACTIVE_LIST_URLS, DEFAULT_LIST_OF_LISTS, UNSUPPORTED_LIST_URLS 
 
 export const initialState = {
   lastInitializedDefaultListOfLists: DEFAULT_LIST_OF_LISTS,
-  byUrl: {
-    ...DEFAULT_LIST_OF_LISTS.concat(...UNSUPPORTED_LIST_URLS).reduce((memo, listUrl) => {
-      memo[listUrl] = NEW_LIST_STATE
-      return memo
-    }, {}),
-  },
   activeListUrls: DEFAULT_ACTIVE_LIST_URLS,
 }
 

@@ -3,12 +3,6 @@
 /* eslint-disable no-else-return */
 import invariant from 'tiny-invariant'
 import {
-  InsufficientInputAmountError,
-  InsufficientReservesError,
-  ONE,
-  TradeType,
-  ZERO,
-  CurrencyAmount,
   Fraction,
   Percent,
   Price,
@@ -23,6 +17,32 @@ import { ZERO_PERCENT, ONE_HUNDRED_PERCENT } from './constants'
 
 // minimal interface so the input output comparator may be shared across types
 interface InputOutput<TInput extends Currency, TOutput extends Currency> {
+  readonly inputAmount: CurrencyAmount<TInput>
+  readonly outputAmount: CurrencyAmount<TOutput>
+}
+
+// comparator function that allows sorting trades by their output amounts, in decreasing order, and then input amounts
+// in increasing order. i.e. the best trades have the most outputs for the least inputs and are sorted first
+export function inputOutputComparator<TInput extends Currency, TOutput extends Currency>(
+  a: InputOutput<TInput, TOutput>,
+  b: InputOutput<TInput, TOutput>
+): number {
+  // must have same input and output token for comparison
+  invariant(a.inputAmount.currency.equals(b.inputAmount.currency), 'INPUT_CURRENCY')
+  invariant(a.outputAmount.currency.equals(b.outputAmount.currency), 'OUTPUT_CURRENCY')
+  if (a.outputAmount.equalTo(b.outputAmount)) {
+    if (a.inputAmount.equalTo(b.inputAmount)) {
+      return 0
+    }
+    // trade A requires less input than trade B, so A should come first
+    if (a.inputAmount.lessThan(b.inputAmount)) {
+      return -1
+    } else {
+      return 1
+    }
+  } else {
+    // tradeA has less output than trade B, so should come second
+    if (a.outputAmount.lessThan(b.outputAmount)) {
       return 1
     } else {
       return -1

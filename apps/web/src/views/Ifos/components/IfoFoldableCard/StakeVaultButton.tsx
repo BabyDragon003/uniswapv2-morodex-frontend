@@ -3,12 +3,6 @@ import { useRouter } from 'next/router'
 import { Button } from '@pancakeswap/uikit'
 import { useConfig } from 'views/Ifos/contexts/IfoContext'
 
-import { useTranslation } from '@pancakeswap/localization'
-
-const StakeVaultButton = (props) => {
-  const { t } = useTranslation()
-  const router = useRouter()
-  const { isExpanded, setIsExpanded } = useConfig()
   const isFinishedPage = router.pathname.includes('history')
 
   const scrollToTop = useCallback(() => {
@@ -23,3 +17,19 @@ const StakeVaultButton = (props) => {
     if (!isExpanded) {
       setIsExpanded(true)
     }
+
+    if (isFinishedPage) {
+      router.push('/ifo')
+    } else {
+      scrollToTop()
+    }
+  }
+
+  return (
+    <Button {...props} onClick={handleClickButton}>
+      {t('Go to CAKE pool')}
+    </Button>
+  )
+}
+
+export default StakeVaultButton

@@ -3,12 +3,6 @@ import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { layout, space, borderRadius } from "styled-system";
 import { animation as ANIMATION, SkeletonProps, SkeletonV2Props, variant as VARIANT } from "./types";
-import {
-  appearAnimation,
-  disappearAnimation,
-  animationVariants,
-  animationMap,
-  animationHandler,
 } from "../../util/animationToolkit";
 
 const waves = keyframes`

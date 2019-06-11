@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Flex, Heading, Text } from '@pancakeswap/uikit'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 import { remainTimeToNextFriday } from '../helpers'
-
-const FlexGap = styled(Flex)<{ gap: string }>`
-  gap: ${({ gap }) => gap};
-  width: fit-content;
-`
-
 const FlexContainer = styled(FlexGap)`
   border-bottom: dotted 1px white;
 `

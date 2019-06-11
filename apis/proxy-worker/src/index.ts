@@ -3,12 +3,6 @@ import { missing, error } from 'itty-router-extras'
 import { CORS_ALLOW, handleCors, wrapCorsHeader } from '@pancakeswap/worker-utils'
 
 const _corsMethods = `POST, OPTIONS`
-const _corsHeaders = `referer, origin, content-type, x-sf`
-
-const router = Router()
-
-router.post('/bsc-exchange', async (request, _, headers: Headers) => {
-  const ip = headers.get('X-Forwarded-For') || headers.get('Cf-Connecting-Ip') || ''
   const isLocalHost = headers.get('origin') === 'http://localhost:3000'
   const body = (await request.text?.()) as any
 

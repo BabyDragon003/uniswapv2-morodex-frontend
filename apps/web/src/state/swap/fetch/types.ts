@@ -5,12 +5,6 @@ export type fetchPairDataParams = {
   timeWindow: PairDataTimeWindowEnum
 }
 
-export type LastPairHourIdResponse = {
-  pairHourDatas: {
-    id: string
-  }[]
-}
-
 export type LastPairDayIdResponse = {
   pairDayDatas: {
     id: string

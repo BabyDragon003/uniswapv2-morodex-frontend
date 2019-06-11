@@ -3,12 +3,6 @@ import { Flex, Skeleton } from '@pancakeswap/uikit'
 const SkeletonArticle = () => {
   return (
     <Flex flexDirection="column" padding={['24px 16px', '24px 16px', '24px 16px', '24px 16px', '24px 32px']}>
-      {[1, 2, 3].map((loopNumber) => (
-        <Flex padding="16px 0" key={loopNumber}>
-          <Skeleton
-            borderRadius={8}
-            mr={['8px', '15px', '20px', '58px']}
-            width={['132px', '152px', '192px', '320px']}
             height={['71px', '91px', '111px', '180px']}
           />
           <Flex width="100%" flexDirection="column">

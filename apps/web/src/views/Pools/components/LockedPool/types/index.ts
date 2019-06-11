@@ -3,12 +3,6 @@ import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { VaultPosition, VaultPositionParams } from 'utils/cakePool'
 import { DeserializedLockedVaultUser } from 'state/types'
-
-type VoidFn = () => void
-
-export type PrepConfirmArg = (arg: ValidatorArg) => ValidatorReturn
-
-export interface GenericModalProps {
   onDismiss?: VoidFn
   stakingToken: Token
   currentBalance: BigNumber
@@ -23,6 +17,32 @@ export interface ValidatorReturn {
   finalLockedAmount?: number
   finalDuration?: number
 }
+
+export interface ExtendDurationModal {
+  stakingToken: Token
+  currentLockedAmount: number
+  onDismiss?: VoidFn
+  modalTitle?: string
+  currentDuration: number
+  currentDurationLeft: number
+  currentBalance?: BigNumber
+  lockStartTime: string
+  isRenew?: boolean
+}
+
+export interface AddButtonProps {
+  currentBalance: BigNumber
+  stakingToken: Token
+  currentLockedAmount: BigNumber
+  lockEndTime: string
+  lockStartTime: string
+  stakingTokenBalance: BigNumber
+}
+
+export interface OverviewPropsType {
+  usdValueStaked: number
+  lockedAmount: number
+  openCalculator: () => void
   duration: number
   isValidDuration: boolean
   newDuration?: number

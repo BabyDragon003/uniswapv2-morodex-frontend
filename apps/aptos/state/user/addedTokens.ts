@@ -3,12 +3,6 @@ import { SerializedWrappedToken, deserializeToken } from '@pancakeswap/token-lis
 import { useActiveChainId } from 'hooks/useNetwork'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import { useCallback, useMemo } from 'react'
-
-const USER_ADD_TOKENS = 'pcs:user-add-tokens'
-
-type UserAddedTokens = {
-  [chainId: number]: {
     [address: string]: SerializedWrappedToken
   }
 }

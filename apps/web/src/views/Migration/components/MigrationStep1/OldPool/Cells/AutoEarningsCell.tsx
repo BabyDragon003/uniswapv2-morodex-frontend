@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Text, Flex, Box, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
-interface AutoEarningsCellProps {
-  hasEarnings: boolean
-  earningTokenBalance: number
-}
-
-const StyledCell = styled(Pool.BaseCell)`
   display: none;
   ${({ theme }) => theme.mediaQueries.md} {
     display: flex;

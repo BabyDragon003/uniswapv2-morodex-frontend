@@ -3,12 +3,6 @@ import { useReducer } from 'react'
 export enum Views {
   START = 'start',
   CHANGE = 'change',
-  REMOVE = 'remove',
-  APPROVE = 'approve',
-}
-
-export type Actions =
-  | {
       type: 'set_view'
       view: Views
     }

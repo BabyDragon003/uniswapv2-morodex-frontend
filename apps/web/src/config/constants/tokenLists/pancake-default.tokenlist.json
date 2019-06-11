@@ -3,12 +3,6 @@
   "timestamp": "2022-01-26T11:45:09Z",
   "version": {
     "major": 4,
-    "minor": 0,
-    "patch": 0
-  },
-  "tags": {},
-  "logoURI": "/logo.png",
-  "keywords": ["pancake", "default"],
   "tokens": [
     {
       "name": "Wrapped BNB",
@@ -23,6 +17,32 @@
       "symbol": "BUSD",
       "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
       "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/busd.png"
+    },
+    {
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8.png"
+    },
+    {
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/wbtc.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/usdt.png"
     },
     {
       "name": "MORODEX",

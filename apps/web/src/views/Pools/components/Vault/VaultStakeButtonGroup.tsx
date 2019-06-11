@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 
 export const VaultStakeButtonGroup = ({
   onFlexibleClick,
-  onLockedClick,
-}: {
-  onFlexibleClick: () => void
-  onLockedClick: () => void
-}) => {
-  const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     <Box>
       {t(

@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Text, ChevronDownIcon, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
-interface ExpandActionCellProps {
-  expanded: boolean
-  showExpandedText: boolean
-}
-
-const StyledCell = styled(Pool.BaseCell)`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;

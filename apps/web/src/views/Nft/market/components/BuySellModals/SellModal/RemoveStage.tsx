@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Divider } from '../shared/styles'
 
 interface RemoveStageProps {
-  continueToNextStage: () => void
-}
-
-const RemoveStage: React.FC<React.PropsWithChildren<RemoveStageProps>> = ({ continueToNextStage }) => {
-  const { t } = useTranslation()
-  return (
     <>
       <Box p="16px" maxWidth="360px">
         <Text fontSize="24px" bold>

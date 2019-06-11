@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useDebounce } from '@pancakeswap/hooks'
 import { MINIMUM_SEARCH_CHARACTERS } from 'config/constants/info'
 import orderBy from 'lodash/orderBy'
-import { useRouter } from 'next/router'
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { useMultiChainPath, usePoolDatasSWR, useTokenDatasSWR, useGetChainName } from 'state/info/hooks'
-import { checkIsStableSwap } from 'state/info/constant'
-import useFetchSearchResults from 'state/info/queries/search'
-import { PoolData } from 'state/info/types'
 import { useWatchlistPools, useWatchlistTokens } from 'state/user/hooks'
 import styled from 'styled-components'
 import { formatAmount } from 'utils/formatInfoNumbers'
@@ -23,6 +17,32 @@ const Container = styled.div`
 
 const StyledInput = styled(Input)`
   z-index: 9999;
+  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+`
+
+const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  width: 100%;
+  top: 50px;
+  max-height: 400px;
+  overflow: auto;
+  right: 0;
+  padding: 1.5rem;
+  padding-bottom: 2.5rem;
+  position: absolute;
+  background: ${({ theme }) => theme.colors.background};
+  border-radius: 8px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
+    0px 24px 32px rgba(0, 0, 0, 0.04);
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  margin-top: 4px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 0;
+    width: 500px;
+    max-height: 600px;
+  }
   ${({ theme }) => theme.mediaQueries.md} {
     margin-top: 0;
     width: 800px;

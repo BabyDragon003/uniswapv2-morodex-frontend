@@ -3,12 +3,6 @@ import { useIsomorphicLayoutEffect } from "framer-motion";
 import debounce from "lodash/debounce";
 import React, { useCallback, useRef } from "react";
 import { Box } from "../Box";
-import { DropdownMenuItemType } from "../DropdownMenu/types";
-import MenuItem from "../MenuItem/MenuItem";
-import { ChevronLeftIcon, ChevronRightIcon, OpenNewIcon } from "../Svg";
-import StyledSubMenuItems, {
-  LeftMaskLayer,
-  RightMaskLayer,
   StyledSubMenuItemWrapper,
   SubMenuItemWrapper,
 } from "./styles";

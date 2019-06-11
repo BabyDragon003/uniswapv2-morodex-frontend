@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { BidderAuction } from 'config/constants/types'
 import { useFarmAuctionContract } from 'hooks/useContract'
-import { RECLAIM_AUCTIONS_TO_FETCH } from 'config'
-import { processBidderAuctions, sortAuctionBidders } from '../helpers'
-
-interface ReclaimableAuction {
-  id: number
-  amount: BigNumber
   position: number
 }
 

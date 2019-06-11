@@ -4,12 +4,6 @@ import { ConnectorNotFoundError } from '../errors'
 import { Connector } from './base'
 import { Aptos, Account, SignMessagePayload, SignMessageResponse } from './types'
 
-declare global {
-  interface Window {
-    aptos?: Aptos
-  }
-}
-
 export type PetraConnectorOptions = {
   /** Id of connector */
   id?: string

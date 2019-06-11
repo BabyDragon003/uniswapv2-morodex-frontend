@@ -3,12 +3,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Flex } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
-import { DefaultTheme } from 'styled-components'
-import { SaleStatusEnum, UserStatusEnum } from '../../types'
-import BuyTicketsButtons from '../Buttons/BuyTickets'
-import MintButton from '../Buttons/Mint'
-import EndEventButtons from '../Buttons/EndEvent'
-import ActivateProfileButton from '../Buttons/ActivateProfile'
 import { getCurrentButton } from './utils'
 import { ButtonsEnum } from './types'
 

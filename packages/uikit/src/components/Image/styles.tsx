@@ -3,12 +3,6 @@ import { variant as StyledSystemVariant } from "styled-system";
 import { ImageProps, Variant, variants } from "./types";
 import TokenImage from "./TokenImage";
 
-interface StyledImageProps extends ImageProps {
-  variant: Variant;
-}
-
-export const StyledPrimaryImage = styled(TokenImage)<StyledImageProps>`
-  position: absolute;
   width: ${({ variant }) =>
     variant === variants.DEFAULT ? "92%" : "82%"}; // 92, 82 are arbitrary numbers to fit the variant
 

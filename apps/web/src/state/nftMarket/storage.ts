@@ -3,12 +3,6 @@ import { useAtom } from 'jotai'
 import cloneDeep from 'lodash/cloneDeep'
 import { nftMarketFiltersAtom, nftMarketActivityFiltersAtom, tryVideoNftMediaAtom } from 'state/nftMarket/atoms'
 import { useCallback } from 'react'
-
-const initialNftFilterState: NftFilter = {
-  activeFilters: {},
-  showOnlyOnSale: true,
-  ordering: {
-    field: 'currentAskPrice',
     direction: 'asc',
   },
 }
@@ -23,6 +17,32 @@ export function useNftStorage() {
   const [nftMarketActivityFilters, setNftMarketActivityFilters] = useAtom(nftMarketActivityFiltersAtom)
   const [tryVideoNftMedia, setTryVideoNftMedia] = useAtom(tryVideoNftMediaAtom)
 
+  const addActivityTypeFilters = useCallback(
+    ({ collection, field }: { collection: string; field: MarketEvent }) => {
+      if (nftMarketActivityFilters[collection]) {
+        nftMarketActivityFilters[collection].typeFilters.push(field)
+      } else {
+        nftMarketActivityFilters[collection] = {
+          ...cloneDeep(initialNftActivityFilterState),
+          typeFilters: [field],
+        }
+      }
+      setNftMarketActivityFilters({ ...nftMarketActivityFilters })
+    },
+    [setNftMarketActivityFilters, nftMarketActivityFilters],
+  )
+
+  const addActivityCollectionFilters = useCallback(
+    ({ collection }: { collection: string }) => {
+      if (nftMarketActivityFilters['']) {
+        nftMarketActivityFilters[''].collectionFilters.push(collection)
+      } else {
+        nftMarketActivityFilters[''] = {
+          ...cloneDeep(initialNftActivityFilterState),
+          collectionFilters: [collection],
+        }
+      }
+      setNftMarketActivityFilters({ ...nftMarketActivityFilters })
     },
     [setNftMarketActivityFilters, nftMarketActivityFilters],
   )

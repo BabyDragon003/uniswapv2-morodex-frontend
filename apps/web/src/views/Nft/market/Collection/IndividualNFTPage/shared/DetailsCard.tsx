@@ -3,12 +3,6 @@ import { Box, Flex, Text, SearchIcon, Link } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
 import uriToHttp from '@pancakeswap/utils/uriToHttp'
-import { useTranslation } from '@pancakeswap/localization'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import ExpandableCard from './ExpandableCard'
-
-interface DetailsCardProps {
-  contractAddress: string
   ipfsJson: string
   count?: number
   rarity?: number

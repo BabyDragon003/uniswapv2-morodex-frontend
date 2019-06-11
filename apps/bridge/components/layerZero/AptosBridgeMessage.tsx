@@ -3,12 +3,6 @@ import styled from 'styled-components'
 
 const InlineLink = styled(Link)`
   display: inline-block;
-  margin: 0 4px;
-`
-
-const AptosBridgeMessage = () => {
-  return (
-    <Box width={['100%', null, '420px']} padding={['24px 24px 0 24px', '24px 24px 0 24px', '0']}>
       <Message
         mt={['24px', '24px', '24px', '0']}
         mb={['0', '0', '24px']}

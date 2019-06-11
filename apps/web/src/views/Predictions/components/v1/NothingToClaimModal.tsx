@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {
   ModalContainer,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  InjectedModalProps,
-  Text,
-  Heading,
   ModalCloseButton,
   Button,
   AutoRenewIcon,
@@ -23,6 +17,32 @@ const Modal = styled(ModalContainer)`
 const BunnyDecoration = styled.div`
   position: absolute;
   top: -116px; // line up bunny at the top of the modal
+  left: 0px;
+  text-align: center;
+  width: 100%;
+`
+
+const CollectRoundWinningsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ onDismiss }) => {
+  const [isFetching, setIsFetching] = useState(false)
+  const [history, setHistory] = useState([])
+  const { t } = useTranslation()
+  const { address: account } = useAccount()
+
+  const handleClick = () => {
+    const header = [
+      'Round',
+      'Result',
+      'Your Position',
+      'Bet Amount',
+      'Transaction',
+      'Claimed Transaction',
+      'Lock Price',
+      'Close Price',
+      'Total Bets',
+      'Total Amount',
+      'Round Failed',
+    ].join(',')
+
     const rows = history.reduce((accum, bet) => {
       return [
         ...accum,

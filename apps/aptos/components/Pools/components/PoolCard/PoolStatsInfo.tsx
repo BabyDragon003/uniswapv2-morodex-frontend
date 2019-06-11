@@ -3,12 +3,6 @@ import { memo, useMemo } from 'react'
 import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { Token } from '@pancakeswap/sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
-import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
-
-import { AprInfo } from './Stat'
-
 interface ExpandedFooterProps {
   pool: Pool.DeserializedPool<Token> & { stakeLimitEndBlock?: number }
   account?: string
@@ -23,6 +17,32 @@ interface EndTimeTooltipComponentProps {
 const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {
     t,
+    currentLanguage: { locale },
+  } = useTranslation()
+
+  return (
+    <>
+      <Text bold>{t('End Time')}:</Text>
+      <Text>
+        {new Date(endTime * 1000).toLocaleString(locale, {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        })}
+      </Text>
+    </>
+  )
+}
+
+const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({ pool, showTotalStaked = true }) => {
+  const { t } = useTranslation()
+  const getNow = useLedgerTimestamp()
+
+  const {
+    stakingToken,
     earningToken,
     totalStaked = BIG_ZERO,
     userData: poolUserData,

@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { isAddress } from 'utils'
 import PreviewImage from './PreviewImage'
-import { CostLabel, LowestPriceMetaRow, MetaRow } from './styles'
-import LocationTag from './LocationTag'
-import { CollectibleCardProps } from './types'
-import { useGetLowestPriceFromNft } from '../../hooks/useGetLowestPrice'
-import { pancakeBunniesAddress } from '../../constants'
-import NFTMedia from '../NFTMedia'
 
 const CollectibleCardBody: React.FC<React.PropsWithChildren<CollectibleCardProps>> = ({
   nft,

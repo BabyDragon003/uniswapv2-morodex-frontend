@@ -3,12 +3,6 @@ import { UserResponse, BetResponse, RoundResponse } from './responseType'
 export interface UserResponseBNB extends UserResponse<BetResponseBNB> {
   totalBNB: string
   totalBNBBull: string
-  totalBNBBear: string
-  averageBNB: string
-  totalBNBClaimed: string
-  netBNB: string
-}
-
 export interface BetResponseBNB extends BetResponse {
   claimedBNB: string
   claimedNetBNB: string
@@ -23,6 +17,32 @@ export type RoundResponseBNB = RoundResponse<BetResponseBNB>
  */
 export const roundBaseFields = `
   id
+  epoch
+  position
+  failed
+  startAt
+  startBlock
+  startHash
+  lockAt
+  lockBlock
+  lockHash
+  lockPrice
+  lockRoundId
+  closeAt
+  closeBlock
+  closeHash
+  closePrice
+  closeRoundId
+  totalBets
+  totalAmount
+  bullBets
+  bullAmount
+  bearBets
+  bearAmount
+`
+
+export const betBaseFields = `
+ id
  hash  
  amount
  position

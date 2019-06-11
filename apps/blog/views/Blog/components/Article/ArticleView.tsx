@@ -3,12 +3,6 @@ import { Box, Flex, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTheme } from '@pancakeswap/hooks'
 import NoSSR from 'components/NoSSR'
-
-const StyledChoiceContainer = styled(Flex)`
-  width: 100%;
-  flex-direction: column;
-
-  @media screen and (min-width: 1440px) {
     width: 1400px;
   }
 `
@@ -23,6 +17,32 @@ const StyledContainer = styled(Flex)<{ isDark: boolean }>`
       : 'radial-gradient(50% 79.31% at 50% 50%, #FAF9FA 0%, #F5F3F8 100%)'};
 
   ${({ theme }) => theme.mediaQueries.xxl} {
+    padding: 0;
+  }
+`
+
+const Container = styled(Box)`
+  position: relative;
+  width: 100%;
+  margin: auto;
+  top: -55px;
+
+  ${({ theme }) => theme.mediaQueries.xl} {
+    width: 747px;
+  }
+  ${({ theme }) => theme.mediaQueries.xxl} {
+    width: 1139px;
+  }
+`
+
+const StyledTitleContainer = styled(Box)`
+  padding: 0 16px;
+  margin-bottom: 64px;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin-bottom: 80px;
+  }
+
   @media screen and (min-width: 1440px) {
     padding-left: 130px;
   }

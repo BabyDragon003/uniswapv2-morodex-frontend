@@ -3,12 +3,6 @@ import { Box, Button, Flex, Text } from '@pancakeswap/uikit'
 import { chains } from 'config/chains'
 import isEmpty from 'lodash/isEmpty'
 import { clearAllTransactions } from 'state/transactions/actions'
-import { useAllSortedRecentTransactions } from 'state/transactions/hooks'
-import { useTransactionState } from 'state/transactions/reducer'
-import styled from 'styled-components'
-import TransactionRow from './TransactionRow'
-
-const TransactionsContainer = styled(Box)`
   max-height: 300px;
   overflow-y: auto;
 `

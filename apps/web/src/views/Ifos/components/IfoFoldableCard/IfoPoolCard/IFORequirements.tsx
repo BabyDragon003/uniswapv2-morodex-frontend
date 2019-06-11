@@ -3,12 +3,6 @@ import { Text, Flex, AccountIcon, TeamBattleIcon, Box, useTooltip, LinkExternal 
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 
-import OkNFTIcon from './Icons/OkNFT'
-import OkProfilePointsIcon from './Icons/OkProfilePoints'
-import TransWithElement from '../../TransWithElement'
-
-const NotOkNFT = ({ admissionProfile }) => {
-  const { t } = useTranslation()
 
   const keyword = '%Pancake Squad NFT%'
 

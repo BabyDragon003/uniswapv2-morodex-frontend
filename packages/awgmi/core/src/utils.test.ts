@@ -3,12 +3,6 @@ import {
   isAccountAddress,
   unwrapTypeArgFromString,
   unwrapTypeFromString,
-  isHexStringEquals,
-  parseVmStatusError,
-  isStructTag,
-} from './utils'
-
-describe('utils isAccountAddress', () => {
   const validCases = [
     '0x1',
     '0x0000001',

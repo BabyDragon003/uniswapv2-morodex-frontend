@@ -3,12 +3,6 @@ import orderBy from 'lodash/orderBy'
 import useSWR from 'swr'
 import Page from 'components/Layout/Page'
 import { FetchStatus } from 'config/constants/types'
-import { useTranslation } from '@pancakeswap/localization'
-import TeamListCard from './components/TeamListCard'
-import TeamHeader from './components/TeamHeader'
-import { getTeams } from '../../state/teams/helpers'
-
-const Teams = () => {
   const { t } = useTranslation()
   const { data, status } = useSWR('teams', async () => getTeams())
   const teamList = data ? Object.values(data) : []

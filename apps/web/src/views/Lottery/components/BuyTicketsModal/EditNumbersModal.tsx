@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Modal, Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
-import TicketInput from './TicketInput'
-import { UpdateTicketAction, Ticket } from './useTicketsReducer'
-
-const StyledModal = styled(Modal)`
-  max-height: 552px;
-  & div:nth-child(2) {
     padding: 0;
   }
 
@@ -23,6 +17,32 @@ const ScrollableContainer = styled.div`
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.cardBorder}`};
   padding: 24px;
 `
+
+const EditNumbersModal: React.FC<
+  React.PropsWithChildren<{
+    totalCost: string
+    updateTicket: UpdateTicketAction
+    randomize: () => void
+    tickets: Ticket[]
+    allComplete: boolean
+    onConfirm: () => void
+    isConfirming: boolean
+    onDismiss?: () => void
+  }>
+> = ({ totalCost, updateTicket, randomize, tickets, allComplete, onConfirm, isConfirming, onDismiss }) => {
+  const { theme } = useTheme()
+  const { t } = useTranslation()
+  const handleOnConfirm = useCallback(() => onConfirm(), [onConfirm])
+  return (
+    <StyledModal
+      title={t('Edit numbers')}
+      onDismiss={onDismiss}
+      headerBackground={theme.colors.gradientCardHeader}
+      onBack={onDismiss}
+    >
+      <ScrollableContainer>
+        <Flex justifyContent="space-between" mb="16px">
+          <Text color="textSubtle">{t('Total cost')}:</Text>
           <Text>~{totalCost} CAKE</Text>
         </Flex>
         <Text fontSize="12px" color="textSubtle" mb="16px">

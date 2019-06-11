@@ -3,12 +3,6 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { useActiveIfoWithBlocks } from 'hooks/useActiveIfoWithBlocks'
 import Image from 'next/legacy/image'
-import { memo, useEffect, useRef } from 'react'
-import { useChainCurrentBlock } from 'state/block/hooks'
-import styled, { keyframes } from 'styled-components'
-import { getStatus } from '../../../Ifos/hooks/helpers'
-import { IFOImage, IFOMobileImage } from './images'
-import * as S from './Styled'
 
 const IFOHeaderMobileLimitHeight = 36
 const IFOHeaderMobileLimitWidth = 335
@@ -23,6 +17,32 @@ const RightWrapper = styled.div`
   position: absolute;
   right: 1px;
   bottom: 18px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    bottom: -3px;
+    right: 0;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    bottom: 9px;
+    right: 67px;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    bottom: -3px;
+    right: 67px;
+  }
+  z-index: 0;
+`
+const IFOIconImage = styled.div<{ src: string }>`
+  position: absolute;
+  background-image: ${({ src }) => `url("${src}")`};
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  bottom: 35px;
+  right: 95px;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 2;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 60px;
     height: 60px;

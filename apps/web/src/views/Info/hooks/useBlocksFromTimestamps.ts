@@ -3,12 +3,6 @@ import { useGetChainName } from 'state/info/hooks'
 import { Block } from 'state/info/types'
 import useSWRImmutable from 'swr/immutable'
 import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
-
-/**
- * for a given array of timestamps, returns block entities
- * @param timestamps
- * @param sortDirection
- * @param skipCount
  */
 export const useBlocksFromTimestamps = (
   timestamps: number[],

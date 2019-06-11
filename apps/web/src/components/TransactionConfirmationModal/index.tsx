@@ -3,12 +3,6 @@ import { ChainId, Currency, Token } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import {
   Button,
-  Text,
-  ArrowUpIcon,
-  Link,
-  Spinner,
-  Modal,
-  InjectedModalProps,
   ModalProps,
   BscScanIcon,
 } from '@pancakeswap/uikit'

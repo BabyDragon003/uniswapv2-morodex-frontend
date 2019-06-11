@@ -3,12 +3,6 @@ import { APTOS_COIN } from '../constants'
 import { getProvider } from '../providers'
 
 export type FetchBalanceArgs = {
-  /** Address */
-  address: string
-  /** Network to use for provider */
-  networkName?: string
-  /** resource type */
-  coin?: string
 }
 
 export type FetchBalanceResult = {
@@ -23,3 +17,6 @@ export async function fetchBalance({ address, networkName, coin }: FetchBalanceA
   const { value } = (resource.data as CoinStoreResult).coin
 
   return {
+    value,
+  }
+}

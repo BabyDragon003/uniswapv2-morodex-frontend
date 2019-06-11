@@ -4,12 +4,6 @@ import { lightColors } from "../../theme";
 import { styleVariants, styleScales } from "./themes";
 import { ProgressProps, variants } from "./types";
 
-interface ProgressBarProps {
-  primary?: boolean;
-  $useDark: boolean;
-  $background?: string;
-}
-
 export const Bar = styled.div<ProgressBarProps>`
   position: absolute;
   top: 0;

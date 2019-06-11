@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Breadcrumbs,
-  Button,
-  Card,
-  Flex,
-  Heading,
-  Image,
-  Link as UIKitLink,
   LinkExternal,
   Spinner,
   Text,

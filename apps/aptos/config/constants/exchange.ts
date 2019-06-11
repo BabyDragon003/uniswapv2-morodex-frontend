@@ -3,12 +3,6 @@ import { APT, CE_USDC_MAINNET, L0_USDC, WH_USDC_MAINNET } from 'config/coins'
 import { ChainTokenList } from './types'
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)
-export const BIG_INT_TEN = JSBI.BigInt(10)
-export const BIG_INT_20 = JSBI.BigInt(20)
-
-// used to ensure the user doesn't send so much APT so they end up with <0.00000002
-export const MIN_APT: JSBI = JSBI.multiply(JSBI.exponentiate(BIG_INT_TEN, JSBI.BigInt(6)), JSBI.BigInt(2)) // .02 APT
-
 // default allowed slippage, in bips
 export const INITIAL_ALLOWED_SLIPPAGE = 50
 // 20 minutes, denominated in seconds
@@ -23,6 +17,32 @@ export const BASES_TO_CHECK_TRADES_AGAINST = {
     new Coin(
       ChainId.TESTNET,
       '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBNB',
+      8,
+      'BNB',
+    ),
+    new Coin(
+      ChainId.TESTNET,
+      '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetETH',
+      8,
+      'ETH',
+    ),
+  ],
+  [ChainId.MAINNET]: [APT[ChainId.MAINNET], L0_USDC[ChainId.MAINNET], CE_USDC_MAINNET, WH_USDC_MAINNET],
+}
+
+/**
+ * Additional bases for specific tokens
+ * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
+ */
+export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {}
+
+export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {}
+
+export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
+  [ChainId.MAINNET]: [],
+  [ChainId.TESTNET]: [],
+}
+
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.MAINNET]: [],

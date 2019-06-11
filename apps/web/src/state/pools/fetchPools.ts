@@ -3,12 +3,6 @@ import fromPairs from 'lodash/fromPairs'
 import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import poolsConfig from 'config/constants/pools'
 import sousChefABI from 'config/abi/sousChef.json'
-import erc20ABI from 'config/abi/erc20.json'
-import multicall, { multicallv2 } from 'utils/multicall'
-import { getAddress } from 'utils/addressHelpers'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import chunk from 'lodash/chunk'
-import sousChefV2 from '../../config/abi/sousChefV2.json'
 import sousChefV3 from '../../config/abi/sousChefV3.json'
 
 const livePoolsWithEnd = poolsConfig.filter((p) => p.sousId !== 0 && !p.isFinished)

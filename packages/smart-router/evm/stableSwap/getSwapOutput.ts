@@ -3,12 +3,6 @@ import invariant from 'tiny-invariant'
 
 import { getY } from './amm'
 
-export interface GetSwapOutputParams {
-  amplifier: BigintIsh
-  // Token balances of the stable pool
-  balances: CurrencyAmount<Currency>[]
-  // User input amount
-  amount: CurrencyAmount<Currency>
   // The currency user want to swap to
   outputCurrency: Currency
   // Fee of swapping

@@ -3,12 +3,6 @@ import { RocketIcon, Text } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
-import { memo, useContext } from 'react'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import useBoostMultiplier from '../hooks/useBoostMultiplier'
-import useGetBoostedAPR from '../hooks/useGetBoostedAPR'
-import { YieldBoosterState } from '../hooks/useYieldBoosterState'
-import { YieldBoosterStateContext } from './ProxyFarmContainer'
 
 interface BoostedAprPropsType {
   apr: number

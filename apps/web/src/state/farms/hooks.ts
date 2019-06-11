@@ -3,12 +3,6 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { SLOW_INTERVAL } from 'config/constants'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import { useEffect, useMemo } from 'react'
-import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'state'
-import useSWRImmutable from 'swr/immutable'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { useBCakeProxyContractAddress } from 'views/Farms/hooks/useBCakeProxyContractAddress'
-import { getMasterchefContract } from 'utils/contractHelpers'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { getFarmConfig } from '@pancakeswap/farms/constants'
@@ -23,6 +17,32 @@ import {
   makeFarmFromPidSelector,
   makeLpTokenPriceFromLpSymbolSelector,
   makeUserFarmFromPidSelector,
+} from './selectors'
+
+export function useFarmsLength() {
+  const { chainId } = useActiveChainId()
+  return useSWRImmutable(chainId ? ['farmsLength', chainId] : null, async () => {
+    const mc = getMasterchefContract(undefined, chainId)
+    return (await mc.poolLength()).toNumber()
+  })
+}
+
+export const usePollFarmsWithUserData = () => {
+  const dispatch = useAppDispatch()
+  const { account, chainId } = useActiveWeb3React()
+  const {
+    proxyAddress,
+    proxyCreated,
+    isLoading: isProxyContractLoading,
+  } = useBCakeProxyContractAddress(account, chainId)
+  const farmFlag = useFeatureFlag(featureFarmApiAtom)
+
+  useSWRImmutable(
+    chainId ? ['publicFarmData', chainId] : null,
+    async () => {
+      const farmsConfig = await getFarmConfig(chainId)
+      const pids = farmsConfig.map((farmToFetch) => farmToFetch.pid)
+      dispatch(fetchFarmsPublicDataAsync({ pids, chainId, flag: farmFlag }))
     },
     {
       refreshInterval: farmFlag === 'api' ? 50 * 1000 : SLOW_INTERVAL,

@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'
 import { useCallback, useState } from 'react'
 import { ToastDescriptionWithTx } from 'components/Toast'
-import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
-
-export type TxResponse = TransactionResponse | null
-
-export type CatchTxErrorReturn = {
-  fetchWithCatchTxError: (fn: () => Promise<TxResponse>) => Promise<TransactionReceipt | null>
   loading: boolean
 }
 

@@ -3,7 +3,3 @@ export type DividerFill = {
   dark?: string;
 };
 
-export type ClipFill = {
-  light: string;
-  dark?: string;
-};

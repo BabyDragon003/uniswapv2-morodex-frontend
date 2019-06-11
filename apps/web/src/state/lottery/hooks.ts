@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import { useSelector, batch } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
-import { State } from '../types'
-import { fetchCurrentLotteryId, fetchCurrentLottery, fetchUserTicketsAndLotteries, fetchPublicLotteries } from '.'
-import { makeLotteryGraphDataByIdSelector, lotterySelector } from './selectors'
-
-// Lottery
-export const useGetCurrentLotteryId = () => {
   return useSelector((state: State) => state.lottery.currentLotteryId)
 }
 

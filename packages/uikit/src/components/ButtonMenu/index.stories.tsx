@@ -3,12 +3,6 @@ import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import Box from "../Box/Box";
-import ButtonMenu from "./ButtonMenu";
-import ButtonMenuItem from "./ButtonMenuItem";
-
-const Row = styled.div`
-  margin-bottom: 32px;
-
   & > button + button {
     margin-left: 16px;
   }
@@ -23,6 +17,32 @@ export default {
 export const Default: React.FC<React.PropsWithChildren> = () => {
   const [index, setIndex] = useState(0);
   const [index1, setIndex1] = useState(1);
+
+  const handleClick = (newIndex) => setIndex(newIndex);
+  const handleClick1 = (newIndex) => setIndex1(newIndex);
+
+  return (
+    <>
+      <Row>
+        <ButtonMenu activeIndex={index} onItemClick={handleClick}>
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
+        <ButtonMenu activeIndex={index1} onItemClick={handleClick1} scale="sm" ml="24px">
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
+        <ButtonMenu activeIndex={index} onItemClick={handleClick} variant="subtle">
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>

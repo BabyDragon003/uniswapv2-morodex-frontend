@@ -3,12 +3,6 @@ import { Flex, TwitterIcon, TelegramIcon, RedditIcon, Link } from '@pancakeswap/
 import { useRouter } from 'next/router'
 
 const StyledLink = styled(Link)`
-  &:hover {
-    > svg {
-      fill: ${({ theme }) => theme.colors.secondary};
-    }
-  }
-`
 
 const StyledSocialIcon = styled(Flex)`
   position: static;

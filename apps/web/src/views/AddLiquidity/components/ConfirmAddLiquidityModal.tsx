@@ -3,12 +3,6 @@ import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
-import { Field } from 'state/burn/actions'
-import _toNumber from 'lodash/toNumber'
-import { AddLiquidityModalHeader, PairDistribution } from './common'
-
-interface ConfirmAddLiquidityModalProps {
-  title: string
   customOnDismiss: () => void
   attemptingTxn: boolean
   hash: string
@@ -23,6 +17,32 @@ interface ConfirmAddLiquidityModalProps {
   poolTokenPercentage: Percent
   liquidityMinted: CurrencyAmount<Token>
   currencyToAdd: Token
+  isStable?: boolean
+}
+
+const ConfirmAddLiquidityModal: React.FC<
+  React.PropsWithChildren<InjectedModalProps & ConfirmAddLiquidityModalProps>
+> = ({
+  title,
+  onDismiss,
+  customOnDismiss,
+  attemptingTxn,
+  hash,
+  pendingText,
+  price,
+  currencies,
+  noLiquidity,
+  allowedSlippage,
+  parsedAmounts,
+  liquidityErrorMessage,
+  onAdd,
+  poolTokenPercentage,
+  liquidityMinted,
+  currencyToAdd,
+  isStable,
+}) => {
+  const { t } = useTranslation()
+
   let percent = 0.5
 
   // Calculate distribution percentage for display

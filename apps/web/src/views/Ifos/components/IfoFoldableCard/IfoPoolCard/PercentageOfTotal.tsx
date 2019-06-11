@@ -3,12 +3,6 @@ import { Text, TextProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 interface PercentageOfTotalProps extends TextProps {
-  userAmount: BigNumber
-  totalAmount: BigNumber
-}
-
-const PercentageOfTotal: React.FC<React.PropsWithChildren<PercentageOfTotalProps>> = ({
-  userAmount,
   totalAmount,
   ...props
 }) => {
@@ -23,3 +17,4 @@ const PercentageOfTotal: React.FC<React.PropsWithChildren<PercentageOfTotalProps
   )
 }
 
+export default PercentageOfTotal

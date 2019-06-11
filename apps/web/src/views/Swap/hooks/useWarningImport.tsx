@@ -3,12 +3,6 @@ import { Token } from '@pancakeswap/sdk'
 import { useModal } from '@pancakeswap/uikit'
 
 import { useRouter } from 'next/router'
-
-import shouldShowSwapWarning from 'utils/shouldShowSwapWarning'
-
-import { useCurrency, useAllTokens } from 'hooks/Tokens'
-import { useDefaultsFromURLSearch } from 'state/swap/hooks'
-import ImportTokenWarningModal from 'components/ImportTokenWarningModal'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { isAddress } from 'utils'
 

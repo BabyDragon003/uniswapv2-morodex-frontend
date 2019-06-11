@@ -3,12 +3,6 @@ import type { Provider } from '@ethersproject/providers'
 import { provider } from 'utils/wagmi'
 import { Contract } from '@ethersproject/contracts'
 import poolsConfig from 'config/constants/pools'
-import { PoolCategory } from 'config/constants/types'
-import { CAKE } from '@pancakeswap/tokens'
-
-// Addresses
-import {
-  getAddress,
   getPancakeProfileAddress,
   getPancakeBunniesAddress,
   getBunnyFactoryAddress,

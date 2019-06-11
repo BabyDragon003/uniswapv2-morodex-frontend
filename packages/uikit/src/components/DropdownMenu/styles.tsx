@@ -3,12 +3,6 @@ import { Colors } from "../../theme";
 import { Text } from "../Text";
 import { StyledDropdownMenuItemProps } from "./types";
 
-const getTextColor = ({
-  $isActive,
-  disabled,
-  theme,
-}: StyledDropdownMenuItemProps & { theme: DefaultTheme; $isActive: boolean }) => {
-  if (disabled) return theme.colors.textDisabled;
   if ($isActive) return theme.colors.secondary;
 
   return theme.colors.textSubtle;
@@ -23,6 +17,32 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & { $i
   font-weight: ${({ $isActive = false }) => ($isActive ? "600" : "400")};
   display: flex;
   font-size: 16px;
+  height: 48px;
+  justify-content: space-between;
+  outline: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "inherit")};
+
+  &:is(button) {
+    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  }
+
+  &:hover:not(:disabled) {
+    background-color: ${({ theme }) => theme.colors.tertiary};
+  }
+
+  &:active:not(:disabled) {
+    opacity: 0.85;
+    transform: translateY(1px);
+  }
+`;
+
+export const StyledDropdownMenuItemContainer = styled.div`
+  &:first-child ${DropdownMenuItem} {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   &:last-child ${DropdownMenuItem} {

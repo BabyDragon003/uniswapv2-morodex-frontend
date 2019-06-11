@@ -3,12 +3,6 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
   Box,
-  Button,
-  Text,
-  Flex,
-  IconButton,
-  InlineMenu,
-  Input,
   InputGroup,
   SearchIcon,
   CloseIcon,
@@ -23,6 +17,32 @@ import { FilterButton, ListOrderState, SearchWrapper } from '../ListFilter/style
 import { TraitItemRow } from './styles'
 
 interface ListTraitFilterProps {
+  title?: string
+  traitType: string
+  items: Item[]
+  collectionAddress: string
+}
+
+const TriggerButton = styled(Button)<{ hasItem: boolean }>`
+  ${({ hasItem }) =>
+    hasItem &&
+    `
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 8px;
+  `}
+`
+
+const CloseButton = styled(IconButton)`
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+`
+
+export const ListTraitFilter: React.FC<React.PropsWithChildren<ListTraitFilterProps>> = ({
+  title,
+  traitType,
+  items,
+  collectionAddress,
 }) => {
   const { t } = useTranslation()
   const { updateItemFilters } = useNftStorage()

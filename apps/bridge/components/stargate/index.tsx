@@ -3,12 +3,6 @@ import { useMemo } from 'react'
 import type {} from 'styled-jsx'
 import { FEE_COLLECTOR, FEE_TENTH_BPS, PARTNER_ID } from './config'
 import { darkTheme, lightTheme, FontFamily } from './theme'
-
-const stringDarkTheme = JSON.stringify(darkTheme)
-const stringLightTheme = JSON.stringify(lightTheme)
-
-export const StargateWidget = ({ theme }: { theme: PancakeTheme }) => {
-  const widgetTheme = useMemo(() => {
     return theme.isDark ? stringDarkTheme : stringLightTheme
   }, [theme])
 

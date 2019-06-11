@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { LeaderboardDataItem } from '../../../types'
 import GridItem from './GridItem'
 import ExpandedGridItem from './ExpandedGridItem'
-import { LeaderboardStorm, LeaderboardFlippers, LeaderboardCakers } from '../../../svgs'
-
-const SkeletonLoader = () => {
-  return (
-    <Box width="100%">
-      <Skeleton width="100%" height="76px" m="3px" />
       <Skeleton width="100%" height="76px" m="3px" />
       <Skeleton width="100%" height="76px" m="3px" />
       <Skeleton width="100%" height="76px" m="3px" />

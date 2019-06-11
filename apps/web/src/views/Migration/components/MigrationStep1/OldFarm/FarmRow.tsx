@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { useFarmUser } from 'state/farmsV1/hooks'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useDelayedUnmount } from '@pancakeswap/hooks'
-import Farm from '../../Farm/Cells/Farm'
-import Staked from '../../Farm/Cells/Staked'
-import Earned from '../../Farm/Cells/Earned'
-import Multiplier from '../../Farm/Cells/Multiplier'
-import Liquidity from '../../Farm/Cells/Liquidity'
-import Unstake from './Cells/Unstake'
 import ActionPanel from './ActionPanel/ActionPanel'
 import { RowProps } from '../../types'
 import ExpandActionCell from '../../Cells/ExpandActionCell'
@@ -23,6 +17,32 @@ const StyledRow = styled.div`
 `
 
 const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+  }
+`
+
+const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 24px 0;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+    align-items: center;
+  }
+`
+
+const FarmRow: React.FunctionComponent<React.PropsWithChildren<RowProps>> = ({
+  farm,
+  staked,
+  earned,
+  multiplier,
+  liquidity,
   unstake,
 }) => {
   const { isMobile, isXl, isXxl } = useMatchBreakpoints()

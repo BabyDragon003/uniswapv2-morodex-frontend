@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useClaimPottery } from 'views/Pottery/hooks/useClaimPottery'
 
-interface ClaimButtonProps {
-  rewardToken: number
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<ClaimButtonProps>> = ({ rewardToken }) => {
-  const { t } = useTranslation()
   const { isPending, handleClaim } = useClaimPottery()
 
   const isDisabledButton = useMemo(() => rewardToken === 0 || isPending, [rewardToken, isPending])
@@ -23,3 +17,7 @@ const ClaimButton: React.FC<React.PropsWithChildren<ClaimButtonProps>> = ({ rewa
     >
       {t('Claim')}
     </Button>
+  )
+}
+
+export default ClaimButton

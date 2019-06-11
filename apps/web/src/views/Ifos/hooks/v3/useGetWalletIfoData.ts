@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useERC20, useIfoV3Contract } from 'hooks/useContract'
-import { multicallv2 } from 'utils/multicall'
-import ifoV3Abi from 'config/abi/ifoV3.json'
-import { fetchCakeVaultUserData } from 'state/pools'
-import { useAppDispatch } from 'state'
-import { useIfoCredit } from 'state/pools/hooks'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import useIfoAllowance from '../useIfoAllowance'
 import { WalletIfoState, WalletIfoData } from '../../types'
 
@@ -23,6 +17,32 @@ const initialState = {
     isPendingTx: false,
     vestingReleased: BIG_ZERO,
     vestingAmountTotal: BIG_ZERO,
+    isVestingInitialized: false,
+    vestingId: '0',
+    vestingComputeReleasableAmount: BIG_ZERO,
+  },
+  poolUnlimited: {
+    amountTokenCommittedInLP: BIG_ZERO,
+    offeringAmountInToken: BIG_ZERO,
+    refundingAmountInLP: BIG_ZERO,
+    taxAmountInLP: BIG_ZERO,
+    hasClaimed: false,
+    isPendingTx: false,
+    vestingReleased: BIG_ZERO,
+    vestingAmountTotal: BIG_ZERO,
+    isVestingInitialized: false,
+    vestingId: '0',
+    vestingComputeReleasableAmount: BIG_ZERO,
+  },
+}
+
+/**
+ * Gets all data from an IFO related to a wallet
+ */
+const useGetWalletIfoData = (ifo: Ifo): WalletIfoData => {
+  const [state, setState] = useState<WalletIfoState>(initialState)
+  const dispatch = useAppDispatch()
+  const credit = useIfoCredit()
 
   const { address, currency, version } = ifo
 

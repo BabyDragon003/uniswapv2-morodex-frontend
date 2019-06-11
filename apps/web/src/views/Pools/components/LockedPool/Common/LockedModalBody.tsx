@@ -3,12 +3,6 @@ import dynamic from 'next/dynamic'
 import { Button, AutoRenewIcon, Box, Flex, Message, MessageText, Text } from '@pancakeswap/uikit'
 import _noop from 'lodash/noop'
 import { useTranslation } from '@pancakeswap/localization'
-import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
-import { MAX_LOCK_DURATION } from 'config/constants/pools'
-import BigNumber from 'bignumber.js'
-import { getBalanceAmount, getDecimalAmount } from '@pancakeswap/utils/formatBalance'
-import { useIfoCeiling } from 'state/pools/hooks'
-import { VaultKey } from 'state/types'
 
 import { LockedModalBodyPropsType, ModalValidator } from '../types'
 

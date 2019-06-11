@@ -3,12 +3,6 @@ import { QueryFunction, QueryKey, QueryObserver, QueryOptions } from '@tanstack/
 function isQueryKey(value: unknown): value is QueryKey {
   return Array.isArray(value)
 }
-
-export function parseQueryArgs<
-  TOptions extends QueryOptions<any, any, any, TQueryKey>,
-  TQueryKey extends QueryKey = QueryKey,
->(arg1: TQueryKey | TOptions, arg2?: QueryFunction<any, TQueryKey> | TOptions, arg3?: TOptions): TOptions {
-  if (!isQueryKey(arg1)) {
     return arg1 as TOptions
   }
 

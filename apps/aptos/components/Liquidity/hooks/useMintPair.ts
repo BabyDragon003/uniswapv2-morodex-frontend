@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useCurrencyBalance } from 'hooks/Balances'
 import { PairState, usePair } from 'hooks/usePairs'
 import useTotalSupply from 'hooks/useTotalSupply'
-import { createContext, useMemo } from 'react'
-import { BIG_INT_ZERO } from 'config/constants/exchange'
-import { Field } from '../type'
-
-interface MintPairContextValue {
-  pair?: Pair | null
   pairState: PairState
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   error?: string
@@ -23,6 +17,32 @@ export const MintPairContext = createContext<MintPairContextValue>({
     [Field.CURRENCY_A]: undefined,
     [Field.CURRENCY_B]: undefined,
   },
+  error: '',
+  totalSupply: undefined,
+  noLiquidity: false,
+})
+
+export default function useMintPair({ currencyA, currencyB }): MintPairContextValue {
+  const { t } = useTranslation()
+
+  // pair
+  const [pairState, pair] = usePair(currencyA, currencyB)
+
+  const totalSupply = useTotalSupply(pair?.liquidityToken)
+
+  const noLiquidity: boolean =
+    pairState === PairState.NOT_EXISTS ||
+    Boolean(totalSupply && JSBI.equal(totalSupply.quotient, BIG_INT_ZERO)) ||
+    Boolean(
+      pairState === PairState.EXISTS &&
+        pair &&
+        JSBI.equal(pair.reserve0.quotient, BIG_INT_ZERO) &&
+        JSBI.equal(pair.reserve1.quotient, BIG_INT_ZERO),
+    )
+
+  const balanceA = useCurrencyBalance(currencyA?.wrapped.address)
+  const balanceB = useCurrencyBalance(currencyB?.wrapped.address)
+
   // balances
   const currencyBalances: { [field in Field]?: CurrencyAmount<Currency> } = useMemo(
     () => ({

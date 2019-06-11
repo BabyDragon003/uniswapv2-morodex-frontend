@@ -3,12 +3,6 @@ import { Tiers, Rank, easterPrizes } from 'config/constants/trading-competition/
 import {
   BlockIcon,
   Box,
-  CheckmarkCircleIcon,
-  Flex,
-  MedalBronzeIcon,
-  MedalGoldIcon,
-  MedalPurpleIcon,
-  MedalSilverIcon,
   MedalTealIcon,
   CrownIcon,
   Tab,

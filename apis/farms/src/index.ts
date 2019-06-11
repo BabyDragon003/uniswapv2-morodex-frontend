@@ -3,12 +3,6 @@
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
  *
- * - Run `wrangler dev src/index.ts` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `wrangler publish src/index.ts --name my-worker` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
 
 import { Router } from 'itty-router'
 import { error, json, missing } from 'itty-router-extras'
@@ -23,6 +17,32 @@ const allowedOrigin =
   /^(?:[^\w](pancake\.run)|(localhost:3000)|(localhost:3002)|(dapp-frontend-prince.web.app)|(pancakeswap.com))$/
 
 router.get('/price/cake', async (_, event) => {
+  const cache = caches.default
+  const cacheResponse = await cache.match(event.request)
+  let response
+  if (!cacheResponse) {
+    const price = await fetchCakePrice()
+    response = json(
+      { price, updatedAt: new Date().toISOString() },
+      {
+        headers: {
+          'Cache-Control': 'public, max-age=10, s-maxage=10',
+        },
+      },
+    )
+
+    event.waitUntil(cache.put(event.request, response.clone()))
+  } else {
+    response = new Response(cacheResponse.body, cacheResponse)
+  }
+
+  return response
+})
+
+router.get('/apr', async ({ query }) => {
+  if (typeof query?.key === 'string' && query.key === FORCE_UPDATE_KEY) {
+    try {
+      const result = await Promise.allSettled(farmFetcher.supportedChainId.map((id) => saveLPsAPR(id)))
       return json(result.map((r) => r))
     } catch (err) {
       error(500, { err })

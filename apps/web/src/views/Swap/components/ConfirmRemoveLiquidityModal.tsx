@@ -3,12 +3,6 @@ import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/sdk
 import {
   AddIcon,
   Button,
-  InjectedModalProps,
-  Text,
-  TransactionErrorContent,
-  ConfirmationModalContent,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
 import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
 import { AutoColumn } from 'components/Layout/Column'
 import { RowBetween, RowFixed } from 'components/Layout/Row'

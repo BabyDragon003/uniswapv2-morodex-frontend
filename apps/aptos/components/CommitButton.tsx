@@ -3,12 +3,6 @@ import { useAccount } from '@pancakeswap/awgmi'
 import { useIsMounted } from '@pancakeswap/hooks'
 import { useActiveNetwork } from 'hooks/useNetwork'
 import { ConnectWalletButton } from './ConnectWalletButton'
-import Trans from './Trans'
-
-const wrongNetworkProps: ButtonProps = {
-  variant: 'danger',
-  disabled: false,
-  children: <Trans>Wrong Network</Trans>,
 }
 
 export const CommitButton = (props: ButtonProps) => {
@@ -23,3 +17,12 @@ export const CommitButton = (props: ButtonProps) => {
   return (
     <Button
       {...props}
+      onClick={(e) => {
+        if (!isWrongNetwork) {
+          props.onClick?.(e)
+        }
+      }}
+      {...(isWrongNetwork && wrongNetworkProps)}
+    />
+  )
+}

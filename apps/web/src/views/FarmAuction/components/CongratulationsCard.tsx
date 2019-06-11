@@ -3,12 +3,6 @@ import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/ui
 import { Auction, Bidder } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import useCongratulateAuctionWinner from '../hooks/useCongratulateAuctionWinner'
-import WhitelistedBiddersButton from './WhitelistedBiddersButton'
-
-const StyledReclaimBidCard = styled(Card)`
-  margin-top: 16px;
-  flex: 1;
 `
 
 const CongratulationsCard: React.FC<React.PropsWithChildren<{ currentAuction: Auction; bidders: Bidder[] }>> = ({

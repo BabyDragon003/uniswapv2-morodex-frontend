@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import { Modal, Box, Text, Flex, Input, OpenNewIcon, Spinner, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
-import { FarmAuctionBidderConfig } from 'config/constants/types'
-import truncateHash from '@pancakeswap/utils/truncateHash'
-import useWhitelistedAddresses from '../hooks/useWhitelistedAddresses'
-
-interface WhitelistedBiddersModalProps {
-  onDismiss?: () => void
 }
 
 const StyledModal = styled(Modal)`

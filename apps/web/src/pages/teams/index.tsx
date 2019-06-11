@@ -3,12 +3,6 @@ import { SWRConfig } from 'swr'
 import Teams from '../../views/Teams'
 import { getTeams } from '../../state/teams/helpers'
 import { teamsById } from '../../utils/teamsById'
-
-const TeamsPage = ({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <SWRConfig
-      value={{
-        fallback,
       }}
     >
       <Teams />
@@ -23,3 +17,20 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         fallback: {
           teams: teamsById,
+        },
+      },
+      revalidate: 1,
+    }
+  }
+
+  return {
+    props: {
+      fallback: {
+        teams: fetchedTeams,
+      },
+    },
+    revalidate: 60 * 60 * 12, // 12 hours
+  }
+}
+
+export default TeamsPage

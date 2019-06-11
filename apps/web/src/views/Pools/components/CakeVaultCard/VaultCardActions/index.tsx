@@ -3,12 +3,6 @@ import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { Flex, Text, Box, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { Token } from '@pancakeswap/sdk'
-
-import VaultApprovalAction from './VaultApprovalAction'
-import VaultStakeActions from './VaultStakeActions'
-import { useCheckVaultApprovalStatus } from '../../../hooks/useApprove'
 
 const InlineText = styled(Text)`
   display: inline;

@@ -3,12 +3,6 @@ import { useTranslation } from "@pancakeswap/localization";
 import { ReactElement } from "react";
 import { StyledCard } from "./StyledCard";
 import { DeserializedPool } from "./types";
-
-interface PoolCardPropsType<T> {
-  pool: DeserializedPool<T>;
-  cardContent: ReactElement;
-  aprRow: ReactElement;
-  cardFooter: ReactElement;
   tokenPairImage: ReactElement;
   isStaked: boolean;
 }

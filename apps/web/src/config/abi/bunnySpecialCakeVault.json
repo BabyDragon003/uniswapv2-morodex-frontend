@@ -3,12 +3,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cakeVault",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_bunnyMintingStation",
         "type": "address"
       },
       {

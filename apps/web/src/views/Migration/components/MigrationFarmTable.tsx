@@ -3,12 +3,6 @@ import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import { Flex, Spinner, RowType } from '@pancakeswap/uikit'
-import { FarmWithStakedValue } from '@pancakeswap/farms'
-import TableHeader from './MigrationTable/TableHeader'
-import EmptyText from './MigrationTable/EmptyText'
-import TableStyle from './MigrationTable/StyledTable'
-import NewRow from './MigrationStep2/NewFarm/FarmRow'
 import OldRow from './MigrationStep1/OldFarm/FarmRow'
 import { getDisplayApr } from '../../Farms/components/getDisplayApr'
 import { ColumnsDefTypes, DesktopV2ColumnSchema, RowProps } from './types'
@@ -23,6 +17,32 @@ const Container = styled.div`
 
 export interface ITableProps {
   title: string
+  noStakedFarmText: string
+  account: string
+  cakePrice: BigNumber
+  columnSchema: ColumnsDefTypes[]
+  farms: FarmWithStakedValue[]
+  userDataReady: boolean
+  sortColumn?: string
+}
+
+const MigrationFarmTable: React.FC<React.PropsWithChildren<ITableProps>> = ({
+  title,
+  noStakedFarmText,
+  account,
+  cakePrice,
+  columnSchema,
+  farms,
+  userDataReady,
+}) => {
+  const { t } = useTranslation()
+
+  const rowData = farms.map((farm) => {
+    const { token, quoteToken } = farm
+    const tokenAddress = token.address
+    const quoteTokenAddress = quoteToken.address
+    const lpLabel = farm.lpSymbol && farm.lpSymbol.split(' ')[0].toUpperCase().replace('PANCAKE', '')
+    const customRows =
       columnSchema === DesktopV2ColumnSchema
         ? {
             apr: {

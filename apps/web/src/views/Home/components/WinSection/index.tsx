@@ -3,12 +3,6 @@ import { Flex, Text, TicketFillIcon, PredictionsIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import ColoredWordHeading from '../ColoredWordHeading'
-import IconCard, { IconCardData } from '../IconCard'
-import PredictionCardContent from './PredictionCardContent'
-import LotteryCardContent from './LotteryCardContent'
-import CompositeImage from '../CompositeImage'
-
-const TransparentFrame = styled.div<{ isDark: boolean }>`
   background: ${({ theme }) => (theme.isDark ? 'rgba(8, 6, 11, 0.6)' : ' rgba(255, 255, 255, 0.6)')};
   padding: 16px;
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};

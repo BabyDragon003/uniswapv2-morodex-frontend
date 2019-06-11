@@ -3,12 +3,6 @@ import { useAccount } from 'wagmi'
 import { useCakeVault, usePoolsWithVault } from 'state/pools/hooks'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
 import { useAppDispatch } from 'state'
-import {
-  fetchCakePoolUserDataAsync,
-  fetchCakeVaultFees,
-  fetchCakeVaultPublicData,
-  fetchCakeVaultUserData,
-  fetchCakePoolPublicDataAsync,
   fetchCakeFlexibleSideVaultPublicData,
   fetchCakeFlexibleSideVaultUserData,
   fetchCakeFlexibleSideVaultFees,

@@ -3,12 +3,6 @@ import Button from "../components/Button/Button";
 import Text from "../components/Text/Text";
 import useParticleBurst from "./useParticleBurst";
 
-const imagePath = "https://via.placeholder.com/10";
-
-export default {
-  title: "Hooks/useParticleBurst",
-  argTypes: {},
-};
 
 export const WithSelector: React.FC<React.PropsWithChildren> = () => {
   useParticleBurst({ imgSrc: imagePath, selector: "button" });

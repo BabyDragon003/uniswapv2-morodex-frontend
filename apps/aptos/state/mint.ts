@@ -3,12 +3,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { createAction, createReducer } from '@reduxjs/toolkit'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
-import { useCurrencyBalance } from 'hooks/Balances'
-import { PairState, usePair } from 'hooks/usePairs'
-import useTotalSupply from 'hooks/useTotalSupply'
-import { useAtom, useAtomValue } from 'jotai'
-import { atomWithReducer } from 'jotai/utils'
-import { useCallback, useMemo } from 'react'
 
 export enum Field {
   CURRENCY_A = 'currencyA',

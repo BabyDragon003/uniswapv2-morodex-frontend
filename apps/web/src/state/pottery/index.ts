@@ -3,12 +3,6 @@ import { AppState } from 'state'
 import {
   PotteryState,
   SerializedPotteryUserData,
-  SerializedPotteryPublicData,
-  PotteryDepositStatus,
-  PotteryRoundInfo,
-} from 'state/types'
-import { resetUserState } from '../global/actions'
-import { fetchPotteryFinishedRound } from './fetchPotteryRound'
 import {
   fetchLastVaultAddress,
   fetchPublicPotteryValue,
