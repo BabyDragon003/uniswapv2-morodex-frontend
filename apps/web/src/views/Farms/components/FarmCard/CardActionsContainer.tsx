@@ -8,17 +8,6 @@ import { FarmWithStakedValue } from '@pancakeswap/farms'
 import { HarvestActionContainer, ProxyHarvestActionContainer } from '../FarmTable/Actions/HarvestAction'
 import { ProxyStakedContainer, StakedContainer } from '../FarmTable/Actions/StakedAction'
 import BoostedAction from '../YieldBooster/components/BoostedAction'
-import { YieldBoosterStateContext } from '../YieldBooster/components/ProxyFarmContainer'
-import HarvestAction from './HarvestAction'
-import StakeAction from './StakeAction'
-
-const Action = styled.div`
-  padding-top: 16px;
-`
-
-const ActionContainer = styled.div`
-  margin-bottom: 8px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 `

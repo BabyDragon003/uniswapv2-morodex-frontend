@@ -3,16 +3,11 @@ import {
   QueryKey,
   QueryObserver,
   QueryObserverResult,
-} from '@tanstack/react-query'
-
-import * as React from 'react'
-
-import { useSyncExternalStore } from './useSyncExternalStore'
-import { queryClientContext as context } from '../../context'
-import { shouldThrowError, parseQueryArgs, trackResult } from './utils'
-
-export function useBaseQuery<
-  TQueryFnData,
+  UseQueryOptions,
+  notifyManager,
+  UseBaseQueryOptions,
+  useIsRestoring,
+  useQueryClient,
   TError = unknown,
   TData = TQueryFnData,
   TQueryData = TQueryFnData,

@@ -8,17 +8,6 @@ interface FinishedRoundRowProps {
   numberTickets: string
   endTime: string
   onClick: (string) => void
-  hasWon?: boolean
-}
-
-const Grid = styled(Box)`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
-  margin-bottom: 8px;
-  cursor: pointer;
-`
-
-const StyledSmallDotIcon = styled(SmallDotIcon)`
   path {
     fill: ${({ theme }) => theme.colors.textDisabled};
   }

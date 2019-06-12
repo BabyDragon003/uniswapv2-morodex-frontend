@@ -8,17 +8,6 @@ export interface PoolCharacteristics {
   offeringAmountPool: BigNumber
   limitPerUserInLP: BigNumber
   taxRate: number
-  totalAmountPool: BigNumber
-  sumTaxesOverflow: BigNumber
-
-  // extends
-  // pointThreshold?: number
-  vestingInformation?: VestingInformation
-}
-
-// IFO data unrelated to the user returned by useGetPublicIfoData
-export interface PublicIfoData {
-  isInitialized: boolean
   startTime: number
   endTime: number
   currencyPriceInUSD: BigNumber

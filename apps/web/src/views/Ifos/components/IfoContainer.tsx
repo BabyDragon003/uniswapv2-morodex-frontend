@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Container, LinkExternal } from '@pancakeswap/uikit'
 import IfoLayout, { IfoLayoutWrapper } from './IfoLayout'
+import IfoPoolVaultCard from './IfoPoolVaultCard'
+import IfoQuestions from './IfoQuestions'
+
+const IfoStepBackground = styled(Box)`
+  background: ${({ theme }) => theme.colors.gradientBubblegum};
+`
 
 interface TypeProps {
   ifoSection: ReactElement

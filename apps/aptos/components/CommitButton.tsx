@@ -3,16 +3,11 @@ import { useAccount } from '@pancakeswap/awgmi'
 import { useIsMounted } from '@pancakeswap/hooks'
 import { useActiveNetwork } from 'hooks/useNetwork'
 import { ConnectWalletButton } from './ConnectWalletButton'
-}
+import Trans from './Trans'
 
-export const CommitButton = (props: ButtonProps) => {
-  const { isWrongNetwork } = useActiveNetwork()
-  const isMounted = useIsMounted()
-  const { isConnected } = useAccount()
-
-  if (!isConnected && isMounted) {
-    return <ConnectWalletButton />
-  }
+const wrongNetworkProps: ButtonProps = {
+  variant: 'danger',
+  disabled: false,
 
   return (
     <Button

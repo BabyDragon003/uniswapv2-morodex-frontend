@@ -3,16 +3,11 @@ import { Flex, Heading, Text, TextProps } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 const SecondaryCard = styled(Text)`
-}
+  border: 2px solid ${({ theme }) => theme.colors.tertiary};
+  border-radius: 16px;
+`
 
-interface IconStatBoxProps extends TextProps {
-  icon: ElementType
-  title: ReactNode
-  subtitle: ReactNode
-  isDisabled?: boolean
-}
-
-const IconStatBox: React.FC<React.PropsWithChildren<IconStatBoxProps>> = ({
+SecondaryCard.defaultProps = {
   icon: Icon,
   title,
   subtitle,

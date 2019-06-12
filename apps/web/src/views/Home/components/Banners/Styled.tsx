@@ -3,6 +3,12 @@ import styled from 'styled-components'
 
 export const StyledSubheading = styled(Heading)`
   background: -webkit-linear-gradient(#ffd800, #eb8c00);
+  font-size: 20px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  ${({ theme }) => theme.mediaQueries.xs} {
     font-size: 24px;
   }
   ${({ theme }) => theme.mediaQueries.sm} {

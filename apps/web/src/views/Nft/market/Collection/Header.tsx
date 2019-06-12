@@ -3,16 +3,11 @@ import { Text } from '@pancakeswap/uikit'
 import { Collection } from 'state/nftMarket/types'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'
-import BaseSubMenu from '../components/BaseSubMenu'
-import { nftsBaseUrl } from '../constants'
-import TopBar from './TopBar'
-import LowestPriceStatBoxItem from './LowestPriceStatBoxItem'
-
-interface HeaderProps {
-  collection: Collection
-}
-
-const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({ collection }) => {
+import Container from 'components/Layout/Container'
+import MarketPageHeader from '../components/MarketPageHeader'
+import MarketPageTitle from '../components/MarketPageTitle'
+import StatBox, { StatBoxItem } from '../components/StatBox'
+import BannerHeader from '../components/BannerHeader'
   const router = useRouter()
   const collectionAddress = router.query.collectionAddress as string
   const { totalSupply, numberTokensListed, totalVolumeBNB, banner, avatar } = collection

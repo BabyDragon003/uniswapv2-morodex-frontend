@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Container, LinkExternal } from '@pancakeswap/uikit'
 import IfoLayout, { IfoLayoutWrapper } from './IfoLayout'
 import IfoPoolVaultCard from './IfoPoolVaultCard'
+
+interface TypeProps {
+  ifoSection: ReactElement
+}
+
+const IfoContainer: React.FC<React.PropsWithChildren<TypeProps>> = ({ ifoSection }) => {
   const { t } = useTranslation()
 
   return (

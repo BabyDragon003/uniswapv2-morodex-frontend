@@ -3,6 +3,12 @@ import uniqueId from 'lodash/uniqueId'
 import { useTranslation } from '@pancakeswap/localization'
 import Choice from './Choice'
 
+export interface ChoiceIdValue {
+  id: string
+  value: string
+}
+
+interface ChoicesProps {
   choices: ChoiceIdValue[]
   onChange: (newChoices: ChoiceIdValue[]) => void
 }

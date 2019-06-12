@@ -8,17 +8,6 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { Token } from '@pancakeswap/sdk'
 import Harvest from './Harvest'
 import Stake from './Stake'
-import AutoHarvest from './AutoHarvest'
-import { VaultPositionTagWithLabel } from '../../Vault/VaultPositionTag'
-import YieldBoostRow from '../../LockedPool/Common/YieldBoostRow'
-import LockDurationRow from '../../LockedPool/Common/LockDurationRow'
-import useUserDataInVaultPresenter from '../../LockedPool/hooks/useUserDataInVaultPresenter'
-import CakeVaultApr from './CakeVaultApr'
-import PoolStatsInfo from '../../PoolStatsInfo'
-import PoolTypeTag from '../../PoolTypeTag'
-
-const expandAnimation = keyframes`
-  from {
     max-height: 0px;
   }
   to {

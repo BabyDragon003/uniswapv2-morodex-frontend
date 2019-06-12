@@ -3,6 +3,12 @@ import { darkColors, lightColors } from "../../theme/colors";
 import { CardTheme } from "./types";
 
 export const light: CardTheme = {
+  background: lightColors.backgroundAlt,
+  boxShadow: vars.shadows.level1,
+  boxShadowActive: vars.shadows.active,
+  boxShadowSuccess: vars.shadows.success,
+  boxShadowWarning: vars.shadows.warning,
+  cardHeaderBackground: {
     default: lightColors.gradientCardHeader,
     blue: lightColors.gradientBlue,
     bubblegum: lightColors.gradientBubblegum,

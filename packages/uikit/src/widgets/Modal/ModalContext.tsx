@@ -3,16 +3,11 @@ import React, { createContext, useRef, useState, useMemo, useCallback } from "re
 import styled from "styled-components";
 import { mountAnimation, unmountAnimation } from "../../components/BottomDrawer/styles";
 import { Overlay } from "../../components/Overlay";
-  disappearAnimation,
-} from "../../util/animationToolkit";
-import { ModalContainer } from "./styles";
-import { Handler } from "./types";
-
-interface ModalsContext {
-  isOpen: boolean;
-  nodeId: string;
-  modalNode: React.ReactNode;
-  setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
+import { useIsomorphicEffect } from "../../hooks";
+import {
+  animationHandler,
+  animationMap,
+  animationVariants,
   onPresent: (node: React.ReactNode, newNodeId: string, closeOverlayClick: boolean) => void;
   onDismiss: Handler;
 }

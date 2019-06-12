@@ -3,16 +3,11 @@ import isEqual from 'lodash/isEqual'
 import useSWR from 'swr'
 import { useFarmAuctionContract } from 'hooks/useContract'
 import { ConnectedBidder } from 'config/constants/types'
-  const { data: currentAuctionId = null } = useSWR(
-    ['farmAuction', 'currentAuctionId'],
-    async () => {
-      const auctionId = await farmAuctionContract.currentAuctionId()
-      return auctionId.toNumber()
-    },
-    { refreshInterval: FAST_INTERVAL },
-  )
+import { getBidderInfo } from 'config/constants/farmAuctions'
+import { FAST_INTERVAL } from 'config/constants'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { useFarmAuction } from './useFarmAuction'
 
-  const {
     data: { auction: currentAuction, bidders },
     mutate: refreshBidders,
   } = useFarmAuction(currentAuctionId, { refreshInterval: FAST_INTERVAL })

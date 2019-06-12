@@ -3,16 +3,11 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { Ifo } from 'config/constants/types'
 import { useCakePrice } from 'hooks/useStablePrice'
-
-const formatVestingInfo = (pool: IFOPool): VestingInformation => ({
-  percentage: pool ? +pool.vesting_percentage : 0,
-  cliff: pool ? +pool.vesting_cliff : 0,
-  duration: pool ? +pool.vesting_duration : 0,
-  slicePeriodSeconds: pool ? +pool.vesting_slice_period_seconds : 0,
-})
-
-const TAX_PRECISION = new BigNumber(10000000000)
-
+import { useMemo } from 'react'
+import { IFO_RESOURCE_ACCOUNT_TYPE_METADATA, IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE } from 'views/Ifos/constants'
+import { RootObject as IFOPool } from 'views/Ifos/generated/IFOPool'
+import { getPoolTaxRateOverflow } from 'views/Ifos/utils'
+import { PoolCharacteristics, PublicIfoData, VestingInformation } from '../../types'
 const formatPool = (pool: IFOPool): PoolCharacteristics => ({
   raisingAmountPool: pool ? new BigNumber(pool.raising_amount.toString()) : BIG_ZERO,
   offeringAmountPool: pool ? new BigNumber(pool.offering_amount.toString()) : BIG_ZERO,

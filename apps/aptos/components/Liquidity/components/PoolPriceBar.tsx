@@ -3,16 +3,11 @@ import { AutoColumn, AutoRow, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { ONE_BIPS } from 'config/constants/exchange'
 import formatAmountDisplay from 'utils/formatAmountDisplay'
-  price,
-}: {
-  currencyA: Currency
-  currencyB: Currency
-  noLiquidity?: boolean
-  poolTokenPercentage?: Percent
-  price?: Price<Currency, Currency>
-}) {
-  const { t } = useTranslation()
 
+export default function PoolPriceBar({
+  currencyA,
+  currencyB,
+  noLiquidity,
   return (
     <AutoColumn gap="md">
       <AutoRow justifyContent="space-around" gap="4px">

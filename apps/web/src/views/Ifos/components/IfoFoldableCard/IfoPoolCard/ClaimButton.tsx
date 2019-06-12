@@ -8,17 +8,6 @@ import { WalletIfoData } from 'views/Ifos/types'
 interface Props {
   poolId: PoolIds
   ifoVersion: number
-  walletIfoData: WalletIfoData
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({ poolId, ifoVersion, walletIfoData }) => {
-  const userPoolCharacteristics = walletIfoData[poolId]
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError } = useCatchTxError()
-
-  const setPendingTx = (isPending: boolean) => walletIfoData.setPendingTx(isPending, poolId)
-
   const handleClaim = async () => {
     const receipt = await fetchWithCatchTxError(() => {
       setPendingTx(true)

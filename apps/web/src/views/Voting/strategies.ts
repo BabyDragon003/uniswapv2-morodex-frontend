@@ -8,17 +8,6 @@ export const cakeBalanceStrategy = (version: 'v0' | 'v1') => ({
   params: {
     address: votePowerAddress[version],
     decimals: 18,
-    methodABI: {
-      inputs: [
-        {
-          internalType: 'address',
-          name: '_user',
-          type: 'address',
-        },
-      ],
-      name: 'getCakeBalance',
-      outputs: [
-        {
           internalType: 'uint256',
           name: '',
           type: 'uint256',

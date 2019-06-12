@@ -8,17 +8,6 @@ import { potteryDataSelector } from './selectors'
 import { State } from '../types'
 
 export const usePotteryFetch = () => {
-  const { address: account } = useAccount()
-  const dispatch = useAppDispatch()
-  const potteryVaultAddress = useLatestVaultAddress()
-
-  useFastRefreshEffect(() => {
-    dispatch(fetchLastVaultAddressAsync())
-
-    if (potteryVaultAddress) {
-      batch(() => {
-        dispatch(fetchCakeVaultPublicData())
-        dispatch(fetchPublicPotteryDataAsync())
         if (account) {
           dispatch(fetchPotteryUserDataAsync(account))
           dispatch(fetchCakeVaultUserData({ account }))

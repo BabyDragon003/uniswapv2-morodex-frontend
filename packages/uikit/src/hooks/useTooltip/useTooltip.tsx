@@ -3,6 +3,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";
 import { DefaultTheme, ThemeProvider, useTheme } from "styled-components";
+import { dark, light } from "../../theme";
+import getPortalRoot from "../../util/getPortalRoot";
+import isTouchDevice from "../../util/isTouchDevice";
+import { Arrow, StyledTooltip } from "./StyledTooltip";
+import { TooltipOptions, TooltipRefs } from "./types";
+
 const animationVariants: Variants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },

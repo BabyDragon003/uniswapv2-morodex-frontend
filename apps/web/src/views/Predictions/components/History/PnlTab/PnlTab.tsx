@@ -3,16 +3,11 @@ import { useAccount } from 'wagmi'
 import { Box, Flex, Heading, Text, Button, Link, BscScanIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { getRoundResult, Result } from 'state/predictions/helpers'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
-
-import { formatBnb, getMultiplier, getNetPayout } from '../helpers'
-import PnlChart from './PnlChart'
-import SummaryRow from './SummaryRow'
-
-interface PnlTabProps {
-  hasBetHistory: boolean
-  bets: Bet[]
-}
+import { REWARD_RATE } from 'state/predictions/config'
+import { getBlockExploreLink } from 'utils'
+import { multiplyPriceByAmount } from 'utils/prices'
+import useBUSDPrice from 'hooks/useBUSDPrice'
+import { useGetCurrentEpoch } from 'state/predictions/hooks'
 
 interface PnlCategory {
   rounds: number

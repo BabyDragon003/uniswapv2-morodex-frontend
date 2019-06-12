@@ -3,16 +3,11 @@ import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
 import { TeamRanksProps } from '../types'
 import RibbonWithImage from './RibbonWithImage'
-  team2LeaderboardInformation,
-  team3LeaderboardInformation,
-  globalLeaderboardInformation,
-}) => {
-  const { theme } = useTheme()
-  const { t } = useTranslation()
+import TeamRanks from './TeamRanks/TeamRanks'
+import RanksIcon from '../svgs/RanksIcon'
 
-  return (
-    <>
-      <PageSection
+const TeamRanksSection: React.FC<React.PropsWithChildren<TeamRanksProps>> = ({
+  image,
         containerProps={{ style: { marginTop: '-20px' } }}
         index={3}
         concaveDivider

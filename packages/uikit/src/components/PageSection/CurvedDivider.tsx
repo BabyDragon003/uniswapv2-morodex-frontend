@@ -8,17 +8,6 @@ interface CurvedDividerProps extends WrapperProps {
   dividerPosition?: "top" | "bottom";
   concave?: boolean;
   clipFill?: ClipFill;
-}
-interface WrapperProps {
-  index: number;
-  dividerFill?: DividerFill;
-}
-
-const Wrapper = styled.div<WrapperProps>`
-  background: ${({ theme, dividerFill }) => {
-    if (theme.isDark) {
-      return dividerFill?.dark || dividerFill?.light || "none";
-    }
     return dividerFill?.light || dividerFill?.dark || "none";
   }};
   z-index: ${({ index }) => index};

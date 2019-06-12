@@ -8,17 +8,6 @@ type Action = { type: 'confirm_sending' } | { type: 'confirm_receipt' } | { type
 
 interface State {
   confirmState: LoadingState
-}
-
-const initialState: State = {
-  confirmState: 'idle',
-}
-
-const reducer = (state: State, actions: Action): State => {
-  switch (actions.type) {
-    case 'confirm_sending':
-      return {
-        ...state,
         confirmState: 'loading',
       }
     case 'confirm_receipt':

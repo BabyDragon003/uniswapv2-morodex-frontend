@@ -8,17 +8,6 @@ export const useIfoUserInfoList = () => {
 
   return useAccountResources({
     enabled: !!account,
-    address: account?.address,
-    watch: true,
-    select: (resources) => {
-      return resources.filter((resource) => {
-        return resource.type.includes(USER_IFO_POOL_TAG)
-      }) as UserInfo[]
-    },
-  })
-}
-
-export const useIfoUserInfo = (poolType) => {
   const { account } = useAccount()
 
   return useAccountResources({

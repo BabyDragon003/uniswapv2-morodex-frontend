@@ -3,16 +3,11 @@ import { useMemo } from 'react'
 
 import useLastTruthy from 'hooks/useLast'
 
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.invertedContrast};
+import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDetails'
 
-  transform: ${({ show }) => (show ? 'translateY(0%)' : 'translateY(-100%)')};
-  transition: transform 300ms ease-in-out;
-`
-
-export default function AdvancedSwapDetailsDropdown({
+const AdvancedDetailsFooter = styled.div<{ show: boolean }>`
+  margin-top: ${({ show }) => (show ? '16px' : 0)};
+  padding-top: 16px;
   pairs,
   path,
   priceImpactWithoutFee,

@@ -3,16 +3,11 @@ import { AutoRenewIcon, Button, ButtonProps, useToast } from '@pancakeswap/uikit
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
-  onSuccess?: () => Promise<void>
-  children?: ReactNode
-}
+import { usePredictionsContract } from 'hooks/useContract'
+import { ReactNode } from 'react'
+import { useConfig } from '../context/ConfigProvider'
 
-const ReclaimPositionButton: React.FC<React.PropsWithChildren<ReclaimPositionButtonProps>> = ({
-  epoch,
-  onSuccess,
-  children,
-  ...props
-}) => {
+interface ReclaimPositionButtonProps extends ButtonProps {
   const { t } = useTranslation()
   const { address: predictionsAddress } = useConfig()
   const { token } = useConfig()

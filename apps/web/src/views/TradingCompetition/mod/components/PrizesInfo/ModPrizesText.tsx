@@ -4,6 +4,12 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import FlipperBunny from '../../../pngs/MoD-flipper.png'
 
+const StyledFlex = styled(Flex)`
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex: 1;
+  }
+`
+
 const ImageWrapper = styled.div`
   width: 270px;
   margin: 40px auto 0;

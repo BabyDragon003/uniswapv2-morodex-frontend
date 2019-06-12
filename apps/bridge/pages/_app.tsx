@@ -8,17 +8,6 @@ import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'ne
 import Head from 'next/head'
 import { Menu } from '../components/Menu'
 
-declare module 'styled-components' {
-  /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends PancakeTheme {}
-}
-
-const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
-  const { resolvedTheme } = useNextTheme()
-  return (
-    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : light} {...props}>
-      {props.children}
-    </UIKitProvider>
   )
 }
 

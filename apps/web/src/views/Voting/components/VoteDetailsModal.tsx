@@ -8,17 +8,6 @@ interface VoteDetailsModalProps extends InjectedModalProps {
   block: number
 }
 
-const VoteDetailsModal: React.FC<React.PropsWithChildren<VoteDetailsModalProps>> = ({ block, onDismiss }) => {
-  const { t } = useTranslation()
-  const {
-    isLoading,
-    total,
-    cakeBalance,
-    cakeVaultBalance,
-    cakePoolBalance,
-    poolsBalance,
-    cakeBnbLpBalance,
-    ifoPoolBalance,
     lockedCakeBalance,
     lockedEndTime,
   } = useGetVotingPower(block)

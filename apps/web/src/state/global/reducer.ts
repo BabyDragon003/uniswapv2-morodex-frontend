@@ -3,16 +3,11 @@ import { createReducer } from '@reduxjs/toolkit'
 import { ChainId } from '@pancakeswap/sdk'
 import { toggleFarmTransactionModal, pickFarmTransactionTx } from './actions'
 
-}
-
-export const initialState: GlobalState = {
-  showFarmTransactionModal: false,
+export interface GlobalState {
+  showFarmTransactionModal: boolean
   pickedFarmTransactionModalTx: {
-    tx: '',
-    chainId: ChainId.BSC,
-  },
-}
-
+    tx: string
+    chainId: ChainId
 export default createReducer(initialState, (builder) =>
   builder
     .addCase(toggleFarmTransactionModal, (state, { payload: { showModal } }) => {

@@ -8,12 +8,3 @@ const CollectibleActionCard: React.FC<React.PropsWithChildren<CollectibleCardPro
   currentAskPrice,
   isUserNft,
   ...props
-}) => {
-  return (
-    <StyledCollectibleCard {...props}>
-      <CardBody nft={nft} nftLocation={nftLocation} currentAskPrice={currentAskPrice} isUserNft={isUserNft} />
-    </StyledCollectibleCard>
-  )
-}
-
-export default CollectibleActionCard

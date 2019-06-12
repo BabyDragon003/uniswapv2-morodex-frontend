@@ -8,17 +8,6 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { perpetualImage, perpetualMobileImage } from './images'
 import * as S from './Styled'
 
-const RightWrapper = styled.div`
-  position: absolute;
-  min-height: 100%;
-  right: 0;
-  bottom: 0px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    bottom: 8.2px;
-  }
-  ${({ theme }) => theme.mediaQueries.md} {
-    bottom: 9px;
-  }
   ${({ theme }) => theme.mediaQueries.lg} {
     bottom: -2px;
   }

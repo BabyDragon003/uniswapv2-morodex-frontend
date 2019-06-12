@@ -3,6 +3,12 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import {
   SerializedPotteryUserData,
   DeserializedPotteryUserData,
+  SerializedPotteryPublicData,
+  DeserializedPublicData,
+} from 'state/types'
+
+export const transformPotteryPublicData = (publicData: SerializedPotteryPublicData): DeserializedPublicData => {
+  const { totalPrize, totalLockCake, totalSupply, totalLockedValue, maxTotalDeposit } = publicData
 
   return {
     ...publicData,

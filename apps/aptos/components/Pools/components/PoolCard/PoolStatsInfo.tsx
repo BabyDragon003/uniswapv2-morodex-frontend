@@ -3,16 +3,11 @@ import { memo, useMemo } from 'react'
 import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { Token } from '@pancakeswap/sdk'
-interface ExpandedFooterProps {
-  pool: Pool.DeserializedPool<Token> & { stakeLimitEndBlock?: number }
-  account?: string
-  showTotalStaked?: boolean
-  alignLinksToRight?: boolean
-}
+import { useTranslation } from '@pancakeswap/localization'
+import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 
-interface EndTimeTooltipComponentProps {
-  endTime: number
-}
+import { AprInfo } from './Stat'
 
 const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {

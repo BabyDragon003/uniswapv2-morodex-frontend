@@ -8,17 +8,6 @@ import splitTypeTag from 'utils/splitTypeTag'
 import useHarvestPool from '../../hooks/useHarvestPool'
 import CollectModalContainer from './CollectModalContainer'
 
-const CollectModal = ({ poolAddress = '', ...rest }: React.PropsWithChildren<Pool.CollectModalProps>) => {
-  const queryClient = useQueryClient()
-  const { account, networkName, chainId } = useActiveWeb3React()
-
-  const [stakingTokenAddress, earningTokenAddress, sousId] = splitTypeTag(poolAddress[chainId])
-
-  const onReward = useHarvestPool({ stakingTokenAddress, earningTokenAddress, sousId })
-
-  const onDone = useCallback(() => {
-    queryClient.invalidateQueries({
-      queryKey: [{ entity: 'accountResources', networkName, address: SMARTCHEF_ADDRESS }],
     })
     queryClient.invalidateQueries({
       queryKey: [{ entity: 'accountResources', networkName, address: account }],

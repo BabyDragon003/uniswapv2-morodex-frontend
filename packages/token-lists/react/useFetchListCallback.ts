@@ -8,17 +8,6 @@ function useFetchListCallback(
 ): (listUrl: string, sendDispatch?: boolean) => Promise<TokenList> {
   // note: prevent dispatch if using for list search or unsupported list
   return useCallback(
-    async (listUrl: string, sendDispatch = true) => {
-      const requestId = nanoid()
-      if (sendDispatch) {
-        dispatch(fetchTokenList.pending({ requestId, url: listUrl }))
-      }
-      // lazy load avj and token list schema
-      const getTokenList = (await import('./getTokenList')).default
-      return getTokenList(listUrl)
-        .then((tokenList) => {
-          if (sendDispatch) {
-            dispatch(fetchTokenList.fulfilled({ url: listUrl, tokenList, requestId }))
           }
           return tokenList
         })

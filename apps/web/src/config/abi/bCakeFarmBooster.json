@@ -3,6 +3,12 @@
     "inputs": [
       { "internalType": "address", "name": "_cake", "type": "address" },
       { "internalType": "address", "name": "_cakePool", "type": "address" },
+      { "internalType": "address", "name": "_v2", "type": "address" },
+      { "internalType": "uint256", "name": "_max", "type": "uint256" },
+      { "internalType": "uint256", "name": "_cA", "type": "uint256" },
+      { "internalType": "uint256", "name": "_cB", "type": "uint256" }
+    ],
+    "stateMutability": "nonpayable",
     "type": "constructor"
   },
   {

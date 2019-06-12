@@ -3,16 +3,11 @@ import { Currency, CurrencyAmount, JSBI, Pair, Percent } from '@pancakeswap/sdk'
 import {
   Button,
   Text,
-  AddIcon,
-  TooltipText,
-  useTooltip,
-  NextLinkFromReactRouter,
-  Link,
-} from '@pancakeswap/uikit'
-import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import useTotalSupply from 'hooks/useTotalSupply'
-import useBUSDPrice from 'hooks/useBUSDPrice'
+  ChevronUpIcon,
+  ChevronDownIcon,
+  Card,
+  CardBody,
+  Flex,
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useAccount } from 'wagmi'
 import { BIG_INT_ZERO } from 'config/constants/exchange'

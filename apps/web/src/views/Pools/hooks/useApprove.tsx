@@ -8,17 +8,6 @@ import { VaultKey } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { useSousChef, useVaultPoolContract } from 'hooks/useContract'
 import { useToast } from '@pancakeswap/uikit'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useCakeApprovalStatus from 'hooks/useCakeApprovalStatus'
-import useCakeApprove from 'hooks/useCakeApprove'
-
-export const useApprovePool = (lpContract: Contract, sousId, earningTokenSymbol) => {
-  const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
-  const { callWithGasPrice } = useCallWithGasPrice()
-  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const { address: account } = useAccount()
   const sousChefContract = useSousChef(sousId)

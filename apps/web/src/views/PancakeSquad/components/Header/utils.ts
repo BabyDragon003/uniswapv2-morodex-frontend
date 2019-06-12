@@ -3,14 +3,9 @@ import { ButtonsEnum } from './types'
 
 type getCurrentButtonType = {
   saleStatus: SaleStatusEnum
-  saleStatus,
-  numberTicketsOfUser,
-}: getCurrentButtonType): ButtonsEnum => {
-  const isBuyingFinished = saleStatus > SaleStatusEnum.Sale
-  if (userStatus === UserStatusEnum.NO_PROFILE && !isBuyingFinished) return ButtonsEnum.ACTIVATE
-  if (saleStatus === SaleStatusEnum.Presale || saleStatus === SaleStatusEnum.Sale) return ButtonsEnum.BUY
-  if (saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0) return ButtonsEnum.MINT
-  if (saleStatus === SaleStatusEnum.Claim) return ButtonsEnum.END
+  userStatus: UserStatusEnum
+  numberTicketsOfUser: number
+}
 
-  return ButtonsEnum.NONE
+export const getCurrentButton = ({
 }

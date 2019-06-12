@@ -8,17 +8,6 @@ import { wrappedCurrency } from './utils/currency'
 
 export enum PairState {
   LOADING,
-  NOT_EXISTS,
-  EXISTS,
-  INVALID,
-}
-
-interface Options {
-  provider: Provider
-}
-
-export async function getAllCommonPairs(
-  currencyA: Currency,
   currencyB: Currency,
   { provider }: Options,
 ): Promise<Pair[]> {

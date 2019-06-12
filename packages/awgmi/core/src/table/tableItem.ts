@@ -3,6 +3,12 @@ import { getProvider } from '../providers'
 
 export type FetchTableItemArgs = {
   /** Network to use for provider */
+  networkName?: string
+  handle: string
+  data: {
+    keyType: Types.TableItemRequest['key_type']
+    valueType: Types.TableItemRequest['value_type']
+    key: Types.TableItemRequest['key']
   }
 }
 

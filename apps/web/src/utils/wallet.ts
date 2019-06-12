@@ -3,16 +3,11 @@ import { Address } from 'wagmi'
 import { BAD_SRCS } from '../components/Logo/constants'
 
 /**
-export const registerToken = async (
-  tokenAddress: string,
-  tokenSymbol: string,
-  tokenDecimals: number,
-  tokenLogo?: string,
-) => {
-  // better leave this undefined for default image instead of broken image url
-  const image = tokenLogo ? (BAD_SRCS[tokenLogo] ? undefined : tokenLogo) : undefined
-  const tokenAdded = await window.ethereum.request({
-    method: 'wallet_watchAsset',
+ * Prompt the user to add a custom token to metamask
+ * @param tokenAddress
+ * @param tokenSymbol
+ * @param tokenDecimals
+ * @returns {boolean} true if the token has been added, false otherwise
     params: {
       type: 'ERC20',
       options: {

@@ -3,16 +3,11 @@ import { Flex, Card, Text, Table, Th, useMatchBreakpoints, PaginationButton } fr
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { Activity, NftToken } from 'state/nftMarket/types'
-import ActivityRow from '../../../components/Activity/ActivityRow'
-
-interface ActivityCardProps {
-  nft: NftToken
-}
-
-const MAX_PER_PAGE = 5
-
-const ActivityCard: React.FC<React.PropsWithChildren<ActivityCardProps>> = ({ nft }) => {
-  const dispatch = useAppDispatch()
+import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useAppDispatch } from '../../../../../../state'
+import NoNftsImage from '../../../components/Activity/NoNftsImage'
+import TableLoader from '../../../../../../components/TableLoader'
+import { getTokenActivity } from '../../../../../../state/nftMarket/helpers'
   const { theme } = useTheme()
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)

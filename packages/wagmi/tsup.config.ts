@@ -8,6 +8,3 @@ export default defineConfig({
     'connectors/blocto': 'connectors/blocto/index.ts',
     'connectors/trustWallet': 'connectors/trustWallet/index.ts',
   },
-  format: ['esm', 'cjs'],
-  dts: true,
-})

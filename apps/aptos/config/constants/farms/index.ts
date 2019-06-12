@@ -8,7 +8,3 @@ export const getFarmConfig = (chainId: number) => {
       return MainnetFarm
     case ChainId.TESTNET:
       return TestnetFarm
-    default:
-      return []
-  }
-}

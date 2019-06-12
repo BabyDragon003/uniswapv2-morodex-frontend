@@ -8,17 +8,6 @@ import TokenTable from 'views/Info/components/InfoTables/TokensTable'
 import TopTokenMovers from 'views/Info/components/TopTokenMovers'
 
 const TokensOverview: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-
-  const allTokens = useAllTokenDataSWR()
-
-  const formattedTokens = useMemo(() => {
-    return Object.values(allTokens)
-      .map((token) => token.data)
-      .filter((token) => token)
-  }, [allTokens])
-
-  const [savedTokens] = useWatchlistTokens()
   const watchListTokens = useTokenDatasSWR(savedTokens)
 
   return (

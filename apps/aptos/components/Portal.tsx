@@ -3,7 +3,8 @@ import { createPortal } from 'react-dom'
 import { useIsMounted } from '@pancakeswap/hooks'
 
 interface PortalProps {
-  return isMounted ? createPortal(children, container()) : null
+  container?: () => HTMLElement
 }
 
-export default Portal
+const Portal: React.FC<PropsWithChildren<PortalProps>> = ({ container = () => document.body, children }) => {
+  const isMounted = useIsMounted()

@@ -8,5 +8,3 @@ export {
   updateUserAllowance,
   updateUserBalance,
   updateUserPendingReward,
-  updateUserStakedBalance,
-} from './pools'

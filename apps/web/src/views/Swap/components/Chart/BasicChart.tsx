@@ -3,16 +3,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useState, memo } from 'react'
 import { useFetchPairPrices } from 'state/swap/hooks'
 import dynamic from 'next/dynamic'
-  ssr: false,
-})
+import { PairDataTimeWindowEnum } from 'state/swap/types'
+import NoChartAvailable from './NoChartAvailable'
+import PairPriceDisplay from '../../../../components/PairPriceDisplay'
+import { getTimeWindowChange } from './utils'
 
-const BasicChart = ({
-  token0Address,
-  token1Address,
-  isChartExpanded,
-  inputCurrency,
-  outputCurrency,
-  isMobile,
   currentSwapPrice,
 }) => {
   const [timeWindow, setTimeWindow] = useState<PairDataTimeWindowEnum>(0)

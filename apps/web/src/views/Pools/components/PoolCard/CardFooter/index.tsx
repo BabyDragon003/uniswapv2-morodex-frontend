@@ -3,16 +3,11 @@ import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, CardFooter, ExpandableLabel, HelpIcon, Pool } from '@pancakeswap/uikit'
-  account: string
-  totalCakeInVault?: BigNumber
-  defaultExpanded?: boolean
-  isLocked?: boolean
-}
+import { Token } from '@pancakeswap/sdk'
+import PoolStatsInfo from '../../PoolStatsInfo'
+import PoolTypeTag from '../../PoolTypeTag'
 
-const ExpandableButtonWrapper = styled(Flex)`
-  align-items: center;
-  justify-content: space-between;
-  button {
+interface FooterProps {
     padding: 0;
   }
 `

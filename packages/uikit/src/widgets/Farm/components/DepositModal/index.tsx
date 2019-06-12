@@ -8,17 +8,6 @@ import { getInterestBreakdown } from "@pancakeswap/utils/compoundApyHelpers";
 import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
 import { trimTrailZero } from "@pancakeswap/utils/trimTrailZero";
 import { Modal, ModalV2, ModalBody, ModalActions, ModalInput } from "../../../Modal/index";
-import { Flex, Box } from "../../../../components/Box";
-import { Text } from "../../../../components/Text";
-import { Button, IconButton } from "../../../../components/Button";
-import { LinkExternal } from "../../../../components/Link";
-import { Skeleton } from "../../../../components/Skeleton";
-import { Message, MessageText } from "../../../../components/Message";
-import { AutoRenewIcon, ErrorIcon, CalculateIcon } from "../../../../components/Svg";
-import { RoiCalculatorModal } from "../../../../components/RoiCalculatorModal";
-
-const AnnualRoiContainer = styled((props) => <Flex {...props} />)`
-  cursor: pointer;
 `;
 
 const AnnualRoiDisplay = styled((props) => <Text {...props} />)`

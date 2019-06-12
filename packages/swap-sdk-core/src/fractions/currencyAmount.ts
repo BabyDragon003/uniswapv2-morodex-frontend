@@ -3,6 +3,12 @@ import JSBI from 'jsbi'
 import _Big from 'big.js'
 import toFormat from 'toformat'
 import { Currency } from '../currency'
+import { Token } from '../token'
+import { Fraction } from './fraction'
+
+import { BigintIsh, Rounding, MaxUint256 } from '../constants'
+
+const Big = toFormat(_Big)
 
 export class CurrencyAmount<T extends Currency> extends Fraction {
   public readonly currency: T
