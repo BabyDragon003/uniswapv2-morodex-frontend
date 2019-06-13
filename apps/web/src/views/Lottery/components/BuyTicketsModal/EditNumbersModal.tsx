@@ -8,16 +8,11 @@ import { UpdateTicketAction, Ticket } from './useTicketsReducer'
 
 const StyledModal = styled(Modal)`
   max-height: 552px;
-  overflow-y: scroll;
-  border-bottom: ${({ theme }) => `1px solid ${theme.colors.cardBorder}`};
-  padding: 24px;
-`
+  & div:nth-child(2) {
+    padding: 0;
+  }
 
-const EditNumbersModal: React.FC<
-  React.PropsWithChildren<{
-    totalCost: string
-    updateTicket: UpdateTicketAction
-    randomize: () => void
+  ${({ theme }) => theme.mediaQueries.md} {
     tickets: Ticket[]
     allComplete: boolean
     onConfirm: () => void

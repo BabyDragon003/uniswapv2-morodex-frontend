@@ -13,16 +13,3 @@ export default {
 
 const Template: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = (args) => {
   return (
-    <Box maxWidth="100vw">
-      <BrowserRouter>
-        <SubMenuItems {...args} />
-      </BrowserRouter>
-    </Box>
-  );
-};
-
-export const Default = Template.bind({});
-Default.args = {
-  items: SubMenuItemsMock,
-  activeItem: "/swap",
-};

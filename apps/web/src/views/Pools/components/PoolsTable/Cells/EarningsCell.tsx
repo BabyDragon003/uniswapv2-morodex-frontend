@@ -8,6 +8,17 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
 import CollectModal from '../../Modals/CollectModal'
 
+interface EarningsCellProps {
+  pool: Pool.DeserializedPool<Token>
+  account: string
+}
+
+const StyledCell = styled(Pool.BaseCell)`
+  flex: 4.5;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex: 1 0 120px;
+  }
+`
 
 const EarningsCell: React.FC<React.PropsWithChildren<EarningsCellProps>> = ({ pool, account }) => {
   const { t } = useTranslation()

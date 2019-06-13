@@ -8,6 +8,17 @@ const Wrapper = styled.div`
 `;
 
 export function TransactionErrorContent({
+  message,
+  onDismiss,
+}: {
+  message: ReactElement | string;
+  onDismiss?: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <Wrapper>
+      <AutoColumn justify="center">
+        <ErrorIcon color="failure" width="64px" />
         <Text color="failure" style={{ textAlign: "center", width: "85%", wordBreak: "break-word" }}>
           {message}
         </Text>

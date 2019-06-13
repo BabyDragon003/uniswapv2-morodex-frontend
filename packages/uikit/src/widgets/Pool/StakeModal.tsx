@@ -8,16 +8,11 @@ import { formatNumber, getDecimalAmount, getFullDisplayBalance } from "@pancakes
 import removeTrailingZeros from "@pancakeswap/utils/removeTrailingZeros";
 
 import PercentageButton from "./PercentageButton";
-  Skeleton,
-  Slider,
-  Text,
-  RoiCalculatorModal,
-} from "../../components";
-import { Modal } from "../Modal";
+import getThemeValue from "../../util/getThemeValue";
 
-const StyledLink = styled((props) => <Link {...props} />)`
-  width: 100%;
-`;
+import {
+  AutoRenewIcon,
+  BalanceInput,
 
 const AnnualRoiContainer = styled((props) => <Flex {...props} />)`
   cursor: pointer;

@@ -8,6 +8,17 @@ import { SettingsMode } from '../Menu/GlobalSettings/types'
 
 interface Props {
   title: string
+  subtitle?: string
+  helper?: string
+  backTo?: string | (() => void)
+  noConfig?: boolean
+}
+
+const AppHeaderContainer = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 

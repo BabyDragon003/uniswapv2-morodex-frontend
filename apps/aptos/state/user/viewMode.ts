@@ -8,16 +8,11 @@ export enum ViewMode {
 
 const DEFAULT_MODE = ViewMode.TABLE
 
-  (_get, set, mode: ViewMode) => {
-    set(userFarmViewModeAtom, mode)
-  },
-)
+const userFarmViewModeAtom = atomWithStorage<ViewMode.CARD | ViewMode.TABLE>('pcs:farms-view-mode', DEFAULT_MODE)
+const userPoolsViewModeAtom = atomWithStorage<ViewMode.CARD | ViewMode.TABLE>('pcs:pools-view-mode', DEFAULT_MODE)
 
-export function useFarmViewMode() {
-  return useAtom(userFarmViewModeLocalStorage)
-}
-
-const userPoolsViewModeLocalStorage = atom(
+const userFarmViewModeLocalStorage = atom(
+  (get) => {
   (get) => {
     const got = get(userPoolsViewModeAtom)
     if (got === ViewMode.TABLE) {

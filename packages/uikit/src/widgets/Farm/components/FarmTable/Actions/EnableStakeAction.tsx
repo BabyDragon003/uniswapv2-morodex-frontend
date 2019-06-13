@@ -8,6 +8,17 @@ interface EnableStakeActionProps {
   handleApprove: () => void;
 }
 
+const EnableStakeAction: React.FunctionComponent<React.PropsWithChildren<EnableStakeActionProps>> = ({
+  pendingTx,
+  handleApprove,
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <StyledActionContainer>
+      <ActionTitles>
+        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          {t("Enable Farm")}
         </Text>
       </ActionTitles>
       <ActionContent>

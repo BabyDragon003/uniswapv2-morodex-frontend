@@ -8,6 +8,17 @@ export const TwoColumnsContainer = styled(Flex)`
     flex: 1;
     gap: 20px;
   }
+  & > div:last-child {
+    flex: 2;
+  }
+`
+
+export const RoundedImage = styled(Image)`
+  height: max-content;
+  border-radius: ${({ theme }) => theme.radii.default};
+  overflow: hidden;
+  & > img {
+    object-fit: contain;
   }
 `
 

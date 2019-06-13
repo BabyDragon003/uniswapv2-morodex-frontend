@@ -8,16 +8,11 @@ interface ProxyFarmContainerPropsType {
   children: ReactElement
   farm: FarmWithStakedValue
 }
-  const {
-    state: boosterState,
-    refreshActivePool,
-    shouldUseProxyFarm,
-    refreshProxyAddress,
-    proxyAddress,
-  } = useYieldBoosterState({
-    farmPid: farm.pid,
-  })
 
+export const YieldBoosterStateContext = createContext({
+  boosterState: YieldBoosterState.UNCONNECTED,
+  refreshActivePool: _noop,
+  proxyFarm: {},
   const proxyFarm = useMemo(
     () => ({
       ...farm,

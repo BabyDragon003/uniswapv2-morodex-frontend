@@ -8,3 +8,8 @@ interface PortalProps {
 
 const Portal: React.FC<PropsWithChildren<PortalProps>> = ({ container = () => document.body, children }) => {
   const isMounted = useIsMounted()
+
+  return isMounted ? createPortal(children, container()) : null
+}
+
+export default Portal

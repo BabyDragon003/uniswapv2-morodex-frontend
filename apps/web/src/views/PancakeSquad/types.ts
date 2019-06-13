@@ -8,6 +8,17 @@ export enum SaleStatusEnum {
   DrawingRandomness, // Randomness has been drawn
   Claim, // Tickets can be claimed for the token
 }
+
+export enum UserStatusEnum {
+  UNCONNECTED,
+  NO_PROFILE,
+  PROFILE_ACTIVE,
+  PROFILE_ACTIVE_GEN0,
+}
+
+export type EventInfos = {
+  maxSupply: number
+  maxPerAddress: number
   maxPerTransaction: number
   pricePerTicket: BigNumber
   totalTicketsDistributed: number

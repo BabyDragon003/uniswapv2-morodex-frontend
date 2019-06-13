@@ -13,22 +13,6 @@ describe('retry', () => {
         // eslint-disable-next-line no-param-reassign
         fails--
         throw retryable ? new RetryableError('failure') : new Error('bad failure')
-      }
-      return result
-    }
-  }
-
-  it('fails for non-retryable error', async () => {
-    await expect(retry(makeFn(1, 'abc', false), { n: 3, maxWait: 0, minWait: 0 }).promise).rejects.toThrow(
-      'bad failure',
-    )
-  })
-
-  it('works after one fail', async () => {
-    await expect(retry(makeFn(1, 'abc'), { n: 3, maxWait: 0, minWait: 0 }).promise).resolves.toEqual('abc')
-  })
-
-  it('works after two fails', async () => {
     await expect(retry(makeFn(2, 'abc'), { n: 3, maxWait: 0, minWait: 0 }).promise).resolves.toEqual('abc')
   })
 

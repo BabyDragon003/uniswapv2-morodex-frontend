@@ -8,16 +8,11 @@ import {
   AutoRenewIcon,
   ChevronRightIcon,
   Message,
-  vote: {
-    label: string
-    value: number
-  }
-  isLoading: boolean
-  isPending: boolean
-  isError: boolean
-  total: number
-  disabled?: boolean
-  lockedCakeBalance: number
+  Flex,
+  RocketIcon,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
   lockedEndTime: number
   onConfirm: () => void
   onViewDetails: () => void

@@ -13,17 +13,3 @@ export const replaceSwapState = createAction<{
   field: Field
   typedValue: string
   inputCurrencyId?: string
-  outputCurrencyId?: string
-  recipient: string | null
-}>('swap/replaceSwapState')
-export const setRecipient = createAction<{ recipient: string | null }>('swap/setRecipient')
-export const updatePairData = createAction<{
-  pairData: PairDataNormalized
-  pairId: string
-  timeWindow: PairDataTimeWindowEnum
-}>('swap/updatePairData')
-export const updateDerivedPairData = createAction<{
-  pairData: DerivedPairDataNormalized
-  pairId: string
-  timeWindow: PairDataTimeWindowEnum
-}>('swap/updateDerivedPairData')

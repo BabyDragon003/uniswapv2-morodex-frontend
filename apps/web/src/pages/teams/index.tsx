@@ -8,6 +8,17 @@ const TeamsPage = ({ fallback }: InferGetStaticPropsType<typeof getStaticProps>)
   return (
     <SWRConfig
       value={{
+        fallback,
+      }}
+    >
+      <Teams />
+    </SWRConfig>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const fetchedTeams = await getTeams()
+  if (!fetchedTeams) {
     return {
       props: {
         fallback: {

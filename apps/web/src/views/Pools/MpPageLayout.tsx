@@ -8,6 +8,17 @@ listenOnBnMessage()
 const PoolsMpPageLayout: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   useInterceptLink()
   const systemInfo = useSystemInfo()
+  const { setTheme } = useTheme()
+  const { injected } = useInjectI18n()
+  const handleActive = useActiveHandle()
+
+  useEffect(() => {
+    const handleLoad = async () => {
+      const account = await getAccount()
+      if (account) {
+        handleActive(false)
+      }
+    }
     handleLoad()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

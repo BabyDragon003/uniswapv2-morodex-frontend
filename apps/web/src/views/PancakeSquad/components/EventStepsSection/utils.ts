@@ -8,6 +8,17 @@ type getStepperStatusType = getEventStepStatusType & {
   isLastPhase?: boolean
 }
 
+const eventStatusMapping: Record<EventStatus, StepStatus> = {
+  past: 'past',
+  live: 'current',
+  upcoming: 'future',
+}
+
+export const getStepperStatus = ({
+  eventStatus,
+  saleStatus: currentSaleStatus,
+  hasProfileActivated,
+  numberTicketsOfUser = 0,
   isLastPhase = false,
 }: getStepperStatusType): StepStatus => {
   if (!hasProfileActivated) return 'future'

@@ -8,6 +8,17 @@ const SecondaryCard = styled(Text)`
 `
 
 SecondaryCard.defaultProps = {
+  p: '24px',
+}
+
+interface IconStatBoxProps extends TextProps {
+  icon: ElementType
+  title: ReactNode
+  subtitle: ReactNode
+  isDisabled?: boolean
+}
+
+const IconStatBox: React.FC<React.PropsWithChildren<IconStatBoxProps>> = ({
   icon: Icon,
   title,
   subtitle,

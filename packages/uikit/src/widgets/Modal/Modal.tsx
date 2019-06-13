@@ -13,22 +13,6 @@ export const ModalWrapper = ({
   onDismiss,
   minWidth,
   hideCloseButton,
-  ...props
-}: PropsWithChildren<ModalWrapperProps>) => {
-  const { isMobile } = useMatchBreakpoints();
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
-  return (
-    // @ts-ignore
-    <ModalContainer
-      drag={isMobile && !hideCloseButton ? "y" : false}
-      dragConstraints={{ top: 0, bottom: 600 }}
-      dragElastic={{ top: 0 }}
-      dragSnapToOrigin
-      onDragStart={() => {
-        if (wrapperRef.current) wrapperRef.current.style.animation = "none";
-      }}
-      onDragEnd={(e, info) => {
         if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
       }}
       ref={wrapperRef}

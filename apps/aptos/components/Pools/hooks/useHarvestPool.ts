@@ -13,6 +13,3 @@ export default function useHarvestPool({ stakingTokenAddress, earningTokenAddres
       rewardTokenAddress: earningTokenAddress,
     })
 
-    return executeTransaction(payload)
-  }, [earningTokenAddress, executeTransaction, sousId, stakingTokenAddress])
-}

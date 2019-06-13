@@ -8,16 +8,11 @@ import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import AddCakeButton from '../Buttons/AddCakeButton'
 import ExtendButton from '../Buttons/ExtendDurationButton'
 import AfterLockedActions from './AfterLockedActions'
-  const position = useMemo(
-    () =>
-      getVaultPosition({
-        userShares,
-        locked,
-        lockEndTime,
-      }),
-    [userShares, locked, lockEndTime],
-  )
-  const { t } = useTranslation()
+import { LockedActionsPropsType } from '../types'
+
+const LockedActions: React.FC<React.PropsWithChildren<LockedActionsPropsType>> = ({
+  userShares,
+  locked,
   const lockedAmountAsNumber = getBalanceNumber(lockedAmount)
 
   const currentBalance = useMemo(

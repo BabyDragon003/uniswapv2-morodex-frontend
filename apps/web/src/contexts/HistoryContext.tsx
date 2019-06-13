@@ -8,6 +8,17 @@ export function HistoryManagerProvider({ children }) {
   return <historyManagerContext.Provider value={value}>{children}</historyManagerContext.Provider>
 }
 
+export const useHistory = () => useContext(historyManagerContext)
+
+function useHistoryManager() {
+  const router = useRouter()
+  const [history, setHistory] = useState<string[]>(() => [router?.asPath])
+
+  useEffect(() => {
+    const handleRouteChange = (url, { shallow }) => {
+      if (!shallow) {
+        setHistory((prevState) => [...prevState, url])
+      }
     }
 
     router.beforePopState(() => {

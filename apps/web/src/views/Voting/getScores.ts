@@ -8,9 +8,8 @@ export async function getScores(
 ) {
   try {
     const params = {
-    const obj = await res.json()
-    return obj.result.scores
-  } catch (e) {
-    return Promise.reject(e)
-  }
-}
+      space,
+      network,
+      snapshot,
+      strategies,
+      addresses,

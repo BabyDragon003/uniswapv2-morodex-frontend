@@ -8,16 +8,11 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
-  isRemovingStake,
-  onDismiss,
-  stakingTokenBalance,
-  stakingTokenPrice,
-}: Pool.StakeModalPropsType<Token>) => {
-  const { t } = useTranslation()
+import { useERC20 } from 'hooks/useContract'
+import { getDecimalAmount } from '@pancakeswap/utils/formatBalance'
+import { useApprovePool } from 'views/Pools/hooks/useApprove'
+import { usePool } from 'state/pools/hooks'
 
-  const {
-    sousId,
-    earningToken,
     stakingToken,
     earningTokenPrice,
     apr,

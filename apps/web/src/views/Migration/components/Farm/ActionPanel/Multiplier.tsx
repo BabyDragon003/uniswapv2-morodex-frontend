@@ -8,16 +8,11 @@ const Containter = styled(Flex)`
   margin-top: 12px;
   padding: 0;
   width: 100%;
-const MultiplierWrapper = styled.div`
-  color: ${({ theme }) => theme.colors.text};
-  width: 36px;
-  margin-right: 6px;
-  align-self: center;
-  text-align: right;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-right: 0;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 0 12px;
   }
+`
 `
 
 const TotalStaked: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multiplier }) => {

@@ -8,16 +8,11 @@ import ApproveCakeView from './ApproveCakeView'
 
 interface EditProfileModalProps extends InjectedModalProps {
   onSuccess?: () => void
-      return t('Enable CAKE')
-    default:
-      return ''
-  }
 }
 
-const EditProfileModal: React.FC<React.PropsWithChildren<EditProfileModalProps>> = ({ onDismiss, onSuccess }) => {
-  const { currentView, goToChange, goToRemove, goToApprove, goPrevious } = useEditProfile()
-  const { t } = useTranslation()
-
+const viewTitle = (t: ContextApi['t'], currentView: Views) => {
+  switch (currentView) {
+    case Views.START:
   const isStartView = currentView === Views.START
   const handleBack = isStartView ? null : () => goPrevious()
 

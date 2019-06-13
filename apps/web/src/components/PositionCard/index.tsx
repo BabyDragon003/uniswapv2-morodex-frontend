@@ -8,16 +8,11 @@ import {
   Card,
   CardBody,
   Flex,
-import { multiplyPriceByAmount } from 'utils/prices'
-import { useAccount } from 'wagmi'
-import { BIG_INT_ZERO } from 'config/constants/exchange'
-import { useGetRemovedTokenAmounts } from 'views/RemoveLiquidity/RemoveStableLiquidity/hooks/useStableDerivedBurnInfo'
-import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
-
-import { useLPApr } from 'state/swap/useLPApr'
-import { useTokenBalance } from '../../state/wallet/hooks'
-import { currencyId } from '../../utils/currencyId'
-import { unwrappedToken } from '../../utils/wrappedCurrency'
+  CardProps,
+  AddIcon,
+  TooltipText,
+  useTooltip,
+  NextLinkFromReactRouter,
 
 import { LightCard } from '../Card'
 import { AutoColumn } from '../Layout/Column'

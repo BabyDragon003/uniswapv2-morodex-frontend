@@ -8,16 +8,11 @@ import { useIsTransactionPending } from 'state/transactions/hooks'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import getPriceForOneToken from '../utils/getPriceForOneToken'
 import { LimitOrderStatus } from '../types'
-  isExpired: boolean
-  isSubmissionPending: boolean
-  isCancellationPending: boolean
-  bscScanUrls: {
-    created: string
-    executed: string
-    cancelled: string
-  }
-}
 
+export interface FormattedOrderData {
+  inputToken: Currency | Token
+  outputToken: Currency | Token
+  inputAmount: string
 const formatForDisplay = (amount: Fraction) => {
   if (!amount) {
     return undefined

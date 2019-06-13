@@ -8,13 +8,8 @@ const Container = styled.div`
   margin: 30px 14px 0 0;
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    margin: 0 14px 0 0;
+    align-items: center;
+  }
 
-const Unstake: React.FC<React.PropsWithChildren<UnstakeProps>> = ({ pid }) => {
-  return (
-    <Container>
-      <UnstakeButton pid={pid} />
-    </Container>
-  )
-}
-
-export default Unstake
+  ${({ theme }) => theme.mediaQueries.md} {

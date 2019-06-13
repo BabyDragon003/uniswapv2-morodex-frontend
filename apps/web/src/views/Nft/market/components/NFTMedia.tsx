@@ -8,6 +8,17 @@ import { useAppDispatch } from 'state'
 import { useNftStorage } from 'state/nftMarket/storage'
 import { RoundedImage } from '../Collection/IndividualNFTPage/shared/styles'
 
+const StyledAspectRatio = styled(Box)`
+  position: absolute;
+  inset: 0;
+`
+
+export const AspectRatio = ({ ratio, children, ...props }) => (
+  <Box width="100%" height={0} pb={`${100 / ratio}%`} position="relative" {...props}>
+    <StyledAspectRatio>{children}</StyledAspectRatio>
+  </Box>
+)
+
 const NFTMedia: React.FC<
   React.PropsWithChildren<
     {

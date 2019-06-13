@@ -8,6 +8,17 @@
       },
       {
         "internalType": "address",
+        "name": "_bunnyStationAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_cakeTokenAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_lazioTokenAddress",
         "type": "address"
       },
       {

@@ -8,15 +8,10 @@ const useKonamiCheatCode = (matchedCodeHandler: () => void): void => {
       "ArrowDown",
       "ArrowDown",
       "ArrowLeft",
-        currentIndex = 0;
-        return;
-      }
-      currentIndex += 1;
-      if (pattern.length === currentIndex) {
-        currentIndex = 0;
-        matchedCodeHandler();
-      }
-    };
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+    ];
 
     document.addEventListener("keyup", onKeyUpHandler);
     return () => document.removeEventListener("keyup", onKeyUpHandler);

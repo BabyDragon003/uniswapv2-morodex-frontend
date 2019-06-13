@@ -8,8 +8,8 @@ export type FetchAccountResourceArgs = {
   networkName?: string
   /** String representation of an on-chain Move struct type */
   resourceType: string
-  const resource = await provider.getAccountResource(address, resourceType)
-
-  // @ts-ignore
-  return resource as FetchAccountResourceResult
 }
+
+export type FetchAccountResourceResult<T = unknown> = Omit<Types.MoveResource, 'data'> & { data: T }
+
+export async function fetchAccountResource<T>({

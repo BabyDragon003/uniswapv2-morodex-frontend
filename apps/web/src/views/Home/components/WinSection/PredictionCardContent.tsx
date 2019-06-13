@@ -13,22 +13,6 @@ import { SLOW_INTERVAL } from 'config/constants'
 const StyledLink = styled(NextLinkFromReactRouter)`
   width: 100%;
 `
-
-const PredictionCardHeader: React.FC<React.PropsWithChildren<{ preText: string; won: string }>> = ({
-  preText,
-  won,
-}) => {
-  return (
-    <Heading color="#280D5F" my="8px" scale="xl" bold>
-      {preText}
-      {won}
-    </Heading>
-  )
-}
-
-const PredictionCardContent = () => {
-  const { t } = useTranslation()
-  const { observerRef, isIntersecting } = useIntersectionObserver()
   const [loadData, setLoadData] = useState(false)
   const bnbBusdPrice = useBNBBusdPrice({ forceMainnet: true })
   const cakePriceBusd = useCakeBusdPrice({ forceMainnet: true })

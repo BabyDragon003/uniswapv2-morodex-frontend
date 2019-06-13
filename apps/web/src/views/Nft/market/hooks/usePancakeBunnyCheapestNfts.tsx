@@ -8,6 +8,17 @@ import {
   combineApiAndSgResponseToNftToken,
 } from 'state/nftMarket/helpers'
 import { FAST_INTERVAL } from 'config/constants'
+import { FetchStatus } from 'config/constants/types'
+import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
+import { pancakeBunniesAddress } from '../constants'
+import { getLowestUpdatedToken } from './useGetLowestPrice'
+
+type WhereClause = Record<string, string | number | boolean | string[]>
+
+const fetchCheapestBunny = async (
+  whereClause: WhereClause = {},
+  nftMetadata: ApiResponseCollectionTokens,
+): Promise<NftToken> => {
   const nftsMarket = await getNftsMarketData(whereClause, 100, 'currentAskPrice', 'asc')
 
   if (!nftsMarket.length) return null

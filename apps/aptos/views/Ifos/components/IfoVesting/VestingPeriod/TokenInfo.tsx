@@ -8,6 +8,17 @@ import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useDelayedUnmount } from '@pancakeswap/hooks'
+import type { VestingData } from 'views/Ifos/hooks/vesting/useFetchUserWalletIfoData'
+import Expand from './Expand'
+
+const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
+  transform: ${({ toggled }) => (toggled ? 'rotate(180deg)' : 'rotate(0)')};
+  height: 24px;
+`
+
+interface TokenInfoProps {
+  index: number
+  data: VestingData
   fetchUserVestingData: () => void
 }
 

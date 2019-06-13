@@ -8,16 +8,11 @@ const getSecondsRemainingToNow = (timestamp: number) => {
   return Number.isFinite(timestamp) && timestamp > now ? timestamp - now : 0
 }
 
-
-  useEffect(() => {
-    let cancel
-    if (!isPaused) {
-      const { cancel: timerCancel } = accurateTimer(() => {
-        setSecondsRemaining((prevSecondsRemaining) => {
-          if (prevSecondsRemaining) {
-            return prevSecondsRemaining - 1
-          }
-          timerCancelRef.current?.()
+/**
+ * Consider this moving up to the global level
+ */
+const useCountdown = (timestamp: number) => {
+  const timerCancelRef = useRef(null)
           return prevSecondsRemaining
         })
       })

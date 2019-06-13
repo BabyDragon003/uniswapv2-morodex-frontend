@@ -13,22 +13,6 @@ import { VaultKey } from 'state/types'
 import { getContract } from 'utils/contractHelpers'
 import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { cakeVaultAddress, ifoPoolV1Contract, useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
-import { Token } from '@pancakeswap/sdk'
-import { useFetchUserPools } from '../../../hook/V1/Pool/useFetchUserPools'
-import useUnstakePool from '../../../hook/V1/Pool/useUnstakePool'
-
-export interface UnstakeButtonProps {
-  pool: Pool.DeserializedPool<Token>
-}
-
-const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ pool }) => {
-  const { sousId, stakingToken, earningToken, userData, vaultKey } = pool
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const { data: signer } = useSigner()
-  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
-  const { callWithGasPrice } = useCallWithGasPrice()
-  const { toastSuccess } = useToast()
   const { fetchUserPoolsData } = useFetchUserPools(account)
 
   const { vaultPoolData, fetchPoolData } = useVaultPoolByKeyV1(vaultKey)

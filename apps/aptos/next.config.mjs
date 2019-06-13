@@ -8,16 +8,11 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 })
 
-      '@pancakeswap/ui',
-      '@pancakeswap/uikit',
-      '@pancakeswap/localization',
-      '@pancakeswap/hooks',
-      '@pancakeswap/utils',
-      '@pancakeswap/tokens',
-      '@pancakeswap/farms',
-    ],
-  },
-  async redirects() {
+const blocksPage = process.env.NODE_ENV === 'production' ? ['/ifo', '/ifo/history'] : []
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
     return [
       {
         source: '/',

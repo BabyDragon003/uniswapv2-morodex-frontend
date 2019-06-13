@@ -13,22 +13,6 @@ interface Props {
   currentLang: string;
   langs: Language[];
   setLang: (lang: Language) => void;
-  color: keyof Colors;
-  dropdownPosition?: Position;
-  buttonScale?: Scale;
-  hideLanguage?: boolean;
-}
-
-const LangSelector: React.FC<React.PropsWithChildren<Props>> = ({
-  currentLang,
-  langs,
-  color,
-  setLang,
-  dropdownPosition = "bottom",
-  buttonScale = "md",
-  hideLanguage = false,
-}) => (
-  <Dropdown
     position={dropdownPosition}
     target={
       <Button scale={buttonScale} variant="text" startIcon={<LanguageIcon color={color} width="24px" />}>

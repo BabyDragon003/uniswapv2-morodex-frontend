@@ -13,22 +13,6 @@ describe('getAccount', () => {
   beforeEach(() => {
     setupClient()
   })
-
-  describe('behavior', () => {
-    it('not connected', async () => {
-      expect(getAccount()).toMatchInlineSnapshot(`
-        {
-          "account": undefined,
-          "connector": undefined,
-          "isConnected": false,
-          "isConnecting": false,
-          "isDisconnected": true,
-          "isReconnecting": false,
-          "status": "disconnected",
-        }
-      `)
-    })
-
     it('connected', async () => {
       await connect({ connector })
       expect(getAccount()).toMatchInlineSnapshot(`

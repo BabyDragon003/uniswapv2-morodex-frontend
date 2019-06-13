@@ -8,3 +8,6 @@ export interface BasePool {
 }
 
 export interface StableSwapPool extends BasePool {
+  stableSwapAddress: string
+  infoStableSwapAddress: string
+}

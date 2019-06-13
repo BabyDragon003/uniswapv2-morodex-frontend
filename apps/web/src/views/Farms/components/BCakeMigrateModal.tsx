@@ -8,6 +8,17 @@ import {
   HelpIcon,
   LogoIcon,
   Modal,
+  Text,
+  useToast,
+  useTooltip,
+} from '@pancakeswap/uikit'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import BigNumber from 'bignumber.js'
+import { ToastDescriptionWithTx } from 'components/Toast'
+import useCatchTxError from 'hooks/useCatchTxError'
+import { useBCakeProxyContract } from 'hooks/useContract'
+import { useEffect, useMemo, useState } from 'react'
+import styled from 'styled-components'
 import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useBCakeProxyContractAddress } from '../hooks/useBCakeProxyContractAddress'
 import useProxyStakedActions from './YieldBooster/hooks/useProxyStakedActions'

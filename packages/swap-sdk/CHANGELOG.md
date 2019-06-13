@@ -8,6 +8,17 @@
 
 ## 3.1.3
 
+### Patch Changes
+
+- d83530d6b: Remove duplicate isTradeBetter util
+
+## 3.1.2
+
+### Patch Changes
+
+- da105c1eb: Remove duplicate util functions
+
+## 3.1.1
 
 ### Patch Changes
 

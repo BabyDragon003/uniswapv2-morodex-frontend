@@ -8,16 +8,11 @@ import { add, sub } from 'date-fns'
 import { sortAuctionBidders } from '../../views/FarmAuction/helpers'
 
 const fetchFarmsWithAuctions = async (
-      },
-      {
-        address: farmAuctionContract.address,
-        name: 'viewBidsPerAuction',
-        params: [currentAuctionId, 0, 500],
-      },
-    ],
-    options: { requireSuccess: false },
-  })
-  const blocksSinceEnd = currentBlock - auctionData.endBlock.toNumber()
+  currentBlock: number,
+): Promise<{ winnerFarms: string[]; auctionHostingEndDate: string }> => {
+  const farmAuctionContract = getFarmAuctionContract()
+  const currentAuctionId = await farmAuctionContract.currentAuctionId()
+  const [auctionData, [auctionBidders]] = await multicallv2({
   if (blocksSinceEnd > 0) {
     const secondsSinceEnd = blocksSinceEnd * BSC_BLOCK_TIME
     if (secondsSinceEnd > FARM_AUCTION_HOSTING_IN_SECONDS) {

@@ -8,16 +8,11 @@ const Wrapper = styled(Flex)`
   margin: auto;
   padding: 0 24px 72px 24px;
   flex-direction: column-reverse;
-  align-self: flex-start;
-  background: url(/images/pottery/honey.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  align-items: center;
 
   ${({ theme }) => theme.mediaQueries.xl} {
-    width: 291px;
-    min-width: 291px;
-    height: 326.89px;
+    flex-direction: row;
+    max-width: 1140px;
     min-height: 326.89px;
     margin: 40px 40px 0 0;
   }

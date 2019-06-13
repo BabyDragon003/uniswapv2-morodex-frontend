@@ -8,3 +8,10 @@ export function useExpertMode() {
   return useAtom(userExpertModeAtom)
 }
 
+export function useIsExpertMode() {
+  return useAtomValue(userExpertModeAtom)
+}
+
+export function useUserExpertModeAcknowledgement() {
+  return useAtom(userExpertModeAcknowledgementAtom)
+}

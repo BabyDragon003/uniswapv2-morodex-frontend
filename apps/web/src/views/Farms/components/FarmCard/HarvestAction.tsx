@@ -8,6 +8,17 @@ import {
   useTooltip,
   useModal,
   Balance,
+  FARMS_SMALL_AMOUNT_THRESHOLD,
+} from '@pancakeswap/uikit'
+import { useAccount } from 'wagmi'
+import BigNumber from 'bignumber.js'
+import { ToastDescriptionWithTx } from 'components/Toast'
+import useCatchTxError from 'hooks/useCatchTxError'
+
+import { TransactionResponse } from '@ethersproject/providers'
+import { usePriceCakeBusd } from 'state/farms/hooks'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import { Token } from '@pancakeswap/sdk'
 import MultiChainHarvestModal from 'views/Farms/components/MultiChainHarvestModal'
 

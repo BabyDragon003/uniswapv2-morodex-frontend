@@ -8,6 +8,17 @@ import { NftToken } from 'state/nftMarket/types'
 import { useGetCollection } from 'state/nftMarket/hooks'
 import { Divider } from '../shared/styles'
 import { GreyedOutContainer, BnbAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
+
+interface SetPriceStageProps {
+  nftToSell: NftToken
+  variant: 'set' | 'adjust'
+  currentPrice?: string
+  lowestPrice?: number
+  price: string
+  setPrice: React.Dispatch<React.SetStateAction<string>>
+  continueToNextStage: () => void
+}
+
 const MIN_PRICE = 0.005
 const MAX_PRICE = 10000
 

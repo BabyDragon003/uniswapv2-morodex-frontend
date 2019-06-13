@@ -8,6 +8,17 @@ import {
   JSBI,
   MINIMUM_LIQUIDITY,
   Pair,
+  Percent,
+  Price,
+  Token,
+} from '@pancakeswap/sdk'
+import { BIG_INT_ZERO } from 'config/constants/exchange'
+import { FetchStatus } from 'config/constants/types'
+import { useTradeExactIn } from 'hooks/Trades'
+import { useZapContract } from 'hooks/useContract'
+import useNativeCurrency from 'hooks/useNativeCurrency'
+import { PairState, usePair } from 'hooks/usePairs'
+import { usePreviousValue } from '@pancakeswap/hooks'
 import { useSWRContract } from 'hooks/useSWRContract'
 import useTotalSupply from 'hooks/useTotalSupply'
 import { useCallback, useEffect, useMemo, useState } from 'react'

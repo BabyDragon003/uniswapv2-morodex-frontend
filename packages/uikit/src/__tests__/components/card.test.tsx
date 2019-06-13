@@ -8,6 +8,17 @@ it("renders correctly", () => {
       <CardHeader>Header</CardHeader>
       <CardBody>Body</CardBody>
       <CardFooter>Footer</CardFooter>
+    </Card>
+  );
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
+      background: var(--colors-cardBorder);
+      border-radius: var(--radii-card);
+      color: var(--colors-text);
+      overflow: hidden;
+      position: relative;
+      padding: 1px 1px 3px 1px;
     }
 
     .c1 {

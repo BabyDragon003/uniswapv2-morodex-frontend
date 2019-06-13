@@ -8,6 +8,17 @@ import PancakeSwapSmartRouterABI from 'config/abi/pancakeSwapSmartRouter.json'
 import { PancakeSwapSmartRouter } from 'config/abi/types/PancakeSwapSmartRouter'
 import { useContract } from 'hooks/useContract'
 import { useActiveChainId } from 'hooks/useActiveChainId'
+import { ChainMap } from 'config/constants/types'
+
+export const SMART_ROUTER_ADDRESS: ChainMap<string> = {
+  [ChainId.ETHEREUM]: '',
+  [ChainId.GOERLI]: '',
+  [ChainId.BSC]: '0xC6665d98Efd81f47B03801187eB46cbC63F328B0',
+  [ChainId.BSC_TESTNET]: '0xCF457465fC0E98a50Bc3E1b3DDAAF1373622f059',
+}
+
+export function useSmartRouterContract() {
+  const { chainId } = useActiveChainId()
   return useContract<PancakeSwapSmartRouter>(SMART_ROUTER_ADDRESS[chainId], PancakeSwapSmartRouterABI, true)
 }
 

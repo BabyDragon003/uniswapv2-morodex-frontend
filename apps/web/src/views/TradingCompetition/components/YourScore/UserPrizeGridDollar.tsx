@@ -13,7 +13,3 @@ const UserPrizeGridDollar: React.FC<React.PropsWithChildren<UserPrizeGridDollarP
     </Text>
   ) : (
     <Skeleton height={24} width={80} />
-  )
-}
-
-export default UserPrizeGridDollar

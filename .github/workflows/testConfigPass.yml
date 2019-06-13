@@ -8,3 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [16]
+    name: Config (Jest)

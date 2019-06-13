@@ -13,10 +13,3 @@ const RowHeading: React.FC<React.PropsWithChildren<HeadingProps>> = ({ text, ...
 
   return (
     <Heading {...props}>
-      {firstWord}
-      <span style={{ color: theme.colors.secondary }}> {remainingWords}</span>
-    </Heading>
-  )
-}
-
-export default RowHeading

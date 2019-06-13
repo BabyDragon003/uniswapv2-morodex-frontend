@@ -8,16 +8,11 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-  if (!enable || chainId !== ChainId.BSC) {
-    return null
-  }
-  return <GlobalCheckClaim key={account} {...props} />
-}
+import AnniversaryAchievementModal from './AnniversaryAchievementModal'
 
-/**
- * This is represented as a component rather than a hook because we need to keep it
- * inside the Router.
- *
+interface GlobalCheckClaimStatusProps {
+  excludeLocations: string[]
+}
  * TODO: Put global checks in redux or make a generic area to house global checks
  */
 const GlobalCheckClaim: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusProps>> = ({ excludeLocations }) => {

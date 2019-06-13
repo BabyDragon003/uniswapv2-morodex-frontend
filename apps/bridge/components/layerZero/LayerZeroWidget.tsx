@@ -8,16 +8,11 @@ declare global {
   }
   interface Document {
     querySelector?: any
-    }
+  }
+}
 
-    return () => {
-      document.body.classList.remove(themeText)
-    }
-  }, [theme])
-
-  return (
-    <Box width="100%">
-      <style jsx global>{`
+export const LayerZeroWidget = ({ theme }: { theme: PancakeTheme }) => {
+  useEffect(() => {
         .aptos-bridge-container > div {
           padding: 24px 0 !important;
           border-radius: 18px;

@@ -8,16 +8,11 @@ export interface TransactionReceipt {
   from: string
   payload: Types.TransactionPayload
   sequenceNumber: string
-  approval?: { tokenAddress: string; spender: string }
-  claim?: { recipient: string }
-  summary?: string
-  translatableSummary?: { text: string; data?: Record<string, string | number> }
-  type?: TransactionType
-}>('transactions/addTransaction')
-export const clearAllTransactions = createAction('transactions/clearAllTransactions')
-export const clearAllChainTransactions = createAction<{ chainId: ChainId }>('transactions/clearAllChainTransactions')
-export const finalizeTransaction = createAction<{
-  chainId: ChainId
+  blockNumber: string
+  success: boolean
+  timestamp: string
+  transactionHash: string
+  status?: number
   hash: string
   receipt: TransactionReceipt
 }>('transactions/finalizeTransaction')

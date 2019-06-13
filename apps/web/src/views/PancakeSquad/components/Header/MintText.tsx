@@ -8,16 +8,11 @@ type PreEventProps = {
   saleStatus: SaleStatusEnum
   userStatus: UserStatusEnum
   numberTicketsOfUser: number
-  const displayMintText =
-    ((userStatus === UserStatusEnum.PROFILE_ACTIVE_GEN0 || numberTicketsOfUser > 0) &&
-      saleStatus === SaleStatusEnum.Presale) ||
-    saleStatus >= SaleStatusEnum.Sale
-  const hasNoTicketOrToken = numberTicketsOfUser === 0 && numberTokensOfUser === 0
-  return displayMintText ? (
-    <Flex flexDirection="column" mb="24px">
-      <Flex>
-        <Text fontSize="16px" color={lightColors.invertedContrast} mr="2px">
-          {t('Your Claim Tickets: ')}
+  numberTokensOfUser: number
+}
+
+const MintText: React.FC<React.PropsWithChildren<PreEventProps>> = ({
+  t,
         </Text>
         <Text fontSize="16px" color={numberTicketsOfUser > 0 ? lightColors.warning : lightColors.failure} bold>
           {numberTicketsOfUser}

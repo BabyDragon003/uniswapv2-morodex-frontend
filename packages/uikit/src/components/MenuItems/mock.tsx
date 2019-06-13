@@ -8,13 +8,8 @@ const MenuItemsMock = [
   },
   {
     label: "Earn",
-    items: [ItemsMock[0]],
-  },
-  {
-    label: "...",
     href: "/",
     items: ItemsMock,
   },
-];
-
-export default MenuItemsMock;
+  {
+    label: "Win",

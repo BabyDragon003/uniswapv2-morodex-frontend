@@ -8,16 +8,11 @@ import { EXCHANGE_HELP_URLS } from 'config/constants'
 const Page: React.FC<
   React.PropsWithChildren<{
     removePadding?: boolean
-}) => {
-  const { t } = useTranslation()
-  const { chainId } = useActiveChainId()
-  const isBSC = chainId === ChainId.BSC
-  const externalText = isBSC ? t('Bridge assets to BNB Chain') : ''
-  const externalLinkUrl = isBSC ? 'https://bridge.dapp-frontend-prince.web.app/' : ''
-
-  return (
-    <>
-      <PageMeta />
+    hideFooterOnDesktop?: boolean
+    noMinHeight?: boolean
+    helpUrl?: string
+  }>
+> = ({
       <Swap.Page
         removePadding={removePadding}
         noMinHeight={noMinHeight}

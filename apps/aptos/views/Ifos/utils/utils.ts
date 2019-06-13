@@ -8,16 +8,11 @@ import BigNumber from 'bignumber.js'
  */
 export const calculateTaxOverflow = (total_amount: BigNumber, raising_amount: BigNumber): BigNumber => {
   // No tax if raising amount is not overflowed
+  if (raising_amount.isGreaterThanOrEqualTo(total_amount)) {
+    return BIG_ZERO
   }
-  if (ratio_overflow.gte(500)) {
-    return new BigNumber('1000000000') // 0.1%
-  }
-  if (ratio_overflow.gte(250)) {
-    return new BigNumber('1250000000') // 0.125%
-  }
-  if (ratio_overflow.gte(100)) {
-    return new BigNumber('1500000000') // 0.15%
-  }
+
+  const ratio_overflow = total_amount.div(raising_amount)
   if (ratio_overflow.gte(50)) {
     return new BigNumber('2500000000') // 0.25%
   }

@@ -8,16 +8,11 @@ import BigNumber from 'bignumber.js'
 
 export const useCakeApprovalStatus = (spender) => {
   const { address: account } = useAccount()
-    [account, cakeContract, spender],
-  )
+  const { reader: cakeContract } = useCake()
 
-  const { data, mutate } = useSWRContract(key)
-
-  return {
-    isVaultApproved: data ? data.gt(0) : false,
-    allowance: new BigNumber(data?.toString()),
-    setLastUpdated: mutate,
-  }
+  const key = useMemo<UseSWRContractKey>(
+    () =>
+      account && spender
 }
 
 export default useCakeApprovalStatus

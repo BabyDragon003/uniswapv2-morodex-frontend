@@ -13,22 +13,6 @@ import TransactionConfirmSwapContentWithSmartRouter from './TransactionConfirmSw
 const PancakeRouterSlippageErrorMsg =
   'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
 
-const SwapTransactionErrorContent = ({ onDismiss, message, openSettingModal }) => {
-  const isSlippagedErrorMsg = message?.includes(PancakeRouterSlippageErrorMsg)
-
-  const handleErrorDismiss = useCallback(() => {
-    onDismiss?.()
-    if (isSlippagedErrorMsg && openSettingModal) {
-      openSettingModal()
-    }
-  }, [isSlippagedErrorMsg, onDismiss, openSettingModal])
-  const { t } = useTranslation()
-
-  return isSlippagedErrorMsg ? (
-    <TransactionErrorContent
-      message={
-        <>
-          <Text mb="16px">
             {t(
               'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your',
             )}{' '}

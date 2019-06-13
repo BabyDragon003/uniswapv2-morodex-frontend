@@ -8,6 +8,17 @@ export const stakeFarm = async (masterChefContract: Contract, pid, amount, gasPr
 
   return masterChefContract.deposit(pid, value, {
     gasLimit: gasLimit || DEFAULT_GAS_LIMIT,
+    gasPrice,
+  })
+}
+
+export const unstakeFarm = async (masterChefContract, pid, amount, gasPrice, gasLimit?: number) => {
+  const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
+
+  return masterChefContract.withdraw(pid, value, {
+    gasLimit: gasLimit || DEFAULT_GAS_LIMIT,
+    gasPrice,
+  })
 }
 
 export const harvestFarm = async (masterChefContract, pid, gasPrice, gasLimit?: number) => {

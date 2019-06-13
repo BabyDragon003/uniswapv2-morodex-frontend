@@ -8,6 +8,17 @@ import { BoldTd, StyledPrizeTable, Td } from '../../../components/StyledPrizeTab
 import { modPrizes } from '../../../../../config/constants/trading-competition/prizes'
 import UserPrizeGridDollar from '../../../components/YourScore/UserPrizeGridDollar'
 import AchievementPoints from '../../../components/YourScore/AchievementPoints'
+import { useCanClaimSpecialNFT } from '../../../useCanClaimSpecialNFT'
+
+const StyledThead = styled.thead`
+  border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
+const ModUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformation?: UserTradingInformation }>> = ({
+  userTradingInformation,
+}) => {
+  const { t } = useTranslation()
+  const { userRewardGroup, userCakeRewards, userDarRewards, userPointReward, canClaimNFT } = userTradingInformation
   const canClaimSpecialNFT = useCanClaimSpecialNFT()
   const { cakeReward, darReward, dollarValueOfTokensReward } = useModCompetitionRewards({
     userCakeRewards,

@@ -8,16 +8,11 @@ describe('swap reducer', () => {
   beforeEach(() => {
     store = createStore(reducer, {
       [Field.OUTPUT]: { currencyId: '' },
-          field: Field.OUTPUT,
-          currencyId: '0x0000',
-        }),
-      )
-
-      expect(store.getState()).toEqual({
-        [Field.OUTPUT]: { currencyId: '0x0000' },
-        [Field.INPUT]: { currencyId: '' },
-        typedValue: '',
-        independentField: Field.INPUT,
+      [Field.INPUT]: { currencyId: '' },
+      typedValue: '',
+      independentField: Field.INPUT,
+      recipient: null,
+    })
         recipient: null,
       })
     })

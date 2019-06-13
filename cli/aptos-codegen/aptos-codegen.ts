@@ -13,22 +13,6 @@ import { equalsIgnoreCase } from "../../packages/utils/equalsIgnoreCase.ts";
 const {
   TypeTagBool,
   TypeTagU128,
-  TypeTagAddress,
-  TypeTagStruct,
-  TypeTagU64,
-  TypeTagU8,
-  TypeTagVector,
-} = TxnBuilderTypes;
-
-// having a hard time to import aptos generated types
-type MoveFunction = {
-  name: string;
-  visibility: string;
-  is_entry: boolean;
-  generic_type_params: Array<any>;
-  params: Array<string>;
-  return: Array<string>;
-};
 
 type MoveStruct = {
   name: string;

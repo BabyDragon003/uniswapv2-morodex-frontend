@@ -8,16 +8,11 @@ import { useAppDispatch } from '../../../../../../state'
 import NoNftsImage from '../../../components/Activity/NoNftsImage'
 import TableLoader from '../../../../../../components/TableLoader'
 import { getTokenActivity } from '../../../../../../state/nftMarket/helpers'
-  const { theme } = useTheme()
-  const { t } = useTranslation()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [maxPage, setMaxPages] = useState(1)
-  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
-  const [sortedTokenActivities, setSortedTokenActivities] = useState<Activity[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const bnbBusdPrice = useBNBBusdPrice()
-  const { isXs, isSm } = useMatchBreakpoints()
+import { sortActivity } from '../../../ActivityHistory/utils/sortActivity'
+import ActivityRow from '../../../components/Activity/ActivityRow'
 
+interface ActivityCardProps {
+  nft: NftToken
   useEffect(() => {
     const fetchTokenActivity = async () => {
       try {

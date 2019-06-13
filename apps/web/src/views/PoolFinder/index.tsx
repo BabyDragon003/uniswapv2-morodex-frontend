@@ -8,16 +8,11 @@ import { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AppBody, AppHeader } from '../../components/App'
 import { LightCard } from '../../components/Card'
-import { CommonBasesType } from '../../components/SearchModal/types'
-
-enum Fields {
-  TOKEN0 = 0,
-  TOKEN1 = 1,
-}
-
-const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.input};
-  color: ${({ theme }) => theme.colors.text};
+import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
+import Row from '../../components/Layout/Row'
+import Dots from '../../components/Loader/Dots'
+import { CurrencyLogo } from '../../components/Logo'
+import { MinimalPositionCard } from '../../components/PositionCard'
   box-shadow: none;
   // border-radius: 16px;
   border-radius: 6px;

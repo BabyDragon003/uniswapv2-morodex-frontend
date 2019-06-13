@@ -8,16 +8,11 @@ import { useTranslation } from '@pancakeswap/localization'
 export type BeamChartProps = {
   data: any[]
   setHoverValue: Dispatch<SetStateAction<number | undefined>> // used for value on hover
-  if (!data || data.length === 0) {
-    return <LineChartLoader />
-  }
-  return (
-    <ResponsiveContainer>
-      <AreaChart
-        data={data}
-        width={300}
-        height={308}
-        margin={{
+  setHoverDate: Dispatch<SetStateAction<string | undefined>> // used for label of value
+} & React.HTMLAttributes<HTMLDivElement>
+
+/**
+ * Note: remember that it needs to be mounted inside the container with fixed height
           top: 0,
           right: 0,
           left: 0,

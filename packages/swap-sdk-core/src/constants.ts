@@ -8,16 +8,11 @@ export enum TradeType {
   EXACT_OUTPUT,
 }
 
-export const TWO = JSBI.BigInt(2)
-export const THREE = JSBI.BigInt(3)
-export const FIVE = JSBI.BigInt(5)
-export const TEN = JSBI.BigInt(10)
-export const _100 = JSBI.BigInt(100)
-export const _9975 = JSBI.BigInt(9993)
-export const _10000 = JSBI.BigInt(10000)
-
-export const MaxUint256 = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
-
+export enum Rounding {
+  ROUND_DOWN,
+  ROUND_HALF_UP,
+  ROUND_UP,
+}
 export enum VMType {
   uint8 = 'uint8',
   uint256 = 'uint256',
