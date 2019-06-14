@@ -13,3 +13,5 @@ const MojitoWarning = () => {
     </>
   )
 }
+
+export default MojitoWarning

@@ -18,27 +18,6 @@ import { useUserTokenRisk } from 'state/user/hooks/useUserTokenRisk'
 import styled from 'styled-components'
 import useSWRImmutable from 'swr/immutable'
 import { fetchRiskToken, TOKEN_RISK } from 'views/Swap/hooks/fetchTokenRisk'
-
-const AnimatedButton = styled(Button)`
-  animation: ${promotedGradient} 1.5s ease infinite;
-  background-size: 1000% 1000%;
-`
-
-interface AccessRiskProps {
-  token: ERC20Token
-}
-
-function RetryRisk({ onClick }: { onClick: () => void }) {
-  const [retry, setRetry] = useState(false)
-  const { t } = useTranslation()
-  const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false)
-  const displayTooltip = () => {
-    setIsTooltipDisplayed(true)
-    setTimeout(() => {
-      setIsTooltipDisplayed(false)
-    }, 1000)
-  }
-  const retryTooltip = useTooltip(
     <>
       {t('Risk scanning failed.')} {!retry && t('Press the button to retry.')}
     </>,

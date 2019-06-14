@@ -13,6 +13,22 @@ declare global {
 
 export const LayerZeroWidget = ({ theme }: { theme: PancakeTheme }) => {
   useEffect(() => {
+    const themeText = theme.isDark ? 'dark' : 'light'
+    const themeColor = theme.isDark ? darkTheme : lightTheme
+
+    if (window.aptosBridge) {
+      document.body.classList.add(themeText)
+      document.querySelector('aptos-bridge').setTheme(themeColor)
+    }
+
+    return () => {
+      document.body.classList.remove(themeText)
+    }
+  }, [theme])
+
+  return (
+    <Box width="100%">
+      <style jsx global>{`
         .aptos-bridge-container > div {
           padding: 24px 0 !important;
           border-radius: 18px;

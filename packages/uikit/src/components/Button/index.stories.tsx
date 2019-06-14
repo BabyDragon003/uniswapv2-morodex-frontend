@@ -13,6 +13,22 @@ import { scales, variants } from "./types";
 
 export default {
   title: "Components/Button",
+  component: Button,
+  argTypes: {},
+};
+
+const Row = styled(Flex)`
+  margin-bottom: 32px;
+  & > button + button,
+  & > a + a {
+    margin-left: 16px;
+  }
+`;
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <>
+      <Box mb="32px">
         <button type="button">Unstyled Button</button>
       </Box>
       <Box mb="32px">

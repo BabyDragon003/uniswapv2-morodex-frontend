@@ -13,16 +13,11 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   margin: 24px auto 0;
-  const { t } = useTranslation()
-  const showRibbon = !account || isLoading || hasRegistered
+  max-width: 768px;
+`
 
-  return (
-    <Wrapper>
-      {showRibbon && (
-        <RibbonWithImage
-          imageComponent={<ScoreHeader profile={profile} isLoading={isLoading} />}
-          ribbonDirection="down"
-          isCardHeader
+const EasterYourScore: React.FC<React.PropsWithChildren<YourScoreProps>> = ({
+  hasRegistered = false,
         >
           {t('Your Score')}
         </RibbonWithImage>

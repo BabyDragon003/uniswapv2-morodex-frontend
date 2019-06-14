@@ -13,16 +13,11 @@ const Row = styled(Box)<{
   display: flex;
   align-items: ${({ align }) => align ?? 'center'};
   justify-content: ${({ justify }) => justify ?? 'flex-start'};
-  margin: ${({ gap }) => gap && `-${gap}`};
-  justify-content: ${({ justify }) => justify};
-
-  & > * {
-    margin: ${({ gap }) => gap} !important;
-  }
+  padding: ${({ padding }) => padding ?? '0'};
+  border: ${({ border }) => border};
+  border-radius: ${({ borderRadius }) => borderRadius};
 `
 
-export const RowFixed = styled(Row)<{ gap?: string; justify?: string }>`
-  width: fit-content;
   margin: ${({ gap }) => gap && `-${gap}`};
 
   & > * {

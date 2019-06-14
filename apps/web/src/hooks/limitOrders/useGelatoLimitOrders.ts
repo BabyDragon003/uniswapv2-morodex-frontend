@@ -13,3 +13,11 @@ const useGelatoLimitOrders = (): {
 
   const handlers = useGelatoLimitOrdersHandlers()
 
+  return {
+    handlers,
+    derivedOrderInfo,
+    orderState,
+  }
+}
+
+export default useGelatoLimitOrders

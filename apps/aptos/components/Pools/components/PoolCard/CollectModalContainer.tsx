@@ -13,6 +13,22 @@ const CollectModalContainer = ({
 }: React.PropsWithChildren<
   Pool.CollectModalProps & {
     onReward: () => Promise<TxResponse>
+    onDone: () => void
+  }
+>) => {
+  const { t } = useTranslation()
+  const { toastSuccess } = useToast()
+  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
+
+  const handleHarvestConfirm = useCallback(async () => {
+    const receipt = await fetchWithCatchTxError(() => {
+      return onReward()
+    })
+    if (receipt?.status) {
+      toastSuccess(
+        `${t('Harvested')}!`,
+        <ToastDescriptionWithTx txHash={receipt.transactionHash}>
+          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: earningTokenSymbol })}
         </ToastDescriptionWithTx>,
       )
 

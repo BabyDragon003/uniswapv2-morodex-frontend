@@ -14,6 +14,22 @@ const Wrapper = styled(Flex)`
   }
 `
 
+const StyledPodiumWrapper = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex: 1;
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+`
+
+const BunnyImageWrapper = styled(Box)`
+  display: none;
+
   ${({ theme }) => theme.mediaQueries.md} {
     display: flex;
     width: 200px;

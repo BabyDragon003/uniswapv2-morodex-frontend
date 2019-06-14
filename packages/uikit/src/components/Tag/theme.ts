@@ -13,6 +13,22 @@ export const scaleVariants = {
   },
 };
 
+export const styleVariants = {
+  [variants.PRIMARY]: {
+    backgroundColor: "primary",
+  },
+  [variants.SECONDARY]: {
+    backgroundColor: "secondary",
+  },
+  [variants.SUCCESS]: {
+    backgroundColor: "success",
+  },
+  [variants.TEXTDISABLED]: {
+    backgroundColor: "textDisabled",
+  },
+  [variants.TEXTSUBTLE]: {
+    backgroundColor: "textSubtle",
+  },
   [variants.BINANCE]: {
     backgroundColor: "binance",
   },

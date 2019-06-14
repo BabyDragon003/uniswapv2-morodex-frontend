@@ -13,6 +13,22 @@ import {
 } from 'config/constants/exchange'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
+import { useContract } from 'hooks/useContract'
+import { StableTrade } from 'views/Swap/StableSwap/hooks/useStableTradeExactIn'
+import { Field } from '../state/swap/actions'
+
+// converts a basis points value to a sdk percent
+export function basisPointsToPercent(num: number): Percent {
+  return new Percent(JSBI.BigInt(num), BIPS_BASE)
+}
+
+export function calculateSlippageAmount(value: CurrencyAmount<Currency>, slippage: number): [JSBI, JSBI] {
+  if (slippage < 0 || slippage > 10000) {
+    throw Error(`Unexpected slippage value: ${slippage}`)
+  }
+  return [
+    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 - slippage)), BIPS_BASE),
+    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 + slippage)), BIPS_BASE),
   ]
 }
 

@@ -18,27 +18,6 @@ const FanTokenUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInfor
   const { t } = useTranslation()
   const {
     userRewardGroup,
-    userCakeRewards,
-    userLazioRewards,
-    userPortoRewards,
-    userSantosRewards,
-    userPointReward,
-    canClaimNFT,
-  } = userTradingInformation
-  const { cakeReward, lazioReward, portoReward, santosReward, dollarValueOfTokensReward } =
-    useFanTokenCompetitionRewards({
-      userCakeRewards,
-      userLazioRewards,
-      userPortoRewards,
-      userSantosRewards,
-    })
-
-  const achievement = getRewardGroupAchievements(fanTokenPrizes, userRewardGroup, userPointReward)
-
-  return (
-    <StyledPrizeTable>
-      <StyledThead>
-        <tr>
           <th>{t('Token Prizes')}</th>
           <th>{t('Achievements')}</th>
           <th>{t('NFT')}</th>

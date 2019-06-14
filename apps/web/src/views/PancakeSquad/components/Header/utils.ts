@@ -18,5 +18,3 @@ export const getCurrentButton = ({
   if (saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0) return ButtonsEnum.MINT
   if (saleStatus === SaleStatusEnum.Claim) return ButtonsEnum.END
 
-  return ButtonsEnum.NONE
-}

@@ -13,16 +13,11 @@ export const StyledPrimaryImage = styled(TokenImage)<StyledImageProps>`
     variant === variants.DEFAULT ? "92%" : "82%"}; // 92, 82 are arbitrary numbers to fit the variant
 
   ${StyledSystemVariant({
-  })}
-`;
-
-export const StyledSecondaryImage = styled(TokenImage)<StyledImageProps>`
-  position: absolute;
-  width: 50%;
-
-  ${StyledSystemVariant({
     variants: {
       [variants.DEFAULT]: {
+        bottom: "auto",
+        left: 0,
+        right: "auto",
         bottom: 0,
         left: "auto",
         right: 0,

@@ -13,16 +13,11 @@ export interface TokenInfo {
       | {
           [key: string]:
             | {
-    readonly name: string
-    readonly description: string
-  }
-}
-
-export interface TokenList {
-  readonly name: string
-  readonly timestamp: string
-  readonly version: Version
-  readonly tokens: TokenInfo[]
+                [key: string]: ExtensionValue
+              }
+            | ExtensionValue
+        }
+      | ExtensionValue
   readonly keywords?: string[]
   readonly tags?: Tags
   readonly logoURI?: string

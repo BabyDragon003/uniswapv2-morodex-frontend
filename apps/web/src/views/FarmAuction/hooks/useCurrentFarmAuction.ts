@@ -13,16 +13,11 @@ export const useCurrentFarmAuction = (account: string) => {
     ['farmAuction', 'currentAuctionId'],
     async () => {
       const auctionId = await farmAuctionContract.currentAuctionId()
-      try {
-        const whitelistedStatus = await farmAuctionContract.whitelisted(account)
-        setConnectedBidder({
-          account,
-          isWhitelisted: whitelistedStatus,
-        })
-      } catch (error) {
-        console.error('Failed to check if account is whitelisted', error)
-      }
-    }
+      return auctionId.toNumber()
+    },
+    { refreshInterval: FAST_INTERVAL },
+  )
+
     if (account && (!connectedBidder || connectedBidder.account !== account)) {
       checkAccount()
     }

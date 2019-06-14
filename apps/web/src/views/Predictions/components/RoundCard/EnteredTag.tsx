@@ -13,16 +13,11 @@ interface EnteredTagProps {
   multiplier: string
 }
 
-      tokenAmount = amount
-    }
-    return formatTokenv2(tokenAmount, token.decimals, displayedDecimals)
-  }, [amount, displayedDecimals, hasClaimed, multiplier, token])
+const EnteredTag: React.FC<React.PropsWithChildren<EnteredTagProps>> = ({ amount, hasClaimed = false, multiplier }) => {
+  const { t } = useTranslation()
+  const { token, displayedDecimals } = useConfig()
 
-  const { targetRef, tooltipVisible, tooltip } = useTooltip(
-    <div style={{ whiteSpace: 'nowrap' }}>{`${formattedAmount} ${token.symbol}`}</div>,
-    { placement: 'bottom' },
-  )
-
+  const formattedAmount = useMemo(() => {
   return (
     <>
       <span ref={targetRef}>

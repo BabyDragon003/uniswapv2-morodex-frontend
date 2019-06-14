@@ -13,16 +13,11 @@ import HarvestActions from './HarvestActions'
 import { ProfileRequirementWarning } from '../../ProfileRequirementWarning'
 
 const InlineText = styled(Text)`
-  const needsApproval = !allowance.gt(0) && !isBnbPool
-  const isStaked = stakedBalance.gt(0)
-  const isLoading = !userData
+  display: inline;
+`
 
-  const { notMeetRequired, notMeetThreshold } = useProfileRequirement(profileRequirement)
-
-  return (
-    <Flex flexDirection="column">
-      <Flex flexDirection="column">
-        <>
+interface CardActionsProps {
+  pool: Pool.DeserializedPool<Token>
           <Box display="inline">
             <InlineText color="secondary" textTransform="uppercase" bold fontSize="12px">
               {`${earningToken.symbol} `}

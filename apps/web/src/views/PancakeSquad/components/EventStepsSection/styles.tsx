@@ -13,3 +13,4 @@ export const StyledEventStepsSectionContainer = styled(Flex)<{ $isDark: boolean 
 export const StyledBunniesSquadImg = styled.img`
   position: absolute;
   bottom: 4px;
+`

@@ -18,27 +18,6 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
         border-radius: 2px 2px 0 0;
       }
     `};
-`;
-
-const StyledMenuItem = styled.a<StyledMenuItemProps>`
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.white : theme.colors.textSubtle)};
-  font-size: 16px;
-  font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
-  opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};
-  pointer-events: ${({ $isDisabled }) => ($isDisabled ? "none" : "inherit")};
-
-  ${({ $statusColor, theme }) =>
-    $statusColor &&
-    `
-    &:after {
-      content: "";
-      border-radius: 100%;
-      background: ${theme.colors[$statusColor]};
-      height: 8px;
       width: 8px;
       margin-left: 12px;
     }

@@ -13,6 +13,22 @@ import ActivityRow from '../../../components/Activity/ActivityRow'
 
 interface ActivityCardProps {
   nft: NftToken
+}
+
+const MAX_PER_PAGE = 5
+
+const ActivityCard: React.FC<React.PropsWithChildren<ActivityCardProps>> = ({ nft }) => {
+  const dispatch = useAppDispatch()
+  const { theme } = useTheme()
+  const { t } = useTranslation()
+  const [currentPage, setCurrentPage] = useState(1)
+  const [maxPage, setMaxPages] = useState(1)
+  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
+  const [sortedTokenActivities, setSortedTokenActivities] = useState<Activity[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const bnbBusdPrice = useBNBBusdPrice()
+  const { isXs, isSm } = useMatchBreakpoints()
+
   useEffect(() => {
     const fetchTokenActivity = async () => {
       try {

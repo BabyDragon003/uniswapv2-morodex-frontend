@@ -13,6 +13,22 @@ export type UseAccountResourcesConfig<TData = unknown> = QueryConfig<FetchAccoun
 
 export const queryKey = ({ networkName, address }: { networkName?: string; address?: string }) =>
   [{ entity: 'accountResources', networkName, address }] as const
+
+const queryFn = ({ queryKey: [{ networkName, address }] }: QueryFunctionArgs<typeof queryKey>) => {
+  if (!address) throw new Error('address is required')
+  return fetchAccountResources({ networkName, address })
+}
+
+export function useAccountResources<TData = unknown>({
+  cacheTime,
+  networkName: networkName_,
+  keepPreviousData,
+  address,
+  enabled = true,
+  staleTime,
+  suspense,
+  watch = false,
+  onError,
   onSettled,
   onSuccess,
   select,

@@ -13,3 +13,6 @@ export default function PricePoolShareSection({ farmPriceBar, noLiquidity }) {
       <LightCard padding="1rem" borderRadius="20px">
         {farmPriceBar}
       </LightCard>
+    </LightCard>
+  )
+}

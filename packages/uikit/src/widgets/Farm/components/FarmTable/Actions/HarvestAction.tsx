@@ -13,6 +13,22 @@ interface HarvestActionProps {
   earnings: BigNumber;
   earningsBusd: number;
   displayBalance: string | JSX.Element;
+  pendingTx: boolean;
+  userDataReady: boolean;
+  proxyCakeBalance?: number;
+  handleHarvest: () => void;
+}
+
+const HarvestAction: React.FunctionComponent<React.PropsWithChildren<HarvestActionProps>> = ({
+  earnings,
+  earningsBusd,
+  displayBalance,
+  pendingTx,
+  userDataReady,
+  proxyCakeBalance,
+  handleHarvest,
+}) => {
+  const { t } = useTranslation();
 
   const toolTipBalance = !userDataReady ? (
     <Skeleton width={60} />
