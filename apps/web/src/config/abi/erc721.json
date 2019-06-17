@@ -1,4 +1,3 @@
-[
   {
     "constant": true,
     "inputs": [],
@@ -13,6 +12,27 @@
     "inputs": [{ "name": "_tokenId", "type": "uint256" }],
     "name": "getApproved",
     "outputs": [{ "name": "_approved", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_to", "type": "address" },
+      { "name": "_tokenId", "type": "uint256" }
+    ],
+    "name": "approve",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "implementsERC721",
+    "outputs": [{ "name": "_implementsERC721", "type": "bool" }],
     "payable": false,
     "stateMutability": "view",
     "type": "function"

@@ -1,4 +1,3 @@
-const getLiquidityUrlPathParts = ({
   quoteTokenAddress,
   tokenAddress,
 }: {

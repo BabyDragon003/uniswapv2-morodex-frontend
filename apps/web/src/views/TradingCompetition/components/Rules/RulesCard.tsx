@@ -1,4 +1,3 @@
-import { Heading, Card, CardBody } from '@pancakeswap/uikit'
 
 const RulesCard: React.FC<React.PropsWithChildren<{ title?: string }>> = ({ title, children }) => {
   return (

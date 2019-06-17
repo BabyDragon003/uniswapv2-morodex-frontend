@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractFanToken } from 'hooks/useContract'

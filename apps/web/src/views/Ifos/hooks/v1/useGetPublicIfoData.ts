@@ -1,4 +1,3 @@
-import { useState, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import { BSC_BLOCK_TIME } from 'config'
 import { Ifo, IfoStatus, PoolIds } from 'config/constants/types'
@@ -18,6 +17,27 @@ const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const [state, setState] = useState({
     isInitialized: false,
     status: 'idle' as IfoStatus,
+    blocksRemaining: 0,
+    secondsUntilStart: 0,
+    progress: 5,
+    secondsUntilEnd: 0,
+    startBlockNum: 0,
+    endBlockNum: 0,
+    numberPoints: null,
+    thresholdPoints: undefined,
+    [PoolIds.poolUnlimited]: {
+      raisingAmountPool: BIG_ZERO,
+      totalAmountPool: BIG_ZERO,
+      offeringAmountPool: BIG_ZERO, // Not know
+      limitPerUserInLP: BIG_ZERO, //  Not used
+      taxRate: 0, //  Not used
+      sumTaxesOverflow: BIG_ZERO, //  Not used
+    },
+  })
+  const fetchIfoData = useCallback(
+    async (currentBlock: number) => {
+      const ifoCalls = ['startBlock', 'endBlock', 'raisingAmount', 'totalAmount'].map((method) => ({
+        address,
         name: method,
       }))
 

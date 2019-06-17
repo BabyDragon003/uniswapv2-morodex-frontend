@@ -1,4 +1,3 @@
-import { RowBetween, Text } from '@pancakeswap/uikit'
 import { LightCard } from 'components/Card'
 import { useTranslation } from '@pancakeswap/localization'
 

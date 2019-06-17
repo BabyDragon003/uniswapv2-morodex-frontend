@@ -1,4 +1,3 @@
-import { useQueries } from '@pancakeswap/awgmi'
 import { isUserTransaction } from '@pancakeswap/awgmi/core'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'

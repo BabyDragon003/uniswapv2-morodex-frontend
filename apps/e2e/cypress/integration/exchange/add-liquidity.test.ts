@@ -1,4 +1,3 @@
-describe('Add Liquidity', () => {
   it('loads the two correct tokens', () => {
     cy.visit('/add/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'MDEX')

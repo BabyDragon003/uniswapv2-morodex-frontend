@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import { ConnectWalletButton } from 'components/ConnectWalletButton'
 import styled from 'styled-components'

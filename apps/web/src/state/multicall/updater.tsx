@@ -1,4 +1,3 @@
-import { useDebounce } from '@pancakeswap/hooks'
 import { Multicall } from 'config/abi/types'
 import { ResultStructOutput } from 'config/abi/types/Multicall'
 import { useEffect, useMemo, useRef } from 'react'

@@ -1,4 +1,3 @@
-import { ContextApi, useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Card,

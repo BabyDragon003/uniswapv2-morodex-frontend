@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Box, Card, Flex, Text, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useEffect, useMemo, useRef } from 'react'
 import { useAllTokenDataSWR, useGetChainName, useMultiChainPath } from 'state/info/hooks'
@@ -18,6 +17,27 @@ const CardWrapper = styled(NextLinkFromReactRouter)`
   }
 `
 
+const TopMoverCard = styled(Box)`
+  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  border-radius: ${({ theme }) => theme.radii.card};
+  padding: 16px;
+`
+
+export const ScrollableRow = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  padding: 16px 0;
+  white-space: nowrap;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`
+
+const DataCard = ({ tokenData }: { tokenData: TokenData }) => {
+  const chainName = useGetChainName()
+  const chainPath = useMultiChainPath()
+  return (
+    <CardWrapper to={`/info${chainPath}/tokens/${tokenData.address}`}>
       <TopMoverCard>
         <Flex>
           <Box width="32px" height="32px">

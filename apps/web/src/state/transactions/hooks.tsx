@@ -1,4 +1,3 @@
-import { TransactionResponse } from '@ethersproject/providers'
 import { useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Order } from '@gelatonetwork/limit-orders-lib'
@@ -18,6 +17,27 @@ import {
   NonBscFarmTransactionType,
   FarmTransactionStatus,
   NonBscFarmStepType,
+} from './actions'
+import { AppState, useAppDispatch } from '../index'
+
+// helper that can take a ethers library transaction response and add it to the list of transactions
+export function useTransactionAdder(): (
+  response: TransactionResponse,
+  customData?: {
+    summary?: string
+    translatableSummary?: { text: string; data?: Record<string, string | number> }
+    approval?: { tokenAddress: string; spender: string }
+    claim?: { recipient: string }
+    type?: TransactionType
+    order?: Order
+    nonBscFarm?: NonBscFarmTransactionType
+  },
+) => void {
+  const { chainId, account } = useActiveWeb3React()
+  const dispatch = useAppDispatch()
+
+  return useCallback(
+    (
       response: TransactionResponse,
       {
         summary,

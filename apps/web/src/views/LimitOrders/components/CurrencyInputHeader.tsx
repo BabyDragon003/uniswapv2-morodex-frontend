@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { ChartIcon, Flex, Heading, HistoryIcon, IconButton, Text, useModal, ChartDisableIcon } from '@pancakeswap/uikit'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 
 /**
  * Returns the last value of type T that passes a filter function

@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { LotteryResponse, LotteryRound, LotteryRoundUserTickets } from 'state/types'
 
 /**

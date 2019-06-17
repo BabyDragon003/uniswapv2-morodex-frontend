@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, TokenPairImage, Pool } from '@pancakeswap/uikit'
 
 const Container = styled(Flex)`

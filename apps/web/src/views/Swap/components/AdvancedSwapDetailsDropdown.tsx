@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useMemo } from 'react'
 
 import useLastTruthy from 'hooks/useLast'

@@ -1,4 +1,3 @@
-import { Currency, Token, ChainId } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN } from '@pancakeswap/awgmi'
 import memoize from 'lodash/memoize'
 import { useHttpLocations } from '@pancakeswap/hooks'
@@ -18,6 +17,27 @@ const getTokenLogoURL = memoize(
       )}/logo.png` // hex encoding
     }
     return null
+  },
+  (t) => (t ? `${t.chainId}#${t.address}` : null),
+)
+
+const StyledLogo = styled(TokenLogo)<{ size: string }>`
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
+  border-radius: 50%;
+`
+
+const APT_SRCS = ['https://tokens.dapp-frontend-prince.web.app/images/symbol/apt.png']
+
+export function AptosCoinLogo({ size = '24px', style }: { size?: string; style?: React.CSSProperties }) {
+  return (
+    <StyledLogo
+      badSrcs={BAD_SRCS}
+      className={aptosLogoClass({
+        isProduction: true,
+      })}
+      srcs={APT_SRCS}
+      alt="APT logo"
       style={style}
       size={size}
     />

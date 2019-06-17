@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import LineChartLoaderSVG from './LineChartLoaderSVG'

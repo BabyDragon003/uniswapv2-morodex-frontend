@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "address", "name": "_bunnyMintingStationAddress", "type": "address" },
@@ -18,6 +17,27 @@
       { "indexed": true, "internalType": "uint8", "name": "bunnyId", "type": "uint8" }
     ],
     "name": "BunnyMint",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "endBlock", "type": "uint256" }],
+    "name": "NewEndBlock",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "thresholdPoints", "type": "uint256" }],
+    "name": "NewPancakeProfileThresholdPoints",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "internalType": "string", "name": "tokenURI", "type": "string" }],
+    "name": "NewTokenURI",
+    "type": "event"
+  },
+  {
     "anonymous": false,
     "inputs": [
       { "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" },

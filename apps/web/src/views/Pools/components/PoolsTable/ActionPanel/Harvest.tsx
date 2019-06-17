@@ -1,4 +1,3 @@
-import { Button, Text, useModal, Flex, Skeleton, Heading, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { PoolCategory } from 'config/constants/types'

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Box, ButtonMenu, ButtonMenuItem, Flex, Grid, Text } from '@pancakeswap/uikit'
 import capitalize from 'lodash/capitalize'

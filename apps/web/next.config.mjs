@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { withSentryConfig } from '@sentry/nextjs'
 import { withAxiom } from 'next-axiom'
 import BundleAnalyzer from '@next/bundle-analyzer'

@@ -1,4 +1,3 @@
-import { useProfile } from 'state/profile/hooks'
 import { Pool } from '@pancakeswap/uikit'
 import { useMemo } from 'react'
 import { Token } from '@pancakeswap/sdk'
@@ -18,3 +17,8 @@ export function useProfileRequirement(profileRequirement: Pool.DeserializedPool<
     [profileRequirement, profile],
   )
 
+  return {
+    notMeetRequired,
+    notMeetThreshold,
+  }
+}

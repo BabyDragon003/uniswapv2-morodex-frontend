@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "contract ICaKePool", "name": "_cakePool", "type": "address" },

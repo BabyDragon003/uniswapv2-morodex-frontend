@@ -1,4 +1,3 @@
-import { createGlobalStyle } from 'styled-components'
 import { PancakeTheme } from '@pancakeswap/uikit'
 
 declare module 'styled-components' {

@@ -1,4 +1,3 @@
-import { ReactNode, useCallback } from 'react'
 import styled from 'styled-components'
 import { StaticImageData } from 'next/dist/client/image'
 import {
@@ -18,6 +17,27 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import { useTranslation } from '@pancakeswap/localization'
 import ClaimModal from '../ClaimModal'
+import CardUserInfo from './CardUserInfo'
+import ShareImageModal from '../ShareImageModal'
+import { YourScoreProps } from '../../types'
+
+const StyledCard = styled(Card)`
+  ${({ theme }) => theme.mediaQueries.sm} {
+    min-width: 380px;
+  }
+`
+
+const StyledCardFooter = styled(CardFooter)`
+  background: ${({ theme }) => theme.card.cardHeaderBackground.default};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 32px;
+    width: auto;
+    fill: ${({ theme }) => theme.colors.warning};
+  }
 `
 
 const StyledButton = styled(Button)`

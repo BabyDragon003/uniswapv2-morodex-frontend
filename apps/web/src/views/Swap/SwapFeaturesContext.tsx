@@ -1,4 +1,3 @@
-import React, { createContext, useState, useEffect, useMemo } from 'react'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import { useExchangeChartManager } from 'state/user/hooks'
@@ -18,6 +17,27 @@ export const SwapFeaturesContext = createContext<{
   isAccessTokenSupported: false,
   isChartExpanded: false,
   isChartDisplayed: false,
+  setIsChartExpanded: null,
+  setIsChartDisplayed: null,
+})
+
+const CHART_SUPPORT_CHAIN_IDS = [ChainId.BSC]
+const ACCESS_TOKEN_SUPPORT_CHAIN_IDS = [ChainId.BSC]
+const STABLE_SUPPORT_CHAIN_IDS = [ChainId.BSC_TESTNET, ChainId.BSC]
+
+export const SwapFeaturesProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const { isMobile } = useMatchBreakpoints()
+  const { chainId } = useActiveChainId()
+  const [userChartPreference, setUserChartPreference] = useExchangeChartManager(isMobile)
+  const [isChartDisplayed, setIsChartDisplayed] = useState(userChartPreference)
+  const [isChartExpanded, setIsChartExpanded] = useState(false)
+
+  const isChartSupported = useMemo(
+    () =>
+      // avoid layout shift, by default showing
+      !chainId || CHART_SUPPORT_CHAIN_IDS.includes(chainId),
+    [chainId],
+  )
 
   const isStableSupported = useMemo(() => !chainId || STABLE_SUPPORT_CHAIN_IDS.includes(chainId), [chainId])
 

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { RocketIcon, Text } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import BigNumber from 'bignumber.js'

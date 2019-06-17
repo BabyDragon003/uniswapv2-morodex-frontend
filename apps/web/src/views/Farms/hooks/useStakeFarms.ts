@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { stakeFarm, nonBscStakeFarm } from 'utils/calls'
 import { useMasterchef, useNonBscVault } from 'hooks/useContract'

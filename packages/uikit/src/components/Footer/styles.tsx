@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { darkColors } from "../../theme/colors";
 import { Box, Flex } from "../Box";
 import SocialLinks from "./Components/SocialLinks";

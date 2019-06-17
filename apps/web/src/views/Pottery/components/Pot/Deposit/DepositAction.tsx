@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useState, useMemo } from 'react'
 import {
   Flex,
@@ -18,6 +17,27 @@ import { usePotteryData, useLatestVaultAddress } from 'state/pottery/hook'
 import { CAKE } from '@pancakeswap/tokens'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { getFullDisplayBalance, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { PotteryDepositStatus } from 'state/types'
+import { useUserEnoughCakeValidator } from 'views/Pools/components/LockedPool/hooks/useUserEnoughCakeValidator'
+import { DEFAULT_TOKEN_DECIMAL } from 'config'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import EnableButton from './EnableButton'
+import DepositButton from './DepositButton'
+
+const InputPanel = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  border-radius: 20px;
+  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  z-index: 1;
+`
+
+const Container = styled.div<InputProps>`
+  border-radius: 16px;
+  padding: 8px 16px;
+  background-color: ${({ theme }) => theme.colors.input};
+  box-shadow: ${({ theme, isWarning }) => (isWarning ? theme.shadows.warning : theme.shadows.inset)};
 `
 
 interface DepositActionProps {

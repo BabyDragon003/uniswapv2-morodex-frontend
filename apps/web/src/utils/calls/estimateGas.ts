@@ -1,4 +1,3 @@
-import { Contract, PayableOverrides } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { calculateGasMargin } from 'utils'
 import { ContractMethodName, MaybeContract, ContractMethodParams } from 'utils/types'
@@ -18,6 +17,27 @@ export const estimateGas = async <C extends Contract = Contract, N extends Contr
   overrides: PayableOverrides = {},
   gasMarginPer10000: number,
 ) => {
+  if (!contract[methodName]) {
+    throw new Error(`Method ${methodName} doesn't exist on ${contract.address}`)
+  }
+  const rawGasEstimation = await contract.estimateGas[methodName](...methodArgs, overrides)
+  // By convention, BigNumber values are multiplied by 1000 to avoid dealing with real numbers
+  const gasEstimation = calculateGasMargin(rawGasEstimation, gasMarginPer10000)
+  return gasEstimation
+}
+
+/**
+ * Perform a contract call with a gas value returned from estimateGas
+ * @param contract Used to perform the call
+ * @param methodName The name of the method called
+ * @param methodArgs An array of arguments to pass to the method
+ * @param overrides An overrides object to pass to the method
+ * @returns https://docs.ethers.io/v5/api/providers/types/#providers-TransactionReceipt
+ */
+export const callWithEstimateGas = async <C extends Contract = Contract, N extends ContractMethodName<C> = any>(
+  contract: MaybeContract<C>,
+  methodName: N,
+  methodArgs: ContractMethodParams<C, N>,
   overrides: PayableOverrides = {},
   gasMarginPer10000 = 1000,
 ): Promise<TransactionResponse> => {

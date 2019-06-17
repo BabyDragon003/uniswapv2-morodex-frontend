@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { CalculatorMode, RoiCalculatorReducerState } from "./useRoiCalculatorReducer";
 import { Flex } from "../Box";
@@ -18,6 +17,27 @@ const rotate = keyframes`
     stroke-width: 0;
   }
 `;
+
+const ArrowContainer = styled(Flex)`
+  & > svg {
+    animation: 0.2s ${rotate} linear;
+    stroke: ${({ theme }) => `${theme.colors.primary3D}`};
+    stroke-width: 0;
+  }
+`;
+
+interface AnimatedArrowProps {
+  calculatorState: RoiCalculatorReducerState;
+}
+
+const AnimatedArrow: React.FC<React.PropsWithChildren<AnimatedArrowProps>> = ({ calculatorState }) => {
+  const [key, setKey] = useState("roiArrow-0");
+  const { mode } = calculatorState.controls;
+
+  // Trigger animation on state change
+  useEffect(() => {
+    setKey((prevKey) => {
+      const prevId = parseInt(prevKey.split("-")[1], 10);
       return `roiArrow-${prevId + 1}`;
     });
   }, [calculatorState]);

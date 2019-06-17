@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import { RowBetween, TooltipText, Text, useTooltip } from "@pancakeswap/uikit";
 import { formatAmount } from "@pancakeswap/utils/formatInfoNumbers";
 

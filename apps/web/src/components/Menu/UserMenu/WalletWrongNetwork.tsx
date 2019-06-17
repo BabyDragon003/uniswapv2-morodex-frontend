@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, Text, Link, HelpIcon, Message, MessageText } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'

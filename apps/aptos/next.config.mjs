@@ -1,4 +1,3 @@
-import bundleAnalyzer from '@next/bundle-analyzer'
 import { withAxiom } from 'next-axiom'
 
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'

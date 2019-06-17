@@ -1,4 +1,3 @@
-import {
   Currency,
   CurrencyAmount,
   JSBI,

@@ -1,4 +1,3 @@
-export interface CategoriesType {
   id: number
   attributes: {
     name: string

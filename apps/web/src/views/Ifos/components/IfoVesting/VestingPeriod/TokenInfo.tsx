@@ -1,4 +1,3 @@
-import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Box, Flex, Text, ChevronDownIcon, BalanceWithLoading } from '@pancakeswap/uikit'

@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { ACCESS_RISK_API } from 'config/constants/endpoints'
 
 import { z } from 'zod'
@@ -18,6 +17,27 @@ export const TOKEN_RISK = {
   VERY_HIGH: 4,
 } as const
 
+export const TOKEN_RISK_MAPPING = {
+  '5/5': TOKEN_RISK.VERY_LOW,
+  '4/5': TOKEN_RISK.LOW,
+  '3/5': TOKEN_RISK.MEDIUM,
+  '2/5': TOKEN_RISK.HIGH,
+  '1/5': TOKEN_RISK.VERY_HIGH,
+} as const
+
+export interface RiskTokenInfo {
+  address: string
+  chainId: ChainId
+  riskLevel: (typeof TOKEN_RISK)[keyof typeof TOKEN_RISK]
+  scannedTs: number
+}
+
+const fetchRiskApi = async (address: string, chainId: number) => {
+  const response = await fetch(`${ACCESS_RISK_API}/${chainId}/${address}`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
   })
 
   const result = await response.json()

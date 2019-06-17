@@ -1,4 +1,3 @@
-import { Flex, Text } from '@pancakeswap/uikit'
 import { useTheme } from '@pancakeswap/hooks'
 import Image from 'next/image'
 
@@ -18,3 +17,11 @@ const PoweredBy = () => {
           unoptimized
           style={{
             filter: isDark ? 'unset' : 'invert(1)',
+          }}
+        />
+      </a>
+    </Flex>
+  )
+}
+
+export default PoweredBy

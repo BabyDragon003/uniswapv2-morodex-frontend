@@ -1,4 +1,3 @@
-import { wrapCoinInfoTypeTag } from './coinInfo'
 import { getProvider } from '../providers'
 import { APT, APTOS_COIN } from '../constants'
 import { isAccountAddress, isHexStringEquals } from '../utils'

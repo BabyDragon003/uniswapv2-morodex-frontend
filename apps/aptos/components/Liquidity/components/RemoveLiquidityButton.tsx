@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal } from '@pancakeswap/uikit'
 import { useCallback } from 'react'
 import useRemoveLiquidityHandler from '../hooks/useRemoveLiquidityHandler'
@@ -18,6 +17,27 @@ export default function RemoveLiquidityButton({ error, parsedAmounts, currencyA,
   const { onUserInput } = useBurnActionHandlers()
 
   const handleDismissConfirmation = useCallback(() => {
+    // if there was a tx hash, we want to clear the input
+    if (txHash) {
+      onUserInput(Field.LIQUIDITY_PERCENT, '0')
+    }
+  }, [onUserInput, txHash])
+
+  const [onPresentRemoveLiquidity] = useModal(
+    <ConfirmRemoveLiquidityModal
+      title={t('You will receive')}
+      customOnDismiss={handleDismissConfirmation}
+      attemptingTxn={attemptingTxn}
+      hash={txHash || ''}
+      onRemove={onRemove}
+      tokenA={tokenA}
+      tokenB={tokenB}
+      liquidityErrorMessage={liquidityErrorMessage ?? ''}
+      parsedAmounts={parsedAmounts}
+      currencyA={currencyA}
+      currencyB={currencyB}
+    />,
+    true,
     true,
     'removeLiquidityModal',
   )

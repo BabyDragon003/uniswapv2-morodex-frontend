@@ -1,4 +1,3 @@
-import { useEffect, useMemo } from 'react'
 import { Text, Flex, Button, Input, Box, Message, MessageText } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const LockDurationField: React.FC<React.PropsWithChildren<LockDurationFieldProps
   duration,
   setDuration,
   isOverMax,
+  currentDuration,
+  currentDurationLeft,
+  isMaxSelected,
+  setIsMaxSelected,
+}) => {
+  const { t } = useTranslation()
+
+  const maxAvailableDuration = currentDurationLeft ? MAX_LOCK_DURATION - currentDurationLeft : MAX_LOCK_DURATION
+
+  useEffect(() => {
+    if (isMaxSelected) {
+      setDuration(maxAvailableDuration)
+    }
+  }, [isMaxSelected, maxAvailableDuration, setDuration])
+
+  // When user extends the duration due to time passed when approving
+  // transaction the extended duration will be a couple of seconds off to max duration,
+  // therefore it is better to compare based on weeks
+  const currentDurationInWeeks = useMemo(() => currentDuration && secondsToWeeks(currentDuration), [currentDuration])
+
+  const maxDurationInWeeks = useMemo(() => secondsToWeeks(MAX_LOCK_DURATION), [])
 
   return (
     <>

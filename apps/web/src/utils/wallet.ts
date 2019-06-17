@@ -1,4 +1,3 @@
-// Set of helper functions to facilitate wallet setup
 import { Address } from 'wagmi'
 import { BAD_SRCS } from '../components/Logo/constants'
 

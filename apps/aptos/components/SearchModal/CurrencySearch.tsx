@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import { useDebounce } from '@pancakeswap/hooks'
 import { useTranslation } from '@pancakeswap/localization'

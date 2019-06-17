@@ -1,4 +1,3 @@
-import { Price, Currency } from "@pancakeswap/swap-sdk-core";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { Text, AutoRenewIcon } from "@pancakeswap/uikit";
 import { useState } from "react";
@@ -18,3 +17,17 @@ export function TradePrice({ price }: TradePriceProps) {
     : `${price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol}`;
 
   return (
+    <Text style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
+      {show ? (
+        <>
+          {formattedPrice ?? "-"} {label}
+          <AtomBox className={balanceMaxMiniClass} onClick={() => setShowInverted(!showInverted)}>
+            <AutoRenewIcon width="14px" />
+          </AtomBox>
+        </>
+      ) : (
+        "-"
+      )}
+    </Text>
+  );
+}

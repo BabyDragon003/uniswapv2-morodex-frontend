@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Text, TicketFillIcon, PredictionsIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
@@ -18,6 +17,27 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 40px;
+  }
+`
+
+const BgWrapper = styled.div`
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+`
+
+const BottomLeftImgWrapper = styled(Flex)`
+  position: absolute;
+  left: 0;
+  bottom: -64px;
+  max-width: 192px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 100%;
   }
 `
 

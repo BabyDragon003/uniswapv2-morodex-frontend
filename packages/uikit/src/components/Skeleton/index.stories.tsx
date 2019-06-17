@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Skeleton, { SkeletonV2 } from "./Skeleton";
 
 export default {

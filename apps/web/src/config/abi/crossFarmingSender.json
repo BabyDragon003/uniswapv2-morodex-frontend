@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "address", "name": "_messageBus", "type": "address" },
@@ -18,6 +17,27 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "rate", "type": "uint256" }],
+    "name": "CompensationRateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "gaslimit", "type": "uint256" }],
+    "name": "CreateProxyGasLimitUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "internalType": "address", "name": "sender", "type": "address" },
+      { "indexed": false, "internalType": "uint64", "name": "srcChainId", "type": "uint64" },
+      { "indexed": false, "internalType": "uint64", "name": "nonce", "type": "uint64" },
+      { "indexed": false, "internalType": "enum DataTypes.MessageTypes", "name": "msgType", "type": "uint8" },
+      { "indexed": false, "internalType": "address", "name": "acount", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "pid", "type": "uint256" },
+      { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
     ],
     "name": "FarmingMessageReceived",
     "type": "event"

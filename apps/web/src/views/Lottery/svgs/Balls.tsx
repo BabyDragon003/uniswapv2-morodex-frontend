@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Svg, SvgProps, Text, Flex } from '@pancakeswap/uikit'
 
 export const PinkBall: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {

@@ -1,4 +1,3 @@
-import { Modal, Flex, Text, useToast } from '@pancakeswap/uikit'
 import { BigNumber } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ interface Props {
   account: string
   teamId: number
   minimumCakeRequired: BigNumber
+  allowance: BigNumber
+  onDismiss?: () => void
+}
+
+const ConfirmProfileCreationModal: React.FC<React.PropsWithChildren<Props>> = ({
+  account,
+  teamId,
+  selectedNft,
+  minimumCakeRequired,
+  allowance,
+  onDismiss,
+}) => {
+  const { t } = useTranslation()
+  const profileContract = useProfileContract()
+  const { refresh: refreshProfile } = useProfile()
+  const { toastSuccess } = useToast()
+  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
+  const { callWithGasPrice } = useCallWithGasPrice()
+
+  const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
+    useApproveConfirmTransaction({
       onRequiresApproval: async () => {
         return requiresApproval(cakeContractReader, account, profileContract.address, minimumCakeRequired)
       },

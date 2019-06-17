@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { ChainId } from '@pancakeswap/sdk'
 import { useModal, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'

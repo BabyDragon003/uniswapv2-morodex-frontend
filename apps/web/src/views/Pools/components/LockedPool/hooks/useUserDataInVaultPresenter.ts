@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { convertTimeToSeconds, distanceToNowStrict } from 'utils/timeHelper'
 import formatSecondsToWeeks from '../../utils/formatSecondsToWeeks'
 

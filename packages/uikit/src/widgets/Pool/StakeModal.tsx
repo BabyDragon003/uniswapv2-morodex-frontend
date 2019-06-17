@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 
 import BigNumber from "bignumber.js";
 import { useCallback, useEffect, useState } from "react";

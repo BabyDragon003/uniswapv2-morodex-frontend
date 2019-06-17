@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { Box, BoxProps } from "../Box";
 import { ArrowDropDownIcon } from "../Svg";
@@ -18,6 +17,27 @@ const DropDownHeader = styled.div`
   transition: border-radius 0.15s;
 `;
 
+const DropDownListContainer = styled.div`
+  min-width: 136px;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.input};
+  z-index: ${({ theme }) => theme.zIndices.dropdown};
+  transition: transform 0.15s, opacity 0.15s;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  width: 100%;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    min-width: 168px;
+  }
+`;
+
+const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
+  cursor: pointer;
+  width: 100%;
   position: relative;
   background: ${({ theme }) => theme.colors.input};
   border-radius: 16px;

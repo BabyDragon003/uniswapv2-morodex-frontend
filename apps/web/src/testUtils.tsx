@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-unresolved */
@@ -18,6 +17,27 @@ const mockRouter: NextRouter = {
   pathname: '/',
   route: '/',
   asPath: '/',
+  forward: noop,
+  query: {},
+  push: vi.fn(),
+  replace: vi.fn(),
+  reload: vi.fn(),
+  back: vi.fn(),
+  prefetch: vi.fn(),
+  beforePopState: vi.fn(),
+  events: {
+    on: vi.fn(),
+    off: vi.fn(),
+    emit: vi.fn(),
+  },
+  isFallback: false,
+  isLocaleDomain: false,
+  isReady: true,
+  isPreview: false,
+}
+
+export function renderWithProvider(
+  ui,
   { preloadedState = undefined, store = initializeStore(preloadedState), router = {}, ...renderOptions } = {},
 ) {
   function Wrapper({ children }) {

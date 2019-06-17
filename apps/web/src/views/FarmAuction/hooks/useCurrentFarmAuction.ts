@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import isEqual from 'lodash/isEqual'
 import useSWR from 'swr'
 import { useFarmAuctionContract } from 'hooks/useContract'
@@ -18,6 +17,27 @@ export const useCurrentFarmAuction = (account: string) => {
     { refreshInterval: FAST_INTERVAL },
   )
 
+  const {
+    data: { auction: currentAuction, bidders },
+    mutate: refreshBidders,
+  } = useFarmAuction(currentAuctionId, { refreshInterval: FAST_INTERVAL })
+  const [connectedBidder, setConnectedBidder] = useState<ConnectedBidder | null>(null)
+
+  const farmAuctionContract = useFarmAuctionContract(false)
+
+  // Check if connected wallet is whitelisted
+  useEffect(() => {
+    const checkAccount = async () => {
+      try {
+        const whitelistedStatus = await farmAuctionContract.whitelisted(account)
+        setConnectedBidder({
+          account,
+          isWhitelisted: whitelistedStatus,
+        })
+      } catch (error) {
+        console.error('Failed to check if account is whitelisted', error)
+      }
+    }
     if (account && (!connectedBidder || connectedBidder.account !== account)) {
       checkAccount()
     }

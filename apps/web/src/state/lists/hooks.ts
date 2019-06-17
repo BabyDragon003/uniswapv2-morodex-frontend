@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { TokenAddressMap as TTokenAddressMap, WrappedTokenInfo, TokenList, TokenInfo } from '@pancakeswap/token-lists'
 import { ListsState } from '@pancakeswap/token-lists/react'
 import {

@@ -1,4 +1,3 @@
-import { SaleStatusEnum, UserStatusEnum } from 'views/PancakeSquad/types'
 import { ButtonsEnum } from './types'
 
 type getCurrentButtonType = {
@@ -18,3 +17,5 @@ export const getCurrentButton = ({
   if (saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0) return ButtonsEnum.MINT
   if (saleStatus === SaleStatusEnum.Claim) return ButtonsEnum.END
 
+  return ButtonsEnum.NONE
+}

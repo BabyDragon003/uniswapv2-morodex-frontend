@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { Flex } from '@pancakeswap/uikit'
 import NextLink from 'next/link'
 import styled from 'styled-components'

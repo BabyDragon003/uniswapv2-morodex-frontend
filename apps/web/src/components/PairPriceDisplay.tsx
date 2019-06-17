@@ -1,4 +1,3 @@
-import { Flex, Skeleton, Text, FlexGap, FlexGapProps } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { formatAmount, formatAmountNotation } from 'utils/formatInfoNumbers'
 

@@ -1,4 +1,3 @@
-import { fetchCoin, FetchCoinResult } from '@pancakeswap/awgmi/core'
 import { useQueries } from '@tanstack/react-query'
 import { QueryConfig } from '../types'
 import { queryKey as coinQueryKey } from './useCoin'

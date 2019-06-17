@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'

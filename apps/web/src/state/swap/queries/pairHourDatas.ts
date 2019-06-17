@@ -1,4 +1,3 @@
-import { gql } from 'graphql-request'
 
 const pairHourDatas = gql`
   query pairHourDatas($pairId: String, $first: Int) {

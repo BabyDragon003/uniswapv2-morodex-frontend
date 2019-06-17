@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap/sdk'
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

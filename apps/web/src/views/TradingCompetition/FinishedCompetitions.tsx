@@ -1,4 +1,3 @@
-import React from 'react'
 import { Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FanTokenAllBunnies from './pngs/fan-token-all-bunnies.png'

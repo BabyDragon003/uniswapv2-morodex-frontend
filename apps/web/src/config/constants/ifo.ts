@@ -1,4 +1,3 @@
-import { ERC20Token, ChainId } from '@pancakeswap/sdk'
 import { bscTokens } from '@pancakeswap/tokens'
 import { CAKE_BNB_LP_MAINNET } from './lp'
 import { Ifo } from './types'

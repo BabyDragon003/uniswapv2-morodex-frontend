@@ -1,4 +1,3 @@
-import styled, { DefaultTheme } from "styled-components";
 import { space, variant, typography } from "styled-system";
 import { Colors } from "../../theme/types";
 import { scaleVariants, styleVariants } from "./theme";
@@ -18,6 +17,27 @@ const getOutlineStyles = ({ outline, theme, variant: variantKey = variants.PRIMA
       background: ${theme.colors.background};
       border: 2px solid ${color};
     `;
+  }
+
+  return "";
+};
+
+export const StyledTag = styled.div<ThemedProps>`
+  align-items: center;
+  border-radius: 16px;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 400;
+  white-space: nowrap;
+
+  & > svg {
+    fill: currentColor;
+  }
+
+  ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
+
+  ${variant({
+    prop: "scale",
     variants: scaleVariants,
   })}
   ${variant({

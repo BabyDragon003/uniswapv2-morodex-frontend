@@ -1,4 +1,3 @@
-import { getAddress } from '@ethersproject/address'
 import { Contract } from '@ethersproject/contracts'
 import {
   Currency,

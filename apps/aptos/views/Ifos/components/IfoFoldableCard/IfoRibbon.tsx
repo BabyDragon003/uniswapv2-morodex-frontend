@@ -1,4 +1,3 @@
-import { Box, Flex, Heading, Progress, ProgressBar } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { getStatus } from 'views/Ifos/hooks/helpers'

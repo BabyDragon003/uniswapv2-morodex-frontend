@@ -1,4 +1,3 @@
-import lotteryImage from './lottery.png'
 import IFOImage from './IFO.png'
 import IFOMobileImage from './IFOMobile.png'
 import competitionImage from './competition.png'

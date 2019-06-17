@@ -1,4 +1,3 @@
-import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import Button from "../../components/Button/Button";
 
@@ -18,6 +17,27 @@ it("renders correctly", () => {
       cursor: pointer;
       display: -webkit-inline-box;
       display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-letter-spacing: 0.03em;
+      -moz-letter-spacing: 0.03em;
+      -ms-letter-spacing: 0.03em;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      opacity: 1;
+      outline: 0;
+      -webkit-transition: background-color 0.2s,opacity 0.2s;
+      transition: background-color 0.2s,opacity 0.2s;
+      height: 48px;
+      padding: 0 24px;
+      background-color: var(--colors-primary);
       color: var(--colors-invertedContrast);
     }
 

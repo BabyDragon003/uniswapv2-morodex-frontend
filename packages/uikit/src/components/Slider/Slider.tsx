@@ -1,4 +1,3 @@
-import React, { ChangeEvent, useCallback } from "react";
 import { Box } from "../Box";
 import {
   BunnySlider,

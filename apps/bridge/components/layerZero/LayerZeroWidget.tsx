@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Box, PancakeTheme } from '@pancakeswap/uikit'
 import { darkTheme, lightTheme } from 'components/layerZero/theme'
 

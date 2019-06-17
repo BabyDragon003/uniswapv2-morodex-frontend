@@ -1,4 +1,3 @@
-import { useMemo, memo } from 'react'
 import CountUp from 'react-countup'
 import { Text } from '@pancakeswap/uikit'
 import { formatBigNumberToFixed } from '@pancakeswap/utils/formatBalance'

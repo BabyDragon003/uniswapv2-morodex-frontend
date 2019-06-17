@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { parseVmStatusError } from './utils'
 
 export class ConnectorAlreadyConnectedError extends Error {
@@ -18,6 +17,27 @@ export class ChainNotConfiguredError extends Error {
 }
 
 export class ChainMismatchError extends Error {
+  name = 'ChainMismatchError'
+
+  constructor({ activeChain, targetChain }: { activeChain: string; targetChain: string }) {
+    super(`Chain mismatch: Expected "${targetChain}", received "${activeChain}".`)
+  }
+}
+
+export class ConnectorUnauthorizedError extends Error {
+  name = 'ConnectorUnauthorizedError'
+  message = 'Connector Unauthorized'
+}
+
+export class SimulateTransactionError extends Error {
+  name = 'SimulateTransactionError'
+  tx: Types.UserTransaction
+  parsedError?: ReturnType<typeof parseVmStatusError>
+
+  constructor(tx: Types.UserTransaction) {
+    const parseError = parseVmStatusError(tx?.vm_status ?? '')
+    super(`Simulate Transaction Error: ${parseError?.message || parseError?.reason || tx.vm_status}`)
+    this.parsedError = parseError
     this.tx = tx
   }
 }

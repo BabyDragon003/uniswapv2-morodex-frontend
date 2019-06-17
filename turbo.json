@@ -1,4 +1,3 @@
-{
   "$schema": "https://turborepo.org/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {

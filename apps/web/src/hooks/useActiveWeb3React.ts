@@ -1,4 +1,3 @@
-import { useWeb3React } from '@pancakeswap/wagmi'
 import { useRouter, NextRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { EXCHANGE_PAGE_PATHS } from 'config/constants/exchange'

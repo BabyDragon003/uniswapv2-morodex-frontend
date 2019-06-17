@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Flex, Text, useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
@@ -18,6 +17,27 @@ const StyledCell = styled(Pool.BaseCell)`
 `
 
 export interface StakedProps {
+  label: string
+  pid: number
+  stakedBalance: BigNumber
+}
+
+const Staked: React.FC<React.PropsWithChildren<StakedProps>> = ({ label, stakedBalance }) => {
+  const { t } = useTranslation()
+  const { isMobile } = useMatchBreakpoints()
+
+  const labelText = t('%asset% Staked', { asset: label })
+
+  const displayBalance = useMemo(() => {
+    return formatLpBalance(stakedBalance, 18)
+  }, [stakedBalance])
+
+  return (
+    <StyledCell role="cell">
+      <Pool.CellContent>
+        <Text fontSize="12px" color="textSubtle" textAlign="left">
+          {labelText}
+        </Text>
         <Flex mt="4px">
           <Text fontSize={isMobile ? '14px' : '16px'} color={stakedBalance.gt(0) ? 'text' : 'textDisabled'}>
             {displayBalance}

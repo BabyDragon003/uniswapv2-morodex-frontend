@@ -1,4 +1,3 @@
-import { Heading, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 
 const StatCardContent: React.FC<
   React.PropsWithChildren<{ headingText: string; bodyText: string; highlightColor: string }>

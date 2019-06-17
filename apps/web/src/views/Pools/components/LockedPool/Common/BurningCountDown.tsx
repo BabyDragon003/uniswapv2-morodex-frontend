@@ -1,4 +1,3 @@
-import { useState, useCallback, memo, useMemo } from 'react'
 import { useInterval } from '@pancakeswap/hooks'
 
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'

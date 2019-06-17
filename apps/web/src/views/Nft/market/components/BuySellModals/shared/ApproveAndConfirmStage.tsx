@@ -1,4 +1,3 @@
-import { Flex, Text, Button, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { StepIndicator } from './styles'
 
@@ -18,6 +17,27 @@ interface ApproveAndConfirmStageProps {
 const ApproveAndConfirmStage: React.FC<React.PropsWithChildren<ApproveAndConfirmStageProps>> = ({
   variant,
   isApproved,
+  isApproving,
+  isConfirming,
+  handleApprove,
+  handleConfirm,
+}) => {
+  const { t } = useTranslation()
+
+  return (
+    <Flex p="16px" flexDirection="column">
+      <Flex mb="8px" alignItems="center">
+        <Flex flexDirection="column">
+          <Flex alignItems="center">
+            <StepIndicator success={isApproved}>
+              <Text fontSize="20px" bold color="invertedContrast">
+                1
+              </Text>
+            </StepIndicator>
+            <Text fontSize="20px" color={isApproved ? 'success' : 'secondary'} bold>
+              {isApproved ? t('Enabled') : t('Enable')}
+            </Text>
+          </Flex>
           {!isApproved && (
             <Text mt="8px" maxWidth="275px" small color="textSubtle">
               {variant === 'buy'

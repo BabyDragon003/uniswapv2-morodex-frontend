@@ -1,4 +1,3 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 import styled from 'styled-components'
@@ -18,6 +17,27 @@ const FanTokenUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInfor
   const { t } = useTranslation()
   const {
     userRewardGroup,
+    userCakeRewards,
+    userLazioRewards,
+    userPortoRewards,
+    userSantosRewards,
+    userPointReward,
+    canClaimNFT,
+  } = userTradingInformation
+  const { cakeReward, lazioReward, portoReward, santosReward, dollarValueOfTokensReward } =
+    useFanTokenCompetitionRewards({
+      userCakeRewards,
+      userLazioRewards,
+      userPortoRewards,
+      userSantosRewards,
+    })
+
+  const achievement = getRewardGroupAchievements(fanTokenPrizes, userRewardGroup, userPointReward)
+
+  return (
+    <StyledPrizeTable>
+      <StyledThead>
+        <tr>
           <th>{t('Token Prizes')}</th>
           <th>{t('Achievements')}</th>
           <th>{t('NFT')}</th>

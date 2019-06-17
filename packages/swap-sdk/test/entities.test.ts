@@ -1,4 +1,3 @@
-import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import { TradeType, Rounding, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { Pair, Route, Trade } from '../src/entities'
@@ -18,6 +17,27 @@ const DECIMAL_PERMUTATIONS: [number, number, number][] = [
 ]
 
 function decimalize(amount: number, decimals: number): JSBI {
+  return JSBI.multiply(JSBI.BigInt(amount), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(decimals)))
+}
+
+describe('entities', () => {
+  DECIMAL_PERMUTATIONS.forEach((decimals) => {
+    describe(`decimals permutation: ${decimals}`, () => {
+      let tokens: Token[]
+      it('Token', () => {
+        tokens = ADDRESSES.map((address, i) => new Token(CHAIN_ID, address, decimals[i], `Token${i}`))
+        tokens.forEach((token, i) => {
+          expect(token.chainId).toEqual(CHAIN_ID)
+          expect(token.address).toEqual(ADDRESSES[i])
+          expect(token.decimals).toEqual(decimals[i])
+        })
+      })
+
+      let pairs: Pair[]
+      it('Pair', () => {
+        pairs = [
+          new Pair(
+            CurrencyAmount.fromRawAmount(tokens[0], decimalize(1, tokens[0].decimals)),
             CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))
           ),
           new Pair(

@@ -1,4 +1,3 @@
-import { FarmWithStakedValue } from '@pancakeswap/farms'
 import { useTranslation } from '@pancakeswap/localization'
 import { Card, ExpandableSectionButton, Farm as FarmUI, Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'

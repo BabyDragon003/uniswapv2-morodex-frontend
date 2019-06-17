@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useMemo } from 'react'
 import { format } from 'date-fns'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const ExpiredWrapper = styled(Flex)`
     fill: ${({ theme }) => theme.colors.textSubtle};
   }
 `
+
+const ActiveWrapper = styled(Flex)`
+  ${sharedFlexStyles}
+`
+
+const FutureWrapper = styled(Flex)`
+  ${sharedFlexStyles}
+
+  svg {
+    fill: ${({ theme }) => theme.colors.textDisabled};
+  }
+`
+
+const StyledText = styled(Text)`
+  margin: 4px 0;
+  font-weight: 600;
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.secondary};
+`
+
+const StyledDateText = styled(Text)`
   font-size: 12px;
   line-height: 120%;
   min-height: 29px;

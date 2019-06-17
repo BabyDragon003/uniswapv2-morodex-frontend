@@ -1,4 +1,3 @@
-import { Box, BoxProps, Card, Flex, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { HeightProps } from 'styled-system'
 import { ArticleDataType } from 'views/Blog/utils/transformArticle'
@@ -18,6 +17,27 @@ const StyledBlogCard = styled(Box)`
   &:hover ${StyledBackgroundImage} {
     opacity: 0.8;
     transform: scale(1.05);
+  }
+`
+
+const StyledTagGroup = styled(Flex)`
+  flex-wrap: wrap;
+
+  ${Text} {
+    &:after {
+      content: ',';
+      margin: 0 4px;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
+`
+
+interface BlogCardProps extends BoxProps {
   imgUrl: string
   article?: ArticleDataType
   imgHeight?: HeightProps['height']

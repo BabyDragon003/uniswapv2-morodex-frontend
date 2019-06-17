@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, Flex, Heading, useToast, Balance } from '@pancakeswap/uikit'
 import { useAccount } from '@pancakeswap/awgmi'
 import BigNumber from 'bignumber.js'
@@ -18,6 +17,27 @@ interface FarmCardActionsProps {
 }
 
 const HarvestAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({ earnings, onReward, onDone }) => {
+  const { t } = useTranslation()
+  const { account } = useAccount()
+  const { toastSuccess } = useToast()
+  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
+  const cakePrice = usePriceCakeUsdc()
+  const rawEarningsBalance = account ? getBalanceAmount(earnings as BigNumber, FARM_DEFAULT_DECIMALS) : BIG_ZERO
+  const displayBalance = rawEarningsBalance.toFixed(5, BigNumber.ROUND_DOWN)
+  const earningsBusd = rawEarningsBalance ? rawEarningsBalance.times(cakePrice ?? 0).toNumber() : 0
+
+  const handleHarvest = async () => {
+    const receipt = await fetchWithCatchTxError(() => onReward())
+
+    if (receipt?.status) {
+      toastSuccess(
+        `${t('Harvested')}!`,
+        <ToastDescriptionWithTx txHash={receipt.transactionHash}>
+          {t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'MDEX' })}
+        </ToastDescriptionWithTx>,
+      )
+      onDone?.()
+    }
   }
 
   return (

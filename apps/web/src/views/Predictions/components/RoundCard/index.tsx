@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { useGetBetByEpoch, useGetCurrentEpoch } from 'state/predictions/hooks'
 import { BetPosition, NodeRound } from 'state/types'
 import { getMultiplierV2 } from '../../helpers'

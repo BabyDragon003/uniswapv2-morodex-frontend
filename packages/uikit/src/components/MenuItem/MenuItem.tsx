@@ -1,4 +1,3 @@
-import React, { useContext, useRef, useEffect } from "react";
 import { MenuContext } from "../../widgets/Menu/context";
 import StyledMenuItem, { StyledMenuItemContainer } from "./styles";
 import { MenuItemProps } from "./types";

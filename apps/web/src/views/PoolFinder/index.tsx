@@ -1,4 +1,3 @@
-import { Currency, JSBI } from '@pancakeswap/sdk'
 import { AddIcon, Button, ChevronDownIcon, Text, useModal, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'

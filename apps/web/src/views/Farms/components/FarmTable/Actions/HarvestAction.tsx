@@ -1,4 +1,3 @@
-import { TransactionResponse } from '@ethersproject/providers'
 import { useTranslation } from '@pancakeswap/localization'
 import { Skeleton, useToast, useModal, Farm as FarmUI } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
@@ -18,6 +17,27 @@ import { FarmWithStakedValue } from '@pancakeswap/farms'
 import useHarvestFarm from '../../../hooks/useHarvestFarm'
 import useProxyStakedActions from '../../YieldBooster/hooks/useProxyStakedActions'
 
+const { FarmTableHarvestAction } = FarmUI.FarmTable
+
+interface HarvestActionProps extends FarmWithStakedValue {
+  userDataReady: boolean
+  onReward?: () => Promise<TransactionResponse>
+  proxyCakeBalance?: number
+  onDone?: () => void
+}
+
+export const ProxyHarvestActionContainer = ({ children, ...props }) => {
+  const { lpAddress } = props
+  const lpContract = useERC20(lpAddress)
+
+  const { onReward, onDone, proxyCakeBalance } = useProxyStakedActions(props.pid, lpContract)
+
+  return children({ ...props, onReward, proxyCakeBalance, onDone })
+}
+
+export const HarvestActionContainer = ({ children, ...props }) => {
+  const { onReward } = useHarvestFarm(props.pid)
+  const { account, chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
 
   const onDone = useCallback(

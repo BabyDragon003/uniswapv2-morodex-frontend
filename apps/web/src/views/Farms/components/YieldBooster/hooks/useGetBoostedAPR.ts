@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import { useMemo } from 'react'
 import { useCakeVaultPublicData, useCakeVaultUserData } from 'state/pools/hooks'
@@ -18,6 +17,27 @@ export const useGetBoostedMultiplier = (userBalanceInFarm: BigNumber, lpTokenSta
       lockedAmount, // userLockAmount
       secondsToDays(_toNumber(lockedEnd) - _toNumber(lockedStart)), // userLockDuration
       totalLockedAmount, // totalLockAmount
+      lpTokenStakedAmount, // lpBalanceOfFarm
+      avgLockDurationsInSeconds ? secondsToDays(avgLockDurationsInSeconds) : 280, // AverageLockDuration
+    )
+    return result.toString() === 'NaN' || isLoading ? '1.000' : result.toFixed(3)
+  }, [
+    userBalanceInFarm,
+    lpTokenStakedAmount,
+    totalLockedAmount,
+    avgLockDurationsInSeconds,
+    lockedAmount,
+    lockedEnd,
+    lockedStart,
+    isLoading,
+  ])
+  return _toNumber(bCakeMultiplier)
+}
+
+export const useGetCalculatorMultiplier = (
+  userBalanceInFarm: BigNumber,
+  lpTokenStakedAmount: BigNumber,
+  lockedAmount: BigNumber,
   userLockDuration: number,
 ) => {
   useCakeVaultPublicData()

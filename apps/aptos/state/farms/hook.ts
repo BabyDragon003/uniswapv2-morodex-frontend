@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ChainId, Coin, Pair, PAIR_RESERVE_TYPE_TAG } from '@pancakeswap/aptos-swap-sdk'
 import { DeserializedFarmsState, deserializeFarm } from '@pancakeswap/farms'
 import { useAccount, useAccountResource, useCoins, useQueries, useQuery } from '@pancakeswap/awgmi'

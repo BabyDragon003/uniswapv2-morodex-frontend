@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency } from '@pancakeswap/sdk'
 import { AddIcon, Box, CardBody, CardFooter, Text, TooltipText, useTooltip, FlexGap } from '@pancakeswap/uikit'
 import { CommitButton } from 'components/CommitButton'
@@ -18,6 +17,27 @@ export function ChoosePair({
   currencyB,
   error,
   onNext,
+}: {
+  currencyA?: Currency
+  currencyB?: Currency
+  error?: string
+  onNext?: () => void
+}) {
+  const { account } = useActiveWeb3React()
+  const { t } = useTranslation()
+  const isValid = !error
+  const { handleCurrencyASelect, handleCurrencyBSelect } = useCurrencySelectRoute()
+  const [, pair] = usePair(currencyA, currencyB)
+  const poolData = useLPApr(pair)
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+    t(`Based on last 7 days' performance. Does not account for impermanent loss`),
+    {
+      placement: 'bottom',
+    },
+  )
+
+  return (
+    <>
       <AppHeader
         title={t('Add Liquidity')}
         subtitle={t('Receive LP tokens and earn 0.17% trading fees')}

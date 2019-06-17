@@ -1,4 +1,3 @@
-import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import _toNumber from 'lodash/toNumber'
 import { SerializedFarmPublicData, FarmData, isStableFarm } from './types'

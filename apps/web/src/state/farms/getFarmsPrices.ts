@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { BIG_ONE, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { filterFarmsByQuoteToken, SerializedFarm } from '@pancakeswap/farms'
 import { ChainId } from '@pancakeswap/sdk'
@@ -18,6 +17,27 @@ const getFarmBaseTokenPrice = (
   quoteTokenFarm: SerializedFarm,
   nativePriceUSD: BigNumber,
   wNative: string,
+  stable: string,
+): BigNumber => {
+  const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
+
+  if (farm.quoteToken.symbol === stable) {
+    return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
+  }
+
+  if (farm.quoteToken.symbol === wNative) {
+    return hasTokenPriceVsQuote ? nativePriceUSD.times(farm.tokenPriceVsQuote) : BIG_ZERO
+  }
+
+  // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
+  if (!quoteTokenFarm) {
+    return BIG_ZERO
+  }
+
+  // Possible alternative farm quoteTokens:
+  // UST (i.e. MIR-UST), pBTC (i.e. PNT-pBTC), BTCB (i.e. bBADGER-BTCB), ETH (i.e. SUSHI-ETH)
+  // If the farm's quote token isn't BUSD or WBNB, we then use the quote token, of the original farm's quote token
+  // i.e. for farm PNT - pBTC we use the pBTC farm's quote token - BNB, (pBTC - BNB)
   // from the BNB - pBTC price, we can calculate the PNT - BUSD price
   if (quoteTokenFarm.quoteToken.symbol === wNative) {
     const quoteTokenInBusd = nativePriceUSD.times(quoteTokenFarm.tokenPriceVsQuote)

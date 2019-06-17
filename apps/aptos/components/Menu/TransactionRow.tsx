@@ -1,4 +1,3 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { TransactionDetails } from 'state/transactions/reducer'
@@ -18,6 +17,27 @@ const TxnIcon = styled(Flex)`
 const Summary = styled.div`
   flex: 1;
   padding: 0 8px;
+`
+
+const TxnLink = styled(Link)`
+  align-items: center;
+  color: ${({ theme }) => theme.colors.text};
+  display: flex;
+  margin-bottom: 16px;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
+`
+
+const renderIcon = (txn: TransactionDetails) => {
+  if (!txn.receipt) {
+    return <RefreshIcon spin width="24px" />
+  }
+
+  return txn.receipt?.success ? (
+    <CheckmarkCircleIcon color="success" width="24px" />
   ) : (
     <BlockIcon color="failure" width="24px" />
   )

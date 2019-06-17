@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { useState, useCallback } from 'react'
 import { BSC_BLOCK_TIME } from 'config'
 import round from 'lodash/round'
@@ -18,6 +17,27 @@ import { getStatus } from '../helpers'
 const TAX_PRECISION = new BigNumber(10000000000)
 
 const NO_QUALIFIED_NFT_ADDRESS = '0x0000000000000000000000000000000000000000'
+
+const formatPool = (pool) => ({
+  raisingAmountPool: pool ? new BigNumber(pool[0].toString()) : BIG_ZERO,
+  offeringAmountPool: pool ? new BigNumber(pool[1].toString()) : BIG_ZERO,
+  limitPerUserInLP: pool ? new BigNumber(pool[2].toString()) : BIG_ZERO,
+  hasTax: pool ? pool[3] : false,
+  totalAmountPool: pool ? new BigNumber(pool[4].toString()) : BIG_ZERO,
+  sumTaxesOverflow: pool ? new BigNumber(pool[5].toString()) : BIG_ZERO,
+})
+
+const formatVestingInfo = (pool) => ({
+  percentage: pool ? pool[0].toNumber() : 0,
+  cliff: pool ? pool[1].toNumber() : 0,
+  duration: pool ? pool[2].toNumber() : 0,
+  slicePeriodSeconds: pool ? pool[3].toNumber() : 0,
+})
+
+const ROUND_DIGIT = 3
+
+/**
+ * Gets all public data of an IFO
  */
 const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const { address, version, plannedStartTime } = ifo

@@ -1,4 +1,3 @@
-import { BalanceInput, Button, Flex, Image, Slider, Text } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Dispatch, useMemo, memo, SetStateAction, useCallback } from 'react'
@@ -18,6 +17,27 @@ interface PropsType {
   lockedAmount: string
   stakingMax: BigNumber
   setLockedAmount: Dispatch<SetStateAction<string>>
+  usedValueStaked: number | undefined
+  stakingTokenBalance: BigNumber
+  needApprove: boolean
+}
+
+const BalanceField: React.FC<React.PropsWithChildren<PropsType>> = ({
+  stakingAddress,
+  stakingSymbol,
+  stakingDecimals,
+  lockedAmount,
+  stakingMax,
+  setLockedAmount,
+  usedValueStaked,
+  stakingTokenBalance,
+  needApprove,
+}) => {
+  const { t } = useTranslation()
+  const { userNotEnoughCake, notEnoughErrorMessage } = useUserEnoughCakeValidator(lockedAmount, stakingTokenBalance)
+
+  const percent = useMemo(() => {
+    const amount = new BigNumber(lockedAmount)
     if (amount.gt(0)) {
       const convertedInput = amount.multipliedBy(getFullDecimalMultiplier(stakingDecimals))
       const percentage = Math.floor(convertedInput.dividedBy(stakingMax).multipliedBy(100).toNumber())

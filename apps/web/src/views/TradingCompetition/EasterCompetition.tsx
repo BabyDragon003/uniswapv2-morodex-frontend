@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import styled from 'styled-components'
@@ -18,6 +17,27 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { ChainId } from '@pancakeswap/sdk'
 import { DARKBG, MIDBLUEBG, MIDBLUEBG_DARK } from './pageSectionStyles'
 import EasterStormBunny from './pngs/easter-storm.png'
+import Countdown from './components/Countdown'
+import HowToJoin from './components/HowToJoin'
+import BattleCta from './components/BattleCta'
+import EasterBattleBanner from './easter/components/BattleBanner/EasterBattleBanner'
+import EasterPrizesInfo from './easter/components/PrizesInfo/EasterPrizesInfo'
+import EasterYourScore from './easter/components/YourScore/EasterYourScore'
+import EasterCakerBunny from './pngs/easter-cakers.png'
+import { useTeamInformation } from './useTeamInformation'
+import { useRegistrationClaimStatus } from './useRegistrationClaimStatus'
+import Footer from './Footer'
+import TeamRanksSection from './components/TeamRanksSection'
+import PrizesInfoSection from './components/PrizesInfoSection'
+
+const CompetitionPage = styled.div`
+  min-height: calc(100vh - 64px);
+`
+
+const BannerFlex = styled(Flex)`
+  flex-direction: column;
+  ${({ theme }) => theme.mediaQueries.xl} {
+    padding-top: 10px;
     flex-direction: row-reverse;
     justify-content: space-between;
   }

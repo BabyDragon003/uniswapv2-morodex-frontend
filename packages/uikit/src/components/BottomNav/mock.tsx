@@ -1,4 +1,3 @@
-import ItemsMock from "../DropdownMenu/mock";
 import { MenuItemsType } from "../MenuItems/types";
 import {
   SwapFillIcon,

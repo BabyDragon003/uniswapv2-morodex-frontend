@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { TokenData, Block } from 'state/info/types'
@@ -18,6 +17,27 @@ interface TokenFields {
   derivedETH: string // Price in ETH per token
   derivedUSD: string // Price in USD per token
   tradeVolumeUSD: string
+  totalTransactions: string
+  totalLiquidity: string
+}
+
+interface FormattedTokenFields
+  extends Omit<
+    TokenFields,
+    'derivedETH' | 'derivedBNB' | 'derivedUSD' | 'tradeVolumeUSD' | 'totalTransactions' | 'totalLiquidity' | 'decimals'
+  > {
+  derivedBNB: number
+  derivedETH: number
+  derivedUSD: number
+  tradeVolumeUSD: number
+  totalTransactions: number
+  totalLiquidity: number
+  decimals: number
+}
+
+interface TokenQueryResponse {
+  now: TokenFields[]
+  oneDayAgo: TokenFields[]
   twoDaysAgo: TokenFields[]
   oneWeekAgo: TokenFields[]
   twoWeeksAgo: TokenFields[]

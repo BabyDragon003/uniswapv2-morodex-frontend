@@ -1,4 +1,3 @@
-import { ChangeEvent, useState, useEffect } from 'react'
 import { Box, BoxProps, Text, Input } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { isAddress } from 'utils'

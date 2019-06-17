@@ -1,4 +1,3 @@
-import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
 import React, { createContext, useRef, useState, useMemo, useCallback } from "react";
 import styled from "styled-components";
 import { mountAnimation, unmountAnimation } from "../../components/BottomDrawer/styles";

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 import { Modal, Box, Text, Flex, Input, OpenNewIcon, Spinner, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const StyledModal = styled(Modal)`
 `
 
 const InputContainer = styled(Flex)`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
+const AddressRowContainer = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 5fr 0.5fr;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  padding: 8px 24px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+`
+
+const AddressRow: React.FC<React.PropsWithChildren<{ bidder: FarmAuctionBidderConfig; isMobile: boolean }>> = ({
+  bidder,
+  isMobile,
+}) => {
+  const { farmName, tokenName, account, projectSite } = bidder
+  return (
+    <a href={projectSite} target="_blank" rel="noopener noreferrer">
       <AddressRowContainer>
         <Flex flexDirection="column" flex="3">
           <Text>{farmName}</Text>

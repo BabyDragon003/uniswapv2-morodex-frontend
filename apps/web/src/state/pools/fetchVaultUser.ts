@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { SerializedLockedVaultUser, SerializedVaultUser } from 'state/types'
 import { getCakeVaultAddress } from 'utils/addressHelpers'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'

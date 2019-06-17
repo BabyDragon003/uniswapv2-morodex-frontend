@@ -1,4 +1,3 @@
-import { useMemo, useState } from 'react'
 import { Text, Box, Card, Flex, Skeleton } from '@pancakeswap/uikit'
 import LineChart from 'views/Info/components/InfoCharts/LineChart'
 import BarChart from 'views/Info/components/InfoCharts/BarChart'
@@ -18,6 +17,27 @@ enum ChartView {
   VOLUME,
   PRICE,
 }
+
+interface ChartCardProps {
+  variant: 'pool' | 'token'
+  chartData: ChartEntry[]
+  tokenData?: TokenData
+  tokenPriceData?: PriceChartEntry[]
+}
+
+const ChartCard: React.FC<React.PropsWithChildren<ChartCardProps>> = ({
+  variant,
+  chartData,
+  tokenData,
+  tokenPriceData,
+}) => {
+  const [view, setView] = useState(ChartView.VOLUME)
+  const [hoverValue, setHoverValue] = useState<number | undefined>()
+  const [hoverDate, setHoverDate] = useState<string | undefined>()
+  const {
+    t,
+    currentLanguage: { locale },
+  } = useTranslation()
 
   const currentDate = new Date().toLocaleString(locale, { month: 'short', year: 'numeric', day: 'numeric' })
 

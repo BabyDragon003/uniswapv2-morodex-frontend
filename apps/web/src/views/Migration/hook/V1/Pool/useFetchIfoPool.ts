@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import fetchIfoPoolUser from 'views/Migration/hook/V1/Pool/fetchIfoPoolUser'
 import { fetchPublicIfoPoolData, fetchIfoPoolFeesData } from 'views/Migration/hook/V1/Pool/fetchIfoPoolPublic'
@@ -18,6 +17,27 @@ export const ifoPoolV1Contract = '0x1B2A2f6ed4A1401E8C73B4c2B6172455ce2f78E8'
 export const cakeVaultAddress = '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC'
 
 const getCakeVaultContract = (signer?: Signer | Provider) => {
+  const signerOrProvider = signer ?? bscRpcProvider
+  return new Contract(cakeVaultAddress, cakeVaultAbi, signerOrProvider) as any
+}
+
+const fetchVaultUserV1 = async (account: string) => {
+  const contract = getCakeVaultContract()
+  try {
+    const userContractResponse = await contract.userInfo(account)
+    return {
+      isLoading: false,
+      userShares: new BigNumber(userContractResponse.shares.toString()).toJSON(),
+      lastDepositedTime: userContractResponse.lastDepositedTime.toString(),
+      lastUserActionTime: userContractResponse.lastUserActionTime.toString(),
+      cakeAtLastUserAction: new BigNumber(userContractResponse.cakeAtLastUserAction.toString()).toJSON(),
+    }
+  } catch (error) {
+    return {
+      isLoading: true,
+      userShares: null,
+      lastDepositedTime: null,
+      lastUserActionTime: null,
       cakeAtLastUserAction: null,
     }
   }

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'

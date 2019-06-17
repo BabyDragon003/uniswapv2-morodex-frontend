@@ -1,4 +1,3 @@
-import React, { useCallback, useState } from "react";
 import useKonamiCheatCode from "./useKonamiCheatCode";
 
 export default {

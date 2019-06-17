@@ -1,4 +1,3 @@
-import React from 'react'
 import { Currency, Fraction, Percent, CurrencyAmount, Token } from '@pancakeswap/sdk'
 import { Text, useTooltip, TooltipText, Box, Flex, Svg, SvgProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const Dot = styled(Box)<{ scale?: 'sm' | 'md' }>`
 
 const CircleSvg = ({ percent = 1, stroke = '#1FC7D4', ...props }: SvgProps & { percent?: number; stroke?: string }) => (
   <Svg width="60px" height="60px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <g filter="url(#filter0_i_1147_113741)">
+      <circle r="10" cx="10" cy="10" fill="#7645D9" />
+      <circle
+        r="5"
+        cx="10"
+        cy="10"
+        fill="transparent"
+        stroke={stroke}
+        strokeWidth="10"
+        strokeDasharray={`calc(${percent * 100}px * 31.4 / 100) 31.4`}
+        transform="rotate(-90) translate(-20)"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_i_1147_113741"
+        x={0}
+        y={0}
+        width={60}
+        height={60}
+        filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
         <feFlood floodOpacity={0} result="BackgroundImageFix" />

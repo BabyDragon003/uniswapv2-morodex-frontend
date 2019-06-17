@@ -1,4 +1,3 @@
-import styled, { keyframes, css } from 'styled-components'
 import { Box, Flex, HelpIcon, Text, useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'
@@ -18,6 +17,27 @@ import PoolStatsInfo from '../../PoolStatsInfo'
 import PoolTypeTag from '../../PoolTypeTag'
 
 const expandAnimation = keyframes`
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 1000px;
+  }
+`
+
+const collapseAnimation = keyframes`
+  from {
+    max-height: 1000px;
+  }
+  to {
+    max-height: 0px;
+  }
+`
+
+const StyledActionPanel = styled.div<{ expanded: boolean }>`
+  animation: ${({ expanded }) =>
+    expanded
+      ? css`
           ${expandAnimation} 300ms linear forwards
         `
       : css`

@@ -1,4 +1,3 @@
-import { Currency, Token } from '@pancakeswap/sdk'
 import { Button, Text, Modal, useModal, InjectedModalProps, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
@@ -18,6 +17,27 @@ const DetailsFooter = styled.div`
   padding: 8px 0;
   width: 100%;
   max-width: 400px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.invertedContrast};
+  text-align: center;
+`
+
+const UnsupportedModal: React.FC<React.PropsWithChildren<Props>> = ({ currencies, onDismiss }) => {
+  const { chainId } = useActiveChainId()
+  const { t } = useTranslation()
+  const tokens =
+    chainId && currencies
+      ? currencies.map((currency) => {
+          return wrappedCurrency(currency, chainId)
+        })
+      : []
+
+  const unsupportedTokens: { [address: string]: Token } = useUnsupportedTokens()
+
+  return (
+    <Modal title={t('Unsupported Assets')} onDismiss={onDismiss}>
       <AutoColumn gap="lg">
         {tokens.map((token) => {
           return (

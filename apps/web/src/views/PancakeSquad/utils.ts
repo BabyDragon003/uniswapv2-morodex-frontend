@@ -1,4 +1,3 @@
-import { EventStatus } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
 import formatTimePeriod from 'utils/formatTimePeriod'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'

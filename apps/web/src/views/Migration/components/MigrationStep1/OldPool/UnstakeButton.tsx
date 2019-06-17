@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useToast, Pool } from '@pancakeswap/uikit'
 import { useAccount, useSigner } from 'wagmi'
 import BigNumber from 'bignumber.js'

@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
 import { Token, ChainId, Percent, JSBI, CurrencyAmount } from '@pancakeswap/sdk'
 import { getBlockExploreLink, isAddress, calculateGasMargin } from 'utils'
@@ -18,6 +17,27 @@ describe('utils', () => {
     it('enum', () => {
       expect(getBlockExploreLink('abc', 'address', ChainId.BSC_TESTNET)).toEqual(
         'https://testnet.bscscan.com/address/abc',
+      )
+    })
+  })
+
+  describe('#calculateSlippageAmount', () => {
+    it('bounds are correct', () => {
+      const tokenAmount = CurrencyAmount.fromRawAmount(new Token(ChainId.BSC, AddressZero, 0), '100')
+      expect(() => calculateSlippageAmount(tokenAmount, -1)).toThrow()
+      expect(calculateSlippageAmount(tokenAmount, 0).map((bound) => bound.toString())).toEqual(['100', '100'])
+      expect(calculateSlippageAmount(tokenAmount, 100).map((bound) => bound.toString())).toEqual(['99', '101'])
+      expect(calculateSlippageAmount(tokenAmount, 200).map((bound) => bound.toString())).toEqual(['98', '102'])
+      expect(calculateSlippageAmount(tokenAmount, 10000).map((bound) => bound.toString())).toEqual(['0', '200'])
+      expect(() => calculateSlippageAmount(tokenAmount, 10001)).toThrow()
+    })
+  })
+
+  describe('#isAddress', () => {
+    it('returns false if not', () => {
+      expect(isAddress('')).toBe(false)
+      expect(isAddress('0x0000')).toBe(false)
+      expect(isAddress(1)).toBe(false)
       expect(isAddress({})).toBe(false)
       expect(isAddress(undefined)).toBe(false)
     })

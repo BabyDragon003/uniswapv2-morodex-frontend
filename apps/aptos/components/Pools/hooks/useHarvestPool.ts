@@ -1,4 +1,3 @@
-import { SmartChef } from 'contracts/smartchef'
 import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'
 import { useCallback } from 'react'
 

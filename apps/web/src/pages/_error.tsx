@@ -1,4 +1,3 @@
-/**
  * This page is loaded by Nextjs:
  *  - on the server, when data-fetching methods throw or reject
  *  - on the client, when `getInitialProps` throws or rejects
@@ -18,3 +17,14 @@ import { NotFound } from '@pancakeswap/uikit'
 const CustomErrorComponent = (props: ErrorProps) => <NotFound statusCode={props.statusCode} />
 
 CustomErrorComponent.getInitialProps = async (contextData) => {
+  // In case this is running in a serverless function, await this in order to give Sentry
+  // time to send the error before the lambda exits
+  await captureUnderscoreErrorException(contextData)
+
+  // This will contain the status code of the response
+  return NextErrorComponent.getInitialProps(contextData)
+}
+
+CustomErrorComponent.chains = []
+
+export default CustomErrorComponent

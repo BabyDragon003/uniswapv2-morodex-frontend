@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import styled, { CSSProperties } from 'styled-components'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ interface MultiplierArrowProps {
 }
 
 const ArrowWrapper = styled.div`
+  height: 65px;
+  margin: 0 auto;
+  width: 240px;
+`
+
+const Content = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+`
+
+const EnteredTagWrapper = styled.div`
+  position: absolute;
+  z-index: 10;
+`
 
 const getTextColor =
   (fallback = 'textSubtle') =>

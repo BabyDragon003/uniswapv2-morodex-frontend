@@ -1,4 +1,3 @@
-import getLpAddress from 'utils/getLpAddress'
 import { bscTokens } from '@pancakeswap/tokens'
 import { FarmAuctionBidderConfig } from './types'
 

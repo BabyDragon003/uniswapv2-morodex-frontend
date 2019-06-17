@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import { Text } from "../../../../../components/Text";
 import { Skeleton } from "../../../../../components/Skeleton";
 import { StyledActionContainer, ActionContent, ActionTitles } from "./styles";

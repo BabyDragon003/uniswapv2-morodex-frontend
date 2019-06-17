@@ -1,4 +1,3 @@
-interface ReleasedChartProps {
   percentage: number
 }
 
@@ -18,3 +17,6 @@ const ReleasedChart: React.FC<React.PropsWithChildren<ReleasedChartProps>> = ({ 
       />
     </svg>
   )
+}
+
+export default ReleasedChart

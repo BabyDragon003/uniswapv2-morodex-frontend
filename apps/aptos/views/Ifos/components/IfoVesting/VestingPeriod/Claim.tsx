@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
 import { ifoRelease } from 'views/Ifos/generated/ifo'

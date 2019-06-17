@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { BaseLayout, CardsLayout } from ".";
 
@@ -18,3 +17,17 @@ export const Base: React.FC<React.PropsWithChildren> = () => {
     <BaseLayout>
       {[...Array(24)].map((value) => (
         <Stub key={value} />
+      ))}
+    </BaseLayout>
+  );
+};
+
+export const Cards: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <CardsLayout>
+      {[...Array(10)].map((value) => (
+        <Stub key={value} />
+      ))}
+    </CardsLayout>
+  );
+};

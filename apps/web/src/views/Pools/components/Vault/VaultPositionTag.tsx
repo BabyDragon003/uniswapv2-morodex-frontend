@@ -1,4 +1,3 @@
-import {
   Tag,
   TagProps,
   Text,
@@ -18,6 +17,27 @@ import { VaultPosition, getVaultPosition } from 'utils/cakePool'
 
 const tagConfig: Record<VaultPosition, TagProps> = {
   [VaultPosition.None]: {},
+  [VaultPosition.Flexible]: {
+    variant: 'success',
+  },
+  [VaultPosition.Locked]: {
+    variant: 'secondary',
+  },
+  [VaultPosition.LockedEnd]: {
+    variant: 'secondary',
+    outline: true,
+  },
+  [VaultPosition.AfterBurning]: {
+    variant: 'failure',
+    outline: true,
+  },
+}
+const iconConfig: Record<VaultPosition, any> = {
+  [VaultPosition.None]: null,
+  [VaultPosition.Flexible]: SplitIcon,
+  [VaultPosition.Locked]: LockIcon,
+  [VaultPosition.LockedEnd]: UnlockIcon,
+  [VaultPosition.AfterBurning]: HotIcon,
 }
 
 const positionLabel: Record<VaultPosition, ReactNode> = {

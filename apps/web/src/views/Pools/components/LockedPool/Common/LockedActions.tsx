@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Flex, Box } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'

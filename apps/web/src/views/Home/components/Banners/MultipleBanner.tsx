@@ -1,4 +1,3 @@
-import { appearAnimation, useIsomorphicEffect, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useState } from 'react'
 import { ChainId } from '@pancakeswap/sdk'

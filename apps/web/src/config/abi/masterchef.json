@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "contract IMasterChef", "name": "_MASTER_CHEF", "type": "address" },

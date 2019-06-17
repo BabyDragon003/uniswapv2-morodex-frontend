@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { Chain } from '../chain'
 import { Connector } from './base'
 import { ConnectorNotFoundError, UserRejectedRequestError } from '../errors'
@@ -17,6 +16,27 @@ export type MartianConnectorOptions = {
   /** Name of connector */
   name?: string
 }
+
+export class MartianConnector extends Connector<Window['martian'], MartianConnectorOptions> {
+  readonly id: string
+  readonly name: string
+  provider?: Window['martian']
+
+  readonly ready = typeof window !== 'undefined' && !!window.martian
+  constructor(config: { chains?: Chain[]; options?: MartianConnectorOptions } = {}) {
+    super(config)
+
+    let name = 'Martian'
+    const overrideName = config.options?.name
+    if (typeof overrideName === 'string') name = overrideName
+    this.id = config.options?.id || 'martian'
+    this.name = name
+  }
+
+  async getProvider() {
+    if (typeof window !== 'undefined' && !!window.martian) this.provider = window.martian
+    return this.provider
+  }
 
   async connect() {
     try {

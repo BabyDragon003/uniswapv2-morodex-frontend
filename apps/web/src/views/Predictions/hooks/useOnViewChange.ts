@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import useSwiper from './useSwiper'
 import { PageView } from '../types'

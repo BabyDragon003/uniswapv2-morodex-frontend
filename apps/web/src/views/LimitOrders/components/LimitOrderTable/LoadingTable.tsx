@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { Skeleton, Table, Td } from '@pancakeswap/uikit'
 
 const LoadingTable = () => (

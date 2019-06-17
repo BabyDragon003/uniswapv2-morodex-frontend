@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import addSeconds from 'date-fns/addSeconds'
 import { deserializeToken } from '@pancakeswap/token-lists'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
@@ -18,6 +17,27 @@ export const deserializeFarm = (
     vaultPid,
     dual,
     multiplier,
+    isCommunity,
+    auctionHostingStartSeconds,
+    quoteTokenPriceBusd,
+    tokenPriceBusd,
+    boosted,
+    infoStableSwapAddress,
+    stableSwapAddress,
+    stableLpFee,
+    stableLpFeeRateOfTotalFee,
+  } = farm
+
+  const auctionHostingStartDate = !isUndefinedOrNull(auctionHostingStartSeconds)
+    ? new Date((auctionHostingStartSeconds as number) * 1000)
+    : null
+  const auctionHostingEndDate = auctionHostingStartDate
+    ? addSeconds(auctionHostingStartDate, auctionHostingInSeconds)
+    : null
+  const now = Date.now()
+  const isFarmCommunity =
+    isCommunity ||
+    !!(
       auctionHostingStartDate &&
       auctionHostingEndDate &&
       auctionHostingStartDate.getTime() < now &&

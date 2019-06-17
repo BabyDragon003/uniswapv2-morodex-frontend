@@ -1,4 +1,3 @@
-import { gql } from 'graphql-request'
 import { ChartEntry } from 'state/info/types'
 import { PairDayDatasResponse } from '../types'
 import { mapPairDayData, fetchChartDataWithAddress } from '../helpers'

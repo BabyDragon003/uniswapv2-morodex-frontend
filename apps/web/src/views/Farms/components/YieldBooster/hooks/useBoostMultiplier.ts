@@ -1,4 +1,3 @@
-import { useBCakeFarmBoosterContract, useMasterchef } from 'hooks/useContract'
 import farmBoosterAbi from 'config/abi/farmBooster.json'
 import masterChefAbi from 'config/abi/masterchef.json'
 import { FixedNumber } from '@ethersproject/bignumber'

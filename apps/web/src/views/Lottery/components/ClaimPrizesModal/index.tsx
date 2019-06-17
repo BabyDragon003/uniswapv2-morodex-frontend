@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import styled from 'styled-components'
 import { Heading, ModalContainer, ModalHeader, ModalTitle, ModalBody, ModalCloseButton } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
@@ -18,6 +17,27 @@ const StyledModal = styled(ModalContainer)`
   ${({ theme }) => theme.mediaQueries.sm} {
     min-width: 380px;
   }
+`
+
+const StyledModalHeader = styled(ModalHeader)`
+  background: ${({ theme }) => theme.colors.gradientCardHeader};
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+`
+
+const BunnyDecoration = styled.div`
+  position: absolute;
+  top: -116px; // line up bunny at the top of the modal
+  left: 0px;
+  text-align: center;
+  width: 100%;
+`
+
+const showConfetti = () => {
+  confetti({
+    particleCount: 200,
+    startVelocity: 30,
+    gravity: 0.5,
     spread: 350,
     origin: {
       x: 0.5,

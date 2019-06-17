@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 
 interface AvatarImageProps {
   src: string
@@ -18,3 +17,9 @@ const AvatarImage = styled.div.attrs<AvatarImageProps>(({ alt }) => ({
   height: 96px;
   border: 4px ${({ borderColor }) => borderColor || '#f2ecf2'} solid;
 
+  & > img {
+    border-radius: 50%;
+  }
+`
+
+export default AvatarImage

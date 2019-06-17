@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 
 export const useSessionStorage = <T>(keyName: string, defaultValue: T) => {
   const [storedValue, setStoredValue] = useState(() => {
@@ -18,3 +17,10 @@ export const useSessionStorage = <T>(keyName: string, defaultValue: T) => {
   useEffect(() => {
     try {
       window.sessionStorage.setItem(keyName, JSON.stringify(storedValue))
+    } catch (error) {
+      //
+    }
+  }, [keyName, storedValue])
+
+  return [storedValue, setStoredValue]
+}

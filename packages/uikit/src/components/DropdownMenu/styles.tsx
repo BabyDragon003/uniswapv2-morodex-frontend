@@ -1,4 +1,3 @@
-import styled, { DefaultTheme } from "styled-components";
 import { Colors } from "../../theme";
 import { Text } from "../Text";
 import { StyledDropdownMenuItemProps } from "./types";

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDetails'
 

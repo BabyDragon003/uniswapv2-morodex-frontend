@@ -1,4 +1,3 @@
-import React, { useEffect, useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import { useCakeVault, usePoolsWithVault } from 'state/pools/hooks'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'

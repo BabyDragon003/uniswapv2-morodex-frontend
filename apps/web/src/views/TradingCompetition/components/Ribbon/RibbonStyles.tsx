@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { RibbonDownMid, RibbonUpMid, RibbonDownSide, RibbonUpSide } from '../../svgs'
 
 const MidRibbonStyles = `
@@ -18,6 +17,27 @@ position: absolute;
 left: -31px;
 z-index: 1;
 `
+
+export const RibbonDownMidExpanding = styled(RibbonDownMid)`
+  ${MidRibbonStyles}
+  height: 48px;
+`
+
+export const RibbonUpMidExpanding = styled(RibbonUpMid)`
+  ${MidRibbonStyles}
+  height: 46px;
+`
+
+export const RibbonDownRightSide = styled(RibbonDownSide)`
+  ${RightSideRibbonStyles}
+`
+
+export const RibbonUpRightSide = styled(RibbonUpSide)`
+  ${RightSideRibbonStyles}
+`
+
+export const RibbonDownLeftSide = styled(RibbonDownSide)`
+  ${LeftSideRibbonStyles}
 `
 
 export const RibbonUpLeftSide = styled(RibbonUpSide)`

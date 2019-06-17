@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import { usePopper } from "react-popper";
 import { useOnClickOutside } from "../../hooks";
@@ -18,6 +17,27 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
   children,
   isBottomNav = false,
   showItemsOnMobile = false,
+  activeItem = "",
+  items = [],
+  index,
+  setMenuOpenByIndex,
+  isDisabled,
+  ...props
+}) => {
+  const { linkComponent } = useContext(MenuContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
+  const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
+  const hasItems = items.length > 0;
+  const { styles, attributes } = usePopper(targetRef, tooltipRef, {
+    strategy: isBottomNav ? "absolute" : "fixed",
+    placement: isBottomNav ? "top" : "bottom-start",
+    modifiers: [{ name: "offset", options: { offset: [0, isBottomNav ? 6 : 0] } }],
+  });
+
+  const isMenuShow = isOpen && ((isBottomNav && showItemsOnMobile) || !isBottomNav);
+
+  useEffect(() => {
     const showDropdownMenu = () => {
       setIsOpen(true);
     };

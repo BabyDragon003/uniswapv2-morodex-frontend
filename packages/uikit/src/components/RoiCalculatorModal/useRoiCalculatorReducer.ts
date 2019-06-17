@@ -1,4 +1,3 @@
-import { useEffect, useReducer, useCallback } from "react";
 import merge from "lodash/merge";
 import BigNumber from "bignumber.js";
 import { getRoi, getInterestBreakdown, getPrincipalForInterest } from "@pancakeswap/utils/compoundApyHelpers";
@@ -18,6 +17,27 @@ const compoundingIndexToFrequency = {
 };
 
 const TOKEN_PRECISION = 10;
+const USD_PRECISION = 2;
+
+// Used to track/react which currency user is editing (i.e. USD amount or Token amount)
+export enum EditingCurrency {
+  TOKEN,
+  USD,
+}
+
+// Calculator works in 2 modes
+export enum CalculatorMode {
+  ROI_BASED_ON_PRINCIPAL, // User edits principal value and sees what ROI they get
+  PRINCIPAL_BASED_ON_ROI, // User edits ROI value and sees what principal they need to invest to reach it
+}
+
+export interface RoiCalculatorReducerState {
+  controls: {
+    compounding: boolean; // Compounding checkbox state
+    compoundingFrequency: number; // Compounding frequency in number of compounds per day
+    activeCompoundingIndex: number; // index of active compounding button in ButtonMenu
+    stakingDuration: number; // index of active staking duration button in ButtonMenu
+    mode: CalculatorMode;
     editingCurrency: EditingCurrency;
   };
   data: {

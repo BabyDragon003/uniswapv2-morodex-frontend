@@ -1,4 +1,3 @@
-import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { bscTokens, bscTestnetTokens, USDC, USDT, BUSD, WBTC_ETH } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
@@ -18,6 +17,27 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.wbnb,
     bscTokens.cake,
     bscTokens.busd,
+    bscTokens.usdt,
+    bscTokens.btcb,
+    bscTokens.eth,
+    bscTokens.usdc,
+  ],
+  [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
+}
+
+/**
+ * Additional bases for specific tokens
+ * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
+ */
+export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
+  [ChainId.BSC]: {
+    // SNFTS-SFUND
+    [bscTokens.snfts.address]: [bscTokens.sfund],
+  },
+}
+
+/**
+ * Some tokens can only be swapped via certain pairs, so we override the list of bases that are considered for these
  * tokens.
  * @example [AMPL.address]: [DAI, WNATIVE[ChainId.BSC]]
  */

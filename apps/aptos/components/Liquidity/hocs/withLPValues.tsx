@@ -1,4 +1,3 @@
-import multiplyPriceByAmount from '@pancakeswap/utils/multiplyPriceByAmount'
 
 import { Coin, JSBI, Pair, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { memo, useMemo } from 'react'

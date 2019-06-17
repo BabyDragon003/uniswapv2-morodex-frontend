@@ -1,4 +1,3 @@
-import { useFarmUser } from 'state/farms/hooks'
 import { Farm as FarmUI, FarmTableFarmTokenInfoProps } from '@pancakeswap/uikit'
 import { TokenPairImage } from 'components/TokenImage'
 

@@ -1,4 +1,3 @@
-import { CoinStoreResult, wrapCoinStoreTypeTag } from '../coins/coinStore'
 import { APTOS_COIN } from '../constants'
 import { getProvider } from '../providers'
 

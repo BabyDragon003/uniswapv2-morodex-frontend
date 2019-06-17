@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { keccak256 } from '@ethersproject/keccak256'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'

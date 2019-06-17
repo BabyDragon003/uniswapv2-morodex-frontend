@@ -1,4 +1,3 @@
-/**
  * Enum describing types of version differences
  */
 import { Version } from './types'

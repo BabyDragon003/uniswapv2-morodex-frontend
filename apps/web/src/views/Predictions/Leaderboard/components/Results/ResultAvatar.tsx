@@ -1,4 +1,3 @@
-import { Box, Flex, FlexProps, Link, ProfileAvatar, SubMenu, SubMenuItem, useModal, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { getBlockExploreLink } from 'utils'
 import { PredictionUser } from 'state/types'
@@ -18,6 +17,27 @@ const AvatarWrapper = styled(Box)`
   margin-left: 8px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
+    order: 1;
+    margin-left: 0;
+    margin-right: 8px;
+  }
+`
+
+const UsernameWrapper = styled(Box)`
+  order: 1;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    order: 2;
+  }
+`
+
+const ResultAvatar: React.FC<React.PropsWithChildren<ResultAvatarProps>> = ({ user, ...props }) => {
+  const { t } = useTranslation()
+  const { profile } = useProfileForAddress(user.id)
+  const { result, address, leaderboardLoadingState } = useStatModalProps(user.id)
+  const { token, api } = useConfig()
+
+  const [onPresentWalletStatsModal] = useModal(
     <WalletStatsModal
       api={api}
       token={token}

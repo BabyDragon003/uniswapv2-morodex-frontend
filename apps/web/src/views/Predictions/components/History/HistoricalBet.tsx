@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   Box,
   ChevronDownIcon,
@@ -18,6 +17,27 @@ import { Bet, PredictionStatus } from 'state/types'
 import { REWARD_RATE } from 'state/predictions/config'
 import { useGetCurrentEpoch, useGetIsClaimable, useGetPredictionsStatus } from 'state/predictions/hooks'
 import { fetchLedgerData, markAsCollected } from 'state/predictions'
+import { getRoundResult, Result } from 'state/predictions/helpers'
+import { useTranslation } from '@pancakeswap/localization'
+import { formatBnb, getNetPayout } from './helpers'
+import CollectWinningsButton from '../CollectWinningsButton'
+import ReclaimPositionButton from '../ReclaimPositionButton'
+import BetDetails from './BetDetails'
+import { useConfig } from '../../context/ConfigProvider'
+
+interface BetProps {
+  bet: Bet
+}
+
+const StyledBet = styled(Flex).attrs({ alignItems: 'center', p: '16px' })`
+  background-color: ${({ theme }) => theme.card.background};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
+  cursor: pointer;
+`
+
+const YourResult = styled(Box)`
+  flex: 1;
+`
 
 const HistoricalBet: React.FC<React.PropsWithChildren<BetProps>> = ({ bet }) => {
   const [isOpen, setIsOpen] = useState(false)

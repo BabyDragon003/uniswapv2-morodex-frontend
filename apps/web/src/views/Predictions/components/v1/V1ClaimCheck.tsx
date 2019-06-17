@@ -1,4 +1,3 @@
-import { useState, useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const StyledClaimCheck = styled(Flex)`
   background-color: ${({ theme }) => theme.card.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   cursor: pointer;
+  justify-content: space-between;
+  padding: 16px;
+`
+
+const ClaimCheck = () => {
+  const [isFetching, setIsFetching] = useState(false)
+  const [history, setHistory] = useState<Bet[]>([])
+  const { t } = useTranslation()
+  const { address: account } = useAccount()
+  const dispatch = useLocalDispatch()
+  const predictionsV1Address = useMemo(() => getPredictionsV1Address(), [])
+
+  const [onPresentCollectWinningsModal] = useModal(
+    <CollectRoundWinningsModal
+      predictionsAddress={predictionsV1Address}
+      token={bscTokens.bnb}
+      dispatch={dispatch}
+      history={history}
+      isLoadingHistory={isFetching}
+      isV1Claim
+    />,
     false,
     true,
     'CollectRoundWinningsModalV1',

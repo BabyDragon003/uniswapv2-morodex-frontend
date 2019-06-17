@@ -1,4 +1,3 @@
-import React from 'react'
 import { Currency, Percent, Price } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import { Input, Flex, Text, Button, AutoRenewIcon, SyncAltIcon, HelpIcon, useTooltip } from '@pancakeswap/uikit'
@@ -17,6 +16,27 @@ const OrderPriceInput = styled(Input)`
 const LabelContainer = styled(Flex)`
   cursor: pointer;
 `
+
+interface LimitOrderPriceProps {
+  id: string
+  value: string
+  onUserInput: (value: string) => void
+  inputCurrency: Currency
+  outputCurrency: Currency
+  percentageRateDifference: Percent
+  rateType: Rate
+  handleRateType: (rateType: Rate, price?: Price<Currency, Currency>) => void
+  price: Price<Currency, Currency>
+  handleResetToMarketPrice: () => void
+  realExecutionPriceAsString: string
+  disabled: boolean
+}
+
+const DIRECTION_COLORS = {
+  [PercentageDirection.ABOVE]: 'success',
+  [PercentageDirection.BELOW]: 'failure',
+  [PercentageDirection.MARKET]: 'textSubtle',
+}
 
 const LimitOrderPrice: React.FC<React.PropsWithChildren<LimitOrderPriceProps>> = ({
   id,

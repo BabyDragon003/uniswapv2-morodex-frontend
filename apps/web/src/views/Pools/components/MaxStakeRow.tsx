@@ -1,4 +1,3 @@
-import React from 'react'
 import { Flex, Link, Text, TimerIcon, Balance } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import BigNumber from 'bignumber.js'

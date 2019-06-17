@@ -1,4 +1,3 @@
-import { Box } from '@pancakeswap/uikit'
 import { Collection } from 'state/nftMarket/types'
 import Container from 'components/Layout/Container'
 import Filters from './Filters'
@@ -18,3 +17,7 @@ const CollectionWrapper: React.FC<React.PropsWithChildren<CollectionWrapperProps
         <CollectionNfts collection={collection} />
       </Container>
     </Box>
+  )
+}
+
+export default CollectionWrapper

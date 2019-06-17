@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { ContextApi, languageList, useTranslation } from '@pancakeswap/localization'
 import {
   DropdownMenuItems,

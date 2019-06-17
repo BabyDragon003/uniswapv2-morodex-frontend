@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { getProvider } from '../providers'
 
 export type FetchAccountResourceArgs = {

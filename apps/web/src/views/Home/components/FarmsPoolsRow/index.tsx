@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
 import styled from 'styled-components'
 import { ChainId, Token } from '@pancakeswap/sdk'
 import { useActiveChainId } from 'hooks/useActiveChainId'

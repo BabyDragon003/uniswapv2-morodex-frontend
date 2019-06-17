@@ -1,4 +1,3 @@
-import { Currency, Percent, TradeType } from '@pancakeswap/swap-sdk-core'
 import { Trade } from 'entities'
 import { ONE_HUNDRED_PERCENT, ZERO_PERCENT } from './constants'
 
@@ -18,3 +17,14 @@ export function isTradeBetter(
     !tradeA.outputAmount.currency.equals(tradeB.outputAmount.currency)
   ) {
     throw new Error('Trades are not comparable')
+  }
+
+  if (minimumDelta.equalTo(ZERO_PERCENT)) {
+    return tradeA.executionPrice.lessThan(tradeB.executionPrice)
+  }
+  return tradeA.executionPrice.asFraction
+    .multiply(minimumDelta.add(ONE_HUNDRED_PERCENT))
+    .lessThan(tradeB.executionPrice)
+}
+
+export default isTradeBetter

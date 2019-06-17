@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/farmsV1/hooks'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'

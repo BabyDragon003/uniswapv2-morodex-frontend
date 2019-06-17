@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { bscTokens } from '@pancakeswap/tokens'
 import styled from 'styled-components'
 import { Text, Flex, Box, Skeleton, TooltipText, useTooltip } from '@pancakeswap/uikit'

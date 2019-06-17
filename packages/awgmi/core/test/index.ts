@@ -1,4 +1,3 @@
-import { AptosAccount, AptosClient } from 'aptos'
 import { devnet } from '../src/chain'
 import { ClientConfig, createClient } from '../src/client'
 import { MockConnector } from '../src/connectors/mock'

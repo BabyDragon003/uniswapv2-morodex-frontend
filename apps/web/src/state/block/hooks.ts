@@ -1,4 +1,3 @@
-import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
 // eslint-disable-next-line camelcase
 import useSWR, { useSWRConfig, unstable_serialize } from 'swr'
 import useSWRImmutable from 'swr/immutable'
@@ -18,6 +17,27 @@ export const usePollBlockNumber = () => {
       const blockNumber = await provider.getBlockNumber()
       mutate(['blockNumber', chainId], blockNumber)
       if (!cache.get(unstable_serialize(['initialBlockNumber', chainId]))?.data) {
+        mutate(['initialBlockNumber', chainId], blockNumber)
+      }
+      return blockNumber
+    },
+    {
+      refreshInterval: REFRESH_BLOCK_INTERVAL,
+    },
+  )
+
+  useSWR(
+    chainId && [FAST_INTERVAL, 'blockNumber', chainId],
+    async () => {
+      return data
+    },
+    {
+      refreshInterval: FAST_INTERVAL,
+    },
+  )
+
+  useSWR(
+    chainId && [SLOW_INTERVAL, 'blockNumber', chainId],
     async () => {
       return data
     },

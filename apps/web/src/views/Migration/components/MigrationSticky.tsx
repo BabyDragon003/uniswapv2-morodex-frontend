@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
@@ -18,6 +17,27 @@ const Container = styled.div`
   z-index: 6;
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    bottom: 0;
+  }
+
+  ${({ theme }) => theme.mediaQueries.xxl} {
+    width: 1120px;
+    padding: 24px 40px;
+  }
+
+  border-top: 1px ${({ theme }) => theme.colors.secondary} solid;
+  border-left: 1px ${({ theme }) => theme.colors.secondary} solid;
+  border-right: 1px ${({ theme }) => theme.colors.secondary} solid;
+  border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card}`} 0 0;
+  background: ${({ theme }) =>
+    theme.isDark
+      ? 'linear-gradient(360deg, rgba(61, 42, 84, 0.9) 0%, rgba(49, 61, 92, 0.9) 100%)'
+      : 'linear-gradient(180deg, rgba(206, 236, 243, 0.9) 0%,  rgba(204, 220, 239, 0.9) 51.04%, rgba(202, 194, 236, 0.9) 100%)'};
+`
+
+const TextGroup = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-right: 16px;
 `
 

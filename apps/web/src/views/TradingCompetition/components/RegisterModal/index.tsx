@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Modal, Button, NoProfileAvatarIcon, Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
@@ -18,6 +17,27 @@ const StyledNoProfileAvatarIcon = styled(NoProfileAvatarIcon)`
   height: 100%;
 `
 
+const RegisterModal: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
+  onDismiss,
+  profile,
+  onRegisterSuccess,
+}) => {
+  const { t } = useTranslation()
+
+  const modalInner = () => {
+    // No profile created
+    if (!profile) {
+      return <MakeProfile onDismiss={onDismiss} />
+    }
+
+    // Profile created and active
+    if (profile?.isActive) {
+      return <RegisterWithProfile profile={profile} onDismiss={onDismiss} onRegisterSuccess={onRegisterSuccess} />
+    }
+
+    // Profile created but not active
+    return <ReactivateProfile onDismiss={onDismiss} />
+  }
 
   return (
     <Modal title={t('Register')} onDismiss={onDismiss}>

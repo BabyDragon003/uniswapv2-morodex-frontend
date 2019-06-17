@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LotteryStatus } from 'config/constants/types'

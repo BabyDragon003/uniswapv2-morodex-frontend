@@ -1,4 +1,3 @@
-import { Button, Grid, Message, MessageText, Modal, Text } from '@pancakeswap/uikit'
 import { useLocalNetworkChain } from 'hooks/useActiveChainId'
 import { useTranslation } from '@pancakeswap/localization'
 import { useSwitchNetwork, useSwitchNetworkLocal } from 'hooks/useSwitchNetwork'

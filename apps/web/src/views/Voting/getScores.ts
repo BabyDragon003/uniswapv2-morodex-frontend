@@ -1,4 +1,3 @@
-export async function getScores(
   space: string,
   strategies: any[],
   network: string,
@@ -18,3 +17,10 @@ export async function getScores(
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ params }),
+    })
+    const obj = await res.json()
+    return obj.result.scores
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

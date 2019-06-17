@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Flex, Card, Text, Table, Th, useMatchBreakpoints, PaginationButton } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'

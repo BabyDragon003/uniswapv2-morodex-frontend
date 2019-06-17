@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Flex from "../Box/Flex";
 import Box from "../Box/Box";
@@ -18,6 +17,27 @@ const StyledStep = styled(Flex)`
   ${({ theme }) => theme.mediaQueries.md} {
     justify-content: center;
   }
+`;
+
+const Connector = styled.div<StatusProps>`
+  position: absolute;
+  width: 4px;
+  height: calc(50% + 20px);
+  ${({ $isFirstStep, $isLastStep, $isFirstPart }) => {
+    if ($isFirstStep) return "top: 50%;";
+    if ($isLastStep) return "top: 0;";
+    return $isFirstPart ? "top:0;" : "top:50%;";
+  }}
+  left: calc(50% - 2px);
+  background-color: ${({ theme, status }) =>
+    theme.colors[status === "past" || status === "current" ? "success" : "textDisabled"]};
+`;
+
+const ChildrenWrapper = styled(Box)<{ isVisible: boolean }>`
+  ${({ theme }) => theme.mediaQueries.md} {
+    visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
+  }
+`;
 
 const ChildrenLeftWrapper = styled(ChildrenWrapper)`
   display: none;

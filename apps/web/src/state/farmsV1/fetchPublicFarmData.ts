@@ -1,4 +1,3 @@
-import erc20 from 'config/abi/erc20.json'
 import chunk from 'lodash/chunk'
 import { getMasterChefV1Address } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'

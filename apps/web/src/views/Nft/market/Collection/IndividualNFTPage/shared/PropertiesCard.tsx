@@ -1,4 +1,3 @@
-import { Box, Flex, Text, NftIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { NftAttribute } from 'state/nftMarket/types'
 import ExpandableCard from './ExpandableCard'

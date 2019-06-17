@@ -1,4 +1,3 @@
-import { useEffect, useCallback, useState, useMemo, useRef } from 'react'
 import BigNumber from 'bignumber.js'
 import { ChainId } from '@pancakeswap/sdk'
 import { useAccount } from 'wagmi'
@@ -18,6 +17,27 @@ import {
   Select,
   OptionProps,
   FlexLayout,
+  PageHeader,
+  NextLinkFromReactRouter,
+  ToggleView,
+} from '@pancakeswap/uikit'
+import styled from 'styled-components'
+import Page from 'components/Layout/Page'
+import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
+import { useCakeVaultUserData } from 'state/pools/hooks'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
+import { DeserializedFarm, FarmWithStakedValue, filterFarmsByQuery } from '@pancakeswap/farms'
+import { useTranslation } from '@pancakeswap/localization'
+import { getFarmApr } from 'utils/apr'
+import orderBy from 'lodash/orderBy'
+import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
+import { ViewMode } from 'state/user/actions'
+import { useRouter } from 'next/router'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import Table from './components/FarmTable/FarmTable'
+import { BCakeBoosterCard } from './components/BCakeBoosterCard'
+import { FarmTypesFilter } from './components/FarmTypesFilter'
+import { FarmsContext } from './context'
 
 const ControlContainer = styled.div`
   display: flex;

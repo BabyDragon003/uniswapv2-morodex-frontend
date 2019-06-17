@@ -1,4 +1,3 @@
-import fs from 'fs'
 import os from 'os'
 import { request, gql } from 'graphql-request'
 import BigNumber from 'bignumber.js'
@@ -18,6 +17,27 @@ interface SingleFarmResponse {
   volumeUSD: string
 }
 
+interface FarmsResponse {
+  farmsAtLatestBlock: SingleFarmResponse[]
+  farmsOneWeekAgo: SingleFarmResponse[]
+}
+
+interface AprMap {
+  [key: string]: BigNumber
+}
+
+const getWeekAgoTimestamp = () => {
+  const weekAgo = sub(new Date(), { weeks: 1 })
+  return getUnixTime(weekAgo)
+}
+
+const LP_HOLDERS_FEE = 0.0017
+const WEEKS_IN_A_YEAR = 52.1429
+
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.BSC) => {
+  try {
+    const { blocks } = await request<BlockResponse>(
+      BLOCKS_CLIENT_WITH_CHAIN[chainId],
       `query getBlock($timestampGreater: Int!, $timestampLess: Int!) {
         blocks(first: 1, where: { timestamp_gt: $timestampGreater, timestamp_lt: $timestampLess }) {
           number

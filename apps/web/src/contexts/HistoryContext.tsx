@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useContext, createContext, useEffect, useState, useMemo } from 'react'
 
 const historyManagerContext = createContext<ReturnType<typeof useHistoryManager>>(null)

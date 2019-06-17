@@ -1,4 +1,3 @@
-import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 

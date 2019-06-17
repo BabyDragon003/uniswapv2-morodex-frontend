@@ -1,4 +1,3 @@
-import { StyleRule } from '@vanilla-extract/css'
 import { Breakpoint, breakpoints } from './breakpoints'
 
 type CSSProps = Omit<StyleRule, '@media' | '@supports'>

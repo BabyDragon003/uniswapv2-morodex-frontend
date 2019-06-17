@@ -1,4 +1,3 @@
-import { NativeCurrency, SerializedToken } from '@pancakeswap/swap-sdk-core'
 import { TxnBuilderTypes } from 'aptos'
 import { Coin } from './coin'
 import { Currency } from './currency'

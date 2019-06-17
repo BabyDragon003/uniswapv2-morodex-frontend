@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import styled from 'styled-components'
 import { Text, Flex, CardBody, CardFooter, Button, AddIcon } from '@pancakeswap/uikit'
 import Link from 'next/link'
@@ -18,6 +17,27 @@ const Body = styled(CardBody)`
 `
 
 export default function Pool() {
+  const { address: account } = useAccount()
+  const { t } = useTranslation()
+
+  // fetch the user's balances of all tracked V2 LP tokens
+  const trackedTokenPairs = useTrackedTokenPairs()
+
+  const tokenPairsWithLiquidityTokens = useMemo(
+    () => trackedTokenPairs.map((tokens) => ({ liquidityToken: toV2LiquidityToken(tokens), tokens })),
+    [trackedTokenPairs],
+  )
+  const liquidityTokens = useMemo(
+    () => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken),
+    [tokenPairsWithLiquidityTokens],
+  )
+  const [v2PairsBalances, fetchingV2PairBalances] = useTokenBalancesWithLoadingIndicator(
+    account ?? undefined,
+    liquidityTokens,
+  )
+
+  const stablePairs = useLPTokensWithBalanceByAccount(account)
+
   // fetch the reserves for all V2 pools in which the user has a balance
   const liquidityTokensWithBalances = useMemo(
     () =>

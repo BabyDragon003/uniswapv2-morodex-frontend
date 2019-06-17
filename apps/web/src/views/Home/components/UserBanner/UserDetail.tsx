@@ -1,4 +1,3 @@
-import {
   NoProfileAvatarIcon,
   Flex,
   Heading,

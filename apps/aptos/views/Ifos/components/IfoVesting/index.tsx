@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Box, Card, CardBody, CardHeader, Flex, Text, Image } from '@pancakeswap/uikit'
 import { useMemo, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'

@@ -1,4 +1,3 @@
-import { Fragment, memo } from 'react'
 import { Trade, Currency, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { Text, Flex, ChevronRightIcon } from '@pancakeswap/uikit'
 
@@ -18,3 +17,7 @@ export default memo(function SwapRoute({ trade }: { trade: Trade<Currency, Curre
             {!isLastItem && <ChevronRightIcon width="12px" />}
           </Fragment>
         )
+      })}
+    </Flex>
+  )
+})

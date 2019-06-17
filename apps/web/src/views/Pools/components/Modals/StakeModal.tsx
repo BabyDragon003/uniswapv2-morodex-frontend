@@ -1,4 +1,3 @@
-import { Pool, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallback, useState, useMemo } from 'react'

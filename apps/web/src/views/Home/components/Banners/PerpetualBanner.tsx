@@ -1,4 +1,3 @@
-import { ArrowForwardIcon, Button, Text, Link, useMatchBreakpoints, useIsomorphicEffect } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/legacy/image'
 import { memo, useMemo, useRef } from 'react'
@@ -18,6 +17,27 @@ const RightWrapper = styled.div`
   }
   ${({ theme }) => theme.mediaQueries.md} {
     bottom: 9px;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    bottom: -2px;
+  }
+`
+const Header = styled(S.StyledHeading)`
+  font-size: 20px;
+  min-height: 44px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 40px;
+    min-height: auto;
+  }
+`
+
+const HEADING_ONE_LINE_HEIGHT = 27
+
+const PerpetualBanner = () => {
+  const {
+    t,
+    currentLanguage: { code },
+  } = useTranslation()
   const { isDesktop, isMobile } = useMatchBreakpoints()
   const { isDark } = useTheme()
   const { chainId } = useActiveChainId()

@@ -1,4 +1,3 @@
-# @pancakeswap/wagmi
 
 ## 0.1.0
 

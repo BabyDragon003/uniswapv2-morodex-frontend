@@ -1,4 +1,3 @@
-import { ChainId, Coin } from '@pancakeswap/aptos-swap-sdk'
 import { APT } from '../../coins'
 
 export const testnetTokens = {
@@ -18,6 +17,27 @@ export const testnetTokens = {
     'MDEX',
     'MORODEX',
     '',
+  ),
+  eth: new Coin(
+    ChainId.TESTNET,
+    '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetETH',
+    8,
+    'ETH',
+    'ETH Token',
+    '',
+  ),
+  bnb: new Coin(
+    ChainId.TESTNET,
+    '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBNB',
+    8,
+    'BNB',
+    'BNB Token',
+    '',
+  ),
+  btc: new Coin(
+    ChainId.TESTNET,
+    '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBTC',
+    8,
     'BTC',
     'BTC Token',
     '',

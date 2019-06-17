@@ -1,4 +1,3 @@
-import { request, gql } from 'graphql-request'
 import { campaignMap } from 'config/constants/campaigns'
 import { TranslateFunction } from '@pancakeswap/localization'
 import { GRAPH_API_PROFILE } from 'config/constants/endpoints'

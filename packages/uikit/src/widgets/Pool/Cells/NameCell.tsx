@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import { useTranslation } from "@pancakeswap/localization";
 import React, { useMemo, ReactNode } from "react";
 import styled from "styled-components";

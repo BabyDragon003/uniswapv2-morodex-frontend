@@ -1,4 +1,3 @@
-import { useCallback, useMemo, useState, useContext } from 'react'
 import styled from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useRouter } from 'next/router'
@@ -18,6 +17,27 @@ import {
   IconButton,
   PencilIcon,
 } from '@pancakeswap/uikit'
+import { useDebouncedChangeHandler } from '@pancakeswap/hooks'
+import { BigNumber } from '@ethersproject/bignumber'
+import useNativeCurrency from 'hooks/useNativeCurrency'
+import { CommitButton } from 'components/CommitButton'
+import { useTranslation } from '@pancakeswap/localization'
+import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
+import { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
+
+import { AutoColumn, ColumnCenter } from '../../../components/Layout/Column'
+import CurrencyInputPanel from '../../../components/CurrencyInputPanel'
+import { MinimalPositionCard } from '../../../components/PositionCard'
+import { AppHeader, AppBody } from '../../../components/App'
+import { RowBetween } from '../../../components/Layout/Row'
+import ConnectWalletButton from '../../../components/ConnectWalletButton'
+import { LightGreyCard } from '../../../components/Card'
+
+import { CurrencyLogo } from '../../../components/Logo'
+import useActiveWeb3React from '../../../hooks/useActiveWeb3React'
+
+import { useTransactionAdder } from '../../../state/transactions/hooks'
+import StyledInternalLink from '../../../components/Links'
 import { calculateGasMargin } from '../../../utils'
 import { calculateSlippageAmount } from '../../../utils/exchange'
 import { currencyId } from '../../../utils/currencyId'

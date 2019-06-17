@@ -1,4 +1,3 @@
-import { InjectedModalProps, Modal } from '@pancakeswap/uikit'
 import { useTranslation, ContextApi } from '@pancakeswap/localization'
 import useEditProfile, { Views } from './reducer'
 import StartView from './StartView'

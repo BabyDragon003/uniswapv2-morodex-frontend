@@ -1,4 +1,3 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { SWRConfig } from 'swr'
 import Teams from '../../views/Teams'
 import { getTeams } from '../../state/teams/helpers'

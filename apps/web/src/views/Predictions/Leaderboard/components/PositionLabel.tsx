@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,4 +1,3 @@
-import { getFarmsPriceHelperLpFiles } from '@pancakeswap/farms/constants/priceHelperLps/getFarmsPriceHelperLpFiles'
 import { ChainId } from '@pancakeswap/sdk'
 import PoolsEthereumPriceHelper from './pools/1'
 import PoolsGoerliPriceHelper from './pools/5'
@@ -18,3 +17,6 @@ export const getPoolsPriceHelperLpFiles = (chainId: ChainId) => {
     case ChainId.GOERLI:
       return PoolsGoerliPriceHelper
     default:
+      return []
+  }
+}

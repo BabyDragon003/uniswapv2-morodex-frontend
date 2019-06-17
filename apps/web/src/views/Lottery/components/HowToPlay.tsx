@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Box, Flex, Text, Heading, Link, Image, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
@@ -18,6 +17,27 @@ const BulletList = styled.ul`
   li {
     margin: 0;
     padding: 0;
+  }
+  li::before {
+    content: '•';
+    margin-right: 4px;
+    color: ${({ theme }) => theme.colors.textSubtle};
+  }
+  li::marker {
+    font-size: 12px;
+  }
+`
+
+const StepContainer = styled(Flex)`
+  gap: 24px;
+  width: 100%;
+  flex-direction: column;
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-direction: row;
+  }
+`
+
+const StyledStepCard = styled(Box)`
   display: flex;
   align-self: baseline;
   position: relative;

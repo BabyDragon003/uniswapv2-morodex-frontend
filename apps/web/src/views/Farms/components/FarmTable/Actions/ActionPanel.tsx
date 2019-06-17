@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import {
   Farm as FarmUI,
   FarmTableLiquidityProps,

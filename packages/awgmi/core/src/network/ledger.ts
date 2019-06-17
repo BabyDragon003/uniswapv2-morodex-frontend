@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 
 import { getProvider } from '../providers'
 
@@ -18,3 +17,4 @@ export async function fetchLedgerInfo({ networkName }: FetchLedgerArgs = {}): Pr
 }
 
 export type WatchLedgerArgs = { listen: boolean }
+export type WatchLedgerCallback = (ledger: FetchLedgerResult) => void

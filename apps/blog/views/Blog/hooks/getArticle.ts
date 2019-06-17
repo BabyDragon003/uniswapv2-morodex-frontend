@@ -1,4 +1,3 @@
-import { fetchAPI } from 'views/Blog/utils/api'
 import { ResponseArticleType, ResponseArticleDataType, ResponseCategoriesType, Categories } from 'views/Blog/types'
 import { transformArticle, ArticleType, ArticleDataType } from 'views/Blog/utils/transformArticle'
 
@@ -18,6 +17,27 @@ export const getArticle = async ({ url, urlParamsObject = {} }: GetArticleProps)
     console.error('[ERROR] Fetching Article', error)
     return {
       data: [],
+      pagination: {
+        page: 0,
+        pageSize: 0,
+        pageCount: 0,
+        total: 0,
+      },
+    }
+  }
+}
+
+export const getSingleArticle = async ({ url, urlParamsObject = {} }: GetArticleProps): Promise<ArticleDataType> => {
+  try {
+    const response = await fetchAPI(url, urlParamsObject)
+    return transformArticle(response.data as ResponseArticleDataType)
+  } catch (error) {
+    console.error('[ERROR] Fetching Single Article', error)
+    return {
+      id: 0,
+      title: '',
+      locale: '',
+      imgUrl: '',
       content: '',
       createAt: '',
       publishedAt: '',

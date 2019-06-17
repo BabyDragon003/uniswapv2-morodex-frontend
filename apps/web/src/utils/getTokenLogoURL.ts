@@ -1,4 +1,3 @@
-import { getAddress } from '@ethersproject/address'
 import memoize from 'lodash/memoize'
 import { ChainId, Token } from '@pancakeswap/sdk'
 

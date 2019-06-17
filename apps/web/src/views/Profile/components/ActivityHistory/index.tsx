@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import { isAddress } from 'utils'
 import { useAppDispatch } from 'state'
@@ -18,6 +17,27 @@ import { fetchActivityNftMetadata } from '../../../Nft/market/ActivityHistory/ut
 const MAX_PER_PAGE = 8
 
 const ActivityHistory = () => {
+  const { address: account } = useAccount()
+  const dispatch = useAppDispatch()
+  const accountAddress = useRouter().query.accountAddress as string
+  const { theme } = useTheme()
+  const { t } = useTranslation()
+  const [currentPage, setCurrentPage] = useState(1)
+  const [maxPage, setMaxPages] = useState(1)
+  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
+  const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
+  const [sortedUserActivities, setSortedUserActivities] = useState<Activity[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const bnbBusdPrice = useBNBBusdPrice()
+  const { isXs, isSm } = useMatchBreakpoints()
+
+  useEffect(() => {
+    const fetchAddressActivity = async () => {
+      try {
+        const addressActivity = await getUserActivity(accountAddress.toLowerCase())
+        setSortedUserActivities(sortUserActivity(accountAddress, addressActivity))
+        setIsLoading(false)
+      } catch (error) {
         console.error('Failed to fetch address activity', error)
       }
     }

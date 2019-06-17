@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { isAddress } from 'utils'
 import { useAppDispatch } from 'state'
 import { Box, Button, Flex, Table, Text, Th, useMatchBreakpoints, PaginationButton } from '@pancakeswap/uikit'
@@ -18,6 +17,27 @@ import { sortActivity } from './utils/sortActivity'
 import { fetchActivityNftMetadata } from './utils/fetchActivityNftMetadata'
 
 const MAX_PER_PAGE = 8
+
+const MAX_PER_QUERY = 100
+
+interface ActivityHistoryProps {
+  collection?: Collection
+}
+
+const ActivityHistory: React.FC<React.PropsWithChildren<ActivityHistoryProps>> = ({ collection }) => {
+  const dispatch = useAppDispatch()
+  const { address: collectionAddress } = collection || { address: '' }
+  const nftActivityFilters = useGetNftActivityFilters(collectionAddress)
+  const { theme } = useTheme()
+  const { t } = useTranslation()
+  const [currentPage, setCurrentPage] = useState(1)
+  const [maxPage, setMaxPages] = useState(1)
+  const [activityData, setActivityData] = useState<Activity[]>([])
+  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
+  const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [isInitialized, setIsInitialized] = useState(false)
+  const [queryPage, setQueryPage] = useState(1)
   const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
   const bnbBusdPrice = useBNBBusdPrice()
   const { isXs, isSm, isMd } = useMatchBreakpoints()

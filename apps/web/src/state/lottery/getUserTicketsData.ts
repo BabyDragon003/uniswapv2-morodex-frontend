@@ -1,4 +1,3 @@
-import { LotteryV2 } from 'config/abi/types'
 import { TICKET_LIMIT_PER_REQUEST } from 'config/constants/lottery'
 import { LotteryTicket } from 'config/constants/types'
 import { getLotteryV2Contract } from 'utils/contractHelpers'

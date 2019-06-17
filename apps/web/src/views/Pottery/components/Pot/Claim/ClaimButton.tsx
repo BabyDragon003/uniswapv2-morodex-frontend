@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useClaimPottery } from 'views/Pottery/hooks/useClaimPottery'
@@ -18,3 +17,12 @@ const ClaimButton: React.FC<React.PropsWithChildren<ClaimButtonProps>> = ({ rewa
       width={['110px', '110px', '162px']}
       ml="auto"
       disabled={isDisabledButton}
+      endIcon={isPending ? <AutoRenewIcon spin color="currentColor" /> : null}
+      onClick={handleClaim}
+    >
+      {t('Claim')}
+    </Button>
+  )
+}
+
+export default ClaimButton

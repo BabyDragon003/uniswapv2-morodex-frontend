@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Box, Flex, Text, SearchIcon, Link } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'

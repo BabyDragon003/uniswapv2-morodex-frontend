@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 
 // modified from https://usehooks.com/useDebounce/
 export default function useDebounce<T>(value: T, delay: number): T {
@@ -18,3 +17,5 @@ export default function useDebounce<T>(value: T, delay: number): T {
     }
   }, [value, delay])
 
+  return debouncedValue
+}

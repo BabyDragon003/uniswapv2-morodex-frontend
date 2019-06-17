@@ -1,4 +1,3 @@
-import invariant from 'tiny-invariant'
 import { BaseCurrency } from './baseCurrency'
 import { Currency } from './currency'
 

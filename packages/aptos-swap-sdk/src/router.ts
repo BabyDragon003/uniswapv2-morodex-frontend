@@ -1,4 +1,3 @@
-import { Percent, TradeType } from '@pancakeswap/swap-sdk-core'
 import {
   routerSwapExactInput,
   routerAddLiquidity,
@@ -18,6 +17,27 @@ export interface TradeOptions {
   /**
    * How much the execution price is allowed to move unfavorably from the trade execution price.
    */
+  allowedSlippage: Percent
+}
+
+export abstract class Router {
+  public static swapCallParameters(trade: Trade<Currency, Currency, TradeType>, options: TradeOptions) {
+    const amountIn = trade.maximumAmountIn(options.allowedSlippage).quotient.toString()
+    const amountOut = trade.minimumAmountOut(options.allowedSlippage).quotient.toString()
+
+    if (trade.tradeType === TradeType.EXACT_INPUT) {
+      const args: [string, string] = [amountIn, amountOut]
+      switch (trade.route.path.length) {
+        case 2:
+          return routerSwapExactInput(args, [trade.route.input.wrapped.address, trade.route.output.wrapped.address])
+        case 3:
+          return routerSwapExactInputDoublehop(args, [
+            trade.route.path[0].address,
+            trade.route.path[1].address,
+            trade.route.path[2].address,
+          ])
+        case 4:
+          return routerSwapExactInputTriplehop(args, [
             trade.route.path[0].address,
             trade.route.path[1].address,
             trade.route.path[2].address,

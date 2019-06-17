@@ -1,4 +1,3 @@
-import { useTranslation, ContextApi } from '@pancakeswap/localization'
 import { Box, Card, CardBody, CardHeader, Flex, HelpIcon, Text, useTooltip } from '@pancakeswap/uikit'
 import { Ifo, PoolIds } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
