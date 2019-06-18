@@ -1,3 +1,4 @@
+import { useConnect, useDisconnect } from '@pancakeswap/awgmi'
 import { ConnectorNotFoundError } from '@pancakeswap/awgmi/core'
 import { WalletConnectorNotFoundError } from '@pancakeswap/ui-wallets'
 import { ConnectorNames } from 'config/wallets'

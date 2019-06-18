@@ -1,13 +1,8 @@
+import { Currency, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { AutoColumn, AutoRow, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { ONE_BIPS } from 'config/constants/exchange'
 import formatAmountDisplay from 'utils/formatAmountDisplay'
-
-export default function PoolPriceBar({
-  currencyA,
-  currencyB,
-  noLiquidity,
-  poolTokenPercentage,
   price,
 }: {
   currencyA: Currency

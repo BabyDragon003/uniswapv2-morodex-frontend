@@ -1,13 +1,8 @@
+import { parseUnits } from '@ethersproject/units'
 import { Call, MultiCallV2 } from '@pancakeswap/multicall'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { SerializedStableFarmConfig } from './types'
-
-const stableSwapAbi = [
-  {
-    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
-    name: 'coins',
-    outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
     type: 'function',
   },

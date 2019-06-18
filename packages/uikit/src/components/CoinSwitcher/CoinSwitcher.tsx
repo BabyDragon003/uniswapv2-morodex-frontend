@@ -1,13 +1,8 @@
+import { memo, useCallback, useState, useMemo } from "react";
 import styled from "styled-components";
 import { bnb2CakeImages, cake2BnbImages } from "./constant";
 import { SequencePlayer } from "./SequencePlayer";
 
-export const CoinSwitcherWrapper = styled.div`
-  position: absolute;
-  top: -25px;
-  left: -25px;
-  z-index: 31;
-  width: 100%;
   height: 100px;
   overflow: hidden;
   cursor: pointer;

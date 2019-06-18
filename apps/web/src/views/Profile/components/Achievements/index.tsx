@@ -1,13 +1,8 @@
+import { Card, CardBody, Heading, PrizeIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import IconStatBox from 'views/Teams/components/IconStatBox'
 import { Achievement } from 'state/types'
 import AchievementsList from './AchievementsList'
-import ClaimPointsCallout from './ClaimPointsCallout'
-
-const Achievements: React.FC<
-  React.PropsWithChildren<{
-    achievements: Achievement[]
-    isLoading: boolean
     points?: number
     onSuccess?: () => void
   }>

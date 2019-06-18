@@ -1,3 +1,4 @@
+import { Text, TextProps } from "@pancakeswap/uikit";
 import { useMemo } from "react";
 import CountUp from "react-countup";
 

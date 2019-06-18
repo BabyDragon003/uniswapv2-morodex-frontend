@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useAccount } from '@pancakeswap/awgmi'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'

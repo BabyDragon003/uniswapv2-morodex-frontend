@@ -1,13 +1,8 @@
+import { ContextApi } from '@pancakeswap/localization'
 import { SaleStatusEnum } from 'views/PancakeSquad/types'
 import { BuyButtonsEnum } from './types'
 
 type getBuyButtonTextProps = {
-  t: ContextApi['t']
-  canBuyTickets: boolean
-  saleStatus: SaleStatusEnum
-  numberTicketsOfUser: number
-}
-
 export const getBuyButtonText = ({ t, canBuyTickets, saleStatus, numberTicketsOfUser }: getBuyButtonTextProps) => {
   if ((saleStatus === SaleStatusEnum.Presale || saleStatus === SaleStatusEnum.Sale) && !canBuyTickets) {
     if (numberTicketsOfUser > 0) {

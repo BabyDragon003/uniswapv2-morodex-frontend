@@ -1,12 +1,7 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { StyledActionContainer, ActionContent, ActionTitles } from "./styles";
 import { Text } from "../../../../../components/Text";
 import { Button } from "../../../../../components/Button";
-
-interface StakeComponentProps {
-  lpSymbol: string;
-  isStakeReady: boolean;
-  onPresentDeposit: () => void;
-}
 
 const StakeComponent: React.FunctionComponent<React.PropsWithChildren<StakeComponentProps>> = ({
   lpSymbol,

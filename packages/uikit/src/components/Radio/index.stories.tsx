@@ -1,13 +1,8 @@
+import React, { useState } from "react";
 import Radio from "./Radio";
 
 export default {
   title: "Components/Radio",
-  component: Radio,
-  argTypes: {},
-};
-
-export const Default: React.FC<React.PropsWithChildren> = () => {
-  const [radio, setRadio] = useState("one");
   const [radioSm, setRadioSm] = useState("one");
 
   const handleChange = (evt) => {

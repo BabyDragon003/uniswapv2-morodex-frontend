@@ -1,13 +1,8 @@
+import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { Text } from "../../../../components/Text";
 import { HelpIcon } from "../../../../components/Svg";
 import { Skeleton } from "../../../../components/Skeleton";
-import { useTooltip } from "../../../../hooks/useTooltip";
-import { FarmTableLiquidityProps } from "../../types";
-
-const ReferenceElement = styled.div`
-  display: inline-block;
-`;
 
 const LiquidityWrapper = styled.div`
   min-width: 110px;

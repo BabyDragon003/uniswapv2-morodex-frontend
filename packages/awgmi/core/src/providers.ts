@@ -1,13 +1,8 @@
+import { AptosClient } from 'aptos'
 import { defaultChains, defaultChain } from './chain'
 import { getClient } from './client'
 
 export type GetProviderArgs = {
-  /** Network Name to use for provider */
-  networkName?: string
-}
-
-export type GetProviderResult<TProvider extends AptosClient = AptosClient> = TProvider
-
 export function getProvider<TProvider extends AptosClient = AptosClient>({
   networkName,
 }: GetProviderArgs = {}): GetProviderResult<TProvider> {

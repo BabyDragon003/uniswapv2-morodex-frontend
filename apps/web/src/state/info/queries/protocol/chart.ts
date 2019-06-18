@@ -1,13 +1,8 @@
+/* eslint-disable no-await-in-loop */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { ChartEntry } from 'state/info/types'
 import { fetchChartData, mapDayData } from '../helpers'
-import { PancakeDayDatasResponse } from '../types'
-import { MultiChainName, getMultiChainQueryEndPointWithStableSwap, multiChainStartTime } from '../../constant'
-import { useGetChainName } from '../../hooks'
-
-/**
- * Data for displaying Liquidity and Volume charts on Overview page
  */
 const PANCAKE_DAY_DATAS = gql`
   query overviewCharts($startTime: Int!, $skip: Int!) {

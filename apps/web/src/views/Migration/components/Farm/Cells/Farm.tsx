@@ -1,13 +1,8 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Flex, Text, Pool } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 import { TokenPairImage } from 'components/TokenImage'
-import { FarmWithStakedValue } from '@pancakeswap/farms'
-
-const StyledCell = styled(Pool.BaseCell)`
-  flex: 0;
-  margin-left: 12px;
-  ${({ theme }) => theme.mediaQueries.sm} {
     flex: 1 0 100px;
     margin-left: 30px;
   }

@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   Button,
   CheckmarkIcon,
   CogIcon,
-  Input,
-  LinkExternal,
-  Text,
-  Toggle,
-  useTooltip,
-  Column,
   AutoColumn,
   Row,
   RowBetween,

@@ -1,13 +1,8 @@
+import { Currency, Price } from '@pancakeswap/sdk'
 
 import { RouteWithStableSwap } from '../types'
 import { isStableSwapPair } from './pair'
 
-export function getMidPrice<TIn extends Currency, TOut extends Currency>(
-  route: RouteWithStableSwap<TIn, TOut>,
-): Price<TIn, TOut> {
-  // TODO caching
-  const prices: Price<Currency, Currency>[] = []
-  for (const [i, pair] of route.pairs.entries()) {
     if (isStableSwapPair(pair)) {
       prices.push(route.path[i].equals(pair.price.baseCurrency) ? pair.price : pair.price.invert())
       // eslint-disable-next-line no-continue

@@ -1,13 +1,8 @@
+import { describe, expect, it } from 'vitest'
 
 import { getAptosAccounts, getAptosClient } from '../test'
 import { Client, createClient, getClient } from './client'
 import { MockConnector } from './connectors/mock'
-import { createStorage } from './storage'
-
-const provider = getAptosClient()
-
-describe('createClient', () => {
-  it('returns client', () => {
     const client = createClient({
       provider,
     })

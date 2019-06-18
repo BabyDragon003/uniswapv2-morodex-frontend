@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 
 const StakeButtonContainer = styled.div`
   display: flex;

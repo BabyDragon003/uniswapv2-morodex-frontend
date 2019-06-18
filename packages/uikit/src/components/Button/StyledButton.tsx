@@ -1,13 +1,8 @@
+import styled, { DefaultTheme, css } from "styled-components";
 import { space, layout, variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { BaseButtonProps } from "./types";
 
-interface ThemedButtonProps extends BaseButtonProps {
-  theme: DefaultTheme;
-}
-
-interface TransientButtonProps extends ThemedButtonProps {
-  $isLoading?: boolean;
 }
 
 const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {

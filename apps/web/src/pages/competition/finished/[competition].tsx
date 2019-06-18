@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useRouter } from 'next/router'
 import SubMenu from '../../../views/TradingCompetition/components/SubMenu'
 import EasterCompetition from '../../../views/TradingCompetition/EasterCompetition'

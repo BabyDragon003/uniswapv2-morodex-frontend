@@ -1,13 +1,8 @@
+import { Box, Text, Skeleton } from '@pancakeswap/uikit'
 import { fromUnixTime } from 'date-fns'
 import { useState, useMemo, memo, useEffect } from 'react'
 import { ChartEntry, ProtocolData } from 'state/info/types'
 import { formatAmount } from 'utils/formatInfoNumbers'
-import LineChart from './LineChart'
-import BeamChart from './BeamChart'
-
-interface LogChartProps {
-  chartData: ChartEntry[]
-  protocolData: ProtocolData
   currentDate: string
   valueProperty: string
   title: string

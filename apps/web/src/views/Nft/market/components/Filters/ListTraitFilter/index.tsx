@@ -1,13 +1,8 @@
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
   Box,
-  Button,
-  Text,
-  Flex,
-  IconButton,
-  InlineMenu,
-  Input,
   InputGroup,
   SearchIcon,
   CloseIcon,

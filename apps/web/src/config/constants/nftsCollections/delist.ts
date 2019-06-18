@@ -1,3 +1,4 @@
+const DELIST_COLLECTIONS = {
   '0x4D89eBf7b1F66806A4C99Df71D22b7b9efC6bB0b': {
     active: false,
     address: '0x4D89eBf7b1F66806A4C99Df71D22b7b9efC6bB0b',

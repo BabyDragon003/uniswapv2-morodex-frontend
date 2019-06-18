@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import clsx, { ClassValue } from 'clsx'
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'

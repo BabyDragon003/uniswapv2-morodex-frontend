@@ -1,13 +1,8 @@
+import { useEffect, useRef } from 'react'
 import { Flex, Grid, Box, Text, Button, BinanceIcon, ErrorIcon, useTooltip, Skeleton } from '@pancakeswap/uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { escapeRegExp } from 'utils'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-import { useTranslation } from '@pancakeswap/localization'
-import { NftToken } from 'state/nftMarket/types'
-import { useGetCollection } from 'state/nftMarket/hooks'
-import { Divider } from '../shared/styles'
-import { GreyedOutContainer, BnbAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
-
 interface SetPriceStageProps {
   nftToSell: NftToken
   variant: 'set' | 'adjust'

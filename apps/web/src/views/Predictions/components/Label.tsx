@@ -1,3 +1,4 @@
+import { Box, CoinSwitcher, Flex, PocketWatchIcon, Text, CloseIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'

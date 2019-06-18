@@ -1,3 +1,4 @@
+import { useDeferredValue } from 'react'
 import useSWR from 'swr'
 import { CurrencyAmount, TradeType, Currency, Pair } from '@pancakeswap/sdk'
 import { getBestTradeExactIn, getBestTradeExactOut, createStableSwapPair } from '@pancakeswap/smart-router/evm'

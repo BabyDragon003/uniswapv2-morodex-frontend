@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 
 function isWindowVisible() {
   if (!(typeof document !== 'undefined' && 'visibilityState' in document)) {

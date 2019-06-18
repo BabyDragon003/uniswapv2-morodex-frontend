@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Text, Flex, TooltipText, useTooltip, BalanceWithLoading } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import _toNumber from 'lodash/toNumber'

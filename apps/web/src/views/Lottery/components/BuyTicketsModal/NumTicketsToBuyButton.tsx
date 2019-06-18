@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Button } from '@pancakeswap/uikit'
 
 interface NumTicketsToBuyButtonProps {
   onClick: () => void
-  disabled?: boolean
-}
-
-const StyledButton = styled(Button)`
-  flex-grow: 1;
-`
 
 const NumTicketsToBuyButton: React.FC<React.PropsWithChildren<NumTicketsToBuyButtonProps>> = ({
   children,

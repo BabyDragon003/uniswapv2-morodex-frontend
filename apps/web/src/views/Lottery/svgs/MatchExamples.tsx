@@ -1,3 +1,4 @@
+import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 export const MatchExampleA: React.FC<React.PropsWithChildren<{ isDark: boolean } & SvgProps>> = ({
   isDark,

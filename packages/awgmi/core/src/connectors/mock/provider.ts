@@ -1,3 +1,4 @@
+import { AptosAccount, AptosClient, Types } from 'aptos'
 import EventEmitter from 'eventemitter3'
 import { devnet } from '../../chain'
 import { UserRejectedRequestError } from '../../errors'

@@ -1,13 +1,8 @@
+import React from "react";
 import BoxComponent from "./Box";
 import FlexComponent from "./Flex";
 import GridComponent from "./Grid";
 import Text from "../Text/Text";
-import { Link } from "../Link";
-
-export default {
-  title: "Components/Primitives",
-  component: BoxComponent,
-  argTypes: {},
 };
 
 export const Box: React.FC<React.PropsWithChildren> = () => {

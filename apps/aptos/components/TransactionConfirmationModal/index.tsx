@@ -1,13 +1,8 @@
+// TODO: aptos merge
 import { ChainId, Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   ArrowUpIcon,
-  AutoColumn,
-  Button,
-  ColumnCenter,
-  InjectedModalProps,
-  Link,
-  Modal,
   ModalProps,
   Spinner,
   Text,

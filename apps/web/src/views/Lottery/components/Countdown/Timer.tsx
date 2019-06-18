@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Flex, Heading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 export interface TimerProps {
-  seconds?: number
-  minutes?: number
-  hours?: number
-  days?: number
-  wrapperClassName?: string
-}
 
 const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
   ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Card, Heading, Table, Th, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useAccount } from 'wagmi'

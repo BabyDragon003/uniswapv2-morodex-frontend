@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import ConnectWalletButton from 'components/ConnectWalletButton'

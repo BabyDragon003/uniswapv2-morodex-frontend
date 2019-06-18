@@ -1,13 +1,8 @@
+import { createReducer } from '@reduxjs/toolkit'
 
 import {
   acceptListUpdate,
   addList,
-  fetchTokenList,
-  removeList,
-  enableList,
-  disableList,
-  updateListVersion,
-} from './actions'
 import { getVersionUpgrade, VersionUpgrade, TokenList } from '../src'
 
 export interface ListsState {

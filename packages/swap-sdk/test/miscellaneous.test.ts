@@ -1,13 +1,8 @@
+import { Token, CurrencyAmount, sortedInsert, InsufficientInputAmountError } from '@pancakeswap/swap-sdk-core'
 import { Pair } from '../src/entities'
 import { ChainId } from '../src/constants'
 
 describe('miscellaneous', () => {
-  it('getLiquidityMinted:0', async () => {
-    const tokenA = new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000001', 18, 'A')
-    const tokenB = new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000002', 18, 'B')
-    const pair = new Pair(CurrencyAmount.fromRawAmount(tokenA, '0'), CurrencyAmount.fromRawAmount(tokenB, '0'))
-
-    expect(() => {
       pair.getLiquidityMinted(
         CurrencyAmount.fromRawAmount(pair.liquidityToken, '0'),
         CurrencyAmount.fromRawAmount(tokenA, '1000'),

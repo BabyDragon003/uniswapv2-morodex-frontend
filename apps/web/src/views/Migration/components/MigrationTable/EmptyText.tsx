@@ -1,3 +1,4 @@
+import React from 'react'
 import { Text } from '@pancakeswap/uikit'
 
 export interface EmptyTextProps {

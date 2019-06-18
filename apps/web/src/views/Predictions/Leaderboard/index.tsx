@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useGetLeaderboardFilters, useGetLeaderboardLoadingState } from 'state/predictions/hooks'

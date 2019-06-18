@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { useMemo } from 'react'
 
 import useLastTruthy from 'hooks/useLast'
 
-import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDetails'
-
-const AdvancedDetailsFooter = styled.div<{ show: boolean }>`
-  margin-top: ${({ show }) => (show ? '16px' : 0)};
-  padding-top: 16px;
-  padding-bottom: 16px;
   width: 100%;
   max-width: 400px;
   border-radius: 20px;

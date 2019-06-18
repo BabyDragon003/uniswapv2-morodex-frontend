@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 import { Currency, CurrencyAmount, Fraction, Token } from '@pancakeswap/sdk'
 import { useCurrency } from 'hooks/Tokens'
 import useGelatoLimitOrdersLib from 'hooks/limitOrders/useGelatoLimitOrdersLib'
-import { getBlockExploreLink } from 'utils'
-import { useIsTransactionPending } from 'state/transactions/hooks'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import getPriceForOneToken from '../utils/getPriceForOneToken'
-import { LimitOrderStatus } from '../types'
-
 export interface FormattedOrderData {
   inputToken: Currency | Token
   outputToken: Currency | Token

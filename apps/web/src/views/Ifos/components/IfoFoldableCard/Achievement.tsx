@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import {
   Flex,
   Image,
   Text,
-  PrizeIcon,
-  Skeleton,
-  LanguageIcon,
-  SvgProps,
-  Svg,
-  TwitterIcon,
   Link,
   TelegramIcon,
   FlexGap,

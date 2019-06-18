@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { infoClient } from 'utils/graphql'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'

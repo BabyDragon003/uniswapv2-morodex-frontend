@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { ContextApi } from '@pancakeswap/localization'
 import { DefaultTheme } from 'styled-components'
 import { UserInfos, EventInfos, UserStatusEnum } from 'views/PancakeSquad/types'

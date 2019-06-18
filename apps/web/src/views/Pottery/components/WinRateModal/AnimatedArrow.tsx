@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Flex, ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
 import styled, { keyframes } from 'styled-components'
 import { WinRateCalculatorState } from 'views/Pottery/hooks/useWinRateCalculator'

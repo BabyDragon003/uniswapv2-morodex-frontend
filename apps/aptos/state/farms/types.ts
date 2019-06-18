@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 
 export interface FarmResourcePoolInfo {
   acc_cake_per_share: string

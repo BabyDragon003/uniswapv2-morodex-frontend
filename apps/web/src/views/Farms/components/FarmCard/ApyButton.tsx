@@ -1,13 +1,8 @@
+import { useContext, useState } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation } from '@pancakeswap/localization'
 import { Text, TooltipText, useModal, useTooltip, Farm as FarmUI, RoiCalculatorModal } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import _toNumber from 'lodash/toNumber'
-import BCakeCalculator from 'views/Farms/components/YieldBooster/components/BCakeCalculator'
-import { useFarmFromPid, useFarmUser } from 'state/farms/hooks'
-import { YieldBoosterStateContext } from '../YieldBooster/components/ProxyFarmContainer'
-import useBoostMultiplier from '../YieldBooster/hooks/useBoostMultiplier'
-import { useGetBoostedMultiplier } from '../YieldBooster/hooks/useGetBoostedAPR'
 import { YieldBoosterState } from '../YieldBooster/hooks/useYieldBoosterState'
 
 export interface ApyButtonProps {

@@ -1,3 +1,4 @@
+import { Heading } from '@pancakeswap/uikit'
 import styled, { DefaultTheme } from 'styled-components'
 
 const H1SizeStyles = (theme: DefaultTheme) => `

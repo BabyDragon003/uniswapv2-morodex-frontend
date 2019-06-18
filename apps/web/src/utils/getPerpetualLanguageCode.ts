@@ -1,3 +1,4 @@
+export const perpetualLangs = {
   en: 'en',
   ko: 'ko',
   ja: 'ja',
