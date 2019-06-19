@@ -8,17 +8,6 @@ export const articles = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const mergedOptions = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.STRAPI_PREVIEW_SECRET}`,
-    },
-  }
-  const queryString = qs.stringify(req.query)
-  const requestUrl = `${process.env.STRAPI_API_URL}/api/articles?${queryString}`
-  const response = await fetch(requestUrl, mergedOptions)
-
-  if (!response.ok) {
-    return res.status(400).json({ message: 'An error occured please try again' })
   }
 
   const data = await response.json()

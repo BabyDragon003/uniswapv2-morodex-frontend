@@ -3,6 +3,12 @@ import stableSwapABI from 'config/abi/stableSwap.json'
 import stableSwapInfoABI from 'config/abi/infoStableSwap.json'
 import stableLPABI from 'config/abi/stableLP.json'
 import { Currency, CurrencyAmount, ERC20Token } from '@pancakeswap/sdk'
+import { useTokenBalancesWithLoadingIndicator } from 'state/wallet/hooks'
+import { createContext, useMemo } from 'react'
+import useSWRImmutable from 'swr/immutable'
+import { getStableConfig } from '@pancakeswap/farms/constants'
+import { deserializeToken } from '@pancakeswap/token-lists'
+import { useActiveChainId } from 'hooks/useActiveChainId'
 
 export function useStableFarms() {
   const { chainId } = useActiveChainId()

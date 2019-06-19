@@ -3,5 +3,8 @@
   "timestamp": "2021-01-05T20:47:02.923Z",
   "version": {
     "major": 1,
-  "tokens": []
-}
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://dapp-frontend-prince.web.app/logo.png",

@@ -3,16 +3,11 @@ import { Flex, Grid, Box, Text, Button, BinanceIcon, ErrorIcon, useTooltip, Skel
 import { multiplyPriceByAmount } from 'utils/prices'
 import { escapeRegExp } from 'utils'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-interface SetPriceStageProps {
-  nftToSell: NftToken
-  variant: 'set' | 'adjust'
-  currentPrice?: string
-  lowestPrice?: number
-  price: string
-  setPrice: React.Dispatch<React.SetStateAction<string>>
-  continueToNextStage: () => void
-}
-
+import { useTranslation } from '@pancakeswap/localization'
+import { NftToken } from 'state/nftMarket/types'
+import { useGetCollection } from 'state/nftMarket/hooks'
+import { Divider } from '../shared/styles'
+import { GreyedOutContainer, BnbAmountCell, RightAlignedInput, FeeAmountCell } from './styles'
 const MIN_PRICE = 0.005
 const MAX_PRICE = 10000
 

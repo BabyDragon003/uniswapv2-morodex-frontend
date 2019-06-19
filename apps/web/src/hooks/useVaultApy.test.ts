@@ -3,6 +3,12 @@ import { renderHook } from '@testing-library/react-hooks'
 import BigNumber from 'bignumber.js'
 import { createSWRWrapper } from 'testUtils'
 import { vi } from 'vitest'
+import * as PoolHooks from '../state/pools/hooks'
+import { useVaultApy } from './useVaultApy'
+
+BigNumber.config({
+  EXPONENTIAL_AT: 1000,
+  DECIMAL_PLACES: 80,
 })
 
 vi.mock('../state/pools/hooks', () => ({

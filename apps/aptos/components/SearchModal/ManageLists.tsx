@@ -3,16 +3,11 @@ import {
   Button,
   CheckmarkIcon,
   CogIcon,
-  AutoColumn,
-  Row,
-  RowBetween,
-  RowFixed,
-  ListLogo,
-} from '@pancakeswap/uikit'
-import { TokenList, Version } from '@pancakeswap/token-lists'
-import Card from 'components/Card'
-import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+  Input,
+  LinkExternal,
+  Text,
+  Toggle,
+  useTooltip,
 import { useAtomValue } from 'jotai'
 import { memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { useListState } from 'state/lists'

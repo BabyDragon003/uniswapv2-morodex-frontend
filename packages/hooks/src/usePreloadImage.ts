@@ -8,9 +8,3 @@ export const usePreloadImages = (imageSources: string[]) => {
     for (const src of imageSources) {
       if (!preloadImageMap.has(src)) {
         preloadImageMap.set(src, true)
-        const img = new Image()
-        img.src = src
-      }
-    }
-  }, [imageSources])
-}

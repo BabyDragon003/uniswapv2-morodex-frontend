@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "contract IERC20",
+        "name": "_token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_oracleAddress",
         "type": "address"
       },
       {

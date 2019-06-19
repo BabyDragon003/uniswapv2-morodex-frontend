@@ -8,9 +8,3 @@ export interface EmptyTextProps {
 const EmptyText: React.FC<React.PropsWithChildren<EmptyTextProps>> = ({ text }) => {
   return (
     <Text padding="24px" fontSize="16px" textAlign="center">
-      {text}
-    </Text>
-  )
-}
-
-export default EmptyText

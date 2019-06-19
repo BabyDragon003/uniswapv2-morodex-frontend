@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { ChainId } from '@pancakeswap/sdk'
 import { Text, Link, BscScanIcon } from '@pancakeswap/uikit'
 import { isAddress } from 'utils'
+import { useTranslation } from '@pancakeswap/localization'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import { AutoColumn } from '../../../components/Layout/Column'
+import { RowBetween } from '../../../components/Layout/Row'
+import { getBlockExploreLink, getBlockExploreName } from '../../../utils'
+
 const InputPanel = styled.div`
   display: flex;
   flex-flow: column nowrap;

@@ -3,15 +3,10 @@ import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { VaultPosition, VaultPositionParams } from 'utils/cakePool'
 import { DeserializedLockedVaultUser } from 'state/types'
-  onDismiss?: VoidFn
-  stakingToken: Token
-  currentBalance: BigNumber
-  stakingTokenBalance: BigNumber
-}
 
-export interface ValidatorArg {
-  duration: number
-}
+type VoidFn = () => void
+
+export type PrepConfirmArg = (arg: ValidatorArg) => ValidatorReturn
 
 export interface ValidatorReturn {
   finalLockedAmount?: number

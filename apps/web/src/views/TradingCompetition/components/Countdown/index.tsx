@@ -9,17 +9,6 @@ import { CompetitionPhaseProps } from '../../types'
 import Timer from './Timer'
 import ProgressStepper from './ProgressStepper'
 
-const Wrapper = styled(Flex)`
-  width: fit-content;
-  height: fit-content;
-  background: linear-gradient(180deg, #7645d9 0%, #452a7a 100%);
-  border: 1px solid #7645d9;
-  box-sizing: border-box;
-  border-radius: 0px 0px 24px 24px;
-  padding: 16px 18px;
-  margin: -30px auto 50px;
-  justify-content: space-around;
-
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 16px 24px;
   }

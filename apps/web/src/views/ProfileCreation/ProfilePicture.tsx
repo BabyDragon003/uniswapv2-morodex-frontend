@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import {
   AutoRenewIcon,
   Button,
-  NextLinkFromReactRouter,
-} from '@pancakeswap/uikit'
-import { useAccount, useSigner } from 'wagmi'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
-import { getErc721Contract } from 'utils/contractHelpers'
-import { useTranslation } from '@pancakeswap/localization'
-import { useProfileContract } from 'hooks/useContract'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+  Card,
+  CardBody,
+  Heading,
+  Skeleton,
+  Text,
 import { NftLocation } from 'state/nftMarket/types'
 import { useProfile } from 'state/profile/hooks'
 import SelectionCard from './SelectionCard'

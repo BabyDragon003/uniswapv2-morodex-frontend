@@ -8,14 +8,3 @@ export const styleVariants = {
     borderRadius: 0,
   },
 };
-
-export const styleScales = {
-  [scales.MD]: {
-    height: "16px",
-  },
-  [scales.SM]: {
-    height: "8px",
-  },
-};
-
-export default styleVariants;

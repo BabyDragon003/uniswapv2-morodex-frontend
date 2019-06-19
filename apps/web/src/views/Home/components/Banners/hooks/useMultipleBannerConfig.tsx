@@ -3,6 +3,12 @@ import shuffle from 'lodash/shuffle'
 import CompetitionBanner from '../CompetitionBanner'
 import IFOBanner from '../IFOBanner'
 import PerpetualBanner from '../PerpetualBanner'
+import useIsRenderIfoBanner from './useIsRenderIFOBanner'
+import useIsRenderCompetitionBanner from './useIsRenderCompetitionBanner'
+import AptosBanner from '../AptosBanner'
+
+interface IBannerConfig {
+  shouldRender: boolean
   banner: ReactElement
 }
 

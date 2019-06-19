@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import { Table, Td } from '@pancakeswap/uikit'
 import CompactRow from './CompactRow'
 
-`
+const RowStyle = styled.tr`
+  cursor: pointer;
 
-const CompactLimitOrderTable = ({ orders }) => (
-  <Table>
-    <tbody>
-      {orders.map((order) => (
-        <RowStyle key={order.id}>
-          <Td>
-            <CompactRow order={order} />
-          </Td>
+  &:hover {
+    background: ${({ theme }) => theme.colors.backgroundDisabled};
         </RowStyle>
       ))}
     </tbody>

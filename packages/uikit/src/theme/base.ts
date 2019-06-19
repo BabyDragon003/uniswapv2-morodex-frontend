@@ -8,4 +8,3 @@ export default {
   shadows: vars.shadows,
   radii: vars.radii,
   zIndices: { ribbon: 9, dropdown: 10, modal: 100 },
-};

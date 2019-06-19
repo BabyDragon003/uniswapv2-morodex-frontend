@@ -8,17 +8,6 @@ import { BoldTd, StyledPrizeTable, Td } from '../../../components/StyledPrizeTab
 import { mboxPrizes } from '../../../../../config/constants/trading-competition/prizes'
 import UserPrizeGridDollar from '../../../components/YourScore/UserPrizeGridDollar'
 import AchievementPoints from '../../../components/YourScore/AchievementPoints'
-
-const StyledThead = styled.thead`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
-`
-
-const MoboxUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformation?: UserTradingInformation }>> = ({
-  userTradingInformation,
-}) => {
-  const { t } = useTranslation()
-  const { userRewardGroup, userCakeRewards, userMoboxRewards, userPointReward, canClaimMysteryBox, canClaimNFT } =
-    userTradingInformation
   const { cakeReward, moboxReward, dollarValueOfTokensReward } = useMoboxCompetitionRewards({
     userCakeRewards,
     userMoboxRewards,

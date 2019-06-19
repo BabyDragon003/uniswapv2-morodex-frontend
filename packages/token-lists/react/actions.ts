@@ -3,6 +3,12 @@ import { TokenList, Version } from '../src/types'
 
 export const fetchTokenList: Readonly<{
   pending: ActionCreatorWithPayload<{ url: string; requestId: string }>
+  fulfilled: ActionCreatorWithPayload<{ url: string; tokenList: TokenList; requestId: string }>
+  rejected: ActionCreatorWithPayload<{ url: string; errorMessage: string; requestId: string }>
+}> = {
+  pending: createAction('lists/fetchTokenList/pending'),
+  fulfilled: createAction('lists/fetchTokenList/fulfilled'),
+  rejected: createAction('lists/fetchTokenList/rejected'),
 }
 // add and remove from list options
 export const addList = createAction<string>('lists/addList')

@@ -3,16 +3,11 @@ import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useCollectWinningModalProps } from 'state/predictions/hooks'
 import { useConfig } from '../context/ConfigProvider'
 import CollectRoundWinningsModal from './CollectRoundWinningsModal'
-const CollectWinningsButton: React.FC<React.PropsWithChildren<CollectWinningsButtonProps>> = ({
-  hasClaimed,
-  onSuccess,
-  children,
-  ...props
-}) => {
-  const { history, isLoadingHistory } = useCollectWinningModalProps()
-  const dispatch = useLocalDispatch()
-  const { address: predictionsAddress, token } = useConfig()
 
+interface CollectWinningsButtonProps extends ButtonProps {
+  hasClaimed: boolean
+  onSuccess?: () => Promise<void>
+}
   const [onPresentCollectWinningsModal] = useModal(
     <CollectRoundWinningsModal
       dispatch={dispatch}

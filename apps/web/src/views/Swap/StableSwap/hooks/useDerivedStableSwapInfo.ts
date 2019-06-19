@@ -8,17 +8,6 @@ import { Field } from 'state/swap/actions'
 import { computeSlippageAdjustedAmounts } from 'utils/exchange'
 import { useUserSlippageTolerance } from 'state/user/hooks'
 import { useCurrencyBalances } from 'state/wallet/hooks'
-import { useMemo } from 'react'
-import useStableTradeExactIn, { StableTrade } from './useStableTradeExactIn'
-import useStableTradeExactOut from './useStableTradeExactOut'
-
-// from the current swap inputs, compute the best trade and return it.
-export function useDerivedStableSwapInfo(
-  independentField: Field,
-  typedValue: string,
-  inputCurrency: Currency | undefined,
-  outputCurrency: Currency | undefined,
-): {
   currencies: { [field in Field]?: Currency }
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   parsedAmount: CurrencyAmount<Currency> | undefined

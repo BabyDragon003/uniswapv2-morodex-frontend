@@ -8,16 +8,5 @@ const NftProfileAchievementsPage = () => {
   const { profile } = useProfileForAddress(accountAddress)
   const { achievements, isFetching: isAchievementFetching, refresh } = useAchievementsForAddress(accountAddress)
 
-  return (
-    <Achievements
-      achievements={achievements}
-      isLoading={isAchievementFetching}
-      points={profile?.points}
-      onSuccess={refresh}
-    />
-  )
-}
-
-NftProfileAchievementsPage.Layout = NftProfileLayout
 
 export default NftProfileAchievementsPage

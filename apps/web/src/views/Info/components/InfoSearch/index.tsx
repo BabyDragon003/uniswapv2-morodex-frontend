@@ -3,16 +3,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useDebounce } from '@pancakeswap/hooks'
 import { MINIMUM_SEARCH_CHARACTERS } from 'config/constants/info'
 import orderBy from 'lodash/orderBy'
-import { useWatchlistPools, useWatchlistTokens } from 'state/user/hooks'
-import styled from 'styled-components'
-import { formatAmount } from 'utils/formatInfoNumbers'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'views/Info/components/CurrencyLogo'
-import SaveIcon from 'views/Info/components/SaveIcon'
-
-const Container = styled.div`
-  position: relative;
-  z-index: 30;
-  width: 100%;
+import { useRouter } from 'next/router'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMultiChainPath, usePoolDatasSWR, useTokenDatasSWR, useGetChainName } from 'state/info/hooks'
+import { checkIsStableSwap } from 'state/info/constant'
+import useFetchSearchResults from 'state/info/queries/search'
 `
 
 const StyledInput = styled(Input)`

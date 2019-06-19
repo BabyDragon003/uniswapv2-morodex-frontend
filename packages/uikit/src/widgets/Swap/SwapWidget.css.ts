@@ -3,16 +3,11 @@ import { vars } from "@pancakeswap/ui/css/vars.css";
 import { responsiveStyle } from "@pancakeswap/ui/css/responsiveStyle";
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-]);
 
-export const iconDownClass = style({
-  color: "rgb(0, 233, 177)",
-  fill: "rgb(0, 233, 177) !important",
-  width: "2.5em",
-  selectors: {
-    [`${switchButtonClass}:hover &`]: {
-      display: "none",
-      fill: "rgba(255, 255, 255, 0.7)",
+export const switchButtonClass = style([
+  atoms({}),
+  style({
+    backgroundColor: "primary",
       borderRadius: "50%",
       boxShadow: "0 0 0 2px rgba(255, 255, 255, 0.7)",
       color: "rgba(255, 255, 255, 0.7)",

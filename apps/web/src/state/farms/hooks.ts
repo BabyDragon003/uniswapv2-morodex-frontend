@@ -3,16 +3,11 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { SLOW_INTERVAL } from 'config/constants'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import { useEffect, useMemo } from 'react'
-import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
-import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
-import { getFarmConfig } from '@pancakeswap/farms/constants'
-import { DeserializedFarm, DeserializedFarmsState, DeserializedFarmUserData } from '@pancakeswap/farms'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, fetchInitialFarmsData } from '.'
-import { State } from '../types'
-import {
-  farmFromLpSymbolSelector,
-  farmSelector,
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'state'
+import useSWRImmutable from 'swr/immutable'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { useBCakeProxyContractAddress } from 'views/Farms/hooks/useBCakeProxyContractAddress'
   makeBusdPriceFromPidSelector,
   makeFarmFromPidSelector,
   makeLpTokenPriceFromLpSymbolSelector,

@@ -8,17 +8,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
 import { useIfoCeiling } from 'state/pools/hooks'
 
-import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
-import StaticAmount from '../Common/StaticAmount'
-import LockedBodyModal from '../Common/LockedModalBody'
-import Overview from '../Common/Overview'
-import { ExtendDurationModal } from '../types'
-import RoiCalculatorModalProvider from './RoiCalculatorModalProvider'
-import { ENABLE_EXTEND_LOCK_AMOUNT } from '../../../helpers'
-
-const ExtendDurationModal: React.FC<ExtendDurationModal> = ({
-  modalTitle,
-  stakingToken,
   onDismiss,
   currentLockedAmount,
   currentDuration,

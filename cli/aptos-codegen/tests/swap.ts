@@ -3,15 +3,10 @@ import { Types } from 'aptos'
 
 export const ADDRESS = '0xc7efb4076dbe143cbcd98cfaaa929ecfc8f299203dfff63b95ccb6bfe19850fa' as const
 
-  return {
-    type: 'entry_function_payload',
-    type_arguments: [],
-    arguments: args,
-    function: `${ADDRESS}::${SWAP_MODULE_NAME}::set_admin`
-  }
-}
+export const SWAP_MODULE_NAME = 'swap' as const
+export const ROUTER_MODULE_NAME = 'router' as const
 
-export type SwapSetFeeToArgs = [string]
+export type SwapSetAdminArgs = [string]
 
 export const swapSetFeeTo = (args: SwapSetFeeToArgs): Types.TransactionPayload_EntryFunctionPayload => {
   return {

@@ -3,16 +3,11 @@ import { Text, Heading, Card, CardHeader, CardBody, Flex, useToast } from '@panc
 import { useTranslation } from '@pancakeswap/localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'
-import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useReclaimAuctionBid from '../hooks/useReclaimAuctionBid'
-
-const StyledReclaimBidCard = styled(Card)`
-  margin-top: 16px;
-  flex: 1;
-`
-
-const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
+import { requiresApproval } from 'utils/requiresApproval'
+import { useAccount } from 'wagmi'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
   const { t } = useTranslation()
   const { address: account } = useAccount()
   const { callWithGasPrice } = useCallWithGasPrice()

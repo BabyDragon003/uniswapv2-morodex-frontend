@@ -8,4 +8,3 @@ export default function useLocalDispatch() {
   const emptyFn = useCallback(_noop, [])
 
   return localContext?.store?.dispatch || emptyFn
-}

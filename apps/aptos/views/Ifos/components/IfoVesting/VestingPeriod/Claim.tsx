@@ -3,16 +3,11 @@ import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
 import { ifoRelease } from 'views/Ifos/generated/ifo'
 import type { VestingData } from 'views/Ifos/hooks/vesting/useFetchUserWalletIfoData'
-
-interface Props {
-  poolId: PoolIds
-  data: VestingData
-  claimableAmount: string
-  fetchUserVestingData: () => void
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({
-  poolId,
+import { ToastDescriptionWithTx } from 'components/Toast'
+import { useIfoPool } from 'views/Ifos/hooks/useIfoPool'
+import splitTypeTag from 'utils/splitTypeTag'
+import { useCallback, useState } from 'react'
+import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'
   data,
   claimableAmount,
   fetchUserVestingData,

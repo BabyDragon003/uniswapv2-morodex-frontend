@@ -8,17 +8,6 @@ describe('numberOrNull', () => {
     ['7.308', 7.308],
     [null, null],
     ['test', null],
-  ])('return %s correctly as number, null, or NaN', (value, expected) => {
-    expect(numberOrNull(value)).toEqual(expected)
-  })
-})
-
-describe('makeFutureRoundResponse', () => {
-  it('returns a correctly transformed future round response', () => {
-    expect(makeFutureRoundResponse(200, 1626243374)).toEqual({
-      epoch: 200,
-      startTimestamp: 1626243374,
-      lockTimestamp: null,
       closeTimestamp: null,
       lockPrice: null,
       closePrice: null,

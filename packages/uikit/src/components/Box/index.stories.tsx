@@ -3,16 +3,11 @@ import BoxComponent from "./Box";
 import FlexComponent from "./Flex";
 import GridComponent from "./Grid";
 import Text from "../Text/Text";
-};
+import { Link } from "../Link";
 
-export const Box: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <div>
-      <BoxComponent as="p">
-        Contains background, border, layout, position, and space from{" "}
-        <Link href="https://styled-system.com/api" target="_blank">
-          Styled System&lsquo;s API
-        </Link>
+export default {
+  title: "Components/Primitives",
+  component: BoxComponent,
       </BoxComponent>
     </div>
   );

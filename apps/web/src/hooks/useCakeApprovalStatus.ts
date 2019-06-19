@@ -4,15 +4,10 @@ import { useCake } from 'hooks/useContract'
 import { useSWRContract, UseSWRContractKey } from 'hooks/useSWRContract'
 import BigNumber from 'bignumber.js'
 
-  const key = useMemo<UseSWRContractKey>(
-    () =>
-      account && spender
-        ? {
-            contract: cakeContract,
-            methodName: 'allowance',
-            params: [account, spender],
-          }
-        : null,
+// TODO: refactor as useTokenApprovalStatus for generic use
+
+export const useCakeApprovalStatus = (spender) => {
+  const { address: account } = useAccount()
     [account, cakeContract, spender],
   )
 

@@ -3,16 +3,11 @@ import { Spinner } from "../../components/Spinner";
 
 it("renders correctly", () => {
   const { asFragment } = renderWithProvider(<Spinner />);
-    }
-
-    .c1 {
-      max-height: 153.216px;
-      max-width: 128px;
-      position: relative;
-      width: 100%;
-    }
-
-    .c1:after {
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
+      width: 128px;
+      height: 153.216px;
       content: "";
       display: block;
       padding-top: 119.7%;

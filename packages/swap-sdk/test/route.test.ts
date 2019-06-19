@@ -3,6 +3,12 @@ import { Pair, Route, Native } from '../src/entities'
 import { ChainId, WNATIVE } from '../src/constants'
 
 describe('Route', () => {
+  const ETHER = Native.onChain(ChainId.BSC)
+  const token0 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000001', 18, 't0')
+  const token1 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000002', 18, 't1')
+  const weth = WNATIVE[ChainId.BSC]
+  const pair01 = new Pair(CurrencyAmount.fromRawAmount(token0, '100'), CurrencyAmount.fromRawAmount(token1, '200'))
+  const pair0Weth = new Pair(CurrencyAmount.fromRawAmount(token0, '100'), CurrencyAmount.fromRawAmount(weth, '100'))
   const pair1Weth = new Pair(CurrencyAmount.fromRawAmount(token1, '175'), CurrencyAmount.fromRawAmount(weth, '100'))
 
   it('constructs a path from the tokens', () => {

@@ -3,16 +3,11 @@ import { Liquidity as LiquidityUI } from '@pancakeswap/uikit'
 import HasAccount from 'components/HasAccount'
 import { ExchangeLayout } from 'components/Layout/ExchangeLayout'
 import { PageMeta } from 'components/Layout/Page'
-  const { t } = useTranslation()
+import LiquidityList from 'components/Liquidity/components/LiquidityList'
+import { SettingsButton } from 'components/Menu/Settings/SettingsButton'
 
-  return (
-    <>
-      <PageMeta title={t('Liquidity')} />
-      <LiquidityCard>
-        <LiquidityCard.Header
-          title={t('Your Liquidity')}
-          subtitle={t('Remove liquidity to receive tokens back')}
-          config={<SettingsButton />}
+const { LiquidityCard, GotoAddLiquidityButton, LiquidityNotConnect } = LiquidityUI
+
         />
         <LiquidityCard.ListBody>
           <HasAccount fallbackComp={<LiquidityNotConnect />}>

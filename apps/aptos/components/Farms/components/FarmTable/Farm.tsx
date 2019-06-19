@@ -3,16 +3,11 @@ import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { TokenPairImage } from 'components/TokenImage'
 import { useFarmUserInfoCache } from 'state/farms/hook'
-  label,
-  pid,
-  isReady,
-  isStable,
-}) => {
-  const { data: userInfo } = useFarmUserInfoCache(String(pid))
-  const stakedBalance = userInfo?.amount ? new BigNumber(userInfo.amount) : BIG_ZERO
 
-  return (
-    <FarmTokenInfo
+const { FarmTokenInfo } = FarmUI.FarmTable
+
+const Farm: React.FunctionComponent<React.PropsWithChildren<FarmTableFarmTokenInfoProps>> = ({
+  token,
       pid={pid}
       label={label}
       token={token}

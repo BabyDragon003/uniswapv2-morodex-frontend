@@ -3,6 +3,12 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-unresolved */
 import { render as rtlRender } from '@testing-library/react'
+import noop from 'lodash/noop'
+import { RouterContext } from 'next/dist/shared/lib/router-context'
+import { NextRouter } from 'next/router'
+import Provider from 'Providers'
+import { initializeStore, makeStore } from 'state'
+import { SWRConfig } from 'swr'
 import { vi } from 'vitest'
 import { WagmiConfig } from 'wagmi'
 import { client } from './utils/wagmi'

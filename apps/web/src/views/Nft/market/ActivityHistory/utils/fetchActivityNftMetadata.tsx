@@ -3,6 +3,12 @@ import { getNftsFromCollectionApi, getNftsFromDifferentCollectionsApi } from 'st
 import uniqBy from 'lodash/uniqBy'
 import partition from 'lodash/partition'
 import { isAddress } from 'utils'
+import { pancakeBunniesAddress } from '../../constants'
+
+export const fetchActivityNftMetadata = async (activities: Activity[]): Promise<NftToken[]> => {
+  const [pbCollections, nonPBCollections] = partition(
+    activities,
+    (activity) => isAddress(activity.nft.collection.id) === pancakeBunniesAddress,
   )
 
   const activityNftTokenIds = uniqBy(

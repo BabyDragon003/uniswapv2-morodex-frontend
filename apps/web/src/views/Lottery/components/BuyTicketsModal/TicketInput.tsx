@@ -8,17 +8,6 @@ const InputsContainer = styled.div<{ focused: boolean; isDuplicate: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 36px;
-  box-sizing: border-box;
-  background-color: ${({ theme }) => theme.colors.input};
-  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-  border-radius: 16px;
-  margin-bottom: 8px;
-  ${({ isDuplicate }) =>
-    isDuplicate &&
-    `
-    border: 1px solid #FFB237;
-    box-shadow: 0px 0px 0px 2px #FFB237;
   `}
   ${({ focused }) =>
     focused &&

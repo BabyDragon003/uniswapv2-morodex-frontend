@@ -3,6 +3,12 @@ import { BigNumber } from '@ethersproject/bignumber'
 import CountUp from 'react-countup'
 import { Skeleton, TooltipText } from '@pancakeswap/uikit'
 import { formatBigNumberToFixed } from '@pancakeswap/utils/formatBalance'
+import { BetPosition } from 'state/types'
+
+interface LiveRoundPriceProps {
+  betPosition: BetPosition
+  price: BigNumber
+}
 
 const LiveRoundPrice: React.FC<React.PropsWithChildren<LiveRoundPriceProps>> = ({ betPosition, price }) => {
   const priceAsNumber = useMemo(() => parseFloat(formatBigNumberToFixed(price, 4, 8)), [price])

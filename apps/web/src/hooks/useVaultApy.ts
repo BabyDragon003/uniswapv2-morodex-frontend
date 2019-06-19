@@ -8,17 +8,6 @@ import { useCakeVault } from 'state/pools/hooks'
 import useSWRImmutable from 'swr/immutable'
 import { getMasterChefAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { BOOST_WEIGHT, DURATION_FACTOR, MAX_LOCK_DURATION } from 'config/constants/pools'
-import { multicallv2 } from '../utils/multicall'
-
-const masterChefAddress = getMasterChefAddress()
-
-// default
-const DEFAULT_PERFORMANCE_FEE_DECIMALS = 2
-
-const PRECISION_FACTOR = BigNumber.from('1000000000000')
-
-const getFlexibleApy = (
   totalCakePoolEmissionPerYear: FixedNumber,
   pricePerFullShare: FixedNumber,
   totalShares: FixedNumber,

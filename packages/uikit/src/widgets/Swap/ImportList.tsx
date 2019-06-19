@@ -8,17 +8,6 @@ import { ListLogo } from "./ListLogo";
 interface ImportProps {
   listURL: string;
   listLogoURI: string | undefined;
-  listName: string;
-  listTokenLength: number;
-  onAddList: () => void;
-  addError: string | null;
-  badSrcs: { [imageSrc: string]: true };
-}
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-`;
 
 const TextDot = styled.div`
   height: 3px;

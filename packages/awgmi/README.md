@@ -3,6 +3,12 @@
 Connect to Aptos with similar [wagmi](https://github.com/wagmi-dev/wagmi) React hooks.
 
 Support Aptos Wallet Connectors:
+- Petra
+- Martian
+- Pontem
+- Fewcha
+- SafePal
+- Trust Wallet
 
 
 ```jsx

@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useRouter } from 'next/router'
 import { Currency, Percent, WNATIVE } from '@pancakeswap/sdk'
+import {
+  useToast,
+  Button,
+  Text,
+  AddIcon,
+  ArrowDownIcon,
   CardBody,
   Slider,
   Box,

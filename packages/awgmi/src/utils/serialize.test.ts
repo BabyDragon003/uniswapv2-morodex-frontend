@@ -8,17 +8,6 @@ import { describe, expect, it } from 'vitest'
 import { serialize } from './serialize'
 
 class Foo {
-  value: string
-
-  constructor(value: string) {
-    this.value = value
-  }
-}
-
-const simpleObject = {
-  boolean: true,
-  fn() {
-    return 'foo'
   },
   nan: NaN,
   nil: null,

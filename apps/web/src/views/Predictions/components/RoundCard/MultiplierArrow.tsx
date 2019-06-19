@@ -8,17 +8,6 @@ import EnteredTag from './EnteredTag'
 
 interface MultiplierArrowProps {
   betAmount?: BigNumber
-  multiplier?: string
-  hasEntered?: boolean
-  hasClaimed?: boolean
-  betPosition?: BetPosition
-  isDisabled?: boolean
-  isActive?: boolean
-  isHouse?: boolean
-}
-
-const ArrowWrapper = styled.div`
-  height: 65px;
   margin: 0 auto;
   width: 240px;
 `

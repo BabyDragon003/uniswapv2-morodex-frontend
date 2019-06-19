@@ -3,16 +3,11 @@ import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import Box from "../Box/Box";
-  & > button + button {
-    margin-left: 16px;
-  }
-`;
+import ButtonMenu from "./ButtonMenu";
+import ButtonMenuItem from "./ButtonMenuItem";
 
-export default {
-  title: "Components/Button Menu",
-  component: ButtonMenu,
-  argTypes: {},
-} as Meta;
+const Row = styled.div`
+  margin-bottom: 32px;
 
 export const Default: React.FC<React.PropsWithChildren> = () => {
   const [index, setIndex] = useState(0);

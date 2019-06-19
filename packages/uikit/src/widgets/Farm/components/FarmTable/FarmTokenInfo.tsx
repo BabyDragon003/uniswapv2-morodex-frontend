@@ -3,6 +3,12 @@ import { useTranslation } from "@pancakeswap/localization";
 import { getBalanceNumber } from "@pancakeswap/utils/formatBalance";
 import { Text } from "../../../../components/Text";
 import { Skeleton } from "../../../../components/Skeleton";
+import { Flex } from "../../../../components/Box";
+import Tags from "../Tags";
+import { FarmTableFarmTokenInfoProps } from "../../types";
+
+const Container = styled.div`
+  padding-left: 16px;
   display: flex;
   align-items: center;
 

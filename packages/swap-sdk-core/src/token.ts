@@ -3,16 +3,11 @@ import { BaseCurrency } from './baseCurrency'
 import { Currency } from './currency'
 
 export interface SerializedToken {
-}
-
-/**
- * Represents an ERC20 token with a unique address and some metadata.
- */
-export class Token extends BaseCurrency {
-  public readonly isNative: false = false
-
-  public readonly isToken: true = true
-
+  chainId: number
+  address: string
+  decimals: number
+  symbol: string
+  name?: string
   /**
    * The contract address on the chain on which this token lives
    */

@@ -3,6 +3,12 @@ import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/aptos-s
 import { Button, Text, ErrorIcon, ArrowDownIcon, RowBetween, RowFixed, AutoColumn } from '@pancakeswap/uikit'
 import { Field } from 'state/swap'
 import { useTranslation } from '@pancakeswap/localization'
+import { computeTradePriceBreakdown, warningSeverity } from 'utils/exchange'
+import { CurrencyLogo } from 'components/Logo'
+import truncateHash from '@pancakeswap/utils/truncateHash'
+import formatAmountDisplay from 'utils/formatAmountDisplay'
+import { TruncatedText, SwapShowAcceptChanges } from './styleds'
+
 export default function SwapModalHeader({
   trade,
   slippageAdjustedAmounts,

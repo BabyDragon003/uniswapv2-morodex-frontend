@@ -8,17 +8,6 @@ import formatAmountDisplay from 'utils/formatAmountDisplay'
 import { useBurnState } from '../state/remove'
 import { Field } from '../type'
 
-export default function useBurnLiquidityInfo(
-  currencyA: Currency | undefined,
-  currencyB: Currency | undefined,
-  pair?: Pair | null,
-): {
-  parsedAmounts: {
-    [Field.LIQUIDITY_PERCENT]: Percent
-    [Field.LIQUIDITY]?: CurrencyAmount<Token | AptosCoin>
-    [Field.CURRENCY_A]?: CurrencyAmount<Currency>
-    [Field.CURRENCY_B]?: CurrencyAmount<Currency>
-  }
   formattedAmounts: {
     [Field.LIQUIDITY_PERCENT]: string
     [Field.LIQUIDITY]?: string

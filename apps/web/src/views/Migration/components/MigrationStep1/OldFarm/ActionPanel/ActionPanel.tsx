@@ -9,17 +9,6 @@ import { FarmProps } from '../../../Farm/Cells/Farm'
 import { MultiplierProps } from '../../../Farm/Cells/Multiplier'
 import { LiquidityProps } from '../../../Farm/Cells/Liquidity'
 
-const expandAnimation = keyframes`
-  from {
-    opacity: 0;
-    max-height: 0px;
-  }
-  to {
-    opacity: 1;
-    max-height: 700px;
-  }
-`
-
 const collapseAnimation = keyframes`
   from {
     opacity: 1;

@@ -3,6 +3,12 @@
     "inputs": [
       { "internalType": "address", "name": "_cakeToken", "type": "address" },
       { "internalType": "address", "name": "_operatorAddress", "type": "address" },
+      { "internalType": "uint256", "name": "_maxAuctionLength", "type": "uint256" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "anonymous": false,
     "inputs": [
       { "indexed": true, "internalType": "uint256", "name": "auctionId", "type": "uint256" },

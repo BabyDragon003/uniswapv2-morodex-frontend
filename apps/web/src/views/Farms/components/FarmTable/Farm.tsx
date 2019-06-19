@@ -8,17 +8,6 @@ const Farm: React.FunctionComponent<React.PropsWithChildren<FarmTableFarmTokenIn
   token,
   quoteToken,
   label,
-  pid,
-  isReady,
-  isStable,
-}) => {
-  const { stakedBalance, proxy } = useFarmUser(pid)
-
-  return (
-    <FarmTokenInfo
-      pid={pid}
-      label={label}
-      token={token}
       quoteToken={quoteToken}
       isReady={isReady}
       isStable={isStable}

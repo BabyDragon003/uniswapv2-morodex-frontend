@@ -3,16 +3,11 @@ import { Box, Flex, HelpIcon, CardHeader, CardBody, Text, useTooltip } from '@pa
 
 import { StyledCard } from '../IfoCardStyles'
 import { CardConfigReturn } from './types'
-const GenericIfoCard: React.FC<React.PropsWithChildren<CardConfigReturn & GenericIfoCardElements>> = ({
-  title,
-  variant,
-  action,
-  content,
-  tooltip,
-}) => {
-  const { targetRef, tooltip: tooltipMsg, tooltipVisible } = useTooltip(tooltip, { placement: 'bottom' })
 
-  return (
+interface GenericIfoCardElements {
+  action: ReactNode
+  content: ReactNode
+}
     <>
       {tooltipVisible && tooltipMsg}
       <StyledCard>

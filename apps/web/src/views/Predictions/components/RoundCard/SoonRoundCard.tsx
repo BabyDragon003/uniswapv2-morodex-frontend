@@ -3,16 +3,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import { NodeRound, BetPosition } from 'state/types'
 import useTheme from 'hooks/useTheme'
 import { formatRoundTime } from '../../helpers'
-  round: NodeRound
-}
+import useCountdown from '../../hooks/useCountdown'
+import { RoundResultBox } from '../RoundResult'
+import MultiplierArrow from './MultiplierArrow'
+import CardHeader, { getBorderBackground } from './CardHeader'
 
-const SoonRoundCard: React.FC<React.PropsWithChildren<SoonRoundCardProps>> = ({ round }) => {
-  const { secondsRemaining } = useCountdown(round.startTimestamp)
-  const countdown = formatRoundTime(secondsRemaining)
-  const { t } = useTranslation()
-  const { theme } = useTheme()
-
-  return (
     <Card borderBackground={getBorderBackground(theme, 'soon')}>
       <CardHeader status="soon" icon={<WaitIcon mr="4px" width="21px" />} title={t('Later')} epoch={round.epoch} />
       <CardBody p="16px">

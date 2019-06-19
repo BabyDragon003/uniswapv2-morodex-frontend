@@ -8,6 +8,3 @@ export const BIG_NINE = new BigNumber(9)
 export const BIG_TEN = new BigNumber(10)
 export const BIG_ONE_HUNDRED = new BigNumber(100)
 
-export const ethersToSerializedBigNumber = (ethersBn: EthersBigNumber): string => ethersToBigNumber(ethersBn).toJSON()
-
-export const ethersToBigNumber = (ethersBn: EthersBigNumber): BigNumber => new BigNumber(ethersBn.toString())

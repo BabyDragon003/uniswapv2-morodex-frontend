@@ -3,16 +3,11 @@ import { ChartEntry } from 'state/info/types'
 import { PairDayDatasResponse } from '../types'
 import { mapPairDayData, fetchChartDataWithAddress } from '../helpers'
 import { getMultiChainQueryEndPointWithStableSwap, MultiChainName, multiChainStartTime } from '../../constant'
-  try {
-    const query = gql`
-      query pairDayDatas($startTime: Int!, $skip: Int!, $address: Bytes!) {
-        pairDayDatas(
-          first: 1000
-          skip: $skip
-          where: { pairAddress: $address, date_gt: $startTime }
-          orderBy: date
-          orderDirection: asc
-        ) {
+
+const getPoolChartData = async (
+  chainName: MultiChainName,
+  skip: number,
+  address: string,
           date
           dailyVolumeUSD
           reserveUSD
