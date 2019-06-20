@@ -8,4 +8,15 @@ export const rowVariants = recipe({
     gap: {
       sm: {
         rowGap: "8px",
+      },
+      md: {
+        rowGap: "12px",
+      },
+      lg: {
+        rowGap: "24px",
+      },
+    },
+  },
+});
+
 export type Variants = RecipeVariants<typeof rowVariants>;

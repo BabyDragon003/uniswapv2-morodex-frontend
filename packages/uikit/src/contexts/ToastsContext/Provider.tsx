@@ -8,6 +8,17 @@ export const ToastsContext = createContext<ToastContextApi | undefined>(undefine
 export const ToastsProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [toasts, setToasts] = useState<ToastContextApi["toasts"]>([]);
 
+  const toast = useCallback(
+    ({ title, description, type }: Omit<ToastData, "id">) => {
+      setToasts((prevToasts) => {
+        const id = kebabCase(title);
+
+        // Remove any existing toasts with the same id
+        const currentToasts = prevToasts.filter((prevToast) => prevToast.id !== id);
+
+        return [
+          {
+            id,
             title,
             description,
             type,

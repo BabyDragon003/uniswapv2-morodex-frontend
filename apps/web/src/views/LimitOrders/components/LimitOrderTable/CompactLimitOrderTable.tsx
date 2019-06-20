@@ -8,10 +8,8 @@ const RowStyle = styled.tr`
 
   &:hover {
     background: ${({ theme }) => theme.colors.backgroundDisabled};
-        </RowStyle>
-      ))}
-    </tbody>
-  </Table>
-)
+  }
+`
 
-export default memo(CompactLimitOrderTable)
+const CompactLimitOrderTable = ({ orders }) => (
+  <Table>

@@ -8,15 +8,10 @@ import {
   UseBaseQueryOptions,
   useIsRestoring,
   useQueryClient,
-  TError = unknown,
-  TData = TQueryFnData,
-  TQueryData = TQueryFnData,
-  TQueryKey extends QueryKey = QueryKey,
->(options: UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>, Observer: typeof QueryObserver) {
-  const queryClient = useQueryClient({ context: options.context })
-  const isRestoring = useIsRestoring()
-  const errorResetBoundary = useQueryErrorResetBoundary()
-  const defaultedOptions = queryClient.defaultQueryOptions(options)
+  useQueryErrorResetBoundary,
+} from '@tanstack/react-query'
+
+import * as React from 'react'
 
   // Make sure results are optimistically set in fetching state before subscribing or updating options
   defaultedOptions._optimisticResults = isRestoring ? 'isRestoring' : 'optimistic'

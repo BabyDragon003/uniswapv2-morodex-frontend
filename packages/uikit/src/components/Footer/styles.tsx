@@ -8,6 +8,17 @@ export const StyledFooter = styled(Flex)`
 `;
 
 export const StyledList = styled.ul`
+  list-style: none;
+  margin-bottom: 40px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-bottom: 0px;
+  }
+`;
+
+export const StyledListItem = styled.li`
+  font-size: 16px;
+  margin-bottom: 8px;
   text-transform: capitalize;
 
   &:first-child {

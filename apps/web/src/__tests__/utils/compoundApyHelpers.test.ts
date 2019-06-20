@@ -8,6 +8,17 @@ const ONCE_PER_30_DAYS = 0.033333333
 it.each([
   [
     { principalInUSD: 1000, apr: 120, earningTokenPrice: 16, performanceFee: 0, compoundFrequency: 1 },
+    [0.205, 1.453, 6.467, 144.599, 24904.871],
+  ],
+  [
+    { principalInUSD: 1000, apr: 120, earningTokenPrice: 16, performanceFee: 0, compoundFrequency: 2 },
+    [0.206, 1.454, 6.473, 144.803, 25027.897],
+  ],
+  [
+    { principalInUSD: 1000, apr: 120, earningTokenPrice: 16, performanceFee: 0, compoundFrequency: ONCE_PER_7_DAYS },
+    [0.203, 1.438, 6.402, 142.204, 23494.228],
+  ],
+  [
     { principalInUSD: 1000, apr: 120, earningTokenPrice: 16, performanceFee: 0, compoundFrequency: ONCE_PER_30_DAYS },
     [0.196, 1.387, 6.164, 133.794, 19036.623],
   ],

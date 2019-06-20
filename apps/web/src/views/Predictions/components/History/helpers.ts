@@ -8,16 +8,11 @@ export const formatUsd = (usd: number, displayedDecimals: number) => {
 export const formatBnb = (bnb: number, displayedDecimals: number) => {
   return bnb
     ? bnb.toLocaleString(undefined, {
-  return total / amount
+        minimumFractionDigits: displayedDecimals,
+        maximumFractionDigits: displayedDecimals,
+      })
+    : '0'
 }
-
-/**
- * Calculates the total payout given a bet
- */
-export const getPayout = (bet: Bet, rewardRate = 1) => {
-  if (!bet || !bet.round) {
-    return 0
-  }
 
   const { bullAmount, bearAmount, totalAmount } = bet.round
   const multiplier = getMultiplier(totalAmount, bet.position === BetPosition.BULL ? bullAmount : bearAmount)

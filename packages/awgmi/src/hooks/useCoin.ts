@@ -8,6 +8,17 @@ export type UseCoinArgs = Partial<FetchCoinArgs> & {
   /** Subscribe to changes */
   watch?: boolean
 }
+
+export type UseCoinConfig<TData> = QueryConfig<FetchCoinResult, Error, TData>
+
+export const queryKey = ({ coin, networkName }: Partial<UseCoinArgs>) =>
+  [{ entity: 'coin', coin, networkName }] as const
+
+const queryFn = ({ queryKey: [{ coin, networkName }] }: QueryFunctionArgs<typeof queryKey>) => {
+  if (!coin) throw new Error('coin is required')
+  return fetchCoin({ coin, networkName })
+}
+
 export function useCoin<TData = FetchCoinResult>({
   cacheTime,
   coin,

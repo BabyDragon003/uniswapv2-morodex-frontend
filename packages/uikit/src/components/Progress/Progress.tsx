@@ -8,16 +8,11 @@ const stepGuard = (step: number) => {
   if (step < 0) {
     return 0;
   }
-  primaryStep = 0,
-  secondaryStep = null,
-  showProgressBunny = false,
-  useDark = true,
-  children,
-}) => {
-  return (
-    <StyledProgress $useDark={useDark} variant={variant} scale={scale}>
-      {children || (
-        <>
+
+  if (step > 100) {
+    return 100;
+  }
+
           {showProgressBunny && (
             <ProgressBunnyWrapper style={{ left: `${stepGuard(primaryStep)}%` }}>
               <ProgressBunny />

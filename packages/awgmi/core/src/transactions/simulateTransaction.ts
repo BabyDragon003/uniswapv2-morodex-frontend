@@ -13,22 +13,6 @@ export type SimulateTransactionArgs = {
   query?: {
     estimateGasUnitPrice?: boolean
     estimateMaxGasAmount?: boolean
-    estimatePrioritizedGasUnitPrice: boolean
-  }
-}
-
-export type SimulateTransactionResult = Types.UserTransaction[]
-
-export async function simulateTransaction({
-  networkName,
-  payload,
-  throwOnError = true,
-  options,
-  query,
-}: SimulateTransactionArgs): Promise<SimulateTransactionResult> {
-  const { account } = getAccount()
-  const provider = getProvider({ networkName })
-
   if (!account) throw new WalletProviderError(4100, 'No Account')
 
   let { publicKey } = account

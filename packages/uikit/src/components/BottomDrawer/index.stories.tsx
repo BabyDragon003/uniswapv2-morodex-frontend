@@ -8,16 +8,11 @@ export default {
   title: "Components/BottomDrawer",
   component: BottomDrawer,
   argTypes: {},
-        </Text>
-      ))}
-      <Text>The end</Text>
-    </Box>
-  );
-  return (
-    <Box p="24px">
-      <Text mb="8px">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus dolorum porro facere cum ducimus, iste
-        nobis voluptas dolorem quaerat perspiciatis voluptatum sed laborum reiciendis magnam illum necessitatibus. Ea,
+};
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const content = (
         hic.
       </Text>
       <Button onClick={() => setIsOpen(true)}>Show bottom drawer</Button>

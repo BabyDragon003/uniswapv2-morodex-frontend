@@ -8,6 +8,17 @@ describe('Add Liquidity', () => {
     cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'BUSD')
   })
 
+  it('loads the BNB and tokens', () => {
+    cy.visit('/add/BNB/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9')
+    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'BNB')
+    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'MDEX')
+    cy.getBySel('choose-pair-next').click({ force: true })
+    cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'BNB')
+    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'MDEX')
+  })
+
+  it('loads the WBNB and tokens', () => {
+    cy.visit('/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'WBNB')
     cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'MDEX')
     cy.getBySel('choose-pair-next').click({ force: true })

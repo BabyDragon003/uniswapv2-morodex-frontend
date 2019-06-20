@@ -8,16 +8,11 @@ import {
   SellIcon,
   WalletFilledIcon,
   CameraIcon,
-import { CollectibleRowContainer, SmallRoundedImage } from './styles'
-import ProfileNftModal from '../../../components/ProfileNftModal'
-import SellModal from '../../../components/BuySellModals/SellModal'
-import { useCollectionsNftsForAddress } from '../../../hooks/useNftsForAddress'
-import ExpandableCard from './ExpandableCard'
-
-const ScrollableContainer = styled(Box)`
-  overflow-y: auto;
-  max-height: 224px;
-`
+  BinanceIcon,
+  Skeleton,
+  useModal,
+} from '@pancakeswap/uikit'
+import { useAccount } from 'wagmi'
 
 const Divider = styled.div`
   margin: 16px 20px;

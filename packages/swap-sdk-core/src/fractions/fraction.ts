@@ -8,6 +8,17 @@ import { BigintIsh, Rounding } from '../constants'
 
 const Decimal = toFormat(_Decimal)
 const Big = toFormat(_Big)
+
+const toSignificantRounding = {
+  [Rounding.ROUND_DOWN]: Decimal.ROUND_DOWN,
+  [Rounding.ROUND_HALF_UP]: Decimal.ROUND_HALF_UP,
+  [Rounding.ROUND_UP]: Decimal.ROUND_UP,
+}
+
+const enum RoundingMode {
+  /**
+   * Rounds towards zero.
+   * I.e. truncate, no rounding.
    */
   RoundDown = 0,
   /**

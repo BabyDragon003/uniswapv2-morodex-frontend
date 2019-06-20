@@ -13,22 +13,6 @@ import { chains } from './wagmi'
 // returns the checksummed address if the address is valid, otherwise returns false
 export const isAddress = memoize((value: any): string | false => {
   try {
-    return getAddress(value)
-  } catch {
-    return false
-  }
-})
-
-export function getBlockExploreLink(
-  data: string | number,
-  type: 'transaction' | 'token' | 'address' | 'block' | 'countdown',
-  chainIdOverride?: number,
-): string {
-  const chainId = chainIdOverride || ChainId.BSC
-  const chain = chains.find((c) => c.id === chainId)
-  if (!chain) return bsc.blockExplorers.default.url
-  switch (type) {
-    case 'transaction': {
       return `${chain.blockExplorers.default.url}/tx/${data}`
     }
     case 'token': {

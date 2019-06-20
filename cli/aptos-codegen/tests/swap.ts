@@ -8,16 +8,11 @@ export const ROUTER_MODULE_NAME = 'router' as const
 
 export type SwapSetAdminArgs = [string]
 
-export const swapSetFeeTo = (args: SwapSetFeeToArgs): Types.TransactionPayload_EntryFunctionPayload => {
+export const swapSetAdmin = (args: SwapSetAdminArgs): Types.TransactionPayload_EntryFunctionPayload => {
   return {
     type: 'entry_function_payload',
     type_arguments: [],
     arguments: args,
-    function: `${ADDRESS}::${SWAP_MODULE_NAME}::set_fee_to`
-  }
-}
-
-export type SwapUpgradeSwapArgs = [number[] | Uint8Array, number[] | Uint8Array]
 
 export const swapUpgradeSwap = (args: SwapUpgradeSwapArgs): Types.TransactionPayload_EntryFunctionPayload => {
   return {

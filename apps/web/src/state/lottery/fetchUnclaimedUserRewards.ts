@@ -8,6 +8,17 @@ import { NUM_ROUNDS_TO_CHECK_FOR_REWARDS } from 'config/constants/lottery'
 import { getLotteryV2Address } from 'utils/addressHelpers'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { fetchUserTicketsForMultipleRounds } from './getUserTicketsData'
+import { MAX_LOTTERIES_REQUEST_SIZE } from './getLotteriesData'
+
+interface RoundDataAndUserTickets {
+  roundId: string
+  userTickets: LotteryTicket[]
+  finalNumber: string
+}
+
+const lotteryAddress = getLotteryV2Address()
+
+const fetchCakeRewardsForTickets = async (
   winningTickets: LotteryTicket[],
 ): Promise<{ ticketsWithUnclaimedRewards: LotteryTicket[]; cakeTotal: BigNumber }> => {
   const calls = winningTickets.map((winningTicket) => {

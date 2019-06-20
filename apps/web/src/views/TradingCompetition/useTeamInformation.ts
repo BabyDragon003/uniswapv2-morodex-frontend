@@ -8,16 +8,11 @@ export const useTeamInformation = (competitionId: number) => {
   const [team1LeaderboardInformation, setTeam1LeaderboardInformation] = useState({ teamId: 1, leaderboardData: null })
   // 2. Flippers
   const [team2LeaderboardInformation, setTeam2LeaderboardInformation] = useState({ teamId: 2, leaderboardData: null })
-      try {
-        const res = await fetch(`${API_PROFILE}/api/leaderboard/${competitionId}/team/${teamId}`)
-        const data = await res.json()
-        callBack(data)
-      } catch (e) {
-        console.error(e)
-      }
-    }
+  // 3. Cakers
+  const [team3LeaderboardInformation, setTeam3LeaderboardInformation] = useState({ teamId: 3, leaderboardData: null })
 
-    fetchTeamsLeaderboardStats(1, (data) =>
+  useEffect(() => {
+    const fetchGlobalLeaderboardStats = async () => {
       setTeam1LeaderboardInformation((prevState) => {
         return { ...prevState, leaderboardData: data }
       }),

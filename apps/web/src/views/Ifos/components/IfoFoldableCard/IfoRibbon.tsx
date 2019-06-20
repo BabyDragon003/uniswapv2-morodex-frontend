@@ -13,22 +13,6 @@ const BigCurve = styled(Box)<{ $status: PublicIfoData['status'] }>`
   transform: translateX(-50%);
 
   ${({ theme }) => theme.mediaQueries.md} {
-    border-radius: 50%;
-  }
-
-  ${({ $status, theme }) => {
-    switch ($status) {
-      case 'coming_soon':
-        return `
-          background: ${theme.colors.tertiary};
-        `
-      case 'live':
-        return `
-          background: linear-gradient(#8051D6 100%, #492286 100%);
-        `
-      case 'finished':
-        return `
-          background: ${theme.colors.input};
         `
       default:
         return ''

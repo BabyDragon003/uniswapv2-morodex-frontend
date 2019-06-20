@@ -8,16 +8,11 @@
         ],
         "internalType": "struct Multicall2.Call[]",
         "name": "calls",
-  {
-    "inputs": [
-      {
-        "components": [
-          { "internalType": "address", "name": "target", "type": "address" },
-          { "internalType": "bytes", "name": "callData", "type": "bytes" }
-        ],
-        "internalType": "struct Multicall2.Call[]",
-        "name": "calls",
         "type": "tuple[]"
+      }
+    ],
+    "name": "aggregate",
+    "outputs": [
       }
     ],
     "name": "blockAndAggregate",

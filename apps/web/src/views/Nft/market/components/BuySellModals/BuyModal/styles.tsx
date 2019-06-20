@@ -8,16 +8,11 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
   & > div:last-child {
     padding: 0;
   }
-  }
-`
-
-export const BorderedBox = styled(Grid)`
-  margin: 16px 0;
-  padding: 16px;
-  background-color: ${({ theme }) => theme.colors.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: ${({ theme }) => theme.radii.default};
-  grid-template-columns: 1fr 1fr;
+  & h2:first-of-type {
+    ${({ stage, theme }) =>
+      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
+        ? `color: ${theme.colors.textSubtle}`
+        : null};
   grid-row-gap: 8px;
 `
 

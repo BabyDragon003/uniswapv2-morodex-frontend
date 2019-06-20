@@ -13,22 +13,6 @@ BigNumber.config({
 
 vi.mock('../state/pools/hooks', () => ({
   // @ts-ignore
-  ...vi.importActual('state/pools/hooks'),
-  useCakeVault: vi.fn(),
-}))
-
-describe('useVaultApy', () => {
-  it.each([
-    [
-      {
-        totalShares: new BigNumber('125327628384770000000000000'),
-        pricePerFullShare: new BigNumber('1736860000000000000'),
-        emission: FixedNumber.from('105000000000000000000000000'),
-      },
-      {
-        flexibleApy: '47.271974190831774174',
-        lockedApy: '1012.9708755178237323',
-      },
     ],
   ])('should get correct vault apy', (cases, want) => {
     // @ts-ignore

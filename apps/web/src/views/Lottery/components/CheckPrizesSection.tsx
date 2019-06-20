@@ -8,16 +8,11 @@ import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import ClaimPrizesModal from './ClaimPrizesModal'
 import useGetUnclaimedRewards from '../hooks/useGetUnclaimedRewards'
-    height: 84px;
-  }
-`
 
-const CheckPrizesSection = () => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const {
-    isTransitioning,
-    currentRound: { status },
+const TicketImage = styled.img`
+  height: 60px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: 100px;
   } = useLottery()
   const { fetchAllRewards, unclaimedRewards, fetchStatus } = useGetUnclaimedRewards()
   const userLotteryData = useGetUserLotteriesGraphData()

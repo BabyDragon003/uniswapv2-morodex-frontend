@@ -8,16 +8,11 @@ export default {
 };
 
 export const Default: React.FC<React.PropsWithChildren> = () => {
-      </div>
-      <div style={{ marginBottom: "32px" }}>
-        <Toggle
-          checked={isChecked}
-          defaultColor="textDisabled"
-          checkedColor="textDisabled"
-          onChange={toggle}
-          scale="md"
-          startIcon={(isActive = false) => <SunIcon color={isActive ? "warning" : "backgroundAlt"} />}
-          endIcon={(isActive = false) => <MoonIcon color={isActive ? "secondary" : "backgroundAlt"} />}
+  const [isChecked, setIsChecked] = useState(false);
+
+  const toggle = () => setIsChecked(!isChecked);
+
+  return (
         />
       </div>
       <div>

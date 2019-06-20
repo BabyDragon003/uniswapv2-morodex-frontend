@@ -8,16 +8,11 @@ const lotteryContract = getLotteryV2Contract()
 export const processRawTicketsResponse = (
   ticketsResponse: Awaited<ReturnType<LotteryV2['viewUserInfoForLotteryId']>>,
 ): LotteryTicket[] => {
-  return []
-}
+  const [ticketIds, ticketNumbers, ticketStatuses] = ticketsResponse
 
-export const viewUserInfoForLotteryId = async (
-  account: string,
-  lotteryId: string,
-  cursor: number,
-  perRequestLimit: number,
-): Promise<LotteryTicket[]> => {
-  try {
+  if (ticketIds?.length > 0) {
+    return ticketIds.map((ticketId, index) => {
+      return {
     const data = await lotteryContract.viewUserInfoForLotteryId(account, lotteryId, cursor, perRequestLimit)
     return processRawTicketsResponse(data)
   } catch (error) {

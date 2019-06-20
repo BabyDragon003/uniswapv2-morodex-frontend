@@ -8,16 +8,11 @@ import {
   Heading,
   Skeleton,
   Text,
-import { NftLocation } from 'state/nftMarket/types'
-import { useProfile } from 'state/profile/hooks'
-import SelectionCard from './SelectionCard'
-import NextStepButton from './NextStepButton'
-import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
-import multicall from '../../utils/multicall'
-import profileABI from '../../config/abi/pancakeProfile.json'
-import { useNftsForAddress } from '../Nft/market/hooks/useNftsForAddress'
-
-const Link = styled(NextLinkFromReactRouter)`
+  useToast,
+  NextLinkFromReactRouter,
+} from '@pancakeswap/uikit'
+import { useAccount, useSigner } from 'wagmi'
+import { getPancakeProfileAddress } from 'utils/addressHelpers'
   color: ${({ theme }) => theme.colors.primary};
 `
 

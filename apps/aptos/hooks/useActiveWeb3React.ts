@@ -8,3 +8,8 @@ export default function useActiveWeb3React() {
   const { networkName } = useActiveNetwork()
   const chainId = useActiveChainId()
   const provider = useProvider({ networkName })
+  const { account } = useAccount()
+
+  return {
+    chainId,
+    networkName,

@@ -8,16 +8,11 @@
       },
       {
         "internalType": "address",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
+        "name": "_pancakeProfileAddress",
+        "type": "address"
+      },
       {
+        "internalType": "uint256",
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",

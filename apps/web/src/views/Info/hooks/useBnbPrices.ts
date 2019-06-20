@@ -8,6 +8,17 @@ export interface BnbPrices {
   current: number
   oneDay: number
   twoDay: number
+  week: number
+}
+
+const BNB_PRICES = gql`
+  query prices($block24: Int!, $block48: Int!, $blockWeek: Int!) {
+    current: bundle(id: "1") {
+      bnbPrice
+    }
+    oneDay: bundle(id: "1", block: { number: $block24 }) {
+      bnbPrice
+    }
     twoDay: bundle(id: "1", block: { number: $block48 }) {
       bnbPrice
     }

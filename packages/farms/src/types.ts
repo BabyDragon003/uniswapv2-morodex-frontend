@@ -8,6 +8,17 @@ export type FarmsDynamicDataResult = {
   lpTotalSupply: string
   lpTotalInQuoteToken: string
   tokenPriceVsQuote: string
+  poolWeight: string
+  multiplier: string
+}
+export type FarmData = SerializedFarmConfig & FarmsDynamicDataResult
+
+export interface FarmConfigBaseProps {
+  pid: number
+  v1pid?: number
+  vaultPid?: number
+  lpSymbol: string
+  lpAddress: string
   multiplier?: string
   isCommunity?: boolean
   auctionHostingStartSeconds?: number

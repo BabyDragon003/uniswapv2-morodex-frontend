@@ -13,19 +13,3 @@ const BTTWarning = () => {
       </Text>
       <Text>1 BTT (OLD) = 1,000 BTT (NEW)</Text>
       <Text mb="8px">
-        {t('Trade the new BTT token')}{' '}
-        <Link
-          style={{ display: 'inline' }}
-          href="https://dapp-frontend-prince.web.app/swap?outputCurrency=0x352Cb5E19b12FC216548a2677bD0fce83BaE434B"
-        >
-          {t('here')}
-        </Link>
-      </Text>
-      <LinkExternal href="https://medium.com/@BitTorrent/tutorial-how-to-swap-bttold-to-btt-453264d7142">
-        {t('For more details on the swap, please refer here.')}
-      </LinkExternal>
-    </>
-  )
-}
-
-export default BTTWarning

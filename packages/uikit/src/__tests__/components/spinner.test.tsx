@@ -8,16 +8,11 @@ it("renders correctly", () => {
       .c0 {
       width: 128px;
       height: 153.216px;
-      content: "";
-      display: block;
-      padding-top: 119.7%;
+      position: relative;
     }
 
-    .c2 {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
+    .c1 {
+      max-height: 153.216px;
       width: 100%;
     }
 

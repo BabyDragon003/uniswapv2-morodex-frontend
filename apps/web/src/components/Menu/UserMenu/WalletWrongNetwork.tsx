@@ -8,16 +8,11 @@ const StyledLink = styled(Link)`
   width: 100%;
   &:hover {
     text-decoration: initial;
-  const handleSwitchNetwork = async (): Promise<void> => {
-    await switchNetworkAsync(ChainId.BSC)
-    onDismiss?.()
   }
+`
 
-  return (
-    <>
-      <Text mb="24px">{t('You’re connected to the wrong network.')}</Text>
-      {canSwitch ? (
-        <Button onClick={handleSwitchNetwork} mb="24px">
+interface WalletWrongNetworkProps {
+  onDismiss: () => void
           {t('Switch Network')}
         </Button>
       ) : (

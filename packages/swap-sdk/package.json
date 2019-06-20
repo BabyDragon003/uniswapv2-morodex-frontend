@@ -8,6 +8,17 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pancakeswap/pancake-frontend.git",
+    "directory": "packages/swap-sdk"
+  },
+  "keywords": [
+    "pancakeswap",
+    "bsc"
+  ],
+  "module": "dist/index.mjs",
+  "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "test": "jest",

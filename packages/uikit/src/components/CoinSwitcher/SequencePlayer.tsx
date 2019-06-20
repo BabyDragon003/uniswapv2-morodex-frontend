@@ -8,16 +8,11 @@ interface SequencePlayerProps {
   onPlayStart?: () => void;
   onPlayFinish?: () => void;
 }
-  const isPlaying = useRef<boolean>(false);
 
-  const stopCoinLooper = useCallback(() => {
-    clearInterval(coinInterval);
-  }, []);
-
-  const coinDrawer = useCallback(() => {
-    if (canvasRef.current) {
-      const { width, height } = canvasRef.current;
-      const ctx = canvasRef.current.getContext("2d");
+export const SequencePlayer: React.FC<React.PropsWithChildren<SequencePlayerProps>> = ({
+  images,
+  msPerFrame = 32,
+  onPlayFinish,
       if (ctx) {
         ctx.clearRect(0, 0, width, height);
         ctx.drawImage(imagePreload.current[coinImagePlayProgress.current], 0, 0);

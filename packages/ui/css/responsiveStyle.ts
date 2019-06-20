@@ -8,6 +8,17 @@ const makeMediaQuery = (breakpoint: Breakpoint) => (styles?: CSSProps) =>
     ? {}
     : {
         [`screen and (min-width: ${breakpoints[breakpoint]}px)`]: styles,
+      }
+
+const mediaQuery = {
+  sm: makeMediaQuery('sm'),
+  md: makeMediaQuery('md'),
+  lg: makeMediaQuery('lg'),
+  xl: makeMediaQuery('xl'),
+  xxl: makeMediaQuery('xxl'),
+}
+
+type ResponsiveStyle = {
   xs?: CSSProps
   sm?: CSSProps
   md?: CSSProps

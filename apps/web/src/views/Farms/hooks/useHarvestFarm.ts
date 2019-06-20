@@ -8,3 +8,10 @@ const useHarvestFarm = (farmPid: number) => {
   const gasPrice = useGasPrice()
 
   const handleHarvest = useCallback(async () => {
+    return harvestFarm(masterChefContract, farmPid, gasPrice)
+  }, [farmPid, masterChefContract, gasPrice])
+
+  return { onReward: handleHarvest }
+}
+
+export default useHarvestFarm

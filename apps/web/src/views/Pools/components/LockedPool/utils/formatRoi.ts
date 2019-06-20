@@ -13,5 +13,3 @@ export default function formatRoi(roiArgs: FormatRoiArgs): string {
   return roi.toLocaleString('en', {
     minimumFractionDigits: roiFractionDigits,
     maximumFractionDigits: roiFractionDigits,
-  })
-}

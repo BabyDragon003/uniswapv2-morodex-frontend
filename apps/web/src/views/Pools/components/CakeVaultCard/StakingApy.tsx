@@ -8,6 +8,17 @@ import styled from 'styled-components'
 import { Token } from '@pancakeswap/sdk'
 import { VaultRoiCalculatorModal } from '../Vault/VaultRoiCalculatorModal'
 
+const AprLabelContainer = styled(Flex)`
+  &:hover {
+    opacity: 0.5;
+  }
+`
+
+export const StakingApy = memo(({ pool }: { pool: Pool.DeserializedPool<Token> }) => {
+  const { t } = useTranslation()
+
+  const { flexibleApy, lockedApy } = useVaultApy()
+
   const [onPresentFlexibleApyModal] = useModal(<VaultRoiCalculatorModal pool={pool} />)
 
   const [onPresentLockedApyModal] = useModal(<VaultRoiCalculatorModal pool={pool} initialView={1} />)

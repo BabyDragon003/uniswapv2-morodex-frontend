@@ -8,16 +8,11 @@ import { getFullDecimalMultiplier } from './getFullDecimalMultiplier'
 // Find BUSD price for token
 // either via direct calculation if farm is X-BNB or X-BUSD
 // or via quoteTokenFarm which is quoteToken-BNB or quoteToken-BUSD farm
-    return hasTokenPriceVsQuote ? FixedNumber.from(farm.tokenPriceVsQuote) : FIXED_ONE
-  }
-
-  if (farm.quoteToken.symbol === wNative) {
-    return hasTokenPriceVsQuote ? nativePriceUSD.mulUnsafe(FixedNumber.from(farm.tokenPriceVsQuote)) : FIXED_ONE
-  }
-
-  // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
-  if (!quoteTokenFarm) {
-    return FIXED_ZERO
+export const getFarmBaseTokenPrice = (
+  farm: SerializedFarmPublicData,
+  quoteTokenFarm: SerializedFarmPublicData,
+  nativePriceUSD: FixedNumber,
+  wNative: string,
   }
 
   // Possible alternative farm quoteTokens:

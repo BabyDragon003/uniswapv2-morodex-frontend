@@ -8,3 +8,4 @@ const InfoTokensPage = () => {
 InfoTokensPage.Layout = InfoPageLayout
 InfoTokensPage.chains = [] // set all
 
+export default InfoTokensPage

@@ -8,6 +8,17 @@ interface GenericIfoCardElements {
   action: ReactElement
   content: ReactElement
 }
+
+const GenericIfoCard: React.FC<React.PropsWithChildren<CardConfigReturn & GenericIfoCardElements>> = ({
+  title,
+  variant,
+  action,
+  content,
+  tooltip,
+}) => {
+  const { targetRef, tooltip: tooltipMsg, tooltipVisible } = useTooltip(tooltip, { placement: 'bottom' })
+
+  return (
     <>
       {tooltipVisible && tooltipMsg}
       <StyledCard>

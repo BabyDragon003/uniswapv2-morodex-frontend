@@ -8,6 +8,17 @@ interface TimeFrameProps {
   endDate: number
   proposalState: ProposalState
 }
+
+const getFormattedDate = (timestamp: number) => {
+  const date = toDate(timestamp * 1000)
+  return format(date, 'MMM do, yyyy HH:mm')
+}
+
+const TimeFrame: React.FC<React.PropsWithChildren<TimeFrameProps>> = ({ startDate, endDate, proposalState }) => {
+  const { t } = useTranslation()
+  const textProps = {
+    fontSize: '16px',
+    color: 'textSubtle',
     ml: '8px',
   }
 

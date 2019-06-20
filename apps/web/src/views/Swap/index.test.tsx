@@ -8,3 +8,6 @@ describe('Swap', () => {
       screen.getByRole('heading', {
         name: /swap/i,
       }),
+    ).toBeInTheDocument()
+  })
+})

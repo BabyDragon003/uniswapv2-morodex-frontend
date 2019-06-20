@@ -13,5 +13,3 @@ export const useUserLockedCakeStatus = () => {
     lockedAmount: vaultPool?.userData?.lockedAmount,
     lockBalance: vaultPool?.userData?.balance,
     lockedStart: vaultPool?.userData?.lockStartTime,
-  }
-}

@@ -8,6 +8,17 @@
     },
     "test": {
       "outputs": ["coverage/**"],
+      "dependsOn": ["^build"]
+    },
+    "test:config": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": ["^build"],
       "persistent": true
     },
     "start": {

@@ -8,6 +8,17 @@ export enum ButtonArrangement {
 }
 
 interface ApproveConfirmButtonsProps {
+  isApproveDisabled: boolean
+  isApproving: boolean
+  isConfirming: boolean
+  isConfirmDisabled: boolean
+  onApprove: () => void
+  onConfirm: () => void
+  buttonArrangement?: ButtonArrangement
+  confirmLabel?: string
+  confirmId?: string
+  useMinWidth?: boolean
+}
 
 const StyledApproveConfirmButtonRow = styled.div`
   align-items: center;

@@ -8,16 +8,11 @@ import { SettingsButton } from 'components/Menu/Settings/SettingsButton'
 
 const { LiquidityCard, GotoAddLiquidityButton, LiquidityNotConnect } = LiquidityUI
 
-        />
-        <LiquidityCard.ListBody>
-          <HasAccount fallbackComp={<LiquidityNotConnect />}>
-            <LiquidityList />
-          </HasAccount>
-        </LiquidityCard.ListBody>
-        <LiquidityCard.Footer>
-          <GotoAddLiquidityButton />
-        </LiquidityCard.Footer>
-      </LiquidityCard>
+const LiquidityPage = () => {
+  const { t } = useTranslation()
+
+  return (
+    <>
     </>
   )
 }

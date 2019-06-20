@@ -8,16 +8,11 @@ import _toNumber from 'lodash/toNumber'
 import { AddLiquidityModalHeader, PairDistribution } from './common'
 
 interface ConfirmAddLiquidityModalProps {
-  onAdd: () => void
-  poolTokenPercentage: Percent
-  liquidityMinted: CurrencyAmount<Token>
-  currencyToAdd: Token
-  isStable?: boolean
-}
-
-const ConfirmAddLiquidityModal: React.FC<
-  React.PropsWithChildren<InjectedModalProps & ConfirmAddLiquidityModalProps>
-> = ({
+  title: string
+  customOnDismiss: () => void
+  attemptingTxn: boolean
+  hash: string
+  pendingText: string
   title,
   onDismiss,
   customOnDismiss,

@@ -13,22 +13,6 @@ export function getStableSwapFeeCall(pair: StableSwapPair, inputAmount: Currency
   const wrappedInputAmount = wrappedCurrencyAmount(inputAmount, chainId)
   if (!wrappedInputAmount) {
     throw new Error(`No wrapped token amount found for input amount: ${inputAmount.currency.name}`)
-  }
-
-  const { stableSwapAddress } = pair
-  const inputToken = wrappedInputAmount.currency
-  const outputToken = getOutputToken(pair, inputToken)
-  const inputRawAmount = inputAmount.wrapped.quotient.toString()
-
-  const isOutputToken0 = pair.token0.equals(outputToken)
-  const args = isOutputToken0 ? [stableSwapAddress, 1, 0, inputRawAmount] : [stableSwapAddress, 0, 1, inputRawAmount]
-  return {
-    address: STABLE_SWAP_INFO_ADDRESS[chainId as ChainId],
-    name: 'get_exchange_fee',
-    params: args,
-  }
-}
-
 interface Options {
   provider: Provider
 }

@@ -8,6 +8,17 @@ export type MultiCallResponse<T> = T | null
 export type PredictionsClaimableResponse = boolean
 
 export interface PredictionsLedgerResponse {
+  position: 0 | 1
+  amount: BigNumber
+  claimed: boolean
+}
+
+export interface PredictionsRoundsResponse {
+  epoch: BigNumber
+  startTimestamp: BigNumber
+  lockTimestamp: BigNumber
+  closeTimestamp: BigNumber
+  lockPrice: BigNumber
   closePrice: BigNumber
   lockOracleId: BigNumber
   closeOracleId: BigNumber

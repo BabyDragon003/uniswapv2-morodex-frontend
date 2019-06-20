@@ -8,16 +8,11 @@ interface SearchBarArticle {
 }
 
 const useSearchBarArticle = (searchKey: string): SearchBarArticle => {
-      },
-    })
-
-    return result.data
-  })
-
-  return {
-    isFetching: isLoading,
-    articlesData: articlesData ?? [],
-  }
+  const { data: articlesData, isLoading } = useSWR(searchKey && [`/searchBarArticles`, searchKey], async () => {
+    const result = await getArticle({
+      url: '/articles',
+      urlParamsObject: {
+        ...(searchKey && { _q: searchKey }),
 }
 
 export default useSearchBarArticle

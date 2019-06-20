@@ -8,16 +8,11 @@ import { FarmTableLiquidityProps } from "../../types";
 
 const ReferenceElement = styled.div`
   display: inline-block;
-  }
 `;
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Liquidity: React.FunctionComponent<React.PropsWithChildren<FarmTableLiquidityProps>> = ({ liquidity }) => {
-  const displayLiquidity =
+const LiquidityWrapper = styled.div`
+  min-width: 110px;
+  font-weight: 600;
     liquidity && liquidity.gt(0) ? (
       `$${Number(liquidity).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
     ) : (

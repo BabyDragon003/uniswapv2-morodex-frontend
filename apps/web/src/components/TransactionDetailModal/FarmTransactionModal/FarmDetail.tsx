@@ -8,16 +8,11 @@ import { getBlockExploreLink, getBlockExploreName } from 'utils'
 import { FarmTransactionStatus, NonBscFarmTransactionStep } from 'state/transactions/actions'
 
 interface HarvestDetailProps {
-  return (
-    <Flex mb="16px" justifyContent="space-between">
-      <Flex>
-        <ChainLogo width={20} height={20} chainId={step.chainId} />
-        <Text fontSize="14px" ml="8px">
-          {chainInfo?.name}
-        </Text>
-      </Flex>
-      {!isOneOfTheStepFail && (
-        <Box>
+  status: FarmTransactionStatus
+  step: NonBscFarmTransactionStep
+}
+
+const FarmDetail: React.FC<React.PropsWithChildren<HarvestDetailProps>> = ({ step, status }) => {
           {isLoading ? (
             <Flex>
               <Text color="textSubtle" bold fontSize="14px">

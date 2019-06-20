@@ -8,6 +8,17 @@ interface Props {
   subtitle: string
   noConfig?: boolean
   setIsChartDisplayed?: React.Dispatch<React.SetStateAction<boolean>>
+  isChartDisplayed?: boolean
+}
+
+const CurrencyInputContainer = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  width: 100%;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
 const ColoredIconButton = styled(IconButton)`
   color: ${({ theme }) => theme.colors.textSubtle};
 `

@@ -8,16 +8,11 @@ import { DEFAULT_TOKEN_DECIMAL } from 'config'
 
 interface DepositButtonProps {
   status: PotteryDepositStatus
-  const { t } = useTranslation()
-  const { isPending, handleDeposit } = useDepositPottery(depositAmount, potteryVaultAddress)
-  const depositAmountAsBN = new BigNumber(depositAmount).multipliedBy(DEFAULT_TOKEN_DECIMAL)
+  depositAmount: string
+  potteryVaultAddress: string
+  setDepositAmount: (value: string) => void
+}
 
-  const onClickDeposit = useCallback(async () => {
-    await handleDeposit()
-    setDepositAmount('')
-  }, [handleDeposit, setDepositAmount])
-
-  return (
     <Button
       mt="10px"
       width="100%"

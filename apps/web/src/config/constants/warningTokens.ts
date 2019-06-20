@@ -13,19 +13,3 @@ export const bscWarningTokens = {
   safemoon: new ERC20Token(
     ChainId.BSC,
     '0x8076C74C5e3F5852037F31Ff0093Eeb8c8ADd8D3',
-    9,
-    'SAFEMOON',
-    'Safemoon Token',
-    'https://safemoon.net/',
-  ),
-  gala: new ERC20Token(
-    ChainId.BSC,
-    '0x7dDEE176F665cD201F93eEDE625770E2fD911990',
-    18,
-    'GALA',
-    'pTokens GALA',
-    'https://games.gala.com/',
-  ),
-}
-
-export const bscTestnetWarningTokens = {}

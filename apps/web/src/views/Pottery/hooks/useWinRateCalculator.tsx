@@ -8,16 +8,11 @@ const USD_PRECISION = 2
 
 export interface WinRateCalculatorState {
   controls: {
-  controls: {
-    multiply: 1,
-    mode: CalculatorMode.WIN_RATE_BASED_ON_PRINCIPAL,
-    editingCurrency: EditingCurrency.USD,
-  },
+    multiply: number
+    mode: CalculatorMode
+    editingCurrency: EditingCurrency
+  }
   data: {
-    principalAsToken: '0.00',
-    principalAsUSD: '',
-  },
-}
 
 interface WinRateCalculatorProps {
   cakePrice: BigNumber

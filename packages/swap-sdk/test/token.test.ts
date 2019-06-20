@@ -13,22 +13,6 @@ describe('Token', () => {
     })
 
     it('false if chain id differs', () => {
-      expect(
-        new Token(ChainId.BSC_TESTNET, ADDRESS_ONE, 18, 'A').equals(new Token(ChainId.BSC, ADDRESS_ONE, 18, 'B'))
-      ).toBe(false)
-    })
-
-    it('true if only decimals differs', () => {
-      expect(new Token(ChainId.BSC, ADDRESS_ONE, 9, 'A').equals(new Token(ChainId.BSC, ADDRESS_ONE, 18, 'B'))).toBe(
-        true
-      )
-    })
-
-    it('true if address is the same', () => {
-      expect(new Token(ChainId.BSC, ADDRESS_ONE, 18, 'A').equals(new Token(ChainId.BSC, ADDRESS_ONE, 18, 'B'))).toBe(
-        true
-      )
-    })
 
     it('true on reference equality', () => {
       const token = new Token(ChainId.BSC, ADDRESS_ONE, 18, 'A')

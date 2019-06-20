@@ -8,6 +8,17 @@ const alertTypeMap = {
   [types.INFO]: alertVariants.INFO,
   [types.SUCCESS]: alertVariants.SUCCESS,
   [types.DANGER]: alertVariants.DANGER,
+  [types.WARNING]: alertVariants.WARNING,
+};
+
+const StyledToast = styled.div`
+  right: 16px;
+  position: fixed;
+  max-width: calc(100% - 32px);
+  transition: all 250ms ease-in;
+  width: 100%;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
     max-width: 400px;
   }
 `;

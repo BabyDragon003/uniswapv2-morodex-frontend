@@ -8,16 +8,11 @@ import { SerializedFarmConfig } from '../../config/constants/types'
 const fetchFarmCalls = (farm: SerializedFarm) => {
   const { lpAddress, token, quoteToken } = farm
   return [
-    },
-    // Balance of LP tokens in the master chef contract
+    // Balance of token in the LP contract
     {
-      address: lpAddress,
+      address: token.address,
       name: 'balanceOf',
-      params: [getMasterChefV1Address()],
-    },
-    // Total supply of LP tokens
-    {
-      address: lpAddress,
+      params: [lpAddress],
       name: 'totalSupply',
     },
     // Token decimals

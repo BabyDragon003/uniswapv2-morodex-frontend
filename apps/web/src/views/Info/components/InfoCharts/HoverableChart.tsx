@@ -8,16 +8,11 @@ import LineChart from './LineChart'
 
 interface HoverableChartProps {
   chartData: ChartEntry[]
-  valueProperty,
-  title,
-  ChartComponent,
-}: HoverableChartProps) => {
-  const [hover, setHover] = useState<number | undefined>()
-  const [dateHover, setDateHover] = useState<string | undefined>()
-
-  // Getting latest data to display on top of chart when not hovered
-  useEffect(() => {
-    setHover(null)
+  protocolData: ProtocolData
+  currentDate: string
+  valueProperty: string
+  title: string
+  ChartComponent: typeof BarChart | typeof LineChart
   }, [protocolData])
 
   useEffect(() => {

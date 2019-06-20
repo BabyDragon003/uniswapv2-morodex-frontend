@@ -13,22 +13,6 @@ export const useCurrencySelectRoute = () => {
     (currencyA_: Currency) => {
       const newCurrencyIdA = currencyId(currencyA_)
       if (newCurrencyIdA === currencyIdB) {
-        router.replace(`/add/${currencyIdB}/${currencyIdA}`, undefined, { shallow: true })
-      } else if (currencyIdB) {
-        router.replace(`/add/${newCurrencyIdA}/${currencyIdB}`, undefined, { shallow: true })
-      } else {
-        router.replace(`/add/${newCurrencyIdA}`, undefined, { shallow: true })
-      }
-    },
-    [currencyIdB, router, currencyIdA],
-  )
-  const handleCurrencyBSelect = useCallback(
-    (currencyB_: Currency) => {
-      const newCurrencyIdB = currencyId(currencyB_)
-      if (currencyIdA === newCurrencyIdB) {
-        if (currencyIdB) {
-          router.replace(`/add/${currencyIdB}/${newCurrencyIdB}`, undefined, { shallow: true })
-        } else {
           router.replace(`/add/${newCurrencyIdB}`, undefined, { shallow: true })
         }
       } else {

@@ -13,10 +13,3 @@ export default {
     token: bscTokens.bnb,
   },
   CAKE: {
-    address: getAddress(addresses.predictionsCAKE),
-    api: GRAPH_API_PREDICTION_CAKE,
-    chainlinkOracleAddress: getAddress(addresses.chainlinkOracleCAKE),
-    displayedDecimals: 4,
-    token: bscTokens.cake,
-  },
-}

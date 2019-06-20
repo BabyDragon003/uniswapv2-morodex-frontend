@@ -8,14 +8,9 @@ const Container = styled(Flex)`
   border-bottom: solid 1px ${({ theme }) => theme.colors.cardBorder};
 `
 
-  secondarySrc,
-}) => {
-  return (
-    <Container>
-      <Pool.PoolCardHeaderTitle title={title} subTitle={subTitle} />
-      <TokenPairImage width={64} height={64} primarySrc={primarySrc} secondarySrc={secondarySrc} />
-    </Container>
-  )
-}
-
+interface CardHeaderProps {
+  title: string
+  subTitle: string
+  primarySrc: string
+  secondarySrc: string
 export default CardHeader

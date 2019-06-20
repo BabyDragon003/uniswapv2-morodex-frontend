@@ -13,20 +13,4 @@ interface CorePoolProps {
   endBlock?: number
   apr?: number
   rawApr?: number
-  stakingTokenPrice?: number
-  earningTokenPrice?: number
-  vaultKey?: VaultKey
-}
-
-export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps {
-  totalStaked?: BigNumber
-  stakingLimit?: BigNumber
-  stakingLimitEndBlock?: number
-  userDataLoaded?: boolean
-  userData?: {
-    allowance: BigNumber
-    stakingTokenBalance: BigNumber
-    stakedBalance: BigNumber
-    pendingReward: BigNumber
-  }
 }
