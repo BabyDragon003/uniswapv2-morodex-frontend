@@ -13,16 +13,11 @@ export interface AprProps {
   lpLabel: string
   lpSymbol: string
   lpRewardsApr: number
-  color: ${({ theme }) => theme.colors.text};
-
-  button {
-    width: 20px;
-    height: 20px;
-
-    svg {
-      path {
-        fill: ${({ theme }) => theme.colors.textSubtle};
-      }
+  lpTokenPrice: BigNumber
+  tokenAddress?: string
+  quoteTokenAddress?: string
+  cakePrice: BigNumber
+  originalValue: number
     }
   }
 `

@@ -13,6 +13,22 @@ import {
   TooltipText,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
+import { useTranslation } from '@pancakeswap/localization'
+import { useVaultApy } from 'hooks/useVaultApy'
+import { useVaultPoolByKey } from 'state/pools/hooks'
+import { DeserializedLockedVaultUser, VaultKey } from 'state/types'
+import { MAX_LOCK_DURATION } from 'config/constants/pools'
+import { getVaultPosition, VaultPosition, isLocked } from 'utils/cakePool'
+import { Token } from '@pancakeswap/sdk'
+import { useMemo } from 'react'
+import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+
+import { VaultRoiCalculatorModal } from '../../Vault/VaultRoiCalculatorModal'
+import LockedAprTooltipContent from '../../LockedPool/Common/LockedAprTooltipContent'
+
+const AprLabelContainer = styled(Flex)`
+  &:hover {
+    opacity: 0.5;
   }
 `
 

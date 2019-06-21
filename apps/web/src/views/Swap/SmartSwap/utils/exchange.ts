@@ -18,27 +18,6 @@ export const SMART_ROUTER_ADDRESS: ChainMap<string> = {
 }
 
 export function useSmartRouterContract() {
-  const { chainId } = useActiveChainId()
-  return useContract<PancakeSwapSmartRouter>(SMART_ROUTER_ADDRESS[chainId], PancakeSwapSmartRouterABI, true)
-}
-
-export function calculateSlippageAmount(value: CurrencyAmount<Currency>, slippage: number): [JSBI, JSBI] {
-  if (slippage < 0 || slippage > 10000) {
-    throw Error(`Unexpected slippage value: ${slippage}`)
-  }
-  return [
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 - slippage)), BIPS_BASE),
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 + slippage)), BIPS_BASE),
-  ]
-}
-
-// computes price breakdown for the trade
-export function computeTradePriceBreakdown(trade?: TradeWithStableSwap<Currency, Currency, TradeType> | null): {
-  priceImpactWithoutFee: Percent | undefined
-  realizedLPFee: CurrencyAmount<Currency> | undefined | null
-} {
-  // for each hop in our trade, take away the x*y=k price impact from 0.3% fees
-  // e.g. for 3 tokens/2 hops: 1 - ((1 - .03) * (1-.03))
   const realizedLPFee = !trade
     ? undefined
     : ONE_HUNDRED_PERCENT.subtract(

@@ -13,6 +13,22 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
   secondaryButton: {
     to: 'https://docs.dapp-frontend-prince.web.app/',
     text: t('Learn'),
+    external: true,
+  },
+  images: {
+    path: '/images/home/trade/',
+    attributes: [
+      { src: 'BNB', alt: t('BNB token') },
+      { src: 'BTC', alt: t('BTC token') },
+      { src: 'MDEX', alt: t('CAKE token') },
+    ],
+  },
+})
+
+export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
+  headingText: t('Earn passive income with crypto.'),
+  bodyText: t('PancakeSwap makes it easy to make your crypto work for you.'),
+  reverse: true,
   primaryButton: {
     to: '/farms',
     text: t('Explore'),

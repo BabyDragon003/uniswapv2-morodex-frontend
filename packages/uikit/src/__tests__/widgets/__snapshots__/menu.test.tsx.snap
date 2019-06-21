@@ -13,11 +13,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c19 {
-  flex-shrink: 0;
-  margin-right: 8px;
-}
-
-.c32 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;

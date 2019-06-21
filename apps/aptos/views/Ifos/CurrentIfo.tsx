@@ -13,3 +13,12 @@ interface TypeProps {
 const CurrentIfo: React.FC<React.PropsWithChildren<TypeProps>> = ({ activeIfo }) => {
   const publicIfoData = useGetPublicIfoData(activeIfo)
   const walletIfoData = useGetWalletIfoData(activeIfo)
+
+  return (
+    <IfoContainer
+      ifoSection={<IfoCurrentCard ifo={activeIfo} publicIfoData={publicIfoData} walletIfoData={walletIfoData} />}
+    />
+  )
+}
+
+export default CurrentIfo

@@ -13,16 +13,11 @@ export const zRiskTokenData = z.object({
 export const TOKEN_RISK = {
   VERY_LOW: 0,
   LOW: 1,
-  riskLevel: (typeof TOKEN_RISK)[keyof typeof TOKEN_RISK]
-  scannedTs: number
-}
+  MEDIUM: 2,
+  HIGH: 3,
+  VERY_HIGH: 4,
+} as const
 
-const fetchRiskApi = async (address: string, chainId: number) => {
-  const response = await fetch(`${ACCESS_RISK_API}/${chainId}/${address}`, {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
   })
 
   const result = await response.json()

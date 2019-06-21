@@ -13,16 +13,11 @@ import {
   MobileColumnSchema,
   DesktopColumnSchema,
 } from '@pancakeswap/uikit'
-  multiplier: FarmTableMultiplierProps
-  liquidity: FarmTableLiquidityProps
-  details: FarmWithStakedValue
-  type: 'core' | 'community'
-  initialActivity?: boolean
-}
+import { createElement, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { useDelayedUnmount } from '@pancakeswap/hooks'
 
-interface RowPropsWithLoading extends RowProps {
-  userDataReady: boolean
-}
 
 const cells = {
   apr: Apr,

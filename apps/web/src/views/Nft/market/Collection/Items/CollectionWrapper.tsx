@@ -18,7 +18,3 @@ const CollectionWrapper: React.FC<React.PropsWithChildren<CollectionWrapperProps
         <CollectionNfts collection={collection} />
       </Container>
     </Box>
-  )
-}
-
-export default CollectionWrapper

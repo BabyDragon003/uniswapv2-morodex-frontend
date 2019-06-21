@@ -13,16 +13,11 @@ export type SimulateTransactionArgs = {
   query?: {
     estimateGasUnitPrice?: boolean
     estimateMaxGasAmount?: boolean
-  if (!account) throw new WalletProviderError(4100, 'No Account')
-
-  let { publicKey } = account
-
-  if (!publicKey) {
-    const client = getClient()
-    const activeConnector = client.connector
-    const accountFromActiveConnector = await activeConnector?.account()
-    publicKey = accountFromActiveConnector?.publicKey
+    estimatePrioritizedGasUnitPrice: boolean
   }
+}
+
+export type SimulateTransactionResult = Types.UserTransaction[]
 
   if (!publicKey) throw new WalletProviderError(4100, 'Missing pubic key')
 

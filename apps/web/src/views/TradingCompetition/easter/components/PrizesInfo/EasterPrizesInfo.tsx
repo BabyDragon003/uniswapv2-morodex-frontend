@@ -13,3 +13,13 @@ const Wrapper = styled(Flex)`
   }
 `
 
+const EasterPrizesInfo = () => {
+  return (
+    <Wrapper flexDirection="column">
+      <EasterPrizesCard />
+      <EasterPrizesText />
+    </Wrapper>
+  )
+}
+
+export default EasterPrizesInfo

@@ -13,3 +13,12 @@ const Traits = () => {
       <Container py="40px">
         {isAddress(collectionAddress) === pancakeBunniesAddress ? (
           <PancakeBunniesTraits collectionAddress={collectionAddress} />
+        ) : (
+          <CollectionTraits collectionAddress={collectionAddress} />
+        )}
+      </Container>
+    </>
+  )
+}
+
+export default Traits

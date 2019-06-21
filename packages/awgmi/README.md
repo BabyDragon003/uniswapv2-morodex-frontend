@@ -13,16 +13,11 @@ Support Aptos Wallet Connectors:
 
 ```jsx
 import {
-  connectors: [
-    new PetraConnector({ chains }),
-    new MartianConnector({ chains }),
-    new PetraConnector({ chains, options: { name: 'Trust Wallet', id: 'trustWallet' } }),
-    new SafePalConnector({ chains }),
-    new BloctoConnector({ chains, options: { appId: BLOCTO_APP_ID } }),
-    new FewchaConnector({ chains }),
-  ],
-  provider: getDefaultProviders,
-  autoConnect: true,
+  createClient,
+  AwgmiConfig,
+  useConnect,
+  getDefaultProviders,
+  defaultChains,
 });
 
 

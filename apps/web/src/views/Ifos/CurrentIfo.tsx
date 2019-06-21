@@ -13,6 +13,22 @@ interface TypeProps {
 }
 
 const CurrentIfo: React.FC<React.PropsWithChildren<TypeProps>> = ({ activeIfo }) => {
+  const publicIfoData = useGetPublicIfoV3Data(activeIfo)
+  const walletIfoData = useGetWalletIfoV3Data(activeIfo)
+
+  const { poolBasic, poolUnlimited } = walletIfoData
+
+  const isCommitted = useMemo(
+    () =>
+      poolBasic.amountTokenCommittedInLP.isGreaterThan(0) || poolUnlimited.amountTokenCommittedInLP.isGreaterThan(0),
+    [poolBasic.amountTokenCommittedInLP, poolUnlimited.amountTokenCommittedInLP],
+  )
+
+  return (
+    <IfoContainer
+      ifoSection={<IfoCurrentCard ifo={activeIfo} publicIfoData={publicIfoData} walletIfoData={walletIfoData} />}
+      ifoSteps={
+        <IfoSteps
           isLive={publicIfoData.status === 'live'}
           hasClaimed={poolBasic.hasClaimed || poolUnlimited.hasClaimed}
           isCommitted={isCommitted}

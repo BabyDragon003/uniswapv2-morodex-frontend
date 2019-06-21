@@ -13,3 +13,12 @@ const nextConfig = {
       '@pancakeswap/ui',
       '@pancakeswap/hooks',
       '@pancakeswap/localization',
+      '@pancakeswap/utils',
+    ],
+  },
+  compiler: {
+    styledComponents: true,
+  },
+}
+
+export default withAxiom(withVanillaExtract(nextConfig))

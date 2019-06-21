@@ -18,27 +18,6 @@ const includesVariableRegex = new RegExp(/%\S+?%/, 'gm')
 
 const translatedTextIncludesVariable = memoize((translatedText: string): boolean => {
   return !!translatedText?.match(includesVariableRegex)
-})
-
-const getRegExpForDataKey = memoize((dataKey: string): RegExp => {
-  return new RegExp(`%${dataKey}%`, 'g')
-})
-
-// Export the translations directly
-const languageMap = new Map<Language['locale'], Record<string, string>>()
-languageMap.set(EN.locale, {})
-
-export const LanguageContext = createContext<ContextApi | undefined>(undefined)
-
-export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
-  const [state, setState] = useState<ProviderState>(() => {
-    const codeFromStorage = getLanguageCodeFromLS()
-
-    return {
-      ...initialState,
-      currentLanguage: languages[codeFromStorage] || EN,
-    }
   })
   const { currentLanguage } = state
 

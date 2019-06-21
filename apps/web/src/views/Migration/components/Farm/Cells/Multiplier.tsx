@@ -13,6 +13,22 @@ const StyledCell = styled(Pool.BaseCell)`
 
 const ReferenceElement = styled.div`
   display: inline-block;
+`
+
+const MultiplierWrapper = styled.div`
+  color: ${({ theme }) => theme.colors.text};
+  width: 36px;
+  text-align: right;
+  margin-right: 14px;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    text-align: left;
+    margin-right: 0;
+  }
+`
+
+export interface MultiplierProps {
+  multiplier: string
 }
 
 const Multiplier: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multiplier }) => {

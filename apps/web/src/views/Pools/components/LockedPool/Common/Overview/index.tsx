@@ -13,16 +13,11 @@ import BalanceRow from './BalanceRow'
 import DateRow from './DateRow'
 import formatRoi from '../../utils/formatRoi'
 import formatiCake from '../../utils/formatICake'
-  const { t } = useTranslation()
+import { OverviewPropsType } from '../../types'
+import CalculatorButton from '../../Buttons/CalculatorButton'
 
-  const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])
-  const boostFactor = useMemo(() => getBoostFactor(duration), [getBoostFactor, duration])
-  const newLockedApy = useMemo(() => (newDuration && getLockedApy(newDuration)) || 0, [getLockedApy, newDuration])
-  const newBoost = useMemo(() => (newDuration && getBoostFactor(newDuration)) || 0, [getBoostFactor, newDuration])
-
-  const formattedRoi = useMemo(() => {
-    return formatRoi({ usdValueStaked, lockedApy, duration })
-  }, [lockedApy, usdValueStaked, duration])
+const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
+  usdValueStaked,
 
   const newFormattedRoi = useMemo(() => {
     return newLockedApy && formatRoi({ usdValueStaked, lockedApy: newLockedApy, duration: newDuration })

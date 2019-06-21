@@ -13,6 +13,22 @@ interface ConfirmAddLiquidityModalProps {
   attemptingTxn: boolean
   hash: string
   pendingText: string
+  currencies: { [field in Field]?: Currency }
+  noLiquidity: boolean
+  allowedSlippage: number
+  liquidityErrorMessage: string
+  price: Fraction
+  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
+  onAdd: () => void
+  poolTokenPercentage: Percent
+  liquidityMinted: CurrencyAmount<Token>
+  currencyToAdd: Token
+  isStable?: boolean
+}
+
+const ConfirmAddLiquidityModal: React.FC<
+  React.PropsWithChildren<InjectedModalProps & ConfirmAddLiquidityModalProps>
+> = ({
   title,
   onDismiss,
   customOnDismiss,

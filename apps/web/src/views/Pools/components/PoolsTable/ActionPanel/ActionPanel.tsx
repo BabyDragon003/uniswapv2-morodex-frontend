@@ -18,27 +18,6 @@ import PoolStatsInfo from '../../PoolStatsInfo'
 import PoolTypeTag from '../../PoolTypeTag'
 
 const expandAnimation = keyframes`
-  from {
-    max-height: 0px;
-  }
-  to {
-    max-height: 1000px;
-  }
-`
-
-const collapseAnimation = keyframes`
-  from {
-    max-height: 1000px;
-  }
-  to {
-    max-height: 0px;
-  }
-`
-
-const StyledActionPanel = styled.div<{ expanded: boolean }>`
-  animation: ${({ expanded }) =>
-    expanded
-      ? css`
           ${expandAnimation} 300ms linear forwards
         `
       : css`

@@ -13,16 +13,11 @@ export const noopStorage: BaseStorage = {
 }
 
 export function createStorage({
-    },
-    setItem: (key, value) => {
-      if (value === null) {
-        storage.removeItem(`${prefix}.${key}`)
-      } else {
-        try {
-          storage.setItem(`${prefix}.${key}`, JSON.stringify(value))
-        } catch (err) {
-          console.error(err)
-        }
+  storage,
+  key: prefix = 'awgmi',
+}: {
+  storage: BaseStorage
+  key?: string
       }
     },
     removeItem: (key) => storage.removeItem(`${prefix}.${key}`),

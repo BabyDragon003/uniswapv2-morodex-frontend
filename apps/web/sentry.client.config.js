@@ -13,16 +13,11 @@ const isUserRejected = (err) => {
 
 const ENV = process.env.VERCEL_ENV || process.env.NODE_ENV
 
-  // Note: if you want to override the automatic release value, do not set a
-  // `release` value here - use the environment variable `SENTRY_RELEASE`, so
-  // that it will also get attached to your source maps
-  beforeSend(event, hint) {
-    const error = hint?.originalException
-    if (error && isUserRejected(error)) {
-      return null
-    }
-    return event
-  },
+init({
+  dsn: SENTRY_DSN,
+  integrations: [
+    new Breadcrumbs({
+      console: ENV === 'production',
   ignoreErrors: [
     'User denied transaction signature',
     'Non-Error promise rejection captured',

@@ -18,27 +18,6 @@ interface SellStageProps {
 // Initial stage when user wants to put their NFT for sale or transfer to another wallet
 const SellStage: React.FC<React.PropsWithChildren<SellStageProps>> = ({
   nftToSell,
-  lowestPrice,
-  continueToNextStage,
-  continueToTransferStage,
-  onSuccessEditProfile,
-}) => {
-  const { t } = useTranslation()
-  const { hasProfile } = useProfile()
-  const itemPageUrlId =
-    isAddress(nftToSell.collectionAddress) === pancakeBunniesAddress ? nftToSell.attributes[0].value : nftToSell.tokenId
-
-  const [onEditProfileModal] = useModal(<EditProfileModal onSuccess={onSuccessEditProfile} />, false)
-
-  return (
-    <>
-      <Flex p="16px">
-        <RoundedImage src={nftToSell.image.thumbnail} height={68} width={68} mr="8px" />
-        <Grid flex="1" gridTemplateColumns="1fr 1fr" alignItems="center">
-          <Text bold>{nftToSell.name}</Text>
-          <Text fontSize="12px" color="textSubtle" textAlign="right">
-            {nftToSell?.collectionName}
-          </Text>
           {lowestPrice && (
             <>
               <Text small color="textSubtle">

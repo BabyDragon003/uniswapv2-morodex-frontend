@@ -13,16 +13,11 @@ export interface TimerProps {
   blockNumber?: number
   HeadingTextComponent?: React.ElementType
   BodyTextComponent?: React.ElementType
-          <HeadingTextComponent mr="2px">{days}</HeadingTextComponent>
-          <BodyTextComponent mr="16px">{t('d')}</BodyTextComponent>
-        </>
-      )}
-      {Boolean(hours) && (
-        <>
-          <HeadingTextComponent mr="2px">{hours}</HeadingTextComponent>
-          <BodyTextComponent mr="16px">{t('h')}</BodyTextComponent>
-        </>
-      )}
+}
+
+const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
+  ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}
+  div:last-of-type {
       {Boolean(minutes) && (
         <>
           <HeadingTextComponent mr="2px">{minutes}</HeadingTextComponent>

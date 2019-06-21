@@ -13,6 +13,22 @@ export default function useSimulationAndSendTransaction() {
       console.info('payload: ', payload)
 
       let results
+
+      try {
+        results = await simulateTransactionAsync({ payload })
+      } catch (error) {
+        // ignore error
+        if (simulateError) {
+          simulateError(error)
+        }
+      }
+
+      let options
+
+      if (Array.isArray(results)) {
+        const maxGasAmount = Math.ceil(results[0].gas_used * SAFE_FACTOR)
+        const gasUnitPrice = results[0].gas_unit_price
+
         options = { max_gas_amount: maxGasAmount, gas_unit_price: gasUnitPrice }
       }
 

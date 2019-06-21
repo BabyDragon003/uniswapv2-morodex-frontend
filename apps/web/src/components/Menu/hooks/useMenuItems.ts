@@ -13,16 +13,11 @@ export const useMenuItems = (): ConfigMenuItemsType[] => {
   } = useTranslation()
   const { chainId } = useActiveChainId()
   const { isDark } = useTheme()
-              itemMenuStatus = <LinkStatus>{ text: t('Live'), color: 'failure' }
-            } else if (itemStatus === 'vote_now') {
-              itemMenuStatus = <LinkStatus>{ text: t('Vote Now'), color: 'success' }
-            } else if (itemStatus === 'pot_open') {
-              itemMenuStatus = <LinkStatus>{ text: t('Pot Open'), color: 'success' }
-            } else if (itemStatus === 'lock_end') {
-              itemMenuStatus = <LinkStatus>{ text: t('Lock End'), color: 'failure' }
-            } else {
-              itemMenuStatus = <LinkStatus>{ text: t('New'), color: 'success' }
-            }
+  const menuItemsStatus = useMenuItemsStatus()
+
+  const menuItems = useMemo(() => {
+    return config(t, isDark, languageCode, chainId)
+  }, [t, isDark, languageCode, chainId])
             return { ...innerItem, status: itemMenuStatus }
           }
           return innerItem

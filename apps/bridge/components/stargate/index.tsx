@@ -13,6 +13,22 @@ export const StargateWidget = ({ theme }: { theme: PancakeTheme }) => {
   }, [theme])
 
   return (
+    <Box width="100%">
+      <style jsx global>{`
+        .MuiScopedCssBaseline-root {
+          background-color: transparent !important;
+        }
+        .StgHeader {
+          border-bottom: 1px solid ${theme.colors.cardBorder} !important;
+        }
+        .StgHeader .MuiTypography-subtitle1 {
+          visibility: hidden;
+        }
+
+        .StgHeader .MuiTypography-subtitle1::after {
+          font-family: ${FontFamily.KANIT};
+          visibility: visible;
+          position: absolute;
           content: 'Bridge';
         }
         .MuiScopedCssBaseline-root .StgMaxButton {

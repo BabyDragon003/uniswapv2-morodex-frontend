@@ -13,6 +13,22 @@ import {
 const EventDescriptionSection = () => {
   const { t } = useTranslation()
 
+  const { headingText, subHeadingText, bodyTextHeader, bodyText, primaryButton, image, accessoriesImages } =
+    eventDescriptionConfigBuilder({ t })
+
+  return (
+    <StyledEventDescriptionSectionContainer justifyContent={['flex-start', null, null, 'center']}>
+      <LandingBodyWrapper
+        alignItems={['flex-end', null, 'center', null]}
+        flexDirection={['column', null, null, 'row']}
+        pt={['64px', null, '104px']}
+        pb="60px"
+      >
+        <Flex
+          flex={1}
+          order={[2, null, null, 1]}
+          flexDirection="column"
+          mr={[null, null, null, '64px']}
           alignSelf={['flex-start', null, null, 'center']}
           width={['100%', null, null, '50%']}
         >

@@ -13,6 +13,22 @@ import {
   useUnsupportedTokenList,
   useWarningTokenList,
 } from '../state/lists/hooks'
+import useUserAddedTokens from '../state/user/hooks/useUserAddedTokens'
+import { isAddress } from '../utils'
+import useNativeCurrency from './useNativeCurrency'
+import { useActiveChainId } from './useActiveChainId'
+import multicall from '../utils/multicall'
+import erc20ABI from '../config/abi/erc20.json'
+import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
+import { FetchStatus } from '../config/constants/types'
+
+const mapWithoutUrls = (tokenMap: TokenAddressMap<ChainId>, chainId: number) =>
+  Object.keys(tokenMap[chainId] || {}).reduce<{ [address: string]: ERC20Token }>((newMap, address) => {
+    const checksummedAddress = isAddress(address)
+
+    if (checksummedAddress && !newMap[checksummedAddress]) {
+      newMap[checksummedAddress] = tokenMap[chainId][address].token
+    }
 
     return newMap
   }, {})

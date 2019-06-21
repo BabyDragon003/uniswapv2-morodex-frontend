@@ -13,6 +13,22 @@
       },
       {
         "internalType": "address",
+        "name": "_cakeTokenAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "enum TradingCompV1.CompetitionStatus",
+        "name": "status",
+        "type": "uint8"
+      }
     ],
     "name": "NewCompetitionStatus",
     "type": "event"
