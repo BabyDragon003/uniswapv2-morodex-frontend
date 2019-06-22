@@ -18,6 +18,27 @@ export default function useInterval(
   useEffect(() => {
     setRunImmediate(leading)
     setRunAfter(delay)
+  }, [leading, delay])
+
+  const tick = useCallback(() => {
+    setIsReadyForUpdate(true)
+  }, [])
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback
+  }, [callback])
+
+  useEffect(() => {
+    if (initiateUpdate && isReadyForUpdate) {
+      savedCallback.current?.()
+      setIsReadyForUpdate(false)
+      setRunImmediate(false)
+      refresh()
+    }
+  }, [initiateUpdate, isReadyForUpdate, refresh])
+
+  // Set up the timeout.
   useEffect(() => {
     if (!isUndefinedOrNull(runAfter)) {
       if (runImmediate) tick()

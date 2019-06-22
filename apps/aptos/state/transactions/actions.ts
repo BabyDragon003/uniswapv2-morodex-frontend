@@ -18,3 +18,8 @@ export interface TransactionReceipt {
 export const addTransaction = createAction<{
   chainId: ChainId
   hash: string
+  from: string
+  approval?: { tokenAddress: string; spender: string }
+  claim?: { recipient: string }
+  summary?: string
+  translatableSummary?: { text: string; data?: Record<string, string | number> }

@@ -18,3 +18,15 @@ export function AwgmiConfig<TProvider extends AptosClient>({
 }: React.PropsWithChildren<AwgmiConfigProps<TProvider>>) {
   return (
     <Context.Provider value={client as unknown as Client}>
+      <QueryClientProvider client={client.queryClient} context={queryClientContext}>
+        {children}
+      </QueryClientProvider>
+    </Context.Provider>
+  )
+}
+
+export function useClient<TProvider extends AptosClient>() {
+  const client = React.useContext(Context) as unknown as Client<TProvider>
+  if (!client) throw new Error(['`useClient` must be used within `AwgmiConfig`.\n'].join('\n'))
+  return client
+}

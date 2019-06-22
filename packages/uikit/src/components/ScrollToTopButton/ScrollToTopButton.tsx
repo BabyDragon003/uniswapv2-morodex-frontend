@@ -18,13 +18,8 @@ const ScrollToTopButton = () => {
   const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 400,
-  return (
-    <FixedContainer style={{ display: visible ? "inline" : "none" }}>
-      <Button variant="subtle" endIcon={<ChevronUpIcon color="invertedContrast" />} onClick={scrollToTop}>
-        {t("To Top")}
-      </Button>
-    </FixedContainer>
-  );
-};
+      behavior: "auto",
+    });
+  }, []);
 
-export default ScrollToTopButton;
+  useEffect(() => {

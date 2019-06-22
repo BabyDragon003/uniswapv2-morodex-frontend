@@ -23,32 +23,6 @@ const GlobalCheckClaimStatus: React.FC<React.PropsWithChildren<GlobalCheckClaimS
     return null
   }
   return <GlobalCheckClaim key={account} {...props} />
-}
-
-/**
- * This is represented as a component rather than a hook because we need to keep it
- * inside the Router.
- *
- * TODO: Put global checks in redux or make a generic area to house global checks
- */
-const GlobalCheckClaim: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusProps>> = ({ excludeLocations }) => {
-  const hasDisplayedModal = useRef(false)
-  const { toastSuccess } = useToast()
-  const { t } = useTranslation()
-  const [canClaimAnniversaryPoints, setCanClaimAnniversaryPoints] = useState(false)
-  const { claimAnniversaryPoints } = useAnniversaryAchievementContract()
-  const { canClaim } = useAnniversaryAchievementContract(false)
-  const { fetchWithCatchTxError } = useCatchTxError()
-  const [onPresentAnniversaryModal] = useModal(
-    <AnniversaryAchievementModal
-      onClick={async () => {
-        const receipt = await fetchWithCatchTxError(() => claimAnniversaryPoints())
-        if (receipt?.status) {
-          toastSuccess(t('Success!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-        }
-      }}
-    />,
-  )
 
   const { address: account } = useAccount()
   const { pathname } = useRouter()

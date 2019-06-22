@@ -23,4 +23,3 @@ const NotTokens: React.FC<React.PropsWithChildren> = () => {
   )
 }
 
-export default NotTokens

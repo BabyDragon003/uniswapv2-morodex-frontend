@@ -23,29 +23,3 @@ export default function useProxyStakedActions(pid, lpContract) {
     dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId, proxyAddress }))
   }, [account, proxyAddress, chainId, pid, dispatch, refreshProxyCakeBalance])
 
-  const { onApprove } = useApproveBoostProxyFarm(lpContract, proxyAddress)
-
-  const onStake = useCallback(
-    (value) => stakeFarm(bCakeProxy, pid, value, gasPrice, BOOSTED_FARM_GAS_LIMIT),
-    [bCakeProxy, pid, gasPrice],
-  )
-
-  const onUnstake = useCallback(
-    (value) => unstakeFarm(bCakeProxy, pid, value, gasPrice, BOOSTED_FARM_GAS_LIMIT),
-    [bCakeProxy, pid, gasPrice],
-  )
-
-  const onReward = useCallback(
-    () => harvestFarm(bCakeProxy, pid, gasPrice, BOOSTED_FARM_GAS_LIMIT),
-    [bCakeProxy, pid, gasPrice],
-  )
-
-  return {
-    onStake,
-    onUnstake,
-    onReward,
-    onApprove,
-    onDone,
-    proxyCakeBalance,
-  }
-}

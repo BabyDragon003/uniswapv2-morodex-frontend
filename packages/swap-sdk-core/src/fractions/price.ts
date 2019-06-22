@@ -18,16 +18,11 @@ export class Price<TBase extends Currency, TQuote extends Currency> extends Frac
    * @param args
    */
   public constructor(
-    super(numerator, denominator)
-
-    this.baseCurrency = baseCurrency
-    this.quoteCurrency = quoteCurrency
-    this.scalar = new Fraction(
-      JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(baseCurrency.decimals)),
-      JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(quoteCurrency.decimals))
-    )
-  }
-
+    ...args:
+      | [TBase, TQuote, BigintIsh, BigintIsh]
+      | [{ baseAmount: CurrencyAmount<TBase>; quoteAmount: CurrencyAmount<TQuote> }]
+  ) {
+    let baseCurrency: TBase
   /**
    * Flip the price, switching the base and quote currency
    */

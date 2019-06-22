@@ -23,32 +23,6 @@ const Address = styled.div`
     background: transparent;
     border: 0;
     color: ${({ theme }) => theme.colors.text};
-    display: block;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 0;
-    width: 100%;
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  &:after {
-    background: linear-gradient(
-      to right,
-      ${({ theme }) => theme.colors.background}00,
-      ${({ theme }) => theme.colors.background}E6
-    );
-    content: "";
-    height: 100%;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px;
-  }
-`;
 
 export const CopyAddress: React.FC<React.PropsWithChildren<CopyAddressProps>> = ({
   account,

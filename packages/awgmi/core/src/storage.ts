@@ -18,8 +18,8 @@ export function createStorage({
 }: {
   storage: BaseStorage
   key?: string
-      }
-    },
-    removeItem: (key) => storage.removeItem(`${prefix}.${key}`),
-  }
-}
+}): ClientStorage {
+  return {
+    ...storage,
+    getItem: (key, defaultState = null) => {
+      const value = storage.getItem(`${prefix}.${key}`)

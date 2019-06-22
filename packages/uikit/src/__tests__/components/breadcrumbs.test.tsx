@@ -23,15 +23,3 @@ it("renders correctly", () => {
 
     .c0 a {
       color: var(--colors-primary);
-    }
-
-    .c0 a:hover {
-      color: var(--colors-primaryBright);
-    }
-
-    <ul
-        class="c0"
-      />
-    </DocumentFragment>
-  `);
-});

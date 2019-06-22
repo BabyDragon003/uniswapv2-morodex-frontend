@@ -18,6 +18,27 @@ export const ActionContainer = styled.div`
   ${({ theme }) => theme.mediaQueries.xl} {
     margin-right: 0;
     margin-bottom: 0;
+    /* max-height: 130px; */
+  }
+`;
+
+export const ActionTitles = styled.div`
+  display: flex;
+  margin-bottom: 8px;
+`;
+
+export const ActionContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const IconButtonWrapper = styled.div`
+  display: flex;
+`;
+
+export const StyledActionContainer = styled(ActionContainer)`
+  &:nth-child(3) {
     flex-basis: 100%;
   }
   min-height: 124.5px;

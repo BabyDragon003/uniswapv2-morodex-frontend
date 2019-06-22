@@ -18,16 +18,11 @@ import {
 import { TokenList, Version } from '@pancakeswap/token-lists'
 import Card from 'components/Card'
 import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
-}
-
-const Wrapper = styled(Column)`
-  width: 100%;
-  height: 100%;
-`
-
-const RowWrapper = styled(Row)<{ active: boolean; hasActiveTokens: boolean }>`
-  background-color: ${({ active, theme }) => (active ? `${theme.colors.success19}` : 'transparent')};
-  border: solid 1px;
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useAtomValue } from 'jotai'
+import { memo, useCallback, useEffect, useMemo, useState } from 'react'
+import { useListState } from 'state/lists'
+import styled from 'styled-components'
   border-color: ${({ active, theme }) => (active ? theme.colors.success : theme.colors.tertiary)};
   transition: 200ms;
   align-items: center;

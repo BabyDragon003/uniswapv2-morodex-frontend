@@ -23,15 +23,3 @@ const StyledAchievementAvatar = styled.img`
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 64px;
     width: 64px;
-  }
-`
-
-const AchievementAvatar: React.FC<React.PropsWithChildren<AchievementAvatarProps>> = ({ badge, ...props }) => {
-  if (!badge) {
-    return <NoBadgePlaceholder />
-  }
-
-  return <StyledAchievementAvatar src={`/images/achievements/${badge}`} alt="achievement badge" {...props} />
-}
-
-export default AchievementAvatar

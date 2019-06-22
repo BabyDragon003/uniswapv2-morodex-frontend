@@ -23,32 +23,6 @@ const allowedOrigin =
   /^(?:[^\w](pancake\.run)|(localhost:3000)|(localhost:3002)|(dapp-frontend-prince.web.app)|(pancakeswap.com))$/
 
 router.get('/price/cake', async (_, event) => {
-  const cache = caches.default
-  const cacheResponse = await cache.match(event.request)
-  let response
-  if (!cacheResponse) {
-    const price = await fetchCakePrice()
-    response = json(
-      { price, updatedAt: new Date().toISOString() },
-      {
-        headers: {
-          'Cache-Control': 'public, max-age=10, s-maxage=10',
-        },
-      },
-    )
-
-    event.waitUntil(cache.put(event.request, response.clone()))
-  } else {
-    response = new Response(cacheResponse.body, cacheResponse)
-  }
-
-  return response
-})
-
-router.get('/apr', async ({ query }) => {
-  if (typeof query?.key === 'string' && query.key === FORCE_UPDATE_KEY) {
-    try {
-      const result = await Promise.allSettled(farmFetcher.supportedChainId.map((id) => saveLPsAPR(id)))
       return json(result.map((r) => r))
     } catch (err) {
       error(500, { err })

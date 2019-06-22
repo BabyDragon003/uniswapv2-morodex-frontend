@@ -18,3 +18,7 @@ const SubMenu: React.FC<React.PropsWithChildren> = () => {
     return subMenuItems.find((subMenuItem) => subMenuItem.href === pathname)?.href
   }, [subMenuItems, pathname])
 
+  return <SubMenuItems items={subMenuItems} activeItem={activeSubItem} />
+}
+
+export default SubMenu

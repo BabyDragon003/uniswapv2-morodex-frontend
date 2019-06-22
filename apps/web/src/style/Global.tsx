@@ -23,32 +23,6 @@ const GlobalStyle = createGlobalStyle`
     width: 0;
   }
   .animate-y-slide {
-    animation: y-slide 4s ease-in-out infinite;
-    height: 0;
-  }
-  @keyframes x-slide {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      width: 100%;
-    }
-  }
-  @keyframes y-slide {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      height: 100%;
-    }
-  }
-  .fa-spin {
-    -webkit-animation-name: fa-spin;
-    animation-name: fa-spin;
-    -webkit-animation-delay: var(--fa-animation-delay, 0s);
-    animation-delay: var(--fa-animation-delay, 0s);
     -webkit-animation-direction: var(--fa-animation-direction, normal);
     animation-direction: var(--fa-animation-direction, normal);
     -webkit-animation-duration: var(--fa-animation-duration, 2s);

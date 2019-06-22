@@ -18,3 +18,15 @@ const Tab = styled.button<TabProps>`
   font-size: 16px;
   font-weight: 600;
 
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-grow: 0;
+  }
+
+  ${color}
+`;
+
+Tab.defaultProps = {
+  scale: "md",
+};
+
+export default Tab;

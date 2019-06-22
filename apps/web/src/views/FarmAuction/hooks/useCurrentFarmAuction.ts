@@ -18,16 +18,11 @@ export const useCurrentFarmAuction = (account: string) => {
     { refreshInterval: FAST_INTERVAL },
   )
 
-    if (account && (!connectedBidder || connectedBidder.account !== account)) {
-      checkAccount()
-    }
-    // Refresh UI if user logs out
-    if (!account) {
-      setConnectedBidder(null)
-    }
-  }, [account, connectedBidder, farmAuctionContract])
-
-  // Attach bidder data to connectedBidder object
+  const {
+    data: { auction: currentAuction, bidders },
+    mutate: refreshBidders,
+  } = useFarmAuction(currentAuctionId, { refreshInterval: FAST_INTERVAL })
+  const [connectedBidder, setConnectedBidder] = useState<ConnectedBidder | null>(null)
   useEffect(() => {
     const getBidderData = () => {
       if (bidders && bidders.length > 0) {

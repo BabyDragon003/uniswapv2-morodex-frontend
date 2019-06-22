@@ -18,6 +18,27 @@ export const getPoolTaxRateOverflow = (
   pid: number,
   data: {
     ifo_pool: IFOPool
+  },
+): BigNumber => {
+  if (data.ifo_pool.has_tax) {
+    return calculateTaxOverflow(new BigNumber(data.ifo_pool.total_amount), new BigNumber(data.ifo_pool.raising_amount))
+  }
+
+  return BIG_ZERO
+}
+
+/**
+ * compute_offering_and_refund_amount
+ */
+export const computeOfferingAndRefundAmount = (amount: string, ifo_pool: IFOPool) => {
+  let offering_amount: BigNumber
+  let refunding_amount: BigNumber
+  let tax_amount: BigNumber = BIG_ZERO
+
+  const totalAmount = _toNumber(ifo_pool.total_amount)
+  const raisingAmount = _toNumber(ifo_pool.raising_amount)
+
+  if (totalAmount > raisingAmount) {
     const allocation = getUserAllocation(new BigNumber(totalAmount), new BigNumber(amount))
 
     offering_amount = new BigNumber(ifo_pool.offering_amount).times(allocation.div(PRECISION))

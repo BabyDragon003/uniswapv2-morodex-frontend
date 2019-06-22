@@ -18,3 +18,17 @@ export function TradePrice({ price }: TradePriceProps) {
     : `${price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol}`;
 
   return (
+    <Text style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
+      {show ? (
+        <>
+          {formattedPrice ?? "-"} {label}
+          <AtomBox className={balanceMaxMiniClass} onClick={() => setShowInverted(!showInverted)}>
+            <AutoRenewIcon width="14px" />
+          </AtomBox>
+        </>
+      ) : (
+        "-"
+      )}
+    </Text>
+  );
+}

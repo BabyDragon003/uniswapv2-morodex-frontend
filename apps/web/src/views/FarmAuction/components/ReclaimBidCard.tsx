@@ -23,32 +23,6 @@ const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
   const { address: account } = useAccount()
   const { callWithGasPrice } = useCallWithGasPrice()
 
-  const [reclaimableAuction, checkForNextReclaimableAuction] = useReclaimAuctionBid()
-
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
-  const farmAuctionContract = useFarmAuctionContract()
-
-  const { toastSuccess } = useToast()
-
-  const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm } = useApproveConfirmTransaction({
-    onRequiresApproval: async () => {
-      return requiresApproval(cakeContractReader, account, farmAuctionContract.address)
-    },
-    onApprove: () => {
-      return callWithGasPrice(cakeContractApprover, 'approve', [farmAuctionContract.address, MaxUint256])
-    },
-    onApproveSuccess: async ({ receipt }) => {
-      toastSuccess(
-        t('Contract approved - you can now reclaim your bid!'),
-        <ToastDescriptionWithTx txHash={receipt.transactionHash} />,
-      )
-    },
-    onConfirm: () => {
-      return callWithGasPrice(farmAuctionContract, 'claimAuction', [reclaimableAuction.id])
-    },
-    onSuccess: async ({ receipt }) => {
-      checkForNextReclaimableAuction()
-      toastSuccess(t('Bid reclaimed!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
     },
   })
 
