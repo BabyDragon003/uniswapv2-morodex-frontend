@@ -1,4 +1,3 @@
-interface FormatRoiArgs {
   lockedApy: string
   usdValueStaked: number
   duration: number

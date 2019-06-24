@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Heading, Skeleton, PageSection } from '@pancakeswap/uikit'
 import { LotteryStatus } from 'config/constants/types'

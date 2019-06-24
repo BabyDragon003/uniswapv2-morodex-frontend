@@ -1,4 +1,3 @@
-import { useMemo, useRef } from 'react'
 import isEmpty from 'lodash/isEmpty'
 import { useGetCollections } from 'state/nftMarket/hooks'
 import { NftLocation, ApiCollections } from 'state/nftMarket/types'

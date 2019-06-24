@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { ButtonMenu, ButtonMenuItem, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { memo, useState, useMemo } from 'react'
 import { useActiveChainId } from 'hooks/useActiveChainId'

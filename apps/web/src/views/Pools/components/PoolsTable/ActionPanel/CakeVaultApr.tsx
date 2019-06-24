@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Skeleton, Text, CalculateIcon, useModal, Balance, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { DeserializedLockedVaultUser, VaultKey, DeserializedVaultUser } from 'state/types'
 import { useVaultApy } from 'hooks/useVaultApy'

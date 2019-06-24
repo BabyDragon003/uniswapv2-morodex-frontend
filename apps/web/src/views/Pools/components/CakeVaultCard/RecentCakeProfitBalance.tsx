@@ -1,4 +1,3 @@
-import { Token } from '@pancakeswap/sdk'
 import { TooltipText, useTooltip, Balance, Pool } from '@pancakeswap/uikit'
 import AutoEarningsBreakdown from '../AutoEarningsBreakdown'
 

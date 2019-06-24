@@ -1,4 +1,3 @@
-import { ComponentProps, ElementType, ReactElement } from "react";
 
 /**
  * @see https://www.benmvp.com/blog/polymorphic-react-components-typescript/

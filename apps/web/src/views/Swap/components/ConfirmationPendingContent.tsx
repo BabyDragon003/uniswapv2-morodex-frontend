@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
 import { Spinner, Text } from '@pancakeswap/uikit'
 import { AutoColumn, ColumnCenter } from 'components/Layout/Column'

@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import { masterchefWithdraw } from 'config/constants/contracts/masterchef'
 import { FARMS_DEFAULT_TOKEN_DECIMAL } from 'config'

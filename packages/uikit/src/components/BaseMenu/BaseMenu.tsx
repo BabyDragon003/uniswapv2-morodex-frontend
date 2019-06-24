@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";
 import { ClickableElementContainer } from "./styles";

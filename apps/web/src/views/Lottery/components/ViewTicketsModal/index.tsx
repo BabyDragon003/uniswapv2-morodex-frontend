@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Modal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LotteryStatus } from 'config/constants/types'

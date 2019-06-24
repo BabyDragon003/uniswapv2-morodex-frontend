@@ -1,4 +1,3 @@
-import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { WeiPerEther } from '@ethersproject/constants'
 import _toString from 'lodash/toString'
 import { BLOCKS_PER_YEAR } from 'config'

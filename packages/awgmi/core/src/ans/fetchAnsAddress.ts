@@ -1,4 +1,3 @@
-import { getNetwork } from '../network/network'
 import { Address } from '../types'
 
 export type FetchAnsAddressArgs = {

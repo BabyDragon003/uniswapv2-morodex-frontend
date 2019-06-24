@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import NextLink from 'next/link'
 import { Box, Breadcrumbs, Text, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

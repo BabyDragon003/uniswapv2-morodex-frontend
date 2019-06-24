@@ -1,4 +1,3 @@
-import { useAtom } from 'jotai'
 import atomWithStorageWithErrorCatch from 'utils/atomWithStorageWithErrorCatch'
 
 const USER_TOKEN_RISK = 'pcs:user-token-risk'

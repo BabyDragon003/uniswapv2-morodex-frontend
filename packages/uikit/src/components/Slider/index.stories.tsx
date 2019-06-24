@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import Flex from "../Box/Flex";
 import Box from "../Box/Box";

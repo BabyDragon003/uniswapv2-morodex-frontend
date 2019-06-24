@@ -1,4 +1,3 @@
-import _toNumber from 'lodash/toNumber'
 
 import { Trade } from '@pancakeswap/aptos-swap-sdk'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'

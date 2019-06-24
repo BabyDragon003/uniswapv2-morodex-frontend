@@ -1,4 +1,3 @@
-{
   "main": "../../dist/connectors/fewcha.js",
   "module": "../../dist/connectors/fewcha.mjs"
 }

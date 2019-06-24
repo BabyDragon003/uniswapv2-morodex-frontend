@@ -1,4 +1,3 @@
-import { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { Currency, CurrencyAmount, Token } from '@pancakeswap/sdk'
 import { Text, QuestionHelper } from '@pancakeswap/uikit'
 import styled from 'styled-components'

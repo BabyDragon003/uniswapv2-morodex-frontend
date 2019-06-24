@@ -1,4 +1,3 @@
-import { Pool, useToast } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallback } from 'react'
 import { ToastDescriptionWithTx } from 'components/Toast'

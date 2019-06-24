@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Box } from "../Box";
 import Container from "../Layouts/Container";
 import { PageHeaderProps } from "./types";

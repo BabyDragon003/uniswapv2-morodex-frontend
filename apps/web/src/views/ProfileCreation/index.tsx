@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import Page from 'components/Layout/Page'
 import { useProfile } from 'state/profile/hooks'

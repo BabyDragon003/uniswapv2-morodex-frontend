@@ -1,4 +1,3 @@
-import { AptosAccount, AptosClient } from 'aptos'
 import { devnet } from '../src/chain'
 import { ClientConfig, createClient } from '../src/client'
 import { MockConnector } from '../src/connectors/mock'
@@ -23,3 +22,19 @@ class AptosProvider extends AptosClient {
 }
 
 export function getAptosClient() {
+  return new AptosProvider(devnet.nodeUrls.default)
+}
+
+export function setupClient(config: Partial<ClientConfig> = {}) {
+  return createClient({
+    connectors: [
+      new MockConnector({
+        options: {
+          account: getAptosAccounts()[0],
+        },
+      }),
+    ],
+    provider: getDefaultProviders,
+    ...config,
+  })
+}

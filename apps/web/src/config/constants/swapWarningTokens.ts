@@ -1,4 +1,3 @@
-import { Token } from '@pancakeswap/sdk'
 import { bscTokens } from '@pancakeswap/tokens'
 import { bscWarningTokens } from 'config/constants/warningTokens'
 

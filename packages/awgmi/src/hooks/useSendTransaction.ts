@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { sendTransaction, SendTransactionArgs, SendTransactionResult } from '@pancakeswap/awgmi/core'
 
 import { MutationConfig } from '../types'

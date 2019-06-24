@@ -1,4 +1,3 @@
-import React, { useMemo, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { getFarmApr } from 'utils/apr'

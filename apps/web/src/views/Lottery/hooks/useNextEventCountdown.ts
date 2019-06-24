@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react'
 import { useAppDispatch } from 'state'
 import { useLottery } from 'state/lottery/hooks'
 import { fetchCurrentLottery, setLotteryIsTransitioning } from 'state/lottery'

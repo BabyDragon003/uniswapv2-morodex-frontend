@@ -1,4 +1,3 @@
-import { modeVars } from '@pancakeswap/ui/css/vars.css'
 import { tokens } from '@pancakeswap/ui/tokens'
 import { createGlobalTheme } from '@vanilla-extract/css'
 

@@ -1,4 +1,3 @@
-import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import { LotteryStatus, LotteryTicket } from 'config/constants/types'
 import lotteryV2Abi from 'config/abi/lotteryV2.json'
 import { getLotteryV2Address } from 'utils/addressHelpers'

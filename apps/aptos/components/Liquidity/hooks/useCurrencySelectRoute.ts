@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN } from '@pancakeswap/awgmi'
 import { useCurrency } from 'hooks/Tokens'
 import { useRouter } from 'next/router'

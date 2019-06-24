@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Skeleton, Text, Flex, Box, useModal, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { PoolCategory } from 'config/constants/types'
@@ -23,6 +22,32 @@ const StyledCell = styled(Pool.BaseCell)`
 const EarningsCell: React.FC<React.PropsWithChildren<EarningsCellProps>> = ({ pool, account }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
+  const { sousId, earningToken, poolCategory, userData, earningTokenPrice } = pool
+
+  const earnings = userData?.pendingReward ? new BigNumber(userData.pendingReward) : BIG_ZERO
+  const earningTokenBalance = getBalanceNumber(earnings, earningToken.decimals)
+  const earningTokenDollarBalance = getBalanceNumber(earnings.multipliedBy(earningTokenPrice), earningToken.decimals)
+  const hasEarnings = account && earnings.gt(0)
+  const fullBalance = getFullDisplayBalance(earnings, earningToken.decimals)
+  const formattedBalance = formatNumber(earningTokenBalance, 3, 3)
+  const isBnbPool = poolCategory === PoolCategory.BINANCE
+
+  const labelText = t('%asset% Earned', { asset: earningToken.symbol })
+
+  const [onPresentCollect] = useModal(
+    <CollectModal
+      formattedBalance={formattedBalance}
+      fullBalance={fullBalance}
+      earningTokenSymbol={earningToken.symbol}
+      earningsDollarValue={earningTokenDollarBalance}
+      sousId={sousId}
+      isBnbPool={isBnbPool}
+    />,
+  )
+
+  const handleEarningsClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation()
+    onPresentCollect()
   }
 
   return (

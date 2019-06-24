@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { StarFillIcon, StarLineIcon } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
@@ -23,3 +22,10 @@ const SaveIcon: React.FC<React.PropsWithChildren<{ fill: boolean } & HTMLAttribu
       {fill ? (
         <StarFillIcon stroke={theme.colors.warning} color={theme.colors.warning} />
       ) : (
+        <StarLineIcon stroke={theme.colors.textDisabled} />
+      )}
+    </HoverIcon>
+  )
+}
+
+export default SaveIcon

@@ -1,4 +1,3 @@
-describe('Pools Page', () => {
   beforeEach(() => {
     cy.visit('/pools')
   })

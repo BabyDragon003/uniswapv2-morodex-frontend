@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency } from '@pancakeswap/sdk'
 import { isStableSwapPair, Pair } from '@pancakeswap/smart-router/evm'
 import { Box, Flex, Text, useTooltip } from '@pancakeswap/uikit'

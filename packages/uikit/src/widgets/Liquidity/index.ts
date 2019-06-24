@@ -1,4 +1,3 @@
-export * from "./LiquidityCard";
 export * from "./GotoAddLiquidityButton";
 export * from "./FindOtherLP";
 export * from "./LiquidityNotConnect";

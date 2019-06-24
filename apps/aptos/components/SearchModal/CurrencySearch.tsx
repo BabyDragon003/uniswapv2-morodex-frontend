@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import { useDebounce } from '@pancakeswap/hooks'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ import { getSwapSound } from './swapSound'
 interface CurrencySearchProps {
   selectedCurrency?: Currency | null
   onCurrencySelect: (currency: Currency) => void
+  otherSelectedCurrency?: Currency | null
+  showCommonBases?: boolean
+  commonBasesType?: string
+  showImportView: () => void
+  setImportToken: (token: Token) => void
+  height?: number
+}
+
+function useSearchInactiveTokenLists(search: string | undefined, minResults = 10): WrappedTokenInfo[] {
+  const lists = useAllLists()
+  const inactiveUrls = useInactiveListUrls()
+  const { chainId } = useActiveWeb3React()
+  const activeTokens = useAllTokens()
+  return useMemo(() => {
+    if (!search || search.trim().length === 0) return []
+    const filterToken = createFilterToken(search)
+    const exactMatches: WrappedTokenInfo[] = []
+    const rest: WrappedTokenInfo[] = []
+    const addressSet: { [address: string]: true } = {}
+    const trimmedSearchQuery = search.toLowerCase().trim()
+    for (const url of inactiveUrls) {
+      const list = lists[url].current
+      // eslint-disable-next-line no-continue
+      if (!list) continue
+      for (const tokenInfo of list.tokens) {
+        if (
           tokenInfo.address !== APTOS_COIN &&
           tokenInfo.chainId === chainId &&
           !(tokenInfo.address in activeTokens) &&

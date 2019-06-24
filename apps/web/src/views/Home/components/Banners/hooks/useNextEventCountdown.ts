@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react'
 
 const useNextEventCountdown = (nextEventTime: number): number => {
   const [secondsRemaining, setSecondsRemaining] = useState(null)

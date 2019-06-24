@@ -1,4 +1,3 @@
-import { ChainId, Currency, Pair, Token } from '@pancakeswap/sdk'
 import flatMap from 'lodash/flatMap'
 
 import { ADDITIONAL_BASES, BASES_TO_CHECK_TRADES_AGAINST, CUSTOM_BASES } from './constants'

@@ -1,4 +1,3 @@
-import { createAction } from '@reduxjs/toolkit'
 import { DerivedPairDataNormalized, PairDataNormalized, PairDataTimeWindowEnum } from './types'
 
 export enum Field {

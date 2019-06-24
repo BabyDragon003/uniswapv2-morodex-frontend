@@ -1,4 +1,3 @@
-import { SerializedFarmConfig } from 'config/constants/types'
 import groupBy from 'lodash/groupBy'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 

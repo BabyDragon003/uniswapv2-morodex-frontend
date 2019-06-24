@@ -1,4 +1,3 @@
-import { Coin, Currency, CurrencyAmount, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { AutoColumn, useModal } from '@pancakeswap/uikit'
 import { CommitButton } from 'components/CommitButton'

@@ -1,4 +1,3 @@
-export enum BuyButtonsEnum {
   ENABLE,
   BUY,
   READY,

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text, Flex, Heading, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'

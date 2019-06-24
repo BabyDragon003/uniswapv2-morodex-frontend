@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTheme } from '@pancakeswap/hooks'

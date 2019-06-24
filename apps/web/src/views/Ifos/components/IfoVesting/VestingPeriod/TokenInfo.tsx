@@ -1,4 +1,3 @@
-import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Box, Flex, Text, ChevronDownIcon, BalanceWithLoading } from '@pancakeswap/uikit'
@@ -23,6 +22,32 @@ interface TokenInfoProps {
 }
 
 const TokenInfo: React.FC<React.PropsWithChildren<TokenInfoProps>> = ({ index, data, fetchUserVestingData }) => {
+  const { vestingTitle, token } = data.ifo
+  const { vestingComputeReleasableAmount } = data.userVestingData[PoolIds.poolUnlimited]
+  const { vestingComputeReleasableAmount: basicReleaseAmount } = data.userVestingData[PoolIds.poolBasic]
+  const [expanded, setExpanded] = useState(false)
+  const shouldRenderExpand = useDelayedUnmount(expanded, 300)
+
+  useEffect(() => {
+    if (index === 0) {
+      setExpanded(true)
+    }
+  }, [index])
+
+  const toggleExpanded = () => {
+    setExpanded((prev) => !prev)
+  }
+
+  const amountAvailable = useMemo(() => {
+    const totalReleaseAmount = new BigNumber(vestingComputeReleasableAmount).plus(basicReleaseAmount)
+    return getBalanceNumber(totalReleaseAmount, token.decimals)
+  }, [token, vestingComputeReleasableAmount, basicReleaseAmount])
+
+  const price = useBUSDPrice(token)
+  const dollarValueOfToken = multiplyPriceByAmount(price, amountAvailable, token.decimals)
+
+  return (
+    <Box>
       <Flex p="24px" m="-24px -24px 0 -24px" style={{ cursor: 'pointer' }} onClick={toggleExpanded}>
         <TokenImage width={32} height={32} token={token} />
         <Flex flexDirection="column" ml="8px">

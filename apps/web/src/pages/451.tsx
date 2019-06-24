@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 

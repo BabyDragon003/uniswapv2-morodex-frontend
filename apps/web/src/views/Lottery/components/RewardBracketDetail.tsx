@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { Flex, Skeleton, Text, Balance } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'

@@ -1,4 +1,3 @@
-export const variants = {
   ROUND: "round",
   FLAT: "flat",
 } as const;

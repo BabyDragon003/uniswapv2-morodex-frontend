@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import styled from 'styled-components'
 import { Flex, Box, Text, Balance } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'

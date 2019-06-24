@@ -1,4 +1,3 @@
-import { Pair } from '@pancakeswap/aptos-swap-sdk'
 import type { SerializedFarmConfig } from '@pancakeswap/farms'
 import { mainnetTokens } from '../tokens/index'
 

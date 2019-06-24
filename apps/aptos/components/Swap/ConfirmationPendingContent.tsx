@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Text, Spinner, AutoColumn, ColumnCenter } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Trade, Currency, TradeType } from '@pancakeswap/aptos-swap-sdk'

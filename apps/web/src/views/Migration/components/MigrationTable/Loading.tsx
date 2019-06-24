@@ -1,4 +1,3 @@
-import { Flex, Loading } from '@pancakeswap/uikit'
 
 const TableLoading = () => {
   return (

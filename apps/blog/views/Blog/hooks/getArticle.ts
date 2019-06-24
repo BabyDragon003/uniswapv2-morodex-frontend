@@ -1,4 +1,3 @@
-import { fetchAPI } from 'views/Blog/utils/api'
 import { ResponseArticleType, ResponseArticleDataType, ResponseCategoriesType, Categories } from 'views/Blog/types'
 import { transformArticle, ArticleType, ArticleDataType } from 'views/Blog/utils/transformArticle'
 

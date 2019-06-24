@@ -1,4 +1,3 @@
-import fs from 'fs'
 import os from 'os'
 import { request, gql } from 'graphql-request'
 import BigNumber from 'bignumber.js'

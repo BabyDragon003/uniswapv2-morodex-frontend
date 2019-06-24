@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,3 +22,7 @@ const AprRow: React.FC<React.PropsWithChildren<AprProps>> = (apr) => {
       <Text>{t('APR')}</Text>
       <Apr {...apr} />
     </Containter>
+  )
+}
+
+export default AprRow

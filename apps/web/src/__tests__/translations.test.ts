@@ -1,4 +1,3 @@
-import Path from 'path'
 import fs from 'fs'
 import teams from 'config/constants/teams'
 import { NftLocation } from 'state/nftMarket/types'

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Box, Modal, useToast } from '@pancakeswap/uikit'
 import { useWeb3LibraryContext } from '@pancakeswap/wagmi'
 import { useAccount } from 'wagmi'

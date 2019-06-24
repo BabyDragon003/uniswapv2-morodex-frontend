@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { FarmsPageLayout, FarmsContext } from 'components/Farms/components/index'
 import FarmCard from 'components/Farms/components/FarmCard/FarmCard'

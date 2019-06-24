@@ -1,4 +1,3 @@
-import { formatUnits } from '@ethersproject/units'
 import {
   CoinStoreResource,
   coinStoreResourcesFilter,

@@ -1,4 +1,3 @@
-import { useRef, useEffect, useCallback } from "react";
 
 let coinInterval: NodeJS.Timeout;
 
@@ -23,6 +22,32 @@ export const SequencePlayer: React.FC<React.PropsWithChildren<SequencePlayerProp
 
   const stopCoinLooper = useCallback(() => {
     clearInterval(coinInterval);
+  }, []);
+
+  const coinDrawer = useCallback(() => {
+    if (canvasRef.current) {
+      const { width, height } = canvasRef.current;
+      const ctx = canvasRef.current.getContext("2d");
+      if (ctx) {
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(imagePreload.current[coinImagePlayProgress.current], 0, 0);
+        coinImagePlayProgress.current++;
+        if (coinImagePlayProgress.current >= images.length) {
+          // set the frame back to default frame 0
+          ctx.clearRect(0, 0, width, height);
+          ctx.drawImage(imagePreload.current[0], 0, 0);
+          coinImagePlayProgress.current = 0;
+          stopCoinLooper();
+          isPlaying.current = false;
+          if (onPlayFinish) onPlayFinish();
+        }
+      }
+    }
+  }, [stopCoinLooper, images.length, onPlayFinish]);
+
+  const coinLooper = useCallback(() => {
+    if (isPlaying.current) return;
+    if (onPlayStart) onPlayStart();
     coinInterval = setInterval(() => {
       isPlaying.current = true;
       requestAnimationFrame(coinDrawer);

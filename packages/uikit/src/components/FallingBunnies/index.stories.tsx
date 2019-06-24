@@ -1,4 +1,3 @@
-import React from "react";
 import FallingBunnies from "./FallingBunnies";
 
 export default {
