@@ -1,3 +1,4 @@
+describe('Swap', () => {
   beforeEach(() => {
     cy.visit('/swap')
     // eslint-disable-next-line cypress/no-unnecessary-waiting

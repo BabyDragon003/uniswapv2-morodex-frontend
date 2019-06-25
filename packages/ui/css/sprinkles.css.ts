@@ -1,3 +1,4 @@
+import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 import { calc } from '@vanilla-extract/css-utils'
 
 import { Breakpoint, breakpointNames, breakpoints } from './breakpoints'

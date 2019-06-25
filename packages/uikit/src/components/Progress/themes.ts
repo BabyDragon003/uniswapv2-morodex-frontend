@@ -1,3 +1,4 @@
+import { variants, scales } from "./types";
 
 export const styleVariants = {
   [variants.ROUND]: {

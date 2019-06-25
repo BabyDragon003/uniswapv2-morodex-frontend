@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import { Flex, Button } from '@pancakeswap/uikit'
 import { Categories } from 'views/Blog/types'
 import { useTranslation } from '@pancakeswap/localization'
 
-interface CategoriesSelectorProps {
-  selected: number
-  categoriesData: Categories[]
-  childMargin: string
-  setSelected: (value: number) => void
-}
 
 const CategoriesSelector = ({ selected, categoriesData, childMargin, setSelected }: CategoriesSelectorProps) => {
   const { t } = useTranslation()

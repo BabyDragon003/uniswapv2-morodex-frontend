@@ -1,13 +1,8 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { JSBI, CurrencyAmount, Token, WNATIVE, MINIMUM_LIQUIDITY, Percent } from '@pancakeswap/sdk'
 import {
-  Button,
-  Text,
-  AddIcon,
-  CardBody,
-  Message,
-  useModal,
   TooltipText,
   useTooltip,
   MessageText,

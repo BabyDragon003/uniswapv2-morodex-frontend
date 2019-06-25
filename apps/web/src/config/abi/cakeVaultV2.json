@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       { "internalType": "contract IERC20", "name": "_token", "type": "address" },
       { "internalType": "contract IMasterChefV2", "name": "_masterchefV2", "type": "address" },
-      { "internalType": "address", "name": "_admin", "type": "address" },
-      { "internalType": "address", "name": "_treasury", "type": "address" },
-      { "internalType": "address", "name": "_operator", "type": "address" },
-      { "internalType": "uint256", "name": "_pid", "type": "uint256" }
-    ],
-    "stateMutability": "nonpayable",
     "type": "constructor"
   },
   {

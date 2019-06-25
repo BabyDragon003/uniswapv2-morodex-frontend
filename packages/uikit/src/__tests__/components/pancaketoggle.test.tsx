@@ -1,13 +1,8 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import PancakeToggle from "../../components/PancakeToggle/PancakeToggle";
 
 const handleChange = vi.fn();
-
-it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(<PancakeToggle checked onChange={handleChange} scale="md" />);
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      .c0 {
       position: relative;
       display: inline-block;
     }

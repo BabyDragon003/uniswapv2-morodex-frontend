@@ -1,3 +1,4 @@
+import { multicallAddresses } from '@pancakeswap/multicall'
 
 export default {
   masterChef: {

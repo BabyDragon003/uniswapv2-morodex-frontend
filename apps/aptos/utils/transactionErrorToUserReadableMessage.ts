@@ -1,3 +1,4 @@
+import _isString from 'lodash/isString'
 
 /**
  * This is hacking out the revert reason from the ethers provider thrown error however it can.

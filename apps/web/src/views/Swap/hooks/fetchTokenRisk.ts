@@ -1,13 +1,8 @@
+import { ChainId } from '@pancakeswap/sdk'
 import { ACCESS_RISK_API } from 'config/constants/endpoints'
 
 import { z } from 'zod'
 
-const zBand = z.enum(['5/5', '4/5', '3/5', '2/5', '1/5'])
-export const zRiskTokenData = z.object({
-  trust_level: z.string(),
-  band: zBand,
-  scanned_ts: z.string(),
-})
 
 export const TOKEN_RISK = {
   VERY_LOW: 0,

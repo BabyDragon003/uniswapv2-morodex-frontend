@@ -1,3 +1,4 @@
+import { useAccount } from '@pancakeswap/awgmi'
 import { useIsMounted } from '@pancakeswap/hooks'
 
 export default function HasAccount({ fallbackComp, children }) {

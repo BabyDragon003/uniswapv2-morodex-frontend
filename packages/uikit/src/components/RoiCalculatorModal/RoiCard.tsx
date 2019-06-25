@@ -1,13 +1,8 @@
+import { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { CalculatorMode, RoiCalculatorReducerState } from "./useRoiCalculatorReducer";
 import { Box, Flex } from "../Box";
-import { Text } from "../Text";
-import { Input } from "../Input";
-import { IconButton } from "../Button";
-import { CheckmarkIcon, PencilIcon } from "../Svg";
-
-const MILLION = 1000000;
 const TRILLION = 1000000000000;
 
 const RoiCardWrapper = styled(Box)`

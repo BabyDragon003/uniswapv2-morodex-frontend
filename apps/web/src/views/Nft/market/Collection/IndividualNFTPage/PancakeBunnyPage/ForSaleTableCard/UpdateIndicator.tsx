@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Flex, useTooltip } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import CountdownCircle from './CountdownCircle'

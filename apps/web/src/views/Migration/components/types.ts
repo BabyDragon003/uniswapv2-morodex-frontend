@@ -1,3 +1,4 @@
+import { FarmProps } from './Farm/Cells/Farm'
 import { AprProps } from '../../Farms/components/FarmTable/Apr'
 import { EarnedProps } from './Farm/Cells/Earned'
 import { StakedProps } from './Farm/Cells/Staked'

@@ -1,13 +1,8 @@
+import {
   Button,
   Heading,
   Text,
   ButtonProps,
-  HelpIcon,
-  Flex,
-  TooltipText,
-  useTooltip,
-  LinkExternal,
-  useMatchBreakpoints,
 } from '@pancakeswap/uikit'
 import _isEmpty from 'lodash/isEmpty'
 import { ReactNode } from 'react'

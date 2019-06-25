@@ -1,13 +1,8 @@
+import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { TransactionDetails } from 'state/transactions/reducer'
 import { getBlockExploreLink } from 'utils'
-
-interface TransactionRowProps {
-  txn: TransactionDetails
-  chainId: number
-}
-
 const TxnIcon = styled(Flex)`
   align-items: center;
   flex: none;

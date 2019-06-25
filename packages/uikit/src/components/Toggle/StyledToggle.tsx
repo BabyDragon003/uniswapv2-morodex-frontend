@@ -1,13 +1,8 @@
+import styled from "styled-components";
 import { ToggleProps, HandleProps, InputProps, ScaleKeys, scales, StyleToggleProps } from "./types";
 
 const scaleKeyValues = {
   sm: {
-    handleHeight: "16px",
-    handleWidth: "16px",
-    handleLeft: "2px",
-    handleTop: "2px",
-    checkedLeft: "calc(100% - 18px)",
-    toggleHeight: "20px",
     toggleWidth: "36px",
   },
   md: {

@@ -1,13 +1,8 @@
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { Box, Flex, Text, Select, OptionProps } from '@pancakeswap/uikit'
 import { useGetCollection } from 'state/nftMarket/hooks'
 import { useTranslation } from '@pancakeswap/localization'
-import Container from 'components/Layout/Container'
-import { isAddress } from 'utils'
-import { pancakeBunniesAddress } from '../../constants'
-import PancakeBunniesCollectionNfts from './PancakeBunniesCollectionNfts'
-import CollectionWrapper from './CollectionWrapper'
-
 const Items = () => {
   const collectionAddress = useRouter().query.collectionAddress as string
   const [sortBy, setSortBy] = useState('updatedAt')

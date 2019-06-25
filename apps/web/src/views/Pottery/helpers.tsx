@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { PotteryDepositStatus } from 'state/types'
 
 const calculateSecondsRemaining = (today, daysToFri) => {

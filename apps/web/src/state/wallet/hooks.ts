@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, JSBI, Native, Token } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import ERC20_INTERFACE from 'config/abi/erc20'

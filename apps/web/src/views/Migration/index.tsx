@@ -1,3 +1,4 @@
+import React, { memo, useState, useRef, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import { Heading, Text, Button, ArrowForwardIcon, Link, PageHeader, Pool } from '@pancakeswap/uikit'

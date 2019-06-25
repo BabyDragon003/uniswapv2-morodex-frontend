@@ -1,13 +1,8 @@
+import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { Modal, useModal } from ".";
 import { ModalProps } from "./types";
 import Button from "../../components/Button/Button";
-import Heading from "../../components/Heading/Heading";
-
-export default {
-  title: "Widgets/Modal",
-  component: Modal,
-  argTypes: {},
 };
 
 const CustomModal: React.FC<React.PropsWithChildren<ModalProps>> = ({ title, onDismiss, ...props }) => (

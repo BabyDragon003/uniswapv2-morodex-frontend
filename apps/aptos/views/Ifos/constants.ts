@@ -1,3 +1,4 @@
+import { ADDRESS } from './generated/ifo'
 
 export const IFO_ADDRESS = ADDRESS
 

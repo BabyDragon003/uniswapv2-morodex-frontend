@@ -1,3 +1,4 @@
+import { MINIMUM_SEARCH_CHARACTERS } from 'config/constants/info'
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { useGetChainName, usePoolDatasSWR, useTokenDatasSWR } from 'state/info/hooks'

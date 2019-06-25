@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { NormalComponents, SpecialComponents } from "react-markdown/src/ast-to-react";
 import { Text } from "../Text";
 import { Heading } from "../Heading";

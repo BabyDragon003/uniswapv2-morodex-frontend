@@ -1,3 +1,4 @@
+import { formatUnits } from '@ethersproject/units'
 import { fetchBalance, FetchBalanceArgs, FetchCoinResult } from '@pancakeswap/awgmi/core'
 
 import { QueryConfig } from '../types'

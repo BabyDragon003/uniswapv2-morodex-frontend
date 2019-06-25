@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Types } from 'aptos'
 import { ConnectorTransactionResponse } from '../connectors/index'
 

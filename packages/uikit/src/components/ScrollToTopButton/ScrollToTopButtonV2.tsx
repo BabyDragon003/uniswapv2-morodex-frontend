@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import throttle from "lodash/throttle";
 import { Button } from "../Button";

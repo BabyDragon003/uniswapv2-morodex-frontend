@@ -1,13 +1,8 @@
+import React, { useState } from "react";
 import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 import BottomDrawer from "./BottomDrawer";
-
-export default {
-  title: "Components/BottomDrawer",
-  component: BottomDrawer,
-  argTypes: {},
-};
 
 export const Default: React.FC<React.PropsWithChildren> = () => {
   const [isOpen, setIsOpen] = useState(false);

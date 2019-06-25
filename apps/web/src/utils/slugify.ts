@@ -1,3 +1,4 @@
+const slugify = (str: string) => {
   return str
     .toLowerCase()
     .replace(/\s/g, '-') // Replace white space

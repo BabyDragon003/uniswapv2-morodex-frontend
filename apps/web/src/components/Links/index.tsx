@@ -1,3 +1,4 @@
+import Link, { LinkProps } from 'next/link'
 import styled from 'styled-components'
 
 const StyledInternalLink = styled('a')`

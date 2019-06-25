@@ -1,13 +1,8 @@
+import styled from "styled-components";
 import { CopyButton } from "./CopyButton";
 import { Box, Flex, FlexProps } from "../Box";
 
 interface CopyAddressProps extends FlexProps {
-  account: string;
-  tooltipMessage: string;
-}
-
-const Wrapper = styled(Flex)`
-  align-items: center;
   background-color: ${({ theme }) => theme.colors.dropdown};
   border-radius: 16px;
   position: relative;

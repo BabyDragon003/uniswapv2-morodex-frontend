@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react'
 import { Coin, Currency, CurrencyAmount, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,3 +1,4 @@
+import { ADDRESS, MASTERCHEF_MODULE_NAME } from 'config/constants/contracts/masterchef'
 
 export const FARMS_ADDRESS = ADDRESS
 export const FARMS_MODULE_NAME = MASTERCHEF_MODULE_NAME

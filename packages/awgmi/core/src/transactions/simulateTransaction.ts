@@ -1,13 +1,8 @@
+import { HexString, TxnBuilderTypes, Types } from 'aptos'
 import { getAccount } from '../accounts/account'
 import { getClient } from '../client'
 import { WalletProviderError, SimulateTransactionError } from '../errors'
 import { getProvider } from '../providers'
-
-export type SimulateTransactionArgs = {
-  /** Network name used to validate if the signer is connected to the target chain */
-  networkName?: string
-  throwOnError?: boolean
-  payload: Types.EntryFunctionPayload
   options?: Omit<Types.SubmitTransactionRequest, 'payload' | 'signature'>
   query?: {
     estimateGasUnitPrice?: boolean

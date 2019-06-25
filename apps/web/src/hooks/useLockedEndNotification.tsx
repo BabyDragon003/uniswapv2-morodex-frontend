@@ -1,13 +1,8 @@
+import { useToast, Text, Link } from '@pancakeswap/uikit'
 import { useEffect } from 'react'
 import { useSWRConfig } from 'swr'
 import { useTranslation } from '@pancakeswap/localization'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
-import { useAtom } from 'jotai'
-import { createJSONStorage } from 'jotai/utils'
-import { useAccount } from 'wagmi'
-import atomWithStorageWithErrorCatch from 'utils/atomWithStorageWithErrorCatch'
-import { useUserCakeLockStatus } from './useUserCakeLockStatus'
-
 const storage = createJSONStorage(() => sessionStorage)
 storage.delayInit = true
 const lockedNotificationShowAtom = atomWithStorageWithErrorCatch('lockedNotificationShow', true, storage)

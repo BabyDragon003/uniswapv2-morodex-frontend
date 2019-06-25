@@ -1,13 +1,8 @@
+export const CORS_ALLOW = /[^\w](?:pancake\.run|localhost:3000|pancakeswap\.finance|pancakeswap\.com)$/
 
 function isString(s: any): s is string {
   return typeof s === 'string' || s instanceof String
 }
-
-export function isOriginAllowed(origin: string | null, allowedOrigin: any) {
-  if (Array.isArray(allowedOrigin)) {
-    for (let i = 0; i < allowedOrigin.length; ++i) {
-      if (isOriginAllowed(origin, allowedOrigin[i])) {
-        return true
       }
     }
     return false

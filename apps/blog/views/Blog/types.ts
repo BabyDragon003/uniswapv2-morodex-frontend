@@ -1,13 +1,8 @@
+export interface CategoriesType {
   id: number
   attributes: {
     name: string
     createdAt: string
-    updatedAt: string
-    publishedAt: string
-  }
-}
-
-export interface ArticleImageType {
   id: number
   attributes: {
     url: string
