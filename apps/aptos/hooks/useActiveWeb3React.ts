@@ -3,11 +3,8 @@ import { useIsMounted } from '@pancakeswap/hooks'
 import { useActiveChainId, useActiveNetwork } from './useNetwork'
 
 export default function useActiveWeb3React() {
+  const isMounted = useIsMounted()
 
-  return {
-    chainId,
-    networkName,
-    provider,
-    account: isMounted ? account?.address : undefined,
-  }
-}
+  const { networkName } = useActiveNetwork()
+  const chainId = useActiveChainId()
+  const provider = useProvider({ networkName })

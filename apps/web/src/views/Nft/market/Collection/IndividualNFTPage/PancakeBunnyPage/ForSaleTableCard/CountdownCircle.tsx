@@ -3,16 +3,11 @@ import { Spinner, Text } from '@pancakeswap/uikit'
 import styled, { keyframes } from 'styled-components'
 
 const countdownAnimation = keyframes`
-`
-
-const CountdownContainer = styled.div`
-  position: relative;
-  margin: auto;
-  height: 40px;
-  width: 40px;
-  text-align: center;
-
-  & svg {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
     position: absolute;
     top: 0;
     right: 0;

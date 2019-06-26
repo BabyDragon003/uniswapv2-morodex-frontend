@@ -8,17 +8,6 @@ import Text from "../Text/Text";
 import BackgroundImage from "./BackgroundImage";
 import Img from "./Image";
 import TokenImage from "./TokenImage";
-import TokenPairImage from "./TokenPairImage";
-import ProfileAvatarComponent from "./ProfileAvatar";
-import tokenList from "./tokens";
-
-export default {
-  title: "Components/Image",
-  argTypes: {},
-};
-
-export const Image: React.FC<React.PropsWithChildren> = () => {
-  return (
     <div>
       <Img src="https://via.placeholder.com/800x400" width={800} height={400} alt="test" />
       <div>Image</div>

@@ -3,16 +3,11 @@ import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {
   ModalContainer,
-  ModalCloseButton,
-  Button,
-  AutoRenewIcon,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { getAllV1History } from './helpers'
-
-const Modal = styled(ModalContainer)`
-  overflow: visible;
-`
+  ModalBody,
+  ModalTitle,
+  ModalHeader,
+  InjectedModalProps,
+  Text,
 
 const BunnyDecoration = styled.div`
   position: absolute;

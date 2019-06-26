@@ -9,17 +9,6 @@ import { EN, languages } from './config/languages'
 import { ContextApi, ProviderState, TranslateFunction } from './types'
 import { LS_KEY, fetchLocale, getLanguageCodeFromLS } from './helpers'
 
-const initialState: ProviderState = {
-  isFetching: true,
-  currentLanguage: EN,
-}
-
-const includesVariableRegex = new RegExp(/%\S+?%/, 'gm')
-
-const translatedTextIncludesVariable = memoize((translatedText: string): boolean => {
-  return !!translatedText?.match(includesVariableRegex)
-})
-
 const getRegExpForDataKey = memoize((dataKey: string): RegExp => {
   return new RegExp(`%${dataKey}%`, 'g')
 })

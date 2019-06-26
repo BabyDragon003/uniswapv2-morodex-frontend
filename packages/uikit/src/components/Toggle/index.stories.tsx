@@ -3,16 +3,11 @@ import { SunIcon, MoonIcon } from "../Svg";
 import Toggle from "./Toggle";
 
 export default {
+  title: "Components/Toggle",
+  component: Toggle,
+};
 
-  const toggle = () => setIsChecked(!isChecked);
-
-  return (
-    <>
-      <div style={{ marginBottom: "32px" }}>
-        <Toggle checked={isChecked} onChange={toggle} />
-      </div>
-      <div style={{ marginBottom: "32px" }}>
-        <Toggle checked={isChecked} onChange={toggle} scale="md" />
+export const Default: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div style={{ marginBottom: "32px" }}>
         <Toggle

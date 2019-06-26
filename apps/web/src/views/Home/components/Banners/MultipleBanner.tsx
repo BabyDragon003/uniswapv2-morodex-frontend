@@ -3,6 +3,12 @@ import { useAccount } from 'wagmi'
 import { useState } from 'react'
 import { ChainId } from '@pancakeswap/sdk'
 import { useActiveChainId } from 'hooks/useActiveChainId'
+import styled from 'styled-components'
+import SwiperCore, { Autoplay, EffectFade, Pagination } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMultipleBannerConfig } from './hooks/useMultipleBannerConfig'
 
 const BannerPlaceHolder = styled.div<{ walletConnected: boolean }>`

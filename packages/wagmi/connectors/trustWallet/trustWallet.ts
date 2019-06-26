@@ -8,17 +8,6 @@ import { getAddress } from '@ethersproject/address'
 
 declare global {
   interface Window {
-    trustwallet?: Ethereum
-  }
-}
-
-const mappingNetwork: Record<number, string> = {
-  1: 'eth-mainnet',
-  5: 'eth-goerli',
-  56: 'bsc-mainnet',
-  97: 'bsc-testnet',
-}
-
 export function getTrustWalletProvider() {
   const isTrustWallet = (ethereum: NonNullable<Window['ethereum']>) => {
     // Identify if Trust Wallet injected provider is present.

@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Pool, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError, { TxResponse } from 'hooks/useCatchTxError'
+
+const CollectModalContainer = ({
+  earningTokenSymbol,
+  onDismiss,
+  onReward,
+  onDone,
   ...rest
 }: React.PropsWithChildren<
   Pool.CollectModalProps & {

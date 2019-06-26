@@ -3,6 +3,12 @@ import { UserResponse, BetResponse, RoundResponse } from './responseType'
 export interface UserResponseCAKE extends UserResponse<BetResponseCAKE> {
   totalCAKE: string
   totalCAKEBull: string
+  totalCAKEBear: string
+  averageCAKE: string
+  totalCAKEClaimed: string
+  netCAKE: string
+}
+
 export interface BetResponseCAKE extends BetResponse {
   claimedCAKE: string
   claimedNetCAKE: string

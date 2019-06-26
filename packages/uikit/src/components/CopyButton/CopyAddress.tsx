@@ -3,16 +3,11 @@ import { CopyButton } from "./CopyButton";
 import { Box, Flex, FlexProps } from "../Box";
 
 interface CopyAddressProps extends FlexProps {
-  background-color: ${({ theme }) => theme.colors.dropdown};
-  border-radius: 16px;
-  position: relative;
-`;
+  account: string;
+  tooltipMessage: string;
+}
 
-const Address = styled.div`
-  flex: 1;
-  position: relative;
-  padding-left: 16px;
-
+const Wrapper = styled(Flex)`
   & > input {
     background: transparent;
     border: 0;

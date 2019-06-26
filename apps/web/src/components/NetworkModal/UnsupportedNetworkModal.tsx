@@ -8,17 +8,6 @@ import { useMenuItems } from 'components/Menu/hooks/useMenuItems'
 import { useRouter } from 'next/router'
 import { getActiveMenuItem, getActiveSubMenuItem } from 'components/Menu/utils'
 import { useAccount, useNetwork } from 'wagmi'
-import { useMemo } from 'react'
-import { ChainId } from '@pancakeswap/sdk'
-import Dots from '../Loader/Dots'
-
-// Where chain is not supported or page not supported
-export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupportedChains: number[] }) {
-  const { switchNetworkAsync, isLoading, canSwitch } = useSwitchNetwork()
-  const switchNetworkLocal = useSwitchNetworkLocal()
-  const { chains } = useNetwork()
-  const chainId = useLocalNetworkChain() || ChainId.BSC
-  const { isConnected } = useAccount()
   const { logout } = useAuth()
   const { t } = useTranslation()
   const menuItems = useMenuItems()

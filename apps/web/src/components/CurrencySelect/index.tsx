@@ -3,16 +3,11 @@ import { ArrowDropDownIcon, Box, Button, Text, useModal, Flex, BoxProps } from '
 import CurrencySearchModal, { CurrencySearchModalProps } from 'components/SearchModal/CurrencySearchModal'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
-const DropDownHeader = styled.div`
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 16px;
-  box-shadow: ${({ theme }) => theme.shadows.inset};
-  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-  // border-radius: 16px;
+import { useCurrencyBalance } from 'state/wallet/hooks'
+import useBUSDPrice from 'hooks/useBUSDPrice'
+import { useAccount } from 'wagmi'
+import { CurrencyLogo } from '../Logo'
+import { RowBetween, AutoRow } from '../Layout/Row'
   border-radius: 6px;
   // background: ${({ theme }) => theme.colors.input};
   transition: border-radius 0.15s;

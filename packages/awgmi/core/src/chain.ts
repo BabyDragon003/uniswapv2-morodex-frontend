@@ -8,17 +8,6 @@ export type Chain = {
   /** Internal network name */
   network: string
   /** Collection of Node url endpoints */
-  nodeUrls: {
-    [key: string]: string
-    default: string
-  }
-  /** Collection of block explorers */
-  blockExplorers?: {
-    [key: string]: BlockExplorer
-    default: BlockExplorer
-  }
-  /** Flag for test networks */
-  testnet?: boolean
 } & (MainnetChain | TestnetChain)
 
 type MainnetChain = {

@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import { Flex, Box, Text, Skeleton } from '@pancakeswap/uikit'
 import TeamPodiumIcon from './TeamPodiumIcon'
 import { PodiumBase } from '../../../svgs'
-  ${({ theme }) => theme.mediaQueries.xs} {
-    width: 320px;
-  }
+import { localiseTradingVolume } from '../../../helpers'
+import { PodiumProps } from './styles'
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 387px;
-  }
-`
-
-const Inner = styled(Flex)`
+const Wrapper = styled(Flex)`
+  width: 260px;
   width: 100%;
   flex-direction: column;
 

@@ -3,16 +3,11 @@ import { useRouter } from 'next/router'
 import { Button } from '@pancakeswap/uikit'
 import { useConfig } from 'views/Ifos/contexts/IfoContext'
 
-  const isFinishedPage = router.pathname.includes('history')
+import { useTranslation } from '@pancakeswap/localization'
 
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto',
-    })
-  }, [])
-
-  const handleClickButton = () => {
+const StakeVaultButton = (props) => {
+  const { t } = useTranslation()
+  const router = useRouter()
     // Always expand for mobile
     if (!isExpanded) {
       setIsExpanded(true)

@@ -9,17 +9,6 @@ export interface ChartEntry {
   liquidityUSD: number
 }
 
-/**
- * Formatted type for Candlestick charts
- */
-export interface PriceChartEntry {
-  time: number
-  open: number
-  close: number
-  high: number
-  low: number
-}
-
 export enum TransactionType {
   SWAP,
   MINT,

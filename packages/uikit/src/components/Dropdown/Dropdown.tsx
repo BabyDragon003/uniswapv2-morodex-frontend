@@ -3,6 +3,12 @@ import throttle from "lodash/throttle";
 import styled, { css } from "styled-components";
 import { DropdownProps, PositionProps, Position } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
+
+const getLeft = ({ position }: PositionProps) => {
+  if (position === "top-right") {
+    return "100%";
+  }
+  return "50%";
 };
 
 const getBottom = ({ position }: PositionProps) => {

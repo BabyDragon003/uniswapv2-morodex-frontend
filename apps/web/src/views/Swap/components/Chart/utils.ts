@@ -8,17 +8,6 @@ export const getTimeWindowChange = (lineChartData) => {
     const lastValue = lineChartData[lineChartData.length - 1].value
     const changeValue = lastValue - firstValue
 
-    return {
-      changeValue:
-        changeValue > 0 ? Math.max(changeValue, MIN_VALUE_DISPLAYED) : Math.min(changeValue, MIN_VALUE_DISPLAYED * -1),
-      changePercentage: ((changeValue / firstValue) * 100).toFixed(2),
-    }
-  }
-
-  return {
-    changeValue: 0,
-    changePercentage: 0,
-  }
 }
 
 export const getTokenAddress = (tokenAddress: undefined | string) => {

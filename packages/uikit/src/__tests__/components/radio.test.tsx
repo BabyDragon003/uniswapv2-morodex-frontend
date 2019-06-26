@@ -3,6 +3,12 @@ import { renderWithProvider } from "../../testHelpers";
 import Radio from "../../components/Radio/Radio";
 
 it("renders correctly", () => {
+  const { asFragment } = renderWithProvider(<Radio name="radio" value="1" />);
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
       overflow: hidden;
       cursor: pointer;

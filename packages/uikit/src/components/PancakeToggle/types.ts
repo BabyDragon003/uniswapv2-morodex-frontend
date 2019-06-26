@@ -8,17 +8,6 @@ export type PancakeToggleTheme = {
 export const scales = {
   SM: "sm",
   MD: "md",
-  LG: "lg",
-} as const;
-
-export type Scales = (typeof scales)[keyof typeof scales];
-
-export interface PancakeToggleProps extends InputHTMLAttributes<HTMLInputElement> {
-  scale?: Scales;
-  checked?: boolean;
-}
-
-export interface HandleProps {
   scale: Scales;
 }
 

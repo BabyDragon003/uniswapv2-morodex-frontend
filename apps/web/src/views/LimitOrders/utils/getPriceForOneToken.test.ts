@@ -3,6 +3,12 @@ import getPriceForOneToken from './getPriceForOneToken'
 
 const CAKE = new ERC20Token(56, '0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9', 18, 'MDEX', 'MORODEX')
 const BUSD = new ERC20Token(56, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
+const DOGE = new ERC20Token(56, '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', 8, 'DOGE', 'Binance-Peg Dogecoin')
+
+const EIGHT_DECIMALS = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(8))
+const EIGHTEEN_DECIMALS = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))
+const ZERO = JSBI.multiply(JSBI.BigInt(0), EIGHTEEN_DECIMALS)
+const ONE = JSBI.multiply(JSBI.BigInt(1), EIGHTEEN_DECIMALS)
 const ONE_EIGHT_DEC = JSBI.multiply(JSBI.BigInt(1), EIGHT_DECIMALS)
 const FIVE = JSBI.multiply(JSBI.BigInt(5), EIGHTEEN_DECIMALS)
 const FIVE_EIGHT_DEC = JSBI.multiply(JSBI.BigInt(5), EIGHT_DECIMALS)

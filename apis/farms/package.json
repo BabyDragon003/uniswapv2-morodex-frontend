@@ -3,13 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "@pancakeswap/farms": "*",
-    "@cloudflare/workers-types": "^3.10.0",
-    "typescript": "^4.9.4",
-    "wrangler": "2.0.6"
+    "itty-router": "^2.6.1",
+    "itty-router-extras": "^0.4.2"
   },
-  "private": true,
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler publish"
-  }
-}
+  "devDependencies": {
+    "@types/itty-router-extras": "^0.4.0",

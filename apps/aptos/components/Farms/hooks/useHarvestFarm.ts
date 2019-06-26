@@ -3,8 +3,8 @@ import { masterchefDeposit } from 'config/constants/contracts/masterchef'
 import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'
 
 const useHarvestFarm = (tokenType: string) => {
+  const executeTransaction = useSimulationAndSendTransaction()
 
-  return { onReward: handleHarvest }
-}
-
-export default useHarvestFarm
+  const handleHarvest = useCallback(async () => {
+    const payload = masterchefDeposit(['0'], [tokenType])
+    return executeTransaction(payload)

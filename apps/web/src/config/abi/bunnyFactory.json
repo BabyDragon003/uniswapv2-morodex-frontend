@@ -3,16 +3,11 @@
     "inputs": [
       {
         "internalType": "contract BunnyFactoryV2",
+        "name": "_bunnyFactoryV2",
         "type": "address"
       },
       {
-        "internalType": "contract IBEP20",
-        "name": "_cakeToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_tokenPrice",
+        "internalType": "contract BunnyMintingStation",
         "type": "uint256"
       },
       {

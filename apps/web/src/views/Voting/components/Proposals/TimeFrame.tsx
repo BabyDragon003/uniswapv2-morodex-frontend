@@ -3,16 +3,11 @@ import { toDate, format } from 'date-fns'
 import { useTranslation } from '@pancakeswap/localization'
 import { ProposalState } from 'state/types'
 
-const getFormattedDate = (timestamp: number) => {
-  const date = toDate(timestamp * 1000)
-  return format(date, 'MMM do, yyyy HH:mm')
+interface TimeFrameProps {
+  startDate: number
+  endDate: number
+  proposalState: ProposalState
 }
-
-const TimeFrame: React.FC<React.PropsWithChildren<TimeFrameProps>> = ({ startDate, endDate, proposalState }) => {
-  const { t } = useTranslation()
-  const textProps = {
-    fontSize: '16px',
-    color: 'textSubtle',
     ml: '8px',
   }
 

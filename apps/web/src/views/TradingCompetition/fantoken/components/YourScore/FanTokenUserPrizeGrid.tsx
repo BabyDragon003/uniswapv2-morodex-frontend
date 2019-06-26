@@ -8,17 +8,6 @@ import { fanTokenPrizes } from '../../../../../config/constants/trading-competit
 import UserPrizeGridDollar from '../../../components/YourScore/UserPrizeGridDollar'
 import AchievementPoints from '../../../components/YourScore/AchievementPoints'
 
-const StyledThead = styled.thead`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
-`
-
-const FanTokenUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformation? }>> = ({
-  userTradingInformation,
-}) => {
-  const { t } = useTranslation()
-  const {
-    userRewardGroup,
-    userCakeRewards,
     userLazioRewards,
     userPortoRewards,
     userSantosRewards,

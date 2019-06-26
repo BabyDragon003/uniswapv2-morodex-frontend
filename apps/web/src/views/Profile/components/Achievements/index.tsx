@@ -3,16 +3,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import IconStatBox from 'views/Teams/components/IconStatBox'
 import { Achievement } from 'state/types'
 import AchievementsList from './AchievementsList'
-    points?: number
-    onSuccess?: () => void
-  }>
-> = ({ achievements, isLoading, points = 0, onSuccess = null }) => {
-  const { t } = useTranslation()
+import ClaimPointsCallout from './ClaimPointsCallout'
 
-  return (
-    <Card>
-      <CardBody>
-        <IconStatBox icon={PrizeIcon} title={points} subtitle={t('Points')} mb="24px" />
+const Achievements: React.FC<
+  React.PropsWithChildren<{
+    achievements: Achievement[]
         <Heading as="h4" scale="md" mb="16px">
           {t('Achievements')}
         </Heading>

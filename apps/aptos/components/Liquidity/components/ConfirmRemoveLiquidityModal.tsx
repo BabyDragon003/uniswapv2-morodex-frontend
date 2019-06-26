@@ -3,16 +3,11 @@ import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/apt
 import {
   AddIcon,
   AutoColumn,
-  ConfirmationModalContent,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-import { useUserSlippage } from 'state/user'
-import formatAmountDisplay from 'utils/formatAmountDisplay'
-
-import { Field } from '../type'
-
+  Button,
+  InjectedModalProps,
+  RowBetween,
+  RowFixed,
+  Text,
 interface ConfirmRemoveLiquidityModalProps {
   title: string
   customOnDismiss: () => void

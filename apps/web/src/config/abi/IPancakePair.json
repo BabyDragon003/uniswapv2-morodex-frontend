@@ -3,16 +3,11 @@
     "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
+  },
+  {
+    "anonymous": false,
+    "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "spender",
-        "type": "address"
-      },
       {
         "indexed": false,
         "internalType": "uint256",

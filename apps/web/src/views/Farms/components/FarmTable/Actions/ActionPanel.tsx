@@ -3,16 +3,11 @@ import {
   Farm as FarmUI,
   FarmTableLiquidityProps,
   FarmTableMultiplierProps,
-import { CHAIN_QUERY_NAME } from 'config/chains'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import { useContext, useMemo } from 'react'
-import { multiChainPaths } from 'state/info/constant'
-import styled, { css, keyframes } from 'styled-components'
-import { getBlockExploreLink } from 'utils'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
+  LinkExternal,
+  Text,
+  useMatchBreakpoints,
+} from '@pancakeswap/uikit'
 
-import BoostedAction from '../../YieldBooster/components/BoostedAction'
-import { YieldBoosterStateContext } from '../../YieldBooster/components/ProxyFarmContainer'
 import Apr, { AprProps } from '../Apr'
 import { HarvestAction, HarvestActionContainer, ProxyHarvestActionContainer } from './HarvestAction'
 import StakedAction, { ProxyStakedContainer, StakedContainer } from './StakedAction'

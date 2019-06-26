@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import { Text, Flex, Heading, useMatchBreakpoints, Balance } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { ActionContainer, ActionTitles, ActionContent } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
-interface AutoEarningProps {
-  earningTokenBalance: number
-  earningTokenDollarBalance: number
-  earningTokenPrice: number
-}
 
-const AutoEarning: React.FunctionComponent<React.PropsWithChildren<AutoEarningProps>> = ({
-  earningTokenBalance,
-  earningTokenDollarBalance,
-  earningTokenPrice,
+const Container = styled(ActionContainer)`
+  flex: 2;
+  align-self: stretch;
+`
 }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()

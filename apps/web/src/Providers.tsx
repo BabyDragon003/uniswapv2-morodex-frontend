@@ -3,16 +3,11 @@ import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
 import { LanguageProvider } from '@pancakeswap/localization'
 import { fetchStatusMiddleware } from 'hooks/useSWRContract'
-const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
-  const { resolvedTheme } = useNextTheme()
-  return (
-    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : light} {...props}>
-      {children}
-    </UIKitProvider>
-  )
-}
-
-const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: React.ReactNode }>> = ({
+import { Store } from '@reduxjs/toolkit'
+import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes'
+import { WagmiProvider } from '@pancakeswap/wagmi'
+import { client } from 'utils/wagmi'
+import { HistoryManagerProvider } from 'contexts/HistoryContext'
   children,
   store,
 }) => {

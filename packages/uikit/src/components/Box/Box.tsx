@@ -8,17 +8,6 @@ export type MotionVariants = Variants;
 
 export const MotionBox = styled(motion.div)<BoxProps>`
   ${background}
-  ${border}
-  ${layout}
-  ${position}
-  ${space}
-`;
-
-const Box = styled.div<BoxProps>`
-  ${background}
-  ${border}
-  ${layout}
-  ${position}
   ${space}
   ${color}
 `;

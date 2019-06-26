@@ -3,16 +3,11 @@ import { useMemo } from 'react'
 import IPancakePairABI from 'config/abi/IPancakePair.json'
 import { Interface } from '@ethersproject/abi'
 
-export enum PairState {
-  LOADING,
-  NOT_EXISTS,
-  EXISTS,
-  INVALID,
-}
+import { useMultipleContractSingleData } from '../state/multicall/hooks'
+import { wrappedCurrency } from '../utils/wrappedCurrency'
+import { useActiveChainId } from './useActiveChainId'
 
-export function usePairs(currencies: [Currency | undefined, Currency | undefined][]): [PairState, Pair | null][] {
-  const { chainId } = useActiveChainId()
-
+const PAIR_INTERFACE = new Interface(IPancakePairABI)
   const tokens = useMemo(
     () =>
       currencies.map(([currencyA, currencyB]) => [

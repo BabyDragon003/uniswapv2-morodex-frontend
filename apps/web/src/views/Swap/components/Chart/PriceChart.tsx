@@ -3,6 +3,12 @@ import {
   ExpandIcon,
   Flex,
   IconButton,
+  ShrinkIcon,
+  SyncAltIcon,
+  Text,
+  // TradingViewIcon,
+  // LineGraphIcon,
+  // useMatchBreakpoints,
 } from '@pancakeswap/uikit'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 // import { TradingViewLabel } from 'components/TradingView'

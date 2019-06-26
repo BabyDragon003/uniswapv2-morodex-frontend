@@ -3,6 +3,12 @@ import { AutoRenewIcon, Button, ButtonProps, useToast } from '@pancakeswap/uikit
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { useBCakeFarmBoosterProxyFactoryContract } from 'hooks/useContract'
+import { memo, useState } from 'react'
+
+const MAX_GAS_LIMIT = 2500000
+
+interface CreateProxyButtonProps extends ButtonProps {
+  onDone?: () => void
 }
 
 const CreateProxyButton: React.FC<React.PropsWithChildren<CreateProxyButtonProps>> = ({ onDone, ...props }) => {

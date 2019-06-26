@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_pancakeProfileAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_bunnyStationAddress",
         "type": "address"
       },
       {

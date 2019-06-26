@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "string",
+        "name": "_baseURI",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "anonymous": false,

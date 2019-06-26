@@ -8,17 +8,6 @@
       },
       {
         "internalType": "contract IERC20",
-        "name": "_receiptToken",
-        "type": "address"
-      },
-      {
-        "internalType": "contract IMasterChef",
-        "name": "_masterchef",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_admin",
         "type": "address"
       },
       {

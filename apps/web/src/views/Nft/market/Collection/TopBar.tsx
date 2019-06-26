@@ -8,17 +8,6 @@ const BackLink = styled(NextLinkFromReactRouter)`
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
   display: inline-flex;
-  font-weight: 600;
-`
-
-const TopBar: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-
-  return (
-    <Flex alignItems="center" justifyContent="space-between" mb="24px">
-      <BackLink to={`${nftsBaseUrl}/collections`}>
-        <ChevronLeftIcon color="primary" width="24px" />
-        {t('All Collections')}
       </BackLink>
       <Box>
         <SearchBar />

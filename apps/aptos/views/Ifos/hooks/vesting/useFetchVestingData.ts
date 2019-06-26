@@ -8,17 +8,6 @@ const useFetchVestingData = () => {
   const allData = useFetchUserWalletIfoData()
 
   const filterVestingIfos = useMemo(
-    () =>
-      allData.filter((ifo) => {
-        const { userVestingData } = ifo
-
-        const poolUnlimitedUserInfo = userVestingData[PoolIds.poolUnlimited]
-
-        const hasClaimedAmount = poolUnlimitedUserInfo?.offeringAmountInToken.gt(0)
-        const hasReleasableAmount = poolUnlimitedUserInfo?.vestingComputeReleasableAmount.gt(0)
-
-        if (hasClaimedAmount) {
-          if (hasReleasableAmount) {
             return true
           }
 

@@ -3,16 +3,11 @@
     "constant": true,
     "inputs": [],
     "name": "name",
-    "constant": false,
-    "inputs": [
-      { "name": "guy", "type": "address" },
-      { "name": "wad", "type": "uint256" }
-    ],
-    "name": "approve",
-    "outputs": [{ "name": "", "type": "bool" }],
+    "outputs": [{ "name": "", "type": "string" }],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
+  },
   },
   {
     "constant": true,

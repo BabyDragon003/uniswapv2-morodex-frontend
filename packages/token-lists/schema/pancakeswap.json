@@ -3,6 +3,12 @@
   "$id": "pancakeswap",
   "title": "MORODEX List",
   "description": "Schema for lists of tokens compatible with the PancakeSwap Interface, including Uniswap standard and PancakeSwap Aptos",
+  "definitions": {
+    "Version": {
+      "type": "object",
+      "description": "The version of the list, used in change detection",
+      "examples": [
+        {
           "major": 1,
           "minor": 0,
           "patch": 0

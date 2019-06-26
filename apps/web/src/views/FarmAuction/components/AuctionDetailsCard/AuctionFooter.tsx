@@ -8,17 +8,6 @@ import WhitelistedBiddersButton from '../WhitelistedBiddersButton'
 const FooterInner = styled(Box)`
   background-color: ${({ theme }) => theme.colors.dropdown};
 `
-
-const AuctionFooter: React.FC<React.PropsWithChildren<{ auction: Auction }>> = ({ auction }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const { t } = useTranslation()
-  const { topLeaderboard, status } = auction
-
-  const isLiveOrPendingAuction = status === AuctionStatus.Pending || status === AuctionStatus.Open
-
-  return (
-    <CardFooter p="0">
-      {isExpanded && (
         <FooterInner>
           <Flex p="16px" flexDirection="column">
             {isLiveOrPendingAuction && (

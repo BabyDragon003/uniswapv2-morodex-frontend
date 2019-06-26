@@ -8,17 +8,6 @@ import { NotificationDot } from "../NotificationDot";
 import { Overlay } from "../Overlay";
 
 const BottomNav: React.FC<React.PropsWithChildren<BottomNavProps>> = ({
-  items = [],
-  activeItem = "",
-  activeSubItem = "",
-  ...props
-}) => {
-  const [menuOpenByIndex, setMenuOpenByIndex] = useState({});
-  const isBottomMenuOpen = Object.values(menuOpenByIndex).some((acc) => acc);
-  return (
-    <>
-      {isBottomMenuOpen && <Overlay />}
-      <StyledBottomNav justifyContent="space-around" {...props}>
         {items.map(
           (
             { label, items: menuItems, href, icon, fillIcon, showOnMobile = true, showItemsOnMobile = true, disabled },

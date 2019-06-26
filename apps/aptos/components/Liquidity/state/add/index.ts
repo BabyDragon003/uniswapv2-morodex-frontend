@@ -8,17 +8,6 @@ import { MintState, mintStateAtom, reducer } from './reducers'
 interface MintLiquidityHandlers {
   onFieldAInput: (typedValue: string) => void
   onFieldBInput: (typedValue: string) => void
-  resetForm: () => void
-}
-
-let tuple: [MintState, MintLiquidityHandlers]
-
-export const useLiquidityStateOnly = () => {
-  return useAtomValue(mintStateAtom)
-}
-
-export const useMintLiquidityStateAndHandlers = (noLiquidity: boolean): typeof tuple => {
-  const [mintState, dispatch] = useReducerAtom(mintStateAtom, reducer)
 
   const onFieldAInput = useCallback(
     (typedValue: string) => {

@@ -3,6 +3,12 @@ import { useInterval, useLastUpdated } from '@pancakeswap/hooks'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { Ifo } from 'config/constants/types'
+import { useMemo } from 'react'
+import splitTypeTag from 'utils/splitTypeTag'
+import {
+  IfoPoolKey,
+  IFO_RESOURCE_ACCOUNT_TYPE_METADATA,
+  IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE,
 } from 'views/Ifos/constants'
 import { RootObject as IFOPool } from 'views/Ifos/generated/IFOPool'
 import type { VestingCharacteristics } from 'views/Ifos/types'

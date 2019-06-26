@@ -3,16 +3,11 @@ import { Currency, Token, NativeCurrency } from '@pancakeswap/swap-sdk-core'
 import { WNATIVE, NATIVE } from '../constants'
 
 /**
-    decimals,
-    name,
-    symbol,
-  }: {
-    chainId: number
-    decimals: number
-    symbol: string
-    name: string
-  }) {
-    super(chainId, decimals, symbol, name)
+ *
+ * Native is the main usage of a 'native' currency, i.e. for BSC mainnet and all testnets
+ */
+export class Native extends NativeCurrency {
+  protected constructor({
   }
 
   public get wrapped(): Token {

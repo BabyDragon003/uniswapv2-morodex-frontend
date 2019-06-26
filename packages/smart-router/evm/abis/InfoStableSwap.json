@@ -3,16 +3,11 @@
     "inputs": [],
     "name": "FEE_DENOMINATOR",
     "outputs": [
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "N_COINS",
-    "outputs": [
       {
         "internalType": "uint256",
         "name": "",
+        "type": "uint256"
+      }
         "type": "uint256"
       }
     ],

@@ -3,6 +3,12 @@ import { Currency, TradeType, CurrencyAmount } from '@pancakeswap/sdk'
 import { InjectedModalProps, LinkExternal, Text, TransactionErrorContent } from '@pancakeswap/uikit'
 import { TransactionSubmittedContent } from 'components/TransactionConfirmationModal'
 import { useTranslation } from '@pancakeswap/localization'
+import { Field } from 'state/swap/actions'
+import { TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import ConfirmationPendingContent from '../../components/ConfirmationPendingContent'
+import ConfirmSwapModalContainer from '../../components/ConfirmSwapModalContainer'
+import TransactionConfirmSwapContentWithSmartRouter from './TransactionConfirmSwapContent'
 
 const PancakeRouterSlippageErrorMsg =
   'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'

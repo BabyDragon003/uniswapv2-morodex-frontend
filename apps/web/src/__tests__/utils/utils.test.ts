@@ -12,17 +12,6 @@ describe('getActiveMenuItem', () => {
     const result = getActiveMenuItem({ pathname, menuConfig: menuConfig(mockT, false, undefined) })
 
     // Then
-    expect(result).toEqual(menuConfig(mockT, false, undefined)[0])
-  })
-
-  it('should return an active item if pathname found in subitems', () => {
-    // Given
-    const pathname = '/pools'
-
-    // When
-    const result = getActiveMenuItem({ pathname, menuConfig: menuConfig(mockT, false, undefined) })
-
-    // Then
     expect(result).toEqual(menuConfig(mockT, false, undefined)[1])
   })
 

@@ -3,16 +3,11 @@ import { Types } from 'aptos'
 import { ChainId } from '@pancakeswap/aptos-swap-sdk'
 
 export type TransactionType = 'approve' | 'swap' | 'add-liquidity' | 'remove-liquidity'
-  success: boolean
-  timestamp: string
-  transactionHash: string
-  status?: number
-}
 
-export const addTransaction = createAction<{
-  chainId: ChainId
-  hash: string
+export interface TransactionReceipt {
   from: string
+  payload: Types.TransactionPayload
+  sequenceNumber: string
   approval?: { tokenAddress: string; spender: string }
   claim?: { recipient: string }
   summary?: string

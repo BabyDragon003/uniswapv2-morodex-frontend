@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
 import { SerializedPool } from 'state/types'
 import { transformPool } from 'state/pools/helpers'
+import { getCakeContract } from 'utils/contractHelpers'
+import { PoolCategory } from 'config/constants/types'
+import { bscTokens } from '@pancakeswap/tokens'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+import { fetchUserStakeBalances, fetchUserPendingRewards } from './fetchPoolsUser'
+
 export interface PoolsState {
   data: SerializedPool
   userDataLoaded: boolean

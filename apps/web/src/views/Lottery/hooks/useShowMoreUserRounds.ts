@@ -8,13 +8,3 @@ const useShowMoreUserRounds = () => {
   const { address: account } = useAccount()
   const dispatch = useAppDispatch()
   const [numUserRoundsRequested, setNumUserRoundsRequested] = useState(MAX_USER_LOTTERIES_REQUEST_SIZE)
-
-  const handleShowMoreUserRounds = () => {
-    dispatch(fetchAdditionalUserLotteries({ account, skip: numUserRoundsRequested }))
-    setNumUserRoundsRequested(numUserRoundsRequested + MAX_USER_LOTTERIES_REQUEST_SIZE)
-  }
-
-  return { numUserRoundsRequested, handleShowMoreUserRounds }
-}
-
-export default useShowMoreUserRounds

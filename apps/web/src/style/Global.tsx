@@ -3,16 +3,11 @@ import { PancakeTheme } from '@pancakeswap/uikit'
 
 declare module 'styled-components' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  }
-  body {
-    background-color: ${({ theme }) => theme.colors.background};
+  export interface DefaultTheme extends PancakeTheme {}
+}
 
-    img {
-      height: auto;
-      max-width: 100%;
-    }
-  }
-  .animate-x-slide {
+const GlobalStyle = createGlobalStyle`
+  * {
     animation: x-slide 4s ease-in-out infinite;
     width: 0;
   }

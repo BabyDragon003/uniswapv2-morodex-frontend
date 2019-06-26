@@ -3,16 +3,11 @@ import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
-  customOnDismiss: () => void
-  attemptingTxn: boolean
-  hash: string
-  pendingText: string
-  currencies: { [field in Field]?: Currency }
-  noLiquidity: boolean
-  allowedSlippage: number
-  liquidityErrorMessage: string
-  price: Fraction
-  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
+import { Field } from 'state/burn/actions'
+import _toNumber from 'lodash/toNumber'
+import { AddLiquidityModalHeader, PairDistribution } from './common'
+
+interface ConfirmAddLiquidityModalProps {
   onAdd: () => void
   poolTokenPercentage: Percent
   liquidityMinted: CurrencyAmount<Token>

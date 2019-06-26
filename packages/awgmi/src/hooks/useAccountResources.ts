@@ -3,6 +3,12 @@ import { fetchAccountResources, FetchAccountResourcesArgs, FetchAccountResources
 import { QueryConfig, QueryFunctionArgs } from '../types'
 import { useNetwork } from './useNetwork'
 import { useQuery } from './utils/useQuery'
+
+export type UseAccountResourcesArgs = Partial<FetchAccountResourcesArgs> & {
+  /** Subscribe to changes */
+  watch?: boolean
+}
+
 export type UseAccountResourcesConfig<TData = unknown> = QueryConfig<FetchAccountResourcesResult, Error, TData>
 
 export const queryKey = ({ networkName, address }: { networkName?: string; address?: string }) =>

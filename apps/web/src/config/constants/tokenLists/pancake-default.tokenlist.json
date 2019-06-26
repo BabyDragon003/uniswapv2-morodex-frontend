@@ -3,16 +3,11 @@
   "timestamp": "2022-01-26T11:45:09Z",
   "version": {
     "major": 4,
-  "tokens": [
-    {
-      "name": "Wrapped BNB",
-      "symbol": "WBNB",
-      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-      "chainId": 56,
-      "decimals": 18,
-      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/bnb.png"
-    },
-    {
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "/logo.png",
       "name": "BUSD Token",
       "symbol": "BUSD",
       "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",

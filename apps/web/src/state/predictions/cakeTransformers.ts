@@ -9,17 +9,6 @@ export const transformBetResponseCAKE = (betResponse): Bet => {
     claimedNetBNB: betResponse.claimedNetCAKE ? parseFloat(betResponse.claimedNetCAKE) : 0,
   } as Bet
 
-  if (betResponse.user) {
-    bet.user = transformUserResponseCAKE(betResponse.user)
-  }
-
-  if (betResponse.round) {
-    bet.round = transformRoundResponseToken(betResponse.round, transformBetResponseCAKE)
-  }
-
-  return bet
-}
-
 export const transformUserResponseCAKE = (userResponse): PredictionUser => {
   const baseUserResponse = transformUserResponseToken(userResponse)
   const { totalCAKE, totalCAKEBull, totalCAKEBear, totalCAKEClaimed, averageCAKE, netCAKE } = userResponse || {}

@@ -3,16 +3,11 @@ import { useTranslation } from "@pancakeswap/localization";
 import BigNumber from "bignumber.js";
 import { useCallback, useEffect, useState } from "react";
 import styled, { useTheme } from "styled-components";
+import { getInterestBreakdown } from "@pancakeswap/utils/compoundApyHelpers";
+import { formatNumber, getDecimalAmount, getFullDisplayBalance } from "@pancakeswap/utils/formatBalance";
+import removeTrailingZeros from "@pancakeswap/utils/removeTrailingZeros";
 
-import {
-  AutoRenewIcon,
-  BalanceInput,
-  Button,
-  CalculateIcon,
-  Flex,
-  IconButton,
-  Image,
-  Link,
+import PercentageButton from "./PercentageButton";
   Skeleton,
   Slider,
   Text,

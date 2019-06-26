@@ -8,17 +8,6 @@ import {
   RibbonUpRightSide,
   RibbonDownLeftSide,
   RibbonUpLeftSide,
-} from './RibbonStyles'
-import { Heading2Text, VisuallyHiddenHeading2Text } from '../CompetitionHeadingText'
-
-const Wrapper = styled(Flex)<{ ribbonDirection?: 'up' | 'down' }>`
-  position: relative;
-  display: inline-flex;
-  align-items: ${({ ribbonDirection }) => (ribbonDirection === 'up' ? 'flex-end' : 'flex-start')};
-  justify-content: center;
-`
-
-const TextWrapper = styled(Flex)`
   display: flex;
   align-items: center;
   position: absolute;

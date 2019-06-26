@@ -8,17 +8,6 @@ import { ChartByLabel } from './Chart/ChartbyLabel'
 /**
  * When the script tag is injected the TradingView object is not immediately
  * available on the window. So we listen for when it gets set
- */
-const tradingViewListener = async () =>
-  new Promise<void>((resolve) =>
-    Object.defineProperty(window, 'TradingView', {
-      configurable: true,
-      set(value) {
-        this.tv = value
-        resolve(value)
-      },
-    }),
-  )
 
 const initializeTradingView = (TradingViewObj: any, theme: DefaultTheme, localeCode: string, opts: any) => {
   let timezone = 'Etc/UTC'

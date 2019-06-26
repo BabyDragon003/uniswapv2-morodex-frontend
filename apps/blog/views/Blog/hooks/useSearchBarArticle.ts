@@ -3,16 +3,11 @@ import { getArticle } from 'views/Blog/hooks/getArticle'
 import { ArticleDataType } from 'views/Blog/utils/transformArticle'
 
 interface SearchBarArticle {
-    const result = await getArticle({
-      url: '/articles',
-      urlParamsObject: {
-        ...(searchKey && { _q: searchKey }),
-        locale: 'all',
-        populate: 'categories,image',
-        sort: 'createAt:desc',
-        pagination: {
-          limit: 10,
-        },
+  isFetching: boolean
+  articlesData: ArticleDataType[]
+}
+
+const useSearchBarArticle = (searchKey: string): SearchBarArticle => {
       },
     })
 

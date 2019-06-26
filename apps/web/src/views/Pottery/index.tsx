@@ -3,6 +3,12 @@ import { createPortal } from 'react-dom'
 import { PageMeta } from 'components/Layout/Page'
 import { Box } from '@pancakeswap/uikit'
 import { usePotteryFetch } from 'state/pottery/hook'
+import Banner from 'views/Pottery/components/Banner/index'
+import Pot from 'views/Pottery/components/Pot/index'
+import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
+import FinishedRounds from './components/FinishedRounds'
+import HowToPlay from './components/HowToPlay'
+import PrizeFunds from './components/PrizeFunds'
 import FAQ from './components/FAQ'
 
 const Pottery: React.FC<React.PropsWithChildren> = () => {
