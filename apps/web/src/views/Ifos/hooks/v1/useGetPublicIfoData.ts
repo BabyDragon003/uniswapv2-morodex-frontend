@@ -8,16 +8,11 @@ import { multicallv2 } from 'utils/multicall'
 import ifoV1Abi from 'config/abi/ifoV1.json'
 import { PublicIfoData } from '../../types'
 import { getStatus } from '../helpers'
-    secondsUntilStart: 0,
-    progress: 5,
-    secondsUntilEnd: 0,
-    startBlockNum: 0,
-    endBlockNum: 0,
-    numberPoints: null,
-    thresholdPoints: undefined,
-    [PoolIds.poolUnlimited]: {
-      raisingAmountPool: BIG_ZERO,
-      totalAmountPool: BIG_ZERO,
+
+/**
+ * Gets all public data of an IFO
+ */
+const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
       offeringAmountPool: BIG_ZERO, // Not know
       limitPerUserInLP: BIG_ZERO, //  Not used
       taxRate: 0, //  Not used

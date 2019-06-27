@@ -8,16 +8,11 @@ import { ChevronUpIcon } from "../Svg";
 const FixedContainer = styled.div`
   position: fixed;
   right: 5%;
-    });
-  }, []);
+  bottom: calc(110px + env(safe-area-inset-bottom));
+`;
 
-  useEffect(() => {
-    const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 700) {
-        setVisible(true);
-      } else if (scrolled <= 700) {
-        setVisible(false);
+const ScrollToTopButton = () => {
+  const [visible, setVisible] = useState(false);
       }
     };
 

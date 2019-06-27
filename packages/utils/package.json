@@ -8,3 +8,5 @@
   "dependencies": {
     "@pancakeswap/tokens": "*",
     "@pancakeswap/sdk": "*"
+  }
+}

@@ -13,13 +13,3 @@ export const getStatus = (currentBlock: number, startBlock: number, endBlock: nu
 
   if (currentBlock >= startBlock && currentBlock <= endBlock) {
     return 'live'
-  }
-
-  if (currentBlock > endBlock) {
-    return 'finished'
-  }
-
-  return 'idle'
-}
-
-export default null

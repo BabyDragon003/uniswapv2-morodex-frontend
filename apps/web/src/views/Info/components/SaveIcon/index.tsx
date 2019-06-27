@@ -8,14 +8,9 @@ const HoverIcon = styled.div`
   justify-content: center;
   align-items: center;
   :hover {
-    <HoverIcon {...rest}>
-      {fill ? (
-        <StarFillIcon stroke={theme.colors.warning} color={theme.colors.warning} />
-      ) : (
-        <StarLineIcon stroke={theme.colors.textDisabled} />
-      )}
-    </HoverIcon>
-  )
-}
+    cursor: pointer;
+    opacity: 0.6;
+  }
+`
 
 export default SaveIcon

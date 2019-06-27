@@ -8,6 +8,17 @@ import {
   IconButton,
   ChevronUpIcon,
   ChevronDownIcon,
+} from '@pancakeswap/uikit'
+
+interface CollapsibleCardProps extends CardProps {
+  initialOpenState?: boolean
+  title: string
+}
+
+const CollapsibleCard: React.FC<React.PropsWithChildren<CollapsibleCardProps>> = ({
+  initialOpenState = true,
+  title,
+  children,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState)

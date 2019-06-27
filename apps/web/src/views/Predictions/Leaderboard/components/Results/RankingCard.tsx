@@ -8,16 +8,11 @@ import {
   LaurelLeftIcon,
   LaurelRightIcon,
   Link,
-import { useStatModalProps } from 'state/predictions/hooks'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
-import WalletStatsModal from '../WalletStatsModal'
-import { NetWinningsRow, Row } from './styles'
-
-interface RankingCardProps {
-  rank: 1 | 2 | 3
-  user: PredictionUser
-}
-
+  Text,
+  SubMenu,
+  SubMenuItem,
+  useModal,
+} from '@pancakeswap/uikit'
 const RotatedLaurelLeftIcon = styled(LaurelLeftIcon)`
   transform: rotate(30deg);
 `

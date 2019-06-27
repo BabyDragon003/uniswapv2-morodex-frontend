@@ -8,6 +8,17 @@ import { WNATIVE, NATIVE } from '../constants'
  */
 export class Native extends NativeCurrency {
   protected constructor({
+    chainId,
+    decimals,
+    name,
+    symbol,
+  }: {
+    chainId: number
+    decimals: number
+    symbol: string
+    name: string
+  }) {
+    super(chainId, decimals, symbol, name)
   }
 
   public get wrapped(): Token {

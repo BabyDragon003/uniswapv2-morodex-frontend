@@ -8,16 +8,11 @@ import {
   RowBetween,
   RowFixed,
   Text,
-interface ConfirmRemoveLiquidityModalProps {
-  title: string
-  customOnDismiss: () => void
-  attemptingTxn: boolean
-  pair?: Pair
-  hash: string
-  parsedAmounts: {
-    [Field.LIQUIDITY_PERCENT]: Percent
-    [Field.LIQUIDITY]?: CurrencyAmount<Token>
-    [Field.CURRENCY_A]?: CurrencyAmount<Currency>
+  TransactionErrorContent,
+  ConfirmationModalContent,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
     [Field.CURRENCY_B]?: CurrencyAmount<Currency>
   }
   onRemove: () => void

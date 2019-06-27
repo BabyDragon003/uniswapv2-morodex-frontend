@@ -8,16 +8,11 @@ import NotEnoughTokensModal from '../../Modals/NotEnoughTokensModal'
 
 const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
   currentBalance,
-
-  const [openAddAmountModal] = useModal(
-    <AddAmountModal
-      currentLockedAmount={currentLockedAmount}
-      currentBalance={currentBalance}
-      stakingToken={stakingToken}
-      lockStartTime={lockStartTime}
-      lockEndTime={lockEndTime}
-      stakingTokenBalance={stakingTokenBalance}
-    />,
+  stakingToken,
+  currentLockedAmount,
+  lockEndTime,
+  lockStartTime,
+  stakingTokenBalance,
     true,
     true,
     'AddAmountModal',

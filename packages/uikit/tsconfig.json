@@ -8,3 +8,8 @@
     "strict": true,
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,

@@ -8,16 +8,11 @@ import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'ne
 import { WagmiProvider } from '@pancakeswap/wagmi'
 import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
-  children,
-  store,
-}) => {
+
+const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
+  const { resolvedTheme } = useNextTheme()
   return (
-    <WagmiProvider client={client}>
-      <Provider store={store}>
-        <NextThemeProvider>
-          <StyledUIKitProvider>
-            <LanguageProvider>
-              <SWRConfig
+    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : light} {...props}>
                 value={{
                   use: [fetchStatusMiddleware],
                 }}

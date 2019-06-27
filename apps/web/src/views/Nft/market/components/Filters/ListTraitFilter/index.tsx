@@ -8,6 +8,17 @@ import {
   Flex,
   IconButton,
   InlineMenu,
+  Input,
+  InputGroup,
+  SearchIcon,
+  CloseIcon,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import orderBy from 'lodash/orderBy'
+import { useGetNftFilters } from 'state/nftMarket/hooks'
+import { useNftStorage } from 'state/nftMarket/storage'
+import styled from 'styled-components'
+import { Item } from './types'
 import { FilterButton, ListOrderState, SearchWrapper } from '../ListFilter/styles'
 import { TraitItemRow } from './styles'
 

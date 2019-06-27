@@ -13,22 +13,6 @@ import {
 } from '@pancakeswap/uikit'
 import { Activity, NftToken } from 'state/nftMarket/types'
 import { Price, Currency } from '@pancakeswap/sdk'
-import { getBlockExploreLink, isAddress } from 'utils'
-import ProfileCell from 'views/Nft/market/components/ProfileCell'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import MobileModal from './MobileModal'
-import ActivityPrice from './ActivityPrice'
-import ActivityEventText from './ActivityEventText'
-import { nftsBaseUrl, pancakeBunniesAddress } from '../../constants'
-import NFTMedia from '../NFTMedia'
-
-interface ActivityRowProps {
-  activity: Activity
-  nft: NftToken
-  bnbBusdPrice: Price<Currency, Currency>
-  isUserActivity?: boolean
-  isNftActivity?: boolean
-}
 
 const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
   activity,

@@ -8,16 +8,11 @@ import {
   clearAllTransactions,
   finalizeTransaction,
   SerializableTransactionReceipt,
-  approval?: { tokenAddress: string; spender: string }
-  type?: TransactionType
-  order?: Order
-  summary?: string
-  translatableSummary?: { text: string; data?: Record<string, string | number> }
-  claim?: { recipient: string }
-  receipt?: SerializableTransactionReceipt
-  lastCheckedBlockNumber?: number
-  addedTime: number
-  confirmedTime?: number
+  TransactionType,
+  clearAllChainTransactions,
+  NonBscFarmTransactionType,
+  FarmTransactionStatus,
+} from './actions'
   from: string
   nonBscFarm?: NonBscFarmTransactionType
 }

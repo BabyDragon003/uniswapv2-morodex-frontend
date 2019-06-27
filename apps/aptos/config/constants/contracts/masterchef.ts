@@ -8,16 +8,11 @@ export const MASTERCHEF_MODULE_NAME = 'masterchef' as const
 export type MasterchefAddPoolArgs = [bigint | string, boolean, boolean]
 
 export const masterchefAddPool = (
-export type MasterchefDepositArgs = [bigint | string]
-
-export const masterchefDeposit = (
-  args: MasterchefDepositArgs,
+  args: MasterchefAddPoolArgs,
   typeArgs: [string],
 ): Types.TransactionPayload_EntryFunctionPayload => {
   return {
     type: 'entry_function_payload',
-    type_arguments: typeArgs,
-    arguments: args,
     function: `${ADDRESS}::${MASTERCHEF_MODULE_NAME}::deposit`,
   }
 }

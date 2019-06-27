@@ -13,4 +13,3 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   );
 };
 
-export default Icon;

@@ -8,6 +8,17 @@ import { formatAmount } from 'utils/formatInfoNumbers'
 import { ChartEntry, TokenData, PriceChartEntry } from 'state/info/types'
 import { fromUnixTime } from 'date-fns'
 import dynamic from 'next/dynamic'
+
+const CandleChart = dynamic(() => import('../CandleChart'), {
+  ssr: false,
+})
+
+enum ChartView {
+  LIQUIDITY,
+  VOLUME,
+  PRICE,
+}
+
 interface ChartCardProps {
   variant: 'pool' | 'token'
   chartData: ChartEntry[]

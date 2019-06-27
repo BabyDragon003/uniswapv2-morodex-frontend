@@ -8,16 +8,11 @@ import {
   StyledBunnyAccessoriesContainer,
   StyledBunnyAccessory,
   StyledEventDescriptionSectionContainer,
-        alignItems={['flex-end', null, 'center', null]}
-        flexDirection={['column', null, null, 'row']}
-        pt={['64px', null, '104px']}
-        pb="60px"
-      >
-        <Flex
-          flex={1}
-          order={[2, null, null, 1]}
-          flexDirection="column"
-          mr={[null, null, null, '64px']}
+} from './styles'
+
+const EventDescriptionSection = () => {
+  const { t } = useTranslation()
+
           alignSelf={['flex-start', null, null, 'center']}
           width={['100%', null, null, '50%']}
         >

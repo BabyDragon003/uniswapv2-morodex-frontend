@@ -8,6 +8,17 @@ import { useConfig } from '../../context/ConfigProvider'
 
 interface RoundResultProps extends BoxProps {
   round: Round
+}
+
+const RoundResult: React.FC<React.PropsWithChildren<RoundResultProps>> = ({ round, children, ...props }) => {
+  const { displayedDecimals } = useConfig()
+  const { lockPrice, closePrice, totalAmount } = round
+  const betPosition = closePrice > lockPrice ? BetPosition.BULL : BetPosition.BEAR
+  const isPositionUp = betPosition === BetPosition.BULL
+  const { t } = useTranslation()
+  const priceDifference = closePrice - lockPrice
+
+  return (
     <RoundResultBox betPosition={betPosition} {...props}>
       <Text color="textSubtle" fontSize="12px" bold textTransform="uppercase" mb="8px">
         {t('Closed Price')}

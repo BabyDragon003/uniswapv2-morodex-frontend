@@ -13,17 +13,3 @@ const AchievementTitle: React.FC<React.PropsWithChildren<AchievementTitleProps>>
     return (
       <Text bold {...props}>
         {title}
-      </Text>
-    )
-  }
-
-  const { key, data = {} } = title
-
-  return (
-    <Text bold {...props}>
-      {t(key, data)}
-    </Text>
-  )
-}
-
-export default AchievementTitle

@@ -8,16 +8,11 @@ import { VaultKey, DeserializedLockedCakeVault, DeserializedCakeVault } from 'st
 import styled from 'styled-components'
 import { Token } from '@pancakeswap/sdk'
 
-
-interface CakeVaultProps extends CardProps {
-  pool: Pool.DeserializedPool<Token>
-  showStakedOnly: boolean
-  defaultFooterExpanded?: boolean
-  showICake?: boolean
-  showSkeleton?: boolean
-}
-
-interface CakeVaultDetailProps {
+import CardFooter from '../PoolCard/CardFooter'
+import { VaultPositionTagWithLabel } from '../Vault/VaultPositionTag'
+import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
+import RecentCakeProfitRow from './RecentCakeProfitRow'
+import { StakingApy } from './StakingApy'
   isLoading?: boolean
   account: string
   pool: Pool.DeserializedPool<Token>

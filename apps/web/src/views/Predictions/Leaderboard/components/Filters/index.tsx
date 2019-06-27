@@ -8,6 +8,17 @@ import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import AddressSearch from '../AddressSearch'
 
 const SearchWrapper = styled(Box)`
+  position: relative;
+  margin-bottom: 8px;
+  order: 1;
+  width: 100%;
+  z-index: 2;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin-bottom: 0;
+    order: 2;
+    width: 320px;
+  }
 `
 const FilterWrapper = styled(Box)`
   position: relative;

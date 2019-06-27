@@ -8,16 +8,11 @@ import invariant from 'tiny-invariant'
  */
 export interface TradeOptions {
   /**
+   * How much the execution price is allowed to move unfavorably from the trade execution price.
    */
-  recipient: string
-
+  allowedSlippage: Percent
   /**
-   * Whether any of the tokens in the path are fee on transfer tokens, which should be handled with special methods
-   */
-  feeOnTransfer?: boolean
-}
-
-export interface TradeOptionsDeadline extends Omit<TradeOptions, 'ttl'> {
+   * How long the swap is valid until it expires, in seconds.
   /**
    * When the transaction expires.
    * This is an atlernate to specifying the ttl, for when you do not want to use local time.

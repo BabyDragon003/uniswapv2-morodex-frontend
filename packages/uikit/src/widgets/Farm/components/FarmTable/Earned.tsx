@@ -8,6 +8,17 @@ interface EarnedPropsWithLoading extends FarmTableEarnedProps {
 
 const Amount = styled.span<{ earned: number }>`
   color: ${({ earned, theme }) => (earned ? theme.colors.text : theme.colors.textDisabled)};
+  display: flex;
+  align-items: center;
+`;
+
+const Earned: React.FunctionComponent<React.PropsWithChildren<EarnedPropsWithLoading>> = ({
+  earnings,
+  userDataReady,
+}) => {
+  const amount = earnings > 0 ? earnings : 0;
+
+  if (userDataReady) {
     return <Amount earned={amount}>{amount.toLocaleString()}</Amount>;
   }
   return (

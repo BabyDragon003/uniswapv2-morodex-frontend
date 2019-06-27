@@ -8,6 +8,17 @@ type PreEventProps = {
   userStatus: UserStatusEnum
   totalTicketsDistributed: number
   maxSupply: number
+  totalSupplyMinted: number
+}
+
+const saleProgressTextMapping = (t: ContextApi['t'], saleStatus: SaleStatusEnum, remaining: string, total: string) => {
+  const data = {
+    remaining,
+    total,
+  }
+
+  switch (saleStatus) {
+    case SaleStatusEnum.Pending:
     case SaleStatusEnum.Premint:
       return ''
     case SaleStatusEnum.Presale:

@@ -8,6 +8,8 @@ import CollectionTraits from './CollectionTraits'
 const Traits = () => {
   const collectionAddress = useRouter().query.collectionAddress as string
 
-}
-
-export default Traits
+  return (
+    <>
+      <Container py="40px">
+        {isAddress(collectionAddress) === pancakeBunniesAddress ? (
+          <PancakeBunniesTraits collectionAddress={collectionAddress} />

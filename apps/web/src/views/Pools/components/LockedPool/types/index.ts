@@ -8,6 +8,17 @@ type VoidFn = () => void
 
 export type PrepConfirmArg = (arg: ValidatorArg) => ValidatorReturn
 
+export interface GenericModalProps {
+  onDismiss?: VoidFn
+  stakingToken: Token
+  currentBalance: BigNumber
+  stakingTokenBalance: BigNumber
+}
+
+export interface ValidatorArg {
+  duration: number
+}
+
 export interface ValidatorReturn {
   finalLockedAmount?: number
   finalDuration?: number

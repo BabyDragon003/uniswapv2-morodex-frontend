@@ -8,6 +8,17 @@ export const isAccountAddress = (addr: string): addr is Address => {
     )
   } catch (error) {
     return false
+  }
+}
+
+export const isStructTag = (structTag: string) => {
+  try {
+    // Type args are not supported in string literal
+    if (structTag.includes('<')) {
+      throw new Error('Not implemented')
+    }
+
+    const parts = structTag.split('::').filter(Boolean)
     if (parts.length !== 3) {
       throw new Error('Invalid struct tag string literal.')
     }

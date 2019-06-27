@@ -13,22 +13,6 @@ export const isLockedEnd = ({ userShares, locked, lockEndTime }: VaultPositionPa
   Date.now() >= parseInt(lockEndTime) * 1000 &&
   Date.now() <= new Date(parseInt(lockEndTime) * 1000).getTime() + UNLOCK_FREE_DURATION * 1000
 
-export const isAfterBurning = ({ userShares, locked, lockEndTime }: VaultPositionParams): boolean =>
-  lockEndTime &&
-  lockEndTime !== '0' &&
-  isLocked({ userShares, locked }) &&
-  Date.now() > new Date(parseInt(lockEndTime) * 1000).getTime() + UNLOCK_FREE_DURATION * 1000
-
-export enum VaultPosition {
-  None,
-  Flexible,
-  Locked,
-  LockedEnd,
-  AfterBurning,
-}
-
-export type VaultPositionParams = { userShares?: BigNumber; locked?: boolean; lockEndTime?: string }
-
 export const getVaultPosition = (params: VaultPositionParams): VaultPosition => {
   if (isAfterBurning(params)) {
     return VaultPosition.AfterBurning

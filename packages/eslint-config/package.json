@@ -8,12 +8,8 @@
   ],
   "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/eslint-config-pancake",
   "license": "MIT",
-  },
-  "peerDependencies": {
-    "eslint": "^8.32.0",
-    "prettier": "^2.8.3"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
-}
+  "author": "RabbitDoge",
+  "private": true,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",

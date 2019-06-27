@@ -13,22 +13,6 @@ import fetchTokenChartData from 'state/info/queries/tokens/chartData'
 import fetchPoolsForToken from 'state/info/queries/tokens/poolsForToken'
 import fetchTokenPriceData from 'state/info/queries/tokens/priceData'
 import { fetchAllTokenData, fetchAllTokenDataByAddresses } from 'state/info/queries/tokens/tokenData'
-import fetchTokenTransactions from 'state/info/queries/tokens/transactions'
-import { Block, Transaction } from 'state/info/types'
-import { SWRConfiguration } from 'swr'
-import useSWRImmutable from 'swr/immutable'
-import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
-import { getAprsForStableFarm } from 'utils/getAprsForStableFarm'
-import { useBlockFromTimeStampSWR } from 'views/Info/hooks/useBlocksFromTimestamps'
-import { checkIsStableSwap, MultiChainName } from './constant'
-import { ChartEntry, PoolData, PriceChartEntry, ProtocolData, TokenData } from './types'
-
-// Protocol hooks
-
-const refreshIntervalForInfo = 15000 // 15s
-const SWR_SETTINGS_WITHOUT_REFETCH = {
-  errorRetryCount: 3,
-  errorRetryInterval: 3000,
 }
 const SWR_SETTINGS: SWRConfiguration = {
   refreshInterval: refreshIntervalForInfo,

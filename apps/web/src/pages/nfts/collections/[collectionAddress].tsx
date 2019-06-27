@@ -8,6 +8,17 @@ const CollectionPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getSta
   return (
     <SWRConfig
       value={{
+        fallback,
+      }}
+    >
+      <CollectionPageRouter />
+    </SWRConfig>
+  )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    fallback: true,
     paths: [],
   }
 }

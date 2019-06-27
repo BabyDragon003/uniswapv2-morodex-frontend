@@ -13,22 +13,6 @@ const showConfetti = () => {
     spread: 350,
     origin: {
       x: 0.5,
-      y: 0.3,
-    },
-  })
-}
-
-const ClaimNftModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ onDismiss }) => {
-  const { t } = useTranslation()
-  const [isClaiming, setIsClaiming] = useState(false)
-  const bunnyXmasContract = useBunnySpecialXmasContract()
-  const { toastSuccess, toastError } = useToast()
-
-  const claimNft = async () => {
-    try {
-      setIsClaiming(true)
-      await bunnyXmasContract.mintNFT()
-      toastSuccess(t('Your NFT has been sent to your wallet'))
       onDismiss?.()
     } catch (error: any) {
       const errorDescription = `${error.message} - ${error.data?.message}`

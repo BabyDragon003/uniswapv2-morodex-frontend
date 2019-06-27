@@ -8,6 +8,17 @@ const mainTicketAnimation = keyframes`
     transform: rotate(0deg);
   }
   50% {
+    transform: rotate(6deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }  
+`
+
+const TicketContainer = styled(Flex)`
+  animation: ${mainTicketAnimation} 3s ease-in-out infinite;
+`
+const TicketSvgWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;

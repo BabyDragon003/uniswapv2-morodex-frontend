@@ -8,6 +8,17 @@ import { TimelineProps, EventStatus } from "./types";
 
 type getTextColorProps = {
   eventStatus: EventStatus;
+  useDark: boolean;
+};
+
+const getTextColor = ({ eventStatus, useDark }: getTextColorProps): keyof Colors => {
+  if (eventStatus === "upcoming") return useDark ? "textDisabled" : (lightColors.textDisabled as keyof Colors);
+  if (eventStatus === "live") return "success";
+  return useDark ? "textSubtle" : (lightColors.textSubtle as keyof Colors);
+};
+
+const Timeline: React.FC<React.PropsWithChildren<TimelineProps>> = ({ events, useDark = true }) => {
+  return (
     <TimelineContainer>
       {events.map(({ text, status, altText, infoText }) => {
         const isUpcoming = status === "upcoming";

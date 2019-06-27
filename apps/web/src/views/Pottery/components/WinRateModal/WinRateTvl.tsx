@@ -13,22 +13,6 @@ const StyledBox = styled(Box)`
 `
 
 interface TvlType {
-  title: string | JSX.Element
-  multiply: number
-}
-
-const tvlArray: TvlType[] = [
-  { title: <Trans>Current</Trans>, multiply: 1 },
-  { title: '+25%', multiply: 1.25 },
-  { title: '+50%', multiply: 1.5 },
-  { title: '+100%', multiply: 2 },
-]
-
-interface WinRateTvlProps {
-  calculatorState: WinRateCalculatorState
-  totalLockValue: number
-  totalLockValueAsUSD: number
-  setMultiplyNumber: (multiply: number) => void
 }
 
 const WinRateTvl: React.FC<React.PropsWithChildren<WinRateTvlProps>> = ({

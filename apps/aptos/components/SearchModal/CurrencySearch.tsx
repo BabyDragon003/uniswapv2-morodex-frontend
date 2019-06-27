@@ -8,6 +8,17 @@ import useNativeCurrency from 'hooks/useNativeCurrency'
 import { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { APTOS_COIN } from '@pancakeswap/awgmi'
 import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { FixedSizeList } from 'react-window'
+import { useAllLists, useInactiveListUrls } from 'state/lists/hooks'
+import { useAudioPlay } from 'state/user'
+
+import { useAllTokens, useIsUserAddedToken, useToken } from '../../hooks/Tokens'
+import CommonBases from './CommonBases'
+import CurrencyList from './CurrencyList'
+import { createFilterToken, useSortedTokensByQuery } from './filtering'
+import ImportRow from './ImportRow'
+import useTokenComparator from './sorting'
+import { getSwapSound } from './swapSound'
 
 interface CurrencySearchProps {
   selectedCurrency?: Currency | null

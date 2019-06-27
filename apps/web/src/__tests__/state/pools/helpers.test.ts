@@ -14,22 +14,6 @@ describe('transformUserData', () => {
         stakedBalance: new BigNumber(0),
         pendingReward: new BigNumber(0),
       },
-      {
-        allowance: 0,
-        stakingTokenBalance: 0,
-        stakedBalance: 0,
-        pendingReward: 0,
-      },
-      {
-        allowance: '0',
-        stakingTokenBalance: '0',
-        stakedBalance: '0',
-        pendingReward: '0',
-      },
-      {
-        allowance: '0',
-        stakingTokenBalance: '0',
-      },
       {},
       {
         randomKey: 1,

@@ -8,3 +8,8 @@ export const useFarmCProxyAddress = (account?: string, chainId?: number) => {
   const { data } = useSWR(account && chainId && ['cProxyAddress', account, chainId], async () =>
     fetchCProxyAddress(account, multiCallChainId),
   )
+
+  return {
+    cProxyAddress: data,
+  }
+}

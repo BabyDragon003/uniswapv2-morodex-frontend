@@ -8,16 +8,11 @@ export interface WrapperProps extends SpaceProps, HTMLAttributes<HTMLDivElement>
 }
 
 export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement>, SpaceProps {
-  DEFAULT: "default",
-  INVERTED: "inverted",
-} as const;
-
-export type Variant = (typeof variants)[keyof typeof variants];
-
-export interface TokenPairImageProps extends BoxProps {
-  primarySrc: string;
-  secondarySrc: string;
-  variant?: Variant;
+  width: number;
+  height: number;
+  wrapperProps?: WrapperProps;
+  fallbackSrc?: string;
+}
   height: number;
   width: number;
   primaryImageProps?: Omit<ImageProps, "width" | "height">;

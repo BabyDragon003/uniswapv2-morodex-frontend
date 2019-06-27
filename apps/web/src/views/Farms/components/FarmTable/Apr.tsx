@@ -13,22 +13,6 @@ export interface AprProps {
   lpLabel: string
   lpSymbol: string
   lpRewardsApr: number
-  lpTokenPrice: BigNumber
-  tokenAddress?: string
-  quoteTokenAddress?: string
-  cakePrice: BigNumber
-  originalValue: number
-  hideButton?: boolean
-  strikethrough?: boolean
-  useTooltipText?: boolean
-  boosted?: boolean
-  stableSwapAddress?: string
-  stableLpFee?: number
-}
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
   color: ${({ theme }) => theme.colors.text};
 
   button {

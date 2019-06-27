@@ -8,6 +8,17 @@ import { Colors } from "../../theme";
 export interface Props {
   color?: keyof Colors;
   cakePriceUsd?: number;
+  showSkeleton?: boolean;
+}
+
+const PriceLink = styled.a`
+  display: flex;
+  align-items: center;
+  svg {
+    transition: transform 0.3s;
+  }
+  :hover {
+    svg {
       transform: scale(1.2);
     }
   }

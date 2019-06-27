@@ -13,22 +13,6 @@ import {
   Text,
 } from '@pancakeswap/uikit'
 import Image from 'next/image'
-import Trans from 'components/Trans'
-import { Tiers, PrizesConfig } from 'config/constants/trading-competition/prizes'
-import { useTranslation } from '@pancakeswap/localization'
-import { useState } from 'react'
-import { BoldTd, Td, StyledPrizeTable } from '../../StyledPrizeTable'
-
-const COLOR_GOLD = '#FFBF33'
-const COLOR_SILVER = '#C1C1C1'
-const COLOR_BRONZE = '#E79559'
-const COLOR_PURPLE = '#A57CFD'
-const COLOR_TEAL = '#4CD2DD'
-
-const tierStyleMap = {
-  [Tiers.GOLD]: {
-    icon: MedalGoldIcon,
-    label: {
       text: <Trans>Gold</Trans>,
     },
     color: COLOR_GOLD,

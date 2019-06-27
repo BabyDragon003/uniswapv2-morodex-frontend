@@ -8,16 +8,11 @@ export interface TimerProps {
   suffix?: string
   minutes?: number
   hours?: number
-  }
-`
-
-const Timer = ({ minutes, hours, days, showTooltip, HeadingTextComponent, BodyTextComponent }) => {
-  const { t } = useTranslation()
-
-  return (
-    <StyledTimerFlex alignItems="flex-end" showTooltip={showTooltip}>
-      {Boolean(days) && (
-        <>
+  days?: number
+  showTooltip?: boolean
+  blockNumber?: number
+  HeadingTextComponent?: React.ElementType
+  BodyTextComponent?: React.ElementType
           <HeadingTextComponent mr="2px">{days}</HeadingTextComponent>
           <BodyTextComponent mr="16px">{t('d')}</BodyTextComponent>
         </>

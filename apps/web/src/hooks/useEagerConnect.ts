@@ -13,13 +13,3 @@ const useEagerConnect = () => {
       // @ts-ignore
       !window.cy
     ) {
-      connectAsync({ connector: connectorInstance }).catch(() => {
-        client.autoConnect()
-      })
-    } else {
-      client.autoConnect()
-    }
-  }, [client, connectAsync, connectors])
-}
-
-export default useEagerConnect

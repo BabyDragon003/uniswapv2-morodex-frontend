@@ -8,3 +8,6 @@
   "private": true,
   "scripts": {},
   "dependencies": {
+    "react": "^18.2.0"
+  }
+}

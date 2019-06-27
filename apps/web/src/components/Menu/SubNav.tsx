@@ -8,6 +8,17 @@ const StyledNav = styled.nav`
   margin-bottom: 40px;
 `
 
+const getActiveIndex = (pathname: string): number => {
+  if (
+    pathname.includes('/pool') ||
+    pathname.includes('/create') ||
+    pathname.includes('/add') ||
+    pathname.includes('/remove') ||
+    pathname.includes('/find') ||
+    pathname.includes('/liquidity')
+  ) {
+    return 1
+  }
   return 0
 }
 

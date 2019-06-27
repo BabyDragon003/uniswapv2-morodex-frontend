@@ -8,16 +8,11 @@ import { getFarmConfig } from '../../apps/aptos/config/constants/farms'
 import { CAKE_PID } from '../../apps/aptos/config/constants'
 
 interface AprMap {
-  reserveUSD: string
+  [key: string]: BigNumber
 }
 
-interface FarmsOneWeekData {
-  [key: string]: {
-    updateDate: string
-    usdList: UsdListType[]
-  }
-}
-
+interface SingleFarmResponse {
+  id: string
 const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
 const FETCH_URL = 'https://api.coinmarketcap.com/dexer/v3/platformpage/pair-pages'

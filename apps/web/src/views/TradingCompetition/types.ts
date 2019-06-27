@@ -8,6 +8,17 @@ export interface CompetitionProps extends UserRewardsProps {
   profile?: Profile
   isCompetitionLive?: boolean
   hasCompetitionEnded?: boolean
+  userCanClaimPrizes?: boolean
+  finishedAndPrizesClaimed?: boolean
+  finishedAndNothingToClaim?: boolean
+  isLoading?: boolean
+  onDismiss?: () => void
+  onRegisterSuccess?: () => void
+  onClaimSuccess?: () => void
+  coinDecoration?: React.ReactNode
+}
+
+export interface CompetitionStepProps {
   index?: number
   text?: string
 }

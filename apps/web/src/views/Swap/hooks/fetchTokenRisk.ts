@@ -8,16 +8,11 @@ export const zRiskTokenData = z.object({
   trust_level: z.string(),
   band: zBand,
   scanned_ts: z.string(),
-  '5/5': TOKEN_RISK.VERY_LOW,
-  '4/5': TOKEN_RISK.LOW,
-  '3/5': TOKEN_RISK.MEDIUM,
-  '2/5': TOKEN_RISK.HIGH,
-  '1/5': TOKEN_RISK.VERY_HIGH,
-} as const
+})
 
-export interface RiskTokenInfo {
-  address: string
-  chainId: ChainId
+export const TOKEN_RISK = {
+  VERY_LOW: 0,
+  LOW: 1,
   riskLevel: (typeof TOKEN_RISK)[keyof typeof TOKEN_RISK]
   scannedTs: number
 }

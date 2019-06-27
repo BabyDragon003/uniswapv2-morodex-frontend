@@ -8,3 +8,4 @@ const replaceBrowserHistory = (key: string, value?: string | number | null) => {
   window.history.replaceState({}, '', url)
 }
 
+export default replaceBrowserHistory

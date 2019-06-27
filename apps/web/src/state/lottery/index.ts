@@ -8,6 +8,17 @@ import getUserLotteryData, { getGraphLotteryUser } from './getUserLotteryData'
 import { resetUserState } from '../global/actions'
 
 interface PublicLotteryData {
+  currentLotteryId: string
+  maxNumberTicketsPerBuyOrClaim: string
+}
+
+const initialState: LotteryState = {
+  currentLotteryId: null,
+  isTransitioning: false,
+  maxNumberTicketsPerBuyOrClaim: null,
+  currentRound: {
+    isLoading: true,
+    lotteryId: null,
     status: LotteryStatus.PENDING,
     startTime: '',
     endTime: '',

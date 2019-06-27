@@ -8,16 +8,11 @@ type ZapStyle = "noZap" | "zap";
 interface CurrencyInputPanelProps {
   value: string;
   onUserInput: (value: string) => void;
-  onUserInput,
-  onInputBlur,
-  zapStyle,
-  top,
-  bottom,
-  id,
-  disabled,
-  error,
-  showBridgeWarning,
-}: CurrencyInputPanelProps) {
+  onInputBlur?: () => void;
+  id: string;
+  zapStyle?: ZapStyle;
+  top?: React.ReactNode;
+  bottom?: React.ReactNode;
   return (
     <AtomBox position="relative" id={id}>
       <AtomBox display="flex" alignItems="center" justifyContent="space-between">

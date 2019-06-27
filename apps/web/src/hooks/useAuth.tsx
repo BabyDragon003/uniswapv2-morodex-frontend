@@ -8,6 +8,17 @@ import { useAppDispatch } from 'state'
 import {
   ConnectorNotFoundError,
   SwitchChainError,
+  SwitchChainNotSupportedError,
+  useConnect,
+  useDisconnect,
+  useNetwork,
+} from 'wagmi'
+import { clearUserStates } from '../utils/clearUserStates'
+import { useActiveChainId } from './useActiveChainId'
+import { useSessionChainId } from './useSessionChainId'
+
+const useAuth = () => {
+  const dispatch = useAppDispatch()
   const { connectAsync, connectors } = useConnect()
   const { chain } = useNetwork()
   const { disconnectAsync } = useDisconnect()

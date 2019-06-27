@@ -8,16 +8,11 @@ import {
   BIPS_BASE,
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
   INPUT_FRACTION_AFTER_FEE,
-  return new Percent(JSBI.BigInt(num), BIPS_BASE)
-}
+  ONE_HUNDRED_PERCENT,
+  ROUTER_ADDRESS,
+} from 'config/constants/exchange'
 
-export function calculateSlippageAmount(value: CurrencyAmount<Currency>, slippage: number): [JSBI, JSBI] {
-  if (slippage < 0 || slippage > 10000) {
-    throw Error(`Unexpected slippage value: ${slippage}`)
-  }
-  return [
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 - slippage)), BIPS_BASE),
-    JSBI.divide(JSBI.multiply(value.quotient, JSBI.BigInt(10000 + slippage)), BIPS_BASE),
+import { useActiveChainId } from 'hooks/useActiveChainId'
   ]
 }
 

@@ -8,14 +8,9 @@ export default function splitTypeTag(resourceType) {
   try {
     const parsedTypeTag = new TypeTagParser(resourceType).parseTypeTag()
 
-      `${HexString.fromUint8Array(typeArg1.value.address.address).toShortString()}::${
-        typeArg1.value.module_name.value
-      }::${typeArg1.value.name.value}`,
-      `${HexString.fromUint8Array(typeArg3.value.address.address).toShortString()}::${
-        typeArg3.value.module_name.value
-      }::${typeArg3.value.name.value}`,
-    ]
-  } catch (error) {
-    return []
-  }
+    // If there is 2 args, assume it will be a pair
+    if (_get(parsedTypeTag, 'value.type_args.length', 0) === 2) {
+      return Pair.parseType(resourceType)
+    }
+
 }

@@ -13,4 +13,3 @@ export const ExchangeLayout = ({ children }: React.PropsWithChildren) => {
       {children}
     </Swap.Page>
   )
-}

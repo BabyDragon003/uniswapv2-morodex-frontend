@@ -8,16 +8,11 @@ import TicketNumber from '../TicketNumber'
 import BuyTicketsButton from '../BuyTicketsButton'
 
 const ScrollBox = styled(Box)`
-  const {
-    isTransitioning,
-    currentRound: { status, userTickets },
-  } = useLottery()
-  const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
-
-  return (
-    <>
-      <Flex flexDirection="column">
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" mb="16px">
+  max-height: 300px;
+  overflow-y: scroll;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
           {t('Your tickets')}
         </Text>
         <ScrollBox>

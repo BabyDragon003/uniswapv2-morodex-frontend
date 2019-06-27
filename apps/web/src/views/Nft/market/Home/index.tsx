@@ -8,16 +8,11 @@ import {
   PageHeader,
   NextLinkFromReactRouter,
   PageSection,
-import Collections from './Collections'
-import Newest from './Newest'
-import config from './config'
-
-const Gradient = styled(Box)`
-  background: ${({ theme }) => theme.colors.gradientCardHeader};
-`
-
-const StyledPageHeader = styled(PageHeader)`
-  margin-bottom: -40px;
+} from '@pancakeswap/uikit'
+import { useAccount } from 'wagmi'
+import { useTranslation } from '@pancakeswap/localization'
+import SectionsWithFoldableText from 'components/FoldableSection/SectionsWithFoldableText'
+import { PageMeta } from 'components/Layout/Page'
   padding-bottom: 40px;
 `
 

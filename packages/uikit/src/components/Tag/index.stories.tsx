@@ -8,16 +8,11 @@ import { scales, variants } from "./types";
 export default {
   title: "Components/Tag",
   argTypes: {},
-                  <Tag scale={scale} variant={variant} mr="8px">
-                    {`${capitalize(variant)}: ${scale.toUpperCase()}`}
-                  </Tag>
-                );
-              })}
-              <Tag variant={variant} outline mr="8px">
-                {`${capitalize(variant)} Outline`}
-              </Tag>
-              <Tag variant={variant} outline startIcon={<CommunityIcon />} mr="8px">
-                {`${capitalize(variant)} Icon Left`}
+};
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <Box>
               </Tag>
               <Tag variant={variant} outline endIcon={<RemoveIcon />} mr="8px">
                 {`${capitalize(variant)} Icon Right`}

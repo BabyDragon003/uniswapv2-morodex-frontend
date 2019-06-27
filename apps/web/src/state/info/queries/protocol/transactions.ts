@@ -8,6 +8,17 @@ import { getMultiChainQueryEndPointWithStableSwap, MultiChainName } from '../../
  * Transactions for Transaction table on the Home page
  */
 const GLOBAL_TRANSACTIONS = gql`
+  query overviewTransactions {
+    mints: mints(first: 33, orderBy: timestamp, orderDirection: desc) {
+      id
+      timestamp
+      pair {
+        token0 {
+          id
+          symbol
+        }
+        token1 {
+          id
           symbol
         }
       }

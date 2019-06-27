@@ -8,16 +8,11 @@ import { PageMeta } from 'components/Layout/Page'
 import {
   SmartContractPhases,
   CompetitionPhases,
-import HowToJoin from './components/HowToJoin'
-import BattleCta from './components/BattleCta'
-import { CompetitionPage, BannerFlex } from './styles'
-import FanTokenBattleBanner from './fantoken/components/BattleBanner/FanTokenBattleBanner'
-import FanTokenYourScore from './fantoken/components/YourScore/FanTokenYourScore'
-import FanTokenPrizesInfo from './fantoken/components/PrizesInfo/FanTokenPrizesInfo'
-import FanTokenCakerBunny from './pngs/fan-token-cakers.png'
-import { useTeamInformation } from './useTeamInformation'
-import { useRegistrationClaimStatus } from './useRegistrationClaimStatus'
-import Footer from './Footer'
+  LIVE,
+  FINISHED,
+  CLAIM,
+  OVER,
+  REGISTRATION,
 import TeamRanksSection from './components/TeamRanksSection'
 import PrizesInfoSection from './components/PrizesInfoSection'
 

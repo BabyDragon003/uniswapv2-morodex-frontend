@@ -8,3 +8,6 @@ const poolRelatedQueries = (account) => (query) => {
   const isSmartChef = queryObject?.entity === 'accountResources' && queryObject?.address === SMARTCHEF_ADDRESS
 
   return isBalances || isSmartChef
+}
+
+export default poolRelatedQueries

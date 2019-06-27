@@ -13,20 +13,4 @@ const StyledCell = styled(Pool.BaseCell)`
 `
 
 const AprCell: React.FC<React.PropsWithChildren<AprProps>> = (apr) => {
-  const { t } = useTranslation()
-
-  return (
-    <StyledCell role="cell">
-      <Pool.CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {t('APR')}
-        </Text>
-        <Flex mt="4px">
-          <Apr {...apr} />
-        </Flex>
-      </Pool.CellContent>
-    </StyledCell>
-  )
-}
-
 export default AprCell

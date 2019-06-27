@@ -9,6 +9,17 @@ import { useAllCommonPairs } from 'hooks/Trades'
 import { provider } from 'utils/wagmi'
 import { getBestPriceWithRouter, RequestBody } from 'state/swap/fetch/fetchBestPriceWithRouter'
 
+const NATIVE_CURRENCY_ADDRESS = getAddress('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE')
+
+interface TradeOptions {
+  trader?: string
+  amount: CurrencyAmount<Currency>
+  currency: Currency
+  tradeType: TradeType
+  allCommonPairs: Pair[]
+  maxHops?: number
+}
+
 interface UseTradeOptions {
   maxHops?: number
 }

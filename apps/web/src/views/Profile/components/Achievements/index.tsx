@@ -8,6 +8,17 @@ import ClaimPointsCallout from './ClaimPointsCallout'
 const Achievements: React.FC<
   React.PropsWithChildren<{
     achievements: Achievement[]
+    isLoading: boolean
+    points?: number
+    onSuccess?: () => void
+  }>
+> = ({ achievements, isLoading, points = 0, onSuccess = null }) => {
+  const { t } = useTranslation()
+
+  return (
+    <Card>
+      <CardBody>
+        <IconStatBox icon={PrizeIcon} title={points} subtitle={t('Points')} mb="24px" />
         <Heading as="h4" scale="md" mb="16px">
           {t('Achievements')}
         </Heading>

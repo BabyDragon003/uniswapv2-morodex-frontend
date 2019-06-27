@@ -8,6 +8,17 @@ import nftSaleAbi from 'config/abi/nftSale.json'
 const useEventInfos = ({ refreshCounter, setCallback }) => {
   useEffect(() => {
     const fetchEventInfos = async () => {
+      try {
+        const nftSaleAddress = getNftSaleAddress()
+        const pancakeSquadContract = getPancakeSquadContract()
+
+        const calls = [
+          'maxSupply',
+          'maxPerAddress',
+          'pricePerTicket',
+          'maxPerTransaction',
+          'totalTicketsDistributed',
+          'currentStatus',
           'startTimestamp',
         ].map((method) => ({
           address: nftSaleAddress,

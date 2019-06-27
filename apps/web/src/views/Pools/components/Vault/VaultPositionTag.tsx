@@ -8,16 +8,11 @@ import {
   HotIcon,
   Box,
   FlexGap,
-    variant: 'success',
-  },
-  [VaultPosition.Locked]: {
-    variant: 'secondary',
-  },
-  [VaultPosition.LockedEnd]: {
-    variant: 'secondary',
-    outline: true,
-  },
-  [VaultPosition.AfterBurning]: {
+  FlexGapProps,
+} from '@pancakeswap/uikit'
+import Trans from 'components/Trans'
+import { useTranslation } from '@pancakeswap/localization'
+import { ReactNode, useMemo } from 'react'
     variant: 'failure',
     outline: true,
   },

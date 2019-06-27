@@ -8,16 +8,11 @@ import {
   ColumnCenter,
   InjectedModalProps,
   Link,
-  width: 100%;
-`
-const Section = styled(AutoColumn)`
-  padding: 24px;
-`
-
-const ConfirmedIcon = styled(ColumnCenter)`
-  padding: 24px 0;
-`
-
+  Modal,
+  ModalProps,
+  Spinner,
+  Text,
+} from '@pancakeswap/uikit'
 function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
   const { t } = useTranslation()
   return (

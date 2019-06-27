@@ -13,10 +13,3 @@ const InfoTooltip: React.FC<React.PropsWithChildren<InfoTooltip>> = ({ text, ico
     <Flex {...props} alignItems="center">
       {tooltipVisible && tooltip}
       <Flex ref={targetRef} alignItems="center">
-        <InfoIcon color={iconColor} />
-      </Flex>
-    </Flex>
-  );
-};
-
-export default InfoTooltip;

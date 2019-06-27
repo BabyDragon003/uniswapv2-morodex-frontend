@@ -8,6 +8,17 @@
       },
       {
         "internalType": "address",
+        "name": "_bunnyMintingStationAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_pancakeProfileAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_endBlock",
         "type": "uint256"
       },
       {

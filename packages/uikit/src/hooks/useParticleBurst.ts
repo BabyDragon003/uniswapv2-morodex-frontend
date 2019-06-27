@@ -8,6 +8,17 @@ type ParticleOptions = {
 
 const defaultParticleOptions = {
   size: 30,
+  distance: 500,
+};
+
+const createParticle = (x: number, y: number, imgSrc: string, options: ParticleOptions = {}) => {
+  const { size, distance } = { ...defaultParticleOptions, ...options };
+
+  const particle = document.createElement("particle");
+  document.body.appendChild(particle);
+
+  const width = Math.floor(Math.random() * size + 8);
+  const height = width;
   const destinationX = (Math.random() - 0.5) * distance;
   const destinationY = (Math.random() - 0.5) * distance;
   const rotation = Math.random() * 520;

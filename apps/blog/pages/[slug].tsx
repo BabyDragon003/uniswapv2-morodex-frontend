@@ -8,16 +8,11 @@ import PageMeta from 'components/PageMeta'
 
 export async function getStaticPaths() {
   return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
 
-  const similarArticles = await getArticle({
-    url: '/articles',
-    urlParamsObject: {
-      locale: article.locale,
-      sort: 'createAt:desc',
-      populate: 'categories,image',
-      pagination: { limit: 6 },
-      filters: {
-        id: {
           $not: params,
         },
         categories: {

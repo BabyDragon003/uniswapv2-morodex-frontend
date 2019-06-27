@@ -8,16 +8,11 @@ import { LeaderboardDataItem } from '../../../types'
 const Wrapper = styled.div`
   position: relative;
   display: grid;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.textDisabled};
+  grid-gap: 4px;
 
-  ${({ theme }) => theme.mediaQueries.xs} {
-    grid-template-columns: auto repeat(3, 1fr);
-    grid-gap: 8px;
-
-    svg {
-      height: 65px;
-    }
-  }
-
+  svg {
+    height: 55px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(4, 1fr);
   }

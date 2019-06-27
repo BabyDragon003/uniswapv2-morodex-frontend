@@ -13,22 +13,6 @@ const Icons = {
   warning: WarningIcon,
   danger: ErrorIcon,
   success: CheckmarkCircleFillIcon,
-  primary: InfoFilledIcon,
-};
-
-const MessageContainer = styled.div<MessageProps>`
-  background-color: gray;
-  padding: 16px;
-  border-radius: 16px;
-  border: solid 1px;
-
-  ${space}
-  ${systemVariant({
-    variants,
-  })}
-`;
-
-const Flex = styled.div`
   display: flex;
 `;
 

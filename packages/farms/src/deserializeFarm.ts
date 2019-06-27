@@ -8,6 +8,17 @@ import { deserializeFarmUserData } from './deserializeFarmUserData'
 import { FARM_AUCTION_HOSTING_IN_SECONDS } from './const'
 
 export const deserializeFarm = (
+  farm: SerializedFarm,
+  auctionHostingInSeconds: number = FARM_AUCTION_HOSTING_IN_SECONDS,
+): DeserializedFarm => {
+  const {
+    lpAddress,
+    lpSymbol,
+    pid,
+    vaultPid,
+    dual,
+    multiplier,
+    isCommunity,
     auctionHostingStartSeconds,
     quoteTokenPriceBusd,
     tokenPriceBusd,

@@ -8,16 +8,11 @@ import NoChartAvailable from './NoChartAvailable'
 import PairPriceDisplay from '../../../../components/PairPriceDisplay'
 import { getTimeWindowChange } from './utils'
 
-  currentSwapPrice,
-}) => {
-  const [timeWindow, setTimeWindow] = useState<PairDataTimeWindowEnum>(0)
+const SwapLineChart = dynamic(() => import('./SwapLineChart'), {
+  ssr: false,
+})
 
-  const { pairPrices = [], pairId } = useFetchPairPrices({
-    token0Address,
-    token1Address,
-    timeWindow,
-    currentSwapPrice,
-  })
+const BasicChart = ({
   const [hoverValue, setHoverValue] = useState<number | undefined>()
   const [hoverDate, setHoverDate] = useState<string | undefined>()
   const valueToDisplay = hoverValue || pairPrices[pairPrices.length - 1]?.value

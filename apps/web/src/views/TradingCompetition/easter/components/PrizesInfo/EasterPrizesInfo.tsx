@@ -8,7 +8,8 @@ const Wrapper = styled(Flex)`
 
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
-  )
-}
+    justify-content: center;
+    align-items: center;
+  }
+`
 
-export default EasterPrizesInfo

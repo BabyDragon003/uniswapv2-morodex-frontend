@@ -13,22 +13,6 @@ interface ChoicesProps {
   onChange: (newChoices: ChoiceIdValue[]) => void
 }
 
-export const MINIMUM_CHOICES = 2
-export const makeChoice = (): ChoiceIdValue => ({ id: uniqueId(), value: '' })
-
-const Choices: React.FC<React.PropsWithChildren<ChoicesProps>> = ({ choices, onChange }) => {
-  const { t } = useTranslation()
-  const hasMinimumChoices = choices.filter((choice) => choice.value.length > 0).length >= MINIMUM_CHOICES
-
-  const addChoice = () => {
-    onChange([...choices, makeChoice()])
-  }
-
-  return (
-    <Card>
-      <CardHeader>
-        <Heading as="h3" scale="md">
-          {t('Choices')}
         </Heading>
       </CardHeader>
       <CardBody>
