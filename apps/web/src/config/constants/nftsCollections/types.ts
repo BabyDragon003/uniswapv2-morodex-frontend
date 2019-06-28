@@ -13,3 +13,5 @@ export type PancakeCollection = {
 }
 
 export type PancakeCollections = {
+  [key in PancakeCollectionKey]: PancakeCollection
+}

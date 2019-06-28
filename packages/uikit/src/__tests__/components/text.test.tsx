@@ -18,8 +18,3 @@ it("renders correctly", () => {
         color="text"
         font-size="16px"
       >
-        pancake
-      </div>
-    </DocumentFragment>
-  `);
-});

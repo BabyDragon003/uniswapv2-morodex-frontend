@@ -13,6 +13,22 @@ export const processRawTicketsResponse = (
   if (ticketIds?.length > 0) {
     return ticketIds.map((ticketId, index) => {
       return {
+        id: ticketId.toString(),
+        number: ticketNumbers[index].toString(),
+        status: ticketStatuses[index],
+      }
+    })
+  }
+  return []
+}
+
+export const viewUserInfoForLotteryId = async (
+  account: string,
+  lotteryId: string,
+  cursor: number,
+  perRequestLimit: number,
+): Promise<LotteryTicket[]> => {
+  try {
     const data = await lotteryContract.viewUserInfoForLotteryId(account, lotteryId, cursor, perRequestLimit)
     return processRawTicketsResponse(data)
   } catch (error) {

@@ -13,8 +13,8 @@ interface AprCellProps<T> {
   }>;
 }
 
-        })}
-      </Pool.CellContent>
-    </Pool.BaseCell>
-  );
-}
+export function AprCell<T>({ pool, aprComp }: AprCellProps<T>) {
+  const { t } = useTranslation();
+  const { isMobile } = useMatchBreakpoints();
+  const { userData } = pool;
+  const stakedBalance = userData?.stakedBalance ? new BigNumber(userData.stakedBalance) : BIG_ZERO;

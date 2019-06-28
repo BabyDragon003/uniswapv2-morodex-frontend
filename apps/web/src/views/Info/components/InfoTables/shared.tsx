@@ -13,14 +13,9 @@ export const TableWrapper = styled(Flex)`
   background-color: ${({ theme }) => theme.card.background};
   border-radius: ${({ theme }) => theme.radii[0]};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  padding: 0 20px;
-  :hover {
-    cursor: pointer;
+  ${({ theme }) => theme.mediaQueries.md} {
+    border-radius: ${({ theme }) => theme.radii.card};
   }
 `
 
-export const Break = styled.div`
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.cardBorder};
-  width: 100%;
 `

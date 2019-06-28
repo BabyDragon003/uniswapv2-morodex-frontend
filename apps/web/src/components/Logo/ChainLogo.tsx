@@ -18,6 +18,3 @@ export const ChainLogo = memo(
       )
     }
 
-    return <HelpIcon width={width} height={height} />
-  },
-)

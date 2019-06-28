@@ -13,16 +13,11 @@ class SuspenseWithChunkError extends Component<SuspenseProps, State> {
   static getDerivedStateFromError() {
     // Update state so the next render will show the fallback UI.
     return { hasError: true }
-      return
-    }
-
-    throw error
   }
 
-  render() {
-    const { hasError } = this.state
-    const { fallback } = this.props
-
+  componentDidCatch(error) {
+    const isJsChunkLoadError = error.name === 'ChunkLoadError'
+    const isCssChunkLoadError = error.code === 'CSS_CHUNK_LOAD_FAILED'
     if (hasError) {
       return fallback
     }

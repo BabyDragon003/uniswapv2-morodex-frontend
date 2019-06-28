@@ -13,16 +13,11 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
       stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
         ? `color: ${theme.colors.textSubtle}`
         : null};
-  grid-row-gap: 8px;
-`
-
-interface BnbAmountCellProps {
-  bnbAmount: number
-  isLoading?: boolean
-  isInsufficient?: boolean
-}
-
-export const BnbAmountCell: React.FC<React.PropsWithChildren<BnbAmountCellProps>> = ({
+  }
+  & svg:first-of-type {
+    ${({ stage, theme }) =>
+      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
+        ? `fill: ${theme.colors.textSubtle}`
   bnbAmount,
   isLoading,
   isInsufficient,

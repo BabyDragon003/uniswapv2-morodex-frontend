@@ -13,3 +13,4 @@ describe('Farms Page', () => {
       }
     })
   })
+})

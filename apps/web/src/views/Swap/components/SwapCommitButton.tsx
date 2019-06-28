@@ -13,6 +13,22 @@ import { Field } from 'state/swap/actions'
 import SettingsModal, { withCustomOnDismiss } from 'components/Menu/GlobalSettings/SettingsModal'
 import { SettingsMode } from 'components/Menu/GlobalSettings/types'
 import { useCallback, useEffect, useState } from 'react'
+import Column from 'components/Layout/Column'
+import { useUserSingleHopOnly } from 'state/user/hooks'
+import {
+  BIG_INT_ZERO,
+  ALLOWED_PRICE_IMPACT_HIGH,
+  PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN,
+} from 'config/constants/exchange'
+import { computeTradePriceBreakdown, warningSeverity } from 'utils/exchange'
+import { useSwapCallback } from 'hooks/useSwapCallback'
+import { useSwapCallArguments } from 'hooks/useSwapCallArguments'
+
+import ConfirmSwapModal from './ConfirmSwapModal'
+import ProgressSteps from './ProgressSteps'
+import { SwapCallbackError } from './styleds'
+
+const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
 
 interface SwapCommitButtonPropsType {
   swapIsUnsupported: boolean

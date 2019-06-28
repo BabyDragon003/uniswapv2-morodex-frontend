@@ -13,16 +13,11 @@ import { getStatus } from '../helpers'
  * Gets all public data of an IFO
  */
 const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
-      offeringAmountPool: BIG_ZERO, // Not know
-      limitPerUserInLP: BIG_ZERO, //  Not used
-      taxRate: 0, //  Not used
-      sumTaxesOverflow: BIG_ZERO, //  Not used
-    },
-  })
-  const fetchIfoData = useCallback(
-    async (currentBlock: number) => {
-      const ifoCalls = ['startBlock', 'endBlock', 'raisingAmount', 'totalAmount'].map((method) => ({
-        address,
+  const { address } = ifo
+  const lpTokenPriceInUsd = useLpTokenPrice(ifo.currency.symbol)
+  const [state, setState] = useState({
+    isInitialized: false,
+    status: 'idle' as IfoStatus,
         name: method,
       }))
 

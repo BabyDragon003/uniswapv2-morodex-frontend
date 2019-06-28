@@ -13,6 +13,22 @@ const Page: React.FC<
     helpUrl?: string
   }>
 > = ({
+  children,
+  removePadding = false,
+  hideFooterOnDesktop = false,
+  noMinHeight = false,
+  helpUrl = EXCHANGE_HELP_URLS,
+  ...props
+}) => {
+  const { t } = useTranslation()
+  const { chainId } = useActiveChainId()
+  const isBSC = chainId === ChainId.BSC
+  const externalText = isBSC ? t('Bridge assets to BNB Chain') : ''
+  const externalLinkUrl = isBSC ? 'https://bridge.dapp-frontend-prince.web.app/' : ''
+
+  return (
+    <>
+      <PageMeta />
       <Swap.Page
         removePadding={removePadding}
         noMinHeight={noMinHeight}

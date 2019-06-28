@@ -18,27 +18,6 @@ function TradeSummary({
   const { t } = useTranslation()
   const { priceImpactWithoutFee, realizedLPFee } = computeTradePriceBreakdown(trade)
   const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
-  const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
-
-  const totalFeePercent = `${(TOTAL_FEE * 100).toFixed(2)}%`
-  const lpHoldersFeePercent = `${(LP_HOLDERS_FEE * 100).toFixed(2)}%`
-  const treasuryFeePercent = `${(TREASURY_FEE * 100).toFixed(4)}%`
-  const buyBackFeePercent = `${(BUYBACK_FEE * 100).toFixed(4)}%`
-
-  return (
-    <AutoColumn style={{ padding: '0 16px' }}>
-      <RowBetween>
-        <RowFixed>
-          <Text fontSize="14px" color="textSubtle">
-            {isExactIn ? t('Minimum received') : t('Maximum sold')}
-          </Text>
-          <QuestionHelper
-            text={t(
-              'Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.',
-            )}
-            ml="4px"
-            placement="top-start"
-          />
         </RowFixed>
         <RowFixed>
           <Text fontSize="14px">

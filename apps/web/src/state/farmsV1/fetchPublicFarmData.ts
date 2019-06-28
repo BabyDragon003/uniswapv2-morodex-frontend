@@ -13,6 +13,22 @@ const fetchFarmCalls = (farm: SerializedFarm) => {
       address: token.address,
       name: 'balanceOf',
       params: [lpAddress],
+    },
+    // Balance of quote token on LP contract
+    {
+      address: quoteToken.address,
+      name: 'balanceOf',
+      params: [lpAddress],
+    },
+    // Balance of LP tokens in the master chef contract
+    {
+      address: lpAddress,
+      name: 'balanceOf',
+      params: [getMasterChefV1Address()],
+    },
+    // Total supply of LP tokens
+    {
+      address: lpAddress,
       name: 'totalSupply',
     },
     // Token decimals

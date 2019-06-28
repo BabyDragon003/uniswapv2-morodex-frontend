@@ -13,16 +13,11 @@ const selectIntervalSeconds = (state: PredictionsState) => state.intervalSeconds
 
 export const makeGetBetByEpochSelector = (account: string, epoch: number) =>
   createSelector([selectLedgers], (bets) => {
-export const getRoundsByCloseOracleIdSelector = createSelector([selectRounds], (rounds) => {
-  return Object.keys(rounds).reduce((accum, epoch) => {
-    const parsed = parseBigNumberObj<ReduxNodeRound, NodeRound>(rounds[epoch])
-    return {
-      ...accum,
-      [parsed.closeOracleId]: parsed,
+    if (!bets[account]) {
+      return null
     }
-  }, {}) as { [key: string]: NodeRound }
-})
 
+    if (!bets[account][epoch]) {
 export const getBigNumberRounds = createSelector([selectRounds], (rounds) => {
   return Object.keys(rounds).reduce((accum, epoch) => {
     return {

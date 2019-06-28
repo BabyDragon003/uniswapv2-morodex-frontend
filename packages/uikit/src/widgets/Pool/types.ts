@@ -13,6 +13,22 @@ export enum PoolCategory {
 
 export interface PoolConfigBaseProps {
   sousId: number;
+  contractAddress: Address;
+  poolCategory: PoolCategory;
+  tokenPerBlock: string;
+  isFinished?: boolean;
+  enableEmergencyWithdraw?: boolean;
+  version?: number;
+}
+
+interface GenericToken {
+  decimals: number;
+  symbol: string;
+  address: string;
+}
+
+export interface SerializedPoolConfig<T> extends PoolConfigBaseProps {
+  earningToken: T & GenericToken;
   stakingToken: T & GenericToken;
 }
 

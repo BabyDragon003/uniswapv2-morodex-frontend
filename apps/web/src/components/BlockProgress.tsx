@@ -13,3 +13,5 @@ const BlockProgress: React.FC<React.PropsWithChildren<BlockProgressProps>> = ({ 
 
   return <Progress primaryStep={progress} {...props} />
 }
+
+export default BlockProgress

@@ -13,16 +13,11 @@ import { ContractMethodName, MaybeContract, ContractMethodParams } from 'utils/t
  */
 export const estimateGas = async <C extends Contract = Contract, N extends ContractMethodName<C> = any>(
   contract: MaybeContract<C>,
- * @param contract Used to perform the call
- * @param methodName The name of the method called
- * @param methodArgs An array of arguments to pass to the method
- * @param overrides An overrides object to pass to the method
- * @returns https://docs.ethers.io/v5/api/providers/types/#providers-TransactionReceipt
- */
-export const callWithEstimateGas = async <C extends Contract = Contract, N extends ContractMethodName<C> = any>(
-  contract: MaybeContract<C>,
   methodName: N,
   methodArgs: ContractMethodParams<C, N>,
+  overrides: PayableOverrides = {},
+  gasMarginPer10000: number,
+) => {
   overrides: PayableOverrides = {},
   gasMarginPer10000 = 1000,
 ): Promise<TransactionResponse> => {

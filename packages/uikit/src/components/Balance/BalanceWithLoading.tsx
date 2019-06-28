@@ -13,8 +13,8 @@ interface BalanceProps extends TextProps {
   unit?: string;
   isDisabled?: boolean;
   prefix?: string;
-  }
-  return <Balance {...props} value={finalValue as number} fontSize={fontSize} />;
-};
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+}
 
-export default BalanceWithLoading;
+const BalanceWithLoading: React.FC<
+  React.PropsWithChildren<Omit<BalanceProps, "value"> & { value: string | number }>

@@ -13,16 +13,11 @@ import {
   Spinner,
   useMatchBreakpoints,
   PaginationButton,
-    display: flex;
-    flex-direction: column;
-    ${({ theme }) => theme.mediaQueries.md} {
-      ${({ hasManyPages }) => (hasManyPages ? 'min-height: 850px;' : null)}
-    }
-  }
-`
-
-interface ForSaleTableCardProps {
-  bunnyId: string
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import useTheme from 'hooks/useTheme'
+import { ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import ForSaleTableRows from './ForSaleTableRows'
   nftMetadata: ApiResponseCollectionTokens
   onSuccessSale: () => void
 }

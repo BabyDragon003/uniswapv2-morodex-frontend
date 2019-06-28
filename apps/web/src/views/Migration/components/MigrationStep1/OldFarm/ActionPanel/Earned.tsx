@@ -18,27 +18,6 @@ const Earned: React.FC<React.PropsWithChildren<EarnedProps>> = ({ earnings }) =>
 
   const earningsBigNumber = new BigNumber(earnings)
   const cakePrice = usePriceCakeBusd()
-  let earningsBusd = 0
-  let displayBalance = earnings.toLocaleString()
-
-  // If user didn't connect wallet default balance will be 0
-  if (!earningsBigNumber.isZero()) {
-    earningsBusd = earningsBigNumber.multipliedBy(cakePrice).toNumber()
-    displayBalance = earningsBigNumber.toFixed(3, BigNumber.ROUND_DOWN)
-  }
-
-  if (isMobile) {
-    return (
-      <Flex justifyContent="space-between">
-        <Text>{`CAKE ${t('Earned')}`}</Text>
-        <Flex height="20px" alignItems="center">
-          {Number(displayBalance) ? (
-            <Balance fontSize="16px" value={Number(displayBalance)} />
-          ) : (
-            <Text fontSize="16px">0</Text>
-          )}
-        </Flex>
-      </Flex>
     )
   }
 

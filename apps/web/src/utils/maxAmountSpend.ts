@@ -13,3 +13,5 @@ export function maxAmountSpend(currencyAmount?: CurrencyAmount<Currency>): Curre
     }
     return CurrencyAmount.fromRawAmount(currencyAmount.currency, BIG_INT_ZERO)
   }
+  return currencyAmount
+}
