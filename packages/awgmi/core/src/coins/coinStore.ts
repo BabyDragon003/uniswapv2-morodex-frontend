@@ -18,3 +18,11 @@ export type CoinStoreResult = {
   frozen: boolean
   withdraw_events: {
     counter: string
+    guid: {
+      id: {
+        addr: string
+        creation_num: string
+      }
+    }
+  }
+}

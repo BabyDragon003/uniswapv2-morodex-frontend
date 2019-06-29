@@ -18,16 +18,11 @@ import { transactionErrorToUserReadableMessage } from '../utils/transactionError
 
 export enum SwapCallbackState {
   INVALID,
-// returns a function that will execute a swap, if the parameters are all valid
-// and the user has approved the slippage adjusted input amount for the trade
-export function useSwapCallback(
-  trade: V2TradeAndStableSwap, // trade to execute, required
-  allowedSlippage: number = INITIAL_ALLOWED_SLIPPAGE, // in bips
-  recipientAddress: string | null, // the address of the recipient of the trade, or null if swap should be returned to sender
-  swapCalls: SwapCall[],
-): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
-  const { account, chainId } = useActiveWeb3React()
-  const gasPrice = useGasPrice()
+  LOADING,
+  VALID,
+}
+
+interface SwapCall {
 
   const { t } = useTranslation()
 

@@ -23,32 +23,6 @@ const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({
   claimableAmount,
   fetchUserVestingData,
 }) => {
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const { token } = data.ifo
-  const [isPending, setIsPending] = useState(false)
-  const executeTransaction = useSimulationAndSendTransaction()
-  const ifo = useIfoPool(data.ifo)
-
-  const handleClaim = useCallback(async () => {
-    setIsPending(true)
-
-    const { vestingId } = data.userVestingData[poolId]
-
-    const [raisingCoin, offeringCoin, uid] = splitTypeTag(ifo?.type)
-
-    const vestingScheduleIdInArray: number[] = Array.from(new HexString(vestingId).toUint8Array())
-
-    const payload = ifoRelease([vestingScheduleIdInArray], [raisingCoin, offeringCoin, uid])
-
-    try {
-      const response = await executeTransaction(payload)
-
-      if (response.hash) {
-        toastSuccess(
-          t('Success!'),
-          <ToastDescriptionWithTx txHash={response.hash}>
-            {t('You have successfully claimed available tokens.')}
           </ToastDescriptionWithTx>,
         )
         fetchUserVestingData()

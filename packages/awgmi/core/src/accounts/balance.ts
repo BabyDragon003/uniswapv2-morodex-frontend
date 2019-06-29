@@ -23,6 +23,3 @@ export async function fetchBalance({ address, networkName, coin }: FetchBalanceA
   const { value } = (resource.data as CoinStoreResult).coin
 
   return {
-    value,
-  }
-}

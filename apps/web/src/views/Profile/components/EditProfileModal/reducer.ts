@@ -18,6 +18,27 @@ export type Actions =
 
 export interface State {
   currentView: Views
+  previousView: Views | null
+}
+
+const reducer = (state: State, action: Actions): State => {
+  switch (action.type) {
+    case 'set_view':
+      return {
+        ...state,
+        currentView: action.view,
+        previousView: state.currentView,
+      }
+    case 'go_previous':
+      return {
+        ...state,
+        currentView: state.previousView,
+        previousView: state.currentView,
+      }
+    default:
+      return state
+  }
+}
 
 export interface UseEditProfileResponse extends State {
   goToStart: () => void

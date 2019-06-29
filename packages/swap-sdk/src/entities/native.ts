@@ -18,6 +18,8 @@ export class Native extends NativeCurrency {
     symbol: string
     name: string
   }) {
-    return other.isNative && other.chainId === this.chainId
+    super(chainId, decimals, symbol, name)
   }
-}
+
+  public get wrapped(): Token {
+    const wnative = WNATIVE[this.chainId]

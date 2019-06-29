@@ -18,4 +18,25 @@ const getImageUrlFromToken = (token: Token) => {
   }
   return `/images/tokens/${address}.png`
 }
+
+export const TokenPairImage: React.FC<React.PropsWithChildren<TokenPairImageProps>> = ({
+  primaryToken,
+  secondaryToken,
+  ...props
+}) => {
+  return (
+    <UIKitTokenPairImage
+      primarySrc={getImageUrlFromToken(primaryToken)}
+      secondarySrc={getImageUrlFromToken(secondaryToken)}
+      {...props}
+    />
+  )
+}
+
+interface TokenImageProps extends ImageProps {
+  token: Token
+}
+
+export const TokenImage: React.FC<React.PropsWithChildren<TokenImageProps>> = ({ token, ...props }) => {
+  return <UIKitTokenImage src={getImageUrlFromToken(token)} {...props} />
 }

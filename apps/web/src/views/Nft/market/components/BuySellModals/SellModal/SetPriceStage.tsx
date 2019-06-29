@@ -23,32 +23,6 @@ const MIN_PRICE = 0.005
 const MAX_PRICE = 10000
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
-
-// Stage where user puts price for NFT they're about to put on sale
-// Also shown when user wants to adjust the price of already listed NFT
-const SetPriceStage: React.FC<React.PropsWithChildren<SetPriceStageProps>> = ({
-  nftToSell,
-  variant,
-  lowestPrice,
-  currentPrice,
-  price,
-  setPrice,
-  continueToNextStage,
-}) => {
-  const { t } = useTranslation()
-  const inputRef = useRef<HTMLInputElement>()
-  const adjustedPriceIsTheSame = variant === 'adjust' && parseFloat(currentPrice) === parseFloat(price)
-  const priceIsValid = !price || Number.isNaN(parseFloat(price)) || parseFloat(price) <= 0
-
-  const { creatorFee = '', tradingFee = '' } = useGetCollection(nftToSell.collectionAddress) || {}
-  const creatorFeeAsNumber = parseFloat(creatorFee)
-  const tradingFeeAsNumber = parseFloat(tradingFee)
-  const bnbPrice = useBNBBusdPrice()
-  const priceAsFloat = parseFloat(price)
-  const priceInUsd = multiplyPriceByAmount(bnbPrice, priceAsFloat)
-
-  const priceIsOutOfRange = priceAsFloat > MAX_PRICE || priceAsFloat < MIN_PRICE
-
   const enforcer = (nextUserInput: string) => {
     if (nextUserInput === '' || inputRegex.test(escapeRegExp(nextUserInput))) {
       setPrice(nextUserInput)

@@ -23,32 +23,6 @@ const LiquidityWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Liquidity: React.FunctionComponent<React.PropsWithChildren<FarmTableLiquidityProps>> = ({ liquidity }) => {
-  const displayLiquidity =
-    liquidity && liquidity.gt(0) ? (
-      `$${Number(liquidity).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
-    ) : (
-      <Skeleton width={60} />
-    );
-  const { t } = useTranslation();
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    t("Total value of the funds in this farm’s liquidity pair"),
-    { placement: "top-end", tooltipOffset: [20, 10] }
-  );
-
-  return (
-    <Container>
-      <LiquidityWrapper>
-        <Text>{displayLiquidity}</Text>
-      </LiquidityWrapper>
-      <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
-      </ReferenceElement>
-      {tooltipVisible && tooltip}
     </Container>
   );
 };

@@ -18,6 +18,27 @@ export default {
 };
 
 export const Image: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <div>
+      <Img src="https://via.placeholder.com/800x400" width={800} height={400} alt="test" />
+      <div>Image</div>
+    </div>
+  );
+};
+
+export const Background: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <div>
+      <BackgroundImage src="https://via.placeholder.com/800x400" width={800} height={400} mr="16px" />
+      <div>Background Image</div>
+    </div>
+  );
+};
+
+export const LazyImages: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <Flex flexWrap="wrap">
+      {times(40, (index) => (
         <Img
           key={index}
           src={`https://via.placeholder.com/${150 + index}`}

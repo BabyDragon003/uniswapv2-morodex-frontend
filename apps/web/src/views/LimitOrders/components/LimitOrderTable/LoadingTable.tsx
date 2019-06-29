@@ -23,22 +23,3 @@ const LoadingTable = () => (
           <Skeleton />
         </Td>
         <Td>
-          <Skeleton />
-        </Td>
-      </tr>
-      <tr>
-        <Td>
-          <Skeleton />
-        </Td>
-        <Td>
-          <Skeleton />
-        </Td>
-        <Td>
-          <Skeleton />
-        </Td>
-      </tr>
-    </tbody>
-  </Table>
-)
-
-export default memo(LoadingTable)

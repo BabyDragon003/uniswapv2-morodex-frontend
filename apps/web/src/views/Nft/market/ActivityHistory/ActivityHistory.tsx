@@ -18,16 +18,11 @@ import { sortActivity } from './utils/sortActivity'
 import { fetchActivityNftMetadata } from './utils/fetchActivityNftMetadata'
 
 const MAX_PER_PAGE = 8
-  const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
-  const bnbBusdPrice = useBNBBusdPrice()
-  const { isXs, isSm, isMd } = useMatchBreakpoints()
 
-  const nftActivityFiltersString = JSON.stringify(nftActivityFilters)
+const MAX_PER_QUERY = 100
 
-  useEffect(() => {
-    const fetchCollectionActivity = async () => {
-      try {
-        setIsLoading(true)
+interface ActivityHistoryProps {
+  collection?: Collection
         const nftActivityFiltersParsed = JSON.parse(nftActivityFiltersString)
         const collectionActivity = await getCollectionActivity(
           collectionAddress.toLowerCase(),

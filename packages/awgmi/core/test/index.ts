@@ -23,19 +23,3 @@ class AptosProvider extends AptosClient {
 }
 
 export function getAptosClient() {
-  return new AptosProvider(devnet.nodeUrls.default)
-}
-
-export function setupClient(config: Partial<ClientConfig> = {}) {
-  return createClient({
-    connectors: [
-      new MockConnector({
-        options: {
-          account: getAptosAccounts()[0],
-        },
-      }),
-    ],
-    provider: getDefaultProviders,
-    ...config,
-  })
-}

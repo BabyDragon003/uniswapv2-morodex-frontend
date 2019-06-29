@@ -18,6 +18,27 @@ import {
   Select,
   OptionProps,
   NextLinkFromReactRouter,
+  ToggleView,
+} from '@pancakeswap/uikit'
+import useSWRImmutable from 'swr/immutable'
+import orderBy from 'lodash/orderBy'
+import { getLeastMostPriceInCollection } from 'state/nftMarket/helpers'
+import { ViewMode } from 'state/user/actions'
+import { Collection } from 'state/nftMarket/types'
+import styled from 'styled-components'
+import { FetchStatus } from 'config/constants/types'
+import { useGetShuffledCollections } from 'state/nftMarket/hooks'
+import { useTranslation } from '@pancakeswap/localization'
+import Page from 'components/Layout/Page'
+import { nftsBaseUrl } from 'views/Nft/market/constants'
+import PageLoader from 'components/Loader/PageLoader'
+import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
+import CollectionCardWithVolume from '../components/CollectibleCard/CollectionCardWithVolume'
+
+export const ITEMS_PER_PAGE = 9
+
+const SORT_FIELD = {
+  createdAt: 'createdAt',
   volumeBNB: 'totalVolumeBNB',
   items: 'numberTokensListed',
   supply: 'totalSupply',

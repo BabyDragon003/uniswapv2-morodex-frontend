@@ -18,6 +18,27 @@ const Pottery: React.FC<React.PropsWithChildren> = () => {
   const handleScroll = () => {
     window.scrollTo({
       top: potWrapperEl.current.offsetTop,
+      behavior: 'smooth',
+    })
+  }
+
+  return (
+    <Box position="relative">
+      <PageMeta />
+      <Banner handleScroll={handleScroll} />
+      <Box ref={potWrapperEl}>
+        <Pot />
+      </Box>
+      <FinishedRounds />
+      <HowToPlay />
+      <PrizeFunds />
+      <FAQ />
+      {createPortal(
+        <>
+          <SubgraphHealthIndicator subgraphName="pancakeswap/pottery" />
+        </>,
+        document.body,
+      )}
     </Box>
   )
 }

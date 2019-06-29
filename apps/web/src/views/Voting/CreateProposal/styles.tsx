@@ -18,3 +18,17 @@ export const SecondaryLabel = styled(BaseLabel)`
 `
 
 export const FormError: React.FC<React.PropsWithChildren> = ({ children }) => (
+  <Text color="failure" mb="4px">
+    {children}
+  </Text>
+)
+
+export const FormErrors: React.FC<React.PropsWithChildren<{ errors: string[] }>> = ({ errors }) => {
+  return (
+    <Box mt="8px">
+      {errors.map((error) => {
+        return <FormError key={error}>{error}</FormError>
+      })}
+    </Box>
+  )
+}

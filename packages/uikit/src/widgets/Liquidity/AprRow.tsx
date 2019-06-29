@@ -23,4 +23,3 @@ export default function AprRow({ lpApr7d }: { lpApr7d: number }) {
       </Text>
     </RowBetween>
   );
-}

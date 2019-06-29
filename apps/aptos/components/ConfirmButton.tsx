@@ -18,3 +18,17 @@ export const ConfirmButton: React.FC<React.PropsWithChildren<ConfirmButtonProps>
   isConfirming,
   isConfirmDisabled,
   onConfirm,
+}) => {
+  const { t } = useTranslation()
+
+  return (
+    <Button
+      onClick={onConfirm}
+      disabled={isConfirmDisabled}
+      isLoading={isConfirming}
+      endIcon={isConfirming ? spinnerIcon : undefined}
+    >
+      {isConfirming ? t('Confirming') : t('Confirm')}
+    </Button>
+  )
+}

@@ -23,32 +23,6 @@ import {
   makeFarmFromPidSelector,
   makeLpTokenPriceFromLpSymbolSelector,
   makeUserFarmFromPidSelector,
-} from './selectors'
-
-export function useFarmsLength() {
-  const { chainId } = useActiveChainId()
-  return useSWRImmutable(chainId ? ['farmsLength', chainId] : null, async () => {
-    const mc = getMasterchefContract(undefined, chainId)
-    return (await mc.poolLength()).toNumber()
-  })
-}
-
-export const usePollFarmsWithUserData = () => {
-  const dispatch = useAppDispatch()
-  const { account, chainId } = useActiveWeb3React()
-  const {
-    proxyAddress,
-    proxyCreated,
-    isLoading: isProxyContractLoading,
-  } = useBCakeProxyContractAddress(account, chainId)
-  const farmFlag = useFeatureFlag(featureFarmApiAtom)
-
-  useSWRImmutable(
-    chainId ? ['publicFarmData', chainId] : null,
-    async () => {
-      const farmsConfig = await getFarmConfig(chainId)
-      const pids = farmsConfig.map((farmToFetch) => farmToFetch.pid)
-      dispatch(fetchFarmsPublicDataAsync({ pids, chainId, flag: farmFlag }))
     },
     {
       refreshInterval: farmFlag === 'api' ? 50 * 1000 : SLOW_INTERVAL,

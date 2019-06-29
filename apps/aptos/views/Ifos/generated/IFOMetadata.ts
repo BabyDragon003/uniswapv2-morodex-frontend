@@ -23,32 +23,6 @@ export interface RaisingCoinStore {
 
 export interface Id2 {
   addr: string
-  creation_num: string
-}
-
-export interface Guid2 {
-  id: Id2
-}
-
-export interface RevokedEvents {
-  counter: string
-  guid: Guid2
-}
-
-export interface Id3 {
-  addr: string
-  creation_num: string
-}
-
-export interface Guid3 {
-  id: Id3
-}
-
-export interface StartAndEndTimeSet {
-  counter: string
-  guid: Guid3
-}
-
 export interface Id4 {
   addr: string
   creation_num: string

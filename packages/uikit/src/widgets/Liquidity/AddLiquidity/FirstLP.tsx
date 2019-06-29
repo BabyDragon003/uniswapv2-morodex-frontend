@@ -18,3 +18,4 @@ export function FirstLP() {
       </Message>
     </Column>
   );
+}

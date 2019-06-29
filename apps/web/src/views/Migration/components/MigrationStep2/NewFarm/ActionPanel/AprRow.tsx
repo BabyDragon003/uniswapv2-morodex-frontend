@@ -18,3 +18,8 @@ const Containter = styled(Flex)`
 const AprRow: React.FC<React.PropsWithChildren<AprProps>> = (apr) => {
   const { t } = useTranslation()
 
+  return (
+    <Containter justifyContent="space-between">
+      <Text>{t('APR')}</Text>
+      <Apr {...apr} />
+    </Containter>
