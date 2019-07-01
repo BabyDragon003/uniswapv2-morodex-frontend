@@ -1,4 +1,3 @@
-import { useCurrency } from 'hooks/Tokens'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { CHAIN_IDS } from 'utils/wagmi'

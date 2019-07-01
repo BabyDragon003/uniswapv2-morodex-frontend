@@ -1,4 +1,3 @@
-[
   {
     "inputs": [],
     "name": "FEE_DENOMINATOR",
@@ -23,6 +22,32 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "PRECISION",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_swap",
+        "type": "address"
+      }
+    ],
+    "name": "PRECISION_MUL",
+    "outputs": [
+      {
         "internalType": "uint256[2]",
         "name": "swapPRECISION_MUL",
         "type": "uint256[2]"

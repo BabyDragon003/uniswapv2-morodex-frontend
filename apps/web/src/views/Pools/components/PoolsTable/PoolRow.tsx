@@ -1,4 +1,3 @@
-import { memo, useMemo } from 'react'
 import { useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
 import { usePool, useDeserializedPoolByVaultKey, useVaultPoolByKey } from 'state/pools/hooks'
 import { VaultKey } from 'state/types'

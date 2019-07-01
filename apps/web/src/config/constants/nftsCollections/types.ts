@@ -1,4 +1,3 @@
-import { Address } from '../types'
 
 export enum PancakeCollectionKey {
   PANCAKE = 'pancake',

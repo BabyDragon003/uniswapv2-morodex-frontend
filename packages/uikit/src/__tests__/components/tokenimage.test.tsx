@@ -1,4 +1,3 @@
-import React from "react";
 import { renderWithProvider, setupMockIntersectionObserver } from "../../testHelpers";
 import TokenImage from "../../components/Image/TokenImage";
 

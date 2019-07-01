@@ -1,4 +1,3 @@
-import { useRef, useState, useEffect } from 'react'
 import { Modal, Flex, Button, Text, Skeleton, Box } from '@pancakeswap/uikit'
 import { StaticImageData } from 'next/dist/client/image'
 import styled from 'styled-components'

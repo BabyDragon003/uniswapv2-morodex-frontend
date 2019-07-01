@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import {
   Box,
   Flex,
@@ -23,6 +22,32 @@ import { CollectibleRowContainer, SmallRoundedImage } from './styles'
 import ProfileNftModal from '../../../components/ProfileNftModal'
 import SellModal from '../../../components/BuySellModals/SellModal'
 import { useCollectionsNftsForAddress } from '../../../hooks/useNftsForAddress'
+import ExpandableCard from './ExpandableCard'
+
+const ScrollableContainer = styled(Box)`
+  overflow-y: auto;
+  max-height: 224px;
+`
+
+const Divider = styled.div`
+  margin: 16px 20px;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colors.cardBorder}`};
+`
+
+const LocationColors = {
+  [NftLocation.FORSALE]: 'failure',
+  [NftLocation.WALLET]: 'secondary',
+  [NftLocation.PROFILE]: 'textSubtle',
+}
+
+const LocationIcons = {
+  [NftLocation.FORSALE]: SellIcon,
+  [NftLocation.WALLET]: WalletFilledIcon,
+  [NftLocation.PROFILE]: CameraIcon,
+}
+
+interface CollectibleRowProps {
+  nft: NftToken
   lowestPrice: string
   onSuccessSale: () => void
 }

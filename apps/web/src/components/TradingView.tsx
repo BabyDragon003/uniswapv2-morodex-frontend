@@ -1,4 +1,3 @@
-import { Box, FlexProps, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Script from 'next/script'
 import { useEffect } from 'react'

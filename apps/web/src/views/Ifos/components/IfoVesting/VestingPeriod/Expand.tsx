@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { ifosConfig } from 'config/constants'
 import styled, { keyframes, css } from 'styled-components'

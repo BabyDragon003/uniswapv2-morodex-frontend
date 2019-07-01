@@ -1,4 +1,3 @@
-import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { WalletModalV2 } from '@pancakeswap/ui-wallets'
 import { Trans, useTranslation } from '@pancakeswap/localization'
 import { useState } from 'react'

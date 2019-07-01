@@ -1,4 +1,3 @@
-import { useMemo, useState } from 'react'
 import { Skeleton, Table, Td, Th, Flex, ArrowUpIcon, ArrowDownIcon } from '@pancakeswap/uikit'
 import times from 'lodash/times'
 import { useRouter } from 'next/router'

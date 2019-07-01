@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { render, RenderResult } from "@testing-library/react";
 import { vi } from "vitest";
 import { light } from "./theme";

@@ -1,4 +1,3 @@
-{
   "main": "../../dist/connectors/trustWallet.js",
   "module": "../../dist/connectors/trustWallet.mjs",
   "types": "../../dist/connectors/trustWallet.d.ts"

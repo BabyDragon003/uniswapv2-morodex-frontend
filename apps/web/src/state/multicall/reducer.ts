@@ -1,4 +1,3 @@
-import { createReducer } from '@reduxjs/toolkit'
 import {
   addMulticallListeners,
   errorFetchingMulticallResults,

@@ -1,4 +1,3 @@
-import { ChainId, WETH9, ERC20Token } from '@pancakeswap/sdk'
 import { USDC, USDT, WBTC_ETH } from '@pancakeswap/tokens'
 
 export const ethereumTokens = {

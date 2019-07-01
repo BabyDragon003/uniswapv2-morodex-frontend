@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex } from "../Box";
 import StyledToggle, { Input, Handle } from "./StyledToggle";
 import { ToggleProps, scales } from "./types";

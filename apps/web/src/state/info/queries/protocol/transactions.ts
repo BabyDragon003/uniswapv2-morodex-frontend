@@ -1,4 +1,3 @@
-import { gql } from 'graphql-request'
 import { mapBurns, mapMints, mapSwaps } from 'state/info/queries/helpers'
 import { BurnResponse, MintResponse, SwapResponse } from 'state/info/queries/types'
 import { Transaction } from 'state/info/types'
@@ -23,6 +22,32 @@ const GLOBAL_TRANSACTIONS = gql`
         }
       }
       to
+      amount0
+      amount1
+      amountUSD
+    }
+    swaps: swaps(first: 33, orderBy: timestamp, orderDirection: desc) {
+      id
+      timestamp
+      pair {
+        token0 {
+          id
+          symbol
+        }
+        token1 {
+          id
+          symbol
+        }
+      }
+      from
+      amount0In
+      amount1In
+      amount0Out
+      amount1Out
+      amountUSD
+    }
+    burns: burns(first: 33, orderBy: timestamp, orderDirection: desc) {
+      id
       timestamp
       pair {
         token0 {

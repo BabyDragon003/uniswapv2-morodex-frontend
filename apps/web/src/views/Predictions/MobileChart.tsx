@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
 import { useChartView } from 'state/predictions/hooks'
 import { setChartView } from 'state/predictions'

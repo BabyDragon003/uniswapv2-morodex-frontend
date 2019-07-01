@@ -1,4 +1,3 @@
-import { BIT_QUERY, INFO_CLIENT, STABLESWAP_SUBGRAPH_CLIENT, INFO_CLIENT_ETH } from 'config/constants/endpoints'
 import { GraphQLClient } from 'graphql-request'
 import { INFO_CLIENT_WITH_CHAIN } from '../config/constants/endpoints'
 

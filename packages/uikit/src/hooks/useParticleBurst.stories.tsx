@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../components/Button/Button";
 import Text from "../components/Text/Text";
 import useParticleBurst from "./useParticleBurst";

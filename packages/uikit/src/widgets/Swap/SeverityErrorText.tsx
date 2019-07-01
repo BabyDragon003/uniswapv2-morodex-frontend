@@ -1,4 +1,3 @@
-import { AtomBox, AtomBoxProps } from "@pancakeswap/ui/components/AtomBox";
 import { PropsWithChildren } from "react";
 import { SeverityVariants, severityVariants } from "./SeverityErrorText.css";
 

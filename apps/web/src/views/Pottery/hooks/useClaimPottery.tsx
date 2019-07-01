@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'

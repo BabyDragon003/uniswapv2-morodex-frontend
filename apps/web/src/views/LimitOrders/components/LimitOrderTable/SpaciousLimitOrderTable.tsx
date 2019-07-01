@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { Table, Th, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FullRow from './FullRow'

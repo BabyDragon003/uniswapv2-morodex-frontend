@@ -1,4 +1,3 @@
-import { Fragment, memo } from 'react'
 import { Trade, Currency, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { Text, Flex, ChevronRightIcon } from '@pancakeswap/uikit'
 

@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/aptos-swap-sdk'
 import { Button, Text, ErrorIcon, ArrowDownIcon, RowBetween, RowFixed, AutoColumn } from '@pancakeswap/uikit'
 import { Field } from 'state/swap'

@@ -1,4 +1,3 @@
-describe('Send', () => {
   it('should redirect', () => {
     cy.visit('/send')
     cy.url().should('include', '/swap')

@@ -1,4 +1,3 @@
-import { FarmTabButtons } from "./components/FarmTabButtons";
 import { FarmApyButton } from "./components/FarmApyButton";
 import Tags from "./components/Tags";
 import FarmCard from "./components/FarmCard";

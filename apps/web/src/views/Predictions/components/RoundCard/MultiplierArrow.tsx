@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import styled, { CSSProperties } from 'styled-components'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Box, Text, Balance } from '@pancakeswap/uikit'
 import { DeserializedPotteryUserData } from 'state/types'
 import { usePriceCakeBusd } from 'state/farms/hooks'

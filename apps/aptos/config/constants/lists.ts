@@ -1,4 +1,3 @@
-const PANCAKE_APTOS = 'https://tokens.dapp-frontend-prince.web.app/pancakeswap-aptos.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = []
 

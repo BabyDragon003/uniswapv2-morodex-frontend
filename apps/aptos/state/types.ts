@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { DeserializedPoolConfig } from 'config/constants/types'
 
 export enum VaultKey {

@@ -1,4 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit'
 import { State } from 'state/types'
 import { transformPotteryPublicData, transformPotteryUserData } from './helpers'
 

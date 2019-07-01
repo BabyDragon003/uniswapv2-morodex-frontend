@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useMemo } from 'react'
 import { Flex, Text, Skeleton } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
@@ -23,6 +22,32 @@ const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ labe
   return (
     <Flex justifyContent="space-between" alignItems="center">
       <Text bold fontSize="12px" color="textSubtle" textTransform="uppercase">
+        {label}
+      </Text>
+      {value ? (
+        <Text bold small textAlign="right">
+          {value}
+        </Text>
+      ) : (
+        <Skeleton height={21} width={80} />
+      )}
+    </Flex>
+  )
+}
+
+interface IfoVestingFooterProps {
+  ifo: Ifo
+  poolId: PoolIds
+  publicIfoData: PublicIfoData
+  walletIfoData: WalletIfoData
+}
+
+const IfoVestingFooter: React.FC<React.PropsWithChildren<IfoVestingFooterProps>> = ({
+  ifo,
+  poolId,
+  publicIfoData,
+  walletIfoData,
+}) => {
   const { t } = useTranslation()
   const { token } = ifo
   const { vestingInformation } = publicIfoData[poolId]

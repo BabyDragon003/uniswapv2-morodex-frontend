@@ -1,4 +1,3 @@
-import { StyleRule } from '@vanilla-extract/css'
 import { Breakpoint, breakpoints } from './breakpoints'
 
 type CSSProps = Omit<StyleRule, '@media' | '@supports'>
@@ -23,3 +22,24 @@ type ResponsiveStyle = {
   sm?: CSSProps
   md?: CSSProps
   lg?: CSSProps
+  xl?: CSSProps
+  xxl?: CSSProps
+}
+
+export const responsiveStyle = ({ xs, sm, md, lg, xl, xxl }: ResponsiveStyle): StyleRule => {
+  const { '@media': _, ...xsStyle } = (xs ?? {}) as any
+  return {
+    ...xsStyle,
+    ...(sm || md || lg || xl
+      ? {
+          '@media': {
+            ...mediaQuery.sm(sm ?? {}),
+            ...mediaQuery.md(md ?? {}),
+            ...mediaQuery.lg(lg ?? {}),
+            ...mediaQuery.xl(xl ?? {}),
+            ...mediaQuery.xxl(xxl ?? {}),
+          },
+        }
+      : {}),
+  }
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import { CakePrice, CakePriceProps } from ".";
 import { Flex } from "../Box";
 

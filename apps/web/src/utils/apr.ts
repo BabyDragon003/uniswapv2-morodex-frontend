@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { ChainId } from '@pancakeswap/sdk'
 import { BLOCKS_PER_YEAR } from 'config'
 import lpAprs56 from 'config/constants/lpAprs/56.json'

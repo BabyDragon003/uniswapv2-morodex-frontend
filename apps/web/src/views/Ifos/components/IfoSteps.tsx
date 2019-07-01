@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import every from 'lodash/every'
 import {
   Balance,
@@ -23,6 +22,32 @@ import {
   useTooltip,
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
+
+import { useTranslation } from '@pancakeswap/localization'
+import useTokenBalance from 'hooks/useTokenBalance'
+import { useProfile } from 'state/profile/hooks'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
+import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'
+import { getICakeWeekDisplay } from 'views/Pools/helpers'
+
+interface TypeProps {
+  ifoCurrencyAddress: string
+  hasClaimed: boolean
+  isCommitted: boolean
+  isLive?: boolean
+}
+
+const SmallStakePoolCard = styled(Box)`
+  margin-top: 16px;
+  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background-color: ${({ theme }) => theme.colors.background};
+`
+
+const Wrapper = styled(Container)`
+  margin-left: -16px;
+  margin-right: -16px;
   padding-top: 48px;
   padding-bottom: 48px;
 

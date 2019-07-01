@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { Text, TextProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
@@ -23,3 +22,4 @@ const PercentageOfTotal: React.FC<React.PropsWithChildren<PercentageOfTotalProps
   )
 }
 
+export default PercentageOfTotal

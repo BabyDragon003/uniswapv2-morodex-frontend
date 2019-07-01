@@ -1,4 +1,3 @@
-import { Token } from '@pancakeswap/swap-sdk-core'
 import { HexString } from 'aptos'
 import { Currency } from './currency'
 

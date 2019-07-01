@@ -1,4 +1,3 @@
-import { Flex, Skeleton, Text, Balance } from "@pancakeswap/uikit";
 import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import BigNumber from "bignumber.js";

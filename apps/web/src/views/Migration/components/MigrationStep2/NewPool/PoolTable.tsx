@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Spinner, Pool } from '@pancakeswap/uikit'
@@ -23,3 +22,27 @@ const Container = styled.div`
 `
 
 const PoolsTable: React.FC<React.PropsWithChildren<PoolsTableProps>> = ({ pools, userDataReady, account }) => {
+  const { t } = useTranslation()
+
+  return (
+    <Container>
+      <TableHeader title={t('Pools')} />
+      <TableStyle>
+        {!userDataReady && (
+          <Flex padding="50px 10px" justifyContent="center">
+            <Spinner />
+          </Flex>
+        )}
+        {!account && <EmptyText text={t('Please connect wallet to check your pool status.')} />}
+        {account && userDataReady && pools.length === 0 && (
+          <EmptyText text={t('You are not currently staking in any pools.')} />
+        )}
+        {account &&
+          userDataReady &&
+          pools.map((pool) => <PoolRow key={pool.vaultKey ?? pool.sousId} pool={pool} account={account} />)}
+      </TableStyle>
+    </Container>
+  )
+}
+
+export default PoolsTable

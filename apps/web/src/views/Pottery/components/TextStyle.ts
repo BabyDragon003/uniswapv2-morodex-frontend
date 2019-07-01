@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Text } from '@pancakeswap/uikit'
 
 export const OutlineText = styled(Text)<{ defaultType?: boolean }>`

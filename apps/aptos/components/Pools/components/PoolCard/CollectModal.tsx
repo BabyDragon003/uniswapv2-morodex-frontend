@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { Pool } from '@pancakeswap/uikit'
 import { useQueryClient } from '@pancakeswap/awgmi'
 import { SMARTCHEF_ADDRESS } from 'contracts/smartchef/constants'

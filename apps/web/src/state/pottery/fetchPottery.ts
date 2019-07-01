@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { multicallv3 } from 'utils/multicall'
 import potteryVaultAbi from 'config/abi/potteryVaultAbi.json'
 import { getPotteryDrawAddress } from 'utils/addressHelpers'

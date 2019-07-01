@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { createAction, createReducer } from '@reduxjs/toolkit'

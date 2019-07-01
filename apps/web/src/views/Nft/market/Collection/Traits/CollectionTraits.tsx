@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import times from 'lodash/times'
 import capitalize from 'lodash/capitalize'
 import sum from 'lodash/sum'

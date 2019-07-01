@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'

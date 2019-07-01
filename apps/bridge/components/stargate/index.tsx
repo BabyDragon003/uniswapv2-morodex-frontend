@@ -1,4 +1,3 @@
-import { Box, PancakeTheme } from '@pancakeswap/uikit'
 import { useMemo } from 'react'
 import type {} from 'styled-jsx'
 import { FEE_COLLECTOR, FEE_TENTH_BPS, PARTNER_ID } from './config'

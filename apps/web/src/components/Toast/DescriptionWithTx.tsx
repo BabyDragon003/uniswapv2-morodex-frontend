@@ -1,4 +1,3 @@
-import { Link, Text, BscScanIcon } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import { getBlockExploreLink, getBlockExploreName } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'

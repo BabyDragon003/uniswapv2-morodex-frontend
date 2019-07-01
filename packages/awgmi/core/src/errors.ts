@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { parseVmStatusError } from './utils'
 
 export class ConnectorAlreadyConnectedError extends Error {

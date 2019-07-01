@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import { createSelector } from '@reduxjs/toolkit'

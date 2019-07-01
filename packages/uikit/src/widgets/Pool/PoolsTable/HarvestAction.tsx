@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import { createElement } from "react";
 
 import { Button, Text, Flex, Heading, Balance } from "../../../components";
@@ -23,6 +22,32 @@ export const withStakeActionContainer =
           <ActionContent>{createElement(connectWalletButtonElement, { width: "100%" })}</ActionContent>
         </ActionContainer>
       );
+    }
+
+    return (
+      <ActionContainer>
+        <ActionTitles>
+          <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
+            {stakingTokenSymbol}{" "}
+          </Text>
+          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+            {t("Staked")}
+          </Text>
+        </ActionTitles>
+        <StakeActionsComp {...props} />
+      </ActionContainer>
+    );
+  };
+
+export function HarvestAction({
+  earningTokenPrice,
+  onPresentCollect,
+  account,
+  earningTokenBalance,
+  earningTokenDollarBalance,
+  earningTokenSymbol,
+  earnings,
+}: HarvestActionsProps & { account: string; earningTokenSymbol: string }) {
   const { t } = useTranslation();
 
   const hasEarnings = earnings.gt(0);

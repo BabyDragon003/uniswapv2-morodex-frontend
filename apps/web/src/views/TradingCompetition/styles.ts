@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Box } from '@pancakeswap/uikit'
 
 export const CompetitionPage = styled.div`

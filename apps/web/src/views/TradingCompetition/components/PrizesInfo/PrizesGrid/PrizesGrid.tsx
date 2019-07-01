@@ -1,4 +1,3 @@
-import {
   BlockIcon,
   Box,
   CheckmarkCircleIcon,
