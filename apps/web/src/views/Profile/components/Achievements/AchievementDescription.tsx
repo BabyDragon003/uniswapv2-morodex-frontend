@@ -1,13 +1,8 @@
+import { Text, TextProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TranslatableText as AchievementDescriptionType } from 'config/constants/types'
 import styled from 'styled-components'
 
-interface AchievementDescriptionProps extends TextProps {
-  description?: AchievementDescriptionType
-}
-
-const Description = styled(Text).attrs({ as: 'p' })`
-  display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: block;

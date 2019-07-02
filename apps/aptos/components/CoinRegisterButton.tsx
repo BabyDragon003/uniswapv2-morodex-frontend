@@ -1,3 +1,4 @@
+import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useSendTransaction } from '@pancakeswap/awgmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { IconButton, Loading, useToast, useTooltip, WalletRegisterIcon } from '@pancakeswap/uikit'

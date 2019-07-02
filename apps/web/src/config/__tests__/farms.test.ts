@@ -1,3 +1,4 @@
+import farms56 from '@pancakeswap/farms/constants/56'
 import farms1 from '@pancakeswap/farms/constants/1'
 import { Native } from '@pancakeswap/sdk'
 import { SerializedFarm } from '@pancakeswap/farms'

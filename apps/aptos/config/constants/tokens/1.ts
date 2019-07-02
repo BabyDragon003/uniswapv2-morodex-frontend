@@ -1,3 +1,4 @@
+import { ChainId, Coin } from '@pancakeswap/aptos-swap-sdk'
 import { APT, CAKE } from '../../coins'
 
 export const mainnetTokens = {

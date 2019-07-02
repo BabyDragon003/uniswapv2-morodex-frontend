@@ -1,13 +1,8 @@
+import capitalize from "lodash/capitalize";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import { CommunityIcon, RemoveIcon } from "../Svg";
 import Tag from "./Tag";
-import { scales, variants } from "./types";
-
-export default {
-  title: "Components/Tag",
-  argTypes: {},
-};
 
 export const Default: React.FC<React.PropsWithChildren> = () => {
   return (

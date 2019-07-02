@@ -1,3 +1,4 @@
+export interface UserResponse<BetType> {
   id: string
   createdAt: string
   updatedAt: string

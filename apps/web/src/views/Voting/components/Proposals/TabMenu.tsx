@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { TabMenu as UIKitTabMenu, Tab, Flex, VerifiedIcon, CommunityIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { ProposalType } from 'state/types'
 
-interface TabMenuProps {
-  proposalType: ProposalType
-  onTypeChange: (proposalType: ProposalType) => void
-}
-
-const StyledTabMenu = styled.div`
   background-color: ${({ theme }) => theme.colors.input};
   padding-top: 16px;
 `

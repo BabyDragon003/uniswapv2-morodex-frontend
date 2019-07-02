@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 
 const useUserAgent = () => {
   useEffect(() => {

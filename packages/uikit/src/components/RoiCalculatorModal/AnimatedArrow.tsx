@@ -1,13 +1,8 @@
+import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { CalculatorMode, RoiCalculatorReducerState } from "./useRoiCalculatorReducer";
 import { Flex } from "../Box";
 import { ArrowDownIcon, ArrowUpIcon } from "../Svg";
-
-const rotate = keyframes`
-  0% {
-    transform: scale(1);
-    stroke-width: 0;
-  }
   50% {
     transform: scale(1.3);
     stroke-width: 2;

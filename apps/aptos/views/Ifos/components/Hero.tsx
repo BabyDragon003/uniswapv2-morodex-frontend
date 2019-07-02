@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Box, Container, Flex, Heading, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 

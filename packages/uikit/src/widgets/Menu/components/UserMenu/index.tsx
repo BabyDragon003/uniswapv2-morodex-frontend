@@ -1,13 +1,8 @@
+import React, { useEffect, useState } from "react";
 import { usePopper } from "react-popper";
 import styled from "styled-components";
 import { Box, Flex } from "../../../../components/Box";
 import { ChevronDownIcon } from "../../../../components/Svg";
-import { UserMenuProps, variants } from "./types";
-import MenuIcon from "./MenuIcon";
-import { UserMenuItem } from "./styles";
-
-export const StyledUserMenu = styled(Flex)`
-  align-items: center;
   // background-color: ${({ theme }) => theme.colors.tertiary};
   background: transparent;
   border: solid 2px rgba(255, 255, 255, 0.25);

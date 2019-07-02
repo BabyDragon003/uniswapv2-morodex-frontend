@@ -1,13 +1,8 @@
+import React, { cloneElement, Children, ReactElement } from "react";
 import styled from "styled-components";
 import Flex from "../Box/Flex";
 import { TabMenuProps } from "./types";
 
-const Wrapper = styled(Flex)<{ fullWidth?: boolean }>`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.input};
-  overflow-x: scroll;
-  padding: ${({ fullWidth }) => (fullWidth ? 0 : "16px")};
-
-  ::-webkit-scrollbar {
     display: none;
   }
   -ms-overflow-style: none; /* IE and Edge */

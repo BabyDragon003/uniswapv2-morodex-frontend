@@ -1,13 +1,8 @@
+import { Currency, CurrencyAmount, JSBI, Price } from '@pancakeswap/sdk'
 import { useContext, useMemo } from 'react'
 import { StableSwap } from '@pancakeswap/smart-router/evm'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 
-import { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
-import { useStableSwapInfo } from 'hooks/useStableSwapInfo'
-import { BIG_INT_ZERO } from 'config/constants/exchange'
-
-export function useDerivedLPInfo(
-  amountA: CurrencyAmount<Currency> | undefined,
   amountB: CurrencyAmount<Currency> | undefined,
 ): {
   lpOutputWithoutFee: CurrencyAmount<Currency> | null

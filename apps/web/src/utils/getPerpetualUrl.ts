@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 import { perpLangMap } from 'utils/getPerpetualLanguageCode'
 import { perpTheme } from 'utils/getPerpetualTheme'
 

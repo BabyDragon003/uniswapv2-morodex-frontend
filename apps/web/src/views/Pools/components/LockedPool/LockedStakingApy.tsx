@@ -1,3 +1,4 @@
+import { useMemo, memo } from 'react'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 
 import { Flex, Text, Box, TooltipText, useTooltip, HelpIcon, BalanceWithLoading } from '@pancakeswap/uikit'

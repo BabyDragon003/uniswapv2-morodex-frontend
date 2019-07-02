@@ -1,3 +1,4 @@
+import { DefaultTheme } from "styled-components";
 import { light as lightAlert } from "../components/Alert/theme";
 import { light as lightCard } from "../components/Card/theme";
 import { light as lightPancakeToggle } from "../components/PancakeToggle/theme";

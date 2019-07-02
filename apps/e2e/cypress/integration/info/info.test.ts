@@ -1,3 +1,4 @@
+describe('Info Page', () => {
   it('loads info overview', () => {
     cy.visit('/info')
     cy.get('#info-overview-title').should('be.visible')

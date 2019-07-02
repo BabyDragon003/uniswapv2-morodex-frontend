@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Card, CardBody, CardHeader, Heading, Text, Flex, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
 
-const Wrapper = styled(Flex)`
-  width: 100%;
-  margin: auto;
-  padding: 0 24px 72px 24px;
-  flex-direction: column-reverse;
-  align-items: center;
 
   ${({ theme }) => theme.mediaQueries.xl} {
     flex-direction: row;

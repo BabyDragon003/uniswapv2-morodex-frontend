@@ -1,3 +1,4 @@
+import { Flex, BunnyPlaceholderIcon, Text } from '@pancakeswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from '@pancakeswap/localization'
 

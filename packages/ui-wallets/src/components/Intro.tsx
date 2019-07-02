@@ -1,13 +1,8 @@
+import { Trans } from '@pancakeswap/localization'
 import { AtomBox } from '@pancakeswap/ui/components/AtomBox'
 import { Button, Heading, Image, LinkExternal, Text } from '@pancakeswap/uikit'
 import { useState } from 'react'
 
-const IntroSteps = [
-  {
-    title: <Trans>Your first step in the DeFi world</Trans>,
-    icon: 'https://cdn.pancakeswap.com/wallets/wallet_intro.png',
-    description: (
-      <Trans>
         A Web3 Wallet allows you to send and receive crypto assets like bitcoin, BNB, ETH, NFTs and much more.
       </Trans>
     ),

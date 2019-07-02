@@ -1,3 +1,4 @@
+import { DefaultTheme } from "styled-components";
 import { dark as darkAlert } from "../components/Alert/theme";
 import { dark as darkCard } from "../components/Card/theme";
 import { dark as darkPancakeToggle } from "../components/PancakeToggle/theme";

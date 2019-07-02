@@ -1,13 +1,8 @@
+import { fetchAnsName, FetchAnsNameArgs, FetchAnsNameResult } from '@pancakeswap/awgmi/core'
 
 import { QueryConfig, QueryFunctionArgs } from '../types'
 import { useNetwork } from './useNetwork'
 import { useQuery } from './utils/useQuery'
-
-export type UseAnsNameArgs = Partial<FetchAnsNameArgs>
-
-export type UseAnsNameConfig = QueryConfig<FetchAnsNameResult, Error>
-
-export const queryKey = ({ networkName, address }: { networkName?: string; address?: string }) =>
   [{ entity: 'ansAddress', networkName, address }] as const
 
 const queryFn = ({ queryKey: [{ networkName, address }] }: QueryFunctionArgs<typeof queryKey>) => {

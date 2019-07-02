@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Box, Button, Flex, IconButton, CloseIcon } from '@pancakeswap/uikit'
 import { ContextApi, useTranslation } from '@pancakeswap/localization'
 import { MarketEvent } from '../../../../state/nftMarket/types'
 import { useNftStorage } from '../../../../state/nftMarket/storage'
-
-interface ActivityFilterProps {
-  eventType: MarketEvent
-  collectionAddress: string
-  nftActivityFilters: { typeFilters: MarketEvent[]; collectionFilters: string[] }
-}
 
 const TriggerButton = styled(Button)<{ hasItem: boolean }>`
   white-space: nowrap;

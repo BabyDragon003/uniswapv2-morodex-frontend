@@ -1,3 +1,4 @@
+import { ColorProps } from "styled-system";
 
 export interface TabMenuProps {
   activeIndex?: number;

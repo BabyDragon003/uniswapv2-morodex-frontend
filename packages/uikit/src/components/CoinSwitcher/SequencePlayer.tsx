@@ -1,13 +1,8 @@
+import { useRef, useEffect, useCallback } from "react";
 
 let coinInterval: NodeJS.Timeout;
 
 interface SequencePlayerProps {
-  images: string[];
-  msPerFrame?: number;
-  onPlayStart?: () => void;
-  onPlayFinish?: () => void;
-}
-
 export const SequencePlayer: React.FC<React.PropsWithChildren<SequencePlayerProps>> = ({
   images,
   msPerFrame = 32,

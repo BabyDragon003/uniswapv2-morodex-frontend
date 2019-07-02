@@ -1,3 +1,4 @@
+import { useState } from 'react'
 
 export const useRegistrationClaimStatus = () => {
   const [registrationSuccessful, setRegistrationSuccessful] = useState(false)

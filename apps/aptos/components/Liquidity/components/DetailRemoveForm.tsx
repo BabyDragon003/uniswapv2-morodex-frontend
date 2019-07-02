@@ -1,3 +1,4 @@
+const DetailRemoveForm = () => {
   return null
 }
 

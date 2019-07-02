@@ -1,3 +1,4 @@
+import { useDisconnect } from '@pancakeswap/awgmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, HelpIcon, Link, Message, MessageText, Modal, ModalV2, Text } from '@pancakeswap/uikit'
 import { useActiveNetwork } from 'hooks/useNetwork'

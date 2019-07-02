@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Button, Text, useMatchBreakpoints, Box, OpenNewIcon } from '@pancakeswap/uikit'
 import Image from 'next/legacy/image'
 import styled from 'styled-components'
 import { Aptos, AptosXPancakeSwap } from './images'
-import * as S from './Styled'
-
-const RightWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: -10px;
   ${({ theme }) => theme.mediaQueries.sm} {
     right: 1px;
     bottom: -18px;

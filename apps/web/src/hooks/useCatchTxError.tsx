@@ -1,13 +1,8 @@
+import { useCallback, useState } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'
 import { ToastDescriptionWithTx } from 'components/Toast'
-
-import { logError, isUserRejected } from 'utils/sentry'
-import useActiveWeb3React from './useActiveWeb3React'
-
-export type TxResponse = TransactionResponse | null
-
 export type CatchTxErrorReturn = {
   fetchWithCatchTxError: (fn: () => Promise<TxResponse>) => Promise<TransactionReceipt>
   fetchTxResponse: (fn: () => Promise<TxResponse>) => Promise<TxResponse>

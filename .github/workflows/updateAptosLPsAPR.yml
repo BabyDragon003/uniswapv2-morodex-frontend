@@ -1,13 +1,8 @@
+name: Fetch and update Aptos LP APRs
 
 on:
   workflow_dispatch:
   schedule:
-    # 23:15 UTC
-    # GitHub Actions might be delayed if time is at exact hour
-    - cron: "15 23 * * *"
-
-jobs:
-  updateLPsAPRs:
     runs-on: ubuntu-latest
     if: github.repository == 'pancakeswap/pancake-frontend'
     steps:

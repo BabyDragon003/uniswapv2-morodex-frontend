@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Button,
   ExpertModal,
-  Flex,
-  InjectedModalProps,
-  Input,
-  Modal,
-  PancakeToggle,
-  QuestionHelper,
   Text,
   ThemeSwitcher,
   Toggle,

@@ -1,13 +1,8 @@
+import { useState, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { Card, Flex, Text, Skeleton, ExpandableSectionButton, Farm as FarmUI } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import CardHeading from './CardHeading'
-import CardActionsContainer from './CardActionsContainer'
-import ApyButton from './ApyButton'
-
-const { DetailsSection } = FarmUI.FarmCard
 
 const StyledCard = styled(Card)`
   align-self: baseline;

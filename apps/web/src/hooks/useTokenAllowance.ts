@@ -1,3 +1,4 @@
+import { Token, CurrencyAmount } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from './useContract'

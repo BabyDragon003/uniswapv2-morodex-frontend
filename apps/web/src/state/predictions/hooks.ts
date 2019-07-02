@@ -1,13 +1,8 @@
+import { useEffect, useMemo } from 'react'
 import { isAddress } from 'utils'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import useSelector from 'contexts/LocalRedux/useSelector'
 import { FetchStatus } from 'config/constants/types'
-
-import { PredictionsState, PredictionUser } from '../types'
-import { fetchAddressResult } from '.'
-import {
-  getRoundsByCloseOracleIdSelector,
-  getSortedRoundsSelector,
   makeGetBetByEpochSelector,
   makeGetIsClaimableSelector,
   getMinBetAmountSelector,

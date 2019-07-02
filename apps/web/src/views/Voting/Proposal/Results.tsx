@@ -1,13 +1,8 @@
+import {
   Box,
   Text,
   Flex,
   Card,
-  CardBody,
-  CardHeader,
-  Heading,
-  Progress,
-  Skeleton,
-  Tag,
   CheckmarkCircleIcon,
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'

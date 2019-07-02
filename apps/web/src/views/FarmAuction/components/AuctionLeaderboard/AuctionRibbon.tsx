@@ -1,3 +1,4 @@
+import { Text } from '@pancakeswap/uikit'
 import { Auction, AuctionStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 

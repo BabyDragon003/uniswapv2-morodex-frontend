@@ -1,3 +1,4 @@
+import { SignMessageArgs } from '@wagmi/core'
 import { useCallback } from 'react'
 import { useAccount, useSignMessage as useSignMessageWagmi } from 'wagmi'
 

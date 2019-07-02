@@ -1,13 +1,8 @@
+import { PairDataTimeWindowEnum } from '../types'
 
 export type fetchPairDataParams = {
   pairId: string
   timeWindow: PairDataTimeWindowEnum
-}
-
-export type LastPairHourIdResponse = {
-  pairHourDatas: {
-    id: string
-  }[]
 }
 
 export type LastPairDayIdResponse = {

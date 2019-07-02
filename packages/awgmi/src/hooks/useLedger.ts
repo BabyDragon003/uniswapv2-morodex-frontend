@@ -1,13 +1,8 @@
+import { FetchLedgerArgs, fetchLedgerInfo, FetchLedgerResult } from '@pancakeswap/awgmi/core'
 
 import { QueryConfig, QueryFunctionArgs } from '../types'
 import { useNetwork } from './useNetwork'
 import { useQuery } from './utils/useQuery'
-
-type UseLedgerArgs = Partial<FetchLedgerArgs> & {
-  /** Subscribe to changes */
-  watch?: boolean
-}
-
 export type UseLedgerConfig<TData> = QueryConfig<FetchLedgerResult, Error, TData>
 
 export const queryKey = ({ networkName }: { networkName?: string }) => [{ entity: 'ledger', networkName }] as const

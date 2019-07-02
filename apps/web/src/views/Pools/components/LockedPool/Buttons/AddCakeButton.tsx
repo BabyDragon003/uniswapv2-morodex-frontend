@@ -1,13 +1,8 @@
+import { useCallback, memo } from 'react'
 import { Button, useModal, Skeleton } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { usePool } from 'state/pools/hooks'
 import AddAmountModal from '../Modals/AddAmountModal'
-import { AddButtonProps } from '../types'
-import NotEnoughTokensModal from '../../Modals/NotEnoughTokensModal'
-
-const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
-  currentBalance,
-  stakingToken,
   currentLockedAmount,
   lockEndTime,
   lockStartTime,

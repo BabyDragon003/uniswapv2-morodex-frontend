@@ -1,13 +1,8 @@
+import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {
   ModalContainer,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  InjectedModalProps,
-  Text,
-  Heading,
   ModalCloseButton,
   Button,
   AutoRenewIcon,

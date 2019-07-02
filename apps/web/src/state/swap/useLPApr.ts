@@ -1,13 +1,8 @@
+import { gql } from 'graphql-request'
 import { Pair, ChainId } from '@pancakeswap/sdk'
 import useSWRImmutable from 'swr/immutable'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
 import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
-import { getChangeForPeriod } from 'utils/getChangeForPeriod'
-import { SLOW_INTERVAL } from 'config/constants'
-import { LP_HOLDERS_FEE, WEEKS_IN_YEAR } from 'config/constants/info'
-import { getMultiChainQueryEndPointWithStableSwap, MultiChainName, multiChainQueryMainToken } from '../info/constant'
-
-interface PoolReserveVolume {
   reserveUSD: string
   volumeUSD: string
 }

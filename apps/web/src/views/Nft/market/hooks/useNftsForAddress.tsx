@@ -1,13 +1,8 @@
+import { useMemo, useRef } from 'react'
 import isEmpty from 'lodash/isEmpty'
 import { useGetCollections } from 'state/nftMarket/hooks'
 import { NftLocation, ApiCollections } from 'state/nftMarket/types'
 import { Profile } from 'state/types'
-import { getCompleteAccountNftData } from 'state/nftMarket/helpers'
-import useSWR from 'swr'
-import { FetchStatus } from 'config/constants/types'
-import { usePreviousValue } from '@pancakeswap/hooks'
-import { isAddress } from 'utils'
-
 export const useNftsForAddress = (account: string, profile: Profile, isProfileFetching: boolean) => {
   const { data: collections } = useGetCollections()
 

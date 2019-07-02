@@ -1,13 +1,8 @@
+import * as React from 'react'
 // eslint-disable-next-line import/extensions
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector.js'
 import { deepEqual } from '../utils'
 
-const isPlainObject = (obj: unknown) => typeof obj === 'object' && !Array.isArray(obj)
-
-export function useSyncExternalStoreWithTracked<Snapshot extends Selection, Selection = Snapshot>(
-  subscribe: (onStoreChange: () => void) => () => void,
-  getSnapshot: () => Snapshot,
-  getServerSnapshot: undefined | null | (() => Snapshot) = getSnapshot,
   isEqual: (a: Selection, b: Selection) => boolean = (a, b) => deepEqual(a, b),
 ) {
   const trackedKeys = React.useRef<string[]>([])

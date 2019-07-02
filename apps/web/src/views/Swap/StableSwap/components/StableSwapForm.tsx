@@ -1,13 +1,8 @@
+import { useCallback, useEffect, useState, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { Currency, CurrencyAmount, Percent } from '@pancakeswap/sdk'
 import {
   Text,
-  ArrowDownIcon,
-  Box,
-  IconButton,
-  ArrowUpDownIcon,
-  Skeleton,
-  Flex,
   Message,
   MessageText,
   Swap as SwapUI,

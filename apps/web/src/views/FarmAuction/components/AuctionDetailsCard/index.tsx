@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import {
   Text,
   Heading,
   Card,
-  CardHeader,
-  CardBody,
-  Flex,
-  Spinner,
-  Skeleton,
-  Tag,
   Button,
   CheckmarkCircleIcon,
   useModal,
