@@ -3,26 +3,16 @@ import { responsiveStyle } from '@pancakeswap/ui/css/responsiveStyle'
 import { style, keyframes } from '@vanilla-extract/css'
 
 const promotedGradientKf = keyframes({
+  '0%': {
+    backgroundPosition: '50% 0%',
+  },
+  '50%': {
+    backgroundPosition: '50% 100%',
+  },
   '100%': {
     backgroundPosition: '50% 0%',
   },
 })
-
-export const promotedGradientClass = style([
-  atoms({
-    background: 'gradientBold',
-  }),
-  style({
-    animation: `${promotedGradientKf} 3s ease infinite`,
-    backgroundSize: '400% 400%',
-  }),
-])
-
-export const modalWrapperClass = style([
-  style({
-    display: 'flex',
-  }),
-  responsiveStyle({
     xs: {
       width: '100%',
       marginBottom: 0,

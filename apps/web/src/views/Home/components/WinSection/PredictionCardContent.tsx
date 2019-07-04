@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { ArrowForwardIcon, Button, Flex, Heading, Skeleton, Text, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatLocalisedCompactNumber } from '@pancakeswap/utils/formatBalance'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
+import { getTotalWon } from 'state/predictions/helpers'
+import { useBNBBusdPrice, useCakeBusdPrice } from 'hooks/useBUSDPrice'
+import { multiplyPriceByAmount } from 'utils/prices'
+import useSWR from 'swr'
+import { SLOW_INTERVAL } from 'config/constants'
 
 const StyledLink = styled(NextLinkFromReactRouter)`
   width: 100%;
 `
-
-const PredictionCardHeader: React.FC<React.PropsWithChildren<{ preText: string; won: string }>> = ({
-  preText,
-  won,
-}) => {
-  return (
-    <Heading color="#280D5F" my="8px" scale="xl" bold>
-      {preText}
-      {won}
-    </Heading>
-  )
-}
-
-const PredictionCardContent = () => {
-  const { t } = useTranslation()
-  const { observerRef, isIntersecting } = useIntersectionObserver()
   const [loadData, setLoadData] = useState(false)
   const bnbBusdPrice = useBNBBusdPrice({ forceMainnet: true })
   const cakePriceBusd = useCakeBusdPrice({ forceMainnet: true })

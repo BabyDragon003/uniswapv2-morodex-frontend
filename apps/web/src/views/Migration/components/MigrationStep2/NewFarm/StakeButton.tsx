@@ -3,26 +3,16 @@ import {
   AddIcon,
   Button,
   IconButton,
+  MinusIcon,
+  useMatchBreakpoints,
+  useModal,
+  useToast,
+  Farm as FarmUI,
+} from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { useERC20 } from 'hooks/useContract'
-import React, { useCallback, useState } from 'react'
-import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
-import { useFarmUser, usePriceCakeBusd, useFarmFromPid } from 'state/farms/hooks'
-import styled from 'styled-components'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { FarmWithStakedValue } from '@pancakeswap/farms'
-import useApproveFarm from 'views/Farms/hooks/useApproveFarm'
-import useStakeFarms from 'views/Farms/hooks/useStakeFarms'
-import useUnstakeFarms from 'views/Farms/hooks/useUnstakeFarms'
-import BCakeCalculator from 'views/Farms/components/YieldBooster/components/BCakeCalculator'
-
-const IconButtonWrapper = styled.div`
-  display: flex;
-`
 
 interface StackedActionProps extends FarmWithStakedValue {
   lpLabel?: string

@@ -3,6 +3,12 @@ import { renderWithProvider } from "../../testHelpers";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
 const handleChange = vi.fn();
+
+it("renders correctly", () => {
+  const { asFragment } = renderWithProvider(<Checkbox checked onChange={handleChange} />);
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;

@@ -3,26 +3,16 @@ import {
   BlockIcon,
   Box,
   Button,
+  CheckmarkCircleIcon,
+  Flex,
+  Link,
+  Logo,
+  Modal,
+  OpenNewIcon,
   RefreshIcon,
   Text,
   ThemeSwitcher,
   useModal,
-  UserMenu,
-  UserMenuDivider,
-  UserMenuItem,
-} from '@pancakeswap/uikit'
-import { useRouter } from 'next/router'
-import { useTheme as useNextTheme } from 'next-themes'
-import Image from 'next/image'
-import NextLink from 'next/link'
-import { useEffect, useReducer, useRef, useState } from 'react'
-import styled, { useTheme } from 'styled-components'
-import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
-import { CHAINS_STARGATE } from './stargate/config'
-import { findChainByStargateId } from './stargate/network'
-
-const StyledMenuItem = styled('div')<{ $isActive?: boolean }>`
-  position: relative;
   display: flex;
   align-items: center;
 

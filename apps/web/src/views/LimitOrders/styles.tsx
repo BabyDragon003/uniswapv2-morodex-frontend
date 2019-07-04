@@ -3,6 +3,12 @@ import styled from 'styled-components'
 
 export const Wrapper = styled(Flex)`
   position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+`
+
+export const StyledSwapContainer = styled(Flex)<{ $isChartExpanded: boolean }>`
   flex-shrink: 0;
   height: fit-content;
   padding: 0 24px;

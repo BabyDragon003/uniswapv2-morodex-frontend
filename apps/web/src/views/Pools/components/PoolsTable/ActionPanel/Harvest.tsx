@@ -3,26 +3,16 @@ import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { PoolCategory } from 'config/constants/types'
 import { formatNumber, getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { Token } from '@pancakeswap/sdk'
+
+import { ActionContainer, ActionTitles, ActionContent } from './styles'
+import CollectModal from '../../Modals/CollectModal'
 
 const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Pool.DeserializedPool<Token>>> = ({
   sousId,
   poolCategory,
-  earningToken,
-  userData,
-  userDataLoaded,
-  earningTokenPrice,
-}) => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-
-  const earnings = userData?.pendingReward ? new BigNumber(userData.pendingReward) : BIG_ZERO
-  const earningTokenBalance = getBalanceNumber(earnings, earningToken.decimals)
-  const earningTokenDollarBalance = getBalanceNumber(earnings.multipliedBy(earningTokenPrice), earningToken.decimals)
-  const hasEarnings = earnings.gt(0)
-  const fullBalance = getFullDisplayBalance(earnings, earningToken.decimals)
-  const formattedBalance = formatNumber(earningTokenBalance, 3, 3)
-  const isBnbPool = poolCategory === PoolCategory.BINANCE
-
   const [onPresentCollect] = useModal(
     <CollectModal
       formattedBalance={formattedBalance}

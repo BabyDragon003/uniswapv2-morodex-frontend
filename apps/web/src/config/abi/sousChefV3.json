@@ -3,26 +3,16 @@
     "inputs": [
       { "internalType": "address", "name": "_pancakeProfile", "type": "address" },
       { "internalType": "bool", "name": "_pancakeProfileIsRequested", "type": "bool" },
-    "anonymous": false,
-    "inputs": [
-      { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
-      { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
+      { "internalType": "uint256", "name": "_pancakeProfileThresholdPoints", "type": "uint256" }
     ],
-    "name": "Deposit",
-    "type": "event"
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "anonymous": false,
     "inputs": [
       { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
       { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
-    ],
-    "name": "EmergencyWithdraw",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "poolLimitPerUser", "type": "uint256" }],
     "name": "NewPoolLimit",
     "type": "event"
   },

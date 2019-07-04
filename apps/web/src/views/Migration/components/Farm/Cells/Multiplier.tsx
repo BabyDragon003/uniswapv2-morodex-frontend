@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, HelpIcon, useTooltip, Pool, Link } from '@pancakeswap/uikit'
 
+const StyledCell = styled(Pool.BaseCell)`
+  display: none;
+  flex: 1 0 100px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: flex;
+  }
 `
 
 const ReferenceElement = styled.div`
   display: inline-block;
-`
-
-const MultiplierWrapper = styled.div`
-  color: ${({ theme }) => theme.colors.text};
-  width: 36px;
-  text-align: right;
-  margin-right: 14px;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    text-align: left;
-    margin-right: 0;
-  }
-`
-
-export interface MultiplierProps {
-  multiplier: string
 }
 
 const Multiplier: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multiplier }) => {

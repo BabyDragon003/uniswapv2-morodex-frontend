@@ -3,6 +3,12 @@ import { getAltText, getEventStepStatus, getEventText } from 'views/PancakeSquad
 
 const HOUR_IN_MS = 3600 * 1000
 
+describe('PancakeSquad/utils/getEventStepStatus', () => {
+  it('Should return past status', () => {
+    // Given
+    const eventStatus = [SaleStatusEnum.Presale, SaleStatusEnum.Sale]
+    const saleStatus = SaleStatusEnum.Claim
+    const startTimestamp = undefined
 
     // When
     const result = getEventStepStatus({ eventStatus, saleStatus, startTimestamp })

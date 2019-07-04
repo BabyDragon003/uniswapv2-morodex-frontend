@@ -3,26 +3,16 @@ import {
   TagProps,
   Text,
   SplitIcon,
+  LockIcon,
+  UnlockIcon,
+  HotIcon,
+  Box,
+  FlexGap,
+  FlexGapProps,
 } from '@pancakeswap/uikit'
 import Trans from 'components/Trans'
 import { useTranslation } from '@pancakeswap/localization'
 import { ReactNode, useMemo } from 'react'
-import { DeserializedLockedVaultUser } from 'state/types'
-import { VaultPosition, getVaultPosition } from 'utils/cakePool'
-
-const tagConfig: Record<VaultPosition, TagProps> = {
-  [VaultPosition.None]: {},
-  [VaultPosition.Flexible]: {
-    variant: 'success',
-  },
-  [VaultPosition.Locked]: {
-    variant: 'secondary',
-  },
-  [VaultPosition.LockedEnd]: {
-    variant: 'secondary',
-    outline: true,
-  },
-  [VaultPosition.AfterBurning]: {
     variant: 'failure',
     outline: true,
   },

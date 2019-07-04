@@ -3,6 +3,12 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { Ifo } from 'config/constants/types'
 import { useCakePrice } from 'hooks/useStablePrice'
+import { useMemo } from 'react'
+import { IFO_RESOURCE_ACCOUNT_TYPE_METADATA, IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE } from 'views/Ifos/constants'
+import { RootObject as IFOPool } from 'views/Ifos/generated/IFOPool'
+import { getPoolTaxRateOverflow } from 'views/Ifos/utils'
+import { PoolCharacteristics, PublicIfoData, VestingInformation } from '../../types'
+import { useIfoResources } from '../useIfoResources'
 
 const formatVestingInfo = (pool: IFOPool): VestingInformation => ({
   percentage: pool ? +pool.vesting_percentage : 0,

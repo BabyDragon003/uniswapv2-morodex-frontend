@@ -3,26 +3,16 @@ import { AddIcon, Button, ChevronDownIcon, Text, useModal, NextLinkFromReactRout
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
+import useNativeCurrency from 'hooks/useNativeCurrency'
+import { useCallback, useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { AppBody, AppHeader } from '../../components/App'
+import { LightCard } from '../../components/Card'
+import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import Row from '../../components/Layout/Row'
 import Dots from '../../components/Loader/Dots'
 import { CurrencyLogo } from '../../components/Logo'
 import { MinimalPositionCard } from '../../components/PositionCard'
-import CurrencySearchModal from '../../components/SearchModal/CurrencySearchModal'
-import { PairState, usePair } from '../../hooks/usePairs'
-import { usePairAdder } from '../../state/user/hooks'
-import { useTokenBalance } from '../../state/wallet/hooks'
-import { currencyId } from '../../utils/currencyId'
-import Page from '../Page'
-import { CommonBasesType } from '../../components/SearchModal/types'
-
-enum Fields {
-  TOKEN0 = 0,
-  TOKEN1 = 1,
-}
-
-const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.input};
-  color: ${({ theme }) => theme.colors.text};
   box-shadow: none;
   // border-radius: 16px;
   border-radius: 6px;

@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useCurrencyBalance } from 'hooks/Balances'
 import { PairState, usePair } from 'hooks/usePairs'
 import useTotalSupply from 'hooks/useTotalSupply'
+import { createContext, useMemo } from 'react'
+import { BIG_INT_ZERO } from 'config/constants/exchange'
+import { Field } from '../type'
+
+interface MintPairContextValue {
+  pair?: Pair | null
   pairState: PairState
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   error?: string

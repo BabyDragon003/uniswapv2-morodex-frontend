@@ -3,26 +3,16 @@ import styled from 'styled-components'
 const StyledDatePickerPortal = styled.div`
   .react-datepicker-wrapper,
   .react-datepicker__input-container {
+    display: block;
+  }
+
+  .react-datepicker {
+    background: ${({ theme }) => theme.card.background};
+    border-color: ${({ theme }) => theme.colors.cardBorder};
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Kanit', sans-serif;
   }
 
-  .react-datepicker__header {
-    background: ${({ theme }) => theme.colors.input};
-    border-color: ${({ theme }) => theme.colors.cardBorder};
-  }
-
-  .react-datepicker__current-month,
-  .react-datepicker-time__header,
-  .react-datepicker-year-header,
-  .react-datepicker__day-name,
-  .react-datepicker__day,
-  .react-datepicker__time-name {
-    color: ${({ theme }) => theme.colors.text};
-  }
-
-  .react-datepicker__day:hover,
-  .react-datepicker__month-text:hover,
   .react-datepicker__quarter-text:hover,
   .react-datepicker__year-text:hover {
     background-color: ${({ theme }) => theme.colors.cardBorder};

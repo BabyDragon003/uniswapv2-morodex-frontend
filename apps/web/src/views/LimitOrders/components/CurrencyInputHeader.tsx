@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { ChartIcon, Flex, Heading, HistoryIcon, IconButton, Text, useModal, ChartDisableIcon } from '@pancakeswap/uikit'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 
+interface Props {
+  title: string
+  subtitle: string
+  noConfig?: boolean
+  setIsChartDisplayed?: React.Dispatch<React.SetStateAction<boolean>>
+  isChartDisplayed?: boolean
 }
 
 const CurrencyInputContainer = styled(Flex)`

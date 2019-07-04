@@ -3,6 +3,12 @@ import React, { useContext, useEffect, useState, useCallback } from "react";
 import { usePopper } from "react-popper";
 import { useOnClickOutside } from "../../hooks";
 import { MenuContext } from "../../widgets/Menu/context";
+import { Box, Flex } from "../Box";
+import { LogoutIcon } from "../Svg";
+import {
+  DropdownMenuDivider,
+  DropdownMenuItem,
+  StyledDropdownMenu,
   LinkStatus,
   StyledDropdownMenuItemContainer,
 } from "./styles";

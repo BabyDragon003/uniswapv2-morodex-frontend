@@ -3,26 +3,16 @@ import { Message, MessageText, Box, Flex, useMatchBreakpoints } from '@pancakesw
 import { useTranslation } from '@pancakeswap/localization'
 import Trans from 'components/Trans'
 import { VaultPosition } from 'utils/cakePool'
+
+import ConvertToFlexibleButton from '../Buttons/ConvertToFlexibleButton'
+import ExtendButton from '../Buttons/ExtendDurationButton'
+import { AfterLockedActionsPropsType } from '../types'
+
+const msg: Record<VaultPosition, ReactNode> = {
   [VaultPosition.None]: null,
   [VaultPosition.Flexible]: null,
   [VaultPosition.Locked]: null,
   [VaultPosition.LockedEnd]: (
-    <Trans>
-      Renew your staking position to continue enjoying the benefits of farm yield boosting, participating in IFOs,
-      voting power boosts, and so much more!
-    </Trans>
-  ),
-  [VaultPosition.AfterBurning]: (
-    <Trans>
-      The lock period has ended. To avoid more rewards being burned, renew your staking position to continue enjoying
-      the benefits from locked staking.
-    </Trans>
-  ),
-}
-
-const AfterLockedActions: React.FC<React.PropsWithChildren<AfterLockedActionsPropsType>> = ({
-  currentLockedAmount,
-  stakingToken,
   position,
   isInline,
 }) => {

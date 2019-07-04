@@ -3,26 +3,16 @@ import { useEffect, useReducer } from 'react'
 import { parseRetrievedNumber } from '../../helpers'
 import generateTicketNumbers from './generateTicketNumbers'
 
+export interface Ticket {
+  id: number
+  numbers: string[]
+  duplicateWith: number[]
+  isComplete: boolean
+}
 
 export interface TicketsState {
   tickets: Ticket[]
   allComplete: boolean
-}
-
-const getInitialState = ({
-  amount,
-  userCurrentTickets,
-}: {
-  amount: number
-  userCurrentTickets: LotteryTicket[]
-}): TicketsState => {
-  const randomTickets = generateTicketNumbers(amount, userCurrentTickets)
-  const randomTicketsAsStringArray = randomTickets.map((ticket) => parseRetrievedNumber(ticket.toString()).split(''))
-  const tickets = Array.from({ length: amount }, (_, i) => i + 1).map((index) => ({
-    id: index,
-    numbers: randomTicketsAsStringArray[index - 1],
-    duplicateWith: [],
-    isComplete: true,
   }))
   return {
     tickets,

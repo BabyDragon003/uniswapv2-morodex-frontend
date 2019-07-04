@@ -3,3 +3,4 @@ describe('Lottery Page', () => {
     cy.visit('/lottery')
     cy.get('#lottery-hero-title').should('be.visible')
   })
+})

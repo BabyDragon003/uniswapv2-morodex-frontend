@@ -3,26 +3,16 @@ import { Currency, Token } from '@pancakeswap/sdk'
 import {
   ModalContainer,
   ModalHeader,
+  ModalTitle,
+  ModalBackButton,
+  ModalCloseButton,
+  ModalBody,
+  InjectedModalProps,
+  Heading,
   Button,
   useMatchBreakpoints,
   MODAL_SWIPE_TO_CLOSE_VELOCITY,
   ImportList,
-} from '@pancakeswap/uikit'
-import styled from 'styled-components'
-import { useListState } from 'state/lists/lists'
-import { useAllLists } from 'state/lists/hooks'
-import { usePreviousValue } from '@pancakeswap/hooks'
-import { TokenList } from '@pancakeswap/token-lists'
-import { useTranslation } from '@pancakeswap/localization'
-import { enableList, removeList, useFetchListCallback } from '@pancakeswap/token-lists/react'
-import CurrencySearch from './CurrencySearch'
-import ImportToken from './ImportToken'
-import Manage from './Manage'
-import { CurrencyModalView } from './types'
-import { BAD_SRCS } from '../Logo/constants'
-
-const Footer = styled.div`
-  width: 100%;
   background-color: ${({ theme }) => theme.colors.backgroundAlt};
   text-align: center;
 `

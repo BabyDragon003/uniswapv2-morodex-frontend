@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Heading, Text, useMatchBreakpoints, Balance } from '@pancakeswap/uikit'
+import { ActionContainer, ActionContent, ActionTitles } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
+import { usePriceCakeBusd } from 'state/farmsV1/hooks'
+import { EarnedProps } from '../../../Farm/Cells/Earned'
+
+const Container = styled(ActionContainer)`
+  flex: 2;
   height: 100%;
 `
 

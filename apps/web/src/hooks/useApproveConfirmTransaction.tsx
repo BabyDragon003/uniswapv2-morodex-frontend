@@ -3,26 +3,16 @@ import noop from 'lodash/noop'
 import { useAccount } from 'wagmi'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'
 import useCatchTxError from './useCatchTxError'
+
+type LoadingState = 'idle' | 'loading' | 'success' | 'fail'
+
+type Action =
+  | { type: 'approve_sending' }
+  | { type: 'approve_receipt' }
   | { type: 'approve_error' }
   | { type: 'confirm_sending' }
   | { type: 'confirm_receipt' }
   | { type: 'confirm_error' }
-
-interface State {
-  approvalState: LoadingState
-  confirmState: LoadingState
-}
-
-const initialState: State = {
-  approvalState: 'idle',
-  confirmState: 'idle',
-}
-
-const reducer = (state: State, actions: Action): State => {
-  switch (actions.type) {
-    case 'approve_sending':
-      return {
-        ...state,
         approvalState: 'loading',
       }
     case 'approve_receipt':

@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { LinkExternal, Flex, Svg, Image, Button } from "../../components";
 
+const Wrapper = styled.div<{ $isSide: boolean }>`
+  width: 100%;
+  height: ${({ $isSide }) => ($isSide ? "100%" : "auto")};
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   padding-top: 16px;
   padding-right: ${({ $isSide }) => ($isSide ? "32px" : "0px")};

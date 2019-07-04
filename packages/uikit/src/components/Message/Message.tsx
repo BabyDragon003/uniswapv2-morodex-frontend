@@ -3,26 +3,16 @@ import styled from "styled-components";
 import { variant as systemVariant, space } from "styled-system";
 import { WarningIcon, ErrorIcon, CheckmarkCircleFillIcon, InfoFilledIcon } from "../Svg";
 import { Text, TextProps } from "../Text";
+import { Box } from "../Box";
+import { MessageProps } from "./types";
+import variants from "./theme";
+
+const MessageContext = React.createContext<MessageProps>({ variant: "success" });
+
 const Icons = {
   warning: WarningIcon,
   danger: ErrorIcon,
   success: CheckmarkCircleFillIcon,
-  primary: InfoFilledIcon,
-};
-
-const MessageContainer = styled.div<MessageProps>`
-  background-color: gray;
-  padding: 16px;
-  border-radius: 16px;
-  border: solid 1px;
-
-  ${space}
-  ${systemVariant({
-    variants,
-  })}
-`;
-
-const Flex = styled.div`
   display: flex;
 `;
 

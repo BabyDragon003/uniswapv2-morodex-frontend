@@ -3,26 +3,16 @@ import { Text, Flex, Box, Skeleton, TooltipText, useTooltip } from '@pancakeswap
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { Ifo, PoolIds } from 'config/constants/types'
+import BigNumber from 'bignumber.js'
+import { getBalanceNumber, formatNumber } from '@pancakeswap/utils/formatBalance'
+import useStablePrice from 'hooks/useStablePrice'
+import { DAY_IN_SECONDS } from '@pancakeswap/utils/getTimePeriods'
+import { getStatus } from 'views/Ifos/hooks/helpers'
+import { multiplyPriceByAmount } from 'utils/prices'
 import { SkeletonCardDetails } from './Skeletons'
 
 export interface IfoCardDetailsProps {
   poolId: PoolIds
-  ifo: Ifo
-  publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-  isEligible: boolean
-}
-
-export interface FooterEntryProps {
-  label: ReactNode
-  value: ReactNode
-  tooltipContent?: string
-}
-
-const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ label, value, tooltipContent }) => {
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
-
-  return (
     <Flex justifyContent="space-between" alignItems="center">
       {tooltipVisible && tooltip}
       {tooltipContent ? (

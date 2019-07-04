@@ -3,26 +3,16 @@ import { APTOS_COIN } from '@pancakeswap/awgmi'
 import { useCurrency } from 'hooks/Tokens'
 import { useRouter } from 'next/router'
 import { createContext, useCallback, useMemo } from 'react'
+import currencyId from 'utils/currencyId'
+import _noop from 'lodash/noop'
+import { useIsMounted } from '@pancakeswap/hooks'
+
+export interface CurrencySelectorValue {
+  currencyA: Currency | undefined
   currencyB: Currency | undefined
   handleCurrencyASelect: (currency: Currency) => void
   handleCurrencyBSelect: (currency: Currency) => void
 }
-
-const initialValue = {
-  currencyA: undefined,
-  currencyB: undefined,
-  handleCurrencyASelect: _noop,
-  handleCurrencyBSelect: _noop,
-}
-
-export const CurrencySelectorContext = createContext<CurrencySelectorValue>(initialValue)
-
-export default function useCurrencySelectRoute(defaultCurrencies?: string[]): CurrencySelectorValue {
-  const router = useRouter()
-  const isMounted = useIsMounted()
-
-  const [currencyIdA, currencyIdB] = router.query.currency || defaultCurrencies || []
-
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
 

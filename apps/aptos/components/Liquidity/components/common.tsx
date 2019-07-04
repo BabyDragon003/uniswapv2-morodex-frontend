@@ -3,6 +3,12 @@ import { Percent, CurrencyAmount, Price } from '@pancakeswap/aptos-swap-sdk'
 import { Currency } from '@pancakeswap/swap-sdk-core'
 
 import {
+  Text,
+  useTooltip,
+  TooltipText,
+  Box,
+  Flex,
+  Svg,
   SvgProps,
   AutoColumn,
   RowBetween,

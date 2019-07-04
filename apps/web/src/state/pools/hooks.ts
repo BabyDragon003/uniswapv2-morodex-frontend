@@ -3,26 +3,16 @@ import { useAccount } from 'wagmi'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { batch, useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
+import { useFastRefreshEffect, useSlowRefreshEffect } from 'hooks/useRefreshEffect'
+import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
+import { FAST_INTERVAL } from 'config/constants'
+import useSWRImmutable from 'swr/immutable'
+import { getFarmConfig } from '@pancakeswap/farms/constants'
+import { livePools } from 'config/constants/pools'
 import { Pool } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import {
-  fetchPoolsPublicDataAsync,
-  fetchPoolsUserDataAsync,
-  fetchCakeVaultPublicData,
-  fetchCakeVaultUserData,
-  fetchCakeVaultFees,
-  fetchPoolsStakingLimitsAsync,
-  fetchUserIfoCreditDataAsync,
-  fetchIfoPublicDataAsync,
-  fetchCakeFlexibleSideVaultPublicData,
-  fetchCakeFlexibleSideVaultUserData,
-  fetchCakeFlexibleSideVaultFees,
-  fetchCakePoolUserDataAsync,
-  fetchCakePoolPublicDataAsync,
-} from '.'
-import { VaultKey } from '../types'
 import { fetchFarmsPublicDataAsync } from '../farms'
 import {
   makePoolWithUserDataLoadingSelector,

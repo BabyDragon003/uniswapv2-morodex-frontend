@@ -3,26 +3,16 @@ import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/ui
 import { Auction, Bidder } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import useCongratulateAuctionWinner from '../hooks/useCongratulateAuctionWinner'
+import WhitelistedBiddersButton from './WhitelistedBiddersButton'
+
+const StyledReclaimBidCard = styled(Card)`
+  margin-top: 16px;
+  flex: 1;
 `
 
 const CongratulationsCard: React.FC<React.PropsWithChildren<{ currentAuction: Auction; bidders: Bidder[] }>> = ({
   currentAuction,
-  bidders,
-}) => {
-  const { t } = useTranslation()
-  const wonAuction = useCongratulateAuctionWinner(currentAuction, bidders)
-
-  if (!wonAuction) {
-    return null
-  }
-
-  const { auction, bidderData } = wonAuction
-  const { amount, position } = bidderData
-  return (
-    <StyledReclaimBidCard mb={['24px', null, null, '0']}>
-      <CardHeader>
-        <Heading>{t('Congratulations!')}</Heading>
-      </CardHeader>
       <CardBody>
         <Text mb="16px">{t('Your bid in Auction #%auctionId% was successful.', { auctionId: auction.id })}</Text>
         <Text>{t('Your Farm will be launched as follows:')}</Text>

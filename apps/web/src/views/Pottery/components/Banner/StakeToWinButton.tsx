@@ -3,6 +3,12 @@ import { Flex, Button, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TicketCard } from '../../svgs'
 
+const mainTicketAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
   }
   to {
     transform: rotate(0deg);

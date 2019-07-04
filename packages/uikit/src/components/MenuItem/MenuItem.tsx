@@ -3,6 +3,12 @@ import { MenuContext } from "../../widgets/Menu/context";
 import StyledMenuItem, { StyledMenuItemContainer } from "./styles";
 import { MenuItemProps } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
+
+const MenuItem: React.FC<React.PropsWithChildren<MenuItemProps>> = ({
+  children,
+  href,
+  isActive = false,
+  isDisabled = false,
   variant = "default",
   scrollLayerRef,
   statusColor,

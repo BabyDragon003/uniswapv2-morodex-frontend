@@ -3,6 +3,12 @@ import merge from 'lodash/merge'
 import pickBy from 'lodash/pickBy'
 import forEach from 'lodash/forEach'
 import { useTranslation } from '@pancakeswap/localization'
+import { useProvider } from 'wagmi'
+import { poll } from '@ethersproject/web'
+import { ToastDescriptionWithTx } from 'components/Toast'
+import { Box, Text, useToast } from '@pancakeswap/uikit'
+import { FAST_INTERVAL } from 'config/constants'
+import useSWRImmutable from 'swr/immutable'
 import { useAppDispatch } from '../index'
 import {
   finalizeTransaction,

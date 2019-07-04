@@ -3,26 +3,16 @@ import { RocketIcon, Text } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
+import { memo, useContext } from 'react'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import useBoostMultiplier from '../hooks/useBoostMultiplier'
+import useGetBoostedAPR from '../hooks/useGetBoostedAPR'
+import { YieldBoosterState } from '../hooks/useYieldBoosterState'
+import { YieldBoosterStateContext } from './ProxyFarmContainer'
 
 interface BoostedAprPropsType {
   apr: number
   lpRewardsApr: number
-  pid: number
-  mr?: string
-  userBalanceInFarm: BigNumber
-  lpTotalSupply: BigNumber
-}
-
-function BoostedApr(props: BoostedAprPropsType) {
-  const { lpRewardsApr, apr, pid, userBalanceInFarm, lpTotalSupply, ...rest } = props
-  const { boosterState, proxyAddress } = useContext(YieldBoosterStateContext)
-  const { t } = useTranslation()
-
-  const boostedAprFromFE = useGetBoostedAPR(userBalanceInFarm, lpTotalSupply, apr, lpRewardsApr)
-
-  const multiplier = useBoostMultiplier({ pid, boosterState, proxyAddress })
-
-  const boostedAprFromSC =
     (!isUndefinedOrNull(multiplier) &&
       !isUndefinedOrNull(apr) &&
       formatNumber(

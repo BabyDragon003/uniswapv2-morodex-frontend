@@ -3,26 +3,16 @@ import BigNumber from "bignumber.js";
 import { Button } from "../../../../../components/Button";
 import { Heading } from "../../../../../components/Heading";
 import { Text, TooltipText } from "../../../../../components/Text";
+import { Balance } from "../../../../../components/Balance";
+import { Skeleton } from "../../../../../components/Skeleton";
+import { useTooltip } from "../../../../../hooks/useTooltip";
+import { ActionContainer, ActionContent, ActionTitles } from "./styles";
+import { FARMS_SMALL_AMOUNT_THRESHOLD } from "../../../constants";
+
 interface HarvestActionProps {
   earnings: BigNumber;
   earningsBusd: number;
   displayBalance: string | JSX.Element;
-  pendingTx: boolean;
-  userDataReady: boolean;
-  proxyCakeBalance?: number;
-  handleHarvest: () => void;
-}
-
-const HarvestAction: React.FunctionComponent<React.PropsWithChildren<HarvestActionProps>> = ({
-  earnings,
-  earningsBusd,
-  displayBalance,
-  pendingTx,
-  userDataReady,
-  proxyCakeBalance,
-  handleHarvest,
-}) => {
-  const { t } = useTranslation();
 
   const toolTipBalance = !userDataReady ? (
     <Skeleton width={60} />

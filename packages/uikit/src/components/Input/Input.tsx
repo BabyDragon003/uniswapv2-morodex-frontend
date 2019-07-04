@@ -3,26 +3,16 @@ import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {
   theme: DefaultTheme;
+}
+
+/**
+ * Priority: Warning --> Success
+ */
+const getBoxShadow = ({ isSuccess = false, isWarning = false, theme }: StyledInputProps) => {
   if (isWarning) {
     return theme.shadows.warning;
   }
 
-  if (isSuccess) {
-    return theme.shadows.success;
-  }
-
-  return theme.shadows.inset;
-};
-
-const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
-  switch (scale) {
-    case scales.SM:
-      return "32px";
-    case scales.LG:
-      return "48px";
-    case scales.MD:
-    default:
-      return "40px";
   }
 };
 
