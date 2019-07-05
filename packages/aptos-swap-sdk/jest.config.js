@@ -13,3 +13,6 @@ module.exports = {
         },
       },
     ],
+  },
+  testEnvironment: 'jsdom',
+}

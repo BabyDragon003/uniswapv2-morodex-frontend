@@ -13,6 +13,22 @@ const StatusElement: React.FC<
 > = ({ element, text, color }) => {
   if (element === StatusElementType.TAG) {
     return (
+      <Tag outline scale="sm" variant={color} ml="auto">
+        {text}
+      </Tag>
+    )
+  }
+  return <Text color={color}>{text}</Text>
+}
+
+const OrderStatus: React.FC<
+  React.PropsWithChildren<{
+    formattedOrder: FormattedOrderData
+    showOpenTag?: boolean
+    element?: StatusElementType
+  }>
+> = ({ formattedOrder, showOpenTag = false, element = StatusElementType.TAG }) => {
+  const { t } = useTranslation()
   const { isOpen, isSubmissionPending, isCancelled, isCancellationPending, isExecuted, isExpired } = formattedOrder
   if (isOpen && isExpired) {
     return <StatusElement element={element} text={t('Expired')} color="warning" />

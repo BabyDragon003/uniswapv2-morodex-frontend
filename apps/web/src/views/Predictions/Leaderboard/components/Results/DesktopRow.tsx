@@ -13,15 +13,10 @@ const DesktopRow: React.FC<React.PropsWithChildren<DesktopRowProps>> = ({ rank, 
     {rank ? (
       <Td>
         <Text textAlign="center" fontWeight="bold" color="secondary">{`#${rank}`}</Text>
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2,
-      })}%`}
-    </Td>
-    <Td textAlign="center">
-      <strong>{user.totalBetsClaimed.toLocaleString()}</strong>
-    </Td>
-    <Td textAlign="center">{user.totalBets.toLocaleString()}</Td>
-  </tr>
-)
+      </Td>
+    ) : (
+      <Td />
+    )}
+    <Td>
 
 export default DesktopRow

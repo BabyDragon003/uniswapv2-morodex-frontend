@@ -13,16 +13,11 @@ export const ActionContainer = styled.div`
     margin-right: 12px;
     margin-bottom: 12px;
     /* max-height: 130px; */
-  justify-content: space-between;
-  align-items: center;
-`;
+  }
 
-export const IconButtonWrapper = styled.div`
-  display: flex;
-`;
-
-export const StyledActionContainer = styled(ActionContainer)`
-  &:nth-child(3) {
+  ${({ theme }) => theme.mediaQueries.xl} {
+    margin-right: 0;
+    margin-bottom: 0;
     flex-basis: 100%;
   }
   min-height: 124.5px;

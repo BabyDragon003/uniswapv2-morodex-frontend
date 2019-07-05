@@ -13,6 +13,22 @@ interface ExtendEnableProps {
 
 const ExtendEnable: React.FC<React.PropsWithChildren<ExtendEnableProps>> = ({
   hasEnoughCake,
+  handleConfirmClick,
+  pendingConfirmTx,
+  isValidAmount,
+  isValidDuration,
+}) => {
+  const { handleEnable, pendingEnableTx } = useCakeEnable(ENABLE_EXTEND_LOCK_AMOUNT)
+
+  const [pendingEnableTxWithBalance, setPendingEnableTxWithBalance] = useState(pendingEnableTx)
+
+  useEffect(() => {
+    if (pendingEnableTx) {
+      setPendingEnableTxWithBalance(true)
+    } else if (hasEnoughCake) {
+      setPendingEnableTxWithBalance(false)
+    }
+  }, [hasEnoughCake, pendingEnableTx])
 
   return (
     <ApproveConfirmButtons

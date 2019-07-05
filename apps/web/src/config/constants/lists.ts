@@ -18,7 +18,3 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
   ...ETH_URLS,
   ...UNSUPPORTED_LIST_URLS, // need to load unsupported tokens as well
   ...WARNING_LIST_URLS,
-]
-
-// default lists to be 'active' aka searched across
-export const DEFAULT_ACTIVE_LIST_URLS: string[] = [PANCAKE_EXTENDED, COINGECKO_ETH]

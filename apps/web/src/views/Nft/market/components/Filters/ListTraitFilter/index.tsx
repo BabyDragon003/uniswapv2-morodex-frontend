@@ -18,27 +18,6 @@ import orderBy from 'lodash/orderBy'
 import { useGetNftFilters } from 'state/nftMarket/hooks'
 import { useNftStorage } from 'state/nftMarket/storage'
 import styled from 'styled-components'
-import { Item } from './types'
-import { FilterButton, ListOrderState, SearchWrapper } from '../ListFilter/styles'
-import { TraitItemRow } from './styles'
-
-interface ListTraitFilterProps {
-  title?: string
-  traitType: string
-  items: Item[]
-  collectionAddress: string
-}
-
-const TriggerButton = styled(Button)<{ hasItem: boolean }>`
-  ${({ hasItem }) =>
-    hasItem &&
-    `
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-right: 8px;
-  `}
-`
-
 const CloseButton = styled(IconButton)`
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

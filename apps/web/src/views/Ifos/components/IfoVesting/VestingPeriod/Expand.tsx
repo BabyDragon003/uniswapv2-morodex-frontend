@@ -13,6 +13,22 @@ const expandAnimation = keyframes`
     opacity: 0;
     max-height: 0px;
   }
+  to {
+    opacity: 1;
+    max-height: 484px;
+  }
+`
+
+const collapseAnimation = keyframes`
+  from {
+    opacity: 1;
+    max-height: 484px;
+  }
+  to {
+    opacity: 0;
+    max-height: 0px;
+  }
+`
 
 const StyledExpand = styled(Box)<{ expanded: boolean }>`
   position: relative;

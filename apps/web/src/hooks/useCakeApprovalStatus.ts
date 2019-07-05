@@ -13,6 +13,8 @@ export const useCakeApprovalStatus = (spender) => {
   const key = useMemo<UseSWRContractKey>(
     () =>
       account && spender
-}
-
-export default useCakeApprovalStatus
+        ? {
+            contract: cakeContract,
+            methodName: 'allowance',
+            params: [account, spender],
+          }

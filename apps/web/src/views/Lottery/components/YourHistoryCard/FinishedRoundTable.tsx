@@ -13,16 +13,11 @@ const Grid = styled(Box)`
 interface FinishedRoundTableProps {
   handleHistoryRowClick: (string) => void
   handleShowMoreClick: () => void
-    return parseInt(roundB.lotteryId, 10) - parseInt(roundA.lotteryId, 10)
-  })
+  numUserRoundsRequested: number
+}
 
-  return (
-    <>
-      <Grid px="24px" pt="24px" mb="8px">
-        <Text bold fontSize="12px" color="secondary">
-          #
-        </Text>
-        <Text bold fontSize="12px" color="secondary" textTransform="uppercase">
+const FinishedRoundTable: React.FC<React.PropsWithChildren<FinishedRoundTableProps>> = ({
+  handleShowMoreClick,
           {t('Date')}
         </Text>
         <Text bold fontSize="12px" color="secondary" textTransform="uppercase">

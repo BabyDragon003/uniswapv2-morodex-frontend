@@ -13,6 +13,22 @@ import getThemeValue from "../../util/getThemeValue";
 import {
   AutoRenewIcon,
   BalanceInput,
+  Button,
+  CalculateIcon,
+  Flex,
+  IconButton,
+  Image,
+  Link,
+  Skeleton,
+  Slider,
+  Text,
+  RoiCalculatorModal,
+} from "../../components";
+import { Modal } from "../Modal";
+
+const StyledLink = styled((props) => <Link {...props} />)`
+  width: 100%;
+`;
 
 const AnnualRoiContainer = styled((props) => <Flex {...props} />)`
   cursor: pointer;

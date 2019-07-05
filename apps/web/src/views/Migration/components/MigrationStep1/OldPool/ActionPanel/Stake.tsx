@@ -13,16 +13,11 @@ import UnstakeButton from '../UnstakeButton'
 
 const Container = styled(ActionContainer)`
   flex: 3;
-  )
+`
 
-  const { vaultPoolData } = useVaultPoolByKeyV1(pool.vaultKey)
-  const { pricePerFullShare } = vaultPoolData
-  const { userShares } = vaultPoolData.userData
-
-  let cakeAsBigNumber = BIG_ZERO
-  let cakeAsNumberBalance = 0
-  if (pricePerFullShare) {
-    const { cakeAsBigNumber: cakeBigBumber, cakeAsNumberBalance: cakeBalance } = convertSharesToCake(
+interface StackedActionProps {
+  pool: Pool.DeserializedPool<Token>
+}
       userShares,
       pricePerFullShare,
     )

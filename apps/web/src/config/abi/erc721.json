@@ -13,11 +13,6 @@
     "inputs": [{ "name": "_tokenId", "type": "uint256" }],
     "name": "getApproved",
     "outputs": [{ "name": "_approved", "type": "address" }],
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "implementsERC721",
-    "outputs": [{ "name": "_implementsERC721", "type": "bool" }],
     "payable": false,
     "stateMutability": "view",
     "type": "function"

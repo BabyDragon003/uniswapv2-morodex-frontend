@@ -13,6 +13,22 @@ import {
 
 const waves = keyframes`
    from {
+        left: -150px;
+    }
+    to   {
+        left: 100%;
+    }
+`;
+
+const pulse = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
   }
 `;
 

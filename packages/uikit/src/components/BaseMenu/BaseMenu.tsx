@@ -13,6 +13,22 @@ const BaseMenu: React.FC<BaseMenuProps & { children: any }> = ({ component, opti
   const padding = options?.padding ?? { left: 16, right: 16 };
 
   const [isMenuOpen, setIsMenuOpen] = useState(isOpen);
+
+  const toggle = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const open = () => {
+    setIsMenuOpen(true);
+  };
+
+  const close = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Allow for component to be controlled
+  useEffect(() => {
+    setIsMenuOpen(isOpen);
   }, [isOpen, setIsMenuOpen]);
 
   useEffect(() => {

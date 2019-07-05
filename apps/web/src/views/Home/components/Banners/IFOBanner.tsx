@@ -13,6 +13,22 @@ import * as S from './Styled'
 const IFOHeaderMobileLimitHeight = 36
 const IFOHeaderMobileLimitWidth = 335
 
+const shineAnimation = keyframes`
+	0% {transform:translateX(-100%);}
+  20% {transform:translateX(100%);}
+	100% {transform:translateX(100%);}
+`
+
+const RightWrapper = styled.div`
+  position: absolute;
+  right: 1px;
+  bottom: 18px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    bottom: -3px;
+    right: 0;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    bottom: 9px;
     right: 67px;
   }
   ${({ theme }) => theme.mediaQueries.lg} {

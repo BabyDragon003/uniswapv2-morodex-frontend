@@ -13,6 +13,22 @@ const getPoolChartData = async (
     const query = gql`
       query pairDayDatas($startTime: Int!, $skip: Int!, $address: Bytes!) {
         pairDayDatas(
+          first: 1000
+          skip: $skip
+          where: { pairAddress: $address, date_gt: $startTime }
+          orderBy: date
+          orderDirection: asc
+        ) {
+          date
+          dailyVolumeUSD
+          reserveUSD
+        }
+      }
+    `
+    const { pairDayDatas } = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PairDayDatasResponse>(
+      query,
+      {
+        startTime: multiChainStartTime[chainName],
         skip,
         address,
       },

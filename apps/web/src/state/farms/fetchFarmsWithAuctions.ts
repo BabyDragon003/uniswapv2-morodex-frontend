@@ -13,16 +13,11 @@ const fetchFarmsWithAuctions = async (
   const farmAuctionContract = getFarmAuctionContract()
   const currentAuctionId = await farmAuctionContract.currentAuctionId()
   const [auctionData, [auctionBidders]] = await multicallv2({
-  if (blocksSinceEnd > 0) {
-    const secondsSinceEnd = blocksSinceEnd * BSC_BLOCK_TIME
-    if (secondsSinceEnd > FARM_AUCTION_HOSTING_IN_SECONDS) {
-      return { winnerFarms: [], auctionHostingEndDate: null }
-    }
-    const sortedBidders = sortAuctionBidders(auctionBidders)
-    const leaderboardThreshold = ethersToBigNumber(auctionData.leaderboardThreshold)
-    const winnerFarms = sortedBidders
-      .filter((bidder) => bidder.amount.gt(leaderboardThreshold))
-      .map((bidder) => bidder.lpAddress)
+    abi: farmAuctionAbi,
+    calls: [
+      {
+        address: farmAuctionContract.address,
+        name: 'auctions',
     const currentAuctionEndDate = sub(new Date(), { seconds: secondsSinceEnd })
     return {
       winnerFarms,

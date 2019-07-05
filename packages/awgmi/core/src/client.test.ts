@@ -13,6 +13,22 @@ describe('createClient', () => {
       provider,
     })
     expect(client).toBeInstanceOf(Client)
+  })
+
+  describe('config', () => {
+    describe('autoConnect', () => {
+      describe('true', () => {
+        it('disconnected', async () => {
+          const client = createClient({
+            autoConnect: true,
+            provider,
+          })
+          expect(client.status).toMatchInlineSnapshot(`"connecting"`)
+          await client.autoConnect()
+          expect(client.status).toMatchInlineSnapshot(`"disconnected"`)
+        })
+
+        it('connected', async () => {
           const client = createClient({
             autoConnect: true,
             connectors: [

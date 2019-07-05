@@ -14,15 +14,10 @@ import { SLOW_INTERVAL } from 'config/constants'
 import cakeVaultV2Abi from 'config/abi/cakeVaultV2.json'
 import { BigNumber } from '@ethersproject/bignumber'
 
-  ${({ noDesktopBorder, theme }) =>
-    noDesktopBorder &&
-    `${theme.mediaQueries.md} {
-           padding: 0;
-           border-left: none;
-         }
-       `}
-`
-
+const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: boolean }>`
+  flex-direction: column;
+  ${({ noMobileBorder, theme }) =>
+    noMobileBorder
 const Grid = styled.div`
   display: grid;
   grid-gap: 16px 8px;

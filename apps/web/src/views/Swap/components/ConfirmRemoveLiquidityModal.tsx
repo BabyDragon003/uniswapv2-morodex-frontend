@@ -13,16 +13,11 @@ import TransactionConfirmationModal from 'components/TransactionConfirmationModa
 import { AutoColumn } from 'components/Layout/Column'
 import { RowBetween, RowFixed } from 'components/Layout/Row'
 import { Field } from 'state/burn/actions'
-  }
-  allowedSlippage: number
-  onRemove: () => void
-  liquidityErrorMessage: string
-  approval: ApprovalState
-  signatureData?: any
-  tokenA: Token
-  tokenB: Token
-  currencyA: Currency | null | undefined
-  currencyB: Currency | null | undefined
+import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
+import { ApprovalState } from 'hooks/useApproveCallback'
+import { ZapErrorMessages } from '../../AddLiquidity/components/ZapErrorMessage'
+
+interface ConfirmRemoveLiquidityModalProps {
   isZap?: boolean
   toggleZapMode?: (value: boolean) => void
 }

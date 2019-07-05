@@ -18,27 +18,6 @@ import {
 } from '@pancakeswap/uikit'
 import { AnyAction, AsyncThunkAction } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
-import styled from 'styled-components'
-
-import { useTranslation } from '@pancakeswap/localization'
-import { useAccount } from 'wagmi'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useBUSDPrice from 'hooks/useBUSDPrice'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { usePredictionsContract } from 'hooks/useContract'
-import { fetchNodeHistory, markAsCollected } from 'state/predictions'
-import { REWARD_RATE } from 'state/predictions/config'
-import { Bet } from 'state/types'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import { multiplyPriceByAmount } from 'utils/prices'
-import { getPayout } from './History/helpers'
-
-interface CollectRoundWinningsModalProps extends InjectedModalProps {
-  onSuccess?: () => Promise<void>
-  dispatch: (action: AnyAction | AsyncThunkAction<any, { account: string }, any>) => void
-  history: Bet[]
-  isLoadingHistory: boolean
   predictionsAddress: string
   token: Token
   isV1Claim?: boolean

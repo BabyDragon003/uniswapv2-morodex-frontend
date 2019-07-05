@@ -18,27 +18,6 @@ const useGetTopPoolsByApr = (isIntersecting: boolean) => {
   const [fetchStatus, setFetchStatus] = useState(FetchStatus.Idle)
   const [topPools, setTopPools] = useState<Pool.DeserializedPool<Token>[]>([null, null, null, null, null])
   const initialBlock = useInitialBlock()
-
-  const { pools } = usePoolsWithVault()
-
-  useEffect(() => {
-    const fetchPoolsPublicData = async () => {
-      setFetchStatus(FetchStatus.Fetching)
-
-      try {
-        // It should all be blocking calls since data only fetched once
-        await Promise.all([
-          dispatch(fetchCakeVaultFees()),
-          dispatch(fetchCakeVaultPublicData()),
-          dispatch(fetchPoolsPublicDataAsync(initialBlock, chainId)),
-        ])
-        setFetchStatus(FetchStatus.Fetched)
-      } catch (e) {
-        console.error(e)
-        setFetchStatus(FetchStatus.Failed)
-      }
-    }
-
     if (isIntersecting && fetchStatus === FetchStatus.Idle && initialBlock > 0) {
       fetchPoolsPublicData()
     }

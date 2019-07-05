@@ -13,16 +13,11 @@ import { useLastUpdated } from '@pancakeswap/hooks'
 import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
 import NoNftsImage from '../components/Activity/NoNftsImage'
 import ActivityFilters from './ActivityFilters'
-  const { theme } = useTheme()
-  const { t } = useTranslation()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [maxPage, setMaxPages] = useState(1)
-  const [activityData, setActivityData] = useState<Activity[]>([])
-  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
-  const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [isInitialized, setIsInitialized] = useState(false)
-  const [queryPage, setQueryPage] = useState(1)
+import ActivityRow from '../components/Activity/ActivityRow'
+import { sortActivity } from './utils/sortActivity'
+import { fetchActivityNftMetadata } from './utils/fetchActivityNftMetadata'
+
+const MAX_PER_PAGE = 8
   const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
   const bnbBusdPrice = useBNBBusdPrice()
   const { isXs, isSm, isMd } = useMatchBreakpoints()

@@ -18,10 +18,3 @@ const usePollPredictions = () => {
     () => dispatch(fetchPredictionData(account)),
     {
       refreshInterval: POLL_TIME_IN_SECONDS * 1000,
-      refreshWhenHidden: true,
-      refreshWhenOffline: true,
-    },
-  )
-}
-
-export default usePollPredictions

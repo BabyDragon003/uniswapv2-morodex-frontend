@@ -13,6 +13,22 @@ export function useDerivedLPInfo(
 ): {
   lpOutputWithoutFee: CurrencyAmount<Currency> | null
   price: Price<Currency, Currency> | null
+  loading: boolean
+} {
+  const { stableSwapConfig } = useContext(StableConfigContext)
+  const { totalSupply, balances, amplifier, loading } = useStableSwapInfo(
+    stableSwapConfig?.stableSwapAddress,
+    stableSwapConfig?.liquidityToken.address,
+  )
+  const wrappedCurrencyA = amountA?.currency.wrapped
+  const wrappedCurrencyB = amountB?.currency.wrapped
+  const [token0, token1] =
+    wrappedCurrencyA && wrappedCurrencyB && wrappedCurrencyA?.sortsBefore(wrappedCurrencyB)
+      ? [wrappedCurrencyA, wrappedCurrencyB]
+      : [wrappedCurrencyB, wrappedCurrencyA]
+  const [amount0, amount1] =
+    wrappedCurrencyA && token0 && token0.equals(wrappedCurrencyA) ? [amountA, amountB] : [amountB, amountA]
+  const poolBalances = useMemo<[CurrencyAmount<Currency>, CurrencyAmount<Currency>] | undefined>(
     () =>
       token0 &&
       token1 &&

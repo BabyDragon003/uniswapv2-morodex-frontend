@@ -13,16 +13,11 @@ const useNftOwn = (collectionAddress: string, tokenId: string, marketData?: Toke
   const { address: account } = useAccount()
   const { reader: collectionContract } = useErc721CollectionContract(collectionAddress)
   const { isInitialized: isProfileInitialized, profile } = useProfile()
-      const nftIsOnSale = marketData ? marketData?.currentSeller !== NOT_ON_SALE_SELLER : false
-      if (nftIsOnSale) {
-        isOwn = isAddress(marketData?.currentSeller) === isAddress(account)
-        location = NftLocation.FORSALE
-      } else if (nftIsProfilePic) {
-        isOwn = true
-        location = NftLocation.PROFILE
-      } else {
-        isOwn = isAddress(tokenOwner) === isAddress(account)
-        location = NftLocation.WALLET
+
+  const { data: tokenOwner } = useSWR(
+    collectionContract ? ['nft', 'ownerOf', collectionAddress, tokenId] : null,
+    async () => collectionContract.ownerOf(tokenId),
+  )
       }
 
       return {

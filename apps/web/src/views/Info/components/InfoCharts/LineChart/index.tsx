@@ -13,6 +13,22 @@ export type LineChartProps = {
 
 /**
  * Note: remember that it needs to be mounted inside the container with fixed height
+ */
+const LineChart = ({ data, setHoverValue, setHoverDate }: LineChartProps) => {
+  const {
+    currentLanguage: { locale },
+  } = useTranslation()
+  const { theme } = useTheme()
+  if (!data || data.length === 0) {
+    return <LineChartLoader />
+  }
+  return (
+    <ResponsiveContainer>
+      <AreaChart
+        data={data}
+        width={300}
+        height={308}
+        margin={{
           top: 5,
           right: 15,
           left: 0,
