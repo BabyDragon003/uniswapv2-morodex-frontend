@@ -18,3 +18,8 @@ export const StyledArtistBioContainer = styled(Flex)`
 
   & > svg {
     position: absolute;
+    width: 20px;
+    height: 85px;
+    left: calc(50% - 10px);
+    top: -51px;
+    transform: rotate(90deg);

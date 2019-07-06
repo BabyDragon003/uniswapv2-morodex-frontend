@@ -18,3 +18,10 @@ const withShownApr = (AprComp) => (props) => {
     <AprComp
       {...props}
       shouldShowApr={hasPoolStarted || !shouldShowBlockCountdown}
+      account={account}
+      autoCompoundFrequency={autoCompoundFrequency}
+    />
+  )
+}
+
+export default withShownApr(Pool.Apr<Token>)

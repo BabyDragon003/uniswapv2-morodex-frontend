@@ -18,16 +18,11 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
     ${({ stage, theme }) =>
       stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
         ? `fill: ${theme.colors.textSubtle}`
-  bnbAmount,
-  isLoading,
-  isInsufficient,
-}) => {
-  const bnbBusdPrice = useBNBBusdPrice()
-  if (isLoading) {
-    return (
-      <Flex flexDirection="column" justifySelf="flex-end">
-        <Skeleton width="86px" height="20px" mb="6px" />
-        <Skeleton width="86px" height="20px" />
+        : null};
+  }
+`
+
+export const BorderedBox = styled(Grid)`
       </Flex>
     )
   }

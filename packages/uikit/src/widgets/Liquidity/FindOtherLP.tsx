@@ -18,3 +18,4 @@ export function FindOtherLP() {
       </Link>
     </AtomBox>
   );
+}

@@ -18,16 +18,11 @@ const StyledContainer = styled(Flex)<{ isDark: boolean }>`
   border-radius: 24px;
   padding: 12px 16px;
   background: ${({ isDark }) =>
-`
+    isDark
+      ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
+      : 'radial-gradient(50% 79.31% at 50% 50%, #FAF9FA 0%, #F5F3F8 100%)'};
 
-const StyledTitleContainer = styled(Box)`
-  padding: 0 16px;
-  margin-bottom: 64px;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-bottom: 80px;
-  }
-
+  ${({ theme }) => theme.mediaQueries.xxl} {
   @media screen and (min-width: 1440px) {
     padding-left: 130px;
   }

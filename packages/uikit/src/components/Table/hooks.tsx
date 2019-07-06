@@ -18,6 +18,27 @@ import { byTextAscending, byTextDescending } from "./utils";
 
 const sortByColumn = <T extends DataType>(
   data: RowType<T>[],
+  sortColumn: string,
+  columns: ColumnStateType<T>[]
+): RowType<T>[] => {
+  let isAscending: boolean | undefined | null = null;
+  let sortedRows: RowType<T>[] = [...data];
+
+  columns.forEach((column) => {
+    // if the row was found
+    if (sortColumn === column.name) {
+      isAscending = column.sorted.asc;
+
+      if (column.sort) {
+        sortedRows = isAscending ? data.sort(column.sort) : data.sort(column.sort).reverse();
+        // default to sort by string
+      } else {
+        sortedRows = isAscending
+          ? data.sort(byTextAscending((object) => object.original[sortColumn]))
+          : data.sort(byTextDescending((object) => object.original[sortColumn]));
+      }
+    }
+  });
 
   return sortedRows;
 };

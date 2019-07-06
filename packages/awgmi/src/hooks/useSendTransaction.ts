@@ -18,6 +18,27 @@ const mutationFn = async ({ networkName, payload, options }: SendTransactionArgs
     payload,
     options,
   } as SendTransactionArgs)
+}
+
+export function useSendTransaction({
+  networkName,
+  payload,
+  onError,
+  onMutate,
+  onSettled,
+  onSuccess,
+}: UseSendTransactionArgs & UseSendTransactionConfig = {}) {
+  const { data, error, isError, isIdle, isLoading, isSuccess, mutate, mutateAsync, reset, status, variables } =
+    useMutation(
+      mutationKey({
+        networkName,
+        payload,
+      } as SendTransactionArgs),
+      mutationFn,
+      {
+        onError,
+        onMutate,
+        onSettled,
         onSuccess,
       },
     )

@@ -18,6 +18,27 @@ import {
 import { getBlockExploreLink } from 'utils'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'
+import { usePriceCakeBusd } from 'state/farms/hooks'
+import { Bidder } from 'config/constants/types'
+import WhitelistedBiddersModal from '../WhitelistedBiddersModal'
+
+const LeaderboardContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 5fr 3fr 1fr;
+  ${({ theme }) => theme.mediaQueries.md} {
+    grid-template-columns: 3fr 5fr 5fr 1fr;
+  }
+`
+
+const GridCell = styled(Flex)<{ isTopPosition: boolean }>`
+  height: 65px;
+  align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+
+  ${({ theme, isTopPosition }) => isTopPosition && `background-color: ${theme.colors.warning2D};`}
+`
+
+interface LeaderboardRowProps {
   bidder: Bidder
   cakePriceBusd: BigNumber
   isMobile: boolean

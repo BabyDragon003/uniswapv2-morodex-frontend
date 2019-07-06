@@ -18,6 +18,27 @@ import { Block, Transaction } from 'state/info/types'
 import { SWRConfiguration } from 'swr'
 import useSWRImmutable from 'swr/immutable'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
+import { getAprsForStableFarm } from 'utils/getAprsForStableFarm'
+import { useBlockFromTimeStampSWR } from 'views/Info/hooks/useBlocksFromTimestamps'
+import { checkIsStableSwap, MultiChainName } from './constant'
+import { ChartEntry, PoolData, PriceChartEntry, ProtocolData, TokenData } from './types'
+
+// Protocol hooks
+
+const refreshIntervalForInfo = 15000 // 15s
+const SWR_SETTINGS_WITHOUT_REFETCH = {
+  errorRetryCount: 3,
+  errorRetryInterval: 3000,
+}
+const SWR_SETTINGS: SWRConfiguration = {
+  refreshInterval: refreshIntervalForInfo,
+  ...SWR_SETTINGS_WITHOUT_REFETCH,
+}
+
+export const useProtocolDataSWR = (): ProtocolData | undefined => {
+  const chainName = useGetChainName()
+  const [t24, t48] = getDeltaTimestamps()
+  const { blocks } = useBlockFromTimeStampSWR([t24, t48])
   const [block24, block48] = blocks ?? []
   const type = checkIsStableSwap() ? 'stableSwap' : 'swap'
   const { data: protocolData } = useSWRImmutable(

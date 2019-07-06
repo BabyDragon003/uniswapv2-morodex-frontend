@@ -18,14 +18,9 @@ const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
     pool: { userDataLoaded },
   } = usePool(0)
 
+  const { t } = useTranslation()
 
-  return userDataLoaded ? (
-    <Button onClick={handleClicked} width="100%" style={{ whiteSpace: 'nowrap', paddingLeft: 0, paddingRight: 0 }}>
-      {t('Add CAKE')}
-    </Button>
-  ) : (
-    <Skeleton height={48} />
-  )
-}
-
+  const [openAddAmountModal] = useModal(
+    <AddAmountModal
+      currentLockedAmount={currentLockedAmount}
 export default memo(AddCakeButton)

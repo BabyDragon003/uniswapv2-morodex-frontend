@@ -23,32 +23,6 @@ const RewardsInner = styled.div`
 `
 
 interface RewardMatchesProps {
-  lotteryNodeData: LotteryRound
-  isHistoricRound?: boolean
-}
-
-interface RewardsState {
-  isLoading: boolean
-  cakeToBurn: BigNumber
-  rewardsLessTreasuryFee: BigNumber
-  rewardsBreakdown: string[]
-  countWinnersPerBracket: string[]
-}
-
-const RewardBrackets: React.FC<React.PropsWithChildren<RewardMatchesProps>> = ({
-  lotteryNodeData,
-  isHistoricRound,
-}) => {
-  const { t } = useTranslation()
-  const [state, setState] = useState<RewardsState>({
-    isLoading: true,
-    cakeToBurn: BIG_ZERO,
-    rewardsLessTreasuryFee: BIG_ZERO,
-    rewardsBreakdown: null,
-    countWinnersPerBracket: null,
-  })
-
-  useEffect(() => {
     if (lotteryNodeData) {
       const { treasuryFee, amountCollectedInCake, rewardsBreakdown, countWinnersPerBracket } = lotteryNodeData
 

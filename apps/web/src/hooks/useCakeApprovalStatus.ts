@@ -18,3 +18,8 @@ export const useCakeApprovalStatus = (spender) => {
             methodName: 'allowance',
             params: [account, spender],
           }
+        : null,
+    [account, cakeContract, spender],
+  )
+
+  const { data, mutate } = useSWRContract(key)

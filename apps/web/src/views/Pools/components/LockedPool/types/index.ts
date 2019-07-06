@@ -18,16 +18,11 @@ export interface GenericModalProps {
 export interface ValidatorArg {
   duration: number
 }
-  currentLockedAmount: BigNumber
-  lockEndTime: string
-  lockStartTime: string
-  stakingTokenBalance: BigNumber
-}
 
-export interface OverviewPropsType {
-  usdValueStaked: number
-  lockedAmount: number
-  openCalculator: () => void
+export interface ValidatorReturn {
+  finalLockedAmount?: number
+  finalDuration?: number
+}
   duration: number
   isValidDuration: boolean
   newDuration?: number

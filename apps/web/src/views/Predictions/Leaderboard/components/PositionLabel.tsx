@@ -23,25 +23,3 @@ const Label = styled.div`
   color: #fff;
   display: none;
   text-transform: uppercase;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    display: block;
-    margin-left: 4px;
-  }
-`
-
-const PositionLabel: React.FC<React.PropsWithChildren<PositionLabelProps>> = ({ position }) => {
-  const { t } = useTranslation()
-  const isBull = position === BetPosition.BULL
-  const bgColor = isBull ? 'success' : 'failure'
-  const icon = isBull ? <ArrowUpIcon width="24px" color="white" /> : <ArrowDownIcon width="24px" color="white" />
-
-  return (
-    <StyledPositionLabel bgColor={bgColor}>
-      {icon}
-      <Label>{isBull ? t('Up') : t('Down')}</Label>
-    </StyledPositionLabel>
-  )
-}
-
-export default PositionLabel

@@ -18,6 +18,27 @@ const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
   }
+`
+
+const OwnerRow = styled(Grid)`
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-row-gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  align-items: center;
+`
+
+interface OwnerCardProps {
+  nft: NftToken
+  isOwnNft: boolean
+  nftIsProfilePic: boolean
+  onSuccess: () => void
+}
+
+const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
+  nft,
+  isOwnNft,
+  nftIsProfilePic,
   onSuccess,
 }) => {
   const { t } = useTranslation()

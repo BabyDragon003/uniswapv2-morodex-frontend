@@ -18,16 +18,11 @@ const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: 
   flex-direction: column;
   ${({ noMobileBorder, theme }) =>
     noMobileBorder
-const Grid = styled.div`
-  display: grid;
-  grid-gap: 16px 8px;
-  margin-top: 24px;
-  grid-template-columns: repeat(2, auto);
-  grid-template-areas:
-    'a d'
-    'b e'
-    'c f';
-
+      ? `${theme.mediaQueries.md} {
+           padding: 0 16px;
+           border-left: 1px ${theme.colors.inputSecondary} solid;
+         }
+       `
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-gap: 16px;
   }

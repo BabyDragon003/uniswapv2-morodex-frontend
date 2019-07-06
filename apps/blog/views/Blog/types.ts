@@ -23,32 +23,6 @@ export interface ArticleImageType {
         url: string
       }
     }
-  }
-}
-
-export interface ResponseArticleDataType {
-  id: number
-  attributes: {
-    title: string
-    description: string
-    createAt: string
-    publishedAt: string
-    content: string
-    locale?: string
-    categories: {
-      data: CategoriesType[]
-    }
-    image: {
-      data: ArticleImageType[]
-    }
-  }
-}
-
-export interface PaginationType {
-  page: number
-  pageSize: number
-  pageCount: number
-  total: number
 }
 
 export interface ResponseArticleType {

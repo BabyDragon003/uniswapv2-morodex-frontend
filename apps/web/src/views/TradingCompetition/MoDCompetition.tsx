@@ -23,32 +23,6 @@ import {
 import { DARKBG, MIDBLUEBG, MIDBLUEBG_DARK, TRADINGCOMPETITIONBANNER } from './pageSectionStyles'
 import {
   //  RanksIcon,
-  RulesIcon,
-} from './svgs'
-import Countdown from './components/Countdown'
-import StormBunny from './pngs/MoD-storm-bunny.png'
-import RibbonWithImage from './components/RibbonWithImage'
-import HowToJoin from './components/HowToJoin'
-import BattleCta from './components/BattleCta'
-import Rules from './components/Rules'
-import { UserTradingInformation, initialUserTradingInformation, initialUserLeaderboardInformation } from './types'
-import { CompetitionPage, BannerFlex, BottomBunnyWrapper } from './styles'
-import RanksIcon from './svgs/RanksIcon'
-import ModBattleBanner, { CoinDecoration } from './mod/components/BattleBanner/ModBattleBanner'
-import ModPrizesInfo from './mod/components/PrizesInfo/ModPrizesInfo'
-import ModYourScore from './mod/components/YourScore/ModYourScore'
-import { useTeamInformation } from './useTeamInformation'
-import { useRegistrationClaimStatus } from './useRegistrationClaimStatus'
-import TeamRanksWithParticipants from './components/TeamRanks/TeamRanksWithParticipants'
-import MoDCakerBunny from './pngs/MoD-caker.png'
-import PrizesInfoSection from './components/PrizesInfoSection'
-
-const MoDCompetition = () => {
-  const { account, chainId } = useActiveWeb3React()
-  const { t } = useTranslation()
-  const { profile, isLoading: isProfileLoading } = useProfile()
-  const { isMobile } = useMatchBreakpoints()
-  const { isDark, theme } = useTheme()
   const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
   const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.CLAIM)
   const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()

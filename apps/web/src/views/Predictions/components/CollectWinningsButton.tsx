@@ -23,21 +23,3 @@ const CollectWinningsButton: React.FC<React.PropsWithChildren<CollectWinningsBut
     <CollectRoundWinningsModal
       dispatch={dispatch}
       history={history}
-      isLoadingHistory={isLoadingHistory}
-      onSuccess={onSuccess}
-      predictionsAddress={predictionsAddress}
-      token={token}
-    />,
-    false,
-    true,
-    'CollectRoundWinningsModal',
-  )
-
-  return (
-    <Button onClick={onPresentCollectWinningsModal} disabled={hasClaimed} {...props}>
-      {children}
-    </Button>
-  )
-}
-
-export default CollectWinningsButton
