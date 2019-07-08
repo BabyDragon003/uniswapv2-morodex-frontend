@@ -1,4 +1,3 @@
-export enum Tiers {
   GOLD = 'Gold',
   SILVER = 'Silver',
   BRONZE = 'Bronze',

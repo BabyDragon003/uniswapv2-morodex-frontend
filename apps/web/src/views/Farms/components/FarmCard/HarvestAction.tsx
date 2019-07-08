@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import {
   Button,
   Flex,
@@ -23,6 +22,32 @@ import { Token } from '@pancakeswap/sdk'
 import MultiChainHarvestModal from 'views/Farms/components/MultiChainHarvestModal'
 
 interface FarmCardActionsProps {
+  pid?: number
+  token?: Token
+  quoteToken?: Token
+  earnings?: BigNumber
+  vaultPid?: number
+  proxyCakeBalance?: number
+  lpSymbol?: string
+  onReward?: () => Promise<TransactionResponse>
+  onDone?: () => void
+}
+
+const HarvestAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
+  pid,
+  token,
+  quoteToken,
+  vaultPid,
+  earnings,
+  proxyCakeBalance,
+  lpSymbol,
+  onReward,
+  onDone,
+}) => {
+  const { address: account } = useAccount()
+  const { toastSuccess } = useToast()
+  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
+  const { t } = useTranslation()
   const cakePrice = usePriceCakeBusd()
   const rawEarningsBalance = account ? getBalanceAmount(earnings) : BIG_ZERO
   const displayBalance = rawEarningsBalance.toFixed(5, BigNumber.ROUND_DOWN)

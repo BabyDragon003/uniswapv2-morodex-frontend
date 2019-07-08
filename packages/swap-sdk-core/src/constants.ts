@@ -1,4 +1,3 @@
-import JSBI from 'jsbi'
 
 // exports for external consumption
 export type BigintIsh = JSBI | number | string
@@ -23,3 +22,18 @@ export const TWO = JSBI.BigInt(2)
 export const THREE = JSBI.BigInt(3)
 export const FIVE = JSBI.BigInt(5)
 export const TEN = JSBI.BigInt(10)
+export const _100 = JSBI.BigInt(100)
+export const _9975 = JSBI.BigInt(9993)
+export const _10000 = JSBI.BigInt(10000)
+
+export const MaxUint256 = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
+
+export enum VMType {
+  uint8 = 'uint8',
+  uint256 = 'uint256',
+}
+
+export const VM_TYPE_MAXIMA = {
+  [VMType.uint8]: JSBI.BigInt('0xff'),
+  [VMType.uint256]: JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'),
+}

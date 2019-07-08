@@ -1,4 +1,3 @@
-import { getUnixTime } from 'date-fns'
 import { gql } from 'graphql-request'
 import orderBy from 'lodash/orderBy'
 

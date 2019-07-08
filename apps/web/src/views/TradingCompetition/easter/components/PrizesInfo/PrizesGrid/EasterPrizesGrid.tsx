@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Tiers, Rank, easterPrizes } from 'config/constants/trading-competition/prizes'
 import {
   BlockIcon,

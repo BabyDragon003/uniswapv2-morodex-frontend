@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
 import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from "@pancakeswap/utils/formatBalance";
 

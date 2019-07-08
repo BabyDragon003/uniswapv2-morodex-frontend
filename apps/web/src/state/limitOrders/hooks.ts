@@ -1,4 +1,3 @@
-import JSBI from 'jsbi'
 import { useDispatch, useSelector } from 'react-redux'
 import { ParsedUrlQuery } from 'querystring'
 import { Currency, CurrencyAmount, Trade, Token, Price, Native, TradeType } from '@pancakeswap/sdk'

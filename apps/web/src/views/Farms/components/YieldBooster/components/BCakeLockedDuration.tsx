@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Box, Button, Flex, Input, Message, MessageText, Text } from '@pancakeswap/uikit'
 import { MAX_LOCK_DURATION } from 'config/constants/pools'
 import _toNumber from 'lodash/toNumber'
@@ -23,6 +22,32 @@ interface LockDurationFieldProps {
 }
 
 const LockDurationField: React.FC<React.PropsWithChildren<LockDurationFieldProps>> = ({
+  duration,
+  setDuration,
+  isOverMax,
+  currentDuration,
+  currentDurationLeft,
+}) => {
+  const { t } = useTranslation()
+  const theme = useTheme()
+
+  const maxAvailableDuration = currentDurationLeft ? MAX_LOCK_DURATION - currentDurationLeft : MAX_LOCK_DURATION
+
+  // When user extends the duration due to time passed when approving
+  // transaction the extended duration will be a couple of seconds off to max duration,
+  // therefore it is better to compare based on weeks
+  const currentDurationInWeeks = useMemo(() => currentDuration && secondsToWeeks(currentDuration), [currentDuration])
+
+  const maxDurationInWeeks = useMemo(() => secondsToWeeks(MAX_LOCK_DURATION), [])
+
+  return (
+    <>
+      <Box mb="16px" mt="16px">
+        <Flex mb="8px">
+          <Text fontSize="12px" color="textSubtle" bold textTransform="uppercase">
+            {t('locked for')}
+          </Text>
+        </Flex>
         <Flex flexWrap="wrap" justifyContent="space-between">
           {DURATIONS.map((week) => {
             const weekSeconds = weeksToSeconds(week)

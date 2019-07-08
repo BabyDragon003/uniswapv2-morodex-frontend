@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { ChainId } from '@pancakeswap/sdk'
 import { useAccount, useProvider, useSigner } from 'wagmi'
 import { useActiveChainId } from './useActiveChainId'

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
@@ -23,6 +22,32 @@ const ContributeButton: React.FC<React.PropsWithChildren<Props>> = ({ poolId, if
   const publicPoolCharacteristics = publicIfoData[poolId]
   const userPoolCharacteristics = walletIfoData[poolId]
   const { isPendingTx, amountTokenCommittedInLP } = userPoolCharacteristics
+  const { limitPerUserInLP } = publicPoolCharacteristics
+  const { t } = useTranslation()
+  const { toastSuccess } = useToast()
+  const currencyBalance = useCurrencyBalance(ifo.currency.address)
+  const { startTime, endTime } = publicIfoData
+
+  const currentTime = Date.now() / 1000
+
+  const status = getStatus(currentTime, startTime, endTime)
+
+  const balance = useMemo(
+    () => (currencyBalance ? new BigNumber(currencyBalance.quotient.toString()) : BIG_ZERO),
+    [currencyBalance],
+  )
+
+  // Refetch all the data, and display a message when fetching is done
+  const handleContributeSuccess = async (amount: BigNumber, txHash: string) => {
+    toastSuccess(
+      t('Success!'),
+      <ToastDescriptionWithTx txHash={txHash}>
+        {t('You have contributed %amount% CAKE to this IFO!', {
+          amount: getBalanceNumber(amount, ifo.currency.decimals),
+        })}
+      </ToastDescriptionWithTx>,
+    )
+  }
 
   const [onPresentContributeModal] = useModal(
     <ContributeModal

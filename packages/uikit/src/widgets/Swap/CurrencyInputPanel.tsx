@@ -1,4 +1,3 @@
-import { AtomBox } from "@pancakeswap/ui";
 import { inputContainerVariants } from "./SwapWidget.css";
 
 import { NumericalInput } from "./NumericalInput";
@@ -23,6 +22,32 @@ export function CurrencyInputPanel({
   onInputBlur,
   zapStyle,
   top,
+  bottom,
+  id,
+  disabled,
+  error,
+  showBridgeWarning,
+}: CurrencyInputPanelProps) {
+  return (
+    <AtomBox position="relative" id={id}>
+      <AtomBox display="flex" alignItems="center" justifyContent="space-between">
+        {top}
+      </AtomBox>
+      <AtomBox
+        display="flex"
+        flexDirection="column"
+        flexWrap="nowrap"
+        position="relative"
+        backgroundColor="backgroundAlt"
+        zIndex="1"
+      >
+        <AtomBox
+          as="label"
+          className={inputContainerVariants({
+            hasZapStyle: !!zapStyle,
+            showBridgeWarning: !!showBridgeWarning,
+            error,
+          })}
         >
           <AtomBox
             display="flex"

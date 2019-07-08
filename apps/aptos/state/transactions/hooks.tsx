@@ -1,4 +1,3 @@
-import { TransactionResponse } from '@pancakeswap/awgmi/core'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import isEmpty from 'lodash/isEmpty'
 import keyBy from 'lodash/keyBy'

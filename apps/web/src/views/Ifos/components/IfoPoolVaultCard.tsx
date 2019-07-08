@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Flex, useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
 import CakeVaultCard from 'views/Pools/components/CakeVaultCard'
 import { usePoolsWithVault } from 'state/pools/hooks'

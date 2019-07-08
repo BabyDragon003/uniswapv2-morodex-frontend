@@ -1,4 +1,3 @@
-import { CoinStoreResult, wrapCoinStoreTypeTag } from '../coins/coinStore'
 import { APTOS_COIN } from '../constants'
 import { getProvider } from '../providers'
 
@@ -23,3 +22,6 @@ export async function fetchBalance({ address, networkName, coin }: FetchBalanceA
   const { value } = (resource.data as CoinStoreResult).coin
 
   return {
+    value,
+  }
+}

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { Flex } from '@pancakeswap/uikit'

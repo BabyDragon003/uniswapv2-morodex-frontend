@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { UseQueryResult } from '@tanstack/react-query'
 import { Currency, CurrencyAmount, Pair, SWAP_ADDRESS } from '@pancakeswap/aptos-swap-sdk'
 import { accountResourceQueryKey, useQueries } from '@pancakeswap/awgmi'

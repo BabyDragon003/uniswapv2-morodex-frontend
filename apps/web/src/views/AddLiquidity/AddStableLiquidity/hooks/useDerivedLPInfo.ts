@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, JSBI, Price } from '@pancakeswap/sdk'
 import { useContext, useMemo } from 'react'
 import { StableSwap } from '@pancakeswap/smart-router/evm'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'

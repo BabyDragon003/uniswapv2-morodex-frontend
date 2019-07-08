@@ -1,4 +1,3 @@
-import { Box, BoxProps } from '@pancakeswap/uikit'
 import { useEffect, useRef } from 'react'
 import { useIntersectionObserver } from '@pancakeswap/hooks'
 import { NftToken } from 'state/nftMarket/types'

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Bet } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBlockExploreLink } from 'utils'

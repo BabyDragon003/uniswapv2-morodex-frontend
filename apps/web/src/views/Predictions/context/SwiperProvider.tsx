@@ -1,4 +1,3 @@
-import { memo, createContext, Dispatch, useState, useMemo, useCallback } from 'react'
 import SwiperCore from 'swiper'
 
 interface Context {

@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 /* eslint-disable @typescript-eslint/no-shadow */
 import { atom } from 'jotai'
 import type { WritableAtom } from 'jotai'

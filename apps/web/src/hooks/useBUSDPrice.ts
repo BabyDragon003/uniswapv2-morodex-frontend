@@ -1,4 +1,3 @@
-import {
   ChainId,
   Currency,
   CurrencyAmount,

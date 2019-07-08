@@ -1,4 +1,3 @@
-import { useEffect, useMemo } from 'react'
 import { Text, Flex, Button, Input, Box, Message, MessageText } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'

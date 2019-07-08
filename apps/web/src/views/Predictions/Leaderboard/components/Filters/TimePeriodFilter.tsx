@@ -1,4 +1,3 @@
-import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { setLeaderboardFilter } from 'state/predictions'

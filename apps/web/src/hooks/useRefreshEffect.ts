@@ -1,4 +1,3 @@
-import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
 import { DependencyList, EffectCallback, useEffect } from 'react'
 import useSWR from 'swr'
 import { useActiveChainId } from './useActiveChainId'

@@ -1,4 +1,3 @@
-import { useState, useCallback } from 'react'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'

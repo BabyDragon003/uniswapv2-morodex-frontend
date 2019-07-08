@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { Chain } from '../chain'
 import { Connector } from './base'
 import { ConnectorNotFoundError, UserRejectedRequestError } from '../errors'

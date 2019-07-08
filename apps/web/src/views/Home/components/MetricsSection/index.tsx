@@ -1,4 +1,3 @@
-import { Heading, Flex, Text, Skeleton, ChartIcon, CommunityIcon, SwapIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { formatLocalisedCompactNumber } from '@pancakeswap/utils/formatBalance'
@@ -23,6 +22,32 @@ const Stats = () => {
 
   const UsersCardData: IconCardData = {
     icon: <CommunityIcon color="secondary" width="36px" />,
+  }
+
+  const TradesCardData: IconCardData = {
+    icon: <SwapIcon color="primary" width="36px" />,
+  }
+
+  const StakedCardData: IconCardData = {
+    icon: <ChartIcon color="failure" width="36px" />,
+  }
+
+  return (
+    <Flex justifyContent="center" alignItems="center" flexDirection="column">
+      <GradientLogo height="48px" width="48px" mb="24px" />
+      <Heading textAlign="center" scale="xl">
+        {t('Used by millions.')}
+      </Heading>
+      <Heading textAlign="center" scale="xl" mb="32px">
+        {t('Trusted with billions.')}
+      </Heading>
+      <Text textAlign="center" color="textSubtle">
+        {t('PancakeSwap has the most users of any decentralized platform, ever.')}
+      </Text>
+      <Flex flexWrap="wrap">
+        <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
+          {entrusting}
+          <>{tvl ? <>{tvlString}</> : <Skeleton display="inline-block" height={16} width={70} mt="2px" />}</>
           {inFunds}
         </Text>
       </Flex>

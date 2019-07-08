@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Flex, Skeleton, Heading, Box, Text, Balance } from '@pancakeswap/uikit'

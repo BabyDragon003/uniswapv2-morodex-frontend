@@ -1,4 +1,3 @@
-import { HexString, TxnBuilderTypes } from 'aptos'
 import { Address } from './types'
 
 export const isAccountAddress = (addr: string): addr is Address => {

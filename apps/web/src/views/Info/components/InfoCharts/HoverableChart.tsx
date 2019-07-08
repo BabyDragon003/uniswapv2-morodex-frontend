@@ -1,4 +1,3 @@
-import { Box, Text, Skeleton } from '@pancakeswap/uikit'
 import { fromUnixTime } from 'date-fns'
 import { useState, useMemo, memo, useEffect } from 'react'
 import { ChartEntry, ProtocolData } from 'state/info/types'
@@ -23,6 +22,32 @@ const HoverableChart = ({
   title,
   ChartComponent,
 }: HoverableChartProps) => {
+  const [hover, setHover] = useState<number | undefined>()
+  const [dateHover, setDateHover] = useState<string | undefined>()
+
+  // Getting latest data to display on top of chart when not hovered
+  useEffect(() => {
+    setHover(null)
+  }, [protocolData])
+
+  useEffect(() => {
+    if (hover == null && protocolData) {
+      setHover(protocolData[valueProperty])
+    }
+  }, [protocolData, hover, valueProperty])
+
+  const formattedData = useMemo(() => {
+    if (chartData) {
+      return chartData.map((day) => {
+        return {
+          time: fromUnixTime(day.date),
+          value: day[valueProperty],
+        }
+      })
+    }
+    return []
+  }, [chartData, valueProperty])
+
   return (
     <Box p={['16px', '16px', '24px']}>
       <Text bold color="secondary">

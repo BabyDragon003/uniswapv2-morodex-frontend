@@ -1,4 +1,3 @@
-import { Currency, JSBI } from '@pancakeswap/sdk'
 import { AddIcon, Button, ChevronDownIcon, Text, useModal, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ import { CommonBasesType } from '../../components/SearchModal/types'
 
 enum Fields {
   TOKEN0 = 0,
+  TOKEN1 = 1,
+}
+
+const StyledButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.input};
+  color: ${({ theme }) => theme.colors.text};
+  box-shadow: none;
+  // border-radius: 16px;
+  border-radius: 6px;
+`
+
+export default function PoolFinder() {
+  const { address: account } = useAccount()
+  const { t } = useTranslation()
+  const native = useNativeCurrency()
+
+  const [activeField, setActiveField] = useState<number>(Fields.TOKEN1)
+  const [currency0, setCurrency0] = useState<Currency | null>(() => native)
+  const [currency1, setCurrency1] = useState<Currency | null>(null)
+
+  const [pairState, pair] = usePair(currency0 ?? undefined, currency1 ?? undefined)
+  const addPair = usePairAdder()
+  useEffect(() => {
+    if (pair) {
+      addPair(pair)
+    }
   }, [pair, addPair])
 
   const validPairNoLiquidity: boolean =

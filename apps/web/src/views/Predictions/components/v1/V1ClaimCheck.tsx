@@ -1,4 +1,3 @@
-import { useState, useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'

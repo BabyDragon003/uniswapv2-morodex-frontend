@@ -1,4 +1,3 @@
-import React from "react";
 import Text from "../Text/Text";
 import { StyledBalanceInput, StyledInput } from "./styles";
 import { TextfieldProps } from "./types";

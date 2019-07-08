@@ -1,4 +1,3 @@
-import React from "react";
 import { TokenPairImageProps, variants } from "./types";
 import { StyledPrimaryImage, StyledSecondaryImage } from "./styles";
 import Wrapper from "./Wrapper";

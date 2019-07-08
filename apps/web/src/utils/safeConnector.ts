@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members */
 
 // Forked from @gnosis.pm/safe-apps-wagmi for esm
 import { Web3Provider } from '@ethersproject/providers'

@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 

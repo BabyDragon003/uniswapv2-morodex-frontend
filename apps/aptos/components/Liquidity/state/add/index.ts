@@ -1,4 +1,3 @@
-import { Field } from 'components/Liquidity/type'
 import { useAtomValue } from 'jotai'
 import { useReducerAtom } from 'jotai/utils'
 import { useCallback, useMemo } from 'react'

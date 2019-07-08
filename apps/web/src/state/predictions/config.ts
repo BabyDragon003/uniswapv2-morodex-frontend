@@ -1,4 +1,3 @@
-import { BSC_BLOCK_TIME } from 'config'
 
 export const REWARD_RATE = 0.97
 

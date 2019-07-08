@@ -1,4 +1,3 @@
-export const MINIMUM_SEARCH_CHARACTERS = 2
 
 export const WEEKS_IN_YEAR = 52.1429
 

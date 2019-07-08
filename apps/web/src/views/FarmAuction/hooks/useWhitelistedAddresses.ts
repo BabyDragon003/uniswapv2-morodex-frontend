@@ -1,4 +1,3 @@
-import useSWR from 'swr'
 import { useFarmAuctionContract } from 'hooks/useContract'
 import { getBidderInfo } from 'config/constants/farmAuctions'
 import { FarmAuctionBidderConfig } from 'config/constants/types'

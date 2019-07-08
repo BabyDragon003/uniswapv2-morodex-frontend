@@ -1,4 +1,3 @@
-import createBreakpoints from '@material-ui/core/styles/createBreakpoints'
 import { alpha } from '@material-ui/core/styles/colorManipulator'
 import createTypography from '@material-ui/core/styles/createTypography'
 import createPalette from '@material-ui/core/styles/createPalette'
@@ -23,6 +22,32 @@ function pointsToRem(size: number) {
 export const FontFamily = {
   KANIT: "'Kanit', sans-serif",
 }
+
+const FontWeight = {
+  THIN: 100,
+  EXTRA_LIGHT: 200,
+  LIGHT: 300,
+  REGULAR: 400,
+  MEDIUM: 500,
+  SEMI_BOLD: 600,
+  BOLD: 700,
+  EXTRA_BOLD: 800,
+  BLACK: 900,
+}
+
+const darkPalette = createPalette({
+  type: 'dark',
+  primary: {
+    light: '#BFBFBF',
+    main: darkColors.primary,
+    dark: '#EFEFEF',
+    contrastText: darkColors.invertedContrast,
+  },
+  info: {
+    main: darkColors.primary,
+    light: darkColors.invertedContrast,
+  },
+  success: {
     main: darkColors.success,
   },
   error: {

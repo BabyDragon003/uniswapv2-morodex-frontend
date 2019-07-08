@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import {
   ArrowBackIcon,

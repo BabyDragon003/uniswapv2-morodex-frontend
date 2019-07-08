@@ -1,4 +1,3 @@
-import { captureException } from '@sentry/nextjs'
 
 const assignError = (maybeError: any) => {
   if (typeof maybeError === 'string') {

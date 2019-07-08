@@ -1,4 +1,3 @@
-import { SmartChef } from 'contracts/smartchef'
 import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
 import BigNumber from 'bignumber.js'
 import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'

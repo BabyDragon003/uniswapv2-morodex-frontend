@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 
 export enum SaleStatusEnum {
   Pending, // Contract is deployed

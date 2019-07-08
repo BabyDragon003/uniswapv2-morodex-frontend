@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { useActiveIfoWithBlocks } from 'hooks/useActiveIfoWithBlocks'
 import { useUserCakeLockStatus } from 'hooks/useUserCakeLockStatus'
 import { useMemo } from 'react'

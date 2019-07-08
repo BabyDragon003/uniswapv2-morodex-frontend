@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import { AutoRenewIcon, Button, Flex, Heading, Modal, Text } from "@pancakeswap/uikit";
 import { formatNumber } from "@pancakeswap/utils/formatBalance";
 import { useTheme } from "styled-components";

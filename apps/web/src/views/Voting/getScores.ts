@@ -1,4 +1,3 @@
-export async function getScores(
   space: string,
   strategies: any[],
   network: string,
@@ -23,3 +22,5 @@ export async function getScores(
     return obj.result.scores
   } catch (e) {
     return Promise.reject(e)
+  }
+}

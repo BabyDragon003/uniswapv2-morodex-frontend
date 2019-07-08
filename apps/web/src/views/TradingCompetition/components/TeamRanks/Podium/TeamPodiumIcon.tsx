@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import styled from 'styled-components'
 import { Flex, Image, Skeleton } from '@pancakeswap/uikit'
 import Sticker from '../../Sticker'

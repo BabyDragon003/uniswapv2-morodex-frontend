@@ -1,4 +1,3 @@
-import { Chain } from '../chain'
 
 import { MartianConnector } from './martian'
 

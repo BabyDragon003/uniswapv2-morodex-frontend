@@ -1,4 +1,3 @@
-import { Bet, PredictionUser } from 'state/types'
 import { transformRoundResponseToken, transformUserResponseToken, transformBetResponseToken } from './tokenTransformers'
 
 export const transformBetResponseCAKE = (betResponse): Bet => {

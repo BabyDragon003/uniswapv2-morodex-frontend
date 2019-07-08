@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styled, { useTheme } from 'styled-components'

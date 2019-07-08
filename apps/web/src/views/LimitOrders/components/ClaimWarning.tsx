@@ -1,4 +1,3 @@
-import { useEffect, memo, useCallback } from 'react'
 import { useModal } from '@pancakeswap/uikit'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { useUserLimitOrderAcceptedWarning } from 'state/user/hooks'

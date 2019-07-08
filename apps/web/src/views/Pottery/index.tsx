@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { PageMeta } from 'components/Layout/Page'
 import { Box } from '@pancakeswap/uikit'

@@ -1,4 +1,3 @@
-import { Campaign } from './types'
 
 /**
  * id: The campaign id (required)
