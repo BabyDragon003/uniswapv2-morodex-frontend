@@ -1,3 +1,4 @@
+import { WalletConfigV2 } from '@pancakeswap/ui-wallets'
 
 export enum ConnectorNames {
   Petra = 'petra',

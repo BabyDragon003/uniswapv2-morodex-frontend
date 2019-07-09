@@ -1,3 +1,4 @@
+const variants = {
   warning: {
     background: "#FFB23719",
     borderColor: "warning",

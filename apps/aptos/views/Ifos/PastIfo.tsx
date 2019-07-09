@@ -1,3 +1,4 @@
+import { Container } from '@pancakeswap/uikit'
 import { ifos } from 'config/constants/ifo'
 import { Ifo } from 'config/constants/types'
 import IfoCardV3Data from './components/IfoCardV3Data'

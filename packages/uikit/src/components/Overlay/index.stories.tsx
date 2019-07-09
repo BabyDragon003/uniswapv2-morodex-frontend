@@ -1,3 +1,4 @@
+import React from "react";
 import { Overlay } from "./Overlay";
 
 export default {

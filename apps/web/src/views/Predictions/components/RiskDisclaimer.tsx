@@ -1,3 +1,4 @@
+import { useEffect, memo, useCallback } from 'react'
 import { useModal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import DisclaimerModal from 'components/DisclaimerModal'

@@ -1,3 +1,4 @@
+import { request, gql } from 'graphql-request'
 import { GRAPH_API_PREDICTION_BNB, GRAPH_API_PREDICTION_CAKE } from 'config/constants/endpoints'
 import { BigNumber } from '@ethersproject/bignumber'
 import {

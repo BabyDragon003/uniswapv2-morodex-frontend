@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       {
         "internalType": "contract BunnyFactoryV2",
-        "name": "_bunnyFactoryV2",
-        "type": "address"
-      },
-      {
-        "internalType": "contract BunnyMintingStation",
-        "name": "_bunnyMintingStation",
         "type": "address"
       },
       {

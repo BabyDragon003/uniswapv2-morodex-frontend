@@ -1,3 +1,4 @@
+// see https://stackoverflow.com/a/41102306
 const CAN_SET_PROTOTYPE = 'setPrototypeOf' in Object
 
 /**

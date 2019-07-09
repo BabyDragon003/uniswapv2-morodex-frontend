@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       {
         "internalType": "contract IERC20",
-        "name": "_cake",
-        "type": "address"
-      },
-      {
-        "internalType": "contract ICakePool",
-        "name": "_cakePool",
         "type": "address"
       },
       {

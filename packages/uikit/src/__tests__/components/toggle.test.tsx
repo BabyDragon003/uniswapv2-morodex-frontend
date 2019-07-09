@@ -1,13 +1,8 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import Toggle from "../../components/Toggle/Toggle";
 
 const handleChange = vi.fn();
-
-it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(<Toggle checked onChange={handleChange} scale="md" />);
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      .c3 {
       background-color: var(--colors-backgroundAlt);
       border-radius: 50%;
       cursor: pointer;

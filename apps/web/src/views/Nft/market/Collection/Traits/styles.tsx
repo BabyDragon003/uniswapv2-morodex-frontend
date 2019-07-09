@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Flex, Image, Text } from '@pancakeswap/uikit'
 
 export const StyledSortButton = styled.button`
   border: none;
-  cursor: pointer;
-  background: none;
-  color: ${({ theme }) => theme.colors.secondary};
-  font-weight: bold;
-`
-
 export const TableWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   min-width: 320px;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSystemInfo, listenOnBnMessage, useInterceptLink, useInjectI18n } from 'utils/mpBridge'
 import { useActiveHandle, getAccount } from 'hooks/useEagerConnect.bmp'
 import Navbar from 'components/Navbar.bmp'

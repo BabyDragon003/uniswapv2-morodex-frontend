@@ -1,3 +1,4 @@
+import { Currency } from '@pancakeswap/sdk'
 
 import { Pair, StableSwapPair } from '../types'
 

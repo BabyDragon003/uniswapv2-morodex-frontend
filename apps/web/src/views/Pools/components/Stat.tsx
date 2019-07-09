@@ -1,13 +1,8 @@
+import { Flex, Text, TooltipText, useTooltip, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { isLocked, isStaked } from 'utils/cakePool'
 import { Token } from '@pancakeswap/sdk'
-import useAvgLockDuration from './LockedPool/hooks/useAvgLockDuration'
-import Apr from './Apr'
-
-export const PerformanceFee: React.FC<
-  React.PropsWithChildren<{ userData?: Pool.DeserializedVaultUser; performanceFeeAsDecimal?: number }>
-> = ({ userData, performanceFeeAsDecimal }) => {
   const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t('Performance fee only applies to the flexible staking rewards.'),

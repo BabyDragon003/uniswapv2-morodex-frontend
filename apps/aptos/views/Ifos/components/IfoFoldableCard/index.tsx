@@ -1,13 +1,8 @@
+import { Box, Card, CardBody, CardHeader, ExpandableButton, useMatchBreakpoints } from '@pancakeswap/uikit'
 import NoSSR from 'components/NoSSR'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
-import { getStatus } from 'views/Ifos/hooks/helpers'
-import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import { CardsWrapper } from '../IfoCardStyles'
-import IfoPoolCard from './IfoPoolCard'
-import { IfoRibbon } from './IfoRibbon'
 
 interface IfoFoldableCardProps {
   ifo: Ifo

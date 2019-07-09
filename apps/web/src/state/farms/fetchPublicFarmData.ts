@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 import erc20 from 'config/abi/erc20.json'
 import chunk from 'lodash/chunk'
 import { getMasterChefAddress } from 'utils/addressHelpers'

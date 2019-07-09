@@ -1,3 +1,4 @@
+import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import { Card, CardBody, CardHeader, CardFooter } from "../../components/Card";
 

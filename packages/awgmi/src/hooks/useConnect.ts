@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { ConnectArgs, ConnectResult, connect as connectCore } from '@pancakeswap/awgmi/core'
 
 import { useClient } from '../context'

@@ -1,13 +1,8 @@
+/* eslint-disable lines-between-class-members */
 
 // Forked from @gnosis.pm/safe-apps-wagmi for esm
 import { Web3Provider } from '@ethersproject/providers'
 import { SafeAppProvider } from '@gnosis.pm/safe-apps-provider'
-import SafeAppsSDK, { Opts as SafeOpts, SafeInfo } from '@gnosis.pm/safe-apps-sdk'
-import { getAddress } from 'ethers/lib/utils'
-import { Connector, Chain, ConnectorNotFoundError } from '@wagmi/core'
-
-function normalizeChainId(chainId: string | number) {
-  if (typeof chainId === 'string') {
     const isHex = chainId.trim().substring(0, 2)
 
     return Number.parseInt(chainId, isHex === '0x' ? 16 : 10)

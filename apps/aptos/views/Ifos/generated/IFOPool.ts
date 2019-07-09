@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface Id {
   addr: string
   creation_num: string

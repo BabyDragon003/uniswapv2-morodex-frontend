@@ -1,13 +1,8 @@
+import invariant from 'tiny-invariant'
 import { BaseCurrency } from './baseCurrency'
 import { Currency } from './currency'
 
 export interface SerializedToken {
-  chainId: number
-  address: string
-  decimals: number
-  symbol: string
-  name?: string
-  projectLink?: string
 }
 
 /**

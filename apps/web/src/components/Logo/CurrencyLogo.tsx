@@ -1,3 +1,4 @@
+import { ChainId, Currency } from '@pancakeswap/sdk'
 import { BinanceIcon, TokenLogo } from '@pancakeswap/uikit'
 import { useMemo } from 'react'
 import { WrappedTokenInfo } from '@pancakeswap/token-lists'

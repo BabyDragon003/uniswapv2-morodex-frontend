@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       { "internalType": "contract ICaKePool", "name": "_cakePool", "type": "address" },
       { "internalType": "address", "name": "_admin", "type": "address" },
-      { "internalType": "uint256", "name": "_ceiling", "type": "uint256" }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
     "anonymous": false,
     "inputs": [
       { "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" },

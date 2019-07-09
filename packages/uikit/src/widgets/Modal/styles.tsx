@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Flex from "../../components/Box/Flex";
 import { MotionBox } from "../../components/Box";

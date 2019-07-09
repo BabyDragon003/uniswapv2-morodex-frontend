@@ -1,13 +1,8 @@
+import { TranslateFunction } from '@pancakeswap/localization'
 
 /**
  * This is hacking out the revert reason from the ethers provider thrown error however it can.
  * This object seems to be undocumented by ethers.
- * @param error an error from the ethers provider
- * @param t Translation function
- */
-export function transactionErrorToUserReadableMessage(error: any, t: TranslateFunction) {
-  let reason: string | undefined
-  while (error) {
     reason = error.reason ?? error.data?.message ?? error.message ?? reason
     // eslint-disable-next-line no-param-reassign
     error = error.error ?? error.data?.originalError

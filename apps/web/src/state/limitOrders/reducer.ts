@@ -1,13 +1,8 @@
+import { createReducer } from '@reduxjs/toolkit'
 import { replaceLimitOrdersState, selectCurrency, typeInput, switchCurrencies, setRateType } from './actions'
 import { Field, Rate, OrderState } from './types'
 
 export const initialState: OrderState = {
-  independentField: Field.INPUT,
-  basisField: Field.INPUT,
-  typedValue: '',
-  inputValue: '',
-  outputValue: '',
-  [Field.INPUT]: {
     currencyId: '',
   },
   [Field.OUTPUT]: {

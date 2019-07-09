@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { ChainId, NATIVE } from '@pancakeswap/sdk'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  Box,
-  Button,
-  Flex,
-  InfoIcon,
-  Text,
-  UserMenu,
   UserMenuDivider,
   UserMenuItem,
   useTooltip,

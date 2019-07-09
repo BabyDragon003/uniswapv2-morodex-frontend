@@ -1,3 +1,4 @@
+# Cypress tests
 
 ### Run all tests
 

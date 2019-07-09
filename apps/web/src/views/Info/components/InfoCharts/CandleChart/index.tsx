@@ -1,13 +1,8 @@
+import { useRef, useState, useEffect, useCallback, Dispatch, SetStateAction } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { createChart, IChartApi } from 'lightweight-charts'
 import { format } from 'date-fns'
 import { useTheme } from '@pancakeswap/hooks'
-import { CandleChartLoader } from 'components/ChartLoaders'
-import { baseColors, lightColors, darkColors } from '@pancakeswap/ui/tokens/colors'
-
-const CANDLE_CHART_HEIGHT = 250
-
-export type LineChartProps = {
   data: any[]
   setValue?: Dispatch<SetStateAction<number | undefined>> // used for value on hover
   setLabel?: Dispatch<SetStateAction<string | undefined>> // used for value label on hover

@@ -1,13 +1,8 @@
+import BigNumber from "bignumber.js";
 
 export interface Address {
   [chainId: number]: string;
 }
-
-export enum PoolCategory {
-  "COMMUNITY" = "Community",
-  "CORE" = "Core",
-  "BINANCE" = "Binance", // Pools using native BNB behave differently than pools using a token
-  "AUTO" = "Auto",
 }
 
 export interface PoolConfigBaseProps {

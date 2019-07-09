@@ -1,13 +1,8 @@
+import { ReactElement } from 'react'
 import { Flex, Text } from '@pancakeswap/uikit'
 import styled, { DefaultTheme } from 'styled-components'
 
 type Status = 'expired' | 'live' | 'next' | 'soon' | 'canceled' | 'calculating'
-
-interface CardHeaderProps {
-  status: Status
-  title: string
-  epoch: number
-  icon?: ReactElement
 }
 
 const HEADER_HEIGHT = '37px'

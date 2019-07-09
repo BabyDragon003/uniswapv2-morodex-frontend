@@ -1,13 +1,8 @@
+import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, Flex, HelpIcon, useTooltip } from '@pancakeswap/uikit'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useAccount } from 'wagmi'
-
-interface ButtonMenuProps {
-  cakePrice: BigNumber
-  stakingTokenBalance: BigNumber
-  setPrincipalFromUSDValue: (amount: string) => void
-}
 
 const ButtonMenu: React.FC<React.PropsWithChildren<ButtonMenuProps>> = ({
   cakePrice,

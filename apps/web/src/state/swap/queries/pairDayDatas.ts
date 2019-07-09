@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const pairDayDatas = gql`
   query pairDayDatas($pairId: Bytes, $first: Int) {

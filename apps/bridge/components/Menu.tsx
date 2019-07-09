@@ -1,13 +1,8 @@
+import { CurrencyAmount, Token } from '@pancakeswap/sdk'
 import {
   BlockIcon,
   Box,
   Button,
-  CheckmarkCircleIcon,
-  Flex,
-  Link,
-  Logo,
-  Modal,
-  OpenNewIcon,
   RefreshIcon,
   Text,
   ThemeSwitcher,

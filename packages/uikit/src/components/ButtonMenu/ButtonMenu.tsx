@@ -1,3 +1,4 @@
+import React, { cloneElement, Children, ReactElement } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
 import { scales, variants } from "../Button/types";

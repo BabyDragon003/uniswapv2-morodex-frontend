@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
 import MoboxPrizesCard from './MoboxPrizesCard'
 import MoboxPrizesText from './MoboxPrizesText'

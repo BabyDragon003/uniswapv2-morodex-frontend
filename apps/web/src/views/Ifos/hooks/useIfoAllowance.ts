@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { Contract } from '@ethersproject/contracts'
