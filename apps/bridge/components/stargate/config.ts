@@ -8,7 +8,3 @@ export const FEE_TENTH_BPS = '0'
 
 export const STARGATE_JS = {
   src: `https://unpkg.com/@layerzerolabs/stargate-ui@${VERSION}/element.js`,
-  integrity: `sha384-${SHA384}`,
-}
-
-export const CHAINS_STARGATE = [mainnet, arbitrum, optimism, polygon, avalanche, fantom]

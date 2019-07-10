@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useMemo } from 'react'
+import { IFO_RESOURCE_ACCOUNT_TYPE_METADATA, IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE } from 'views/Ifos/constants'
+import { ifos } from 'config/constants/ifo'
+
+import { VestingCharacteristics } from 'views/Ifos/types'
+import { computeOfferingAndRefundAmount } from 'views/Ifos/utils'
+import { useIfoResourcesListByUserInfoType } from '../useIfoResources'
 import { useIfoUserInfoList } from '../useIfoUserInfo'
 import { useVestingCharacteristicsList } from './useVestingCharacteristics'
 

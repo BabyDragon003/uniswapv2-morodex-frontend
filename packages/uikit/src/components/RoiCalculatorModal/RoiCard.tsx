@@ -3,16 +3,11 @@ import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { CalculatorMode, RoiCalculatorReducerState } from "./useRoiCalculatorReducer";
 import { Box, Flex } from "../Box";
-const TRILLION = 1000000000000;
+import { Text } from "../Text";
+import { Input } from "../Input";
+import { IconButton } from "../Button";
+import { CheckmarkIcon, PencilIcon } from "../Svg";
 
-const RoiCardWrapper = styled(Box)`
-  background: linear-gradient(180deg, #53dee9, #7645d9);
-  padding: 1px;
-  width: 100%;
-  border-radius: ${({ theme }) => theme.radii.default};
-`;
-
-const RoiCardInner = styled(Box)`
   min-height: 120px;
   padding: 24px;
   border-radius: ${({ theme }) => theme.radii.default};

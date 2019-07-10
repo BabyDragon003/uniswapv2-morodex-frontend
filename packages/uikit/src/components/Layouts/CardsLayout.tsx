@@ -3,5 +3,8 @@ import BaseLayout from "./BaseLayout";
 
 const GridLayout = styled(BaseLayout)`
   & > div {
-
-export default GridLayout;
+    grid-column: span 6;
+    ${({ theme }) => theme.mediaQueries.sm} {
+      grid-column: span 4;
+    }
+  }

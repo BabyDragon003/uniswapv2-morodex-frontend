@@ -3,6 +3,12 @@ import { useTooltip, Farm as FarmUI } from '@pancakeswap/uikit'
 
 const { CompoundingPoolTag, ManualPoolTag, LockedPoolTag, LockedOrAutoPoolTag } = FarmUI.Tags
 
+const PoolTypeTag = ({ account, vaultKey, isLocked, children }) => {
+  const { t } = useTranslation()
+
+  let tooltipText
+
+  if (!vaultKey) {
     tooltipText = t('You must harvest and compound your earnings from this pool manually.')
   } else if (!account) {
     tooltipText = t(

@@ -8,9 +8,3 @@ export interface FlexGapProps extends FlexProps {
 }
 
 const FlexGap = styled(Flex)<FlexGapProps>`
-  gap: ${({ gap }) => gap};
-  row-gap: ${({ rowGap }) => rowGap};
-  column-gap: ${({ columnGap }) => columnGap};
-`;
-
-export default FlexGap;

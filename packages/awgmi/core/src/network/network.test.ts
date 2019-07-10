@@ -3,16 +3,11 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { getAptosAccounts, setupClient } from '../../test'
 
 import { connect } from '../accounts/connect'
-  chains: defaultChains,
-})
+import { getNetwork } from './network'
+import { MockConnector } from '../connectors/mock'
+import { defaultChains } from '../chain'
 
-describe('network', () => {
-  beforeEach(() => {
-    setupClient()
-  })
-  describe('getNetwork', () => {
-    it('no network', async () => {
-      expect(getNetwork()).toMatchInlineSnapshot(`
+const connector = new MockConnector({
         {
           "chain": undefined,
           "chains": [],

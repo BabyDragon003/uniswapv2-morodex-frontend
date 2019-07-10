@@ -3,16 +3,11 @@ import { inputContainerVariants } from "./SwapWidget.css";
 
 import { NumericalInput } from "./NumericalInput";
 
-  id: string;
-  zapStyle?: ZapStyle;
-  top?: React.ReactNode;
-  bottom?: React.ReactNode;
-  disabled?: boolean;
-  error?: boolean;
-  showBridgeWarning?: boolean;
-}
-export function CurrencyInputPanel({
-  value,
+type ZapStyle = "noZap" | "zap";
+
+interface CurrencyInputPanelProps {
+  value: string;
+  onUserInput: (value: string) => void;
   onUserInput,
   onInputBlur,
   zapStyle,

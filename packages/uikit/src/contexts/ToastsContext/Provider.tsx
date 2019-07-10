@@ -3,16 +3,11 @@ import kebabCase from "lodash/kebabCase";
 import { ToastData, types as toastTypes } from "../../components/Toast";
 import { ToastContextApi } from "./types";
 
-    ({ title, description, type }: Omit<ToastData, "id">) => {
-      setToasts((prevToasts) => {
-        const id = kebabCase(title);
+export const ToastsContext = createContext<ToastContextApi | undefined>(undefined);
 
-        // Remove any existing toasts with the same id
-        const currentToasts = prevToasts.filter((prevToast) => prevToast.id !== id);
+export const ToastsProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const [toasts, setToasts] = useState<ToastContextApi["toasts"]>([]);
 
-        return [
-          {
-            id,
             title,
             description,
             type,

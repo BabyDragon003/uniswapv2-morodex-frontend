@@ -3,6 +3,12 @@ import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import BigNumber from 'bignumber.js'
 import { gql, GraphQLClient } from 'graphql-request'
+import getUnixTime from 'date-fns/getUnixTime'
+import sub from 'date-fns/sub'
+import { AprMap } from '@pancakeswap/farms'
+import _toLower from 'lodash/toLower'
+
+interface BlockResponse {
   blocks: {
     number: string
   }[]

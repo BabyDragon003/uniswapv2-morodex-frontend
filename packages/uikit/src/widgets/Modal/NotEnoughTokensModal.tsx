@@ -8,17 +8,6 @@ interface NotEnoughTokensModalProps {
   tokenSymbol: string;
   tokenAddress?: string;
   onDismiss?: () => void;
-  hideLocateAddress?: boolean;
-}
-
-const StyledLink = styled(Link)`
-  width: 100%;
-`;
-
-const NotEnoughTokensModal: React.FC<React.PropsWithChildren<NotEnoughTokensModalProps>> = ({
-  tokenSymbol,
-  tokenAddress,
-  onDismiss,
   hideLocateAddress = false,
 }) => {
   const { t } = useTranslation();

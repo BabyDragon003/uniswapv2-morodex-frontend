@@ -3,6 +3,12 @@ import { Tag, Flex, Heading, Box, Skeleton, Farm as FarmUI } from '@pancakeswap/
 import { Token } from '@pancakeswap/sdk'
 import { TokenPairImage } from 'components/TokenImage'
 import BoostedTag from '../YieldBooster/components/BoostedTag'
+
+const { FarmAuctionTag, CoreTag, StableFarmTag } = FarmUI.Tags
+
+export interface ExpandableSectionProps {
+  lpLabel?: string
+  multiplier?: string
   isCommunityFarm?: boolean
   token: Token
   quoteToken: Token

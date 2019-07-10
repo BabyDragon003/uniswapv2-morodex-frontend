@@ -3,16 +3,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import { LandingBodyWrapper } from 'views/PancakeSquad/styles'
 import eventDescriptionConfigBuilder from './config'
 import {
-
-const EventDescriptionSection = () => {
-  const { t } = useTranslation()
-
-  const { headingText, subHeadingText, bodyTextHeader, bodyText, primaryButton, image, accessoriesImages } =
-    eventDescriptionConfigBuilder({ t })
-
-  return (
-    <StyledEventDescriptionSectionContainer justifyContent={['flex-start', null, null, 'center']}>
-      <LandingBodyWrapper
+  StyledBodyTextElement,
+  StyledBodyTextList,
+  StyledBunnyAccessoriesContainer,
+  StyledBunnyAccessory,
+  StyledEventDescriptionSectionContainer,
         alignItems={['flex-end', null, 'center', null]}
         flexDirection={['column', null, null, 'row']}
         pt={['64px', null, '104px']}

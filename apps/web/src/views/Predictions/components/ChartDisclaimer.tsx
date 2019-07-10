@@ -3,6 +3,12 @@ import {
   ModalBody,
   Text,
   Button,
+  InjectedModalProps,
+  LinkExternal,
+  Flex,
+  Image,
+  Heading,
+  Checkbox,
   Box,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'

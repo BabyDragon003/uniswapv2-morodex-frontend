@@ -3,16 +3,11 @@ import { Percent, Rounding } from '@pancakeswap/sdk'
 import CircleLoader from 'components/Loader/CircleLoader'
 import { ONE_BIPS } from 'config/constants/exchange'
 import { ErrorText } from 'views/Swap/components/styleds'
-  const slippageDisplay = slippage
-    ? slippage.lessThan(ONE_BIPS)
-      ? '<0.01%'
-      : `${slippage.toFixed(2, { groupSeparator: '' }, Rounding.ROUND_DOWN)}%`
-    : '-'
+import { warningSeverity } from '../utils/slippage'
 
-  const text = loading ? <CircleLoader /> : slippageDisplay
-  return (
-    <ErrorText fontSize="14px" severity={slippage ? warningSeverity(slippage) : 0}>
-      {text}
+/**
+ * Formatted version of price impact text with warning colors
+ */
     </ErrorText>
   )
 }

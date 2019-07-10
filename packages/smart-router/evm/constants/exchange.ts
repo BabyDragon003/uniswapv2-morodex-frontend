@@ -3,6 +3,12 @@ import { bscTokens, bscTestnetTokens, BUSD, USDC, USDT } from '@pancakeswap/toke
 
 import { ChainMap, ChainTokenList } from '../types'
 
+export const ROUTER_ADDRESS: ChainMap<string> = {
+  [ChainId.ETHEREUM]: '0x3BC722f252C7bAE2f55647e49aDcB9d33Ff6eBcC',
+  [ChainId.GOERLI]: '0x3BC722f252C7bAE2f55647e49aDcB9d33Ff6eBcC',
+  [ChainId.BSC]: '0x27aa0d60CCD8b736593686a1b9dbE0273823E4A2',
+  [ChainId.BSC_TESTNET]: '0x6583bEE82975A1a7d1a13CDD777238401f8E1A0A',
+}
 
 export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
   [ChainId.ETHEREUM]: '',

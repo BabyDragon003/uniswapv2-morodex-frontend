@@ -3,16 +3,11 @@ import invariant from 'tiny-invariant'
 
 import { BigintIsh, Rounding } from '../constants'
 import { Currency } from '../currency'
-  public readonly quoteCurrency: TQuote // output i.e. numerator
+import { Fraction } from './fraction'
+import { CurrencyAmount } from './currencyAmount'
 
-  public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Token
-
-  /**
-   * Construct a price, either with the base and quote currency amount, or the
-   * @param args
-   */
-  public constructor(
-    ...args:
+export class Price<TBase extends Currency, TQuote extends Currency> extends Fraction {
+  public readonly baseCurrency: TBase // input i.e. denominator
       | [TBase, TQuote, BigintIsh, BigintIsh]
       | [{ baseAmount: CurrencyAmount<TBase>; quoteAmount: CurrencyAmount<TQuote> }]
   ) {

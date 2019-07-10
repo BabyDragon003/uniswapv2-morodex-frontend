@@ -3,16 +3,11 @@ import { useRouter } from 'next/router'
 import { NotFound } from '@pancakeswap/uikit'
 import SingleArticle from 'views/Blog/components/Article/SingleArticle'
 import { InferGetServerSidePropsType } from 'next'
-    fallback: 'blocking',
-  }
-}
+import { getArticle, getSingleArticle } from 'views/Blog/hooks/getArticle'
+import PageMeta from 'components/PageMeta'
 
-export const getStaticProps = async (context: any) => {
-  const params = context.params.slug
-  const article = await getSingleArticle({
-    url: `/articles/${params}`,
-    urlParamsObject: { populate: 'categories,image' },
-  })
+export async function getStaticPaths() {
+  return {
 
   const similarArticles = await getArticle({
     url: '/articles',

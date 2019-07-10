@@ -8,7 +8,3 @@ import SoonIfo from './SoonIfo'
 const activeIfo = ifosConfig.find((ifo) => ifo.isActive)
 
 const Ifo = () => {
-  return activeIfo ? <CurrentIfo activeIfo={activeIfo} /> : <SoonIfo />
-}
-
-export default Ifo

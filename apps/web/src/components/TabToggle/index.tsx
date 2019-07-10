@@ -3,16 +3,11 @@ import styled from 'styled-components'
 
 const Wrapper = styled(Flex)`
   overflow-x: scroll;
-`
-
-const Inner = styled(Flex)`
-  justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.input};
-  width: 100%;
-`
-
-interface TabProps extends BoxProps {
-  isActive?: boolean
+  padding: 0;
+  border-radius: 24px 24px 0 0;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   onClick?: () => void
 }
 

@@ -8,17 +8,6 @@ import Header from './Header'
 import ProfileCreationProvider from './contexts/ProfileCreationProvider'
 import Steps from './Steps'
 
-const ProfileCreation = () => {
-  const { address: account } = useAccount()
-  const { isInitialized, isLoading, hasProfile } = useProfile()
-  const router = useRouter()
-
-  useEffect(() => {
-    if (account && hasProfile) {
-      router.push(`/profile/${account.toLowerCase()}`)
-    }
-  }, [account, hasProfile, router])
-
   if (!isInitialized || isLoading) {
     return <PageLoader />
   }

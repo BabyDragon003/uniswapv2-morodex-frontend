@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import { StaticImageData } from 'next/dist/client/image'
 import {
   Card,
-  LaurelRightIcon,
-  CheckmarkCircleIcon,
-  useModal,
-} from '@pancakeswap/uikit'
-import { CLAIM, OVER } from 'config/constants/trading-competition/phases'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
-import { useTranslation } from '@pancakeswap/localization'
-import ClaimModal from '../ClaimModal'
-import CardUserInfo from './CardUserInfo'
+  CardBody,
+  CardFooter,
+  Flex,
+  Skeleton,
+  Button,
 import ShareImageModal from '../ShareImageModal'
 import { YourScoreProps } from '../../types'
 

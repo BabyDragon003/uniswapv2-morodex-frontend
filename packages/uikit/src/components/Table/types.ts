@@ -8,17 +8,6 @@ export type ColumnType<T extends DataType> = {
   headerRender?: HeaderRenderType;
 };
 
-export type ColumnStateType<T extends DataType> = {
-  name: string;
-  label: string;
-  hidden: boolean;
-  sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined;
-  sorted: {
-    on: boolean;
-    asc?: boolean;
-  };
-  headerRender?: HeaderRenderType;
-};
 
 export type HeaderRenderType = ({ label }: { label: React.ReactNode }) => React.ReactNode;
 

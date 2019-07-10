@@ -3,16 +3,11 @@ import { WalletFilledIcon } from '@pancakeswap/uikit'
 import type { ExtendEthereum } from 'global'
 import { isFirefox } from 'react-device-detect'
 import WalletConnectProvider from '@walletconnect/ethereum-provider'
-  WalletConnect = 'walletConnect',
-  BSC = 'bsc',
-  Blocto = 'blocto',
-  WalletLink = 'coinbaseWallet',
-  Ledger = 'ledger',
-  TrustWallet = 'trustWallet',
-}
+import { getTrustWalletProvider } from '@pancakeswap/wagmi/connectors/trustWallet'
+import { metaMaskConnector, walletConnectNoQrCodeConnector } from '../utils/wagmi'
 
-const delay = (t: number) => new Promise((resolve) => setTimeout(resolve, t))
-
+export enum ConnectorNames {
+  MetaMask = 'metaMask',
 const createQrCode = (chainId: number, connect) => async () => {
   connect({ connector: walletConnectNoQrCodeConnector, chainId })
 

@@ -3,16 +3,11 @@ import { MenuContext } from "../../widgets/Menu/context";
 import StyledMenuItem, { StyledMenuItemContainer } from "./styles";
 import { MenuItemProps } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
-  variant = "default",
-  scrollLayerRef,
-  statusColor,
-  ...props
-}) => {
-  const { isMobile } = useMatchBreakpoints();
-  const menuItemRef = useRef<HTMLDivElement>(null);
-  const { linkComponent } = useContext(MenuContext);
-  const itemLinkProps: any = href
-    ? {
+
+const MenuItem: React.FC<React.PropsWithChildren<MenuItemProps>> = ({
+  children,
+  href,
+  isActive = false,
         as: linkComponent,
         href,
       }

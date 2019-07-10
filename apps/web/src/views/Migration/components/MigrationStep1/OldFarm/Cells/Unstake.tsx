@@ -3,16 +3,11 @@ import styled from 'styled-components'
 import UnstakeButton from '../UnstakeButton'
 
 const Container = styled.div`
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  margin: 30px 14px 0 0;
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    margin-right: 32px;
-  }
-`
-export interface UnstakeProps {
-  pid: number
-}
+  ${({ theme }) => theme.mediaQueries.sm} {
 
 const Unstake: React.FC<React.PropsWithChildren<UnstakeProps>> = ({ pid }) => {
   return (

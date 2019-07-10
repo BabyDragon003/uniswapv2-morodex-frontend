@@ -3,16 +3,11 @@ import { Box, BoxProps, Text, Input } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { isAddress } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'
-}
+import CircleLoader from 'components/Loader/CircleLoader'
 
-interface AddressInputSelectProps extends BoxProps {
-  onValidAddress?: (value: string) => Promise<boolean>
-  onAddressClick: (value: string) => void
-}
-
-const SubMenu = styled.div<{ isOpen: boolean }>`
-  align-items: center;
-  background: ${({ theme }) => theme.colors.input};
+enum ResultStatus {
+  NOT_VALID,
+  FOUND,
   border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
   border-radius: 0 0 ${({ theme }) => theme.radii.default} ${({ theme }) => theme.radii.default};
   left: 0;

@@ -3,16 +3,11 @@ import { darkColors } from "../../theme/colors";
 import { Box, Flex } from "../Box";
 import SocialLinks from "./Components/SocialLinks";
 
-  margin-bottom: 40px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    margin-bottom: 0px;
-  }
+export const StyledFooter = styled(Flex)`
+  background: ${darkColors.backgroundAlt};
 `;
 
-export const StyledListItem = styled.li`
-  font-size: 16px;
-  margin-bottom: 8px;
+export const StyledList = styled.ul`
   text-transform: capitalize;
 
   &:first-child {

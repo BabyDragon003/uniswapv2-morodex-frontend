@@ -3,6 +3,12 @@ import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { TeamLeaderboardProps } from '../../../types'
 
 export interface PodiumProps {
+  teamsSortedByVolume?: Array<TeamLeaderboardProps>
+}
+
+export const Wrapper = styled(Flex)`
+  width: 260px;
+
   ${({ theme }) => theme.mediaQueries.xs} {
     width: 320px;
   }

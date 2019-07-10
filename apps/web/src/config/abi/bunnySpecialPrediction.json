@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_pancakePrediction",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_bunnyMintingStation",
         "type": "address"
       },
       {

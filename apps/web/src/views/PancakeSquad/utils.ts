@@ -4,6 +4,12 @@ import formatTimePeriod from 'utils/formatTimePeriod'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 import { SaleStatusEnum, UserStatusEnum } from './types'
 
+type getUserStatusType = {
+  account?: string
+  hasGen0: boolean | null
+  hasActiveProfile: boolean
+}
+
 export type getEventStepStatusType = {
   eventStatus: SaleStatusEnum[]
   saleStatus: SaleStatusEnum

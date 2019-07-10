@@ -3,9 +3,8 @@ import { atomWithStorage } from 'jotai/utils'
 
 const userExpertModeAtom = atomWithStorage<boolean>('pcs:expert-mode', false)
 const userExpertModeAcknowledgementAtom = atomWithStorage<boolean>('pcs:expert-mode-acknowledgement', true)
-  return useAtomValue(userExpertModeAtom)
+
+export function useExpertMode() {
+  return useAtom(userExpertModeAtom)
 }
 
-export function useUserExpertModeAcknowledgement() {
-  return useAtom(userExpertModeAcknowledgementAtom)
-}

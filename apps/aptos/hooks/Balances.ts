@@ -8,17 +8,6 @@ import { useActiveChainId } from './useNetwork'
 
 export function useCurrencyBalance(coinId?: string): CurrencyAmount<Token | AptosCoin> | undefined {
   const allTokens = useAllTokens()
-  const { account } = useAccount()
-  const native = useNativeCurrency()
-  const chainId = useActiveChainId()
-
-  const selector = useCallback(
-    (coin: UseAccountBalancesResult) => {
-      if (coinId && coin) {
-        const currency = allTokens[coinId]
-          ? allTokens[coinId]
-          : isHexStringEquals(coinId, APTOS_COIN)
-          ? native
           : new Coin(chainId, coinId, coin.decimals, coin.symbol)
         return CurrencyAmount.fromRawAmount(currency, coin.value)
       }

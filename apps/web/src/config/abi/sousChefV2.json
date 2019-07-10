@@ -8,17 +8,6 @@
       },
       {
         "internalType": "contract IBEP20",
-        "name": "_rewardToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_rewardPerBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startBlock",
         "type": "uint256"
       },
       {

@@ -3,9 +3,8 @@ name: Test Config Pass
 on:
   pull_request:
     paths-ignore:
-      fail-fast: true
-      matrix:
-        node: [16]
-    name: Config (Jest)
-    steps:
-      - run: 'echo "No Test Config required" '
+      - 'apps/web/src/config/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest

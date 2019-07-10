@@ -3,6 +3,12 @@ import useGetPublicIfoV3Data from 'views/Ifos/hooks/v3/useGetPublicIfoData'
 import useGetWalletIfoV3Data from 'views/Ifos/hooks/v3/useGetWalletIfoData'
 
 import { Ifo } from 'config/constants/types'
+
+import { IfoCurrentCard } from './components/IfoFoldableCard'
+import IfoContainer from './components/IfoContainer'
+import IfoSteps from './components/IfoSteps'
+
+interface TypeProps {
   activeIfo: Ifo
 }
 

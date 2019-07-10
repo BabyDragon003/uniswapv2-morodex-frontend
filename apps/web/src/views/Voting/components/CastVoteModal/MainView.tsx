@@ -3,16 +3,11 @@ import BigNumber from 'bignumber.js'
 import {
   IconButton,
   Text,
-  RocketIcon,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
-import TextEllipsis from '../TextEllipsis'
-import { VotingBoxBorder, VotingBoxCardInner, ModalInner } from './styles'
-import { CastVoteModalProps } from './types'
-
-interface MainViewProps {
+  Skeleton,
+  Button,
+  AutoRenewIcon,
+  ChevronRightIcon,
+  Message,
   vote: {
     label: string
     value: number

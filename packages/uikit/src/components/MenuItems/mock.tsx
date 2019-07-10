@@ -3,16 +3,11 @@ import ItemsMock from "../DropdownMenu/mock";
 const MenuItemsMock = [
   {
     label: "Home",
-    items: ItemsMock,
-  },
-  {
-    label: "Win",
     href: "/",
     items: ItemsMock,
   },
   {
-    label: "NFT",
-    href: "/",
+    label: "Earn",
     items: [ItemsMock[0]],
   },
   {

@@ -3,16 +3,11 @@ import { atomWithStorage } from 'jotai/utils'
 
 export enum ViewMode {
   TABLE = 'TABLE',
-const userPoolsViewModeAtom = atomWithStorage<ViewMode.CARD | ViewMode.TABLE>('pcs:pools-view-mode', DEFAULT_MODE)
+  CARD = 'CARD',
+}
 
-const userFarmViewModeLocalStorage = atom(
-  (get) => {
-    const got = get(userFarmViewModeAtom)
-    if (got === ViewMode.TABLE) {
-      return ViewMode.TABLE
-    }
-    return ViewMode.CARD
-  },
+const DEFAULT_MODE = ViewMode.TABLE
+
   (_get, set, mode: ViewMode) => {
     set(userFarmViewModeAtom, mode)
   },

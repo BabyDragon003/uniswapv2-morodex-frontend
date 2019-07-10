@@ -3,16 +3,11 @@ import {
   Box,
   Button,
   Flex,
-import { useAccount } from 'wagmi'
-import { useTranslation } from '@pancakeswap/localization'
-import SectionsWithFoldableText from 'components/FoldableSection/SectionsWithFoldableText'
-import { PageMeta } from 'components/Layout/Page'
-import { useGetCollections } from 'state/nftMarket/hooks'
-import { FetchStatus } from 'config/constants/types'
-import PageLoader from 'components/Loader/PageLoader'
-import useTheme from 'hooks/useTheme'
-import orderBy from 'lodash/orderBy'
-import SearchBar from '../components/SearchBar'
+  Heading,
+  LinkExternal,
+  PageHeader,
+  NextLinkFromReactRouter,
+  PageSection,
 import Collections from './Collections'
 import Newest from './Newest'
 import config from './config'

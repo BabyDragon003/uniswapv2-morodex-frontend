@@ -3,3 +3,5 @@ main = "src/index.ts"
 name = "proxy-worker-dev"
 node_compat = true
 
+[env.production]
+name = "proxy-worker"

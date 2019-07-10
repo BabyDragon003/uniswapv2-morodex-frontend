@@ -3,6 +3,12 @@ import _toNumber from 'lodash/toNumber'
 import { useMemo } from 'react'
 import { useCakeVaultPublicData, useCakeVaultUserData } from 'state/pools/hooks'
 import { getBCakeMultiplier } from 'views/Farms/components/YieldBooster/components/BCakeCalculator'
+import { useUserLockedCakeStatus } from 'views/Farms/hooks/useUserLockedCakeStatus'
+import useAvgLockDuration from 'views/Pools/components/LockedPool/hooks/useAvgLockDuration'
+import { secondsToDays } from 'views/Pools/components/utils/formatSecondsToWeeks'
+
+export const useGetBoostedMultiplier = (userBalanceInFarm: BigNumber, lpTokenStakedAmount: BigNumber) => {
+  useCakeVaultPublicData()
   useCakeVaultUserData()
   const { avgLockDurationsInSeconds } = useAvgLockDuration()
   const { isLoading, lockedAmount, totalLockedAmount, lockedStart, lockedEnd } = useUserLockedCakeStatus()

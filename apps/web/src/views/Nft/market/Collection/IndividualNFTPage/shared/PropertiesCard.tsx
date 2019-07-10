@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { NftAttribute } from 'state/nftMarket/types'
 import ExpandableCard from './ExpandableCard'
 
+interface PropertiesCardProps {
+  properties: NftAttribute[]
+  rarity: { [key: string]: number }
+}
+
+// Map of known traits to human-readable text
 const KNOWN_TRAITS_TEXT = {
   bunnyId: 'Bunny ID',
 }

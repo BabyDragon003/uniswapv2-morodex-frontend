@@ -3,16 +3,11 @@ name: Integration Tests
 on:
   pull_request:
     branches:
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+      - develop
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
+jobs:
+  integration-tests:
+    name: Integration tests
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path

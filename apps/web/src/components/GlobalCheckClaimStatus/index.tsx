@@ -3,16 +3,11 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useModal, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
-
-interface GlobalCheckClaimStatusProps {
-  excludeLocations: string[]
-}
-
-// change it to true if we have events to check claim status
-const enable = false
-
-const GlobalCheckClaimStatus: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusProps>> = (props) => {
-  const { account, chainId } = useActiveWeb3React()
+import { useAnniversaryAchievementContract } from 'hooks/useContract'
+import useCatchTxError from 'hooks/useCatchTxError'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
   if (!enable || chainId !== ChainId.BSC) {
     return null
   }

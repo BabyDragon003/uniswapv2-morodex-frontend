@@ -3,16 +3,11 @@ import { Trade } from './entities'
 import { validateAndParseAddress } from './utils'
 import invariant from 'tiny-invariant'
 
-   */
-  allowedSlippage: Percent
+/**
+ * Options for producing the arguments to send call to the router.
+ */
+export interface TradeOptions {
   /**
-   * How long the swap is valid until it expires, in seconds.
-   * This will be used to produce a `deadline` parameter which is computed from when the swap call parameters
-   * are generated.
-   */
-  ttl: number
-  /**
-   * The account that should receive the output of the swap.
    */
   recipient: string
 

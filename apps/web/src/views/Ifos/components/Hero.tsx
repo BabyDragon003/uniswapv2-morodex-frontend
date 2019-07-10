@@ -8,17 +8,6 @@ const StyledHero = styled(Box)`
   background-position: top, center;
   background-repeat: no-repeat;
   background-size: auto 100%;
-`
-
-const StyledHeading = styled(Heading)`
-  font-size: 40px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    font-size: 64px;
-  }
-`
-
-const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.tertiary};
   color: ${({ theme }) => theme.colors.primary};
   padding: 4px 13px;

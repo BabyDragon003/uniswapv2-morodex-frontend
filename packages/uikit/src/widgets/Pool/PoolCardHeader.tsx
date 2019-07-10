@@ -8,17 +8,6 @@ const Wrapper = styled(CardHeader)<{ isFinished?: boolean; background: string }>
     isFinished ? theme.colors.backgroundDisabled : getThemeValue(theme, `colors.${background}`)};
   border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card} 0 0`};
 `;
-
-export const PoolCardHeader: React.FC<
-  React.PropsWithChildren<{
-    isFinished?: boolean;
-    isStaking?: boolean;
-  }>
-> = ({ isFinished = false, isStaking = false, children }) => {
-  const background = isStaking ? "gradientBubblegum" : "gradientCardHeader";
-
-  return (
-    <Wrapper isFinished={isFinished} background={background}>
       <Flex alignItems="center" justifyContent="space-between">
         {children}
       </Flex>

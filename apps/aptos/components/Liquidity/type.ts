@@ -3,16 +3,11 @@ import { Dispatch, SetStateAction } from 'react'
 export enum Field {
   LIQUIDITY_PERCENT = 'LIQUIDITY_PERCENT',
   LIQUIDITY = 'LIQUIDITY',
-  NOT_APPROVED,
-  PENDING,
-  APPROVED,
+  CURRENCY_A = 'currencyA',
+  CURRENCY_B = 'currencyB',
 }
 
-export interface LiquidityHandlerReturn {
-  attemptingTxn: boolean
-  liquidityErrorMessage: string | undefined
-  txHash: string | undefined
-  setLiquidityState: Dispatch<
+export enum ApprovalState {
     SetStateAction<{
       attemptingTxn: boolean
       liquidityErrorMessage: string | undefined

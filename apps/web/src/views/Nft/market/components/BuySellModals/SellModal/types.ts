@@ -8,11 +8,3 @@ export enum SellingStage {
   ADJUST_PRICE,
   CONFIRM_ADJUST_PRICE,
   // Remove from market flow
-  REMOVE_FROM_MARKET,
-  CONFIRM_REMOVE_FROM_MARKET,
-  // Transfer flow
-  TRANSFER,
-  CONFIRM_TRANSFER,
-  // Common
-  TX_CONFIRMED,
-}

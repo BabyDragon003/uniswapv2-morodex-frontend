@@ -3,16 +3,11 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { useActiveIfoWithBlocks } from 'hooks/useActiveIfoWithBlocks'
 import Image from 'next/legacy/image'
-
-const IFOHeaderMobileLimitHeight = 36
-const IFOHeaderMobileLimitWidth = 335
-
-const shineAnimation = keyframes`
-	0% {transform:translateX(-100%);}
-  20% {transform:translateX(100%);}
-	100% {transform:translateX(100%);}
-`
-
+import { memo, useEffect, useRef } from 'react'
+import { useChainCurrentBlock } from 'state/block/hooks'
+import styled, { keyframes } from 'styled-components'
+import { getStatus } from '../../../Ifos/hooks/helpers'
+import { IFOImage, IFOMobileImage } from './images'
 const RightWrapper = styled.div`
   position: absolute;
   right: 1px;

@@ -3,6 +3,12 @@ import { renderWithProvider } from "../../testHelpers";
 import { BaseLayout, CardsLayout } from "../../components/Layouts";
 
 it("renders base layout correctly", () => {
+  const { asFragment } = renderWithProvider(<BaseLayout>basic layout</BaseLayout>);
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
+      display: grid;
+    }
 
     .c1 {
       grid-template-columns: repeat(6,1fr);
