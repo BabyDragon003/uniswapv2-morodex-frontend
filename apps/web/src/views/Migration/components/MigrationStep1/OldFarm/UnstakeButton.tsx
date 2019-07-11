@@ -13,22 +13,6 @@ import useUnstakeFarms from '../../../hook/V1/Farms/useUnstakeFarms'
 export interface UnstakeButtonProps {
   pid: number
 }
-
-const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ pid }) => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
-  const { stakedBalance } = useFarmUser(pid)
-  const { onUnstake } = useUnstakeFarms(pid)
-  const dispatch = useAppDispatch()
-
-  const isNeedUnstake = stakedBalance.gt(0)
-
-  const handleUnstake = async (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation()
-
-    const receipt = await fetchWithCatchTxError(() => {
       const balance = getFullDisplayBalance(stakedBalance)
       return onUnstake(balance)
     })

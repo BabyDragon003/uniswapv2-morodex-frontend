@@ -8,16 +8,11 @@
       },
       {
         "internalType": "address",
-        "type": "uint256"
+        "name": "_adminAddress",
+        "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "_bufferBlocks",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_minBetAmount",
+        "internalType": "address",
         "type": "uint256"
       },
       {

@@ -8,16 +8,11 @@ interface PositionLabelProps {
 }
 
 const StyledPositionLabel = styled.div<{ bgColor: string }>`
-const Label = styled.div`
-  color: #fff;
-  display: none;
-  text-transform: uppercase;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    display: block;
-    margin-left: 4px;
-  }
-`
+  align-items: center;
+  background-color: ${({ theme, bgColor }) => theme.colors[bgColor]};
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
 
 const PositionLabel: React.FC<React.PropsWithChildren<PositionLabelProps>> = ({ position }) => {
   const { t } = useTranslation()

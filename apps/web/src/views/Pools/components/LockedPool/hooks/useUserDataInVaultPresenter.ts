@@ -8,16 +8,11 @@ interface UserData {
   burnStartTime?: string
 }
 
-  const {
-    currentLanguage: { locale },
-  } = useTranslation()
-  const secondDuration = Number(lockEndTime) - Number(lockStartTime)
-
-  const lockEndTimeSeconds = convertTimeToSeconds(lockEndTime)
-
-  let lockEndDate = ''
-  let burnStartTime = ''
-
+interface UserDataInVaultPresenter {
+  weekDuration: string
+  remainingTime: string
+  lockEndDate: string
+  secondDuration: number
   try {
     const _lockEndDate = new Date(lockEndTimeSeconds)
     lockEndDate = _lockEndDate.toLocaleString(locale, {

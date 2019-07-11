@@ -13,9 +13,3 @@ const Template: React.FC<React.PropsWithChildren<CakePriceProps>> = ({ ...args }
       <CakePrice {...args} />
     </Flex>
   );
-};
-
-export const Default = Template.bind({});
-Default.args = {
-  cakePriceUsd: 20.0,
-};

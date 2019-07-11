@@ -8,3 +8,5 @@ export function useConfig() {
 }
 
 export default function ConfigProvider({ children, config }) {
+  return <ConfigContext.Provider value={config}>{children}</ConfigContext.Provider>
+}

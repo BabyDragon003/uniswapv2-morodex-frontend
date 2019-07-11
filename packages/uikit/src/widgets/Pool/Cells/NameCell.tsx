@@ -8,16 +8,11 @@ import { BaseCell, CellContent } from "./BaseCell";
 import { Text, Skeleton } from "../../../components";
 import useMatchBreakpoints from "../../../contexts/MatchBreakpoints/useMatchBreakpoints";
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex: 1 0 150px;
-    padding-left: 32px;
-  }
-`;
-
-export function NameCell<T>({ pool, totalCakeInVault, userShares, tokenPairImage }: NameCellProps<T>) {
-  const { t } = useTranslation();
-  const { isMobile } = useMatchBreakpoints();
-  const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey, totalStaked } = pool;
+interface NameCellProps<T> {
+  pool: DeserializedPool<T>;
+  userShares?: BigNumber;
+  totalCakeInVault?: BigNumber;
+  tokenPairImage: ReactNode;
   const hasVaultShares = userShares?.gt(0);
 
   const stakingTokenSymbol = stakingToken.symbol;

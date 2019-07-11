@@ -13,22 +13,6 @@ const IfoStepBackground = styled(Box)`
 interface TypeProps {
   ifoSection: ReactElement
   ifoSteps: ReactElement
-}
-
-const IfoContainer: React.FC<React.PropsWithChildren<TypeProps>> = ({ ifoSection, ifoSteps }) => {
-  const { t } = useTranslation()
-
-  return (
-    <IfoLayout id="current-ifo" py={['24px', '24px', '40px']}>
-      <Container>
-        <IfoLayoutWrapper>
-          <IfoPoolVaultCard />
-          {ifoSection}
-        </IfoLayoutWrapper>
-      </Container>
-      <IfoStepBackground>
-        <Container>{ifoSteps}</Container>
-      </IfoStepBackground>
       <Container>
         <IfoQuestions />
         <LinkExternal

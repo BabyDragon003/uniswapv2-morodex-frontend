@@ -13,22 +13,6 @@ import { LIVE } from '../../../../../config/constants/trading-competition/phases
 import MoboxUserPrizeGrid from './MoboxUserPrizeGrid'
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  margin: 24px auto 0;
-  max-width: 768px;
-`
-
-const MoboxYourScore: React.FC<React.PropsWithChildren<YourScoreProps>> = ({
-  hasRegistered = false,
-  account,
-  userTradingInformation,
-  profile,
-  isLoading,
-  userLeaderboardInformation,
-  currentPhase,
-  userCanClaimPrizes,
-  finishedAndPrizesClaimed,
   finishedAndNothingToClaim,
   onClaimSuccess,
 }) => {

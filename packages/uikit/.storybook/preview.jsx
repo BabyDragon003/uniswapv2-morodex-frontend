@@ -13,22 +13,6 @@ const globalDecorator = (StoryFn) => (
     <ModalProvider>
       <ResetCSS />
       <StoryFn />
-    </ModalProvider>
-  </MatchBreakpointsProvider>
-);
-
-const StyledThemeProvider = (props) => {
-  const { setTheme } = useNextTheme();
-
-  useEffect(() => {
-    setTheme(props.theme.name);
-  }, [props.theme.name]);
-
-  return <ThemeProvider {...props}>{props.children}</ThemeProvider>;
-};
-
-const StorybookThemeProvider = (props) => {
-  return (
     <NextThemeProvider>
       <StyledThemeProvider {...props} />
     </NextThemeProvider>

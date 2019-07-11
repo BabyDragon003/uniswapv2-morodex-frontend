@@ -13,7 +13,3 @@ const MoreButton = () => {
         </Button>
       </NextLink>
     </Flex>
-  )
-}
-
-export default MoreButton

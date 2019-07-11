@@ -8,6 +8,17 @@ import { HarvestAction as TableHarvestAction } from "./PoolsTable/HarvestAction"
 import { HarvestActionsProps } from "./types";
 
 const HarvestActions: React.FC<React.PropsWithChildren<HarvestActionsProps>> = ({
+  earnings,
+  isLoading,
+  onPresentCollect,
+  earningTokenPrice,
+  earningTokenBalance,
+  earningTokenDollarBalance,
+}) => {
+  const { t } = useTranslation();
+  const hasEarnings = earnings.toNumber() > 0;
+
+  return (
     <Flex justifyContent="space-between" alignItems="center" mb="16px">
       <Flex flexDirection="column">
         {isLoading ? (

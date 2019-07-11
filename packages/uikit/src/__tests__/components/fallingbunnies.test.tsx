@@ -8,16 +8,11 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.spyOn(global.Math, "random").mockRestore();
-      -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-    }
+});
 
-    .c0 {
-      display: -webkit-inline-box;
-      display: -webkit-inline-flex;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
+it("renders correctly", () => {
+  const { asFragment } = renderWithProvider(<FallingBunnies count={1} />);
+  expect(asFragment()).toMatchInlineSnapshot(`
       position: fixed;
       top: 0;
       left: 50vw;

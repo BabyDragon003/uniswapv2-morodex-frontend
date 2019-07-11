@@ -8,16 +8,11 @@ export const UserMenuDivider = styled.hr`
   margin: 4px 0;
 `;
 
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 100%;
-
-  &:is(button) {
-    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  }
-
-  &:hover:not(:disabled) {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+export const UserMenuItem = styled.button<UserMenuItemProps>`
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: ${({ theme, disabled }) => theme.colors[disabled ? "textDisabled" : "textSubtle"]};
   }
 
   &:active:not(:disabled) {

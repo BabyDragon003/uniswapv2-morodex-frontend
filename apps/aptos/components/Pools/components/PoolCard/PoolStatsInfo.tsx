@@ -9,6 +9,17 @@ import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 
 import { AprInfo } from './Stat'
 
+interface ExpandedFooterProps {
+  pool: Pool.DeserializedPool<Token> & { stakeLimitEndBlock?: number }
+  account?: string
+  showTotalStaked?: boolean
+  alignLinksToRight?: boolean
+}
+
+interface EndTimeTooltipComponentProps {
+  endTime: number
+}
+
 const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {
     t,

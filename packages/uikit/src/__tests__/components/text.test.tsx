@@ -8,6 +8,17 @@ it("renders correctly", () => {
     <DocumentFragment>
       .c0 {
       color: var(--colors-text);
+      font-weight: 400;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    <div
+        class="c0"
+        color="text"
+        font-size="16px"
+      >
+        pancake
       </div>
     </DocumentFragment>
   `);

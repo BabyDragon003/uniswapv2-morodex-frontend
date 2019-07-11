@@ -13,4 +13,3 @@ export const aptosLogoClass = recipe({
       },
     },
   },
-})

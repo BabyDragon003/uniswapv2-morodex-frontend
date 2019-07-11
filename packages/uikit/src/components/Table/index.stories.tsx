@@ -8,16 +8,11 @@ export default {
   component: Table,
   argTypes: {},
 };
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <Td>Cell 1-1</Td>
-              <Td>Cell 1-2</Td>
-              <Td>Cell 1-3</Td>
-            </tr>
-            <tr>
-              <Td>Cell 2-1</Td>
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <div style={{ width: "640px" }}>
+      <Card>
               <Td>Cell 2-2</Td>
               <Td>Cell 2-3</Td>
             </tr>

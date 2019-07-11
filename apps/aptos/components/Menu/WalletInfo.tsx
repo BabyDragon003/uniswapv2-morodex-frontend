@@ -8,16 +8,11 @@ import {
   Flex,
   InjectedModalProps,
   LinkExternal,
-  hasLowNativeBalance: boolean
-  onDismiss: InjectedModalProps['onDismiss']
-}
-
-const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss }) => {
-  const { t } = useTranslation()
-  const { account } = useAccount()
-  const chainId = useActiveChainId()
-  const native = useNativeCurrency()
-  const { data, isFetched } = useAccountBalance({ address: account?.address, coin: APTOS_COIN })
+  Message,
+  Skeleton,
+  Text,
+} from '@pancakeswap/uikit'
+import { useAuth } from 'hooks/useAuth'
 
   const { logout } = useAuth()
 

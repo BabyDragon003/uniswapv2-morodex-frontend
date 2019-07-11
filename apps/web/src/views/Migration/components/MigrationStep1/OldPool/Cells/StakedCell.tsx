@@ -8,16 +8,11 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { convertSharesToCake } from 'views/Pools/helpers'
 import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex: 2 0 100px;
-    margin-left: 10px;
-    padding: 24px 8px;
-  }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-left: 20px;
-  }
-`
+interface StakedCellProps {
+  pool: Pool.DeserializedPool<Token>
+  account: string
+}
 
 const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool }) => {
   const { t } = useTranslation()

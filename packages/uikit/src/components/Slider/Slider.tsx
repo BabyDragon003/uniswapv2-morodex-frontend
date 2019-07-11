@@ -8,16 +8,11 @@ import {
   StyledInput,
   SliderLabel,
   SliderLabelContainer,
-  disabled = false,
-  ...props
-}) => {
-  const handleChange = useCallback(
-    ({ target }: ChangeEvent<HTMLInputElement>) => {
-      onValueChanged(parseFloat(target.value));
-    },
-    [onValueChanged]
-  );
+} from "./styles";
+import SliderProps from "./types";
 
+const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
+  name,
   const progressPercentage = (value / max) * 100;
   const isMax = value === max;
   let progressWidth: string;

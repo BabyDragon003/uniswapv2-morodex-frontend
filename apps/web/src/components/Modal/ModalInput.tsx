@@ -13,22 +13,6 @@ interface ModalInputProps {
   value: string
   addLiquidityUrl?: string
   inputTitle?: string
-  decimals?: number
-}
-
-const StyledTokenInput = styled.div<InputProps>`
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.input};
-  border-radius: 16px;
-  box-shadow: ${({ theme, isWarning }) => (isWarning ? theme.colors.warning : theme.shadows.inset)};
-  color: ${({ theme }) => theme.colors.text};
-  padding: 8px 16px 8px 0;
-  width: 100%;
-`
-
-const StyledInput = styled(Input)`
-  box-shadow: none;
   width: 60px;
   margin: 0 8px;
   padding: 0 8px;

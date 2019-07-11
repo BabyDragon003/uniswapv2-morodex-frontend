@@ -8,16 +8,11 @@ export type ClientStorage = {
 
 export const noopStorage: BaseStorage = {
   getItem: (_key) => '',
-  return {
-    ...storage,
-    getItem: (key, defaultState = null) => {
-      const value = storage.getItem(`${prefix}.${key}`)
-      try {
-        return value ? JSON.parse(value) : defaultState
-      } catch (error) {
-        console.warn(error)
-        return defaultState
-      }
+  setItem: (_key, _value) => null,
+  removeItem: (_key) => null,
+}
+
+export function createStorage({
     },
     setItem: (key, value) => {
       if (value === null) {

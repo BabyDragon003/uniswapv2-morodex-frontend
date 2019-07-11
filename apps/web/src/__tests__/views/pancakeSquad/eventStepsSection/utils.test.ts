@@ -13,22 +13,6 @@ describe('PancakeSquad/EventStepsSection/utils/getStepperStatus', () => {
     // When
     const result = getStepperStatus({
       hasProfileActivated,
-      eventStatus,
-      isLastPhase,
-      saleStatus,
-      numberTicketsOfUser,
-    })
-
-    // Then
-    expect(result).toEqual('future')
-  })
-
-  it('Should return past text', () => {
-    // Given
-    const eventStatus = []
-    const saleStatus = SaleStatusEnum.Claim
-    const hasProfileActivated = true
-    const numberTicketsOfUser = 0
     const isLastPhase = false
 
     // When

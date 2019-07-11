@@ -13,22 +13,6 @@ interface AprCellProps<T> {
   }>;
 }
 
-export function AprCell<T>({ pool, aprComp }: AprCellProps<T>) {
-  const { t } = useTranslation();
-  const { isMobile } = useMatchBreakpoints();
-  const { userData } = pool;
-  const stakedBalance = userData?.stakedBalance ? new BigNumber(userData.stakedBalance) : BIG_ZERO;
-
-  return (
-    <Pool.BaseCell role="cell" flex={["1 0 50px", "1 0 50px", "2 0 100px", "2 0 100px", "1 0 120px"]}>
-      <Pool.CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {t("APR")}
-        </Text>
-        {createElement(aprComp, {
-          pool,
-          stakedBalance,
-          showIcon: !isMobile,
         })}
       </Pool.CellContent>
     </Pool.BaseCell>

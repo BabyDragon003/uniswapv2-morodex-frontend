@@ -8,16 +8,11 @@ import {
   CardBody,
   CheckmarkIcon,
   Container,
-  TooltipText,
-  useTooltip,
-} from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
-
-import { useTranslation } from '@pancakeswap/localization'
-import useTokenBalance from 'hooks/useTokenBalance'
-import { useProfile } from 'state/profile/hooks'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+  Flex,
+  FlexGap,
+  Heading,
+  Link,
+  LogoRoundIcon,
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
 import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'
 import { getICakeWeekDisplay } from 'views/Pools/helpers'

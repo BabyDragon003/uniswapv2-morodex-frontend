@@ -8,6 +8,17 @@ export interface GlobalState {
   pickedFarmTransactionModalTx: {
     tx: string
     chainId: ChainId
+  }
+}
+
+export const initialState: GlobalState = {
+  showFarmTransactionModal: false,
+  pickedFarmTransactionModalTx: {
+    tx: '',
+    chainId: ChainId.BSC,
+  },
+}
+
 export default createReducer(initialState, (builder) =>
   builder
     .addCase(toggleFarmTransactionModal, (state, { payload: { showModal } }) => {

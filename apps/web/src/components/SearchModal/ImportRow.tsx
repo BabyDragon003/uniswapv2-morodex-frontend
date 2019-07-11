@@ -8,6 +8,17 @@ import { useCombinedInactiveList } from 'state/lists/hooks'
 import styled from 'styled-components'
 import { useIsUserAddedToken, useIsTokenActive } from 'hooks/Tokens'
 import { useTranslation } from '@pancakeswap/localization'
+import { BAD_SRCS } from '../Logo/constants'
+
+const TokenSection = styled.div<{ dim?: boolean }>`
+  padding: 4px 20px;
+  height: 56px;
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1fr) auto;
+  grid-gap: 10px;
+  align-items: center;
+
+  opacity: ${({ dim }) => (dim ? '0.4' : '1')};
 
   ${({ theme }) => theme.mediaQueries.md} {
     grid-gap: 16px;

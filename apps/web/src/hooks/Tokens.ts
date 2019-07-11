@@ -8,16 +8,11 @@ import { useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 import useSWRImmutable from 'swr/immutable'
 import {
-import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
-import { FetchStatus } from '../config/constants/types'
-
-const mapWithoutUrls = (tokenMap: TokenAddressMap<ChainId>, chainId: number) =>
-  Object.keys(tokenMap[chainId] || {}).reduce<{ [address: string]: ERC20Token }>((newMap, address) => {
-    const checksummedAddress = isAddress(address)
-
-    if (checksummedAddress && !newMap[checksummedAddress]) {
-      newMap[checksummedAddress] = tokenMap[chainId][address].token
-    }
+  combinedTokenMapFromActiveUrlsAtom,
+  combinedTokenMapFromOfficialsUrlsAtom,
+  useUnsupportedTokenList,
+  useWarningTokenList,
+} from '../state/lists/hooks'
 
     return newMap
   }, {})

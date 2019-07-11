@@ -8,6 +8,17 @@ export default {
   argTypes: {
     fontSize: {
       name: "fontSize",
+      table: {
+        type: { summary: "string", detail: "Fontsize in px or em" },
+        defaultValue: { summary: "16px" },
+      },
+      control: {
+        type: null,
+      },
+    },
+  },
+};
+
 export const Default: React.FC<React.PropsWithChildren> = () => {
   return (
     <div>

@@ -13,22 +13,6 @@ const getTokenDerivedBnbPrices = async (tokenAddress: string, blocks: Block[]) =
   const rawPrices: any | undefined = await multiQuery(
     getDerivedPricesQueryConstructor,
     getDerivedPrices(tokenAddress, blocks),
-    INFO_CLIENT,
-    200,
-  )
-
-  if (!rawPrices) {
-    console.error('Price data failed to load')
-    return null
-  }
-
-  const prices = mapValues(rawPrices, (value) => {
-    return value.derivedBNB
-  })
-
-  // format token BNB price results
-  const tokenPrices: {
-    tokenAddress: string
     timestamp: string
     derivedBNB: number
   }[] = []

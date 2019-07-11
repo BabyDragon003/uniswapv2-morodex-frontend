@@ -8,7 +8,8 @@ import { ChainId } from '@pancakeswap/sdk'
 
 export const useBSCWhiteList = () => {
   const listsByUrl = useAtomValue(selectorByUrlsAtom)
-  const allTokensFromETH = useAllTokenHighLight()
-
-  return chainId === ChainId.BSC ? allTokensFromBSC : allTokensFromETH
-}
+  const { current: list } = listsByUrl[PANCAKE_EXTENDED]
+  const whiteList = useMemo(() => {
+    return list ? list.tokens.map((t) => t.address.toLowerCase()) : []
+  }, [list])
+  return whiteList

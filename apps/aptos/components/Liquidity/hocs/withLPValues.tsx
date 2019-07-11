@@ -8,16 +8,11 @@ import currencyId from 'utils/currencyId'
 
 // Philip TODO: Replace useBUSDPrice mock
 export function useBUSDPrice(currency?: Coin): Price<Coin, Coin> | undefined {
-      JSBI.greaterThanOrEqual(totalPoolTokens.quotient, userPoolBalance.quotient)
-      ? [
-          pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-          pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
-        ]
-      : [undefined, undefined]
-  }, [totalPoolTokens, userPoolBalance, pair])
+  if (!currency) return undefined
+
+  return new Price(currency, currency, JSBI.BigInt(0), JSBI.BigInt(0))
 }
 
-const useTotalUSDValue = ({ currency0, currency1, token0Deposited, token1Deposited }) => {
   const token0Price = useBUSDPrice(currency0)
   const token1Price = useBUSDPrice(currency1)
 

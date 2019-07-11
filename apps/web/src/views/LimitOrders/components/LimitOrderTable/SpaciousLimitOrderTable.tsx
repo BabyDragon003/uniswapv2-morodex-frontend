@@ -8,6 +8,17 @@ const SpaciousLimitOrderTable = ({ orders }) => {
 
   return (
     <Table>
+      <>
+        <thead>
+          <tr>
+            <Th>
+              <Text fontSize="12px" bold textTransform="uppercase" color="textSubtle" textAlign="left">
+                {t('From')}
+              </Text>
+            </Th>
+            <Th>
+              <Text fontSize="12px" bold textTransform="uppercase" color="textSubtle" textAlign="left">
+                {t('To')}
               </Text>
             </Th>
             <Th>

@@ -8,16 +8,11 @@ import { RoundResultBox } from '../RoundResult'
 import MultiplierArrow from './MultiplierArrow'
 import CardHeader, { getBorderBackground } from './CardHeader'
 
-    <Card borderBackground={getBorderBackground(theme, 'soon')}>
-      <CardHeader status="soon" icon={<WaitIcon mr="4px" width="21px" />} title={t('Later')} epoch={round.epoch} />
-      <CardBody p="16px">
-        <MultiplierArrow isDisabled />
-        <RoundResultBox>
-          <Text textAlign="center">
-            <Text bold>{t('Entry starts')}</Text>
-            <Text fontSize="24px" bold>
-              {`~${countdown}`}
-            </Text>
+interface SoonRoundCardProps {
+  round: NodeRound
+}
+
+const SoonRoundCard: React.FC<React.PropsWithChildren<SoonRoundCardProps>> = ({ round }) => {
           </Text>
         </RoundResultBox>
         <MultiplierArrow betPosition={BetPosition.BEAR} isDisabled />

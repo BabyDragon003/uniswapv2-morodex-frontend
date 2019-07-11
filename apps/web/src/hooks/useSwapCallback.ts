@@ -8,6 +8,17 @@ import { isStableSwap, V2TradeAndStableSwap } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import { useGasPrice } from 'state/user/hooks'
+import { logSwap, logTx } from 'utils/log'
+
+import { INITIAL_ALLOWED_SLIPPAGE } from '../config/constants'
+import { useTransactionAdder } from '../state/transactions/hooks'
+import { calculateGasMargin, isAddress } from '../utils'
+import { basisPointsToPercent } from '../utils/exchange'
+import { transactionErrorToUserReadableMessage } from '../utils/transactionErrorToUserReadableMessage'
+
+export enum SwapCallbackState {
+  INVALID,
+  LOADING,
   VALID,
 }
 

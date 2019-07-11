@@ -8,6 +8,17 @@ const { FarmTokenInfo } = FarmUI.FarmTable
 
 const Farm: React.FunctionComponent<React.PropsWithChildren<FarmTableFarmTokenInfoProps>> = ({
   token,
+  quoteToken,
+  label,
+  pid,
+  isReady,
+  isStable,
+}) => {
+  const { data: userInfo } = useFarmUserInfoCache(String(pid))
+  const stakedBalance = userInfo?.amount ? new BigNumber(userInfo.amount) : BIG_ZERO
+
+  return (
+    <FarmTokenInfo
       pid={pid}
       label={label}
       token={token}

@@ -8,6 +8,17 @@ interface ThemedButtonProps extends BaseButtonProps {
 }
 
 interface TransientButtonProps extends ThemedButtonProps {
+  $isLoading?: boolean;
+}
+
+const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
+  if ($isLoading === true) {
+    return `
+      &:disabled,
+      &.pancake-button--disabled {
+        cursor: not-allowed;
+      }
+    `;
   }
 
   return `

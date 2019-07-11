@@ -13,22 +13,6 @@ it("renders base layout correctly", () => {
     .c1 {
       grid-template-columns: repeat(6,1fr);
       grid-gap: 16px;
-    }
-
-    @media screen and (min-width:576px) {
-      .c1 {
-        grid-template-columns: repeat(8,1fr);
-        grid-gap: 24px;
-      }
-    }
-
-    @media screen and (min-width:852px) {
-      .c1 {
-        grid-template-columns: repeat(12,1fr);
-        grid-gap: 24px;
-      }
-    }
-
     @media screen and (min-width:968px) {
       .c1 {
         grid-template-columns: repeat(12,1fr);

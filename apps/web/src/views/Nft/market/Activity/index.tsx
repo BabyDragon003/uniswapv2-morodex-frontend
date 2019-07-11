@@ -8,6 +8,17 @@ const Activity = () => {
 
   return (
     <>
+      <PageHeader>
+        <Heading as="h1" scale="xxl" color="secondary" data-test="nft-activity-title">
+          {t('Activity')}
+        </Heading>
+      </PageHeader>
+      <Page>
+        <Card>
+          <ActivityHistory />
+        </Card>
+      </Page>
+    </>
   )
 }
 

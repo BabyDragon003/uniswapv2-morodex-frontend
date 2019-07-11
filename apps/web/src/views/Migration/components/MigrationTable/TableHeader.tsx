@@ -8,3 +8,11 @@ export interface TableHeaderProps {
 const TableHeader: React.FC<React.PropsWithChildren<TableHeaderProps>> = ({ title }) => {
   return (
     <CardHeader>
+      <Text fontSize="20px" bold>
+        {title}
+      </Text>
+    </CardHeader>
+  )
+}
+
+export default TableHeader

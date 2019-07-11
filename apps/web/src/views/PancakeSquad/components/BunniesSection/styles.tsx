@@ -13,17 +13,3 @@ export const StyledImageContainer = styled(Flex)`
 
   & > img {
     position absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-`
-
-export const StyledBunnyImage = styled.img<{ $isSelected: boolean }>`
-  opacity: ${({ $isSelected }) => ($isSelected ? 1 : 0)};
-`
-
-export const StyledTextContainer = styled(Flex)`
-  z-index: 5;
-`

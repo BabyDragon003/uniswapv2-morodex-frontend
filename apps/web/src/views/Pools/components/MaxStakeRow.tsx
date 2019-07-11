@@ -8,6 +8,17 @@ import { Token } from '@pancakeswap/sdk'
 
 interface MaxStakeRowProps {
   small?: boolean
+  stakingLimit: BigNumber
+  currentBlock: number
+  stakingLimitEndBlock: number
+  stakingToken: Token
+  hasPoolStarted: boolean
+}
+
+const MaxStakeRow: React.FC<React.PropsWithChildren<MaxStakeRowProps>> = ({
+  small = false,
+  stakingLimit,
+  currentBlock,
   stakingLimitEndBlock,
   stakingToken,
   hasPoolStarted,

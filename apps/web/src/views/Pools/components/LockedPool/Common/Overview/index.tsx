@@ -13,22 +13,6 @@ import BalanceRow from './BalanceRow'
 import DateRow from './DateRow'
 import formatRoi from '../../utils/formatRoi'
 import formatiCake from '../../utils/formatICake'
-import { OverviewPropsType } from '../../types'
-import CalculatorButton from '../../Buttons/CalculatorButton'
-
-const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
-  usdValueStaked,
-  lockedAmount,
-  duration,
-  isValidDuration,
-  newDuration,
-  newLockedAmount,
-  lockStartTime,
-  lockEndTime,
-  showLockWarning,
-  ceiling,
-}) => {
-  const { getLockedApy, getBoostFactor } = useVaultApy()
   const { t } = useTranslation()
 
   const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])

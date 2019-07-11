@@ -8,6 +8,17 @@ interface CollectionCardWithVolumeProps {
   avatarSrc?: string
   collectionName: string
   url?: string
+  disabled?: boolean
+  volume: number
+}
+
+const CollectionCardWithVolume: React.FC<CollectionCardWithVolumeProps> = ({
+  bgSrc,
+  avatarSrc,
+  collectionName,
+  url,
+  volume,
+}) => {
   const { t } = useTranslation()
   return (
     <CollectionCard bgSrc={bgSrc} avatarSrc={avatarSrc} collectionName={collectionName} url={url}>

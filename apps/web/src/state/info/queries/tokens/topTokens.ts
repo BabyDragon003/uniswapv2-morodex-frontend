@@ -8,16 +8,11 @@ import {
   getMultiChainQueryEndPointWithStableSwap,
   checkIsStableSwap,
   multiChainTokenBlackList,
- * The actual data is later requested in tokenData.ts
- * Note: dailyTxns_gt: 300 is there to prevent fetching incorrectly priced tokens with high dailyVolumeUSD
- */
-const fetchTopTokens = async (chainName: MultiChainName, timestamp24hAgo: number): Promise<string[]> => {
-  const whereCondition =
-    chainName === 'ETH'
-      ? `where: { date_gt: ${timestamp24hAgo}, token_not_in: $blacklist, dailyVolumeUSD_gt:2000 }`
-      : checkIsStableSwap()
-      ? ''
-      : `where: { dailyTxns_gt: 300, id_not_in: $blacklist, date_gt: ${timestamp24hAgo}}`
+  multiChainTokenWhiteList,
+} from '../../constant'
+
+interface TopTokensResponse {
+  tokenDayDatas: {
   const firstCount = 50
   try {
     const query = gql`

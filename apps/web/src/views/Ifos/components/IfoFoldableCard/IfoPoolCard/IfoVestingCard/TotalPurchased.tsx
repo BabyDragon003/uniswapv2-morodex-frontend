@@ -13,22 +13,6 @@ interface TotalPurchasedProps {
 }
 
 const TotalPurchased: React.FC<React.PropsWithChildren<TotalPurchasedProps>> = ({ ifo, poolId, walletIfoData }) => {
-  const { t } = useTranslation()
-  const { token } = ifo
-  const { offeringAmountInToken, amountTokenCommittedInLP, refundingAmountInLP } = walletIfoData[poolId]
-  const spentAmount = amountTokenCommittedInLP.minus(refundingAmountInLP)
-
-  const tooltipContentOfSpent = t(
-    'Based on "overflow" sales method. %refundingAmount% unspent %spentToken% are available to claim after the sale is completed.',
-    {
-      refundingAmount: getBalanceNumber(refundingAmountInLP, ifo.currency.decimals).toFixed(4),
-      spentToken: ifo.currency.symbol,
-    },
-  )
-  const {
-    targetRef: tagTargetRefOfSpent,
-    tooltip: tagTooltipOfSpent,
-    tooltipVisible: tagTooltipVisibleOfSpent,
   } = useTooltip(tooltipContentOfSpent, {
     placement: 'bottom',
   })

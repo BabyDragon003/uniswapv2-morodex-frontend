@@ -8,6 +8,17 @@ export interface SerializedPair {
 
 export enum FarmStakedOnly {
   ON_FINISHED = 'onFinished',
+  TRUE = 'true',
+  FALSE = 'false',
+}
+
+export enum ViewMode {
+  TABLE = 'TABLE',
+  CARD = 'CARD',
+}
+
+export enum ChartViewMode {
+  BASIC = 'BASIC',
   TRADING_VIEW = 'TRADING_VIEW',
 }
 

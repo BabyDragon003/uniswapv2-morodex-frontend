@@ -8,16 +8,11 @@ const initialNftFilterState: NftFilter = {
   activeFilters: {},
   showOnlyOnSale: true,
   ordering: {
-  const [nftMarketFilters, setNftMarketFilters] = useAtom(nftMarketFiltersAtom)
-  const [nftMarketActivityFilters, setNftMarketActivityFilters] = useAtom(nftMarketActivityFiltersAtom)
-  const [tryVideoNftMedia, setTryVideoNftMedia] = useAtom(tryVideoNftMediaAtom)
+    field: 'currentAskPrice',
+    direction: 'asc',
+  },
+}
 
-  const addActivityTypeFilters = useCallback(
-    ({ collection, field }: { collection: string; field: MarketEvent }) => {
-      if (nftMarketActivityFilters[collection]) {
-        nftMarketActivityFilters[collection].typeFilters.push(field)
-      } else {
-        nftMarketActivityFilters[collection] = {
           ...cloneDeep(initialNftActivityFilterState),
           typeFilters: [field],
         }

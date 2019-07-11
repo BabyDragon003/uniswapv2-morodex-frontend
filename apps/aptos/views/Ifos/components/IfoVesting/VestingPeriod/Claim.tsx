@@ -8,16 +8,11 @@ import { useIfoPool } from 'views/Ifos/hooks/useIfoPool'
 import splitTypeTag from 'utils/splitTypeTag'
 import { useCallback, useState } from 'react'
 import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'
-  data,
-  claimableAmount,
-  fetchUserVestingData,
-}) => {
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const { token } = data.ifo
-  const [isPending, setIsPending] = useState(false)
-  const executeTransaction = useSimulationAndSendTransaction()
-  const ifo = useIfoPool(data.ifo)
+import { HexString } from 'aptos'
+
+interface Props {
+  poolId: PoolIds
+  data: VestingData
 
   const handleClaim = useCallback(async () => {
     setIsPending(true)

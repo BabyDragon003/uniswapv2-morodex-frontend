@@ -8,16 +8,11 @@ import useBUSDPrice from 'hooks/useBUSDPrice'
 import { useAccount } from 'wagmi'
 import { CurrencyLogo } from '../Logo'
 import { RowBetween, AutoRow } from '../Layout/Row'
-  border-radius: 6px;
-  // background: ${({ theme }) => theme.colors.input};
-  transition: border-radius 0.15s;
-`
 
-const DropDownContainer = styled(Button)`
-  cursor: pointer;
+const DropDownHeader = styled.div`
   width: 100%;
-  position: relative;
-  background: ${({ theme }) => theme.colors.input};
+  height: 40px;
+  display: flex;
   // border-radius: 16px;
   border-radius: 6px;
   height: 40px;

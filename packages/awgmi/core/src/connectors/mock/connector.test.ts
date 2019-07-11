@@ -8,6 +8,17 @@ const accounts = [
   {
     privateKeyHex: '0xd7238892323a3440282657b1ebe046c16357521333003783596da9c2cb26a485',
     address: '0x2cf744dc90acb87c3bbf5f034b37c3718ac10a56e5181c1b43923e5c3623b493',
+  },
+]
+
+describe('MockConnector', () => {
+  let connector: MockConnector
+  let account: AptosAccount
+  beforeEach(() => {
+    account = AptosAccount.fromAptosAccountObject(accounts[0])
+
+    connector = new MockConnector({
+      options: { account },
     })
   })
 

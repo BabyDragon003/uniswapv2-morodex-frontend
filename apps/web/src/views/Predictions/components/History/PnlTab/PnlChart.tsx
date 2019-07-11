@@ -13,22 +13,6 @@ interface PnlChartProps {
 }
 
 // 2 * Pi * R
-const CIRCUMFERENCE = 339.292
-
-const PnlChart: React.FC<React.PropsWithChildren<PnlChartProps>> = ({ lost, won }) => {
-  const { t } = useTranslation()
-  const percentageWon = (won * 100) / (lost + won)
-  const percentageWonDisplay = !Number.isNaN(percentageWon) ? `${percentageWon.toFixed(2)}%` : '0%'
-  const paintLost = (lost / (won + lost)) * CIRCUMFERENCE
-  const paintWon = CIRCUMFERENCE - paintLost
-  return (
-    <Wrapper>
-      <SVG viewBox="0 0 128 128">
-        <LostSlice r="54" cx="64" cy="64" length={paintLost} />
-        <WonSlice r="54" cx="64" cy="64" length={paintWon} offset={paintLost} />
-      </SVG>
-      <Info>
-        <Text small lineHeight="1">
           {t('Won')}
         </Text>
         <Text bold fontSize="20px" lineHeight="1">

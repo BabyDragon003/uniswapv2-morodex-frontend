@@ -8,3 +8,14 @@ const SubMenu: React.FC<React.PropsWithChildren<BaseMenuProps & FlexProps>> = ({
   children,
   component,
   options,
+  isOpen = false,
+  ...props
+}) => {
+  return (
+    <BaseMenu component={component} options={options} isOpen={isOpen}>
+      <SubMenuContainer {...props}>{children}</SubMenuContainer>
+    </BaseMenu>
+  );
+};
+
+export default SubMenu;

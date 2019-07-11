@@ -8,16 +8,11 @@ import {
   Text,
   Toggle,
   useTooltip,
-import { useAtomValue } from 'jotai'
-import { memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { useListState } from 'state/lists'
-import styled from 'styled-components'
-import {
-  useFetchListCallback,
-  acceptListUpdate,
-  disableList,
-  enableList,
-  removeList,
+  Column,
+  AutoColumn,
+  Row,
+  RowBetween,
+  RowFixed,
 } from '@pancakeswap/token-lists/react'
 import uriToHttp from '@pancakeswap/utils/uriToHttp'
 

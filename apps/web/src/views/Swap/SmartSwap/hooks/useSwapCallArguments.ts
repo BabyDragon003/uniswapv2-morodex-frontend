@@ -8,16 +8,11 @@ import {
   SwapParameters,
   TradeOptions,
   TradeOptionsDeadline,
-const NATIVE_CURRENCY_ADDRESS = getAddress('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE')
-
-export interface SwapCall {
-  contract: Contract
-  parameters: SwapParameters
-}
-
-/**
- * Returns the swap calls that can be used to make the trade
- * @param trade trade to execute
+  TradeType,
+} from '@pancakeswap/sdk'
+import { isStableSwapPair, Trade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
+import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants'
+import { BIPS_BASE } from 'config/constants/exchange'
  * @param allowedSlippage user allowed slippage
  * @param recipientAddressOrName
  */

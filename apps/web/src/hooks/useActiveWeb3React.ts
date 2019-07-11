@@ -8,6 +8,17 @@ import { ChainId } from '@pancakeswap/sdk'
 import { getChainId, CHAIN_QUERY_NAME } from 'config/chains'
 import { useActiveChainId } from './useActiveChainId'
 import { useSwitchNetworkLoading } from './useSwitchNetworkLoading'
+
+const getHashFromRouter = (router: NextRouter) => {
+  return router.asPath.match(/#([a-z0-9]+)/gi)
+}
+
+export function useNetworkConnectorUpdater() {
+  const { chainId } = useActiveChainId()
+  const previousChainIdRef = useRef(chainId)
+  const [loading] = useSwitchNetworkLoading()
+  const router = useRouter()
+
   useEffect(() => {
     const setPrevChainId = () => {
       previousChainIdRef.current = chainId

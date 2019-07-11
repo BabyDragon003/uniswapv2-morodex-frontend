@@ -8,6 +8,17 @@ import { APEX_DOMAIN } from 'config'
 import { defaultChain } from 'config/chains'
 import Image from 'next/image'
 import { aptosLogoClass } from './Logo/CurrencyLogo.css'
+
+const evmChains = [
+  { id: 56, name: 'BNB Smart Chain' },
+  { id: 1, name: 'Ethereum' },
+]
+
+const NetworkSelect = () => {
+  const { t } = useTranslation()
+
+  return (
+    <>
       <Box px="16px" py="8px">
         <Text color="textSubtle">{t('Select a Network')}</Text>
       </Box>

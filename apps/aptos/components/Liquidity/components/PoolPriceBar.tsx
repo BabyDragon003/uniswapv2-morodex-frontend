@@ -8,6 +8,17 @@ export default function PoolPriceBar({
   currencyA,
   currencyB,
   noLiquidity,
+  poolTokenPercentage,
+  price,
+}: {
+  currencyA: Currency
+  currencyB: Currency
+  noLiquidity?: boolean
+  poolTokenPercentage?: Percent
+  price?: Price<Currency, Currency>
+}) {
+  const { t } = useTranslation()
+
   return (
     <AutoColumn gap="md">
       <AutoRow justifyContent="space-around" gap="4px">

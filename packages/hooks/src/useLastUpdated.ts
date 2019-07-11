@@ -13,7 +13,3 @@ const useLastUpdated = () => {
     setStateLastUpdated(Date.now())
   }, [setStateLastUpdated])
 
-  return { lastUpdated, previousLastUpdated, setLastUpdated }
-}
-
-export default useLastUpdated

@@ -13,22 +13,6 @@ export function SentryErrorBoundary({ children }) {
         scope.setLevel('fatal')
       }}
       fallback={({ eventId }) => {
-        return (
-          <Page>
-            <Flex flexDirection="column" justifyContent="center" alignItems="center">
-              <LogoIcon width="64px" mb="8px" />
-              <Text mb="16px">{t('Oops, something wrong.')}</Text>
-              {eventId && (
-                <Flex flexDirection="column" style={{ textAlign: 'center' }} mb="8px">
-                  <Text>{t('Error Tracking Id')}</Text>
-                  <Flex alignItems="center">
-                    <Text>{eventId}</Text>
-                    <IconButton variant="text" onClick={() => copyText(eventId)}>
-                      <CopyIcon color="primary" width="24px" />
-                    </IconButton>
-                  </Flex>
-                </Flex>
-              )}
               <Button onClick={handleOnClick}>{t('Click here to reset!')}</Button>
             </Flex>
           </Page>

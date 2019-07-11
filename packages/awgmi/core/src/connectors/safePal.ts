@@ -13,22 +13,6 @@ export type MartianConnectorOptions = {
   id?: string
   /** Name of connector */
   name?: string
-}
-
-export class SafePalConnector extends MartianConnector {
-  readonly id: string
-  readonly name: string
-
-  readonly ready = typeof window !== 'undefined' && !!window.safePal
-  constructor(config: { chains?: Chain[]; options?: MartianConnectorOptions } = {}) {
-    const options = {
-      id: config.options?.id || 'safePal',
-      name: config.options?.name || 'SafePal',
-    }
-
-    super({
-      chains: config.chains,
-      options,
     })
 
     this.id = options.id

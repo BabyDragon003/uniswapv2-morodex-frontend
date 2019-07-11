@@ -13,22 +13,6 @@ import { YieldBoosterStateContext } from './ProxyFarmContainer'
 interface BoostedAprPropsType {
   apr: number
   lpRewardsApr: number
-  pid: number
-  mr?: string
-  userBalanceInFarm: BigNumber
-  lpTotalSupply: BigNumber
-}
-
-function BoostedApr(props: BoostedAprPropsType) {
-  const { lpRewardsApr, apr, pid, userBalanceInFarm, lpTotalSupply, ...rest } = props
-  const { boosterState, proxyAddress } = useContext(YieldBoosterStateContext)
-  const { t } = useTranslation()
-
-  const boostedAprFromFE = useGetBoostedAPR(userBalanceInFarm, lpTotalSupply, apr, lpRewardsApr)
-
-  const multiplier = useBoostMultiplier({ pid, boosterState, proxyAddress })
-
-  const boostedAprFromSC =
     (!isUndefinedOrNull(multiplier) &&
       !isUndefinedOrNull(apr) &&
       formatNumber(

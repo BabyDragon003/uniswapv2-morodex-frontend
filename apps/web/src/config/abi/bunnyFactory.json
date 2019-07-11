@@ -8,16 +8,11 @@
       },
       {
         "internalType": "contract BunnyMintingStation",
-        "type": "uint256"
+        "name": "_bunnyMintingStation",
+        "type": "address"
       },
       {
-        "internalType": "string",
-        "name": "_ipfsHash",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startBlockNumber",
+        "internalType": "contract IBEP20",
         "type": "uint256"
       }
     ],

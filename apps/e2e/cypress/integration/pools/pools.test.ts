@@ -8,3 +8,7 @@ describe('Pools Page', () => {
   })
 
   it('loads finished pools', () => {
+    cy.get('#finished-pools-button').click()
+    cy.get('#pools-table').should('be.visible')
+  })
+})

@@ -8,5 +8,8 @@ export const getStatus = (currentTime: number, startTime: number, endTime: numbe
   }
 
   if (currentTime < startTime) {
-  return 'idle'
-}
+    return 'coming_soon'
+  }
+
+  if (currentTime >= startTime && currentTime <= endTime) {
+    return 'live'

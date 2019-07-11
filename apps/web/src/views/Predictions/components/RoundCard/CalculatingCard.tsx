@@ -8,16 +8,11 @@ import CardHeader, { getBorderBackground } from './CardHeader'
 
 interface CalculatingCardProps {
   round: NodeRound
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    t('This round’s closing transaction has been submitted to the blockchain, and is awaiting confirmation.'),
-    { placement: 'bottom' },
-  )
+  hasEnteredUp: boolean
+  hasEnteredDown: boolean
+}
 
-  return (
-    <>
-      <Card borderBackground={getBorderBackground(theme, 'calculating')}>
-        <CardHeader
-          status="calculating"
+const CalculatingCard: React.FC<React.PropsWithChildren<CalculatingCardProps>> = ({
           icon={<WaitIcon mr="4px" width="21px" />}
           title={t('Calculating')}
           epoch={round.epoch}

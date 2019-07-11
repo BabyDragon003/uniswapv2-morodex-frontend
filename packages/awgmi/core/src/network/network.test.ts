@@ -8,16 +8,11 @@ import { MockConnector } from '../connectors/mock'
 import { defaultChains } from '../chain'
 
 const connector = new MockConnector({
-        {
-          "chain": undefined,
-          "chains": [],
-        }
-      `)
-    })
+  options: { account: getAptosAccounts()[0] },
+  chains: defaultChains,
+})
 
-    it.todo('has network', async () => {
-      await connect({ connector })
-      expect(getNetwork()).toMatchInlineSnapshot(``)
+describe('network', () => {
     })
   })
 })

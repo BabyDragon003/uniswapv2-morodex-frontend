@@ -8,8 +8,8 @@ export default function AprRow({ lpApr7d }: { lpApr7d: number }) {
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(`Based on last 7 days' performance. Does not account for impermanent loss`),
     {
-        {formatAmount(lpApr7d)}%
-      </Text>
-    </RowBetween>
+      placement: "bottom",
+    }
   );
-}
+
+  return (

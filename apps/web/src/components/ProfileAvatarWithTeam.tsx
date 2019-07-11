@@ -8,16 +8,11 @@ export interface ProfileAvatarProps {
 
 const TeamAvatar = styled.img`
   border: 1px solid ${({ theme }) => theme.card.background};
-    border-width: 2px;
-  }
-`
-
-const AvatarWrapper = styled.div<{ bg: string }>`
-  background: url('${({ bg }) => bg}');
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 50%;
-  position: relative;
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
+  min-width: 20px;
   width: 100%;
   height: 100%;
 

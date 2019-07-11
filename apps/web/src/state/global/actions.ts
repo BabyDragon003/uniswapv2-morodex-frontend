@@ -13,5 +13,3 @@ export const toggleFarmTransactionModal = createAction<{
 
 export const pickFarmTransactionTx = createAction<{
   tx: string
-  chainId: ChainId
-}>('transactions/pickFarmTransactionTx')

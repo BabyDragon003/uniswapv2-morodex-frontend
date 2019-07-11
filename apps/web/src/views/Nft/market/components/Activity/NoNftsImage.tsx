@@ -8,3 +8,10 @@ const NoNftsImage = styled.div`
   position: relative;
   width: 96px;
   height: 96px;
+
+  & > img {
+    border-radius: 50%;
+  }
+`
+
+export default NoNftsImage
