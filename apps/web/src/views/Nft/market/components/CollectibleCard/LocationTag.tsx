@@ -13,16 +13,11 @@ const LocationTag: React.FC<React.PropsWithChildren<{ nftLocation: NftLocation }
           {t('Wallet')}
         </Text>
       </Flex>
-      <Flex justifyContent="center">
-        <CameraIcon height="12px" color="textSubtle" />
-        <Text color="textSubtle" fontSize="14px">
-          {t('Profile')}
-        </Text>
-      </Flex>
     )
   }
 
-  const tagsConfig = {
+  const ForSaleTag = () => {
+    return (
     [NftLocation.WALLET]: WalletTag(),
     [NftLocation.PROFILE]: ProfilePicTag(),
     [NftLocation.FORSALE]: ForSaleTag(),

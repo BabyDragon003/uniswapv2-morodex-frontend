@@ -13,16 +13,11 @@ import {
   Row,
   RowBetween,
   RowFixed,
-} from '@pancakeswap/token-lists/react'
-import uriToHttp from '@pancakeswap/utils/uriToHttp'
-
-import { selectorByUrlsAtom, useActiveListUrls, useAllLists, useIsListActive } from 'state/lists/hooks'
-
-import { CurrencyModalView } from './types'
-import { BAD_SRCS } from '../Logo/constants'
-
-function listVersionLabel(version: Version): string {
-  return `v${version.major}.${version.minor}.${version.patch}`
+  ListLogo,
+} from '@pancakeswap/uikit'
+import { TokenList, Version } from '@pancakeswap/token-lists'
+import Card from 'components/Card'
+import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
 }
 
 const Wrapper = styled(Column)`

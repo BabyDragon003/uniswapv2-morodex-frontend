@@ -18,27 +18,6 @@ export const fetchPotterysAllowance = async (account: string, potteryVaultAddres
   } catch (error) {
     console.error('Failed to fetch pottery user allowance', error)
     return BIG_ZERO.toJSON()
-  }
-}
-
-export const fetchVaultUserData = async (account: string, potteryVaultAddress: string) => {
-  try {
-    const potteryVaultContract = getPotteryVaultContract(potteryVaultAddress)
-    const balance = await potteryVaultContract.balanceOf(account)
-    const previewDeposit = await potteryVaultContract.previewRedeem(balance)
-    return {
-      previewDepositBalance: new BigNumber(previewDeposit.toString()).toJSON(),
-      stakingTokenBalance: new BigNumber(balance.toString()).toJSON(),
-    }
-  } catch (error) {
-    console.error('Failed to fetch pottery vault user data', error)
-    return {
-      previewDepositBalance: BIG_ZERO.toJSON(),
-      stakingTokenBalance: BIG_ZERO.toJSON(),
-    }
-  }
-}
-
 export const fetchUserDrawData = async (account: string) => {
   try {
     const [reward, winCount] = await potteryDrawContract.userInfos(account)

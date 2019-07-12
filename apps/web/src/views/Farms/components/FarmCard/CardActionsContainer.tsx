@@ -18,27 +18,6 @@ const Action = styled.div`
 
 const ActionContainer = styled.div`
   margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
-interface FarmCardActionsProps {
-  farm: FarmWithStakedValue
-  account?: string
-  addLiquidityUrl?: string
-  lpLabel?: string
-  displayApr?: string
-}
-
-const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
-  farm,
-  account,
-  addLiquidityUrl,
-  lpLabel,
-  displayApr,
-}) => {
-  const { t } = useTranslation()
   const { pid, token, quoteToken, vaultPid, lpSymbol, lpAddress } = farm
   const { earnings } = farm.userData || {}
   const { shouldUseProxyFarm } = useContext(YieldBoosterStateContext)

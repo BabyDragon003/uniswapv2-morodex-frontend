@@ -13,16 +13,11 @@ interface ButtonMenuProps {
 const ButtonMenu: React.FC<React.PropsWithChildren<ButtonMenuProps>> = ({
   cakePrice,
   stakingTokenBalance,
-    <Flex justifyContent="space-between" mt="8px">
-      <Button scale="xs" p="4px 16px" width="68px" variant="tertiary" onClick={() => setPrincipalFromUSDValue('100')}>
-        $100
-      </Button>
-      <Button scale="xs" p="4px 16px" width="68px" variant="tertiary" onClick={() => setPrincipalFromUSDValue('1000')}>
-        $1000
-      </Button>
-      <Button
-        scale="xs"
-        p="4px 16px"
+  setPrincipalFromUSDValue,
+}) => {
+  const { t } = useTranslation()
+  const { address: account } = useAccount()
+
         width="128px"
         variant="tertiary"
         style={{ textTransform: 'uppercase' }}

@@ -13,6 +13,22 @@ const useGetProfileCosts = () => {
   const [costs, setCosts] = useState({
     numberCakeToReactivate: Zero,
     numberCakeToRegister: Zero,
+    numberCakeToUpdate: Zero,
+  })
+  const { toastError } = useToast()
+
+  useEffect(() => {
+    const fetchCosts = async () => {
+      try {
+        const calls = ['numberCakeToReactivate', 'numberCakeToRegister', 'numberCakeToUpdate'].map((method) => ({
+          address: getPancakeProfileAddress(),
+          name: method,
+        }))
+        const [[numberCakeToReactivate], [numberCakeToRegister], [numberCakeToUpdate]] = await multicallv2<
+          [[BigNumber], [BigNumber], [BigNumber]]
+        >({ abi: profileABI, calls })
+
+        setCosts({
           numberCakeToReactivate,
           numberCakeToRegister,
           numberCakeToUpdate,

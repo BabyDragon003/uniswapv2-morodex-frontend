@@ -13,16 +13,11 @@ export const useGetBoostedMultiplier = (userBalanceInFarm: BigNumber, lpTokenSta
   const { avgLockDurationsInSeconds } = useAvgLockDuration()
   const { isLoading, lockedAmount, totalLockedAmount, lockedStart, lockedEnd } = useUserLockedCakeStatus()
   const bCakeMultiplier = useMemo(() => {
-    lockedStart,
-    isLoading,
-  ])
-  return _toNumber(bCakeMultiplier)
-}
-
-export const useGetCalculatorMultiplier = (
-  userBalanceInFarm: BigNumber,
-  lpTokenStakedAmount: BigNumber,
-  lockedAmount: BigNumber,
+    const result = getBCakeMultiplier(
+      userBalanceInFarm, // userBalanceInFarm,
+      lockedAmount, // userLockAmount
+      secondsToDays(_toNumber(lockedEnd) - _toNumber(lockedStart)), // userLockDuration
+      totalLockedAmount, // totalLockAmount
   userLockDuration: number,
 ) => {
   useCakeVaultPublicData()

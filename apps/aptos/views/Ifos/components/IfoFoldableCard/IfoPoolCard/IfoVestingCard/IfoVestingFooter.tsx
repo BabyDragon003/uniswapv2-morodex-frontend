@@ -13,16 +13,11 @@ const StyledIfoVestingFooter = styled(Flex)`
   margin: 0 -12px -12px;
   background-color: ${({ theme }) => theme.colors.background};
 `
-      ) : (
-        <Skeleton height={21} width={80} />
-      )}
-    </Flex>
-  )
-}
 
-interface IfoVestingFooterProps {
-  ifo: Ifo
-  poolId: PoolIds
+export interface FooterEntryProps {
+  label: string
+  value: string
+}
   publicIfoData: PublicIfoData
   walletIfoData: WalletIfoData
 }

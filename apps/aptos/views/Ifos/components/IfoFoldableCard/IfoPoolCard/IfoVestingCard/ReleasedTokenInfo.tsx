@@ -13,6 +13,22 @@ const Dot = styled.div<{ isActive?: boolean }>`
   height: 8px;
   border-radius: 50%;
   align-self: center;
+  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : '#d7caec')};
+`
+
+interface ReleasedTokenInfoProps {
+  ifo: Ifo
+  amountReleased: BigNumber
+  amountInVesting: BigNumber
+}
+
+const ReleasedTokenInfo: React.FC<React.PropsWithChildren<ReleasedTokenInfoProps>> = ({
+  ifo,
+  amountReleased,
+  amountInVesting,
+}) => {
+  const { t } = useTranslation()
+  const { token } = ifo
 
   const amount = useMemo(() => {
     const released = getBalanceNumber(amountReleased, token.decimals)

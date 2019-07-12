@@ -13,16 +13,11 @@ const FaqSection = () => {
     <StyledFaqSection justifyContent="center">
       <LandingBodyWrapper py="64px">
         <StyledDetailsWrapper>
-                    )
-                  })}
-                </FoldableText>
-              ))}
-            </CardBody>
-          </Card>
-        </StyledDetailsWrapper>
-      </LandingBodyWrapper>
-    </StyledFaqSection>
-  )
+          <Card>
+            <CardHeader>
+              <Heading scale="lg" color="secondary">
+                {t('FAQs')}
+              </Heading>
 }
 
 export default FaqSection

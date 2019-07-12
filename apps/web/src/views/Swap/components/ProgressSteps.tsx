@@ -18,27 +18,6 @@ const Circle = styled.div<{ confirmed?: boolean; disabled?: boolean }>`
   justify-content: center;
   line-height: 8px;
   font-size: 12px;
-`
-
-const CircleRow = styled.div`
-  width: calc(100% - 20px);
-  display: flex;
-  align-items: center;
-`
-
-const Connector = styled.div<{ prevConfirmed?: boolean; disabled?: boolean }>`
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    ${({ theme, prevConfirmed, disabled }) =>
-        disabled ? theme.colors.backgroundDisabled : prevConfirmed ? theme.colors.success : theme.colors.primary}
-      0%,
-    ${({ theme, prevConfirmed, disabled }) =>
-        disabled
-          ? theme.colors.backgroundDisabled
-          : prevConfirmed
-          ? theme.colors.primary
           : theme.colors.backgroundDisabled}
       80%
   );

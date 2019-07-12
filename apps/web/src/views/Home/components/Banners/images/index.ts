@@ -13,3 +13,17 @@ import Aptos from './Aptos.png'
 import AptosXPancakeSwap from './AptosXPancakeSwap.png'
 
 export {
+  lotteryImage,
+  IFOImage,
+  competitionImage,
+  modImage,
+  modMobileImage,
+  lotteryMobileImage,
+  competitionMobileImage,
+  IFOMobileImage,
+  modWhiteLogo,
+  perpetualImage,
+  perpetualMobileImage,
+  Aptos,
+  AptosXPancakeSwap,
+}

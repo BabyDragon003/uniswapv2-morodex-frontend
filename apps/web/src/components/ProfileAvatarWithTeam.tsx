@@ -13,16 +13,11 @@ const TeamAvatar = styled.img`
   position: absolute;
   right: 0px;
   min-width: 20px;
-  width: 100%;
-  height: 100%;
+  min-height: 20px;
+  width: 37.5%;
+  height: 37.5%;
+  z-index: 5;
 
-  & > img {
-    border-radius: 50%;
-  }
-`
-// TODO: replace with no profile avatar icon
-const AvatarInactive = styled(NoProfileAvatarIcon)`
-  width: 100%;
   height: 100%;
 `
 

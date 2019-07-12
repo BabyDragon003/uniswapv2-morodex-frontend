@@ -13,3 +13,17 @@ export default {
 const Template: React.FC<React.PropsWithChildren<MenuItemProps>> = ({ children, ...args }) => {
   return (
     <BrowserRouter>
+      <Flex>
+        <MenuItem {...args}>{children}</MenuItem>
+      </Flex>
+    </BrowserRouter>
+  );
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  isActive: false,
+  href: "/",
+  children: "Trade",
+  variant: "default",
+};

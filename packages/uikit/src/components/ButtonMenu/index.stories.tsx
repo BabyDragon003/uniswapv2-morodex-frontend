@@ -13,6 +13,22 @@ const Row = styled.div`
     margin-left: 16px;
   }
 `;
+
+export default {
+  title: "Components/Button Menu",
+  component: ButtonMenu,
+  argTypes: {},
+} as Meta;
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  const [index, setIndex] = useState(0);
+  const [index1, setIndex1] = useState(1);
+
+  const handleClick = (newIndex) => setIndex(newIndex);
+  const handleClick1 = (newIndex) => setIndex1(newIndex);
+
+  return (
+    <>
       <Row>
         <ButtonMenu activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>

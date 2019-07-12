@@ -13,6 +13,22 @@ import {
   useMatchBreakpoints,
 } from '@pancakeswap/uikit'
 import { VaultPosition } from 'utils/cakePool'
+import { FetchStatus } from 'config/constants/types'
+import { useTranslation } from '@pancakeswap/localization'
+import styled from 'styled-components'
+import useCakeBenefits from './hooks/useCakeBenefits'
+
+const CakeBenefitsCardWrapper = styled(Box)`
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 1px 1px 3px 1px;
+  background: linear-gradient(180deg, #53dee9, #7645d9);
+  border-radius: ${({ theme }) => theme.radii.default};
+`
+
+const CakeBenefitsCardInner = styled(Box)`
+  position: relative;
+  z-index: 1;
   padding: 8px 12px;
   background: ${({ theme }) => theme.colors.backgroundAlt};
   border-radius: ${({ theme }) => theme.radii.default};

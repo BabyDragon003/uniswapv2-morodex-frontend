@@ -18,4 +18,3 @@ const GridLayout = styled(Grid)`
   }
 `;
 
-export default GridLayout;

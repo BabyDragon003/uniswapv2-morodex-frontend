@@ -14,6 +14,22 @@
 
 - e63258cf9: Add swap output amount estimation
 
+## 0.5.0
+
+### Minor Changes
+
+- e11c44d86: Add stable swap lp token mint estimation
+
+## 0.4.0
+
+### Minor Changes
+
+- 7be222310: Add price & fee percent to stable swap pairs
+
+## 0.3.0
+
+### Minor Changes
+
 - 34edbd929: Allow to get all common pairs externally
 
 ## 0.2.1

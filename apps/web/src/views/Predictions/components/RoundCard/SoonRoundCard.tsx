@@ -13,6 +13,22 @@ interface SoonRoundCardProps {
 }
 
 const SoonRoundCard: React.FC<React.PropsWithChildren<SoonRoundCardProps>> = ({ round }) => {
+  const { secondsRemaining } = useCountdown(round.startTimestamp)
+  const countdown = formatRoundTime(secondsRemaining)
+  const { t } = useTranslation()
+  const { theme } = useTheme()
+
+  return (
+    <Card borderBackground={getBorderBackground(theme, 'soon')}>
+      <CardHeader status="soon" icon={<WaitIcon mr="4px" width="21px" />} title={t('Later')} epoch={round.epoch} />
+      <CardBody p="16px">
+        <MultiplierArrow isDisabled />
+        <RoundResultBox>
+          <Text textAlign="center">
+            <Text bold>{t('Entry starts')}</Text>
+            <Text fontSize="24px" bold>
+              {`~${countdown}`}
+            </Text>
           </Text>
         </RoundResultBox>
         <MultiplierArrow betPosition={BetPosition.BEAR} isDisabled />

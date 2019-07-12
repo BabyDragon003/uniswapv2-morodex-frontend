@@ -13,6 +13,22 @@ import { CurrencySelectorContext } from '../hooks/useCurrencySelectRoute'
 import { MintPairContext } from '../hooks/useMintPair'
 import { useMintLiquidityStateAndHandlers } from '../state/add'
 import { Field } from '../type'
+import PoolPriceBar from './PoolPriceBar'
+// import AprRow from './AprRow'
+import PricePoolShareSection from './PricePoolShareSection'
+import SlippageSection from './SlippageSection'
+
+const { FirstLP } = LiquidityUI
+
+export default function AddLiquidityForm({ notSupportPair }: { notSupportPair: boolean }) {
+  const { t } = useTranslation()
+  const { currencyA, currencyB, handleCurrencyASelect, handleCurrencyBSelect } = useContext(CurrencySelectorContext)
+  const { pairState, currencyBalances, error, pair, noLiquidity, totalSupply } = useContext(MintPairContext)
+  const { poolTokenPercentage, price, parsedAmounts, addError, liquidityMinted } = useDerivedMintInfo({
+    noLiquidity,
+    totalSupply,
+  })
+
   const [{ typedValue, otherTypedValue, independentField }, { onFieldAInput, onFieldBInput, resetForm }] =
     useMintLiquidityStateAndHandlers(noLiquidity)
 

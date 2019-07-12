@@ -13,6 +13,22 @@ interface EditProfileModalProps extends InjectedModalProps {
 const viewTitle = (t: ContextApi['t'], currentView: Views) => {
   switch (currentView) {
     case Views.START:
+      return t('Edit Profile')
+    case Views.CHANGE:
+      return t('Change Profile Pic')
+    case Views.REMOVE:
+      return t('Remove Profile Pic')
+    case Views.APPROVE:
+      return t('Enable CAKE')
+    default:
+      return ''
+  }
+}
+
+const EditProfileModal: React.FC<React.PropsWithChildren<EditProfileModalProps>> = ({ onDismiss, onSuccess }) => {
+  const { currentView, goToChange, goToRemove, goToApprove, goPrevious } = useEditProfile()
+  const { t } = useTranslation()
+
   const isStartView = currentView === Views.START
   const handleBack = isStartView ? null : () => goPrevious()
 

@@ -13,3 +13,6 @@ const Icon: React.FC<SvgProps> = (props) => (
       fill="#31D0AA"
     />
   </Svg>
+);
+
+export default Icon;

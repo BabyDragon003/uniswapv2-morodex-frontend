@@ -13,16 +13,11 @@ function ClaimWarning() {
     setHasAcceptedRisk(true)
   }, [setHasAcceptedRisk])
 
-      onSuccess={handleSuccess}
-    />,
-    false,
-    false,
-  )
-
-  useEffect(() => {
-    if (!hasAcceptedRisk) {
-      onPresentRiskDisclaimer()
-    }
+  const [onPresentRiskDisclaimer, onDismiss] = useModal(
+    <DisclaimerModal
+      id="disclaimer-limit-order"
+      header={t('I acknowledge that:')}
+      checks={[
 
     return () => {
       onDismiss()

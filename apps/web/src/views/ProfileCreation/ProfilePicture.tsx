@@ -13,16 +13,11 @@ import {
 } from '@pancakeswap/uikit'
 import { useAccount, useSigner } from 'wagmi'
 import { getPancakeProfileAddress } from 'utils/addressHelpers'
-  color: ${({ theme }) => theme.colors.primary};
-`
-
-const NftWrapper = styled.div`
-  margin-bottom: 24px;
-`
-
-const ProfilePicture: React.FC = () => {
-  const { address: account } = useAccount()
-  const [isApproved, setIsApproved] = useState(false)
+import { getErc721Contract } from 'utils/contractHelpers'
+import { useTranslation } from '@pancakeswap/localization'
+import { useProfileContract } from 'hooks/useContract'
+import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
+import useCatchTxError from 'hooks/useCatchTxError'
   const [isProfileNftsLoading, setIsProfileNftsLoading] = useState(true)
   const [userProfileCreationNfts, setUserProfileCreationNfts] = useState(null)
   const { selectedNft, actions } = useContext(ProfileCreationContext)

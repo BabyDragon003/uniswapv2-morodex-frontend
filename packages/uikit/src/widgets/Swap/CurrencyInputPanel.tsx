@@ -13,6 +13,22 @@ interface CurrencyInputPanelProps {
   zapStyle?: ZapStyle;
   top?: React.ReactNode;
   bottom?: React.ReactNode;
+  disabled?: boolean;
+  error?: boolean;
+  showBridgeWarning?: boolean;
+}
+export function CurrencyInputPanel({
+  value,
+  onUserInput,
+  onInputBlur,
+  zapStyle,
+  top,
+  bottom,
+  id,
+  disabled,
+  error,
+  showBridgeWarning,
+}: CurrencyInputPanelProps) {
   return (
     <AtomBox position="relative" id={id}>
       <AtomBox display="flex" alignItems="center" justifyContent="space-between">

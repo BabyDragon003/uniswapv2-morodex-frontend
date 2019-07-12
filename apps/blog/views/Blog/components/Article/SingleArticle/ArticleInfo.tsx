@@ -13,6 +13,22 @@ const StyledBackgroundImage = styled(Box)<{ imgUrl: string }>`
   background-image: ${({ imgUrl }) => `url(${imgUrl})`};
 `
 
+const StyledTagGroup = styled(Flex)`
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+
+  ${Text} {
+    &:after {
+      content: ',';
+      margin: 0 4px;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
 `
 
 const ArticleInfo = () => {

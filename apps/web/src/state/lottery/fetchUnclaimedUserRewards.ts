@@ -18,27 +18,6 @@ interface RoundDataAndUserTickets {
 
 const lotteryAddress = getLotteryV2Address()
 
-const fetchCakeRewardsForTickets = async (
-  winningTickets: LotteryTicket[],
-): Promise<{ ticketsWithUnclaimedRewards: LotteryTicket[]; cakeTotal: BigNumber }> => {
-  const calls = winningTickets.map((winningTicket) => {
-    const { roundId, id, rewardBracket } = winningTicket
-    return {
-      name: 'viewRewardsForTicketId',
-      address: lotteryAddress,
-      params: [roundId, id, rewardBracket],
-    }
-  })
-
-  try {
-    const cakeRewards = await multicallv2({ abi: lotteryV2Abi, calls })
-
-    const cakeTotal = cakeRewards.reduce((accum: BigNumber, cakeReward: EthersBigNumber[]) => {
-      return accum.plus(new BigNumber(cakeReward[0].toString()))
-    }, BIG_ZERO)
-
-    const ticketsWithUnclaimedRewards = winningTickets.map((winningTicket, index) => {
-      return { ...winningTicket, cakeReward: cakeRewards[index] }
     })
     return { ticketsWithUnclaimedRewards, cakeTotal }
   } catch (error) {

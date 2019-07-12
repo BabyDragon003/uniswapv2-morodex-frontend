@@ -13,6 +13,22 @@ import {
   Skeleton,
   Text,
   useModal,
+  useToast,
+  WarningIcon,
+} from '@pancakeswap/uikit'
+import { useDebounce } from '@pancakeswap/hooks'
+import { useSignMessage } from '@pancakeswap/wagmi'
+import { API_PROFILE } from 'config/constants/endpoints'
+import { FetchStatus } from 'config/constants/types'
+import { formatDistance, parseISO } from 'date-fns'
+import { useGetCakeBalance } from 'hooks/useTokenBalance'
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import fetchWithTimeout from 'utils/fetchWithTimeout'
+import { useAccount } from 'wagmi'
+import { REGISTER_COST, USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from './config'
+import ConfirmProfileCreationModal from './ConfirmProfileCreationModal'
+import useProfileCreation from './contexts/hook'
 
 enum ExistingUserState {
   IDLE = 'idle', // initial state

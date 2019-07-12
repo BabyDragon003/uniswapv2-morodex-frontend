@@ -18,27 +18,6 @@ import { getPoolApr } from './transformCakePool'
 function calcPendingRewardToken({
   currentTimestamp,
   lastRewardTimestamp,
-  totalStakedToken,
-  userStakedAmount,
-  rewardPerSecond,
-  currentRewardDebt,
-  tokenPerShare,
-  precisionFactor,
-  endTime,
-  isFinished,
-}): FixedNumber {
-  const pendingSeconds = Math.max(
-    isFinished ? endTime - lastRewardTimestamp : getSecondsLeftFromNow(lastRewardTimestamp, currentTimestamp),
-    0,
-  )
-
-  if (pendingSeconds === 0) {
-    return FixedNumber.from(0)
-  }
-
-  const multiplier = FixedNumber.from(pendingSeconds)
-
-  const rewardPendingToken = FixedNumber.from(rewardPerSecond).mulUnsafe(multiplier)
 
   const totalStake = FixedNumber.from(totalStakedToken)
 

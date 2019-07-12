@@ -13,16 +13,11 @@ import { useCurrentFarmAuction } from './hooks/useCurrentFarmAuction'
 import AuctionTimer from './components/AuctionTimer'
 import ReclaimBidCard from './components/ReclaimBidCard'
 import NotWhitelistedNotice from './components/NotWhitelistedNotice'
-    max-height: 600px;
-  }
-`
+import CongratulationsCard from './components/CongratulationsCard'
+import AuctionCakeBurn from './components/AuctionCakeBurn'
 
-const Left = styled(Flex)`
-  flex-direction: column;
-  flex: 1;
-`
-
-const Right = styled(Flex)`
+const FAQS_BG_LIGHT = 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)'
+const FAQ_BG_DARK = 'linear-gradient(180deg, #434575 0%, #66578D 100%)'
   align-items: center;
   justify-content: center;
   flex: 0.5;

@@ -13,6 +13,22 @@ const StyledLink = styled(Link)`
 
 interface WalletWrongNetworkProps {
   onDismiss: () => void
+}
+
+const WalletWrongNetwork: React.FC<React.PropsWithChildren<WalletWrongNetworkProps>> = ({ onDismiss }) => {
+  const { t } = useTranslation()
+  const { switchNetworkAsync, canSwitch } = useSwitchNetwork()
+
+  const handleSwitchNetwork = async (): Promise<void> => {
+    await switchNetworkAsync(ChainId.BSC)
+    onDismiss?.()
+  }
+
+  return (
+    <>
+      <Text mb="24px">{t('You’re connected to the wrong network.')}</Text>
+      {canSwitch ? (
+        <Button onClick={handleSwitchNetwork} mb="24px">
           {t('Switch Network')}
         </Button>
       ) : (

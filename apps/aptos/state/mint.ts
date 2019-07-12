@@ -18,27 +18,6 @@ export enum Field {
 const typeInput = createAction<{ field: Field; typedValue: string; noLiquidity: boolean }>('mint/typeInputMint')
 const resetMintState = createAction<void>('mint/resetMintState')
 
-export interface MintState {
-  readonly independentField: Field
-  readonly typedValue: string
-  readonly otherTypedValue: string // for the case when there's no liquidity
-}
-
-const initialState: MintState = {
-  independentField: Field.CURRENCY_A,
-  typedValue: '',
-  otherTypedValue: '',
-}
-
-const reducer = createReducer<MintState>(initialState, (builder) =>
-  builder
-    .addCase(resetMintState, () => initialState)
-    .addCase(typeInput, (state, { payload: { field, typedValue, noLiquidity } }) => {
-      if (noLiquidity) {
-        // they're typing into the field they've last typed in
-        if (field === state.independentField) {
-          return {
-            ...state,
             independentField: field,
             typedValue,
           }
