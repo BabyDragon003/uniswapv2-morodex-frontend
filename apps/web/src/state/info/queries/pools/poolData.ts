@@ -18,6 +18,27 @@ import { useGetChainName } from '../../hooks'
 import { fetchTopPoolAddresses } from './topPools'
 
 interface PoolFields {
+  id: string
+  reserve0: string
+  reserve1: string
+  reserveUSD: string
+  volumeUSD: string
+  volumeOutUSD?: string
+  token0Price: string
+  token1Price: string
+  token0?: {
+    id: string
+    symbol: string
+    name: string
+  }
+  token1?: {
+    id: string
+    symbol: string
+    name: string
+  }
+}
+
+export interface FormattedPoolFields
   extends Omit<
     PoolFields,
     'volumeUSD' | 'reserveUSD' | 'reserve0' | 'reserve1' | 'token0Price' | 'token1Price' | 'volumeOutUSD'

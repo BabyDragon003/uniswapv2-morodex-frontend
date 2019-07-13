@@ -23,6 +23,3 @@ const CompactLimitOrderTable = ({ orders }) => (
       ))}
     </tbody>
   </Table>
-)
-
-export default memo(CompactLimitOrderTable)

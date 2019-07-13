@@ -18,6 +18,27 @@
   "peerDependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "localforage": "^1.10.0",
+    "jotai": "^1.13.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "react": "^18.2.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.mjs",
+      "require": "./dist/react.js"
+    }
+  },
+  "peerDependenciesMeta": {
+    "react": {
       "optional": true
     },
     "@reduxjs/toolkit": {

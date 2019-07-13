@@ -23,6 +23,3 @@ describe('getLpAddress', () => {
     expect(getLpAddress(CAKE_AS_STRING, undefined)).toBe(null)
     expect(getLpAddress(undefined, BUSD_AS_TOKEN)).toBe(null)
     expect(getLpAddress(CAKE_AS_STRING, '456')).toBe(null)
-    expect(getLpAddress('123', BUSD_AS_TOKEN)).toBe(null)
-  })
-})

@@ -18,6 +18,27 @@ const PoolControlsView = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
+  position: relative;
+
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 16px 32px;
+    margin-bottom: 0;
+  }
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     padding: 0;
   }

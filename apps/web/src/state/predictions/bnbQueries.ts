@@ -18,16 +18,11 @@ export interface BetResponseBNB extends BetResponse {
 
 export type RoundResponseBNB = RoundResponse<BetResponseBNB>
 
-  totalBets
-  totalAmount
-  bullBets
-  bullAmount
-  bearBets
-  bearAmount
-`
-
-export const betBaseFields = `
- id
+/**
+ * Base fields are the all the top-level fields available in the api. Used in multiple queries
+ */
+export const roundBaseFields = `
+  id
  hash  
  amount
  position

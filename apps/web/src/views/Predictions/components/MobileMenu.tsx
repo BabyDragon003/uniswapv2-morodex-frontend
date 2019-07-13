@@ -18,6 +18,27 @@ import useSwiper from '../hooks/useSwiper'
 
 const ButtonNav = styled.div`
   flex: none;
+`
+
+const TabNav = styled.div`
+  flex: 1;
+  text-align: center;
+`
+
+const StyledMobileMenu = styled.div`
+  align-items: center;
+  background-color: ${({ theme }) => theme.card.background};
+  display: flex;
+  flex: none;
+  height: 64px;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    display: none;
+  }
+`
+
+const getActiveIndex = (isHistoryOpen: boolean, isChartOpen: boolean) => {
+  if (isHistoryOpen) {
     return 2
   }
 

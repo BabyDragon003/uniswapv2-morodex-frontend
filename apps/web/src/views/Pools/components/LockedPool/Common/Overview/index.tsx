@@ -18,6 +18,27 @@ import CalculatorButton from '../../Buttons/CalculatorButton'
 
 const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
   usdValueStaked,
+  lockedAmount,
+  duration,
+  isValidDuration,
+  newDuration,
+  newLockedAmount,
+  lockStartTime,
+  lockEndTime,
+  showLockWarning,
+  ceiling,
+}) => {
+  const { getLockedApy, getBoostFactor } = useVaultApy()
+  const { t } = useTranslation()
+
+  const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])
+  const boostFactor = useMemo(() => getBoostFactor(duration), [getBoostFactor, duration])
+  const newLockedApy = useMemo(() => (newDuration && getLockedApy(newDuration)) || 0, [getLockedApy, newDuration])
+  const newBoost = useMemo(() => (newDuration && getBoostFactor(newDuration)) || 0, [getBoostFactor, newDuration])
+
+  const formattedRoi = useMemo(() => {
+    return formatRoi({ usdValueStaked, lockedApy, duration })
+  }, [lockedApy, usdValueStaked, duration])
 
   const newFormattedRoi = useMemo(() => {
     return newLockedApy && formatRoi({ usdValueStaked, lockedApy: newLockedApy, duration: newDuration })

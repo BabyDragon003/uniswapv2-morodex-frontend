@@ -23,27 +23,3 @@ const viewTitle = (t: ContextApi['t'], currentView: Views) => {
     default:
       return ''
   }
-}
-
-const EditProfileModal: React.FC<React.PropsWithChildren<EditProfileModalProps>> = ({ onDismiss, onSuccess }) => {
-  const { currentView, goToChange, goToRemove, goToApprove, goPrevious } = useEditProfile()
-  const { t } = useTranslation()
-
-  const isStartView = currentView === Views.START
-  const handleBack = isStartView ? null : () => goPrevious()
-
-  return (
-    <Modal title={viewTitle(t, currentView)} onBack={handleBack} onDismiss={onDismiss} hideCloseButton={!isStartView}>
-      <div style={{ maxWidth: '400px' }}>
-        {currentView === Views.START && (
-          <StartView goToApprove={goToApprove} goToChange={goToChange} goToRemove={goToRemove} onDismiss={onDismiss} />
-        )}
-        {currentView === Views.REMOVE && <PauseProfileView onDismiss={onDismiss} onSuccess={onSuccess} />}
-        {currentView === Views.CHANGE && <ChangeProfilePicView onDismiss={onDismiss} onSuccess={onSuccess} />}
-        {currentView === Views.APPROVE && <ApproveCakeView goToChange={goToChange} onDismiss={onDismiss} />}
-      </div>
-    </Modal>
-  )
-}
-
-export default EditProfileModal

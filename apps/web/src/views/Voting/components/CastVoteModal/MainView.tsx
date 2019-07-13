@@ -23,32 +23,6 @@ interface MainViewProps {
     label: string
     value: number
   }
-  isLoading: boolean
-  isPending: boolean
-  isError: boolean
-  total: number
-  disabled?: boolean
-  lockedCakeBalance: number
-  lockedEndTime: number
-  onConfirm: () => void
-  onViewDetails: () => void
-  onDismiss: CastVoteModalProps['onDismiss']
-}
-
-const MainView: React.FC<React.PropsWithChildren<MainViewProps>> = ({
-  vote,
-  total,
-  isPending,
-  isLoading,
-  isError,
-  onConfirm,
-  onViewDetails,
-  onDismiss,
-  disabled,
-  lockedCakeBalance,
-  lockedEndTime,
-}) => {
-  const { t } = useTranslation()
   const blockTimestamp = useCurrentBlockTimestamp()
 
   const hasLockedCake = lockedCakeBalance > 0

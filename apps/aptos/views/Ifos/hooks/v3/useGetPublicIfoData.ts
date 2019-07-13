@@ -18,16 +18,11 @@ const formatVestingInfo = (pool: IFOPool): VestingInformation => ({
 })
 
 const TAX_PRECISION = new BigNumber(10000000000)
-    totalAmountPool: BIG_ZERO,
-    sumTaxesOverflow: BIG_ZERO,
-    vestingInformation: {
-      percentage: 0,
-      cliff: 0,
-      duration: 0,
-      slicePeriodSeconds: 0,
-    },
-  },
-  vestingStartTime: 0,
+
+const formatPool = (pool: IFOPool): PoolCharacteristics => ({
+  raisingAmountPool: pool ? new BigNumber(pool.raising_amount.toString()) : BIG_ZERO,
+  offeringAmountPool: pool ? new BigNumber(pool.offering_amount.toString()) : BIG_ZERO,
+  limitPerUserInLP: pool ? new BigNumber(pool.limit_per_user.toString()) : BIG_ZERO,
 }
 
 /**

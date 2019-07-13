@@ -18,3 +18,7 @@ export function useTotalSupply(token?: Currency): CurrencyAmount<Currency> | und
   return useMemo(
     () => (token?.wrapped && data ? CurrencyAmount.fromRawAmount(token.wrapped, data) : undefined),
     [data, token?.wrapped],
+  )
+}
+
+export default useTotalSupply

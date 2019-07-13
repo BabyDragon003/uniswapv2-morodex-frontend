@@ -23,32 +23,6 @@ interface ConfirmAddLiquidityModalProps {
   poolTokenPercentage: Percent
   liquidityMinted: CurrencyAmount<Token>
   currencyToAdd: Token
-  isStable?: boolean
-}
-
-const ConfirmAddLiquidityModal: React.FC<
-  React.PropsWithChildren<InjectedModalProps & ConfirmAddLiquidityModalProps>
-> = ({
-  title,
-  onDismiss,
-  customOnDismiss,
-  attemptingTxn,
-  hash,
-  pendingText,
-  price,
-  currencies,
-  noLiquidity,
-  allowedSlippage,
-  parsedAmounts,
-  liquidityErrorMessage,
-  onAdd,
-  poolTokenPercentage,
-  liquidityMinted,
-  currencyToAdd,
-  isStable,
-}) => {
-  const { t } = useTranslation()
-
   let percent = 0.5
 
   // Calculate distribution percentage for display

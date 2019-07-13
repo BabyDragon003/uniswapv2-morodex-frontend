@@ -18,13 +18,8 @@ export const useMenuItems = (): ConfigMenuItemsType[] => {
   const menuItems = useMemo(() => {
     return config(t, isDark, languageCode, chainId)
   }, [t, isDark, languageCode, chainId])
-            return { ...innerItem, status: itemMenuStatus }
-          }
-          return innerItem
-        })
-        return { ...item, items: innerItems }
-      })
-    }
-    return menuItems
-  }, [t, menuItems, menuItemsStatus])
-}
+
+  return useMemo(() => {
+    if (menuItemsStatus && Object.keys(menuItemsStatus).length) {
+      return menuItems.map((item) => {
+        const innerItems = item.items.map((innerItem) => {

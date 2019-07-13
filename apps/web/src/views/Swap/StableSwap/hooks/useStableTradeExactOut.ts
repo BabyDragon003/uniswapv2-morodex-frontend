@@ -18,3 +18,13 @@ export default function useStableTradeExactOut(
     estimatedCurrency: currencyIn,
     quotient: currencyAmountOutQuotient,
     stableSwapContract,
+    stableSwapConfig,
+  })
+
+  return useStableTradeResponse({
+    currencyAmountIn,
+    currencyAmountOut,
+    stableSwapConfig,
+    tradeType: TradeType.EXACT_OUTPUT,
+  })
+}

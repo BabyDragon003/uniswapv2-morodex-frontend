@@ -18,3 +18,12 @@ const HistoryButton = () => {
       id="prediction-history-button"
       variant="subtle"
       onClick={handleClick}
+      isLoading={isFetchingHistory}
+      disabled={!account}
+    >
+      {isFetchingHistory ? <AutoRenewIcon spin color="white" /> : <HistoryIcon width="24px" color="white" />}
+    </IconButton>
+  )
+}
+
+export default HistoryButton

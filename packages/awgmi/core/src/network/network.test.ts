@@ -23,12 +23,3 @@ describe('network', () => {
           "chain": undefined,
           "chains": [],
         }
-      `)
-    })
-
-    it.todo('has network', async () => {
-      await connect({ connector })
-      expect(getNetwork()).toMatchInlineSnapshot(``)
-    })
-  })
-})

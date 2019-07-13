@@ -18,3 +18,19 @@ interface BalanceProps extends TextProps {
 
 const BalanceWithLoading: React.FC<
   React.PropsWithChildren<Omit<BalanceProps, "value"> & { value: string | number }>
+> = ({ value, fontSize, ...props }) => {
+  const isValueUndefinedOrNull = useMemo(() => isUndefinedOrNull(value), [value]);
+  const finalValue = useMemo(() => {
+    if (isValueUndefinedOrNull) return null;
+    const trimmedValue = _replace(_toString(value), /,/g, "");
+
+    return _isNaN(trimmedValue) || _isNaN(_toNumber(trimmedValue)) ? 0 : _toNumber(trimmedValue);
+  }, [value, isValueUndefinedOrNull]);
+
+  if (isValueUndefinedOrNull) {
+    return <Skeleton />;
+  }
+  return <Balance {...props} value={finalValue as number} fontSize={fontSize} />;
+};
+
+export default BalanceWithLoading;

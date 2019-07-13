@@ -18,16 +18,11 @@ describe('MockConnector', () => {
     account = AptosAccount.fromAptosAccountObject(accounts[0])
 
     connector = new MockConnector({
-          "provider": "<MockProvider>",
-        }
-      `)
-      expect(onChange).toBeCalledTimes(1)
-      expect(await connector.isConnected()).toEqual(true)
+      options: { account },
     })
+  })
 
-    it('fails', async () => {
-      const connector = new MockConnector({
-        options: {
+  it('constructor', () => {
           flags: { failConnect: true },
           account,
         },

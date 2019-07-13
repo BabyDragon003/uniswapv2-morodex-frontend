@@ -18,6 +18,27 @@ export const AspectRatio = ({ ratio, children, ...props }) => (
     <StyledAspectRatio>{children}</StyledAspectRatio>
   </Box>
 )
+
+const NFTMedia: React.FC<
+  React.PropsWithChildren<
+    {
+      nft?: NftToken
+      as?: any
+      width: number
+      height: number
+    } & Omit<BoxProps, 'width' | 'height' | 'as'>
+  >
+> = ({ width, height, nft, borderRadius = 'default', as, ...props }) => {
+  const dispatch = useAppDispatch()
+  const { setTryVideoNftMedia } = useNftStorage()
+  const tryVideoNftMedia = useTryVideoNftMedia()
+  const vidRef = useRef(null)
+  const { observerRef, isIntersecting } = useIntersectionObserver()
+
+  useEffect(() => {
+    if (vidRef.current) {
+      if (isIntersecting) {
+        vidRef.current.play().catch((error) => {
           if (error instanceof DOMException && error.name === 'NotAllowedError') {
             setTryVideoNftMedia(false)
           }

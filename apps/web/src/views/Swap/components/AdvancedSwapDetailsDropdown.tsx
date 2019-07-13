@@ -23,32 +23,6 @@ export default function AdvancedSwapDetailsDropdown({
   path,
   priceImpactWithoutFee,
   realizedLPFee,
-  slippageAdjustedAmounts,
-  inputAmount,
-  outputAmount,
-  tradeType,
-  ...rest
-}: AdvancedSwapDetailsProps) {
-  const trade = useMemo(
-    () => ({
-      pairs,
-      path,
-      priceImpactWithoutFee,
-      realizedLPFee,
-      slippageAdjustedAmounts,
-      inputAmount,
-      outputAmount,
-      tradeType,
-    }),
-    [pairs, path, priceImpactWithoutFee, realizedLPFee, slippageAdjustedAmounts, inputAmount, outputAmount, tradeType],
-  )
-  const lastTrade = useLastTruthy(trade)
-
-  return (
-    <AdvancedDetailsFooter show={Boolean(inputAmount && outputAmount)}>
-      <AdvancedSwapDetails
-        {...rest}
-        pairs={pairs ?? lastTrade.pairs ?? undefined}
         path={path ?? lastTrade.path ?? undefined}
         priceImpactWithoutFee={priceImpactWithoutFee ?? lastTrade.priceImpactWithoutFee ?? undefined}
         realizedLPFee={realizedLPFee ?? lastTrade.realizedLPFee ?? undefined}
