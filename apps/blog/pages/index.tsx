@@ -1,4 +1,3 @@
-import { SWRConfig } from 'swr'
 import Blog from 'views/Blog'
 import { InferGetServerSidePropsType } from 'next'
 import { getArticle, getCategories } from 'views/Blog/hooks/getArticle'

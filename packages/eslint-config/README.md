@@ -1,4 +1,3 @@
-# eslint-config-pancake
 
 Pancake Eslint config with:
 

@@ -1,4 +1,3 @@
-import noop from "lodash/noop";
 import { renderWithProvider } from "../../testHelpers";
 import { Modal } from "../../widgets/Modal";
 

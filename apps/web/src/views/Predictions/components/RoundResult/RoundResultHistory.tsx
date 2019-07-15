@@ -1,4 +1,3 @@
-import { BoxProps, Flex, Text } from '@pancakeswap/uikit'
 import { BetPosition, Round } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatUsd } from '../History/helpers'

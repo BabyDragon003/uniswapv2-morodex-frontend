@@ -1,4 +1,3 @@
-import { Button, Card, CardBody, Flex, Heading, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Link from 'next/link'
 

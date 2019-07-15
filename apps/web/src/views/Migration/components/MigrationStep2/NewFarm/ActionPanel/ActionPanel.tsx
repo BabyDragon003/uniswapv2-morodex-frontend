@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import Multiplier from 'views/Migration/components/Farm/ActionPanel/Multiplier'
 import Liquidity from 'views/Migration/components/Farm/ActionPanel/Liquidity'

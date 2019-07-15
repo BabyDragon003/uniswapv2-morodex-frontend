@@ -1,4 +1,3 @@
-import { createReducer } from '@reduxjs/toolkit'
 import { Field } from 'components/Liquidity/type'
 import { atom } from 'jotai'
 import { resetMintState, typeInput } from './actions'

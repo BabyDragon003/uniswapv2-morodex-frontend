@@ -1,4 +1,3 @@
-import { getNetwork } from '../network/network'
 
 export type FetchAnsNameArgs = {
   /** Address to lookup */

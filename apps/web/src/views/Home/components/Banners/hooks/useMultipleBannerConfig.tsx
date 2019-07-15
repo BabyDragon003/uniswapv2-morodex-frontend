@@ -1,4 +1,3 @@
-import { ReactElement, useMemo } from 'react'
 import shuffle from 'lodash/shuffle'
 import CompetitionBanner from '../CompetitionBanner'
 import IFOBanner from '../IFOBanner'

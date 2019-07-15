@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Card, Text, BunnyPlaceholderIcon, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'

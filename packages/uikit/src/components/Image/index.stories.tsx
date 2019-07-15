@@ -1,4 +1,3 @@
-import React from "react";
 import times from "lodash/times";
 import random from "lodash/random";
 import styled from "styled-components";

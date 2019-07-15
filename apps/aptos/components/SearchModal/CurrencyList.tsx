@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, Token } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN, useAccount, useAccountBalance } from '@pancakeswap/awgmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { CircleLoader, Column, QuestionHelper, RowBetween, RowFixed, Text } from '@pancakeswap/uikit'

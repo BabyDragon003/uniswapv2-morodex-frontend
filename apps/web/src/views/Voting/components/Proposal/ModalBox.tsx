@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 
 const VotingBox = styled.div`
   align-items: center;

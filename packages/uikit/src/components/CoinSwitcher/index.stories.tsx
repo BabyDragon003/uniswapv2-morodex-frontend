@@ -1,4 +1,3 @@
-import React from "react";
 import { SequencePlayer } from "./SequencePlayer";
 import { bnb2CakeImages, cake2BnbImages } from "./constant";
 

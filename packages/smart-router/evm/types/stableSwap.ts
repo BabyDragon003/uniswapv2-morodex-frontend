@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, Pair as V2Pair, Percent, Price, TradeType } from '@pancakeswap/sdk'
 
 import { RouteType } from './bestTrade'
 import { BasePair } from './pair'

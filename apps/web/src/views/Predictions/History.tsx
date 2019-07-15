@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Flex, Spinner, Text } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
@@ -23,6 +22,32 @@ const StyledHistory = styled.div`
   background-color: ${({ theme }) => theme.card.background};
   display: flex;
   flex-direction: column;
+  height: 100%;
+`
+
+const BetWrapper = styled.div`
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+`
+
+const SpinnerWrapper = styled.div`
+  align-items: center;
+  background-color: ${({ theme }) => theme.card.background};
+  display: flex;
+  left: 0;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+`
+
+const History = () => {
+  const { address: account } = useAccount()
+  const dispatch = useLocalDispatch()
+  const isHistoryPaneOpen = useIsHistoryPaneOpen()
   const isFetchingHistory = useGetIsFetchingHistory()
   const historyFilter = useGetHistoryFilter()
   const currentEpoch = useGetCurrentEpoch()

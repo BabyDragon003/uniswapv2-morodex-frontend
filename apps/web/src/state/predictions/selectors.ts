@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import orderBy from 'lodash/orderBy'
 import { createSelector } from '@reduxjs/toolkit'
 import { PredictionsState, ReduxNodeRound, NodeRound, ReduxNodeLedger, NodeLedger } from '../types'

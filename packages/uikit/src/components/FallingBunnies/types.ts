@@ -1,4 +1,3 @@
-export interface BunnyProps {
   position: number;
   iterations: number;
   duration: number;

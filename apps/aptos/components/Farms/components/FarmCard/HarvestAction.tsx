@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, Flex, Heading, useToast, Balance } from '@pancakeswap/uikit'
 import { useAccount } from '@pancakeswap/awgmi'
 import BigNumber from 'bignumber.js'

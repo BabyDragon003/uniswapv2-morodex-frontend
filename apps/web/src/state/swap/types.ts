@@ -1,4 +1,3 @@
-export type PairDataNormalized = {
   time: number
   token0Id: string
   token1Id: string

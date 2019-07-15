@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "@pancakeswap/localization";
 import { getFullDisplayBalance } from "@pancakeswap/utils/formatBalance";

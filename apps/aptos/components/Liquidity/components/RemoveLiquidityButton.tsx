@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal } from '@pancakeswap/uikit'
 import { useCallback } from 'react'
 import useRemoveLiquidityHandler from '../hooks/useRemoveLiquidityHandler'

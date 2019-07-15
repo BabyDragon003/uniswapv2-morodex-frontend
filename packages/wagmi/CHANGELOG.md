@@ -1,4 +1,3 @@
-# @pancakeswap/wagmi
 
 ## 0.1.0
 
@@ -23,3 +22,9 @@
 ### Patch Changes
 
 - 394235038: Add blocto connector
+
+## 0.0.2
+
+### Patch Changes
+
+- dfa7dd889: fix binance wallet package path

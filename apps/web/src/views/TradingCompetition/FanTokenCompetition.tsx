@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractFanToken } from 'hooks/useContract'
@@ -23,6 +22,32 @@ import HowToJoin from './components/HowToJoin'
 import BattleCta from './components/BattleCta'
 import { CompetitionPage, BannerFlex } from './styles'
 import FanTokenBattleBanner from './fantoken/components/BattleBanner/FanTokenBattleBanner'
+import FanTokenYourScore from './fantoken/components/YourScore/FanTokenYourScore'
+import FanTokenPrizesInfo from './fantoken/components/PrizesInfo/FanTokenPrizesInfo'
+import FanTokenCakerBunny from './pngs/fan-token-cakers.png'
+import { useTeamInformation } from './useTeamInformation'
+import { useRegistrationClaimStatus } from './useRegistrationClaimStatus'
+import Footer from './Footer'
+import TeamRanksSection from './components/TeamRanksSection'
+import PrizesInfoSection from './components/PrizesInfoSection'
+
+const FanTokenCompetition = () => {
+  const { account, chainId } = useActiveWeb3React()
+  const { isMobile } = useMatchBreakpoints()
+  const { profile, isLoading: isProfileLoading } = useProfile()
+  const { isDark } = useTheme()
+  const tradingCompetitionContract = useTradingCompetitionContractFanToken(false)
+  const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.OVER)
+  const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()
+  const [userTradingInformation, setUserTradingInformation] = useState({
+    isLoading: true,
+    account: undefined,
+    hasRegistered: false,
+    hasUserClaimed: false,
+    userRewardGroup: '0',
+    userCakeRewards: '0',
+    userLazioRewards: '0',
+    userPortoRewards: '0',
     userSantosRewards: '0',
     userPointReward: '0',
     canClaimNFT: false,

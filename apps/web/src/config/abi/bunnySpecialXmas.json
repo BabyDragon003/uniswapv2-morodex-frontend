@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "address", "name": "_bunnyMintingStationAddress", "type": "address" },

@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN } from '@pancakeswap/awgmi'
 
 export function currencyId(currency: Currency): string {

@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Heading, Text, Balance } from '@pancakeswap/uikit'

@@ -1,4 +1,3 @@
-import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 import { useTranslation } from '@pancakeswap/localization'
 
@@ -23,3 +22,16 @@ const GetTokenModal: React.FC<React.PropsWithChildren<Partial<Props>>> = ({ curr
         </Text>
         <Button
           as={Link}
+          external
+          href={`/swap?outputCurrency=${currency.address}`}
+          endIcon={<OpenNewIcon color="invertedContrast" />}
+          minWidth="100%" // Bypass the width="fit-content" on Links
+        >
+          {t('Get %symbol%', { symbol: currency.symbol })}
+        </Button>
+      </ModalBody>
+    </Modal>
+  )
+}
+
+export default GetTokenModal

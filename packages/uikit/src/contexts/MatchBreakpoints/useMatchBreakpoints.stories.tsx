@@ -1,4 +1,3 @@
-import React from "react";
 import useMatchBreakpoints from "./useMatchBreakpoints";
 
 export default {

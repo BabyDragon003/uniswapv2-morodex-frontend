@@ -1,4 +1,3 @@
-// 1 day, 7 days, 30 days, 1 year, 5 years
 const DAYS_TO_CALCULATE_AGAINST = [1, 7, 30, 365, 1825]
 
 /**

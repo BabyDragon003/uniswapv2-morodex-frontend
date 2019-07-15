@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import { useGetLotteriesGraphData, useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
 import fetchUnclaimedUserRewards from 'state/lottery/fetchUnclaimedUserRewards'

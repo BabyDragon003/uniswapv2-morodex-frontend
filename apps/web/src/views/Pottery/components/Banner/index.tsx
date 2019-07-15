@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useMemo } from 'react'
 import { Flex, Box, Text, Balance, SkeletonV2 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

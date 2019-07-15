@@ -1,4 +1,3 @@
-import { Box, Flex, Text, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
@@ -23,6 +22,32 @@ const StyledCell = styled(Pool.BaseCell)`
     flex: 2 0 100px;
     margin-left: 10px;
     padding: 24px 8px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin-left: 20px;
+  }
+`
+
+const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool }) => {
+  const { t } = useTranslation()
+  const { isMobile } = useMatchBreakpoints()
+
+  // vault
+  const { vaultPoolData } = useVaultPoolByKeyV1(pool.vaultKey)
+  const { pricePerFullShare } = vaultPoolData
+  const { userShares } = vaultPoolData.userData
+  const hasSharesStaked = userShares?.gt(0)
+  const isVaultWithShares = pool.vaultKey && hasSharesStaked
+
+  let cakeAsNumberBalance = 0
+  if (pricePerFullShare) {
+    const { cakeAsNumberBalance: cakeBalance } = convertSharesToCake(userShares, pricePerFullShare)
+    cakeAsNumberBalance = cakeBalance
+  }
+
+  // pool
+  const { stakingToken, userData } = pool
   const stakedBalance = userData?.stakedBalance ? new BigNumber(userData.stakedBalance) : BIG_ZERO
   const stakedTokenBalance = getBalanceNumber(stakedBalance, stakingToken.decimals)
 

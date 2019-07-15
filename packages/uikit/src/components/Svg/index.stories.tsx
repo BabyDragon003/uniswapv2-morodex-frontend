@@ -1,4 +1,3 @@
-import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
 import Svg from "./Svg";

@@ -1,4 +1,3 @@
-import { PANCAKE_EXTENDED } from 'config/constants/lists'
 import { useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 import { selectorByUrlsAtom } from 'state/lists/hooks'

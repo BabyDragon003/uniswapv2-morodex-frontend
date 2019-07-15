@@ -1,4 +1,3 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, BscScanIcon, RefreshIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useAppDispatch } from 'state'
 import { useTranslation } from '@pancakeswap/localization'

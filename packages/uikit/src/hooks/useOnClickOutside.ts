@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 const useOnClickOutside = (htmlNode: HTMLElement | null, handler: (event?: MouseEvent | TouchEvent) => void): void => {
   useEffect(

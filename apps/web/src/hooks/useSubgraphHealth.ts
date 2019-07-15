@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { request, gql } from 'graphql-request'
 import { bscRpcProvider } from 'utils/providers'
 import { GRAPH_HEALTH } from 'config/constants/endpoints'

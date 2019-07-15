@@ -1,4 +1,3 @@
-/* eslint-disable no-continue */
 /* eslint-disable no-await-in-loop */
 import { TokenList } from '@pancakeswap/token-lists'
 import uriToHttp from '@pancakeswap/utils/uriToHttp'

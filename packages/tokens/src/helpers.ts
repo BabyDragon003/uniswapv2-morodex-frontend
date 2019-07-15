@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { TokenAddressMap } from '@pancakeswap/token-lists'
 
 /**

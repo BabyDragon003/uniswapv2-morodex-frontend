@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Liquidity as LiquidityUI } from '@pancakeswap/uikit'
 import HasAccount from 'components/HasAccount'
 import { ExchangeLayout } from 'components/Layout/ExchangeLayout'
@@ -23,3 +22,16 @@ const LiquidityPage = () => {
         <LiquidityCard.ListBody>
           <HasAccount fallbackComp={<LiquidityNotConnect />}>
             <LiquidityList />
+          </HasAccount>
+        </LiquidityCard.ListBody>
+        <LiquidityCard.Footer>
+          <GotoAddLiquidityButton />
+        </LiquidityCard.Footer>
+      </LiquidityCard>
+    </>
+  )
+}
+
+LiquidityPage.Layout = ExchangeLayout
+
+export default LiquidityPage

@@ -1,4 +1,3 @@
-import {
   Box,
   CloseIcon,
   Flex,

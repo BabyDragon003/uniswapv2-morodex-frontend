@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import Head from 'next/head'
 import { useRouter } from 'next/router'

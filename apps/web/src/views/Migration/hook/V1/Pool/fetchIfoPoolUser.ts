@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import ifoPoolAbi from 'config/abi/ifoPool.json'
 import { multicallv2 } from 'utils/multicall'
 

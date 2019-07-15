@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { Pool } from '@pancakeswap/uikit'
 import { useUserPoolStakedOnly, useUserPoolsViewMode } from 'state/user/hooks'
 import { useInitialBlock } from 'state/block/hooks'

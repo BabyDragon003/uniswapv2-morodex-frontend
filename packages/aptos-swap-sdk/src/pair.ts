@@ -1,4 +1,3 @@
-import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import {
   Price,

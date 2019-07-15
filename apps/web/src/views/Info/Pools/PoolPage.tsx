@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,

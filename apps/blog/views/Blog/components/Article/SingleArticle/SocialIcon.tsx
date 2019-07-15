@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, TwitterIcon, TelegramIcon, RedditIcon, Link } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'
 

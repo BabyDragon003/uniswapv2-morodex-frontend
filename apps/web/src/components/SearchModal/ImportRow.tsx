@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react'
 import { Currency, Token } from '@pancakeswap/sdk'
 import { Button, Text, CheckmarkCircleIcon, useMatchBreakpoints, Flex, ListLogo } from '@pancakeswap/uikit'
 import { AutoRow, RowFixed } from 'components/Layout/Row'
@@ -23,6 +22,32 @@ const TokenSection = styled.div<{ dim?: boolean }>`
   ${({ theme }) => theme.mediaQueries.md} {
     grid-gap: 16px;
   }
+`
+
+const CheckIcon = styled(CheckmarkCircleIcon)`
+  height: 16px;
+  width: 16px;
+  margin-right: 6px;
+  stroke: ${({ theme }) => theme.colors.success};
+`
+
+const NameOverflow = styled.div`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  font-size: 12px;
+`
+
+export default function ImportRow({
+  token,
+  style,
+  dim,
+  onCurrencySelect,
+  showImportView,
+  setImportToken,
+}: {
+  token: Token
   style?: CSSProperties
   dim?: boolean
   onCurrencySelect?: (currency: Currency) => void

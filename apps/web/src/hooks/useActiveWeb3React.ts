@@ -1,4 +1,3 @@
-import { useWeb3React } from '@pancakeswap/wagmi'
 import { useRouter, NextRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { EXCHANGE_PAGE_PATHS } from 'config/constants/exchange'
@@ -23,6 +22,32 @@ export function useNetworkConnectorUpdater() {
     const setPrevChainId = () => {
       previousChainIdRef.current = chainId
     }
+    if (loading || !router.isReady) return setPrevChainId()
+    const parsedQueryChainId = getChainId(router.query.chain as string)
+
+    if (!parsedQueryChainId && chainId === ChainId.BSC) return setPrevChainId()
+    if (parsedQueryChainId !== chainId && isChainSupported(chainId)) {
+      const removeQueriesFromPath =
+        previousChainIdRef.current !== chainId &&
+        EXCHANGE_PAGE_PATHS.some((item) => {
+          return router.pathname.startsWith(item)
+        })
+      const uriHash = getHashFromRouter(router)?.[0]
+      const { chainId: _chainId, ...omittedQuery } = router.query
+      router.replace(
+        {
+          query: {
+            ...(!removeQueriesFromPath && omittedQuery),
+            chain: CHAIN_QUERY_NAME[chainId],
+          },
+          ...(uriHash && { hash: uriHash }),
+        },
+        undefined,
+      )
+    }
+    return setPrevChainId()
+  }, [chainId, loading, router])
+}
 
 /**
  * Provides a web3 provider with or without user's signer

@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 /* eslint-disable camelcase */
 // polyfill XMLHttpRequest
 import "https://deno.land/x/xhr@0.1.0/mod.ts";

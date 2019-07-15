@@ -1,4 +1,3 @@
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 import { withAxiom } from 'next-axiom'
 
 const withVanillaExtract = createVanillaExtractPlugin()
