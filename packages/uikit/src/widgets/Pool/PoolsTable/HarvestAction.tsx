@@ -1,13 +1,8 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { createElement } from "react";
 
 import { Button, Text, Flex, Heading, Balance } from "../../../components";
 
-import { ActionContainer, ActionTitles, ActionContent } from "./styles";
-
-import { HarvestActionsProps } from "../types";
-
-export const withStakeActionContainer =
-  (StakeActionsComp: any, connectWalletButtonElement: any) =>
   ({ account, stakingTokenSymbol, ...props }: { account?: string; stakingTokenSymbol?: string }) => {
     const { t } = useTranslation();
 

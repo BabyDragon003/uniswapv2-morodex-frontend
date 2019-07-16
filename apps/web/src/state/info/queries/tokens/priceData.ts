@@ -1,13 +1,8 @@
+import { getUnixTime } from 'date-fns'
 import { gql } from 'graphql-request'
 import orderBy from 'lodash/orderBy'
 
 import { PriceChartEntry } from 'state/info/types'
-import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
-import { multiQuery } from 'views/Info/utils/infoQueryHelpers'
-import { MultiChainName, multiChainQueryEndPoint, multiChainQueryMainToken, checkIsStableSwap } from '../../constant'
-
-const getPriceSubqueries = (chainName: MultiChainName, tokenAddress: string, blocks: any) =>
-  blocks.map(
     (block: any) => `
       t${block.timestamp}:token(id:"${tokenAddress}", block: { number: ${block.number} }) {
         derived${multiChainQueryMainToken[chainName]}

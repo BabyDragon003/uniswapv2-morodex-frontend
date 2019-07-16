@@ -1,3 +1,4 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { AtomBox } from "@pancakeswap/ui";
 import { Button, Slider } from "@pancakeswap/uikit";
 

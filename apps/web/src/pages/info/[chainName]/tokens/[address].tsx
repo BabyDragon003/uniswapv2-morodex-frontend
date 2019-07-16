@@ -1,13 +1,8 @@
+import Token from 'views/Info/Tokens/TokenPage'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { isAddress } from 'utils'
 import { InfoPageLayout } from 'views/Info'
 
-const TokenPage = ({ address }: { address: string }) => {
-  if (!address) {
-    return null
-  }
-
-  return <Token routeAddress={address} />
 }
 
 TokenPage.Layout = InfoPageLayout

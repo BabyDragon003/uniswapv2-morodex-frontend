@@ -1,3 +1,4 @@
+import { Pair, PAIR_LP_TYPE_TAG, PAIR_RESERVE_TYPE_TAG } from '@pancakeswap/aptos-swap-sdk'
 import { useAccount, useAccountResources } from '@pancakeswap/awgmi'
 import {
   CoinStoreResource,

@@ -1,13 +1,8 @@
+import { useCallback } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useDepositPottery } from 'views/Pottery/hooks/useDepositPottery'
-import { PotteryDepositStatus } from 'state/types'
-import { DEFAULT_TOKEN_DECIMAL } from 'config'
-
-interface DepositButtonProps {
-  status: PotteryDepositStatus
-  depositAmount: string
   potteryVaultAddress: string
   setDepositAmount: (value: string) => void
 }

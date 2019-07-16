@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Text, Button, Input, InputProps, Flex, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { parseUnits } from '@ethersproject/units'
 import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
-
-interface ModalInputProps {
-  max: string
-  symbol: string
-  onSelectMax?: () => void
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void
   placeholder?: string
   value: string
   addLiquidityUrl?: string

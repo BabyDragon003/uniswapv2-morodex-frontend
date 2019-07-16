@@ -1,13 +1,8 @@
+import { useState } from 'react'
 import { Tiers, Rank, easterPrizes } from 'config/constants/trading-competition/prizes'
 import {
   BlockIcon,
   Box,
-  CheckmarkCircleIcon,
-  Flex,
-  MedalBronzeIcon,
-  MedalGoldIcon,
-  MedalPurpleIcon,
-  MedalSilverIcon,
   MedalTealIcon,
   CrownIcon,
   Tab,

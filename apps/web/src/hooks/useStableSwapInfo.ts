@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { JSBI, Percent } from '@pancakeswap/sdk'
 
 import StableSwapABI from 'config/abi/stableSwap.json'

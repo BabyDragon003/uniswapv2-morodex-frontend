@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { TradeType, CurrencyAmount, Currency, Percent } from '@pancakeswap/sdk'
 import { Button, Text, ErrorIcon, ArrowDownIcon } from '@pancakeswap/uikit'
 import { Field } from 'state/swap/actions'

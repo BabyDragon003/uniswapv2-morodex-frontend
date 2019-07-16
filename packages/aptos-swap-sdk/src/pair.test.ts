@@ -1,13 +1,8 @@
+import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { AptosCoin } from './aptosCoin'
 import { Coin } from './coin'
 import { ChainId } from './constants'
 import { Pair } from './pair'
-
-const coinAAddress = '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBTC'
-const coinA = new Coin(ChainId.TESTNET, coinAAddress, 8, 'BTC')
-const coinBAddress = '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetSOL'
-const coinB = new Coin(ChainId.TESTNET, coinBAddress, 8, 'SOL')
-
 describe('Pair', () => {
   it('should match Pair address', () => {
     const pair1 = Pair.getAddress(coinA, AptosCoin.onChain(ChainId.TESTNET).wrapped)

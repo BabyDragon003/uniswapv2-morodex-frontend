@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { getAchievements } from 'state/achievements/helpers'
 import { useTranslation } from '@pancakeswap/localization'
 import { FetchStatus } from 'config/constants/types'

@@ -1,13 +1,8 @@
+import { useState, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import { BSC_BLOCK_TIME } from 'config'
 import { Ifo, IfoStatus, PoolIds } from 'config/constants/types'
 import { useLpTokenPrice } from 'state/farms/hooks'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { multicallv2 } from 'utils/multicall'
-import ifoV1Abi from 'config/abi/ifoV1.json'
-import { PublicIfoData } from '../../types'
-import { getStatus } from '../helpers'
-
 /**
  * Gets all public data of an IFO
  */

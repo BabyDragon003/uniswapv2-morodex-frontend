@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { Flex, NextLinkFromReactRouter } from '@pancakeswap/uikit'

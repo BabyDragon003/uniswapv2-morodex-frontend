@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Skeleton } from "../../../../components/Skeleton";
 import { FarmTableEarnedProps } from "../../types";
 

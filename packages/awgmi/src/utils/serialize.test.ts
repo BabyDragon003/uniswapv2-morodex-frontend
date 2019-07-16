@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 /* eslint-disable react/no-children-prop */
 /* eslint-disable no-buffer-constructor */
 /* eslint-disable prefer-object-spread */

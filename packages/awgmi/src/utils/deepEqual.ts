@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-self-compare */
 /** Forked from https://github.com/epoberezkin/fast-deep-equal */

@@ -1,13 +1,8 @@
+import { vi } from 'vitest'
 import { retry, RetryableError } from './retry'
 
 describe('retry', () => {
   beforeEach(() => {
-    vi.spyOn(console, 'error').mockImplementation(() => {
-      //
-    })
-  })
-  function makeFn<T>(fails: number, result: T, retryable = true): () => Promise<T> {
-    return async () => {
       if (fails > 0) {
         // eslint-disable-next-line no-param-reassign
         fails--

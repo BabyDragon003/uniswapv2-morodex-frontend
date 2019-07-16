@@ -1,13 +1,8 @@
+/**
  * Enum describing types of version differences
  */
 import { Version } from './types'
 
-export enum VersionUpgrade {
-  NONE,
-  PATCH,
-  MINOR,
-  MAJOR,
-}
 
 /**
  * Return the upgrade type from the base version to the update version.

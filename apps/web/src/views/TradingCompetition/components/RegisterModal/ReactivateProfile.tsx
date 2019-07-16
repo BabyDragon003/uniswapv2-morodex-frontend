@@ -1,3 +1,4 @@
+import { Heading, Button, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { CompetitionProps } from 'views/TradingCompetition/types'
 import { useAccount } from 'wagmi'

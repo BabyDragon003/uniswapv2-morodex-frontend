@@ -1,13 +1,8 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import FallingBunnies from "../../components/FallingBunnies/FallingBunnies";
 
 beforeEach(() => {
-  vi.spyOn(global.Math, "random").mockReturnValue(0.5);
-});
-
-afterEach(() => {
-  vi.spyOn(global.Math, "random").mockRestore();
-});
 
 it("renders correctly", () => {
   const { asFragment } = renderWithProvider(<FallingBunnies count={1} />);

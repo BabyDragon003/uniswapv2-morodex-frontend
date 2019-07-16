@@ -1,3 +1,4 @@
+import { BoxProps } from "../../components/Box";
 
 export interface ModalTheme {
   background: string;

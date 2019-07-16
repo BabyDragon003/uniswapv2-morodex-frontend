@@ -1,13 +1,8 @@
+import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import { usePotterytDrawContract } from 'hooks/useContract'
-import { useAccount } from 'wagmi'
-import { fetchPotteryUserDataAsync } from 'state/pottery'
-
-export const useClaimPottery = () => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
   const dispatch = useAppDispatch()

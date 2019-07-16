@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { Flex, LinkExternal, Text, Box, HelpIcon, useTooltip, RocketIcon, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
-import { getBlockExploreLink } from 'utils'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
-import { ModalInner, VotingBoxBorder, VotingBoxCardInner } from './styles'
-
-const StyledLinkExternal = styled(LinkExternal)`
   display: inline-flex;
   font-size: 14px;
   > svg {

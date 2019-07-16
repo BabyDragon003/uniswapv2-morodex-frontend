@@ -1,13 +1,8 @@
+import { Chain } from '../chain'
 
 import { MartianConnector } from './martian'
 
 declare global {
-  interface Window {
-    safePal?: any
-  }
-}
-
-export type MartianConnectorOptions = {
   /** Id of connector */
   id?: string
   /** Name of connector */

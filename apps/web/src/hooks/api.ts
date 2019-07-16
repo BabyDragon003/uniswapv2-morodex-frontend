@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 
 /* eslint-disable camelcase */
 export interface DeBankTvlResponse {

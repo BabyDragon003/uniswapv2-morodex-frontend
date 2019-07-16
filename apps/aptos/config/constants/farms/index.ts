@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/aptos-swap-sdk'
 import MainnetFarm from './1'
 import TestnetFarm from './2'
 

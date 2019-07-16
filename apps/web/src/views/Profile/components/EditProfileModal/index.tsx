@@ -1,13 +1,8 @@
+import { InjectedModalProps, Modal } from '@pancakeswap/uikit'
 import { useTranslation, ContextApi } from '@pancakeswap/localization'
 import useEditProfile, { Views } from './reducer'
 import StartView from './StartView'
 import PauseProfileView from './PauseProfileView'
-import ChangeProfilePicView from './ChangeProfilePicView'
-import ApproveCakeView from './ApproveCakeView'
-
-interface EditProfileModalProps extends InjectedModalProps {
-  onSuccess?: () => void
-}
 
 const viewTitle = (t: ContextApi['t'], currentView: Views) => {
   switch (currentView) {

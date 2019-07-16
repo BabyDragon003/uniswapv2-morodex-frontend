@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { multicallv2, multicallv3 } from 'utils/multicall'
 import cakeAbi from 'config/abi/cake.json'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'

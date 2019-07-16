@@ -1,3 +1,4 @@
+export * from './coin'
 export * from './constants'
 export * from './router'
 export * from './pair'

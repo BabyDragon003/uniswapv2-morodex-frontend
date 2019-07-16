@@ -1,3 +1,4 @@
+import { fromUnixTime } from 'date-fns'
 import fromPairs from 'lodash/fromPairs'
 import { PairDayDatasResponse, PairHoursDatasResponse } from './fetch/types'
 import { DerivedPairDataNormalized, PairDataNormalized, PairDataTimeWindowEnum, PairPricesNormalized } from './types'

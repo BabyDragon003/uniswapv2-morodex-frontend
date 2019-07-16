@@ -1,3 +1,4 @@
+export const columns = [
   {
     id: 1,
     name: "id",

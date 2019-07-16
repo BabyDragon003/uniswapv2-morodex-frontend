@@ -1,3 +1,4 @@
+const findAndReplace = (
   cacheRef: any,
   {
     find,

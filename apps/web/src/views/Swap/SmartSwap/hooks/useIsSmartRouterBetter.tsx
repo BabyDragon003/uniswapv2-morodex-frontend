@@ -1,3 +1,4 @@
+import { Currency, Trade, TradeType } from '@pancakeswap/sdk'
 import { RouteType, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 
 interface Options {

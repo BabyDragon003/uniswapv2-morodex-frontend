@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import nftSaleAbi from 'config/abi/nftSale.json'
 import { useProfile } from 'state/profile/hooks'

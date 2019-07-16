@@ -1,13 +1,8 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
 import {
   Chain,
-  ConnectorNotFoundError,
-  ResourceUnavailableError,
-  RpcError,
-  UserRejectedRequestError,
-  SwitchChainNotSupportedError,
-} from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { hexValue } from '@ethersproject/bytes'
 import type { Ethereum } from '@wagmi/core'

@@ -1,13 +1,8 @@
+import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/aptos-swap-sdk'
 import {
   AddIcon,
   AutoColumn,
-  Button,
-  InjectedModalProps,
-  RowBetween,
-  RowFixed,
-  Text,
-  TransactionErrorContent,
   ConfirmationModalContent,
 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

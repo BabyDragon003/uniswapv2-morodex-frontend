@@ -1,13 +1,8 @@
+import { Dispatch, SetStateAction } from 'react'
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area, CartesianAxis, CartesianGrid } from 'recharts'
 import useTheme from 'hooks/useTheme'
 import { formatAmount } from 'utils/formatInfoNumbers'
 import { LineChartLoader } from 'components/ChartLoaders'
-import { useTranslation } from '@pancakeswap/localization'
-
-export type BeamChartProps = {
-  data: any[]
-  setHoverValue: Dispatch<SetStateAction<number | undefined>> // used for value on hover
-  setHoverDate: Dispatch<SetStateAction<string | undefined>> // used for label of value
 } & React.HTMLAttributes<HTMLDivElement>
 
 /**

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import PageLoader from 'components/Loader/PageLoader'
 import { isAddress } from 'utils'
 import { pancakeBunniesAddress } from '../../constants'

@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { SerializedFarmConfig } from 'config/constants/types'
 import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
 import { BIG_TWO, BIG_ZERO } from '@pancakeswap/utils/bigNumber'

@@ -1,3 +1,4 @@
+import { JsonRpcProvider } from '@ethersproject/providers'
 import { bscTokens } from '@pancakeswap/tokens'
 import BigNumber from 'bignumber.js'
 import cakeVaultAbiV2 from 'config/abi/cakeVaultV2.json'

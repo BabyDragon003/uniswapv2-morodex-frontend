@@ -1,13 +1,8 @@
+import { Flex, Text, Button, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { StepIndicator } from './styles'
 
 interface ApproveAndConfirmStageProps {
-  variant: 'buy' | 'sell'
-  isApproved: boolean
-  isApproving: boolean
-  isConfirming: boolean
-  handleApprove: () => void
-  handleConfirm: () => void
 }
 
 // Buy Flow:
