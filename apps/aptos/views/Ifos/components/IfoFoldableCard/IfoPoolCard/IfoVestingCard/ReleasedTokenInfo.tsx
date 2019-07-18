@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
+import { Ifo } from 'config/constants/types'
+import { getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
+import ReleasedChart from './ReleasedChart'
+
+const Dot = styled.div<{ isActive?: boolean }>`
   width: 8px;
   height: 8px;
   border-radius: 50%;
   align-self: center;
-  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : '#d7caec')};
-`
-
-interface ReleasedTokenInfoProps {
-  ifo: Ifo
-  amountReleased: BigNumber
-  amountInVesting: BigNumber
-}
-
-const ReleasedTokenInfo: React.FC<React.PropsWithChildren<ReleasedTokenInfoProps>> = ({
-  ifo,
-  amountReleased,
-  amountInVesting,
-}) => {
-  const { t } = useTranslation()
-  const { token } = ifo
 
   const amount = useMemo(() => {
     const released = getBalanceNumber(amountReleased, token.decimals)

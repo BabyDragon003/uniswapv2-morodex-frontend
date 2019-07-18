@@ -3,26 +3,16 @@ import { keccak256 } from '@ethersproject/keccak256'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 
+/**
+ * calculate_tax_overflow
+ */
+export const calculateTaxOverflow = (total_amount: BigNumber, raising_amount: BigNumber): BigNumber => {
+  // No tax if raising amount is not overflowed
+  if (raising_amount.isGreaterThanOrEqualTo(total_amount)) {
     return BIG_ZERO
   }
 
   const ratio_overflow = total_amount.div(raising_amount)
-
-  if (ratio_overflow.gte(1500)) {
-    return new BigNumber('250000000') // 0.025%
-  }
-  if (ratio_overflow.gte(1000)) {
-    return new BigNumber('500000000') // 0.05%
-  }
-  if (ratio_overflow.gte(500)) {
-    return new BigNumber('1000000000') // 0.1%
-  }
-  if (ratio_overflow.gte(250)) {
-    return new BigNumber('1250000000') // 0.125%
-  }
-  if (ratio_overflow.gte(100)) {
-    return new BigNumber('1500000000') // 0.15%
-  }
   if (ratio_overflow.gte(50)) {
     return new BigNumber('2500000000') // 0.25%
   }

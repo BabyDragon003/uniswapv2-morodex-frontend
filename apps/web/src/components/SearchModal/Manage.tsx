@@ -3,26 +3,16 @@ import { Token } from '@pancakeswap/sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { TokenList } from '@pancakeswap/token-lists'
+import { useTranslation } from '@pancakeswap/localization'
+import ManageLists from './ManageLists'
+import ManageTokens from './ManageTokens'
+import { CurrencyModalView } from './types'
+
+const StyledButtonMenu = styled(ButtonMenu)`
   width: 100%;
 `
 
 export default function Manage({
-  setModalView,
-  setImportList,
-  setImportToken,
-  setListUrl,
-}: {
-  setModalView: (view: CurrencyModalView) => void
-  setImportToken: (token: Token) => void
-  setImportList: (list: TokenList) => void
-  setListUrl: (url: string) => void
-}) {
-  const [showLists, setShowLists] = useState(true)
-
-  const { t } = useTranslation()
-
-  return (
-    <ModalBody style={{ overflow: 'visible' }}>
       <StyledButtonMenu
         activeIndex={showLists ? 0 : 1}
         onItemClick={() => setShowLists((prev) => !prev)}

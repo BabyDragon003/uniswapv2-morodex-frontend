@@ -3,26 +3,16 @@ import { useTranslation } from "@pancakeswap/localization";
 import React, { useMemo, ReactNode } from "react";
 import styled from "styled-components";
 import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
+import { DeserializedPool } from "../types";
+import { BaseCell, CellContent } from "./BaseCell";
+import { Text, Skeleton } from "../../../components";
+import useMatchBreakpoints from "../../../contexts/MatchBreakpoints/useMatchBreakpoints";
+
+interface NameCellProps<T> {
   pool: DeserializedPool<T>;
   userShares?: BigNumber;
   totalCakeInVault?: BigNumber;
   tokenPairImage: ReactNode;
-}
-
-const StyledCell = styled(BaseCell)`
-  flex: 5;
-  flex-direction: row;
-  padding-left: 12px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex: 1 0 150px;
-    padding-left: 32px;
-  }
-`;
-
-export function NameCell<T>({ pool, totalCakeInVault, userShares, tokenPairImage }: NameCellProps<T>) {
-  const { t } = useTranslation();
-  const { isMobile } = useMatchBreakpoints();
-  const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey, totalStaked } = pool;
   const hasVaultShares = userShares?.gt(0);
 
   const stakingTokenSymbol = stakingToken.symbol;

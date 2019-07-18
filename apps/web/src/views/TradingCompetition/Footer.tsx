@@ -3,6 +3,12 @@ import Image from 'next/image'
 import useTheme from 'hooks/useTheme'
 import { StaticImageData } from 'next/dist/client/image'
 import { DARKBG } from './pageSectionStyles'
+import BattleCta from './components/BattleCta'
+import { CompetitionProps } from './types'
+import { BottomBunnyWrapper } from './styles'
+
+const Footer: React.FC<
+  React.PropsWithChildren<CompetitionProps & { shouldHideCta: boolean; image: StaticImageData }>
 > = ({
   image,
   shouldHideCta,

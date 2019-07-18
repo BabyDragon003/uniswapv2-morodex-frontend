@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { Button, Heading, Text, Flex, Checkbox, AutoRenewIcon, useToast } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractMoD } from 'hooks/useContract'
 import { useTranslation } from '@pancakeswap/localization'
+import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
+import useCatchTxError from 'hooks/useCatchTxError'
+import { ToastDescriptionWithTx } from 'components/Toast'
+import useGetUsernameWithVisibility from 'hooks/useUsernameWithVisibility'
+import { CompetitionProps } from '../../types'
+
 const StyledCheckbox = styled(Checkbox)`
   min-width: 24px;
 `
 
-const StyledLabel = styled.label`
-  cursor: pointer;
-`
-
-const RegisterWithProfile: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
-  profile,
-  onDismiss,
-  onRegisterSuccess,
-}) => {
-  const [isAcknowledged, setIsAcknowledged] = useState(false)
-  const tradingCompetitionContract = useTradingCompetitionContractMoD()
-  const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError, loading: isConfirming } = useCatchTxError()
-  const { t } = useTranslation()
-  const { callWithGasPrice } = useCallWithGasPrice()
-  const { usernameWithVisibility } = useGetUsernameWithVisibility(profile)
 
   const handleConfirmClick = async () => {
     const receipt = await fetchWithCatchTxError(() => {

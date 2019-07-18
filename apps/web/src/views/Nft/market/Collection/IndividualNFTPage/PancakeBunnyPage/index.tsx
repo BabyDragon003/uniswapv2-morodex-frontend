@@ -3,26 +3,16 @@ import { Flex } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useGetCollection } from 'state/nftMarket/hooks'
 import { getNftsFromCollectionApi } from 'state/nftMarket/helpers'
+import { NftToken, ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import PageLoader from 'components/Loader/PageLoader'
+import { useGetCollectionDistributionPB } from 'views/Nft/market/hooks/useGetCollectionDistribution'
+import MainPancakeBunnyCard from './MainPancakeBunnyCard'
+import PropertiesCard from '../shared/PropertiesCard'
+import DetailsCard from '../shared/DetailsCard'
 import MoreFromThisCollection from '../shared/MoreFromThisCollection'
 import ForSaleTableCard from './ForSaleTableCard'
 import { pancakeBunniesAddress } from '../../../constants'
 import { TwoColumnsContainer } from '../shared/styles'
-import { usePancakeBunnyCheapestNft } from '../../../hooks/usePancakeBunnyCheapestNfts'
-import ManageNftsCard from '../shared/ManageNFTsCard'
-
-interface IndividualPancakeBunnyPageProps {
-  bunnyId: string
-}
-
-const IndividualPancakeBunnyPage = (props: IndividualPancakeBunnyPageProps) => {
-  const collection = useGetCollection(pancakeBunniesAddress)
-
-  if (!collection) {
-    return <PageLoader />
-  }
-
-  return <IndividualPancakeBunnyPageBase {...props} />
-}
 
 const IndividualPancakeBunnyPageBase: React.FC<React.PropsWithChildren<IndividualPancakeBunnyPageProps>> = ({
   bunnyId,

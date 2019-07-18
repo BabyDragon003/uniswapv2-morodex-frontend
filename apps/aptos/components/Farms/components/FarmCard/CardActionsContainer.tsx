@@ -3,26 +3,16 @@ import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import { ConnectWalletButton } from 'components/ConnectWalletButton'
 import styled from 'styled-components'
 import { FarmWithStakedValue } from '@pancakeswap/farms'
+import { HarvestActionContainer } from '../FarmTable/Actions/HarvestAction'
+import { StakedContainer } from '../FarmTable/Actions/StakedAction'
+import HarvestAction from './HarvestAction'
+import StakeAction from './StakeAction'
+
+const Action = styled.div`
   padding-top: 16px;
 `
 
 interface FarmCardActionsProps {
-  farm: FarmWithStakedValue
-  account?: string
-  addLiquidityUrl?: string
-  lpLabel?: string
-  displayApr?: string
-}
-
-const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
-  farm,
-  account,
-  addLiquidityUrl,
-  lpLabel,
-  displayApr,
-}) => {
-  const { t } = useTranslation()
-  const { pid, lpAddress } = farm
   const { earnings } = farm.userData || {}
   const isReady = farm.multiplier !== undefined
 

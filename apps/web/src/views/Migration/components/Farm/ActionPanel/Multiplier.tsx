@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, HelpIcon, useTooltip, Link } from '@pancakeswap/uikit'
 import { MultiplierProps } from '../Cells/Multiplier'
+
+const Containter = styled(Flex)`
+  margin-top: 12px;
+  padding: 0;
+  width: 100%;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 0 12px;
   }
 `
-
-const ReferenceElement = styled.div`
-  display: inline-block;
-  align-self: center;
-`
-
-const MultiplierWrapper = styled.div`
-  color: ${({ theme }) => theme.colors.text};
-  width: 36px;
-  margin-right: 6px;
-  align-self: center;
-  text-align: right;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-right: 0;
-  }
 `
 
 const TotalStaked: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multiplier }) => {

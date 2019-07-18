@@ -3,6 +3,12 @@ import { useTheme } from '@pancakeswap/hooks'
 
 const BunnyKnownPlaceholder: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   const { theme } = useTheme()
+  const primaryColor = theme.isDark ? '#3C3742' : '#e9eaeb'
+  const secondaryColor = theme.isDark ? '#666171' : '#bdc2c4'
+
+  return (
+    <Svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
         d="M80 40.0001C80 62.0914 62.0914 80.0001 40 80.0001C17.9086 80.0001 0 62.0914 0 40.0001C0 17.9087 17.9086 6.10352e-05 40 6.10352e-05C62.0914 6.10352e-05 80 17.9087 80 40.0001Z"
         fill={primaryColor}
       />

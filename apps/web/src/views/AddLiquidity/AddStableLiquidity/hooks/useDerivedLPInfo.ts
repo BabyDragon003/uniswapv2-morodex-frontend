@@ -3,26 +3,16 @@ import { useContext, useMemo } from 'react'
 import { StableSwap } from '@pancakeswap/smart-router/evm'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 
+import { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
+import { useStableSwapInfo } from 'hooks/useStableSwapInfo'
+import { BIG_INT_ZERO } from 'config/constants/exchange'
+
+export function useDerivedLPInfo(
+  amountA: CurrencyAmount<Currency> | undefined,
   amountB: CurrencyAmount<Currency> | undefined,
 ): {
   lpOutputWithoutFee: CurrencyAmount<Currency> | null
   price: Price<Currency, Currency> | null
-  loading: boolean
-} {
-  const { stableSwapConfig } = useContext(StableConfigContext)
-  const { totalSupply, balances, amplifier, loading } = useStableSwapInfo(
-    stableSwapConfig?.stableSwapAddress,
-    stableSwapConfig?.liquidityToken.address,
-  )
-  const wrappedCurrencyA = amountA?.currency.wrapped
-  const wrappedCurrencyB = amountB?.currency.wrapped
-  const [token0, token1] =
-    wrappedCurrencyA && wrappedCurrencyB && wrappedCurrencyA?.sortsBefore(wrappedCurrencyB)
-      ? [wrappedCurrencyA, wrappedCurrencyB]
-      : [wrappedCurrencyB, wrappedCurrencyA]
-  const [amount0, amount1] =
-    wrappedCurrencyA && token0 && token0.equals(wrappedCurrencyA) ? [amountA, amountB] : [amountB, amountA]
-  const poolBalances = useMemo<[CurrencyAmount<Currency>, CurrencyAmount<Currency>] | undefined>(
     () =>
       token0 &&
       token1 &&

@@ -3,6 +3,12 @@ import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
 import { getBestTradeFromV2ExactIn, getBestTradeFromV2ExactOut } from './getBestTradeFromV2'
 import { getBestTradeWithStableSwap } from './getBestTradeWithStableSwap'
 import { getStableSwapPairs } from './getStableSwapPairs'
+import { createTradeWithStableSwapFromV2Trade } from './stableSwap'
+import { BestTradeOptions, TradeWithStableSwap } from './types'
+
+export const getBestTradeExactIn = createGetBestTrade(TradeType.EXACT_INPUT)
+
+export const getBestTradeExactOut = createGetBestTrade(TradeType.EXACT_OUTPUT)
 
 function createGetBestTrade<TTradeType extends TradeType>(tradeType: TTradeType) {
   const getBestTradeFromV2 =

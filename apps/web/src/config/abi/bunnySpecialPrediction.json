@@ -3,26 +3,16 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_pancakePrediction",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_pancakeProfile",
+        "name": "_bunnyMintingStation",
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "_endBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_thresholdRound",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_numberPoints",
+        "internalType": "address",
         "type": "uint256"
       },
       {

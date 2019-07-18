@@ -3,6 +3,12 @@
   "version": "0.6.1",
   "description": "A SDK for getting best routes from AMM",
   "repository": {
+    "type": "git",
+    "url": "https://github.com/pancakeswap/pancake-frontend.git",
+    "directory": "packages/smart-router"
+  },
+  "scripts": {
+    "build": "tsup",
     "dev": "tsup --watch",
     "prepublishOnly": "yarn run build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"

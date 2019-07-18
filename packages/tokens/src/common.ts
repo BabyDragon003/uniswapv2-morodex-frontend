@@ -3,26 +3,16 @@ import { ChainId, ERC20Token } from '@pancakeswap/sdk'
 export const CAKE_MAINNET = new ERC20Token(
   ChainId.BSC,
   '0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9',
-export const CAKE_TESTNET = new ERC20Token(
-  ChainId.BSC_TESTNET,
-  '0x70360225dF3dC665c547b25Fc92916f7fAc642AD',
   18,
   'MDEX',
   'MORODEX',
   'https://dapp-frontend-prince.web.app/',
 )
 
-export const USDC_BSC = new ERC20Token(
-  ChainId.BSC,
-  '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-  18,
-  'USDC',
-  'Binance-Peg USD Coin',
-  'https://www.centre.io/usdc',
-)
-
-export const USDC_TESTNET = new ERC20Token(
+export const CAKE_TESTNET = new ERC20Token(
   ChainId.BSC_TESTNET,
+  '0x70360225dF3dC665c547b25Fc92916f7fAc642AD',
+  18,
   '0x64544969ed7EBf5f083679233325356EbE738930',
   18,
   'USDC',

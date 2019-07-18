@@ -3,26 +3,16 @@ import NoSSR from 'components/NoSSR'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { getStatus } from 'views/Ifos/hooks/helpers'
+import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
+import { CardsWrapper } from '../IfoCardStyles'
+import IfoPoolCard from './IfoPoolCard'
+import { IfoRibbon } from './IfoRibbon'
 
 interface IfoFoldableCardProps {
   ifo: Ifo
   publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-}
-
-const StyledCard = styled(Card)<{ $isCurrent?: boolean }>`
-  width: 100%;
-  margin: auto;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-
-  ${({ $isCurrent }) =>
-    $isCurrent &&
-    `
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  > div {
-    border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   `}

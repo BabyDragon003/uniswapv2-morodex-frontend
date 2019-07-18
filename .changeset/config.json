@@ -3,16 +3,13 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "develop",
+  "updateInternalDependencies": "patch",
+  "ignore": [
+    "@pancakeswap/eslint-config-pancake",
     "@pancakeswap/hooks",
     "@pancakeswap/localization",
     "@pancakeswap/ui",
     "@pancakeswap/ui-wallets",
-    "@pancakeswap/uikit",
-    "farms-api",
-    "aptos-web",
-    "blog",
-    "bridge",
-    "e2e",
-    "web"
-  ]
-}

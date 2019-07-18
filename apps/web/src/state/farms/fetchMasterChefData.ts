@@ -3,6 +3,12 @@ import chunk from 'lodash/chunk'
 import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { multicallv2 } from 'utils/multicall'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { farmFetcher } from 'state/farms'
+import { SerializedFarm } from '@pancakeswap/farms'
+import { SerializedFarmConfig } from '../../config/constants/types'
+import { getMasterChefAddress } from '../../utils/addressHelpers'
+
 export const fetchMasterChefFarmPoolLength = async (chainId: number) => {
   try {
     const [poolLength] = await multicallv2({

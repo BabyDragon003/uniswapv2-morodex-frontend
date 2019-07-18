@@ -3,26 +3,16 @@ import { AutoColumn, Liquidity as LiquidityUI } from '@pancakeswap/uikit'
 import { PageMeta } from 'components/Layout/Page'
 
 import { ExchangeLayout } from 'components/Layout/ExchangeLayout'
+import AddLiquidityForm from 'components/Liquidity/components/AddLiquidityForm'
+import ChoosePair from 'components/Liquidity/components/ChoosePair'
+import withLPValues from 'components/Liquidity/hocs/withLPValues'
+import useCurrencySelectRoute, { CurrencySelectorContext } from 'components/Liquidity/hooks/useCurrencySelectRoute'
+import useMintPair, { MintPairContext } from 'components/Liquidity/hooks/useMintPair'
+import { CAKE } from 'config/coins'
 import { useIsTransactionUnsupported, useIsTransactionWarning } from 'hooks/Trades'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { PairState } from 'hooks/usePairs'
-import { useCallback, useMemo, useState } from 'react'
-import { MinimalPositionCard } from 'components/Liquidity/components/PositionCard'
-import { SettingsButton } from 'components/Menu/Settings/SettingsButton'
-
-enum Steps {
-  Choose,
-  Add,
-}
-
-const MinimalPositionCardContainer = withLPValues(MinimalPositionCard)
-
-const AddLiquidityPage = () => {
-  const { t } = useTranslation()
-  const [steps, setSteps] = useState(Steps.Choose)
-  const native = useNativeCurrency()
-  const activeChainId = useActiveChainId()
 
   const defaultCurrencies = useMemo(() => [native.address, CAKE[activeChainId].address], [native, activeChainId])
 

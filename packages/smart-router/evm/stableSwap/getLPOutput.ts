@@ -3,26 +3,16 @@ import invariant from 'tiny-invariant'
 
 import { getD } from './amm'
 
+export interface GetLPOutputParams {
+  amplifier: BigintIsh
+  // Token balances of the stable pool
+  balances: CurrencyAmount<Currency>[]
+  // User input amounts
+  amounts: CurrencyAmount<Currency>[]
   // Total supply of LP token
   totalSupply: CurrencyAmount<Currency>
   // Fee of adding liquidity
   fee: Percent
-}
-
-export function getLPOutput({
-  amplifier,
-  balances,
-  totalSupply,
-  amounts,
-  fee,
-}: GetLPOutputParams): CurrencyAmount<Currency> {
-  const lpToken = totalSupply.currency
-  const lpTotalSupply = totalSupply.quotient
-  // No liquidity in pool
-  if (JSBI.equal(lpTotalSupply, ZERO) || !balances.length || balances.every((b) => JSBI.equal(b.quotient, ZERO))) {
-    const d = getD({ amplifier, balances: amounts.map((a) => a.quotient) })
-    return CurrencyAmount.fromRawAmount(lpToken, d)
-  }
 
   const currentBalances: JSBI[] = []
   const newBalances: JSBI[] = []

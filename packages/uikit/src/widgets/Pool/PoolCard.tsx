@@ -3,26 +3,16 @@ import { useTranslation } from "@pancakeswap/localization";
 import { ReactElement } from "react";
 import { StyledCard } from "./StyledCard";
 import { DeserializedPool } from "./types";
+
+interface PoolCardPropsType<T> {
+  pool: DeserializedPool<T>;
+  cardContent: ReactElement;
+  aprRow: ReactElement;
+  cardFooter: ReactElement;
   tokenPairImage: ReactElement;
   isStaked: boolean;
 }
 
-export function PoolCard<T>({ pool, cardContent, aprRow, isStaked, cardFooter, tokenPairImage }: PoolCardPropsType<T>) {
-  const { sousId, stakingToken, earningToken, isFinished, totalStaked } = pool;
-  const { t } = useTranslation();
-
-  const isCakePool = earningToken?.symbol === "MDEX" && stakingToken?.symbol === "MDEX";
-
-  return (
-    <StyledCard
-      isActive={isCakePool}
-      isFinished={isFinished && sousId !== 0}
-      ribbon={isFinished && <CardRibbon variantColor="textDisabled" text={t("Finished")} />}
-    >
-      <Pool.PoolCardHeader isStaking={isStaked} isFinished={isFinished && sousId !== 0}>
-        {totalStaked && totalStaked.gte(0) ? (
-          <>
-            <Pool.PoolCardHeaderTitle
               title={isCakePool ? t("Manual") : t("Earn %asset%", { asset: earningToken?.symbol || "" })}
               subTitle={
                 isCakePool ? t("Earn CAKE, stake CAKE") : t("Stake %symbol%", { symbol: stakingToken?.symbol || "" })

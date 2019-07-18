@@ -3,6 +3,12 @@ import { ArrowDownIcon, IconButton, ArrowUpDownIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { AutoColumn } from 'components/Layout/Column'
 import { AutoRow } from 'components/Layout/Row'
+
+const StyledButton = styled(IconButton)`
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
+  .icon-up-down {
+    display: none;
+  }
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     .icon-down {

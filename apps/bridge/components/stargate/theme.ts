@@ -3,6 +3,12 @@ import { alpha } from '@material-ui/core/styles/colorManipulator'
 import createTypography from '@material-ui/core/styles/createTypography'
 import createPalette from '@material-ui/core/styles/createPalette'
 import type { Theme } from '@material-ui/core/styles'
+import { darkColors, lightColors } from '@pancakeswap/ui/tokens/colors'
+
+// utils
+const fontSize = 14
+const htmlFontSize = 16
+const coef = fontSize / 14
 
 function pxToRem(size: number) {
   return `${(size / htmlFontSize) * coef}rem`

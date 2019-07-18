@@ -3,26 +3,16 @@ import { Flex, Box } from '@pancakeswap/uikit'
 import Image from 'next/image'
 import orderBy from 'lodash/orderBy'
 import { TeamRanksProps } from '../../types'
+import TopTradersCard from './TopTradersCard'
+import Podium from './Podium'
+
+const Wrapper = styled(Flex)`
+  flex-direction: column;
+
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
   }
 `
-
-const StyledPodiumWrapper = styled(Flex)`
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    flex: 1;
-    margin-right: 40px;
-    margin-bottom: 0;
-  }
-`
-
-const BunnyImageWrapper = styled(Box)`
-  display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: flex;

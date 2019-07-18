@@ -3,26 +3,16 @@ import { useCallback, useMemo, useContext, useDeferredValue } from 'react'
 import useSWR from 'swr'
 import { StableConfigContext } from './useStableConfig'
 
+export interface StableTrade {
+  tradeType: TradeType
+  inputAmount: CurrencyAmount<Currency>
+  outputAmount: CurrencyAmount<Currency>
+  executionPrice: Price<Currency, Currency>
+  priceImpact: null
   maximumAmountIn: (slippaged: Percent) => CurrencyAmount<Currency>
   minimumAmountOut: (slippaged: Percent) => CurrencyAmount<Currency>
 }
 
-export const maximumAmountInFactory = (currencyAmountIn: CurrencyAmount<Currency>, slippageTolerance: number) => {
-  const slippageAdjustedAmountIn = new Fraction(ONE).add(slippageTolerance).multiply(currencyAmountIn.quotient).quotient
-
-  return CurrencyAmount.fromRawAmount(currencyAmountIn.currency, slippageAdjustedAmountIn)
-}
-
-export const minimumAmountOutFactory = (currencyAmountOut: CurrencyAmount<Currency>, slippageTolerance: number) => {
-  const slippageAdjustedAmountOut = new Fraction(ONE)
-    .add(slippageTolerance)
-    .invert()
-    .multiply(currencyAmountOut.quotient).quotient
-  return CurrencyAmount.fromRawAmount(currencyAmountOut.currency, slippageAdjustedAmountOut)
-}
-
-interface UseStableTradeResponse {
-  currencyAmountIn: CurrencyAmount<Currency>
   currencyAmountOut: CurrencyAmount<Currency>
   stableSwapConfig: any
   tradeType: TradeType

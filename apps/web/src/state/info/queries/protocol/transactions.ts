@@ -3,6 +3,12 @@ import { mapBurns, mapMints, mapSwaps } from 'state/info/queries/helpers'
 import { BurnResponse, MintResponse, SwapResponse } from 'state/info/queries/types'
 import { Transaction } from 'state/info/types'
 import { getMultiChainQueryEndPointWithStableSwap, MultiChainName } from '../../constant'
+
+/**
+ * Transactions for Transaction table on the Home page
+ */
+const GLOBAL_TRANSACTIONS = gql`
+  query overviewTransactions {
     mints: mints(first: 33, orderBy: timestamp, orderDirection: desc) {
       id
       timestamp

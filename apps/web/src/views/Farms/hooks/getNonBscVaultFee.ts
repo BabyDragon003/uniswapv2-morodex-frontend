@@ -3,26 +3,16 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getNonBscVaultContract, getCrossFarmingSenderContract } from 'utils/contractHelpers'
 
 export enum MessageTypes {
+  Deposit = 0,
+  Withdraw = 1,
+  EmergencyWithdraw = 2,
+  Claim = 3,
+}
+
 enum Chains {
   EVM = 0,
   BSC = 1,
 }
-
-interface CalculateTotalFeeProps {
-  pid: number
-  amount: string
-  chainId: number
-  userAddress: string
-  messageType: MessageTypes
-  gasPrice: number
-  oraclePrice: string
-}
-
-const COMPENSATION_PRECISION = 1e5
-const ORACLE_PRECISION = 1e18
-const BNB_CHANGE = 5000000000000000
-const BUFFER = 1.3
-const WITHDRAW_BUFFER = 1.4
 
 export const getNonBscVaultContractFee = async ({
   pid,

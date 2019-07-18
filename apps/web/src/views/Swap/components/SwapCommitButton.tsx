@@ -3,26 +3,16 @@ import { Button, Text, useModal, confirmPriceImpactWithoutFee } from '@pancakesw
 import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
 
 import { GreyCard } from 'components/Card'
+import { CommitButton } from 'components/CommitButton'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { WrapType } from 'hooks/useWrapCallback'
+import { AutoRow, RowBetween } from 'components/Layout/Row'
+import { ApprovalState } from 'hooks/useApproveCallback'
+import CircleLoader from 'components/Loader/CircleLoader'
 import { Field } from 'state/swap/actions'
 import SettingsModal, { withCustomOnDismiss } from 'components/Menu/GlobalSettings/SettingsModal'
 import { SettingsMode } from 'components/Menu/GlobalSettings/types'
 import { useCallback, useEffect, useState } from 'react'
-import Column from 'components/Layout/Column'
-import { useUserSingleHopOnly } from 'state/user/hooks'
-import {
-  BIG_INT_ZERO,
-  ALLOWED_PRICE_IMPACT_HIGH,
-  PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN,
-} from 'config/constants/exchange'
-import { computeTradePriceBreakdown, warningSeverity } from 'utils/exchange'
-import { useSwapCallback } from 'hooks/useSwapCallback'
-import { useSwapCallArguments } from 'hooks/useSwapCallArguments'
-
-import ConfirmSwapModal from './ConfirmSwapModal'
-import ProgressSteps from './ProgressSteps'
-import { SwapCallbackError } from './styleds'
-
-const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
 
 interface SwapCommitButtonPropsType {
   swapIsUnsupported: boolean

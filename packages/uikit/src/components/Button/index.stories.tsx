@@ -3,26 +3,16 @@ import capitalize from "lodash/capitalize";
 import React, { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
+import Box from "../Box/Box";
+import Flex from "../Box/Flex";
+import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
+import IconButton from "./IconButton";
+import Button from "./Button";
+import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
 import { scales, variants } from "./types";
 
 export default {
   title: "Components/Button",
-  component: Button,
-  argTypes: {},
-};
-
-const Row = styled(Flex)`
-  margin-bottom: 32px;
-  & > button + button,
-  & > a + a {
-    margin-left: 16px;
-  }
-`;
-
-export const Default: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <>
-      <Box mb="32px">
         <button type="button">Unstyled Button</button>
       </Box>
       <Box mb="32px">

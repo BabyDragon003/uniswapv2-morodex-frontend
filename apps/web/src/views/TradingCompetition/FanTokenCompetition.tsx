@@ -3,26 +3,16 @@ import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractFanToken } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
+import { API_PROFILE } from 'config/constants/endpoints'
+import { PageMeta } from 'components/Layout/Page'
+import {
+  SmartContractPhases,
+  CompetitionPhases,
+  LIVE,
   FINISHED,
   CLAIM,
   OVER,
   REGISTRATION,
-} from 'config/constants/trading-competition/phases'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { ChainId } from '@pancakeswap/sdk'
-import { DARKBG, MIDBLUEBG, MIDBLUEBG_DARK } from './pageSectionStyles'
-import Countdown from './components/Countdown'
-import FanTokenStormBunny from './pngs/fan-token-storm.png'
-import HowToJoin from './components/HowToJoin'
-import BattleCta from './components/BattleCta'
-import { CompetitionPage, BannerFlex } from './styles'
-import FanTokenBattleBanner from './fantoken/components/BattleBanner/FanTokenBattleBanner'
-import FanTokenYourScore from './fantoken/components/YourScore/FanTokenYourScore'
-import FanTokenPrizesInfo from './fantoken/components/PrizesInfo/FanTokenPrizesInfo'
-import FanTokenCakerBunny from './pngs/fan-token-cakers.png'
-import { useTeamInformation } from './useTeamInformation'
-import { useRegistrationClaimStatus } from './useRegistrationClaimStatus'
-import Footer from './Footer'
 import TeamRanksSection from './components/TeamRanksSection'
 import PrizesInfoSection from './components/PrizesInfoSection'
 

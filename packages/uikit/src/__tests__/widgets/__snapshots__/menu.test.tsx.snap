@@ -3,26 +3,16 @@
 exports[`renders correctly 1`] = `
 <DocumentFragment>
   .c6 {
-  flex-shrink: 0;
-}
-
-.c19 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  fill: var(--colors-textSubtle);
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c27 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   fill: var(--colors-text);
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c19 {
   flex-shrink: 0;
   margin-right: 8px;
 }

@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { Text, Card, Flex, Box, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Auction, AuctionStatus, Bidder } from 'config/constants/types'
+import { TabToggleGroup, TabToggle } from 'components/TabToggle'
+import AuctionHistory from '../AuctionHistory'
+import AuctionProgress from './AuctionProgress'
+import AuctionRibbon from './AuctionRibbon'
+import AuctionLeaderboardTable from './AuctionLeaderboardTable'
+
 const AuctionLeaderboardCard = styled(Card)`
   width: 100%;
   flex: 2;

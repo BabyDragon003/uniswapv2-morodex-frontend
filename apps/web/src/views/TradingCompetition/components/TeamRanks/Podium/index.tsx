@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { Flex, Box, Text, Skeleton } from '@pancakeswap/uikit'
 import TeamPodiumIcon from './TeamPodiumIcon'
 import { PodiumBase } from '../../../svgs'
+import { localiseTradingVolume } from '../../../helpers'
+import { PodiumProps } from './styles'
+
+const Wrapper = styled(Flex)`
+  width: 260px;
+
   ${({ theme }) => theme.mediaQueries.xs} {
     width: 320px;
   }

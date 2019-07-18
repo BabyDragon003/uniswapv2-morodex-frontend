@@ -3,26 +3,16 @@ import { Currency, Trade, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { ConfirmationModalContent } from '@pancakeswap/uikit'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { Field } from 'state/swap'
+import { computeSlippageAdjustedAmounts } from 'utils/exchange'
+import SwapModalFooter from './SwapModalFooter'
+import SwapModalHeader from './SwapModalHeader'
+
+/**
+ * Returns true if the trade requires a confirmation of details before we can submit it
  * @param tradeA trade A
  * @param tradeB trade B
  */
 function tradeMeaningfullyDiffers(
-  tradeA: Trade<Currency, Currency, TradeType>,
-  tradeB: Trade<Currency, Currency, TradeType>,
-): boolean {
-  return (
-    tradeA.tradeType !== tradeB.tradeType ||
-    !tradeA.inputAmount.currency.equals(tradeB.inputAmount.currency) ||
-    !tradeA.inputAmount.equalTo(tradeB.inputAmount) ||
-    !tradeA.outputAmount.currency.equals(tradeB.outputAmount.currency) ||
-    !tradeA.outputAmount.equalTo(tradeB.outputAmount)
-  )
-}
-
-const TransactionConfirmSwapContent = ({
-  trade,
-  originalTrade,
-  onAcceptChanges,
   allowedSlippage,
   onConfirm,
   recipient,

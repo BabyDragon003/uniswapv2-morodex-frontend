@@ -3,26 +3,16 @@ import { Box, Text, Flex, MessageText, Message } from '@pancakeswap/uikit'
 
 import { LightGreyCard } from 'components/Card'
 import { addSeconds } from 'date-fns'
+import { useVaultApy } from 'hooks/useVaultApy'
+import { useTranslation } from '@pancakeswap/localization'
+import _toNumber from 'lodash/toNumber'
+import { convertTimeToSeconds } from 'utils/timeHelper'
+import formatSecondsToWeeks from '../../../utils/formatSecondsToWeeks'
+import TextRow from './TextRow'
 import BalanceRow from './BalanceRow'
 import DateRow from './DateRow'
 import formatRoi from '../../utils/formatRoi'
 import formatiCake from '../../utils/formatICake'
-import { OverviewPropsType } from '../../types'
-import CalculatorButton from '../../Buttons/CalculatorButton'
-
-const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
-  usdValueStaked,
-  lockedAmount,
-  duration,
-  isValidDuration,
-  newDuration,
-  newLockedAmount,
-  lockStartTime,
-  lockEndTime,
-  showLockWarning,
-  ceiling,
-}) => {
-  const { getLockedApy, getBoostFactor } = useVaultApy()
   const { t } = useTranslation()
 
   const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])

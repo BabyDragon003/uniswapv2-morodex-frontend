@@ -3,6 +3,12 @@ import { APT, CE_USDC_MAINNET, L0_USDC, WH_USDC_MAINNET } from 'config/coins'
 import { ChainTokenList } from './types'
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)
+export const BIG_INT_TEN = JSBI.BigInt(10)
+export const BIG_INT_20 = JSBI.BigInt(20)
+
+// used to ensure the user doesn't send so much APT so they end up with <0.00000002
+export const MIN_APT: JSBI = JSBI.multiply(JSBI.exponentiate(BIG_INT_TEN, JSBI.BigInt(6)), JSBI.BigInt(2)) // .02 APT
+
 // default allowed slippage, in bips
 export const INITIAL_ALLOWED_SLIPPAGE = 50
 // 20 minutes, denominated in seconds

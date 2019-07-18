@@ -3,26 +3,16 @@ import BigNumber from 'bignumber.js'
 import { TokenPairImage } from 'components/TokenImage'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { useTranslation } from '@pancakeswap/localization'
+import { memo, useMemo } from 'react'
+import { useVaultPoolByKey } from 'state/pools/hooks'
+import { VaultKey, DeserializedLockedCakeVault } from 'state/types'
+import styled from 'styled-components'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getVaultPosition, VaultPosition, VaultPositionParams } from 'utils/cakePool'
 import { Token } from '@pancakeswap/sdk'
 
 interface NameCellProps {
   pool: Pool.DeserializedPool<Token>
-}
-
-const StyledCell = styled(Pool.BaseCell)`
-  flex: 5;
-  flex-direction: row;
-  padding-left: 12px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex: 1 0 150px;
-    padding-left: 32px;
-  }
-`
-
-const NameCell: React.FC<React.PropsWithChildren<NameCellProps>> = ({ pool }) => {
-  const { t } = useTranslation()
-  const { isMobile } = useMatchBreakpoints()
-  const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey, totalStaked } = pool
   const vaultData = useVaultPoolByKey(pool.vaultKey)
   const {
     userData: { userShares },

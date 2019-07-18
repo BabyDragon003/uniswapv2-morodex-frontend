@@ -3,26 +3,16 @@ import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm 
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { ToastDescriptionWithTx } from 'components/Toast'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { usePriceCakeUsdc } from 'hooks/useStablePrice'
+import type { DeserializedFarmUserData } from '@pancakeswap/farms'
+import { TransactionResponse } from '@pancakeswap/awgmi/core'
+import useCatchTxError from 'hooks/useCatchTxError'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { FARM_DEFAULT_DECIMALS } from 'components/Farms/constants'
 import { FarmWithStakedValue } from '@pancakeswap/farms'
 
 const IconButtonWrapper = styled.div`
-  display: flex;
-  svg {
-    width: 20px;
-  }
-`
-
-interface FarmCardActionsProps extends FarmWithStakedValue {
-  lpLabel?: string
-  addLiquidityUrl?: string
-  displayApr?: string
-  onStake: (value: string) => Promise<TransactionResponse>
-  onUnstake: (value: string) => Promise<TransactionResponse>
-}
-
-const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
-  pid,
   quoteToken,
   token,
   lpSymbol,
