@@ -13,11 +13,8 @@ export interface TransactionReceipt {
   timestamp: string
   transactionHash: string
   status?: number
-  hash: string
-  receipt: TransactionReceipt
-}>('transactions/finalizeTransaction')
-export const checkedTransaction = createAction<{
+}
+
+export const addTransaction = createAction<{
   chainId: ChainId
   hash: string
-  blockNumber: number
-}>('transactions/checkedTransaction')

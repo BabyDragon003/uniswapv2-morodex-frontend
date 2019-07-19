@@ -13,10 +13,8 @@ const LiquidityBridgeWarning = ({ currency }: { currency?: Currency }) => {
         <Message variant="warning" mb="20px">
           <Flex>
             <Text fontSize="12px" color="warning" m="auto">
-        </Message>
-      )}
-    </>
-  )
-}
-
-export default LiquidityBridgeWarning
+              {t('Use')}
+            </Text>
+            <Link
+              external
+              m="0 4px"

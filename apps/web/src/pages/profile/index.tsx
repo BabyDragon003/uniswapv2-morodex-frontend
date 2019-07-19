@@ -13,3 +13,9 @@ const ProfilePage = () => {
     } else {
       router.push(nftsBaseUrl)
     }
+  }, [account, router])
+
+  return null
+}
+
+export default ProfilePage

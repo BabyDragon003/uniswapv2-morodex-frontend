@@ -13,6 +13,8 @@ const Stub = styled.div`
   height: 300px;
 `;
 
-    </CardsLayout>
-  );
-};
+export const Base: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <BaseLayout>
+      {[...Array(24)].map((value) => (
+        <Stub key={value} />

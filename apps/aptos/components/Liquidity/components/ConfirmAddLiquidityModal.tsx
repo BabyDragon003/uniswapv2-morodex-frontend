@@ -18,27 +18,6 @@ interface ConfirmAddLiquidityModalProps {
   price: Price<Currency, Currency> | undefined
   parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
   onAdd: () => void
-  poolTokenPercentage: Percent | undefined
-  liquidityMinted: CurrencyAmount<Currency> | undefined
-  currencyToAdd: Coin | undefined
-  isStable?: boolean
-  currencies: CurrencySelectorValue
-}
-
-const ConfirmAddLiquidityModal: React.FC<
-  React.PropsWithChildren<InjectedModalProps & ConfirmAddLiquidityModalProps>
-> = ({
-  title,
-  onDismiss,
-  customOnDismiss,
-  attemptingTxn,
-  hash,
-  price,
-  noLiquidity,
-  liquidityErrorMessage,
-  onAdd,
-  poolTokenPercentage,
-  liquidityMinted,
   parsedAmounts,
   currencies,
 }) => {

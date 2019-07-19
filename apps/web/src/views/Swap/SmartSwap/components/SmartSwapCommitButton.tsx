@@ -18,27 +18,6 @@ import {
 } from 'config/constants/exchange'
 import { ApprovalState } from 'hooks/useApproveCallback'
 import { WrapType } from 'hooks/useWrapCallback'
-import { useCallback, useEffect, useState } from 'react'
-import { Field } from 'state/swap/actions'
-import { useUserSingleHopOnly } from 'state/user/hooks'
-import { warningSeverity } from 'utils/exchange'
-import ProgressSteps from '../../components/ProgressSteps'
-import { SwapCallbackError } from '../../components/styleds'
-import { useSwapCallArguments } from '../hooks/useSwapCallArguments'
-import { useSwapCallback } from '../hooks/useSwapCallback'
-import { computeTradePriceBreakdown } from '../utils/exchange'
-import ConfirmSwapModal from './ConfirmSwapModal'
-
-const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
-
-interface SwapCommitButtonPropsType {
-  swapIsUnsupported: boolean
-  account: string
-  showWrap: boolean
-  wrapInputError: string
-  onWrap: () => Promise<void>
-  wrapType: WrapType
-  approval: ApprovalState
   approveCallback: () => Promise<void>
   approvalSubmitted: boolean
   currencies: {

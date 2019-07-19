@@ -18,27 +18,6 @@ export default function useRemoveLiquidityHandler({
   currencyA,
   currencyB,
 }: {
-  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
-  currencyA: Currency
-  currencyB: Currency
-}): UseRemoveLiquidityHandlerReturn {
-  const { t } = useTranslation()
-
-  const addTransaction = useTransactionAdder()
-  const executeTransaction = useSimulationAndSendTransaction()
-  const [allowedSlippage] = useUserSlippage() // custom from users
-
-  const [{ attemptingTxn, liquidityErrorMessage, txHash }, setLiquidityState] = useState<{
-    attemptingTxn: boolean
-    liquidityErrorMessage: string | undefined
-    txHash: string | undefined
-  }>({
-    attemptingTxn: false,
-    liquidityErrorMessage: undefined,
-    txHash: undefined,
-  })
-
-  const { [Field.CURRENCY_A]: parsedAAmount, [Field.CURRENCY_B]: parsedBAmount } = parsedAmounts
 
   const amountsMin = useMemo(
     () => ({

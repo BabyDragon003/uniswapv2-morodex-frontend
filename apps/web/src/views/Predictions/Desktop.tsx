@@ -13,6 +13,22 @@ import {
 } from 'state/predictions/hooks'
 import { setChartPaneState, setChartView } from 'state/predictions'
 import { PredictionsChartView, PredictionStatus } from 'state/types'
+import dynamic from 'next/dynamic'
+import { useTranslation } from '@pancakeswap/localization'
+import { ChartByLabel } from 'components/Chart/ChartbyLabel'
+import { TabToggle } from 'components/TabToggle'
+import TradingView from './components/TradingView'
+import { ErrorNotification, PauseNotification } from './components/Notification'
+import History from './History'
+import Positions from './Positions'
+import { useConfig } from './context/ConfigProvider'
+import LoadingSection from './components/LoadingSection'
+import Menu from './components/Menu'
+
+const ChainlinkChart = dynamic(() => import('./components/ChainlinkChart'), { ssr: false })
+
+// The value to set the chart when the user clicks the chart tab at the bottom
+const GRID_TEMPLATE_ROW = '1.2fr 24px .8fr'
 
 const ExpandButtonGroup = styled(Flex)`
   bottom: 24px;

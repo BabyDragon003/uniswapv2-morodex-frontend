@@ -18,27 +18,6 @@ export const deserializeFarm = (
     vaultPid,
     dual,
     multiplier,
-    isCommunity,
-    auctionHostingStartSeconds,
-    quoteTokenPriceBusd,
-    tokenPriceBusd,
-    boosted,
-    infoStableSwapAddress,
-    stableSwapAddress,
-    stableLpFee,
-    stableLpFeeRateOfTotalFee,
-  } = farm
-
-  const auctionHostingStartDate = !isUndefinedOrNull(auctionHostingStartSeconds)
-    ? new Date((auctionHostingStartSeconds as number) * 1000)
-    : null
-  const auctionHostingEndDate = auctionHostingStartDate
-    ? addSeconds(auctionHostingStartDate, auctionHostingInSeconds)
-    : null
-  const now = Date.now()
-  const isFarmCommunity =
-    isCommunity ||
-    !!(
       auctionHostingStartDate &&
       auctionHostingEndDate &&
       auctionHostingStartDate.getTime() < now &&

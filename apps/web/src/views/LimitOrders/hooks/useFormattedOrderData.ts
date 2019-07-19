@@ -13,16 +13,11 @@ export interface FormattedOrderData {
   inputToken: Currency | Token
   outputToken: Currency | Token
   inputAmount: string
-const formatForDisplay = (amount: Fraction) => {
-  if (!amount) {
-    return undefined
-  }
-  return parseFloat(amount.toSignificant(18)).toLocaleString(undefined, {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 8,
-  })
-}
-
+  outputAmount: string
+  executionPrice: string
+  invertedExecutionPrice: string
+  isOpen: boolean
+  isCancelled: boolean
 // Transforms Gelato Order type into types ready to be displayed in UI
 const useFormattedOrderData = (order: Order): FormattedOrderData => {
   const { chainId } = useActiveChainId()

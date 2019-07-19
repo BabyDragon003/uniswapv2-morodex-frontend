@@ -13,3 +13,4 @@ const NftProfileActivityPage = () => {
 
 NftProfileActivityPage.Layout = NftProfileLayout
 
+export default NftProfileActivityPage

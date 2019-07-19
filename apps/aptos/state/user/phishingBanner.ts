@@ -13,3 +13,6 @@ const hidePhishingBannerAtom = atom(
   (_, set) => set(phishingBannerAtom, Date.now()),
 )
 
+export function usePhishingBanner() {
+  return useAtom(hidePhishingBannerAtom)
+}

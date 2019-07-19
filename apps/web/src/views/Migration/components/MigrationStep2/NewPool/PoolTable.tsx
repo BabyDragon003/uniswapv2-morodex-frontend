@@ -13,6 +13,22 @@ interface PoolsTableProps {
   userDataReady: boolean
   account: string
 }
+
+const Container = styled.div`
+  overflow: hidden;
+  margin-bottom: 32px;
+  border-radius: 24px 24px 16px 16px;
+  background-color: ${({ theme }) => theme.colors.disabled};
+  padding: 1px 1px 3px 1px;
+`
+
+const PoolsTable: React.FC<React.PropsWithChildren<PoolsTableProps>> = ({ pools, userDataReady, account }) => {
+  const { t } = useTranslation()
+
+  return (
+    <Container>
+      <TableHeader title={t('Pools')} />
+      <TableStyle>
         {!userDataReady && (
           <Flex padding="50px 10px" justifyContent="center">
             <Spinner />

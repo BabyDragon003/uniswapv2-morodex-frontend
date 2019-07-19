@@ -13,16 +13,11 @@ import fetchTokenChartData from 'state/info/queries/tokens/chartData'
 import fetchPoolsForToken from 'state/info/queries/tokens/poolsForToken'
 import fetchTokenPriceData from 'state/info/queries/tokens/priceData'
 import { fetchAllTokenData, fetchAllTokenDataByAddresses } from 'state/info/queries/tokens/tokenData'
-}
-const SWR_SETTINGS: SWRConfiguration = {
-  refreshInterval: refreshIntervalForInfo,
-  ...SWR_SETTINGS_WITHOUT_REFETCH,
-}
-
-export const useProtocolDataSWR = (): ProtocolData | undefined => {
-  const chainName = useGetChainName()
-  const [t24, t48] = getDeltaTimestamps()
-  const { blocks } = useBlockFromTimeStampSWR([t24, t48])
+import fetchTokenTransactions from 'state/info/queries/tokens/transactions'
+import { Block, Transaction } from 'state/info/types'
+import { SWRConfiguration } from 'swr'
+import useSWRImmutable from 'swr/immutable'
+import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
   const [block24, block48] = blocks ?? []
   const type = checkIsStableSwap() ? 'stableSwap' : 'swap'
   const { data: protocolData } = useSWRImmutable(

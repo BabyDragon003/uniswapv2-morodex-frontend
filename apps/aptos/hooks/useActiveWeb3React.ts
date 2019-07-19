@@ -13,3 +13,7 @@ export default function useActiveWeb3React() {
   return {
     chainId,
     networkName,
+    provider,
+    account: isMounted ? account?.address : undefined,
+  }
+}

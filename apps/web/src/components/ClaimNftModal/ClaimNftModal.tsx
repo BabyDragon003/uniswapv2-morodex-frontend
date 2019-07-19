@@ -13,16 +13,11 @@ const showConfetti = () => {
     spread: 350,
     origin: {
       x: 0.5,
-      onDismiss?.()
-    } catch (error: any) {
-      const errorDescription = `${error.message} - ${error.data?.message}`
-      toastError(t('Failed to claim'), errorDescription)
-    } finally {
-      setIsClaiming(false)
-    }
-  }
+      y: 0.3,
+    },
+  })
+}
 
-  useEffect(() => {
     delay(showConfetti, 100)
   }, [])
   return (

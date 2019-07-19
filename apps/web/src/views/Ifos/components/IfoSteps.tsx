@@ -13,6 +13,22 @@ import {
   Heading,
   Link,
   LogoRoundIcon,
+  NextLinkFromReactRouter as RouterLink,
+  Skeleton,
+  Step,
+  StepStatus,
+  Stepper,
+  Text,
+  TooltipText,
+  useTooltip,
+} from '@pancakeswap/uikit'
+import { useAccount } from 'wagmi'
+
+import { useTranslation } from '@pancakeswap/localization'
+import useTokenBalance from 'hooks/useTokenBalance'
+import { useProfile } from 'state/profile/hooks'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
 import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'
 import { getICakeWeekDisplay } from 'views/Pools/helpers'

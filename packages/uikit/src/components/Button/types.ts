@@ -13,6 +13,22 @@ export const variants = {
   SECONDARY: "secondary",
   TERTIARY: "tertiary",
   TEXT: "text",
+  DANGER: "danger",
+  SUBTLE: "subtle",
+  SUCCESS: "success",
+  LIGHT: "light",
+  BUBBLEGUM: "bubblegum",
+} as const;
+
+export type Scale = (typeof scales)[keyof typeof scales];
+export type Variant = (typeof variants)[keyof typeof variants];
+
+export interface BaseButtonProps extends LayoutProps, SpaceProps {
+  as?: "a" | "button" | ElementType;
+  external?: boolean;
+  isLoading?: boolean;
+  scale?: Scale;
+  variant?: Variant;
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;

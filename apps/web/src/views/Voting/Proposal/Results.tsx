@@ -13,16 +13,11 @@ import {
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { Vote } from 'state/types'
-  const totalVotes = getTotalFromVotes(votes)
-
-  return (
-    <Card>
-      <CardHeader>
-        <Heading as="h3" scale="md">
-          {t('Current Results')}
-        </Heading>
-      </CardHeader>
-      <CardBody>
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@pancakeswap/localization'
+import { FetchStatus } from 'config/constants/types'
+import { calculateVoteResults, getTotalFromVotes } from '../helpers'
+import TextEllipsis from '../components/TextEllipsis'
         {votesLoadingStatus === FetchStatus.Fetched &&
           choices.map((choice, index) => {
             const choiceVotes = results[choice] || []

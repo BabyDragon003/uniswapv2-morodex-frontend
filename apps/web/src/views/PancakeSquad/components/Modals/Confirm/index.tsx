@@ -13,6 +13,22 @@ import {
   ModalHeader,
   ModalProps,
   ModalTitle,
+  Spinner,
+  Text,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import useTheme from 'hooks/useTheme'
+
+import { getBlockExploreLink } from 'utils'
+import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+
+type ConfirmModalProps = {
+  isLoading: boolean
+  txHash?: string
+  loadingText: string
+  loadingButtonLabel: string
+  successButtonLabel: string
   onConfirmClose: () => void
 } & ModalProps
 

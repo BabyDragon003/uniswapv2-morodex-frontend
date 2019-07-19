@@ -13,6 +13,22 @@ import { SkeletonCardDetails } from './Skeletons'
 
 export interface IfoCardDetailsProps {
   poolId: PoolIds
+  ifo: Ifo
+  publicIfoData: PublicIfoData
+  walletIfoData: WalletIfoData
+  isEligible: boolean
+}
+
+export interface FooterEntryProps {
+  label: ReactNode
+  value: ReactNode
+  tooltipContent?: string
+}
+
+const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ label, value, tooltipContent }) => {
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
+
+  return (
     <Flex justifyContent="space-between" alignItems="center">
       {tooltipVisible && tooltip}
       {tooltipContent ? (

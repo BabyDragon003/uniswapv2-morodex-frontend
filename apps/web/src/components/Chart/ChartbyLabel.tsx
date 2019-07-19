@@ -18,5 +18,3 @@ export const ChartByLabel = ({
         {by}
       </Link>
     </Flex>
-  )
-}

@@ -18,27 +18,6 @@ import useAllPancakeBunnyNfts from '../../../hooks/useAllPancakeBunnyNfts'
 
 const INITIAL_SLIDE = 4
 
-const SwiperCircle = styled.div<{ isActive }>`
-  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : theme.colors.textDisabled)};
-  width: 12px;
-  height: 12px;
-  margin-right: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-`
-
-const StyledSwiper = styled.div`
-  ${({ theme }) => theme.mediaQueries.md} {
-    .swiper-wrapper {
-      max-height: 390px;
-    }
-  }
-`
-
-interface MoreFromThisCollectionProps {
-  collectionAddress: string
-  currentTokenName?: string
-  title?: ReactNode
 }
 
 const MoreFromThisCollection: React.FC<React.PropsWithChildren<MoreFromThisCollectionProps>> = ({

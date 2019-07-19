@@ -13,3 +13,8 @@ const PointsLabel: React.FC<React.PropsWithChildren<PointsLabelProps>> = ({ poin
     <Flex alignItems="center" {...props}>
       <PrizeIcon mr="4px" color="textSubtle" />
       <Text color="textSubtle">{t('%num% points', { num: localePoints })}</Text>
+    </Flex>
+  )
+}
+
+export default PointsLabel

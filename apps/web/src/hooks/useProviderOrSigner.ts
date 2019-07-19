@@ -13,3 +13,4 @@ export const useProviderOrSigner = (withSignerIfPossible = true, forceBSC?: bool
     () => (withSignerIfPossible && address && isConnected && signer ? signer : provider),
     [address, isConnected, provider, signer, withSignerIfPossible],
   )
+}
