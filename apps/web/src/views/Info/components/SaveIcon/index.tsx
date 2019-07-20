@@ -23,10 +23,3 @@ const SaveIcon: React.FC<React.PropsWithChildren<{ fill: boolean } & HTMLAttribu
       {fill ? (
         <StarFillIcon stroke={theme.colors.warning} color={theme.colors.warning} />
       ) : (
-        <StarLineIcon stroke={theme.colors.textDisabled} />
-      )}
-    </HoverIcon>
-  )
-}
-
-export default SaveIcon

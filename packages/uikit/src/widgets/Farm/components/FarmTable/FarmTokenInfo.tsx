@@ -18,6 +18,27 @@ const Container = styled.div`
 `;
 
 const TokenWrapper = styled.div`
+  padding-right: 8px;
+  width: 32px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 40px;
+  }
+`;
+
+const Farm: React.FunctionComponent<React.PropsWithChildren<FarmTableFarmTokenInfoProps>> = ({
+  label,
+  isReady,
+  isStable,
+  stakedBalance,
+  children,
+}) => {
+  const { t } = useTranslation();
+  const rawStakedBalance = stakedBalance ? getBalanceNumber(stakedBalance) : 0;
+
+  const handleRenderFarming = (): JSX.Element => {
+    if (rawStakedBalance) {
+      return (
         <Text color="secondary" fontSize="12px" bold textTransform="uppercase">
           {t("Farming")}
         </Text>

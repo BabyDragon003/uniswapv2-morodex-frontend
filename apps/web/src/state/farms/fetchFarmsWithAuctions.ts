@@ -18,16 +18,11 @@ const fetchFarmsWithAuctions = async (
       {
         address: farmAuctionContract.address,
         name: 'auctions',
-    const currentAuctionEndDate = sub(new Date(), { seconds: secondsSinceEnd })
-    return {
-      winnerFarms,
-      auctionHostingEndDate: add(currentAuctionEndDate, {
-        seconds: FARM_AUCTION_HOSTING_IN_SECONDS,
-      }).toJSON(),
-    }
-  }
-
-  return { winnerFarms: [], auctionHostingEndDate: null }
+        params: [currentAuctionId],
+      },
+      {
+        address: farmAuctionContract.address,
+        name: 'viewBidsPerAuction',
 }
 
 export default fetchFarmsWithAuctions

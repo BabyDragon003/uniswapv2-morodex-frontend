@@ -23,32 +23,6 @@ const TicketSvgWrapper = styled.div`
   top: 0;
   left: 0;
   transform: rotate(-4deg);
-`
-
-const ButtonWrapper = styled(Link)`
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-4deg);
-  &:hover {
-    text-decoration: none;
-  }
-`
-
-const StyledButton = styled(Button)`
-  width: 200px;
-  background: linear-gradient(180deg, #7645d9 0%, #452a7a 100%);
-  color: white;
-  ${({ theme }) => theme.mediaQueries.xs} {
-    width: 240px;
-  }
-`
-
-interface StakeToWinButtonProps {
-  handleScroll: () => void
-}
-
 const StakeToWinButton: React.FC<React.PropsWithChildren<StakeToWinButtonProps>> = ({ handleScroll }) => {
   const { t } = useTranslation()
 

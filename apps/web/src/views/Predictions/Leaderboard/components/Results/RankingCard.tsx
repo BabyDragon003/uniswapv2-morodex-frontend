@@ -23,32 +23,6 @@ import { useStatModalProps } from 'state/predictions/hooks'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import WalletStatsModal from '../WalletStatsModal'
 import { NetWinningsRow, Row } from './styles'
-
-interface RankingCardProps {
-  rank: 1 | 2 | 3
-  user: PredictionUser
-}
-
-const RotatedLaurelLeftIcon = styled(LaurelLeftIcon)`
-  transform: rotate(30deg);
-`
-
-const RotatedLaurelRightIcon = styled(LaurelRightIcon)`
-  transform: rotate(-30deg);
-`
-
-const getRankingColor = (rank: number) => {
-  if (rank === 3) {
-    return 'bronze'
-  }
-
-  if (rank === 2) {
-    return 'silver'
-  }
-
-  return 'gold'
-}
-
 const RankingCard: React.FC<React.PropsWithChildren<RankingCardProps>> = ({ rank, user }) => {
   const { t } = useTranslation()
   const rankColor = getRankingColor(rank)

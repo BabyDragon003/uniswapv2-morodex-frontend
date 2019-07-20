@@ -23,32 +23,6 @@ const LockedActions: React.FC<React.PropsWithChildren<LockedActionsPropsType>> =
     () =>
       getVaultPosition({
         userShares,
-        locked,
-        lockEndTime,
-      }),
-    [userShares, locked, lockEndTime],
-  )
-  const { t } = useTranslation()
-  const lockedAmountAsNumber = getBalanceNumber(lockedAmount)
-
-  const currentBalance = useMemo(
-    () => (stakingTokenBalance ? new BigNumber(stakingTokenBalance) : BIG_ZERO),
-    [stakingTokenBalance],
-  )
-
-  if (position === VaultPosition.Locked) {
-    return (
-      <Flex>
-        <Box width="100%" mr="4px">
-          <AddCakeButton
-            lockEndTime={lockEndTime}
-            lockStartTime={lockStartTime}
-            currentLockedAmount={lockedAmount}
-            stakingToken={stakingToken}
-            currentBalance={currentBalance}
-            stakingTokenBalance={stakingTokenBalance}
-          />
-        </Box>
         <Box width="100%" ml="4px">
           <ExtendButton
             lockEndTime={lockEndTime}

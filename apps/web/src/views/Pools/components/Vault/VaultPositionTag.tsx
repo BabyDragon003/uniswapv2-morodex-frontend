@@ -18,16 +18,11 @@ import { VaultPosition, getVaultPosition } from 'utils/cakePool'
 
 const tagConfig: Record<VaultPosition, TagProps> = {
   [VaultPosition.None]: {},
-}
-
-const positionLabel: Record<VaultPosition, ReactNode> = {
-  [VaultPosition.None]: '',
-  [VaultPosition.Flexible]: <Trans>Flexible</Trans>,
-  [VaultPosition.Locked]: <Trans>Locked</Trans>,
-  [VaultPosition.LockedEnd]: <Trans>Locked End</Trans>,
-  [VaultPosition.AfterBurning]: <Trans>After Burning</Trans>,
-}
-
+  [VaultPosition.Flexible]: {
+    variant: 'success',
+  },
+  [VaultPosition.Locked]: {
+    variant: 'secondary',
 const VaultPositionTag: React.FC<React.PropsWithChildren<{ position: VaultPosition }>> = ({ position }) => {
   return (
     <Tag {...tagConfig[position]}>

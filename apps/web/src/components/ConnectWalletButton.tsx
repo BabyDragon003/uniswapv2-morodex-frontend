@@ -23,32 +23,6 @@ const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {
   const { connectAsync } = useConnect()
   const { chainId } = useActiveChainId()
   const [open, setOpen] = useState(false)
-
-  const docLink = useMemo(() => getDocLink(code), [code])
-
-  const ConnectButton = styled(Button)`
-    background: transparent;
-    color: white;
-    border: solid 2px rgba(255, 255, 255, 0.25);
-    :hover {
-      background: rgb(0, 233, 177) !important;
-      opacity: 1 !important;
-      border-color: rgba(255, 255, 255, 1);
-    }
-  `
-  const handleClick = () => {
-    if (typeof __NEZHA_BRIDGE__ !== 'undefined') {
-      handleActive()
-    } else {
-      setOpen(true)
-    }
-  }
-
-  const wallets = useMemo(() => createWallets(chainId, connectAsync), [chainId, connectAsync])
-
-  return (
-    <>
-      <Button onClick={handleClick} {...props}>
         {children || <Trans>Connect</Trans>}
       </Button>
       <WalletModalV2

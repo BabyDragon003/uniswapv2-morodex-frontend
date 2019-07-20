@@ -23,10 +23,3 @@ const Achievements: React.FC<
           {t('Achievements')}
         </Heading>
         <ClaimPointsCallout onSuccess={onSuccess} />
-        <AchievementsList achievements={achievements} isLoading={isLoading} />
-      </CardBody>
-    </Card>
-  )
-}
-
-export default Achievements

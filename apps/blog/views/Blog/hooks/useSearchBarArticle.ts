@@ -23,12 +23,3 @@ const useSearchBarArticle = (searchKey: string): SearchBarArticle => {
     })
 
     return result.data
-  })
-
-  return {
-    isFetching: isLoading,
-    articlesData: articlesData ?? [],
-  }
-}
-
-export default useSearchBarArticle

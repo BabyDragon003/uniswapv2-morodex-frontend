@@ -18,6 +18,27 @@ const StyledToastContainer = styled.div`
     transition: opacity 250ms ease-in;
   }
 
+  .exit {
+    opacity: 1;
+  }
+
+  .exit.exit-active {
+    opacity: 0.01;
+    transition: opacity 250ms ease-out;
+  }
+`;
+
+export const ToastContainer: React.FC<React.PropsWithChildren<ToastContainerProps>> = ({
+  toasts,
+  onRemove,
+  ttl = 6000,
+  stackSpacing = 24,
+}) => {
+  return (
+    <StyledToastContainer>
+      <TransitionGroup>
+        {toasts.map((toast, index) => {
+          const zIndex = (ZINDEX - index).toString();
           const top = TOP_POSITION + index * stackSpacing;
 
           return (

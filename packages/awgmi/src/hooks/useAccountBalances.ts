@@ -18,6 +18,27 @@ import { useNetwork } from './useNetwork'
 export type UseAccountBalancesResult = { value: string; formatted: string } & FetchCoinResult
 
 type UseAccountBalances<TData> = QueryConfig<UseAccountBalancesResult, Error, TData>
+
+type UseAccountBalancesSelect<TData> = Pick<UseAccountBalances<TData>, 'select'>
+
+export type UseAccountBalancesConfig<TData> = Omit<UseAccountResourcesConfig, 'select'> &
+  UseAccountBalancesSelect<TData>
+
+const accountCoinStoreResourceSelect = (resource: FetchAccountResourcesResult) => {
+  return resource.filter(coinStoreResourcesFilter)
+}
+
+export function useAccountBalances<TData = unknown>({
+  address,
+  cacheTime,
+  enabled,
+  isDataEqual,
+  keepPreviousData,
+  networkName: networkName_,
+  onError,
+  onSettled,
+  onSuccess,
+  select,
   staleTime,
   suspense,
   watch,

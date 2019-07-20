@@ -23,32 +23,6 @@ const SwapModalFooterContainer = styled(AutoColumn)`
 
 export default function SwapModalFooter({
   trade,
-  slippageAdjustedAmounts,
-  isEnoughInputBalance,
-  onConfirm,
-  swapErrorMessage,
-  disabledConfirm,
-}: {
-  trade: TradeWithStableSwap<Currency, Currency, TradeType>
-  slippageAdjustedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
-  isEnoughInputBalance: boolean
-  onConfirm: () => void
-  swapErrorMessage?: string | undefined
-  disabledConfirm: boolean
-}) {
-  const { t } = useTranslation()
-  const [showInverted, setShowInverted] = useState<boolean>(false)
-  const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
-  const severity = warningSeverity(priceImpactWithoutFee)
-
-  const totalFeePercent = `${(TOTAL_FEE * 100).toFixed(2)}%`
-  const lpHoldersFeePercent = `${(LP_HOLDERS_FEE * 100).toFixed(2)}%`
-  const treasuryFeePercent = `${(TREASURY_FEE * 100).toFixed(4)}%`
-  const buyBackFeePercent = `${(BUYBACK_FEE * 100).toFixed(4)}%`
-
-  return (
-    <>
-      <SwapModalFooterContainer>
         <RowBetween align="center">
           <Text fontSize="14px">{t('Price')}</Text>
           <Text

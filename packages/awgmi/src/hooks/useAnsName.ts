@@ -23,20 +23,3 @@ export function useAnsName({
   address,
   staleTime = 1_000 * 60 * 60 * 24, // 24 hours
   suspense,
-  onError,
-  onSettled,
-  onSuccess,
-}: UseAnsNameArgs & UseAnsNameConfig = {}) {
-  const { chain } = useNetwork()
-  const networkName = networkName_ ?? chain?.network
-
-  return useQuery(queryKey({ networkName, address }), queryFn, {
-    cacheTime,
-    enabled: Boolean(enabled && networkName && address),
-    staleTime,
-    suspense,
-    onError,
-    onSettled,
-    onSuccess,
-  })
-}

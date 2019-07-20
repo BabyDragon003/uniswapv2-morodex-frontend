@@ -18,16 +18,11 @@ interface ExpandedFooterProps {
 
 interface EndTimeTooltipComponentProps {
   endTime: number
-    </>
-  )
 }
 
-const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({ pool, showTotalStaked = true }) => {
-  const { t } = useTranslation()
-  const getNow = useLedgerTimestamp()
-
+const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {
-    stakingToken,
+    t,
     earningToken,
     totalStaked = BIG_ZERO,
     userData: poolUserData,

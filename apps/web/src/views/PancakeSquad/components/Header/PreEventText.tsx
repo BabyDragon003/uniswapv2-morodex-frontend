@@ -18,3 +18,16 @@ const preEventTextMapping = (t: ContextApi['t'], userStatus: UserStatusEnum) => 
       return t('You’re all set!')
     case UserStatusEnum.PROFILE_ACTIVE_GEN0:
       return t('You’re all set!')
+    default:
+      return ''
+  }
+}
+
+const PreEventText: React.FC<React.PropsWithChildren<PreEventProps>> = ({ t, saleStatus, userStatus }) =>
+  [SaleStatusEnum.Pending, SaleStatusEnum.Premint].includes(saleStatus) ? (
+    <Text data-theme="dark" fontSize="16px" color="text">
+      {preEventTextMapping(t, userStatus)}
+    </Text>
+  ) : null
+
+export default PreEventText

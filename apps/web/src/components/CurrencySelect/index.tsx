@@ -23,32 +23,6 @@ const DropDownHeader = styled.div`
   // background: ${({ theme }) => theme.colors.input};
   transition: border-radius 0.15s;
 `
-
-const DropDownContainer = styled(Button)`
-  cursor: pointer;
-  width: 100%;
-  position: relative;
-  background: ${({ theme }) => theme.colors.input};
-  // border-radius: 16px;
-  border-radius: 6px;
-  height: 40px;
-  min-width: 136px;
-  user-select: none;
-  z-index: 20;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
-  }
-
-  .down-icon {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-`
-
-interface CurrencySelectProps extends CurrencySearchModalProps, BoxProps {
   hideBalance?: boolean
 }
 

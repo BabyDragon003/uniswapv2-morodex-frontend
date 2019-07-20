@@ -18,16 +18,11 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import { useTranslation } from '@pancakeswap/localization'
 import ClaimModal from '../ClaimModal'
-`
+import CardUserInfo from './CardUserInfo'
+import ShareImageModal from '../ShareImageModal'
+import { YourScoreProps } from '../../types'
 
-const StyledButton = styled(Button)`
-  svg {
-    margin-right: 4px;
-    height: 20px;
-    width: auto;
-    fill: ${({ theme }) => theme.colors.textDisabled};
-  }
-`
+const StyledCard = styled(Card)`
 
 interface ScoreCardProps extends YourScoreProps {
   userPrizeGrid: ReactNode

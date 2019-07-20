@@ -23,19 +23,3 @@ const StakeVaultButton = (props) => {
     if (!isExpanded) {
       setIsExpanded(true)
     }
-
-    if (isFinishedPage) {
-      router.push('/ifo')
-    } else {
-      scrollToTop()
-    }
-  }
-
-  return (
-    <Button {...props} onClick={handleClickButton}>
-      {t('Go to CAKE pool')}
-    </Button>
-  )
-}
-
-export default StakeVaultButton

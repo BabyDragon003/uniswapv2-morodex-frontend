@@ -18,16 +18,11 @@ const StyledModal = styled(ModalContainer)`
   ${({ theme }) => theme.mediaQueries.sm} {
     min-width: 380px;
   }
-    spread: 350,
-    origin: {
-      x: 0.5,
-      y: 0.3,
-    },
-  })
-}
+`
 
-interface ClaimPrizesModalModalProps {
-  roundsToClaim: LotteryTicketClaimData[]
+const StyledModalHeader = styled(ModalHeader)`
+  background: ${({ theme }) => theme.colors.gradientCardHeader};
+  border-top-right-radius: 32px;
   onDismiss?: () => void
 }
 

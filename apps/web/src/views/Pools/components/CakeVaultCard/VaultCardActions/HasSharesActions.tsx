@@ -18,6 +18,27 @@ interface HasStakeActionProps {
 const HasSharesActions: React.FC<React.PropsWithChildren<HasStakeActionProps>> = ({
   pool,
   stakingTokenBalance,
+  performanceFee,
+}) => {
+  const {
+    userData: {
+      balance: { cakeAsBigNumber, cakeAsNumberBalance },
+    },
+  } = useVaultPoolByKey(pool.vaultKey)
+
+  const { stakingToken } = pool
+
+  const cakePriceBusd = usePriceCakeBusd()
+  const stakedDollarValue = cakePriceBusd.gt(0)
+    ? getBalanceNumber(cakeAsBigNumber.multipliedBy(cakePriceBusd), stakingToken.decimals)
+    : 0
+
+  const [onPresentTokenRequired] = useModal(<NotEnoughTokensModal tokenSymbol={stakingToken.symbol} />)
+  const [onPresentStake] = useModal(
+    <VaultStakeModal stakingMax={stakingTokenBalance} performanceFee={performanceFee} pool={pool} />,
+  )
+  const [onPresentUnstake] = useModal(
+    <VaultStakeModal stakingMax={cakeAsBigNumber} pool={pool} isRemovingStake />,
     true,
     true,
     `withdraw-vault-${pool.sousId}-${pool.vaultKey}`,
