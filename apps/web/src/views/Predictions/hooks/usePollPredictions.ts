@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { fetchPredictionData } from 'state/predictions'
 import { useInitialBlock } from 'state/block/hooks'
 import useSWR from 'swr'

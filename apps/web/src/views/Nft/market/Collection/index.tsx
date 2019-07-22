@@ -1,4 +1,3 @@
-import PageLoader from 'components/Loader/PageLoader'
 import { PageMeta } from 'components/Layout/Page'
 import dynamic from 'next/dynamic'
 import { NextRouter, useRouter } from 'next/router'

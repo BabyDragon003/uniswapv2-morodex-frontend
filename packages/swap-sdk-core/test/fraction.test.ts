@@ -1,4 +1,3 @@
-import JSBI from 'jsbi'
 import { Fraction } from '../src'
 
 describe('Fraction', () => {

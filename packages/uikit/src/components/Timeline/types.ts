@@ -1,4 +1,3 @@
-export type EventStatus = "past" | "live" | "upcoming";
 
 export type Event = {
   status: EventStatus;

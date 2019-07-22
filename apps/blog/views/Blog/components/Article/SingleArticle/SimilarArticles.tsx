@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { Flex } from '@pancakeswap/uikit'
 import BlogCard from 'views/Blog/components/BlogCard'
 import { useTranslation } from '@pancakeswap/localization'

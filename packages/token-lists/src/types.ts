@@ -1,4 +1,3 @@
-type ExtensionValue = string | number | boolean | null | undefined
 
 export interface TokenInfo {
   readonly chainId: number

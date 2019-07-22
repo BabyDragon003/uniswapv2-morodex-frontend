@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, Router } from '@pancakeswap/aptos-swap-sdk'
 import { SimulateTransactionError, UserRejectedRequestError } from '@pancakeswap/awgmi/core'
 import { useTranslation } from '@pancakeswap/localization'
 import { log } from 'next-axiom'

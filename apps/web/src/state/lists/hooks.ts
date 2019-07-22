@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { TokenAddressMap as TTokenAddressMap, WrappedTokenInfo, TokenList, TokenInfo } from '@pancakeswap/token-lists'
 import { ListsState } from '@pancakeswap/token-lists/react'
 import {
@@ -23,6 +22,32 @@ import UNSUPPORTED_TOKEN_LIST from '../../config/constants/tokenLists/pancake-un
 import WARNING_TOKEN_LIST from '../../config/constants/tokenLists/pancake-warning.tokenlist.json'
 import { listsAtom } from './lists'
 
+type TokenAddressMap = TTokenAddressMap<ChainId>
+
+// use ordering of default list of lists to assign priority
+function sortByListPriority(urlA: string, urlB: string) {
+  const first = DEFAULT_LIST_OF_LISTS.includes(urlA) ? DEFAULT_LIST_OF_LISTS.indexOf(urlA) : Number.MAX_SAFE_INTEGER
+  const second = DEFAULT_LIST_OF_LISTS.includes(urlB) ? DEFAULT_LIST_OF_LISTS.indexOf(urlB) : Number.MAX_SAFE_INTEGER
+
+  // need reverse order to make sure mapping includes top priority last
+  if (first < second) return 1
+  if (first > second) return -1
+  return 0
+}
+
+function enumKeys<O extends object, K extends keyof O = keyof O>(obj: O): K[] {
+  return Object.keys(obj).filter((k) => Number.isNaN(+k)) as K[]
+}
+
+// -------------------------------------
+//   Selectors
+// -------------------------------------
+const selectorActiveUrlsAtom = atom((get) => get(listsAtom)?.activeListUrls ?? [])
+export const selectorByUrlsAtom = atom((get) => get(listsAtom)?.byUrl ?? {})
+
+const activeListUrlsAtom = atom((get) => {
+  const urls = get(selectorActiveUrlsAtom)
+  return urls?.filter((url) => !UNSUPPORTED_LIST_URLS.includes(url))
 })
 
 const combineTokenMapsWithDefault = (lists: ListsState['byUrl'], urls: string[]) => {

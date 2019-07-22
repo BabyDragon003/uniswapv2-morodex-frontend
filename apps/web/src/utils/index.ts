@@ -1,4 +1,3 @@
-import type { Signer } from '@ethersproject/abstract-signer'
 import { getAddress } from '@ethersproject/address'
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'

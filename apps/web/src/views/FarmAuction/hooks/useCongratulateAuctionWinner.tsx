@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import { Auction, AuctionStatus, Bidder } from 'config/constants/types'
 import { useFarmAuctionContract } from 'hooks/useContract'

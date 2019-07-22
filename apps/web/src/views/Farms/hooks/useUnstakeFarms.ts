@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { unstakeFarm, nonBscUnstakeFarm } from 'utils/calls'
 import { useMasterchef, useNonBscVault } from 'hooks/useContract'
@@ -23,3 +22,10 @@ const useUnstakeFarms = (pid: number, vaultPid?: number) => {
     async (amount: string) => {
       return nonBscUnstakeFarm(nonBscVaultContract, vaultPid, amount, gasPrice, account, oraclePrice, chainId)
     },
+    [nonBscVaultContract, vaultPid, gasPrice, account, oraclePrice, chainId],
+  )
+
+  return { onUnstake: vaultPid ? handleUnstakeNonBsc : handleUnstake }
+}
+
+export default useUnstakeFarms

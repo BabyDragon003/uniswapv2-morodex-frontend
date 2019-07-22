@@ -1,4 +1,3 @@
-import { Heading, PageHeader } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Crumbs from './Crumbs'
 

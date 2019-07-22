@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/uikit'
 import { Auction, Bidder } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'

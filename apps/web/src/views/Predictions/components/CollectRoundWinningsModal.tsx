@@ -1,4 +1,3 @@
-import { Token } from '@pancakeswap/sdk'
 import {
   AutoRenewIcon,
   Box,

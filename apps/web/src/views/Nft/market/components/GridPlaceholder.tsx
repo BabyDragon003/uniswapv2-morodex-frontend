@@ -1,4 +1,3 @@
-import { Box, BoxProps, Grid, GridProps, Skeleton } from '@pancakeswap/uikit'
 import times from 'lodash/times'
 
 interface GridPlaceholderProps extends GridProps {

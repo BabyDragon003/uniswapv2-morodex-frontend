@@ -1,4 +1,3 @@
-import { createAction } from '@reduxjs/toolkit'
 import { Types } from 'aptos'
 import { ChainId } from '@pancakeswap/aptos-swap-sdk'
 
@@ -23,3 +22,17 @@ export const addTransaction = createAction<{
   claim?: { recipient: string }
   summary?: string
   translatableSummary?: { text: string; data?: Record<string, string | number> }
+  type?: TransactionType
+}>('transactions/addTransaction')
+export const clearAllTransactions = createAction('transactions/clearAllTransactions')
+export const clearAllChainTransactions = createAction<{ chainId: ChainId }>('transactions/clearAllChainTransactions')
+export const finalizeTransaction = createAction<{
+  chainId: ChainId
+  hash: string
+  receipt: TransactionReceipt
+}>('transactions/finalizeTransaction')
+export const checkedTransaction = createAction<{
+  chainId: ChainId
+  hash: string
+  blockNumber: number
+}>('transactions/checkedTransaction')

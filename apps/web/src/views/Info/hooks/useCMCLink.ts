@@ -1,4 +1,3 @@
-import useSWRImmutable from 'swr/immutable'
 
 // endpoint to check asset exists and get url to CMC page
 // returns 400 status code if token is not on CMC

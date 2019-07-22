@@ -1,4 +1,3 @@
-import removeTrailingZeros from './removeTrailingZeros'
 
 describe('removeTrailingZerosRegex', () => {
   it.each([

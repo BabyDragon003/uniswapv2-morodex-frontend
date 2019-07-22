@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 
 import { Text, ChevronDownIcon } from "../../../components";

@@ -1,4 +1,3 @@
-import { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Flex, Text, Input, CheckmarkIcon, PencilIcon, IconButton } from '@pancakeswap/uikit'
@@ -23,6 +22,32 @@ const WinRateInputContainer = styled(Box)`
   & > input {
     padding-right: 28px;
     max-width: 70%;
+  }
+  &:before {
+    position: absolute;
+    content: '%';
+    color: ${({ theme }) => theme.colors.textSubtle};
+    left: 140px;
+    top: 8px;
+  }
+`
+
+interface WinRateCardProps {
+  winRate: number
+  calculatorState: WinRateCalculatorState
+  setCalculatorMode: (mode: CalculatorMode) => void
+  setTargetWinRate: (percentage: string) => void
+}
+
+const WinRateCard: React.FC<React.PropsWithChildren<WinRateCardProps>> = ({
+  winRate,
+  calculatorState,
+  setCalculatorMode,
+  setTargetWinRate,
+}) => {
+  const { t } = useTranslation()
+  const [expectedWinRate, setExpectedWinRate] = useState('')
+  const { mode } = calculatorState.controls
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {

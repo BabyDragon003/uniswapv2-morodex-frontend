@@ -1,4 +1,3 @@
-import { memo, useCallback, useState, useMemo } from "react";
 import styled from "styled-components";
 import { bnb2CakeImages, cake2BnbImages } from "./constant";
 import { SequencePlayer } from "./SequencePlayer";

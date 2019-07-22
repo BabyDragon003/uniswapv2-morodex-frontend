@@ -1,4 +1,3 @@
-import { createAction } from '@reduxjs/toolkit'
 
 export enum Field {
   CURRENCY_A = 'CURRENCY_A',

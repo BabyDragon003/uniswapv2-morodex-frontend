@@ -1,4 +1,3 @@
-import { useCallback, useMemo } from 'react'
 import { ChainId, Token } from '@pancakeswap/sdk'
 import { BigNumber } from 'bignumber.js'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

@@ -1,4 +1,3 @@
-import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants/exchange'
 import { atom, useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 

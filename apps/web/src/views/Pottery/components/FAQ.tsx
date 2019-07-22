@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Card, CardBody, CardHeader, Heading, Text, Flex, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
@@ -23,6 +22,32 @@ const HoneyImage = styled.div`
   background: url(/images/pottery/honey.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+
+  ${({ theme }) => theme.mediaQueries.xl} {
+    width: 291px;
+    min-width: 291px;
+    height: 326.89px;
+    min-height: 326.89px;
+    margin: 40px 40px 0 0;
+  }
+`
+
+const StyledCardbody = styled(CardBody)`
+  div:first-child {
+    margin-top: 0px;
+  }
+`
+
+const InlineLink = styled(Link)`
+  display: inline-block;
+  margin: 0 4px;
+`
+
+const FAQ = () => {
+  const { t } = useTranslation()
+
+  return (
     <Wrapper>
       <HoneyImage />
       <Card>

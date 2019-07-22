@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { CAKE } from '@pancakeswap/tokens'
 import { FAST_INTERVAL } from 'config/constants'

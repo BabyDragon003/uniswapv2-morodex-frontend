@@ -1,4 +1,3 @@
-const PATH = `https://cdn.pancakeswap.com/sequnce-assets/`;
 
 export const BNB2CAKE_PATH = `${PATH}bnb2cake/bnb2cake-`;
 export const BNB2CAKE_COUNTS = 31;

@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Box, Flex, FlexProps, Skeleton, Text } from '@pancakeswap/uikit'

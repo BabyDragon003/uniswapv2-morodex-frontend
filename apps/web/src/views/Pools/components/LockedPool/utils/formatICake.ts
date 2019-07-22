@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 
 interface FormatiCake {
   lockedAmount: any

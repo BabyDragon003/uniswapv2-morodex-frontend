@@ -1,4 +1,3 @@
-import { Router, Currency, CurrencyAmount } from '@pancakeswap/aptos-swap-sdk'
 import { SimulateTransactionError, UserRejectedRequestError } from '@pancakeswap/awgmi/core'
 import { useTranslation } from '@pancakeswap/localization'
 import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LotteryStatus } from 'config/constants/types'
@@ -23,6 +22,32 @@ const CurrentRoundTicketsInner = () => {
     isTransitioning,
     currentRound: { status, userTickets },
   } = useLottery()
+  const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
+
+  return (
+    <>
+      <Flex flexDirection="column">
+        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" mb="16px">
+          {t('Your tickets')}
+        </Text>
+        <ScrollBox>
+          {userTickets.tickets.map((ticket, index) => {
+            return (
+              <TicketNumber
+                key={ticket.id}
+                localId={index + 1}
+                id={ticket.id}
+                number={ticket.number}
+                status={ticket.status}
+              />
+            )
+          })}
+        </ScrollBox>
+      </Flex>
+      <Flex borderTop={`1px solid ${theme.colors.cardBorder}`} alignItems="center" justifyContent="center">
+        <BuyTicketsButton disabled={ticketBuyIsDisabled} mt="24px" width="100%" />
+      </Flex>
+    </>
   )
 }
 

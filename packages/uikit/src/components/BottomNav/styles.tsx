@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Flex } from "../Box";
 
 const StyledBottomNav = styled(Flex)`

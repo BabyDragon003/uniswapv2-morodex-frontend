@@ -1,4 +1,3 @@
-import { Flex, Heading, Text, SkeletonV2, ProfileAvatar } from '@pancakeswap/uikit'
 import { useProfileForAddress } from 'state/profile/hooks'
 import styled from 'styled-components'
 import truncateHash from '@pancakeswap/utils/truncateHash'
@@ -23,6 +22,32 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.xs} {
     grid-template-columns: auto repeat(3, 1fr);
     grid-gap: 8px;
+
+    svg {
+      height: 65px;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    grid-template-columns: auto repeat(3, 1fr);
+    grid-gap: 16px;
+
+    svg {
+      height: 72px;
+    }
+  }
+
+  /* Between 968 - 1080px the team image is absolute positioned so it returns to a 3-column grid */
+  ${({ theme }) => theme.mediaQueries.lg} {
+    grid-template-columns: auto auto 1fr;
+    min-height: 72px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.xl} {
     grid-template-columns: repeat(4, 1fr);
   }
 `

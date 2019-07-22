@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 
 export const BIG_ZERO = new BigNumber(0)

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ const ExpandableButtonWrapper = styled(Flex)`
   }
 `
 const ExpandedWrapper = styled(Flex)`
+  svg {
+    height: 14px;
+    width: 14px;
+  }
+`
+
+const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({
+  pool,
+  account,
+  defaultExpanded,
+  children,
+  isLocked = false,
+}) => {
+  const { vaultKey } = pool
+  const { t } = useTranslation()
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded || false)
+
+  return (
+    <CardFooter>
+      <ExpandableButtonWrapper>
+        <Flex alignItems="center">
+          <PoolTypeTag vaultKey={vaultKey} isLocked={isLocked} account={account}>
+            {(targetRef) => (
+              <Flex ref={targetRef}>
+                <HelpIcon ml="4px" width="20px" height="20px" color="textSubtle" />
+              </Flex>
             )}
           </PoolTypeTag>
         </Flex>

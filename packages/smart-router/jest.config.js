@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   roots: ['evm'],
   testMatch: ['**/__tests__/**/*.test.(ts|tsx|js|jsx)'],

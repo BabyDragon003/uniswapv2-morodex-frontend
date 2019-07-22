@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import { AppState } from '../index'
 
 // Get Farm Harvest

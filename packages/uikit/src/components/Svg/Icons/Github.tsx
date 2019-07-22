@@ -1,4 +1,3 @@
-import * as React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 

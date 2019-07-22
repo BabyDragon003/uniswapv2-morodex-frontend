@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Colors } from "../../theme/types";
 import Text from "./Text";
 

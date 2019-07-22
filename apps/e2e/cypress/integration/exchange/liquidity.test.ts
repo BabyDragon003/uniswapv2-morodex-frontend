@@ -1,4 +1,3 @@
-describe('Pool', () => {
   beforeEach(() => cy.visit('/liquidity'))
   it('add liquidity links to /add/', () => {
     cy.get('#join-pool-button').click()

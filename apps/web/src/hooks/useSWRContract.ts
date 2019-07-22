@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { FetchStatus } from 'config/constants/types'
 import { useEffect, useMemo } from 'react'
 import { Contract } from '@ethersproject/contracts'

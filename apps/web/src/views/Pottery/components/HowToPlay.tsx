@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { Flex, Text, Card, Box } from '@pancakeswap/uikit'
 import Divider from 'components/Divider'

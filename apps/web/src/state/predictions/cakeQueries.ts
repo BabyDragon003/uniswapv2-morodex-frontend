@@ -1,4 +1,3 @@
-import { UserResponse, BetResponse, RoundResponse } from './responseType'
 
 export interface UserResponseCAKE extends UserResponse<BetResponseCAKE> {
   totalCAKE: string

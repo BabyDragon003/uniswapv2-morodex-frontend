@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/aptos-swap-sdk'
 import {
   AddIcon,
@@ -23,6 +22,32 @@ interface ConfirmRemoveLiquidityModalProps {
   title: string
   customOnDismiss: () => void
   attemptingTxn: boolean
+  pair?: Pair
+  hash: string
+  parsedAmounts: {
+    [Field.LIQUIDITY_PERCENT]: Percent
+    [Field.LIQUIDITY]?: CurrencyAmount<Token>
+    [Field.CURRENCY_A]?: CurrencyAmount<Currency>
+    [Field.CURRENCY_B]?: CurrencyAmount<Currency>
+  }
+  onRemove: () => void
+  liquidityErrorMessage: string
+  signatureData?: any
+  tokenA: Token
+  tokenB: Token
+  currencyA: Currency | undefined
+  currencyB: Currency | undefined
+}
+
+const ConfirmRemoveLiquidityModal: React.FC<
+  React.PropsWithChildren<InjectedModalProps & ConfirmRemoveLiquidityModalProps>
+> = ({
+  title,
+  onDismiss,
+  customOnDismiss,
+  attemptingTxn,
+  pair,
+  hash,
   parsedAmounts,
   onRemove,
   liquidityErrorMessage,

@@ -1,4 +1,3 @@
-import { FarmAuction, Predictions } from 'config/abi/types'
 import { Contract, ContractFunction } from '@ethersproject/contracts'
 import { BigNumber } from '@ethersproject/bignumber'
 

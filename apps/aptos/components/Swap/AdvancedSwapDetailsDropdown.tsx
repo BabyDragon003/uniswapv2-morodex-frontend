@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDetails'
 
@@ -23,3 +22,4 @@ export default function AdvancedSwapDetailsDropdown({ trade, ...rest }: Advanced
       <AdvancedSwapDetails {...rest} trade={trade ?? lastTrade ?? undefined} />
     </AdvancedDetailsFooter>
   )
+}

@@ -1,4 +1,3 @@
-import { Flex, Heading, Skeleton, Text, Balance } from '@pancakeswap/uikit'
 import cakeAbi from 'config/abi/cake.json'
 import { bscTokens } from '@pancakeswap/tokens'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: 
            border-left: 1px ${theme.colors.inputSecondary} solid;
          }
        `
+      : `border-left: 1px ${theme.colors.inputSecondary} solid;
+         padding: 0 8px;
+         ${theme.mediaQueries.sm} {
+           padding: 0 16px;
+         }
+       `}
+
+  ${({ noDesktopBorder, theme }) =>
+    noDesktopBorder &&
+    `${theme.mediaQueries.md} {
+           padding: 0;
+           border-left: none;
+         }
+       `}
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 16px 8px;
+  margin-top: 24px;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas:
+    'a d'
+    'b e'
+    'c f';
+
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-gap: 16px;
   }

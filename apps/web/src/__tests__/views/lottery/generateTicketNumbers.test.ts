@@ -1,4 +1,3 @@
-import generateTicketNumbers from 'views/Lottery/components/BuyTicketsModal/generateTicketNumbers'
 
 const withoutExistingNumbers = [
   {

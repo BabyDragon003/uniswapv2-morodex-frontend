@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 
 interface PageMetaProps {
   title: string

@@ -1,4 +1,3 @@
-import { formatEther } from '@ethersproject/units'
 import { FACTORY_ADDRESS } from '@pancakeswap/sdk'
 import { getUnixTime, sub } from 'date-fns'
 import { gql } from 'graphql-request'

@@ -1,4 +1,3 @@
-import { SerializedFarmPublicData } from './types'
 
 /**
  * Returns the first farm with a quote token that matches from an array of preferred quote tokens

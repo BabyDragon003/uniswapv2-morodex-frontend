@@ -1,4 +1,3 @@
-import { configureScope } from '@sentry/nextjs'
 import { Dispatch } from '@reduxjs/toolkit'
 import { resetUserState, toggleFarmTransactionModal } from 'state/global/actions'
 import { PREDICTION_TOOLTIP_DISMISS_KEY } from 'config/constants'

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useModal } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { getBunnySpecialXmasContract } from 'utils/contractHelpers'

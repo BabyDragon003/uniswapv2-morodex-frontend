@@ -1,4 +1,3 @@
-import { Box, CardBody, CardProps, Flex, Text, TokenPairImage, FlexGap, Skeleton, Pool } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { vaultPoolConfig } from 'config/constants/pools'
@@ -23,6 +22,32 @@ const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
 interface CakeVaultProps extends CardProps {
   pool: Pool.DeserializedPool<Token>
   showStakedOnly: boolean
+  defaultFooterExpanded?: boolean
+  showICake?: boolean
+  showSkeleton?: boolean
+}
+
+interface CakeVaultDetailProps {
+  isLoading?: boolean
+  account: string
+  pool: Pool.DeserializedPool<Token>
+  vaultPool: DeserializedCakeVault
+  accountHasSharesStaked: boolean
+  defaultFooterExpanded?: boolean
+  showICake?: boolean
+  performanceFeeAsDecimal: number
+}
+
+export const CakeVaultDetail: React.FC<React.PropsWithChildren<CakeVaultDetailProps>> = ({
+  isLoading = false,
+  account,
+  pool,
+  vaultPool,
+  accountHasSharesStaked,
+  showICake,
+  performanceFeeAsDecimal,
+  defaultFooterExpanded,
+}) => {
   const { t } = useTranslation()
 
   const isLocked = (vaultPool as DeserializedLockedCakeVault).userData.locked

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { getNftSaleAddress } from 'utils/addressHelpers'
 import { getPancakeSquadContract } from 'utils/contractHelpers'
 import { multicallv2 } from 'utils/multicall'

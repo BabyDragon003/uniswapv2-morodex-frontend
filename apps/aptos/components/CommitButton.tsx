@@ -1,4 +1,3 @@
-import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { useAccount } from '@pancakeswap/awgmi'
 import { useIsMounted } from '@pancakeswap/hooks'
 import { useActiveNetwork } from 'hooks/useNetwork'
@@ -23,3 +22,12 @@ export const CommitButton = (props: ButtonProps) => {
   return (
     <Button
       {...props}
+      onClick={(e) => {
+        if (!isWrongNetwork) {
+          props.onClick?.(e)
+        }
+      }}
+      {...(isWrongNetwork && wrongNetworkProps)}
+    />
+  )
+}

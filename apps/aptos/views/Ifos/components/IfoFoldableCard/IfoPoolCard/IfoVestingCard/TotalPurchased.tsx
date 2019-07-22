@@ -1,4 +1,3 @@
-import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { LightGreyCard } from 'components/Card'
 import { TokenImage } from 'components/TokenImage'
 import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
