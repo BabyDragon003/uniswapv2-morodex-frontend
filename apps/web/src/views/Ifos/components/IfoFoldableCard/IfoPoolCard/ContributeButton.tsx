@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { Ifo, PoolIds } from 'config/constants/types'
-import useTokenBalance from 'hooks/useTokenBalance'
-import { useCurrentBlock } from 'state/block/hooks'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import ContributeModal from './ContributeModal'
-import GetTokenModal from './GetTokenModal'
 
 interface Props {
   poolId: PoolIds

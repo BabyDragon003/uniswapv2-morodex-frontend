@@ -1,3 +1,4 @@
+import React from "react";
 import { Image, Box } from "@pancakeswap/uikit";
 import { SpinnerProps } from "./types";
 

@@ -1,3 +1,4 @@
+import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 export const SlideSvgLight: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (

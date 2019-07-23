@@ -1,13 +1,8 @@
+import { useEffect, useCallback, useState, useMemo, useRef, createContext } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
 import { useRouter } from 'next/router'
 import { useAccount } from '@pancakeswap/awgmi'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { usePriceCakeUsdc } from 'hooks/useStablePrice'
-import {
-  Image,
-  Heading,
-  Toggle,
   Text,
   Flex,
   Box,

@@ -1,13 +1,8 @@
+import { describe, it, expect } from 'vitest'
 
 import { Fraction, JSBI } from '@pancakeswap/aptos-swap-sdk'
 
 import formatAmountDisplay from '../formatAmountDisplay'
-
-describe('formatAmountDisplay', () => {
-  it('should show 8 decimals only', () => {
-    // 0.01234567899
-    const number1 = new Fraction(JSBI.BigInt(1234567899), JSBI.BigInt(100000000000))
-
     expect(formatAmountDisplay(number1)).toBe('0.01234567')
 
     // Should not show scientific number

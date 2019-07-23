@@ -1,13 +1,8 @@
+import { useEffect } from 'react'
 import { Box, PancakeTheme } from '@pancakeswap/uikit'
 import { darkTheme, lightTheme } from 'components/layerZero/theme'
 
 declare global {
-  interface Window {
-    aptosBridge?: any
-  }
-  interface Document {
-    querySelector?: any
-  }
 }
 
 export const LayerZeroWidget = ({ theme }: { theme: PancakeTheme }) => {

@@ -1,3 +1,4 @@
+import { Trade, Currency, CurrencyAmount, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   AutoColumn,

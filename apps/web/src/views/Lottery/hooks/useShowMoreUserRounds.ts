@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { useState } from 'react'
 import { useAppDispatch } from 'state'
 import { fetchAdditionalUserLotteries } from 'state/lottery'

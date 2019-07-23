@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { ArrowBackIcon, ArrowForwardIcon, Box, Flex, NextLinkFromReactRouter, Skeleton, Text } from '@pancakeswap/uikit'
 import { ITEMS_PER_INFO_TABLE_PAGE } from 'config/constants/info'
 import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'

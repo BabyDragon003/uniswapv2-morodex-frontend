@@ -1,3 +1,4 @@
+import JSBI from 'jsbi'
 
 export { JSBI }
 

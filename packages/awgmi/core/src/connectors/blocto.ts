@@ -1,13 +1,8 @@
+import type { AptosProviderInterface, AptosProviderConfig } from '@blocto/sdk'
 import { Types } from 'aptos'
 import { Chain } from '../chain'
 import {
   ChainNotConfiguredError,
-  ConnectorNotFoundError,
-  ConnectorUnauthorizedError,
-  UserRejectedRequestError,
-} from '../errors'
-import { Address } from '../types'
-import { Connector, ConnectorData, ConnectorTransactionResponse } from './base'
 import { Account, SignMessagePayload, SignMessageResponse } from './types'
 
 declare global {

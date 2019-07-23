@@ -1,3 +1,4 @@
+import React from "react";
 import { BoxProps } from "../Box";
 import BaseMenu from "./BaseMenu";
 import { InlineMenuContainer } from "./styles";

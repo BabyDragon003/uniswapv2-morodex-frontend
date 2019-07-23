@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { CheckmarkCircleIcon, CheckmarkCircleFillIcon, Tag, useTooltip } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { ethersToBigNumber } from '@pancakeswap/utils/bigNumber'
-import { REWARD_RATE } from 'state/predictions/config'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
-import { formatTokenv2 } from '../../helpers'
-
-interface EnteredTagProps {
-  amount?: BigNumber
   hasClaimed?: boolean
   multiplier: string
 }

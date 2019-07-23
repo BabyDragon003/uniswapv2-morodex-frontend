@@ -1,13 +1,8 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { Call, createMulticall } from '@pancakeswap/multicall'
 import { ChainId, Currency, CurrencyAmount } from '@pancakeswap/sdk'
 
 import { wrappedCurrencyAmount } from '../utils/currency'
-import { getOutputToken } from '../utils/pair'
-import IStableSwapInfoABI from '../abis/InfoStableSwap.json'
-import { StableSwapPair, Provider, StableSwapFeeRaw } from '../types'
-import { STABLE_SWAP_INFO_ADDRESS } from '../constants'
-
-export function getStableSwapFeeCall(pair: StableSwapPair, inputAmount: CurrencyAmount<Currency>): Call {
   const { chainId } = inputAmount.currency
   const wrappedInputAmount = wrappedCurrencyAmount(inputAmount, chainId)
   if (!wrappedInputAmount) {

@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-continue */
 /* eslint-disable no-await-in-loop */
 import { AptosClient } from 'aptos'

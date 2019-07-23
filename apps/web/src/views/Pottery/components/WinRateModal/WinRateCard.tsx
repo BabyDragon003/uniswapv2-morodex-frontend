@@ -1,13 +1,8 @@
+import { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Flex, Text, Input, CheckmarkIcon, PencilIcon, IconButton } from '@pancakeswap/uikit'
 import { WinRateCalculatorState } from 'views/Pottery/hooks/useWinRateCalculator'
-import { CalculatorMode } from '../../types'
-
-const WinRateWrapper = styled(Box)`
-  background: linear-gradient(180deg, #53dee9, #7645d9);
-  padding: 1px;
-  width: 100%;
   border-radius: ${({ theme }) => theme.radii.default};
 `
 

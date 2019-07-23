@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Text, Link } from '@pancakeswap/uikit'
 
 const ItamWarning = () => {

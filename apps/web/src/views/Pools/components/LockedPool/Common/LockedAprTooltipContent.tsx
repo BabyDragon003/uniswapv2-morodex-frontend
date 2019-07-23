@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 
 export default function LockedAprTooltipContent({ boostedYieldAmount }) {
   const { t } = useTranslation()

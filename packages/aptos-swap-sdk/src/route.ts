@@ -1,13 +1,8 @@
+/* eslint-disable no-return-assign */
 import invariant from 'tiny-invariant'
 import { Price } from '@pancakeswap/swap-sdk-core'
 import { Pair } from './pair'
 import { Currency } from './currency'
-
-export class Route<TInput extends Currency, TOutput extends Currency> {
-  public readonly pairs: Pair[]
-
-  public readonly path: Currency[]
-
   public readonly input: TInput
 
   public readonly output: TOutput

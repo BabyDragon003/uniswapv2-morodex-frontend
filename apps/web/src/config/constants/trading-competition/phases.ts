@@ -1,3 +1,4 @@
+export const REGISTRATION = 'REGISTRATION'
 export const LIVE = 'LIVE'
 export const FINISHED = 'FINISHED'
 export const CLAIM = 'CLAIM'

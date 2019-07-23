@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import {
   Box,
   Flex,
   Grid,
-  Text,
-  CogIcon,
-  SellIcon,
-  WalletFilledIcon,
-  CameraIcon,
-  BinanceIcon,
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'

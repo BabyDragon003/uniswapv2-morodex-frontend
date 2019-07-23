@@ -1,13 +1,8 @@
+// ***********************************************
 // For more comprehensive examples of custom
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-
-import { JsonRpcProvider } from '@ethersproject/providers'
-import { Wallet } from '@ethersproject/wallet'
-import { Eip1193Bridge } from '@ethersproject/experimental/lib/eip1193-bridge'
-
-/**
  * This is random key from https://asecuritysite.com/encryption/ethadd
  * One test in swap.test.ts requires to have some BNB amount available to test swap confirmation modal
  * Seems that there are some problems with using Cypress.env('INTEGRATION_TEST_PRIVATE_KEY') in CI

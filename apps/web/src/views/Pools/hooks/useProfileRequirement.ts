@@ -1,3 +1,4 @@
+import { useProfile } from 'state/profile/hooks'
 import { Pool } from '@pancakeswap/uikit'
 import { useMemo } from 'react'
 import { Token } from '@pancakeswap/sdk'

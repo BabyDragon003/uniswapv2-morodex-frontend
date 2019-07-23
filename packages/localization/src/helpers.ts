@@ -1,3 +1,4 @@
+import { EN } from './config/languages'
 
 const publicUrl = process.env.NEXT_PUBLIC_APEX_URL || ''
 

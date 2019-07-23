@@ -1,13 +1,8 @@
+import { NftFilter, NftActivityFilter, MarketEvent, NftAttribute } from 'state/nftMarket/types'
 import { useAtom } from 'jotai'
 import cloneDeep from 'lodash/cloneDeep'
 import { nftMarketFiltersAtom, nftMarketActivityFiltersAtom, tryVideoNftMediaAtom } from 'state/nftMarket/atoms'
 import { useCallback } from 'react'
-
-const initialNftFilterState: NftFilter = {
-  activeFilters: {},
-  showOnlyOnSale: true,
-  ordering: {
-    field: 'currentAskPrice',
     direction: 'asc',
   },
 }

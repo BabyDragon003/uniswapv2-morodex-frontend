@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import { TokenInfo } from '@pancakeswap/token-lists'
 import { Token } from '@pancakeswap/aptos-swap-sdk'
 import { isStructTag } from '@pancakeswap/awgmi'
 
-export function filterTokens(tokens: Token[], search: string): Token[] {
-  if (search.length === 0) return tokens
-
-  if (isStructTag(search)) {
-    return tokens.filter((token) => token.address === search)
-  }
 
   const lowerSearchParts = search
     .toLowerCase()

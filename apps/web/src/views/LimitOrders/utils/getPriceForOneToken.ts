@@ -1,3 +1,4 @@
+import { CurrencyAmount, Price, Currency } from '@pancakeswap/sdk'
 
 /**
  * Given certain amount if input and output tokens

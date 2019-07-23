@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { PoolIds } from 'config/constants/types'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'

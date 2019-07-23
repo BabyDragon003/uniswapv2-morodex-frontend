@@ -1,13 +1,8 @@
+/* eslint-disable react/no-array-index-key */
 import {
   ArrowUpIcon,
   Box,
   Button,
-  CloseIcon,
-  Flex,
-  Heading,
-  IconButton,
-  LinkExternal,
-  ModalBody,
   ModalContainer,
   ModalHeader,
   ModalProps,

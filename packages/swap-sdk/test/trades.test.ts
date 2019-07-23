@@ -1,13 +1,8 @@
+import { TradeType, Percent, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import JSBI from 'jsbi'
 import { isTradeBetter } from '../src/trade'
 import { Pair, Route, Trade } from '../src/entities'
 import { ChainId } from '../src/constants'
-
-const BETTER_TRADE_LESS_HOPS_THRESHOLD = new Percent(JSBI.BigInt(50), JSBI.BigInt(10000))
-
-describe('isTradeBetter', () => {
-  const token1 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000001', 18, '1')
-  const token2 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000002', 18, '2')
   const token3 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000003', 18, '3')
 
   const pair12 = new Pair(

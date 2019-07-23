@@ -1,3 +1,4 @@
+import { setUser } from '@sentry/nextjs'
 import { useEffect } from 'react'
 import { useAccount } from 'wagmi'
 

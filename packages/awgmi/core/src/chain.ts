@@ -1,3 +1,4 @@
+export type BlockExplorer = { name: string; url: string; params?: Record<string, string> }
 
 export type Chain = {
   /** ID in number form */

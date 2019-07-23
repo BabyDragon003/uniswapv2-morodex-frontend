@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, NextLinkFromReactRouter, Button } from '@pancakeswap/uikit'
 import { ReactNode, useCallback, useContext, useEffect } from 'react'
 

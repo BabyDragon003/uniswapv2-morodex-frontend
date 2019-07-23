@@ -1,3 +1,4 @@
+import { Currency, Token, ChainId } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN } from '@pancakeswap/awgmi'
 import memoize from 'lodash/memoize'
 import { useHttpLocations } from '@pancakeswap/hooks'

@@ -1,13 +1,8 @@
+import { ChainId, Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import { Text, QuestionHelper, AutoColumn, AutoRow } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useTranslation } from '@pancakeswap/localization'
-
-import { SUGGESTED_BASES } from 'config/constants/exchange'
-import { CurrencyLogo } from '../Logo'
-import { CommonBasesType } from './types'
-
-const ButtonWrapper = styled.div`
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;

@@ -1,3 +1,4 @@
+import { FetchStatus } from 'config/constants/types'
 import { useBCakeFarmBoosterContract } from 'hooks/useContract'
 import useSWR from 'swr'
 import useSWRImmutable from 'swr/immutable'

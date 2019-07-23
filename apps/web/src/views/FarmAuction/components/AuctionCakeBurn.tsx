@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Text, Flex, Skeleton, Image, Balance } from '@pancakeswap/uikit'
 import { useFarmAuctionContract } from 'hooks/useContract'
 import { useIntersectionObserver } from '@pancakeswap/hooks'

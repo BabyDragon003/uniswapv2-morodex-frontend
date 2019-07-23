@@ -1,3 +1,4 @@
+import { Grid, Heading, PageHeader } from '@pancakeswap/uikit'
 import useSWR from 'swr'
 import dynamic from 'next/dynamic'
 import { FetchStatus } from 'config/constants/types'

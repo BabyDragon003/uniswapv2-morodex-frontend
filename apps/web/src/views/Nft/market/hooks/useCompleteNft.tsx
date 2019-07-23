@@ -1,13 +1,8 @@
+import { useAccount } from 'wagmi'
 import { FetchStatus } from 'config/constants/types'
 import { useCallback } from 'react'
 import { useErc721CollectionContract } from 'hooks/useContract'
 import { getNftApi, getNftsMarketData, getNftsOnChainMarketData } from 'state/nftMarket/helpers'
-import { NftLocation, NftToken, TokenMarketData } from 'state/nftMarket/types'
-import { useProfile } from 'state/profile/hooks'
-import useSWR from 'swr'
-import { NOT_ON_SALE_SELLER } from 'config/constants'
-import { isAddress } from 'utils'
-
 const useNftOwn = (collectionAddress: string, tokenId: string, marketData?: TokenMarketData) => {
   const { address: account } = useAccount()
   const { reader: collectionContract } = useErc721CollectionContract(collectionAddress)

@@ -1,3 +1,4 @@
+export const baseNftFields = `
   tokenId
   metadataUrl
   currentAskPrice

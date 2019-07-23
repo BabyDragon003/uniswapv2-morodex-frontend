@@ -1,3 +1,4 @@
+import { act, renderHook } from '@testing-library/react-hooks'
 import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
 import { useState } from 'react'
 import useSWR from 'swr'

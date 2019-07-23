@@ -1,3 +1,4 @@
+import { ifos } from 'config/constants/ifo'
 import CurrentIfo from './CurrentIfo'
 import SoonIfo from './SoonIfo'
 
