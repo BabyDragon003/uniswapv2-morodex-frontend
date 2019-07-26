@@ -3,6 +3,12 @@ import { FooterLinkType } from "../../../components/Footer/types";
 
 export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
   {
+    label: t("About"),
+    items: [
+      {
+        label: t("Contact"),
+        href: "https://docs.dapp-frontend-prince.web.app/contact-us",
+        isHighlighted: true,
       },
       {
         label: t("Brand"),

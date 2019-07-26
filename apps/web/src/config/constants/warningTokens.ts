@@ -3,6 +3,12 @@ import { ChainId, ERC20Token } from '@pancakeswap/sdk'
 export const bscWarningTokens = {
   pokemoney: new ERC20Token(ChainId.BSC, '0x32ff5b4C3B1744F0344D96fA2f87799Ed2805749', 18, 'PMY', 'Pokemoney Coin', ''),
   free: new ERC20Token(
+    ChainId.BSC,
+    '0x880BCe9321c79cAc1D290De6d31DDE722C606165',
+    8,
+    'FREE',
+    'Freedom Protocol Token',
+    '',
   ),
   safemoon: new ERC20Token(
     ChainId.BSC,
@@ -12,14 +18,3 @@ export const bscWarningTokens = {
     'Safemoon Token',
     'https://safemoon.net/',
   ),
-  gala: new ERC20Token(
-    ChainId.BSC,
-    '0x7dDEE176F665cD201F93eEDE625770E2fD911990',
-    18,
-    'GALA',
-    'pTokens GALA',
-    'https://games.gala.com/',
-  ),
-}
-
-export const bscTestnetWarningTokens = {}

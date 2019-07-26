@@ -3,6 +3,12 @@ import Text from "../Text/Text";
 import Dropdown from "../Dropdown/Dropdown";
 import Button from "../Button/Button";
 import LanguageIcon from "../Svg/Icons/Language";
+import MenuButton from "./MenuButton";
+import { Colors } from "../../theme";
+import { Language } from "./types";
+import { Position } from "../Dropdown/types";
+import { Scale } from "../Button/types";
+
 interface Props {
   currentLang: string;
   langs: Language[];

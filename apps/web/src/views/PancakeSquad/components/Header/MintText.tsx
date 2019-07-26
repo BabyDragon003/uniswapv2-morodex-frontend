@@ -3,6 +3,12 @@ import { ContextApi } from '@pancakeswap/localization'
 
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 
+type PreEventProps = {
+  t: ContextApi['t']
+  saleStatus: SaleStatusEnum
+  userStatus: UserStatusEnum
+  numberTicketsOfUser: number
+  numberTokensOfUser: number
 }
 
 const MintText: React.FC<React.PropsWithChildren<PreEventProps>> = ({

@@ -3,6 +3,12 @@ import styled from "styled-components";
 import BigNumber from "bignumber.js";
 import partition from "lodash/partition";
 import { useTranslation } from "@pancakeswap/localization";
+import { useIntersectionObserver } from "@pancakeswap/hooks";
+import latinise from "@pancakeswap/utils/latinise";
+import { useRouter } from "next/router";
+
+import PoolTabButtons from "./PoolTabButtons";
+import { ViewMode } from "../../components/ToggleView/ToggleView";
 import { Flex, Text, SearchInput, Select, OptionProps } from "../../components";
 
 import { DeserializedPool, DeserializedPoolVault } from "./types";
@@ -12,27 +18,6 @@ const PoolControlsView = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  position: relative;
-
-  justify-content: space-between;
-  flex-direction: column;
-  margin-bottom: 32px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 16px 32px;
-    margin-bottom: 0;
-  }
-`;
-
-const FilterContainer = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px 0px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     padding: 0;
   }

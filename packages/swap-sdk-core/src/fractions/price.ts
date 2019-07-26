@@ -3,6 +3,12 @@ import invariant from 'tiny-invariant'
 
 import { BigintIsh, Rounding } from '../constants'
 import { Currency } from '../currency'
+import { Fraction } from './fraction'
+import { CurrencyAmount } from './currencyAmount'
+
+export class Price<TBase extends Currency, TQuote extends Currency> extends Fraction {
+  public readonly baseCurrency: TBase // input i.e. denominator
+
   public readonly quoteCurrency: TQuote // output i.e. numerator
 
   public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Token
@@ -12,27 +18,6 @@ import { Currency } from '../currency'
    * @param args
    */
   public constructor(
-    ...args:
-      | [TBase, TQuote, BigintIsh, BigintIsh]
-      | [{ baseAmount: CurrencyAmount<TBase>; quoteAmount: CurrencyAmount<TQuote> }]
-  ) {
-    let baseCurrency: TBase
-    let quoteCurrency: TQuote
-    let denominator: BigintIsh
-    let numerator: BigintIsh
-
-    if (args.length === 4) {
-      // eslint-disable-next-line @typescript-eslint/no-extra-semi
-      ;[baseCurrency, quoteCurrency, denominator, numerator] = args
-    } else {
-      const result = args[0].quoteAmount.divide(args[0].baseAmount)
-      ;[baseCurrency, quoteCurrency, denominator, numerator] = [
-        args[0].baseAmount.currency,
-        args[0].quoteAmount.currency,
-        result.denominator,
-        result.numerator,
-      ]
-    }
     super(numerator, denominator)
 
     this.baseCurrency = baseCurrency

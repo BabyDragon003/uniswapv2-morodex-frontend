@@ -3,3 +3,4 @@ describe('Trading Competition Page', () => {
     cy.visit('/competition')
     cy.get('#pcs-competition-page').should('be.visible')
   })
+})

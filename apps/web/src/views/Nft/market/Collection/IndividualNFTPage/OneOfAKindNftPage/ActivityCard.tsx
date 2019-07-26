@@ -3,6 +3,12 @@ import { Flex, Card, Text, Table, Th, useMatchBreakpoints, PaginationButton } fr
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { Activity, NftToken } from 'state/nftMarket/types'
+import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useAppDispatch } from '../../../../../../state'
+import NoNftsImage from '../../../components/Activity/NoNftsImage'
+import TableLoader from '../../../../../../components/TableLoader'
+import { getTokenActivity } from '../../../../../../state/nftMarket/helpers'
+import { sortActivity } from '../../../ActivityHistory/utils/sortActivity'
 import ActivityRow from '../../../components/Activity/ActivityRow'
 
 interface ActivityCardProps {

@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import ScoreHeader from '../../../components/YourScore/ScoreHeader'
 import RibbonWithImage from '../../../components/RibbonWithImage'
 import { YourScoreProps } from '../../../types'
+import FlippersShare from '../../../pngs/easter-flippers-share.png'
+import StormShare from '../../../pngs/easter-storm-share.png'
+import CakersShare from '../../../pngs/easter-cakers-share.png'
+import ScoreCard from '../../../components/YourScore/ScoreCard'
+import EasterUserPrizeGrid from './EasterUserPrizeGrid'
+
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
@@ -12,27 +18,6 @@ const Wrapper = styled.div`
 
 const EasterYourScore: React.FC<React.PropsWithChildren<YourScoreProps>> = ({
   hasRegistered = false,
-  account,
-  userTradingInformation,
-  profile,
-  isLoading,
-  userLeaderboardInformation,
-  currentPhase,
-  userCanClaimPrizes,
-  finishedAndPrizesClaimed,
-  finishedAndNothingToClaim,
-  onClaimSuccess,
-}) => {
-  const { t } = useTranslation()
-  const showRibbon = !account || isLoading || hasRegistered
-
-  return (
-    <Wrapper>
-      {showRibbon && (
-        <RibbonWithImage
-          imageComponent={<ScoreHeader profile={profile} isLoading={isLoading} />}
-          ribbonDirection="down"
-          isCardHeader
         >
           {t('Your Score')}
         </RibbonWithImage>

@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "contract AggregatorV3Interface",
+        "name": "_oracle",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_adminAddress",
         "type": "address"
       },
       {

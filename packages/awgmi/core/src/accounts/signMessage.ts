@@ -18,5 +18,3 @@ export async function signMessage(args: SignMessageArgs): Promise<SignMessageRes
   } catch (error) {
     if ((error as WalletProviderError).code === 4001) throw new UserRejectedRequestError(error)
     throw error
-  }
-}

@@ -3,6 +3,12 @@ import {
   Box,
   CheckmarkCircleIcon,
   Flex,
+  MedalBronzeIcon,
+  MedalGoldIcon,
+  MedalPurpleIcon,
+  MedalSilverIcon,
+  MedalTealIcon,
+  Tab,
   TabMenu,
   Text,
 } from '@pancakeswap/uikit'

@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { createAction, createReducer } from '@reduxjs/toolkit'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
+import { useCurrencyBalance } from 'hooks/Balances'
+import { PairState, usePair } from 'hooks/usePairs'
+import useTotalSupply from 'hooks/useTotalSupply'
+import { useAtom, useAtomValue } from 'jotai'
+import { atomWithReducer } from 'jotai/utils'
+import { useCallback, useMemo } from 'react'
 
 export enum Field {
   CURRENCY_A = 'currencyA',
@@ -12,27 +18,6 @@ export enum Field {
 const typeInput = createAction<{ field: Field; typedValue: string; noLiquidity: boolean }>('mint/typeInputMint')
 const resetMintState = createAction<void>('mint/resetMintState')
 
-export interface MintState {
-  readonly independentField: Field
-  readonly typedValue: string
-  readonly otherTypedValue: string // for the case when there's no liquidity
-}
-
-const initialState: MintState = {
-  independentField: Field.CURRENCY_A,
-  typedValue: '',
-  otherTypedValue: '',
-}
-
-const reducer = createReducer<MintState>(initialState, (builder) =>
-  builder
-    .addCase(resetMintState, () => initialState)
-    .addCase(typeInput, (state, { payload: { field, typedValue, noLiquidity } }) => {
-      if (noLiquidity) {
-        // they're typing into the field they've last typed in
-        if (field === state.independentField) {
-          return {
-            ...state,
             independentField: field,
             typedValue,
           }

@@ -3,6 +3,12 @@ import { getProvider } from '../providers'
 
 export type FetchAccountResourceArgs = {
   /** Address */
+  address: string
+  /** Network to use for provider */
+  networkName?: string
+  /** String representation of an on-chain Move struct type */
+  resourceType: string
+}
 
 export type FetchAccountResourceResult<T = unknown> = Omit<Types.MoveResource, 'data'> & { data: T }
 

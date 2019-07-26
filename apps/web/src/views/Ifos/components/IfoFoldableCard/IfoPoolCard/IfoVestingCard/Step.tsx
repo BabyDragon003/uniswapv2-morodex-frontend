@@ -3,6 +3,12 @@ import { useMemo } from 'react'
 import { format } from 'date-fns'
 import { useTranslation } from '@pancakeswap/localization'
 import { LogoIcon, CheckmarkCircleIcon, CircleOutlineIcon, Flex, Text } from '@pancakeswap/uikit'
+
+const sharedFlexStyles = `
+  min-width: 86px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 const ExpiredWrapper = styled(Flex)`

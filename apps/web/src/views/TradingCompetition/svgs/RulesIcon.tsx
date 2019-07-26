@@ -3,6 +3,12 @@ import { Svg, SvgProps } from '@pancakeswap/uikit'
 const Prizes: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (
     <Svg viewBox="0 0 166 88" {...props}>
+      <ellipse
+        cx="23.0051"
+        cy="18.3632"
+        rx="13.0661"
+        ry="8.88493"
+        transform="rotate(-30 23.0051 18.3632)"
         fill="#8B5403"
       />
       <path

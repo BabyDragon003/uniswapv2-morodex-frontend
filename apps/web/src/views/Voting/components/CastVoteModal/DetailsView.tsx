@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 import { Flex, LinkExternal, Text, Box, HelpIcon, useTooltip, RocketIcon, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
+import { getBlockExploreLink } from 'utils'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
+import { ModalInner, VotingBoxBorder, VotingBoxCardInner } from './styles'
+
+const StyledLinkExternal = styled(LinkExternal)`
   display: inline-flex;
   font-size: 14px;
   > svg {
@@ -12,27 +18,6 @@ import styled from 'styled-components'
 
 const FixedTermWrapper = styled(Box)<{ expired?: boolean }>`
   width: 100%;
-  margin: 16px 0;
-  padding: 1px 1px 3px 1px;
-  background: ${({ theme, expired }) => (expired ? theme.colors.warning : 'linear-gradient(180deg, #53dee9, #7645d9)')};
-  border-radius: ${({ theme }) => theme.radii.default};
-`
-
-const FixedTermCardInner = styled(Box)<{ expired?: boolean }>`
-  position: relative;
-  z-index: 1;
-  padding: 8px 12px;
-  background: ${({ theme }) => theme.colors.backgroundAlt};
-  border-radius: ${({ theme }) => theme.radii.default};
-
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
     border-radius: ${({ theme }) => theme.radii.default};
     background: ${({ theme, expired }) => (expired ? 'rgba(255, 178, 55, 0.098)' : theme.colors.gradientBubblegum)};

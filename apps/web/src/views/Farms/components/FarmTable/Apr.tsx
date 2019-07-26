@@ -3,6 +3,12 @@ import ApyButton from 'views/Farms/components/FarmCard/ApyButton'
 import BigNumber from 'bignumber.js'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
+import { Skeleton } from '@pancakeswap/uikit'
+import { useActiveChainId } from 'hooks/useActiveChainId'
+
+export interface AprProps {
+  value: string
+  multiplier: string
   pid: number
   lpLabel: string
   lpSymbol: string
@@ -12,27 +18,6 @@ import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
   quoteTokenAddress?: string
   cakePrice: BigNumber
   originalValue: number
-  hideButton?: boolean
-  strikethrough?: boolean
-  useTooltipText?: boolean
-  boosted?: boolean
-  stableSwapAddress?: string
-  stableLpFee?: number
-}
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.text};
-
-  button {
-    width: 20px;
-    height: 20px;
-
-    svg {
-      path {
-        fill: ${({ theme }) => theme.colors.textSubtle};
-      }
     }
   }
 `

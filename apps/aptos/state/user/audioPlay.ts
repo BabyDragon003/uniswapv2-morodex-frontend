@@ -18,5 +18,3 @@ const userAudioAtomWithLocalStorage = atom(
 )
 
 export function useAudioPlay() {
-  return useAtom(userAudioAtomWithLocalStorage)
-}

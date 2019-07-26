@@ -3,6 +3,12 @@ import {
   CoinStoreResource,
   coinStoreResourcesFilter,
   FetchAccountResourcesResult,
+  FetchCoinResult,
+  isHexStringEquals,
+  unwrapTypeFromString,
+  wrapCoinStoreTypeTag,
+} from '@pancakeswap/awgmi/core'
+import { UseQueryResult } from '@tanstack/react-query'
 import { useCallback, useMemo } from 'react'
 import { QueryConfig } from '../types'
 import { useAccountResources, UseAccountResourcesArgs, UseAccountResourcesConfig } from './useAccountResources'
@@ -12,27 +18,6 @@ import { useNetwork } from './useNetwork'
 export type UseAccountBalancesResult = { value: string; formatted: string } & FetchCoinResult
 
 type UseAccountBalances<TData> = QueryConfig<UseAccountBalancesResult, Error, TData>
-
-type UseAccountBalancesSelect<TData> = Pick<UseAccountBalances<TData>, 'select'>
-
-export type UseAccountBalancesConfig<TData> = Omit<UseAccountResourcesConfig, 'select'> &
-  UseAccountBalancesSelect<TData>
-
-const accountCoinStoreResourceSelect = (resource: FetchAccountResourcesResult) => {
-  return resource.filter(coinStoreResourcesFilter)
-}
-
-export function useAccountBalances<TData = unknown>({
-  address,
-  cacheTime,
-  enabled,
-  isDataEqual,
-  keepPreviousData,
-  networkName: networkName_,
-  onError,
-  onSettled,
-  onSuccess,
-  select,
   staleTime,
   suspense,
   watch,

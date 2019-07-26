@@ -3,6 +3,12 @@ import { CheckmarkIcon, CloseIcon, LinkExternal } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { TransactionDetails } from 'state/transactions/reducer'
 import CircleLoader from '../../Loader/CircleLoader'
+
+const TransactionState = styled.div<{ pending: boolean; success?: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none !important;
   border-radius: 0.5rem;
   padding: 0.25rem 0rem;
   font-weight: 500;

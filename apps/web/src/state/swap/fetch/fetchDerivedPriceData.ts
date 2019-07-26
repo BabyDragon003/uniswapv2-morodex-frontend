@@ -3,6 +3,12 @@ import { ONE_DAY_UNIX, ONE_HOUR_SECONDS } from 'config/constants/info'
 import { getUnixTime, startOfHour, sub } from 'date-fns'
 import mapValues from 'lodash/mapValues'
 import orderBy from 'lodash/orderBy'
+import { Block } from 'state/info/types'
+import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
+import { multiQuery } from 'views/Info/utils/infoQueryHelpers'
+import { getDerivedPrices, getDerivedPricesQueryConstructor } from '../queries/getDerivedPrices'
+import { PairDataTimeWindowEnum } from '../types'
+
 const getTokenDerivedBnbPrices = async (tokenAddress: string, blocks: Block[]) => {
   const rawPrices: any | undefined = await multiQuery(
     getDerivedPricesQueryConstructor,

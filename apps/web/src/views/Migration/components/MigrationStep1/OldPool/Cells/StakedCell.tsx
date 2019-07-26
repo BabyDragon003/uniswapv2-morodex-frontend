@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
 import React from 'react'
+import styled from 'styled-components'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { convertSharesToCake } from 'views/Pools/helpers'
+import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
+
 interface StakedCellProps {
   pool: Pool.DeserializedPool<Token>
   account: string

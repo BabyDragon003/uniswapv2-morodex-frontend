@@ -3,6 +3,12 @@ import { ResponseArticleType, ResponseArticleDataType, ResponseCategoriesType, C
 import { transformArticle, ArticleType, ArticleDataType } from 'views/Blog/utils/transformArticle'
 
 interface GetArticleProps {
+  url: string
+  urlParamsObject?: Record<string, any>
+}
+
+export const getArticle = async ({ url, urlParamsObject = {} }: GetArticleProps): Promise<ArticleType> => {
+  try {
     const response: ResponseArticleType = await fetchAPI(url, urlParamsObject)
     return {
       data: response.data.map((i: ResponseArticleDataType) => transformArticle(i)) ?? [],
@@ -12,27 +18,6 @@ interface GetArticleProps {
     console.error('[ERROR] Fetching Article', error)
     return {
       data: [],
-      pagination: {
-        page: 0,
-        pageSize: 0,
-        pageCount: 0,
-        total: 0,
-      },
-    }
-  }
-}
-
-export const getSingleArticle = async ({ url, urlParamsObject = {} }: GetArticleProps): Promise<ArticleDataType> => {
-  try {
-    const response = await fetchAPI(url, urlParamsObject)
-    return transformArticle(response.data as ResponseArticleDataType)
-  } catch (error) {
-    console.error('[ERROR] Fetching Single Article', error)
-    return {
-      id: 0,
-      title: '',
-      locale: '',
-      imgUrl: '',
       content: '',
       createAt: '',
       publishedAt: '',

@@ -18,27 +18,6 @@ const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
 
 interface TokenInfoProps {
   index: number
-  data: VestingData
-  fetchUserVestingData: () => void
-}
-
-const TokenInfo: React.FC<React.PropsWithChildren<TokenInfoProps>> = ({ index, data, fetchUserVestingData }) => {
-  const { vestingTitle, token } = data.ifo
-  const { vestingComputeReleasableAmount } = data.userVestingData[PoolIds.poolUnlimited]
-
-  const [expanded, setExpanded] = useState(false)
-  const shouldRenderExpand = useDelayedUnmount(expanded, 300)
-
-  useEffect(() => {
-    if (index === 0) {
-      setExpanded(true)
-    }
-  }, [index])
-
-  const toggleExpanded = () => {
-    setExpanded((prev) => !prev)
-  }
-
   const amountAvailable = useMemo(() => {
     const totalReleaseAmount = new BigNumber(vestingComputeReleasableAmount)
     return getBalanceNumber(totalReleaseAmount, token.decimals)

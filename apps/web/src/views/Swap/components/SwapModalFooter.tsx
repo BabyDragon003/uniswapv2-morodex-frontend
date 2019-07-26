@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/sdk'
 import { Button, Text, AutoRenewIcon, QuestionHelper } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
+import { Field } from 'state/swap/actions'
+import { computeTradePriceBreakdown, formatExecutionPrice, warningSeverity } from 'utils/exchange'
+import { AutoColumn } from 'components/Layout/Column'
+import { AutoRow, RowBetween, RowFixed } from 'components/Layout/Row'
+import { TOTAL_FEE, LP_HOLDERS_FEE, TREASURY_FEE, BUYBACK_FEE } from 'config/constants/info'
+import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
 
 const SwapModalFooterContainer = styled(AutoColumn)`
@@ -12,27 +18,6 @@ const SwapModalFooterContainer = styled(AutoColumn)`
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   background-color: ${({ theme }) => theme.colors.background};
 `
-
-export default function SwapModalFooter({
-  trade,
-  slippageAdjustedAmounts,
-  isEnoughInputBalance,
-  onConfirm,
-  swapErrorMessage,
-  disabledConfirm,
-}: {
-  trade: Trade<Currency, Currency, TradeType>
-  slippageAdjustedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
-  isEnoughInputBalance: boolean
-  onConfirm: () => void
-  swapErrorMessage?: string | undefined
-  disabledConfirm: boolean
-}) {
-  const { t } = useTranslation()
-  const [showInverted, setShowInverted] = useState<boolean>(false)
-  const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
-  const severity = warningSeverity(priceImpactWithoutFee)
-
   const totalFeePercent = `${(TOTAL_FEE * 100).toFixed(2)}%`
   const lpHoldersFeePercent = `${(LP_HOLDERS_FEE * 100).toFixed(2)}%`
   const treasuryFeePercent = `${(TREASURY_FEE * 100).toFixed(4)}%`

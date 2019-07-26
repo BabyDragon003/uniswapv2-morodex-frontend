@@ -3,6 +3,12 @@ import { createReducer } from '@reduxjs/toolkit'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 import { confirmOrderCancellation, confirmOrderSubmission, saveOrder } from 'utils/localStorageOrders'
 import {
+  addTransaction,
+  checkedTransaction,
+  clearAllTransactions,
+  finalizeTransaction,
+  SerializableTransactionReceipt,
+  TransactionType,
   clearAllChainTransactions,
   NonBscFarmTransactionType,
   FarmTransactionStatus,

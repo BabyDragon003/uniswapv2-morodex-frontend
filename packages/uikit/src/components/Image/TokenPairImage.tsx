@@ -3,6 +3,12 @@ import { TokenPairImageProps, variants } from "./types";
 import { StyledPrimaryImage, StyledSecondaryImage } from "./styles";
 import Wrapper from "./Wrapper";
 
+const TokenPairImage: React.FC<React.PropsWithChildren<TokenPairImageProps>> = ({
+  primarySrc,
+  secondarySrc,
+  width,
+  height,
+  variant = variants.DEFAULT,
   primaryImageProps = {},
   secondaryImageProps = {},
   ...props

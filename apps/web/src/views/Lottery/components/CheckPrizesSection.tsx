@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { FetchStatus, LotteryStatus } from 'config/constants/types'
+import { useTranslation } from '@pancakeswap/localization'
+import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import ClaimPrizesModal from './ClaimPrizesModal'
+import useGetUnclaimedRewards from '../hooks/useGetUnclaimedRewards'
+
 const TicketImage = styled.img`
   height: 60px;
   ${({ theme }) => theme.mediaQueries.sm} {

@@ -3,6 +3,12 @@ import { ButtonsEnum } from './types'
 
 type getCurrentButtonType = {
   saleStatus: SaleStatusEnum
+  userStatus: UserStatusEnum
+  numberTicketsOfUser: number
+}
+
+export const getCurrentButton = ({
+  userStatus,
   saleStatus,
   numberTicketsOfUser,
 }: getCurrentButtonType): ButtonsEnum => {
@@ -12,5 +18,3 @@ type getCurrentButtonType = {
   if (saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0) return ButtonsEnum.MINT
   if (saleStatus === SaleStatusEnum.Claim) return ButtonsEnum.END
 
-  return ButtonsEnum.NONE
-}

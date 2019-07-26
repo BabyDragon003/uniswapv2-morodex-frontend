@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, Balance, Pool } from '@pancakeswap/uikit'
 import { ActionContainer, ActionContent, ActionTitles } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
+import BigNumber from 'bignumber.js'
+import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { convertSharesToCake } from 'views/Pools/helpers'
+import { Token } from '@pancakeswap/sdk'
 import UnstakeButton from '../UnstakeButton'
 
 const Container = styled(ActionContainer)`
@@ -12,27 +18,6 @@ const Container = styled(ActionContainer)`
 interface StackedActionProps {
   pool: Pool.DeserializedPool<Token>
 }
-
-const Staked: React.FC<React.PropsWithChildren<StackedActionProps>> = ({ pool }) => {
-  const { stakingToken, userData, stakingTokenPrice, vaultKey } = pool
-  const { t } = useTranslation()
-
-  const stakedBalance = userData?.stakedBalance ? new BigNumber(userData.stakedBalance) : BIG_ZERO
-
-  const stakedTokenBalance = getBalanceNumber(stakedBalance, stakingToken.decimals)
-  const stakedTokenDollarBalance = getBalanceNumber(
-    stakedBalance.multipliedBy(stakingTokenPrice),
-    stakingToken.decimals,
-  )
-
-  const { vaultPoolData } = useVaultPoolByKeyV1(pool.vaultKey)
-  const { pricePerFullShare } = vaultPoolData
-  const { userShares } = vaultPoolData.userData
-
-  let cakeAsBigNumber = BIG_ZERO
-  let cakeAsNumberBalance = 0
-  if (pricePerFullShare) {
-    const { cakeAsBigNumber: cakeBigBumber, cakeAsNumberBalance: cakeBalance } = convertSharesToCake(
       userShares,
       pricePerFullShare,
     )

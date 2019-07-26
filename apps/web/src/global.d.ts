@@ -18,6 +18,3 @@ declare global {
       switchNetwork?: (networkId: string) => Promise<string>
     } & Ethereum
   }
-}
-
-export {}

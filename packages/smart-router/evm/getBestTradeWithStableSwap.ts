@@ -3,6 +3,12 @@ import { Currency, CurrencyAmount, Pair, Price, Trade, TradeType } from '@pancak
 
 import { getBestTradeFromV2ExactIn } from './getBestTradeFromV2'
 import { getStableSwapFee, getStableSwapOutputAmount } from './onchain'
+import { createTradeWithStableSwap, createTradeWithStableSwapFromV2Trade, getFeePercent } from './stableSwap'
+import { BestTradeOptions, RouteType, StableSwapPair } from './types'
+import { getOutputToken, isSamePair } from './utils/pair'
+
+export async function getBestTradeWithStableSwap(
+  baseTrade: Trade<Currency, Currency, TradeType>,
   stableSwapPairs: StableSwapPair[],
   options: BestTradeOptions,
 ) {

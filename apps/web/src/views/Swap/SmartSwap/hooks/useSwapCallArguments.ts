@@ -3,6 +3,12 @@ import { Contract } from '@ethersproject/contracts'
 import {
   Currency,
   CurrencyAmount,
+  JSBI,
+  Percent,
+  SwapParameters,
+  TradeOptions,
+  TradeOptionsDeadline,
+  TradeType,
 } from '@pancakeswap/sdk'
 import { isStableSwapPair, Trade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants'

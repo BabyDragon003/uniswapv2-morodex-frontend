@@ -3,6 +3,12 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useModal, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
+import { useAnniversaryAchievementContract } from 'hooks/useContract'
+import useCatchTxError from 'hooks/useCatchTxError'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
+import AnniversaryAchievementModal from './AnniversaryAchievementModal'
 
 interface GlobalCheckClaimStatusProps {
   excludeLocations: string[]

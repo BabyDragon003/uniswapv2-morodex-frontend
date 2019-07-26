@@ -3,6 +3,12 @@ import chunk from 'lodash/chunk'
 import { getMasterChefV1Address } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
 import { SerializedFarm } from '@pancakeswap/farms'
+import { SerializedFarmConfig } from '../../config/constants/types'
+
+const fetchFarmCalls = (farm: SerializedFarm) => {
+  const { lpAddress, token, quoteToken } = farm
+  return [
+    // Balance of token in the LP contract
     {
       address: token.address,
       name: 'balanceOf',

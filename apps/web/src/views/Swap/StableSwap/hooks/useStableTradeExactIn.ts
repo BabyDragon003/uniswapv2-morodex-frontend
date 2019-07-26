@@ -3,6 +3,12 @@ import { useCallback, useMemo, useContext, useDeferredValue } from 'react'
 import useSWR from 'swr'
 import { StableConfigContext } from './useStableConfig'
 
+export interface StableTrade {
+  tradeType: TradeType
+  inputAmount: CurrencyAmount<Currency>
+  outputAmount: CurrencyAmount<Currency>
+  executionPrice: Price<Currency, Currency>
+  priceImpact: null
   maximumAmountIn: (slippaged: Percent) => CurrencyAmount<Currency>
   minimumAmountOut: (slippaged: Percent) => CurrencyAmount<Currency>
 }

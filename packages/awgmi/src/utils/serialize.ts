@@ -3,6 +3,12 @@
  *
  * @description
  * get the reference key for the circular value
+ *
+ * @param keys the keys to build the reference key from
+ * @param cutoff the maximum number of keys to include
+ * @returns the reference key
+ */
+function getReferenceKey(keys: string[], cutoff: number) {
   return keys.slice(0, cutoff).join('.') || '.'
 }
 

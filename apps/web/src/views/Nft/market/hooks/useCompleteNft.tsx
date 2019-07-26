@@ -3,6 +3,12 @@ import { FetchStatus } from 'config/constants/types'
 import { useCallback } from 'react'
 import { useErc721CollectionContract } from 'hooks/useContract'
 import { getNftApi, getNftsMarketData, getNftsOnChainMarketData } from 'state/nftMarket/helpers'
+import { NftLocation, NftToken, TokenMarketData } from 'state/nftMarket/types'
+import { useProfile } from 'state/profile/hooks'
+import useSWR from 'swr'
+import { NOT_ON_SALE_SELLER } from 'config/constants'
+import { isAddress } from 'utils'
+
 const useNftOwn = (collectionAddress: string, tokenId: string, marketData?: TokenMarketData) => {
   const { address: account } = useAccount()
   const { reader: collectionContract } = useErc721CollectionContract(collectionAddress)
@@ -12,27 +18,6 @@ const useNftOwn = (collectionAddress: string, tokenId: string, marketData?: Toke
     collectionContract ? ['nft', 'ownerOf', collectionAddress, tokenId] : null,
     async () => collectionContract.ownerOf(tokenId),
   )
-
-  return useSWR(
-    account && isProfileInitialized && tokenOwner
-      ? ['nft', 'own', collectionAddress, tokenId, marketData?.currentSeller]
-      : null,
-    async () => {
-      let isOwn = false
-      let nftIsProfilePic = false
-      let location: NftLocation
-
-      nftIsProfilePic = tokenId === profile?.tokenId?.toString() && collectionAddress === profile?.collectionAddress
-      const nftIsOnSale = marketData ? marketData?.currentSeller !== NOT_ON_SALE_SELLER : false
-      if (nftIsOnSale) {
-        isOwn = isAddress(marketData?.currentSeller) === isAddress(account)
-        location = NftLocation.FORSALE
-      } else if (nftIsProfilePic) {
-        isOwn = true
-        location = NftLocation.PROFILE
-      } else {
-        isOwn = isAddress(tokenOwner) === isAddress(account)
-        location = NftLocation.WALLET
       }
 
       return {

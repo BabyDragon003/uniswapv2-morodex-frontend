@@ -3,6 +3,12 @@ import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import TransactionConfirmationModal from 'components/TransactionConfirmationModal'
+import { Field } from 'state/burn/actions'
+import _toNumber from 'lodash/toNumber'
+import { AddLiquidityModalHeader, PairDistribution } from './common'
+
+interface ConfirmAddLiquidityModalProps {
+  title: string
   customOnDismiss: () => void
   attemptingTxn: boolean
   hash: string

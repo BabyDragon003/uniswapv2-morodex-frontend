@@ -3,6 +3,12 @@ import { Trade } from './entities'
 import { validateAndParseAddress } from './utils'
 import invariant from 'tiny-invariant'
 
+/**
+ * Options for producing the arguments to send call to the router.
+ */
+export interface TradeOptions {
+  /**
+   * How much the execution price is allowed to move unfavorably from the trade execution price.
    */
   allowedSlippage: Percent
   /**

@@ -3,6 +3,12 @@ import { useAccount } from 'wagmi'
 import { Box, Flex, Heading, Text, Button, Link, BscScanIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { getRoundResult, Result } from 'state/predictions/helpers'
+import { REWARD_RATE } from 'state/predictions/config'
+import { getBlockExploreLink } from 'utils'
+import { multiplyPriceByAmount } from 'utils/prices'
+import useBUSDPrice from 'hooks/useBUSDPrice'
+import { useGetCurrentEpoch } from 'state/predictions/hooks'
+import { Bet, BetPosition } from 'state/types'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 
 import { formatBnb, getMultiplier, getNetPayout } from '../helpers'
@@ -12,27 +18,6 @@ import SummaryRow from './SummaryRow'
 interface PnlTabProps {
   hasBetHistory: boolean
   bets: Bet[]
-}
-
-interface PnlCategory {
-  rounds: number
-  amount: number
-}
-
-interface PnlSummary {
-  won: PnlCategory & { payout: number; bestRound: { id: string; payout: number; multiplier: number } }
-  lost: PnlCategory
-  entered: PnlCategory
-}
-
-const Divider = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgroundDisabled};
-  height: 1px;
-  margin: 24px auto;
-  width: 100%;
-`
-
-const initialPnlSummary: PnlSummary = {
   won: {
     rounds: 0,
     amount: 0,

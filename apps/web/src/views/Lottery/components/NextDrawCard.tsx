@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import {
   Card,
   CardHeader,
+  CardBody,
+  Flex,
+  Heading,
+  Text,
+  Skeleton,
+  Button,
   useModal,
   Box,
   CardFooter,

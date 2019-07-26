@@ -3,6 +3,12 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getNonBscVaultContract, getCrossFarmingSenderContract } from 'utils/contractHelpers'
 
 export enum MessageTypes {
+  Deposit = 0,
+  Withdraw = 1,
+  EmergencyWithdraw = 2,
+  Claim = 3,
+}
+
 enum Chains {
   EVM = 0,
   BSC = 1,

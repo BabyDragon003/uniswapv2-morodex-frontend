@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "contract IBEP20",
+        "name": "_cakeToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_pancakeProfileAddress",
         "type": "address"
       },
       {

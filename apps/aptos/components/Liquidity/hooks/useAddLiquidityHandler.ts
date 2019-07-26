@@ -4,6 +4,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { log } from 'next-axiom'
 import { useCallback, useContext, useMemo, useState } from 'react'
 
+import useSimulationAndSendTransaction from 'hooks/useSimulationAndSendTransaction'
+import { useTransactionAdder } from 'state/transactions/hooks'
+import { useUserSlippage } from 'state/user'
+import { calculateSlippageAmount } from 'utils/exchange'
+import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
+
 import { Field, LiquidityHandlerReturn } from '../type'
 import { CurrencySelectorContext } from './useCurrencySelectRoute'
 
@@ -12,27 +18,6 @@ interface UseAddLiquidityHandlerReturn extends LiquidityHandlerReturn {
 }
 
 export default function useAddLiquidityHandler({
-  parsedAmounts,
-  noLiquidity,
-}: {
-  noLiquidity: boolean
-  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
-}): UseAddLiquidityHandlerReturn {
-  const { currencyA, currencyB } = useContext(CurrencySelectorContext)
-  const { t } = useTranslation()
-  const addTransaction = useTransactionAdder()
-
-  const [allowedSlippage] = useUserSlippage() // custom from users
-  const executeTransaction = useSimulationAndSendTransaction()
-
-  const [{ attemptingTxn, liquidityErrorMessage, txHash }, setLiquidityState] = useState<{
-    attemptingTxn: boolean
-    liquidityErrorMessage: string | undefined
-    txHash: string | undefined
-  }>({
-    attemptingTxn: false,
-    liquidityErrorMessage: undefined,
-    txHash: undefined,
   })
 
   const { [Field.CURRENCY_A]: parsedAAmount, [Field.CURRENCY_B]: parsedBAmount } = parsedAmounts

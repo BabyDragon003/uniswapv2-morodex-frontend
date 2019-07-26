@@ -3,6 +3,12 @@ import { keccak256 } from '@ethersproject/keccak256'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 
+/**
+ * calculate_tax_overflow
+ */
+export const calculateTaxOverflow = (total_amount: BigNumber, raising_amount: BigNumber): BigNumber => {
+  // No tax if raising amount is not overflowed
+  if (raising_amount.isGreaterThanOrEqualTo(total_amount)) {
     return BIG_ZERO
   }
 

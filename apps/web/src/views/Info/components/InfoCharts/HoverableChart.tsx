@@ -3,6 +3,12 @@ import { fromUnixTime } from 'date-fns'
 import { useState, useMemo, memo, useEffect } from 'react'
 import { ChartEntry, ProtocolData } from 'state/info/types'
 import { formatAmount } from 'utils/formatInfoNumbers'
+import BarChart from './BarChart'
+import LineChart from './LineChart'
+
+interface HoverableChartProps {
+  chartData: ChartEntry[]
+  protocolData: ProtocolData
   currentDate: string
   valueProperty: string
   title: string

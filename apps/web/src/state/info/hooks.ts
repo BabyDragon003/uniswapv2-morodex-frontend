@@ -3,6 +3,12 @@ import { useRouter } from 'next/router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import BigNumber from 'bignumber.js'
+import fetchPoolChartData from 'state/info/queries/pools/chartData'
+import { fetchAllPoolData, fetchAllPoolDataWithAddress } from 'state/info/queries/pools/poolData'
+import fetchPoolTransactions from 'state/info/queries/pools/transactions'
+import { fetchGlobalChartData } from 'state/info/queries/protocol/chart'
+import { fetchProtocolData } from 'state/info/queries/protocol/overview'
+import fetchTopTransactions from 'state/info/queries/protocol/transactions'
 import fetchTokenChartData from 'state/info/queries/tokens/chartData'
 import fetchPoolsForToken from 'state/info/queries/tokens/poolsForToken'
 import fetchTokenPriceData from 'state/info/queries/tokens/priceData'
@@ -12,27 +18,6 @@ import { Block, Transaction } from 'state/info/types'
 import { SWRConfiguration } from 'swr'
 import useSWRImmutable from 'swr/immutable'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
-import { getAprsForStableFarm } from 'utils/getAprsForStableFarm'
-import { useBlockFromTimeStampSWR } from 'views/Info/hooks/useBlocksFromTimestamps'
-import { checkIsStableSwap, MultiChainName } from './constant'
-import { ChartEntry, PoolData, PriceChartEntry, ProtocolData, TokenData } from './types'
-
-// Protocol hooks
-
-const refreshIntervalForInfo = 15000 // 15s
-const SWR_SETTINGS_WITHOUT_REFETCH = {
-  errorRetryCount: 3,
-  errorRetryInterval: 3000,
-}
-const SWR_SETTINGS: SWRConfiguration = {
-  refreshInterval: refreshIntervalForInfo,
-  ...SWR_SETTINGS_WITHOUT_REFETCH,
-}
-
-export const useProtocolDataSWR = (): ProtocolData | undefined => {
-  const chainName = useGetChainName()
-  const [t24, t48] = getDeltaTimestamps()
-  const { blocks } = useBlockFromTimeStampSWR([t24, t48])
   const [block24, block48] = blocks ?? []
   const type = checkIsStableSwap() ? 'stableSwap' : 'swap'
   const { data: protocolData } = useSWRImmutable(

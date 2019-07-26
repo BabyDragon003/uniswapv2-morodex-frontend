@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- e68ad6524: Add missing chains on connect
+
+## 0.0.10
+
+### Patch Changes
+
 - 2763b05af: Catch more wallets user reject error for Petra, Martian, Blocto, Pontem
 
 ## 0.0.9

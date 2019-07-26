@@ -3,6 +3,12 @@ import Text from "./Text";
 import TooltipText from "./TooltipText";
 
 export default {
+  title: "Components/Text",
+  component: Text,
+  argTypes: {
+    bold: {
+      name: "bold",
+      table: {
         type: { summary: "bool", detail: "Bold the text" },
         defaultValue: { summary: false },
       },

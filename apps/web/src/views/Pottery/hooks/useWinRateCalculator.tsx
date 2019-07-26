@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import { CalculatorMode, EditingCurrency } from '../types'
 
+const TOKEN_PRECISION = 10
+const USD_PRECISION = 2
+
+export interface WinRateCalculatorState {
+  controls: {
+    multiply: number
     mode: CalculatorMode
     editingCurrency: EditingCurrency
   }

@@ -3,6 +3,12 @@ import { Box, Flex, HelpIcon, CardHeader, CardBody, Text, useTooltip } from '@pa
 
 import { StyledCard } from '../IfoCardStyles'
 import { CardConfigReturn } from './types'
+
+interface GenericIfoCardElements {
+  action: ReactNode
+  content: ReactNode
+}
+
 const GenericIfoCard: React.FC<React.PropsWithChildren<CardConfigReturn & GenericIfoCardElements>> = ({
   title,
   variant,

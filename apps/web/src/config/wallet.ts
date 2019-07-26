@@ -3,6 +3,12 @@ import { WalletFilledIcon } from '@pancakeswap/uikit'
 import type { ExtendEthereum } from 'global'
 import { isFirefox } from 'react-device-detect'
 import WalletConnectProvider from '@walletconnect/ethereum-provider'
+import { getTrustWalletProvider } from '@pancakeswap/wagmi/connectors/trustWallet'
+import { metaMaskConnector, walletConnectNoQrCodeConnector } from '../utils/wagmi'
+
+export enum ConnectorNames {
+  MetaMask = 'metaMask',
+  Injected = 'injected',
   WalletConnect = 'walletConnect',
   BSC = 'bsc',
   Blocto = 'blocto',

@@ -3,6 +3,12 @@ import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { TeamLeaderboardProps } from '../../../types'
 
 export interface PodiumProps {
+  teamsSortedByVolume?: Array<TeamLeaderboardProps>
+}
+
+export const Wrapper = styled(Flex)`
+  width: 260px;
+
   ${({ theme }) => theme.mediaQueries.xs} {
     width: 320px;
   }
@@ -12,27 +18,6 @@ export interface PodiumProps {
   }
 `
 
-export const Inner = styled(Flex)`
-  width: 100%;
-  flex-direction: column;
-
-  svg {
-    height: auto;
-    width: 100%;
-  }
-`
-
-export const LeftBox = styled(Box)`
-  position: absolute;
-  bottom: -24px;
-  left: 6px;
-
-  ${({ theme }) => theme.mediaQueries.xs} {
-    bottom: -26px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    bottom: -32px;
   }
 `
 

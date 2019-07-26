@@ -3,6 +3,12 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
 import { useGasPrice } from 'state/user/hooks'
+import { harvestFarm, stakeFarm, unstakeFarm } from 'utils/calls/farms'
+import { fetchFarmUserDataAsync } from 'state/farms'
+import { useBCakeProxyContractAddress } from 'views/Farms/hooks/useBCakeProxyContractAddress'
+import { BOOSTED_FARM_GAS_LIMIT } from 'config'
+import { useApproveBoostProxyFarm } from '../../../hooks/useApproveFarm'
+import useProxyCAKEBalance from './useProxyCAKEBalance'
 
 export default function useProxyStakedActions(pid, lpContract) {
   const { account, chainId } = useActiveWeb3React()

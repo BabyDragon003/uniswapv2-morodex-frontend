@@ -3,6 +3,12 @@ import { Card, CardBody, Heading, ArrowBackIcon, IconButton } from '@pancakeswap
 import { useRouter } from 'next/router'
 import { useTranslation } from '@pancakeswap/localization'
 import { PredictionSupportedSymbol } from 'state/types'
+import { useConfig } from 'views/Predictions/context/ConfigProvider'
+
+interface NotificationProps {
+  title: string
+}
+
 const Wrapper = styled.div`
   align-items: center;
   display: flex;

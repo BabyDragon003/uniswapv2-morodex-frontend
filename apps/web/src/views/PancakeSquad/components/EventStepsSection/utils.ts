@@ -3,6 +3,12 @@ import { SaleStatusEnum } from 'views/PancakeSquad/types'
 import { getEventStepStatus, getEventStepStatusType } from 'views/PancakeSquad/utils'
 
 type getStepperStatusType = getEventStepStatusType & {
+  hasProfileActivated: boolean
+  numberTicketsOfUser?: number
+  isLastPhase?: boolean
+}
+
+const eventStatusMapping: Record<EventStatus, StepStatus> = {
   past: 'past',
   live: 'current',
   upcoming: 'future',

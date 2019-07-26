@@ -3,6 +3,12 @@ import type { SerializedFarmConfig } from '@pancakeswap/farms'
 import { testnetTokens } from '../tokens/index'
 import { L0_USDC } from '../../coins'
 import { CAKE_PID } from '..'
+
+const farms: SerializedFarmConfig[] = [
+  /**
+   * These 1 farms (PID 0) should always be at the top of the file.
+   */
+  {
     pid: CAKE_PID,
     lpSymbol: testnetTokens.cake.symbol,
     lpAddress: testnetTokens.cake.address,

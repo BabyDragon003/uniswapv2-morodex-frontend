@@ -3,6 +3,12 @@ import { Token } from '@pancakeswap/sdk'
 import { useTranslation } from '@pancakeswap/localization'
 
 interface Props {
+  currency: Token
+  onDismiss?: () => void
+}
+
+const GetTokenModal: React.FC<React.PropsWithChildren<Partial<Props>>> = ({ currency, onDismiss }) => {
+  const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
 
   return (

@@ -3,6 +3,12 @@
 Connect to Aptos with similar [wagmi](https://github.com/wagmi-dev/wagmi) React hooks.
 
 Support Aptos Wallet Connectors:
+- Petra
+- Martian
+- Pontem
+- Fewcha
+- SafePal
+- Trust Wallet
 
 
 ```jsx
@@ -12,27 +18,6 @@ import {
   useConnect,
   getDefaultProviders,
   defaultChains,
-} from '@pancakeswap/awgmi';
-import { PetraConnector } from '@pancakeswap/awgmi/connectors/petra'
-import { MartianConnector } from '@pancakeswap/awgmi/connectors/martain'
-import { SafePalConnector } from '@pancakeswap/awgmi/connectors/safePal'
-import { BloctoConnector } from '@pancakeswap/awgmi/connectors/blocto'
-import { FewchaConnector } from '@pancakeswap/awgmi/connectors/fewcha'
-
- // import { mainnet, testnet } from '@pancakeswap/awgmi/core'
-const chains = defaultChains // mainnet, testnet, devnet
-
-export const client = createClient({
-  connectors: [
-    new PetraConnector({ chains }),
-    new MartianConnector({ chains }),
-    new PetraConnector({ chains, options: { name: 'Trust Wallet', id: 'trustWallet' } }),
-    new SafePalConnector({ chains }),
-    new BloctoConnector({ chains, options: { appId: BLOCTO_APP_ID } }),
-    new FewchaConnector({ chains }),
-  ],
-  provider: getDefaultProviders,
-  autoConnect: true,
 });
 
 

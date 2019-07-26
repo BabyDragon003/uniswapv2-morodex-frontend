@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "contract BunnyFactoryV2",
+        "name": "_bunnyFactoryV2",
+        "type": "address"
+      },
+      {
+        "internalType": "contract BunnyMintingStation",
+        "name": "_bunnyMintingStation",
         "type": "address"
       },
       {
@@ -12,27 +18,6 @@
       },
       {
         "internalType": "uint256",
-        "name": "_tokenPrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_ipfsHash",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startBlockNumber",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
         "name": "to",

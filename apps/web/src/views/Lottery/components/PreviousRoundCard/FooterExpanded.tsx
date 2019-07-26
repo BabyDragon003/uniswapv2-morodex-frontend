@@ -18,27 +18,6 @@ const NextDrawWrapper = styled(Flex)`
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
   }
-`
-
-const PreviousRoundCardFooter: React.FC<
-  React.PropsWithChildren<{ lotteryNodeData: LotteryRound; lotteryId: string }>
-> = ({ lotteryNodeData, lotteryId }) => {
-  const { t } = useTranslation()
-  const [fetchedLotteryGraphData, setFetchedLotteryGraphData] = useState<LotteryRoundGraphEntity>()
-  const lotteryGraphDataFromState = useGetLotteryGraphDataById(lotteryId)
-  const cakePriceBusd = usePriceCakeBusd()
-
-  useEffect(() => {
-    const getGraphData = async () => {
-      const fetchedGraphData = await getGraphLotteries(undefined, undefined, { id_in: [lotteryId] })
-      setFetchedLotteryGraphData(fetchedGraphData[0])
-    }
-    if (!lotteryGraphDataFromState) {
-      getGraphData()
-    }
-  }, [lotteryGraphDataFromState, lotteryId])
-
-  let prizeInBusd = new BigNumber(NaN)
   if (lotteryNodeData) {
     const { amountCollectedInCake } = lotteryNodeData
     prizeInBusd = amountCollectedInCake.times(cakePriceBusd)

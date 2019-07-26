@@ -3,6 +3,12 @@ import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
 import { TeamRanksProps } from '../types'
 import RibbonWithImage from './RibbonWithImage'
+import TeamRanks from './TeamRanks/TeamRanks'
+import RanksIcon from '../svgs/RanksIcon'
+
+const TeamRanksSection: React.FC<React.PropsWithChildren<TeamRanksProps>> = ({
+  image,
+  team1LeaderboardInformation,
   team2LeaderboardInformation,
   team3LeaderboardInformation,
   globalLeaderboardInformation,

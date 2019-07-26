@@ -3,6 +3,12 @@ import { formatUnits } from "@ethersproject/units";
 
 import orderBy from "lodash/orderBy";
 
+import { DeserializedPool, DeserializedPoolVault, VaultKey, DeserializedPoolLockedVault } from "../types";
+
+import { getCakeVaultEarnings } from "./getCakeVaultEarnings";
+
+export function sortPools<T>(account: string, sortOption: string, poolsToSort: DeserializedPool<T>[]) {
+  switch (sortOption) {
     case "apr":
       // Ternary is needed to prevent pools without APR (like MIX) getting top spot
       return orderBy(poolsToSort, (pool: DeserializedPool<T>) => (pool.apr ? pool.apr : 0), "desc");

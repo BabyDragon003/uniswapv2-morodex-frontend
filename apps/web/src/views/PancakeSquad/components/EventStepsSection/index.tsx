@@ -18,27 +18,6 @@ const EventStepsSection: React.FC<React.PropsWithChildren<EventStepsProps>> = ({
   account,
 }) => {
   const { t } = useTranslation()
-  const { theme, isDark } = useTheme()
-  const { balance: cakeBalance } = useGetCakeBalance()
-  const stepsConfig = stepsConfigBuilder({ t, eventInfos, userInfos, userStatus, account, theme, cakeBalance })
-  const isMintingFinished = userInfos && eventInfos && eventInfos.maxSupply === eventInfos.totalSupplyMinted
-  return (
-    <StyledEventStepsSectionContainer justifyContent="center" $isDark={isDark}>
-      <StyledWaveContainer top="-13px">
-        <EventStepsTopWave isDark={isDark} />
-      </StyledWaveContainer>
-      <LandingBodyWrapper flexDirection="column" alignItems="center" py="64px">
-        <Text color="invertedContrast" textAlign="center" fontSize="40px" mb="64px" bold>
-          {t('Sounds great, how can I get one?')}
-        </Text>
-        <Box mb={['80px', null, null, '170px']}>
-          {isMintingFinished ? (
-            <Flex flexDirection="column" alignItems="center">
-              <Text fontSize="16px" color="text" textAlign="center">
-                {t('The minting period is now over: all 10,000 bunnies have now been minted.')}
-              </Text>
-              <Text fontSize="16px" color="text" textAlign="center" mb="64px">
-                {t('Head to the NFT Marketplace to buy!')}
               </Text>
               <Box>
                 <Link href="/nfts" passHref>

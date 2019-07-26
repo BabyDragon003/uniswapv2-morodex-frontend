@@ -3,6 +3,12 @@ import { isAddress } from 'utils'
 import {
   getAllPancakeBunniesLowestPrice,
   getAllPancakeBunniesRecentUpdatedAt,
+  getNftsFromCollectionApi,
+} from 'state/nftMarket/helpers'
+import { NftToken } from 'state/nftMarket/types'
+import { pancakeBunniesAddress } from '../constants'
+
+// If collection is PancakeBunnies - gets all available bunnies, otherwise - null
 const useAllPancakeBunnyNfts = (collectionAddress: string) => {
   const [allPancakeBunnyNfts, setAllPancakeBunnyNfts] = useState<NftToken[]>(null)
 

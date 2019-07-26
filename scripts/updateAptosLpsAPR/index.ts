@@ -3,6 +3,12 @@ import os from 'os'
 import fetch from 'node-fetch'
 import BigNumber from 'bignumber.js'
 import chunk from 'lodash/chunk'
+import { ChainId, Pair } from '@pancakeswap/aptos-swap-sdk'
+import { getFarmConfig } from '../../apps/aptos/config/constants/farms'
+import { CAKE_PID } from '../../apps/aptos/config/constants'
+
+interface AprMap {
+  [key: string]: BigNumber
 }
 
 interface SingleFarmResponse {

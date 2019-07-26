@@ -3,6 +3,12 @@ import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import throttle from "lodash/throttle";
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import styled from "styled-components";
+import BottomNav from "../../components/BottomNav";
+import { Box } from "../../components/Box";
+import Flex from "../../components/Box/Flex";
+import CakePrice from "../../components/CakePrice/CakePrice";
+import Footer from "../../components/Footer";
+import LangSelector from "../../components/LangSelector/LangSelector";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
@@ -12,27 +18,6 @@ import { MenuContext } from "./context";
 import { NavProps } from "./types";
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  // display: grid;
-  // grid-template-rows: auto 1fr;
-  // background-image: linear-gradient(to bottom, #000, #3bc4ff) !important;
-  justify-content: center;
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: ${MENU_HEIGHT}px;
-  // background-color: ${({ theme }) => theme.nav.background};
-  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  transform: translate3d(0, 0, 0);
-
-  padding-left: 16px;
-  padding-right: 16px;
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number; showMenuBottom: boolean }>`

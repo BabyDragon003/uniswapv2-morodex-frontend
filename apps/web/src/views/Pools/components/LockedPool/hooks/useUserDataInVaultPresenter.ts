@@ -3,6 +3,12 @@ import { convertTimeToSeconds, distanceToNowStrict } from 'utils/timeHelper'
 import formatSecondsToWeeks from '../../utils/formatSecondsToWeeks'
 
 interface UserData {
+  lockEndTime: string
+  lockStartTime: string
+  burnStartTime?: string
+}
+
+interface UserDataInVaultPresenter {
   weekDuration: string
   remainingTime: string
   lockEndDate: string

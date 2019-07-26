@@ -3,6 +3,12 @@ import { darkColors } from "../../theme/colors";
 import { Box, Flex } from "../Box";
 import SocialLinks from "./Components/SocialLinks";
 
+export const StyledFooter = styled(Flex)`
+  background: ${darkColors.backgroundAlt};
+`;
+
+export const StyledList = styled.ul`
+  list-style: none;
   margin-bottom: 40px;
 
   ${({ theme }) => theme.mediaQueries.md} {

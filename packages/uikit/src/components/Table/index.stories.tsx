@@ -3,6 +3,12 @@ import Card from "../Card/Card";
 import Table from "./Table";
 import { Th, Td } from "./Cell";
 
+export default {
+  title: "Components/Table",
+  component: Table,
+  argTypes: {},
+};
+
 export const Default: React.FC<React.PropsWithChildren> = () => {
   return (
     <div style={{ width: "640px" }}>

@@ -3,6 +3,12 @@ import orderBy from 'lodash/orderBy'
 import { createSelector } from '@reduxjs/toolkit'
 import { PredictionsState, ReduxNodeRound, NodeRound, ReduxNodeLedger, NodeLedger } from '../types'
 import { parseBigNumberObj } from './helpers'
+
+const selectCurrentEpoch = (state: PredictionsState) => state.currentEpoch
+const selectRounds = (state: PredictionsState) => state.rounds
+const selectLedgers = (state: PredictionsState) => state.ledgers
+const selectClaimableStatuses = (state: PredictionsState) => state.claimableStatuses
+const selectMinBetAmount = (state: PredictionsState) => state.minBetAmount
 const selectIntervalSeconds = (state: PredictionsState) => state.intervalSeconds
 
 export const makeGetBetByEpochSelector = (account: string, epoch: number) =>
@@ -12,27 +18,6 @@ export const makeGetBetByEpochSelector = (account: string, epoch: number) =>
     }
 
     if (!bets[account][epoch]) {
-      return null
-    }
-
-    return parseBigNumberObj<ReduxNodeLedger, NodeLedger>(bets[account][epoch])
-  })
-
-export const makeGetIsClaimableSelector = (epoch: number) =>
-  createSelector([selectClaimableStatuses], (claimableStatuses) => {
-    return claimableStatuses[epoch] || false
-  })
-
-export const getRoundsByCloseOracleIdSelector = createSelector([selectRounds], (rounds) => {
-  return Object.keys(rounds).reduce((accum, epoch) => {
-    const parsed = parseBigNumberObj<ReduxNodeRound, NodeRound>(rounds[epoch])
-    return {
-      ...accum,
-      [parsed.closeOracleId]: parsed,
-    }
-  }, {}) as { [key: string]: NodeRound }
-})
-
 export const getBigNumberRounds = createSelector([selectRounds], (rounds) => {
   return Object.keys(rounds).reduce((accum, epoch) => {
     return {

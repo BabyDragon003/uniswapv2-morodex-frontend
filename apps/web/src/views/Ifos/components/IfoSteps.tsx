@@ -3,6 +3,12 @@ import every from 'lodash/every'
 import {
   Balance,
   Box,
+  Button,
+  Card,
+  CardBody,
+  CheckmarkIcon,
+  Container,
+  Flex,
   FlexGap,
   Heading,
   Link,

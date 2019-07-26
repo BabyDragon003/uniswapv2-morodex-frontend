@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { NodeRound, BetPosition } from 'state/types'
 import useTheme from 'hooks/useTheme'
 import { RoundResultBox } from '../RoundResult'
+import MultiplierArrow from './MultiplierArrow'
+import CardHeader, { getBorderBackground } from './CardHeader'
+
+interface CalculatingCardProps {
+  round: NodeRound
+  hasEnteredUp: boolean
   hasEnteredDown: boolean
 }
 

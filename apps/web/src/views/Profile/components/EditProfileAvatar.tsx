@@ -3,6 +3,12 @@ import { useModal } from '@pancakeswap/uikit'
 import AvatarImage from 'views/Nft/market/components/BannerHeader/AvatarImage'
 import EditProfileModal from './EditProfileModal'
 
+const EditOverlay = styled.div`
+  background: rgba(0, 0, 0, 0.6) url('/images/camera.svg') no-repeat center center;
+  border-radius: 50%;
+  left: 0;
+  height: 100%;
+  opacity: 0;
   position: absolute;
   top: 0;
   transition: opacity 300ms;

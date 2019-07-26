@@ -3,6 +3,12 @@ import { alpha } from '@material-ui/core/styles/colorManipulator'
 import createTypography from '@material-ui/core/styles/createTypography'
 import createPalette from '@material-ui/core/styles/createPalette'
 import type { Theme } from '@material-ui/core/styles'
+import { darkColors, lightColors } from '@pancakeswap/ui/tokens/colors'
+
+// utils
+const fontSize = 14
+const htmlFontSize = 16
+const coef = fontSize / 14
 
 function pxToRem(size: number) {
   return `${(size / htmlFontSize) * coef}rem`
@@ -12,27 +18,6 @@ function pointsToRem(size: number) {
   return `${size / 1000}rem`
 }
 
-// theme definition
-
-export const FontFamily = {
-  KANIT: "'Kanit', sans-serif",
-}
-
-const FontWeight = {
-  THIN: 100,
-  EXTRA_LIGHT: 200,
-  LIGHT: 300,
-  REGULAR: 400,
-  MEDIUM: 500,
-  SEMI_BOLD: 600,
-  BOLD: 700,
-  EXTRA_BOLD: 800,
-  BLACK: 900,
-}
-
-const darkPalette = createPalette({
-  type: 'dark',
-  primary: {
     light: '#BFBFBF',
     main: darkColors.primary,
     dark: '#EFEFEF',

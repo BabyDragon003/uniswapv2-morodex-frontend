@@ -3,6 +3,12 @@ import { Box, Card, CardBody, CardHeader, Flex, HelpIcon, Text, useTooltip } fro
 import { Ifo, PoolIds } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
+import styled from 'styled-components'
+import { getStatus } from 'views/Ifos/hooks/helpers'
+import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
+import { CardConfigReturn } from '../types'
+import IfoCardActions from './IfoCardActions'
+import IfoCardDetails from './IfoCardDetails'
 import IfoCardTokens from './IfoCardTokens'
 import IfoVestingCard from './IfoVestingCard'
 
