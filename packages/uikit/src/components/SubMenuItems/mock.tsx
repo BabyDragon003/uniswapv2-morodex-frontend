@@ -18,3 +18,8 @@ const SubMenuItemsMock = [
   },
   {
     label: "Trading Competition",
+    href: "/",
+  },
+];
+
+export default SubMenuItemsMock;

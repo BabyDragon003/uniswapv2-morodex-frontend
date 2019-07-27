@@ -18,6 +18,27 @@ const AnniversaryImage = styled.img`
 const showConfetti = () => {
   confetti({
     particleCount: 200,
+    startVelocity: 30,
+    gravity: 0.5,
+    spread: 350,
+    origin: {
+      x: 0.5,
+      y: 0.3,
+    },
+  })
+}
+
+interface AnniversaryModalProps extends InjectedModalProps {
+  onClick: () => Promise<void>
+}
+
+const AnniversaryAchievementModal: React.FC<AnniversaryModalProps> = ({ onDismiss, onClick }) => {
+  const { t } = useTranslation()
+  const { address } = useAccount()
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
+
+  const handleClick = async () => {
     setIsLoading(true)
     try {
       await onClick()

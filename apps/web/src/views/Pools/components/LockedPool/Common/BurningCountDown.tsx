@@ -23,10 +23,3 @@ const BurningCountDown: React.FC<React.PropsWithChildren<PropsType>> = ({ lockEn
 
   // Update every minute
   useInterval(updateRemainingSeconds, 1000 * 60)
-
-  const { days, hours, minutes } = getTimePeriods(remainingSeconds)
-
-  return <>{`${days}d: ${hours}h: ${minutes}m`}</>
-}
-
-export default memo(BurningCountDown)

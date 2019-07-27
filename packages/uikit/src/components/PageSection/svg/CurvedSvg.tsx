@@ -18,6 +18,27 @@ const sharedStyles = (theme: DefaultTheme, clipPath: string, clipFill?: ClipFill
   background: ${() => {
     if (theme.isDark) {
       return clipFill?.dark || clipFill?.light || theme.colors.background;
+    }
+    return clipFill?.light || theme.colors.background;
+  }};
+
+  & svg {
+    display: block;
+  }
+`;
+
+const ConcaveContainer = styled(Box)<ContainerProps>`
+  ${({ theme, clipPath, clipFill }) => sharedStyles(theme, clipPath, clipFill)}
+  transform: ${({ clipPath }) => (clipPath === "#bottomConcaveCurve" ? "translate(0, -13px)" : "translate(0, 1px)")};
+`;
+
+const ConvexContainer = styled(Box)<ContainerProps>`
+  ${({ theme, clipPath, clipFill }) => sharedStyles(theme, clipPath, clipFill)}
+  transform: ${({ clipPath }) => (clipPath === "#bottomConvexCurve" ? "translate(0, -13px)" : "translate(0, -1px)")};
+`;
+
+export const ConvexTop: React.FC<React.PropsWithChildren<CurveProps>> = ({ clipFill }) => (
+  <ConvexContainer clipFill={clipFill} clipPath="#topConvexCurve">
     <svg width="0" height="0">
       <defs>
         <clipPath id="topConvexCurve" clipPathUnits="objectBoundingBox">

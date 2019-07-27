@@ -18,3 +18,7 @@ export default memo(function SwapRoute({ trade }: { trade: Trade<Currency, Curre
             {!isLastItem && <ChevronRightIcon width="12px" />}
           </Fragment>
         )
+      })}
+    </Flex>
+  )
+})

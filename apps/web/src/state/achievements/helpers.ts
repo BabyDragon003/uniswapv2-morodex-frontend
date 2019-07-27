@@ -23,32 +23,6 @@ export const getUserPointIncreaseEvents = async (account: string): Promise<UserP
           user(id: $account) {
             points {
               id
-              campaignId
-              points
-            }
-          }
-        }
-      `,
-      {
-        account: account.toLowerCase(),
-      },
-    )
-
-    return user.points
-  } catch (error) {
-    return null
-  }
-}
-
-/**
- * Gets all user point increase events and adds achievement meta
- */
-export const getAchievements = async (account: string, t: TranslateFunction): Promise<Achievement[]> => {
-  const pointIncreaseEvents = await getUserPointIncreaseEvents(account)
-
-  if (!pointIncreaseEvents) {
-    return []
-  }
 
   return pointIncreaseEvents.reduce((accum, userPoint) => {
     if (!campaignMap.has(userPoint.campaignId)) {

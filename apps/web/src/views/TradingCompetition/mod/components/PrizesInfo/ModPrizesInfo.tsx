@@ -18,3 +18,8 @@ const ModPrizesInfo = () => {
     <Wrapper flexDirection="column">
       <ModPrizesCard />
       <ModPrizesText />
+    </Wrapper>
+  )
+}
+
+export default ModPrizesInfo

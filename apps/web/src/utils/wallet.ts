@@ -23,21 +23,3 @@ export const registerToken = async (
       type: 'ERC20',
       options: {
         address: tokenAddress as Address,
-        symbol: tokenSymbol,
-        decimals: tokenDecimals,
-        image,
-      },
-    },
-  })
-
-  return tokenAdded
-}
-
-export const canRegisterToken = () =>
-  typeof window !== 'undefined' &&
-  // @ts-ignore
-  !window?.ethereum?.isSafePal &&
-  (window?.ethereum?.isMetaMask ||
-    window?.ethereum?.isTrust ||
-    window?.ethereum?.isCoinbaseWallet ||
-    window?.ethereum?.isTokenPocket)

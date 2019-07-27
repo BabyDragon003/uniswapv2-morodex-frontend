@@ -18,6 +18,27 @@ const StyledHeading = styled(Heading)`
 `
 
 const StyledSubTitle = styled(Text)`
+  font-size: 16px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 20px;
+  }
+`
+
+const Hero = () => {
+  const { t } = useTranslation()
+
+  return (
+    <Box mb="8px">
+      <StyledHero py={['16px', '16px', '32px']} minHeight={['212px', '212px', '197px']}>
+        <Container>
+          <Flex
+            justifyContent="space-between"
+            flexDirection={['column', 'column', 'column', 'row']}
+            style={{ gap: '4px' }}
+          >
+            <Box>
+              <StyledHeading as="h1" mb={['12px', '12px', '16px']}>
                 {t('IFO: Initial Farm Offerings')}
               </StyledHeading>
               <StyledSubTitle bold>

@@ -18,16 +18,11 @@ export interface GetLPOutputParams {
 export function getLPOutput({
   amplifier,
   balances,
-    newBalances.push(JSBI.add(balance.quotient, amount.quotient))
-  }
-
-  const d0 = getD({ amplifier, balances: currentBalances })
-  const d1 = getD({ amplifier, balances: newBalances })
-  invariant(JSBI.greaterThanOrEqual(d1, d0), 'D1 should be greater than or equal than d0.')
-
-  const isFirstSupply = JSBI.lessThanOrEqual(lpTotalSupply, ZERO)
-  if (isFirstSupply) {
-    return CurrencyAmount.fromRawAmount(totalSupply.currency, d1)
+  totalSupply,
+  amounts,
+  fee,
+}: GetLPOutputParams): CurrencyAmount<Currency> {
+  const lpToken = totalSupply.currency
   }
 
   const n = currentBalances.length

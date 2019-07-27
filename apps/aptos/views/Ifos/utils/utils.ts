@@ -23,32 +23,6 @@ export const calculateTaxOverflow = (total_amount: BigNumber, raising_amount: Bi
   if (ratio_overflow.gte(500)) {
     return new BigNumber('1000000000') // 0.1%
   }
-  if (ratio_overflow.gte(250)) {
-    return new BigNumber('1250000000') // 0.125%
-  }
-  if (ratio_overflow.gte(100)) {
-    return new BigNumber('1500000000') // 0.15%
-  }
-  if (ratio_overflow.gte(50)) {
-    return new BigNumber('2500000000') // 0.25%
-  }
-  return new BigNumber('5000000000') // 0.5%
-}
-
-/**
- * get_user_allocation
- */
-export const getUserAllocation = (pool_total_amount: BigNumber, user_amount: BigNumber): BigNumber => {
-  if (pool_total_amount.gt(BIG_ZERO)) {
-    // 100,000,000,000 means 0.1 (10%) / 1 means 0.0000000000001 (0.0000001%) / 1,000,000,000,000 means 1 (100%)
-    return user_amount.times(new BigNumber('1000000000000000000')).div(pool_total_amount.times('1000000'))
-  }
-  return BIG_ZERO
-}
-
-const stripHexPrefix = (address: string) => {
-  if (address.startsWith('0x')) {
-    return address.slice(2)
   }
   return address
 }

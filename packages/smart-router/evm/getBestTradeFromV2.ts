@@ -18,6 +18,27 @@ export async function getBestTradeFromV2<
   return getBestTrade(amountIn, output, options)
 }
 
+function createGetBestTradeFromV2<TTradeType extends TradeType>(tradeType: TTradeType) {
+  function getBestTrade<In extends Currency, Out extends Currency>(
+    pairs: Pair[],
+    amountIn: CurrencyAmount<In>,
+    output: Out,
+    options: Omit<BestTradeOptions, 'provider' | 'getAllCommonPairs'>,
+  ) {
+    if (tradeType === TradeType.EXACT_INPUT) {
+      return Trade.bestTradeExactIn(pairs, amountIn, output, options)
+    }
+    return Trade.bestTradeExactOut(pairs, output, amountIn, options)
+  }
+
+  return async function bestTradeFromV2<In extends Currency, Out extends Currency>(
+    amountIn: CurrencyAmount<In>,
+    output: Out,
+    options: BestTradeOptions,
+  ) {
+    const { provider, allCommonPairs, ...restOptions } = options
+    const { maxHops = 3 } = restOptions
+    const getAllowedPairs = async () => {
       if (Array.isArray(allCommonPairs)) {
         return allCommonPairs
       }

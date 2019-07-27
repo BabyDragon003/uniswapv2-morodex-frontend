@@ -18,16 +18,11 @@ import HoverableChart from '../components/InfoCharts/HoverableChart'
 import { usePoolsData } from '../hooks/usePoolsData'
 
 export const ChartCardsContainer = styled(Flex)`
-  const protocolData = useProtocolDataSWR()
-  const chartData = useProtocolChartDataSWR()
-  const transactions = useProtocolTransactionsSWR()
-
-  const currentDate = useMemo(
-    () => new Date().toLocaleString(locale, { month: 'short', year: 'numeric', day: 'numeric' }),
-    [locale],
-  )
-
-  const allTokens = useAllTokenDataSWR()
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  gap: 1em;
 
   const formattedTokens = useMemo(() => {
     return Object.values(allTokens)

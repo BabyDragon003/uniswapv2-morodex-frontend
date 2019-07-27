@@ -18,16 +18,11 @@ import SummaryRow from './SummaryRow'
 interface PnlTabProps {
   hasBetHistory: boolean
   bets: Bet[]
-  won: {
-    rounds: 0,
-    amount: 0,
-    payout: 0, // net payout after all deductions
-    bestRound: {
-      id: '0',
-      payout: 0, // net payout after all deductions
-      multiplier: 0,
-    },
-  },
+}
+
+interface PnlCategory {
+  rounds: number
+  amount: number
   lost: {
     rounds: 0,
     amount: 0,

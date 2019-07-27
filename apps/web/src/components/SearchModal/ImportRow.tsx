@@ -18,16 +18,11 @@ const TokenSection = styled.div<{ dim?: boolean }>`
   grid-gap: 10px;
   align-items: center;
 
+  opacity: ${({ dim }) => (dim ? '0.4' : '1')};
 
-export default function ImportRow({
-  token,
-  style,
-  dim,
-  onCurrencySelect,
-  showImportView,
-  setImportToken,
-}: {
-  token: Token
+  ${({ theme }) => theme.mediaQueries.md} {
+    grid-gap: 16px;
+  }
   style?: CSSProperties
   dim?: boolean
   onCurrencySelect?: (currency: Currency) => void

@@ -23,32 +23,6 @@ describe('formatRoundTime', () => {
 })
 
 describe('formatUsdv2', () => {
-  it.each`
-    priceDifference | expectedPriceDifferenceFormatted
-    ${10}           | ${'<$0.0001'}
-    ${100}          | ${'<$0.0001'}
-    ${1000}         | ${'<$0.0001'}
-    ${10000}        | ${'$0.0001'}
-    ${100000}       | ${'$0.0010'}
-    ${1000000}      | ${'$0.0100'}
-    ${10000000}     | ${'$0.1000'}
-    ${100000000}    | ${'$1.0000'}
-    ${1000000000}   | ${'$10.0000'}
-    ${10000000000}  | ${'$100.0000'}
-    ${-10000000000} | ${'$-100.0000'}
-    ${-1000000000}  | ${'$-10.0000'}
-    ${-100000000}   | ${'$-1.0000'}
-    ${-10000000}    | ${'$-0.1000'}
-    ${-1000000}     | ${'$-0.0100'}
-    ${-100000}      | ${'$-0.0010'}
-    ${-10000}       | ${'$-0.0001'}
-    ${-1000}        | ${'<$-0.0001'}
-    ${-100}         | ${'<$-0.0001'}
-    ${-10}          | ${'<$-0.0001'}
-  `(
-    'should format $priceDifference to $expectedPriceDifferenceFormatted',
-    ({ priceDifference, expectedPriceDifferenceFormatted }) =>
-      expect(formatUsdv2(BigNumber.from(priceDifference), 4)).toEqual(expectedPriceDifferenceFormatted),
   )
 })
 

@@ -18,16 +18,11 @@ export interface FooterEntryProps {
   label: string
   value: string
 }
-  publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-}
 
-const IfoVestingFooter: React.FC<React.PropsWithChildren<IfoVestingFooterProps>> = ({
-  ifo,
-  poolId,
-  publicIfoData,
-  walletIfoData,
-}) => {
+const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ label, value }) => {
+  return (
+    <Flex justifyContent="space-between" alignItems="center">
+      <Text bold fontSize="12px" color="textSubtle" textTransform="uppercase">
   const { t } = useTranslation()
   const { token } = ifo
   const { vestingInformation } = publicIfoData[poolId]

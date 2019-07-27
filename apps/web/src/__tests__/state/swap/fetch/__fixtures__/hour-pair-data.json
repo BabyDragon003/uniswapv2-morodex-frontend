@@ -23,32 +23,6 @@
           "token0": {
             "id": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
           },
-          "token1": {
-            "id": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
-          }
-        },
-        "reserve0": "14462259.587959855899714952",
-        "reserve1": "282577.766742432541681114",
-        "reserveUSD": "232035098.6225707596428497597077"
-      },
-      {
-        "hourStartUnix": 1645167600,
-        "id": "0x0ed7e52944161450477ee417de9cd3a859b14fd0-456991",
-        "pair": {
-          "token0": {
-            "id": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
-          },
-          "token1": {
-            "id": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
-          }
-        },
-        "reserve0": "14463616.185853662542770732",
-        "reserve1": "282519.46384520943867163",
-        "reserveUSD": "229680544.2975641029065355954182"
-      },
-      {
-        "hourStartUnix": 1645164000,
-        "id": "0x0ed7e52944161450477ee417de9cd3a859b14fd0-456990",
         "pair": {
           "token0": {
             "id": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
