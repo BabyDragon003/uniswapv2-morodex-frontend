@@ -1,4 +1,3 @@
-// import styled from 'styled-components'
 // import { PageSection } from '@pancakeswap/uikit'
 // import { useAccount } from 'wagmi'
 // import useTheme from 'hooks/useTheme'

@@ -1,4 +1,3 @@
-import { useEffect, useReducer, useCallback } from "react";
 import merge from "lodash/merge";
 import BigNumber from "bignumber.js";
 import { getRoi, getInterestBreakdown, getPrincipalForInterest } from "@pancakeswap/utils/compoundApyHelpers";

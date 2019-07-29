@@ -1,4 +1,3 @@
-import { Coin, PAIR_LP_TYPE_TAG, Token } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN, isStructTag, useAccount, useAccountBalance, useAccountBalances } from '@pancakeswap/awgmi'
 import { useTranslation } from '@pancakeswap/localization'
 import {

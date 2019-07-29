@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, Image, Link, Modal, ModalBody, OpenNewIcon, Text } from '@pancakeswap/uikit'
 

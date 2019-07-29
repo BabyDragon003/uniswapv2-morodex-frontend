@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, TokenPairImage, Pool } from '@pancakeswap/uikit'
 
 const Container = styled(Flex)`
@@ -23,3 +22,10 @@ const CardHeader: React.FC<React.PropsWithChildren<CardHeaderProps>> = ({
 }) => {
   return (
     <Container>
+      <Pool.PoolCardHeaderTitle title={title} subTitle={subTitle} />
+      <TokenPairImage width={64} height={64} primarySrc={primarySrc} secondarySrc={secondarySrc} />
+    </Container>
+  )
+}
+
+export default CardHeader

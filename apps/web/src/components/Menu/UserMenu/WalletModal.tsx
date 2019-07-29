@@ -1,4 +1,3 @@
-import { parseUnits } from '@ethersproject/units'
 import {
   ButtonMenu,
   ButtonMenuItem,

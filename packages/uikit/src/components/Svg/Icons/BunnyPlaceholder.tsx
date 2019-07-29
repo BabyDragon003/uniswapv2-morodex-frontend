@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "styled-components";
 import Svg from "../Svg";
 import { SvgProps } from "../types";

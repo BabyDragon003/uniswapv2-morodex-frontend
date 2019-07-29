@@ -1,4 +1,3 @@
-import React, { useContext, useMemo } from "react";
 import styled from "styled-components";
 import { variant as systemVariant, space } from "styled-system";
 import { WarningIcon, ErrorIcon, CheckmarkCircleFillIcon, InfoFilledIcon } from "../Svg";

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import {
   Text,
   Heading,
@@ -23,6 +22,32 @@ import AuctionFooter from './AuctionFooter'
 
 const AuctionDetailsCard = styled(Card)`
   flex: 1;
+`
+
+interface AuctionDetailsProps {
+  auction: Auction
+  connectedBidder: ConnectedBidder
+  refreshBidders: () => void
+}
+
+const AuctionDetails: React.FC<React.PropsWithChildren<AuctionDetailsProps>> = ({
+  auction,
+  connectedBidder,
+  refreshBidders,
+}) => {
+  const { t } = useTranslation()
+
+  const [onPresentPlaceBid] = useModal(
+    <PlaceBidModal
+      connectedBidder={connectedBidder}
+      refreshBidders={refreshBidders}
+      initialBidAmount={auction?.initialBidAmount}
+    />,
+  )
+
+  if (!auction) {
+    return (
+      <AuctionDetailsCard mb={['24px', null, null, '0']}>
         <CardHeader>
           <Heading>{t('Current Auction')}</Heading>
         </CardHeader>

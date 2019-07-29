@@ -1,4 +1,3 @@
-import { createContext, useCallback, useEffect, useState, useMemo } from 'react'
 import { Language } from '@pancakeswap/uikit'
 import { useLastUpdated } from '@pancakeswap/hooks'
 import memoize from 'lodash/memoize'

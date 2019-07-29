@@ -1,4 +1,3 @@
-import { Text, Flex, Image, Box, BalanceWithLoading } from '@pancakeswap/uikit'
 import Divider from 'components/Divider'
 import { useTranslation } from '@pancakeswap/localization'
 import { StaticAmountPropsType } from '../types'

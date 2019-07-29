@@ -1,4 +1,3 @@
-import { Token } from '@pancakeswap/sdk'
 import { Pool } from '@pancakeswap/uikit'
 import React from 'react'
 import PoolsTable from './PoolTable'

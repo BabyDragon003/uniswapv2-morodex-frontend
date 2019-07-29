@@ -1,4 +1,3 @@
-import { Flex, Text } from '@pancakeswap/uikit'
 import { useTheme } from '@pancakeswap/hooks'
 import Image from 'next/image'
 

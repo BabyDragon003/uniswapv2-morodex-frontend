@@ -1,4 +1,3 @@
-import { MaxUint256 } from '@ethersproject/constants'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCake } from 'hooks/useContract'
 import { useToast } from '@pancakeswap/uikit'

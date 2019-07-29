@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { AutoColumn, Liquidity as LiquidityUI } from '@pancakeswap/uikit'
 import { PageMeta } from 'components/Layout/Page'
 

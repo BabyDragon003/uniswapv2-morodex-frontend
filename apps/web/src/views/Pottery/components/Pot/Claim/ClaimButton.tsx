@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useClaimPottery } from 'views/Pottery/hooks/useClaimPottery'
@@ -23,3 +22,7 @@ const ClaimButton: React.FC<React.PropsWithChildren<ClaimButtonProps>> = ({ rewa
     >
       {t('Claim')}
     </Button>
+  )
+}
+
+export default ClaimButton

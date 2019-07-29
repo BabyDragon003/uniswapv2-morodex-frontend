@@ -1,4 +1,3 @@
-import { useReducer } from 'react'
 
 export enum Views {
   START = 'start',

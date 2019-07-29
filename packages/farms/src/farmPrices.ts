@@ -1,4 +1,3 @@
-import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import _toNumber from 'lodash/toNumber'
 import { SerializedFarmPublicData, FarmData, isStableFarm } from './types'
@@ -23,6 +22,32 @@ export const getFarmBaseTokenPrice = (
   }
 
   if (farm.quoteToken.symbol === wNative) {
+    return hasTokenPriceVsQuote ? nativePriceUSD.mulUnsafe(FixedNumber.from(farm.tokenPriceVsQuote)) : FIXED_ONE
+  }
+
+  // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
+  if (!quoteTokenFarm) {
+    return FIXED_ZERO
+  }
+
+  // Possible alternative farm quoteTokens:
+  // UST (i.e. MIR-UST), pBTC (i.e. PNT-pBTC), BTCB (i.e. bBADGER-BTCB), ETH (i.e. SUSHI-ETH)
+  // If the farm's quote token isn't BUSD or WBNB, we then use the quote token, of the original farm's quote token
+  // i.e. for farm PNT - pBTC we use the pBTC farm's quote token - BNB, (pBTC - BNB)
+  // from the BNB - pBTC price, we can calculate the PNT - BUSD price
+  if (quoteTokenFarm.quoteToken.symbol === wNative || quoteTokenFarm.quoteToken.symbol === stable) {
+    return hasTokenPriceVsQuote && quoteTokenInBusd
+      ? FixedNumber.from(farm.tokenPriceVsQuote).mulUnsafe(quoteTokenInBusd)
+      : FIXED_ONE
+  }
+
+  // Catch in case token does not have immediate or once-removed BUSD/WBNB quoteToken
+  return FIXED_ZERO
+}
+
+export const getFarmQuoteTokenPrice = (
+  farm: SerializedFarmPublicData,
+  quoteTokenFarm: SerializedFarmPublicData,
   nativePriceUSD: FixedNumber,
   wNative: string,
   stable: string,

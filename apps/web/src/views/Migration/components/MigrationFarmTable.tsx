@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ const Container = styled.div`
 
 export interface ITableProps {
   title: string
+  noStakedFarmText: string
+  account: string
+  cakePrice: BigNumber
+  columnSchema: ColumnsDefTypes[]
+  farms: FarmWithStakedValue[]
+  userDataReady: boolean
+  sortColumn?: string
+}
+
+const MigrationFarmTable: React.FC<React.PropsWithChildren<ITableProps>> = ({
+  title,
+  noStakedFarmText,
+  account,
+  cakePrice,
+  columnSchema,
+  farms,
+  userDataReady,
+}) => {
+  const { t } = useTranslation()
+
+  const rowData = farms.map((farm) => {
+    const { token, quoteToken } = farm
+    const tokenAddress = token.address
+    const quoteTokenAddress = quoteToken.address
+    const lpLabel = farm.lpSymbol && farm.lpSymbol.split(' ')[0].toUpperCase().replace('PANCAKE', '')
+    const customRows =
       columnSchema === DesktopV2ColumnSchema
         ? {
             apr: {

@@ -1,4 +1,3 @@
-import { Text, Heading, IconButton, ArrowBackIcon, QuestionHelper } from "@pancakeswap/uikit";
 import Link from "next/link";
 import { AtomBox } from "@pancakeswap/ui";
 import styled from "styled-components";

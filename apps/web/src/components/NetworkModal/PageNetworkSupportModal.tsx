@@ -1,4 +1,3 @@
-import { Button, Modal, Text, Grid, Box, Message, MessageText } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import Image from 'next/image'
 import { useSwitchNetwork, useSwitchNetworkLocal } from 'hooks/useSwitchNetwork'

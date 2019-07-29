@@ -1,4 +1,3 @@
-import type { Ethereum } from "@wagmi/core";
 
 interface Window {
   coin98?: true;

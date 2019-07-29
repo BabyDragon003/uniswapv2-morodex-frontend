@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { SerializedFarm, SerializedFarmsState } from '@pancakeswap/farms'
 import type {
   UnknownAsyncThunkFulfilledAction,

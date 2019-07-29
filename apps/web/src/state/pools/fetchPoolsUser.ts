@@ -1,4 +1,3 @@
-import poolsConfig from 'config/constants/pools'
 import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import multicall, { multicallv3 } from 'utils/multicall'

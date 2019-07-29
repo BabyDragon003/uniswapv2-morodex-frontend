@@ -1,4 +1,3 @@
-import { useCallback, useMemo, useState, useContext } from 'react'
 import styled from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useRouter } from 'next/router'

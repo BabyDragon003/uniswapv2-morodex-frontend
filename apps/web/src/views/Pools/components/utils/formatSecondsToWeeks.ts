@@ -1,4 +1,3 @@
-import formatDuration from 'date-fns/formatDuration'
 import differenceInWeeks from 'date-fns/differenceInWeeks'
 import differenceInDays from 'date-fns/differenceInDays'
 import addSeconds from 'date-fns/addSeconds'

@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { Modal, ModalBody, Text, Button, Flex, InjectedModalProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import isEmpty from 'lodash/isEmpty'

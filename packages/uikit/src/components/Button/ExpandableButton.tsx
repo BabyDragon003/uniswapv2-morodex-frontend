@@ -1,4 +1,3 @@
-import React from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "../Svg";
 import Button from "./Button";
 import IconButton from "./IconButton";

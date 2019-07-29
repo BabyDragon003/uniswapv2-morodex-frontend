@@ -1,4 +1,3 @@
-interface PairResponse {
   token0: {
     id: string
     symbol: string

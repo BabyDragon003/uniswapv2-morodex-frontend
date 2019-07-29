@@ -1,4 +1,3 @@
-import { mergeConfig } from 'vite'
 import { defineConfig } from 'vitest/config'
 import defaultConfig from './vitest.config'
 

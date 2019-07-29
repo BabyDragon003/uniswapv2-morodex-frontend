@@ -1,4 +1,3 @@
-import { gql } from 'graphql-request'
 import orderBy from 'lodash/orderBy'
 import { multiChainBlocksClient, MultiChainName } from 'state/info/constant'
 import { Block } from '../state/info/types'

@@ -1,4 +1,3 @@
-import { ReactNode, useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import { BLOCKED_ADDRESSES } from './config/constants'
 import ListsUpdater from './state/lists/updater'

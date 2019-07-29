@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getApy } from '@pancakeswap/utils/compoundApyHelpers'

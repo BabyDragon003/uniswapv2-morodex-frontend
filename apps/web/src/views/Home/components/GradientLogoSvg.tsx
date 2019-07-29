@@ -1,4 +1,3 @@
-import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 const GradientLogo: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (

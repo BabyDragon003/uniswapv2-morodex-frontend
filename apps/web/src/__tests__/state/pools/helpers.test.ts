@@ -1,4 +1,3 @@
-import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 import { Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import poolsConfig from 'config/constants/pools'

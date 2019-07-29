@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Button, Container, Flex, Heading, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'

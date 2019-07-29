@@ -1,4 +1,3 @@
-import { CurrencyAmount, Token, Percent } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 
 import { Liquidity as LiquidityUI, Column, AddIcon, CardBody, AutoColumn, Button } from '@pancakeswap/uikit'

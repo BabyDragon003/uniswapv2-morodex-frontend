@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { HelpIcon } from '@pancakeswap/uikit'
 import { isChainSupported } from 'utils/wagmi'
 import { memo } from 'react'

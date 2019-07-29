@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import { useMemo } from 'react'
 import { useCakeVaultPublicData, useCakeVaultUserData } from 'state/pools/hooks'

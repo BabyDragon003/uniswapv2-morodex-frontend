@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { NftToken, ApiResponseCollectionTokens } from 'state/nftMarket/types'
 import useSWR from 'swr'
 import {

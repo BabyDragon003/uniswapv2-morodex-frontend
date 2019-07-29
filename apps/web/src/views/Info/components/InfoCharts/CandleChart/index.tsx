@@ -1,4 +1,3 @@
-import { useRef, useState, useEffect, useCallback, Dispatch, SetStateAction } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { createChart, IChartApi } from 'lightweight-charts'
 import { format } from 'date-fns'

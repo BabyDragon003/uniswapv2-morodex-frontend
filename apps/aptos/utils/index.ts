@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { stringify } from 'querystring'
 import { chains, defaultChain } from 'config/chains'
 import { TokenAddressMap } from 'state/lists/hooks'

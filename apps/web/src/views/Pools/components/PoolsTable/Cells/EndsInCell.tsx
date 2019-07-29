@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Link, Skeleton, Text, TimerIcon, Balance, Pool } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { useCurrentBlock } from 'state/block/hooks'

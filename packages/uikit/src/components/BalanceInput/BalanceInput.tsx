@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Box } from "../Box";
 import { SwapVertIcon } from "../Svg";
 import Text from "../Text/Text";

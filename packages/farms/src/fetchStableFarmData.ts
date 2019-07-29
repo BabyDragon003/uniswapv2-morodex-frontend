@@ -1,4 +1,3 @@
-import { parseUnits } from '@ethersproject/units'
 import { Call, MultiCallV2 } from '@pancakeswap/multicall'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'

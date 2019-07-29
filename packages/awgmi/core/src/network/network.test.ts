@@ -1,4 +1,3 @@
-import { beforeEach, describe, expect, it } from 'vitest'
 
 import { getAptosAccounts, setupClient } from '../../test'
 
@@ -23,3 +22,12 @@ describe('network', () => {
           "chain": undefined,
           "chains": [],
         }
+      `)
+    })
+
+    it.todo('has network', async () => {
+      await connect({ connector })
+      expect(getNetwork()).toMatchInlineSnapshot(``)
+    })
+  })
+})

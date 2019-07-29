@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/sdk'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useAtom } from 'jotai'
 import atomWithStorageWithErrorCatch from 'utils/atomWithStorageWithErrorCatch'

@@ -1,4 +1,3 @@
-import type { Ethereum } from '@wagmi/core'
 
 export interface ExtendEthereum extends Ethereum {
   isSafePal?: true

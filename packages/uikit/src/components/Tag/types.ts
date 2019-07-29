@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { SpaceProps, TypographyProps } from "styled-system";
 
 export const variants = {

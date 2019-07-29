@@ -1,4 +1,3 @@
-import { FixedNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { formatUnits } from '@ethersproject/units'
 import { getFarmCakeRewardApr, SerializedFarmConfig } from '@pancakeswap/farms'

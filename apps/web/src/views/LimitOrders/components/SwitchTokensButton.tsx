@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react'
 import { ArrowDownIcon, IconButton, ArrowUpDownIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { AutoColumn } from 'components/Layout/Column'

@@ -1,4 +1,3 @@
-import {
   ModalContainer,
   ModalBody,
   Text,

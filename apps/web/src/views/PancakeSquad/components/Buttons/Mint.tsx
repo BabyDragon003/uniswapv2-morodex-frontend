@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { BigNumber } from '@ethersproject/bignumber'
 import { ContextApi } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useModal, useToast } from '@pancakeswap/uikit'

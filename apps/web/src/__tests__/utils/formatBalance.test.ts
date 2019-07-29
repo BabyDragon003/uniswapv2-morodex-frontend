@@ -1,4 +1,3 @@
-import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { formatBigNumber, formatBigNumberToFixed, formatFixedNumber } from '@pancakeswap/utils/formatBalance'
 
 describe('formatBigNumber', () => {

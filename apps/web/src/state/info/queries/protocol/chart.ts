@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { ChartEntry } from 'state/info/types'

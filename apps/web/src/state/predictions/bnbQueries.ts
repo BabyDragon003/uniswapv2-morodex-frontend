@@ -1,4 +1,3 @@
-import { UserResponse, BetResponse, RoundResponse } from './responseType'
 
 export interface UserResponseBNB extends UserResponse<BetResponseBNB> {
   totalBNB: string
@@ -23,6 +22,32 @@ export type RoundResponseBNB = RoundResponse<BetResponseBNB>
  */
 export const roundBaseFields = `
   id
+  epoch
+  position
+  failed
+  startAt
+  startBlock
+  startHash
+  lockAt
+  lockBlock
+  lockHash
+  lockPrice
+  lockRoundId
+  closeAt
+  closeBlock
+  closeHash
+  closePrice
+  closeRoundId
+  totalBets
+  totalAmount
+  bullBets
+  bullAmount
+  bearBets
+  bearAmount
+`
+
+export const betBaseFields = `
+ id
  hash  
  amount
  position

@@ -1,4 +1,3 @@
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useFarmUser } from 'state/farms/hooks'
 import { useBCakeFarmBoosterContract } from 'hooks/useContract'
 import { useSWRMulticall } from 'hooks/useSWRContract'

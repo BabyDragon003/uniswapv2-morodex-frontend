@@ -1,4 +1,3 @@
-import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
 // eslint-disable-next-line camelcase
 import useSWR, { useSWRConfig, unstable_serialize } from 'swr'
 import useSWRImmutable from 'swr/immutable'

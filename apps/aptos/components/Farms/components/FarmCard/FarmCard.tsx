@@ -1,4 +1,3 @@
-import { useState, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { Card, Flex, Text, Skeleton, ExpandableSectionButton, Farm as FarmUI } from '@pancakeswap/uikit'

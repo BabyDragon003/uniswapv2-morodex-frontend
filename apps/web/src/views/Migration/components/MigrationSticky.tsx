@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'

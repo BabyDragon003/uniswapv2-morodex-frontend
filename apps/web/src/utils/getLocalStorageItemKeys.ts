@@ -1,4 +1,3 @@
-const getLocalStorageItemKeys = (prefix: string) => {
   const result = []
   for (let i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i).startsWith(prefix)) {

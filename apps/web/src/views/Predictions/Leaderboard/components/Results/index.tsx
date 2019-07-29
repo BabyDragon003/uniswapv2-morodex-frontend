@@ -1,4 +1,3 @@
-import { Box, Button, Grid, Flex, AutoRenewIcon, useMatchBreakpoints } from '@pancakeswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import {
   useGetLeaderboardHasMoreResults,

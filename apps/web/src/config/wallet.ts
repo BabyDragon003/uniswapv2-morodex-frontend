@@ -1,4 +1,3 @@
-import { WalletConfigV2 } from '@pancakeswap/ui-wallets'
 import { WalletFilledIcon } from '@pancakeswap/uikit'
 import type { ExtendEthereum } from 'global'
 import { isFirefox } from 'react-device-detect'
@@ -23,6 +22,32 @@ const createQrCode = (chainId: number, connect) => async () => {
   connect({ connector: walletConnectNoQrCodeConnector, chainId })
 
   // wait for WalletConnect to setup in order to get the uri
+  await delay(100)
+  const { uri } = ((await walletConnectNoQrCodeConnector.getProvider()) as WalletConnectProvider).connector
+
+  return uri
+}
+
+const isMetamaskInstalled = () => {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  if (window.ethereum?.isMetaMask) {
+    return true
+  }
+
+  if (window.ethereum?.providers?.some((p) => p.isMetaMask)) {
+    return true
+  }
+
+  return false
+}
+
+const walletsConfig = ({
+  chainId,
+  connect,
+}: {
   chainId: number
   connect: (connectorID: ConnectorNames) => void
 }): WalletConfigV2<ConnectorNames>[] => {

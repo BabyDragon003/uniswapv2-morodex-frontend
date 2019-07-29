@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { SpaceProps } from "styled-system";
 
 export const scales = {

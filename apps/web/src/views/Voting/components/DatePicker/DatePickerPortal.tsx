@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 
 const StyledDatePickerPortal = styled.div`
   .react-datepicker-wrapper,
