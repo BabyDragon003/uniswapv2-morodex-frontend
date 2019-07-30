@@ -1,13 +1,8 @@
+import { useCallback, useEffect, useMemo, useRef, useState, ReactElement } from "react";
 import styled from "styled-components";
 import BigNumber from "bignumber.js";
 import partition from "lodash/partition";
 import { useTranslation } from "@pancakeswap/localization";
-import { useIntersectionObserver } from "@pancakeswap/hooks";
-import latinise from "@pancakeswap/utils/latinise";
-import { useRouter } from "next/router";
-
-import PoolTabButtons from "./PoolTabButtons";
-import { ViewMode } from "../../components/ToggleView/ToggleView";
 import { Flex, Text, SearchInput, Select, OptionProps } from "../../components";
 
 import { DeserializedPool, DeserializedPoolVault } from "./types";

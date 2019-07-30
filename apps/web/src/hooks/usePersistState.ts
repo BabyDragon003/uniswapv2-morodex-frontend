@@ -1,3 +1,4 @@
+import identity from 'lodash/identity'
 import { useEffect, useState } from 'react'
 
 interface UsePersistStateOptions {

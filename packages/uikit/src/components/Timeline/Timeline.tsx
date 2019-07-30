@@ -1,13 +1,8 @@
+import { Colors, lightColors } from "../../theme";
 import { Flex } from "../Box";
 import { CircleOutlineIcon, LogoIcon, CheckmarkCircleFillIcon } from "../Svg";
 import { Text } from "../Text";
 import InfoTooltip from "./InfoTooltip";
-import { TimelineContainer, TimelineEvent } from "./styles";
-import { TimelineProps, EventStatus } from "./types";
-
-type getTextColorProps = {
-  eventStatus: EventStatus;
-  useDark: boolean;
 };
 
 const getTextColor = ({ eventStatus, useDark }: getTextColorProps): keyof Colors => {

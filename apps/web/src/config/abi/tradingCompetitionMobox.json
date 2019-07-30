@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       { "internalType": "address", "name": "_pancakeProfileAddress", "type": "address" },
       { "internalType": "address", "name": "_bunnyStationAddress", "type": "address" },
-      { "internalType": "address", "name": "_cakeTokenAddress", "type": "address" },
-      { "internalType": "address", "name": "_moboxTokenAddress", "type": "address" },
-      { "internalType": "address", "name": "_moboxMisteryBoxTokenAddress", "type": "address" },
-      { "internalType": "uint256", "name": "_competitionId", "type": "uint256" }
-    ],
-    "stateMutability": "nonpayable",
     "type": "constructor"
   },
   {

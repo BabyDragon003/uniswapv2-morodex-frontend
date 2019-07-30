@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { simulateTransaction, SimulateTransactionArgs, SimulateTransactionResult } from '@pancakeswap/awgmi/core'
 
 import { MutationConfig } from '../types'

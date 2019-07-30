@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
   Button,
-  Card,
-  CardBody,
-  PlayCircleOutlineIcon,
-  useToast,
-  useTooltip,
-} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'

@@ -1,13 +1,8 @@
+import { fetchCoin, FetchCoinResult } from '@pancakeswap/awgmi/core'
 import { useQueries } from '@tanstack/react-query'
 import { QueryConfig } from '../types'
 import { queryKey as coinQueryKey } from './useCoin'
 import { useNetwork } from './useNetwork'
-import { queryClientContext as context } from '../context'
-
-export type UseCoinsArgs = {
-  networkName?: string
-  coins: string[]
-}
 
 export type UseCoinsConfig<TData> = QueryConfig<FetchCoinResult, Error, TData>
 

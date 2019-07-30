@@ -1,13 +1,8 @@
+import { useAccount } from 'wagmi'
 import { useGetBetByEpoch, useGetCurrentEpoch } from 'state/predictions/hooks'
 import { BetPosition, NodeRound } from 'state/types'
 import { getMultiplierV2 } from '../../helpers'
 import ExpiredRoundCard from './ExpiredRoundCard'
-import LiveRoundCard from './LiveRoundCard'
-import OpenRoundCard from './OpenRoundCard'
-import SoonRoundCard from './SoonRoundCard'
-
-interface RoundCardProps {
-  round: NodeRound
   isActive?: boolean
 }
 

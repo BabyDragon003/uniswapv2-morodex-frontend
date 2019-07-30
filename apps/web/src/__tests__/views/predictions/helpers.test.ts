@@ -1,13 +1,8 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { formatRoundTime, padTime, formatTokenv2, formatUsdv2 } from 'views/Predictions/helpers'
 
 describe('padTime', () => {
   it.each([
-    [1, '01'],
-    [9, '09'],
-    [299, '299'],
-    [0.3, '0.3'],
-  ])('correctly pads %i', (value, expected) => {
-    expect(padTime(value)).toEqual(expected)
   })
 })
 

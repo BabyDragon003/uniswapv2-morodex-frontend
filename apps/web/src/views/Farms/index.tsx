@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { LinkExternal, ModalV2 } from '@pancakeswap/uikit'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { ConnectorNames, getDocLink } from 'config/wallet'
 import { ExtendEthereum } from 'global'
-import { useState, useCallback } from 'react'
-import { useAccount, useNetwork } from 'wagmi'
-import { mainnet } from 'wagmi/chains'
-import { FarmsContext } from './context'
-import Farms from './Farms'
-
 export function useIsBloctoETH() {
   const { chain } = useNetwork()
   const { isConnected, connector } = useAccount()

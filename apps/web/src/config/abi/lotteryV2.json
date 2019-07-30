@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cakeTokenAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_randomGeneratorAddress",
         "type": "address"
       }
     ],

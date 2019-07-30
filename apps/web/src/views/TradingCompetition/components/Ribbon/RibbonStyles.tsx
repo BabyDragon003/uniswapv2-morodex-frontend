@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { RibbonDownMid, RibbonUpMid, RibbonDownSide, RibbonUpSide } from '../../svgs'
 
 const MidRibbonStyles = `
 width: 100%;
-`
-
-const RightSideRibbonStyles = `
-position: absolute;
-right: 0;
-z-index: 1;
 transform: scaleX(-1);
 right: -31px;
 `

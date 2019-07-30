@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useMemo } from 'react'
 import { Flex, Text, Skeleton } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'

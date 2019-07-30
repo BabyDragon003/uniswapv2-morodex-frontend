@@ -1,13 +1,8 @@
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import { getAptosAccounts, setupClient } from '../../test'
 import { MockConnector } from '../connectors/mock'
 import { connect } from './connect'
-import { getAccount } from './account'
-
-const connector = new MockConnector({
-  options: { account: getAptosAccounts()[0] },
-})
-
 describe('getAccount', () => {
   beforeEach(() => {
     setupClient()

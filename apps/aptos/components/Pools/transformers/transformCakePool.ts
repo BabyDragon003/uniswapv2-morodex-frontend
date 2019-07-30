@@ -1,13 +1,8 @@
+import { PoolCategory } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import _get from 'lodash/get'
 import { FixedNumber } from '@ethersproject/bignumber'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { SECONDS_IN_YEAR } from 'config'
-
-import { CAKE_PID } from 'config/constants'
-import { calcRewardCakePerShare, calcPendingRewardCake } from 'state/farms/utils/pendingCake'
-
 export const getPoolApr = ({ rewardTokenPrice, stakingTokenPrice, tokenPerSecond, totalStaked }) => {
   const totalRewardPricePerYear = new BigNumber(rewardTokenPrice).times(tokenPerSecond).times(SECONDS_IN_YEAR)
   const totalStakingTokenInPool = new BigNumber(stakingTokenPrice).times(totalStaked)

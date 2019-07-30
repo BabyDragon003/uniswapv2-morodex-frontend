@@ -1,13 +1,8 @@
+import { Dispatch, SetStateAction } from 'react'
 import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { VaultPosition, VaultPositionParams } from 'utils/cakePool'
 import { DeserializedLockedVaultUser } from 'state/types'
-
-type VoidFn = () => void
-
-export type PrepConfirmArg = (arg: ValidatorArg) => ValidatorReturn
-
-export interface GenericModalProps {
   onDismiss?: VoidFn
   stakingToken: Token
   currentBalance: BigNumber

@@ -1,3 +1,4 @@
+interface FetchTimeoutOptions extends RequestInit {
   timeout?: number
 }
 

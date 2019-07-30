@@ -1,13 +1,8 @@
+/* eslint-disable react/no-array-index-key */
 import { useMemo } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Text, CardBody, CardRibbon, LinkExternal, Skeleton, Balance } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import { useTranslation } from '@pancakeswap/localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
-import { PotteryRoundInfo } from 'state/types'
-import Divider from 'components/Divider'
-import { getDrawnDate } from 'views/Lottery/helpers'
 import { getBlockExploreLink } from 'utils'
 import Winner from './Winner'
 

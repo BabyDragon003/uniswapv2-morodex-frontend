@@ -1,3 +1,4 @@
+// dApps can make requests to the wallet from their website:
 // - `connect()`: prompts the user to allow connection from the dApp (*neccessary to make other requests*)
 // - `isConnected()`: returns if the dApp has established a connection with the wallet
 // - `account()`: gets the address of the account signed into the wallet

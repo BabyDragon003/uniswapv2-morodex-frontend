@@ -1,3 +1,4 @@
+describe('NFTs Page', () => {
   it('loads NFTs hot collections', () => {
     cy.visit('/nfts')
     cy.getBySel('nfts-hot-collections').should('be.visible')

@@ -1,13 +1,8 @@
+import React from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "../Svg";
 import Button from "./Button";
 import IconButton from "./IconButton";
 
-interface Props {
-  onClick?: () => void;
-  expanded?: boolean;
-}
-
-export const ExpandableButton: React.FC<React.PropsWithChildren<Props>> = ({ onClick, expanded, children }) => {
   return (
     <IconButton aria-label="Hide or show expandable content" onClick={onClick}>
       {children}

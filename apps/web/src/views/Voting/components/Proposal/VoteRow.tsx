@@ -1,3 +1,4 @@
+import { Flex, LinkExternal, Text, Tag, CheckmarkCircleIcon } from '@pancakeswap/uikit'
 import truncateHash from '@pancakeswap/utils/truncateHash'
 import { getBlockExploreLink } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'

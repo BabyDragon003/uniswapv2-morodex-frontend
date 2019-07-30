@@ -1,13 +1,8 @@
+import { atoms } from "@pancakeswap/ui/css/atoms";
 import { vars } from "@pancakeswap/ui/css/vars.css";
 import { responsiveStyle } from "@pancakeswap/ui/css/responsiveStyle";
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-
-export const switchButtonClass = style([
-  atoms({}),
-  style({
-    backgroundColor: "primary",
-  }),
 ]);
 
 export const iconDownClass = style({

@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { isAddress } from 'utils'

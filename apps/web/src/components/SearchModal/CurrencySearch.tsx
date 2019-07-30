@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import { Currency, Token } from '@pancakeswap/sdk'
 import { Box, Input, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState, useEffect } from 'react'

@@ -1,13 +1,8 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { Campaign, TranslatableText } from 'config/constants/types'
 import ifosList from 'config/constants/ifo'
 import { campaignMap } from 'config/constants/campaigns'
 import { TranslateFunction } from '@pancakeswap/localization'
-import { Achievement } from 'state/types'
-import { multicallv2 } from 'utils/multicall'
-import { getPointCenterIfoAddress } from 'utils/addressHelpers'
-import pointCenterIfoABI from 'config/abi/pointCenterIfo.json'
-
-interface IfoMapResponse {
   thresholdToClaim: string
   campaignId: string
   numberPoints: BigNumber

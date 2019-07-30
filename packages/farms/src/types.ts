@@ -1,3 +1,4 @@
+import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 import BigNumber from 'bignumber.js'
 import { Token } from '@pancakeswap/swap-sdk-core'
 

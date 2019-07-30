@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 
 export const types = {
   SUCCESS: "success",

@@ -1,13 +1,8 @@
+import { useCallback, useMemo, memo } from 'react'
 import { Currency, Trade, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { ConfirmationModalContent } from '@pancakeswap/uikit'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { Field } from 'state/swap'
-import { computeSlippageAdjustedAmounts } from 'utils/exchange'
-import SwapModalFooter from './SwapModalFooter'
-import SwapModalHeader from './SwapModalHeader'
-
-/**
- * Returns true if the trade requires a confirmation of details before we can submit it
  * @param tradeA trade A
  * @param tradeB trade B
  */

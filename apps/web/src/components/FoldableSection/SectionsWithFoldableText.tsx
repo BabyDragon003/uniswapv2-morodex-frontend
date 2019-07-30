@@ -1,13 +1,8 @@
+import { ReactNode } from 'react'
 import { Text, Heading, Card, CardHeader, CardBody, Box, BoxProps } from '@pancakeswap/uikit'
 import FoldableText from './FoldableText'
 
 interface Props extends BoxProps {
-  header: string
-  config: { title: string; description: ReactNode[] }[]
-}
-
-const SectionsWithFoldableText: React.FC<React.PropsWithChildren<Props>> = ({ header, config, ...props }) => {
-  return (
     <Box maxWidth="888px" {...props}>
       <Card>
         <CardHeader>

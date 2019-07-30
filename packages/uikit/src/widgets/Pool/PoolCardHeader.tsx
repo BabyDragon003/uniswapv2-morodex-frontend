@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 import getThemeValue from "../../util/getThemeValue";
 import { CardHeader, Flex, Heading, Text } from "../../components";

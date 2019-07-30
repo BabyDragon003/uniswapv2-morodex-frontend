@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Grid from "../Box/Grid";
 
 const GridLayout = styled(Grid)`

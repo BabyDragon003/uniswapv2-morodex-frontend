@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

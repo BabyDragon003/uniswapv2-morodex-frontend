@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import {
   Box,
   Button,
   Flex,
-  Heading,
-  LinkExternal,
-  PageHeader,
-  NextLinkFromReactRouter,
-  PageSection,
-} from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import SectionsWithFoldableText from 'components/FoldableSection/SectionsWithFoldableText'

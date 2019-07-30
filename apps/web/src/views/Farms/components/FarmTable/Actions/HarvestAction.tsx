@@ -1,3 +1,4 @@
+import { TransactionResponse } from '@ethersproject/providers'
 import { useTranslation } from '@pancakeswap/localization'
 import { Skeleton, useToast, useModal, Farm as FarmUI } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'

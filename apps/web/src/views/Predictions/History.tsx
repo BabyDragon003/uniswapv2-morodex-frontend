@@ -1,13 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Flex, Spinner, Text } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from '@pancakeswap/localization'
-import { fetchNodeHistory } from 'state/predictions'
-import { getFilteredBets } from 'state/predictions/helpers'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import {
-  useGetCurrentEpoch,
   useGetCurrentHistoryPage,
   useGetHistory,
   useGetHistoryFilter,

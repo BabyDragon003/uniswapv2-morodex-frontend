@@ -1,13 +1,8 @@
+import { formatAmount, getFirstThreeNonZeroDecimals } from 'utils/formatInfoNumbers'
 
 describe('info/utils/formatInfoNumbers', () => {
   it.each`
     value         | expected
-    ${0.12345}    | ${'0.12'}
-    ${0.02345}    | ${'0.023'}
-    ${0.002045}   | ${'0.0020'}
-    ${0.0002405}  | ${'0.00024'}
-    ${0.00020005} | ${'0.00020'}
-    ${0.0002}     | ${'0.00020'}
   `('getFirstThreeNonZeroDecimals returns $expected for $value', ({ value, expected }) => {
     const actual = getFirstThreeNonZeroDecimals(value)
     expect(actual).toBe(expected)

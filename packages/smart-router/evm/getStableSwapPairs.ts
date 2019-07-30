@@ -1,3 +1,4 @@
+import { ChainId, CurrencyAmount } from '@pancakeswap/sdk'
 import { deserializeToken } from '@pancakeswap/token-lists'
 
 import { StableSwapPair } from './types'

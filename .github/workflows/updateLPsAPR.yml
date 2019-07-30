@@ -1,3 +1,4 @@
+name: Fetch and update LP APRs
 
 on:
   workflow_dispatch:

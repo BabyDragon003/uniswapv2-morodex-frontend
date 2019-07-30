@@ -1,13 +1,8 @@
+import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
-  return (
-    <Svg viewBox="0 0 64 64" {...props}>
-      <g opacity="0.5">
-        <g opacity="0.7">
-          <path
-            fillRule="evenodd"
             clipRule="evenodd"
             d="M26.4056 18.7282C25.9843 18.048 25.022 18.0595 24.6402 18.7492C24.3536 19.267 24.543 19.9348 25.0585 20.2242L28.5292 22.1722L28.3615 21.8862L26.4056 18.7282ZM21.3507 16.7681C23.1299 13.5535 27.6151 13.5002 29.5786 16.6703L31.5602 19.8696L35.5898 26.7422L29.3273 26.7422C28.996 26.7422 28.6685 26.6559 28.3751 26.4912L23.3004 23.6429C20.8974 22.2942 20.0147 19.1817 21.3507 16.7681Z"
             fill="#BDC2C4"

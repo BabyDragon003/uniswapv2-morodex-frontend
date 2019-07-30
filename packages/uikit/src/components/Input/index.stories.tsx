@@ -1,13 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import Search from "../Svg/Icons/Search";
-import StarFill from "../Svg/Icons/StarFill";
-import Heading from "../Heading/Heading";
-import Input from "./Input";
-import InputGroup from "./InputGroup";
-import { scales } from "./types";
-import Box from "../Box/Box";
 
 const Row = styled.div`
   display: flex;

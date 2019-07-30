@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Currency } from '@pancakeswap/sdk'
 import { isStableSwapPair, Pair } from '@pancakeswap/smart-router/evm'
 import { Box, Flex, Text, useTooltip } from '@pancakeswap/uikit'
 import { CurrencyLogo } from 'components/Logo'
-import styled from 'styled-components'
-
-const RouterBox = styled(Flex)`
-  position: relative;
-  flex-direction: column;
-  min-height: 450px;
   &:before {
     content: '';
     position: absolute;

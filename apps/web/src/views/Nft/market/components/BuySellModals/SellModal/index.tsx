@@ -1,3 +1,4 @@
+import { parseUnits } from '@ethersproject/units'
 import { ContextApi, useTranslation } from '@pancakeswap/localization'
 import { InjectedModalProps, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'

@@ -1,3 +1,4 @@
+import { fromUnixTime } from 'date-fns'
 import getLatestUnixHour from 'utils/getLatestUnixHour'
 
 describe('getLatestUnixHour', () => {

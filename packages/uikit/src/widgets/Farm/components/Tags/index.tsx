@@ -1,13 +1,8 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { memo } from "react";
 import { Text, TooltipText } from "../../../../components/Text";
 import { Tag, TagProps } from "../../../../components/Tag/index";
 import { useTooltip } from "../../../../hooks/useTooltip";
-import {
-  AutoRenewIcon,
-  BlockIcon,
-  CommunityIcon,
-  RefreshIcon,
-  TimerIcon,
   VerifiedIcon,
   VoteIcon,
   LockIcon,

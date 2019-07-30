@@ -1,13 +1,8 @@
+import {
   Tag,
   TagProps,
   Text,
   SplitIcon,
-  LockIcon,
-  UnlockIcon,
-  HotIcon,
-  Box,
-  FlexGap,
-  FlexGapProps,
 } from '@pancakeswap/uikit'
 import Trans from 'components/Trans'
 import { useTranslation } from '@pancakeswap/localization'

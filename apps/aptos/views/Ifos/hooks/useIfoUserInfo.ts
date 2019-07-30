@@ -1,3 +1,4 @@
+import { useAccount, useAccountResources } from '@pancakeswap/awgmi'
 import { ifos } from 'config/constants/ifo'
 import { RootObject as UserInfo } from 'views/Ifos/generated/UserInfo'
 import { IFO_RESOURCE_ACCOUNT_TYPE_POOL_STORE, USER_IFO_POOL_TAG, IFO_TYPE_USER_INFO } from 'views/Ifos/constants'

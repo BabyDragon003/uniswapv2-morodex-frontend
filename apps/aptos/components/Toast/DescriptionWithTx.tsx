@@ -1,3 +1,4 @@
+// TODO: aptos merge
 import { Link, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import truncateHash from '@pancakeswap/utils/truncateHash'

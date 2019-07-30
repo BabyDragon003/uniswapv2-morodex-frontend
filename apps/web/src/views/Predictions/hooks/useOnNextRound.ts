@@ -1,13 +1,8 @@
+import { useAccount } from 'wagmi'
 import { useIsomorphicEffect } from '@pancakeswap/uikit'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
-import useSwiper from './useSwiper'
-
-/**
- * Hooks for actions to be performed when the round changes
- */
-const useOnNextRound = () => {
   const { address: account } = useAccount()
   const dispatch = useLocalDispatch()
   const { swiper } = useSwiper()
