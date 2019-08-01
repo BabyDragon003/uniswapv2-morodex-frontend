@@ -3,26 +3,16 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { getAptosAccounts, setupClient } from '../../test'
 import { MockConnector } from '../connectors/mock'
 import { connect } from './connect'
+import { getAccount } from './account'
+
+const connector = new MockConnector({
+  options: { account: getAptosAccounts()[0] },
+})
+
 describe('getAccount', () => {
   beforeEach(() => {
     setupClient()
   })
-
-  describe('behavior', () => {
-    it('not connected', async () => {
-      expect(getAccount()).toMatchInlineSnapshot(`
-        {
-          "account": undefined,
-          "connector": undefined,
-          "isConnected": false,
-          "isConnecting": false,
-          "isDisconnected": true,
-          "isReconnecting": false,
-          "status": "disconnected",
-        }
-      `)
-    })
-
     it('connected', async () => {
       await connect({ connector })
       expect(getAccount()).toMatchInlineSnapshot(`

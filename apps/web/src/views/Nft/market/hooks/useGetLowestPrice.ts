@@ -3,6 +3,12 @@ import { getNftsMarketData, getNftsUpdatedMarketData } from 'state/nftMarket/hel
 import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
 import { NftToken } from 'state/nftMarket/types'
 import useSWR from 'swr'
+import { isAddress } from 'utils'
+import { pancakeBunniesAddress } from '../constants'
+
+export interface LowestNftPrice {
+  isFetching: boolean
+  lowestPrice: number
 }
 
 const getBunnyIdFromNft = (nft: NftToken): string => {

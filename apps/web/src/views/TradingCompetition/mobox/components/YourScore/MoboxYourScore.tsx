@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import ScoreHeader from '../../../components/YourScore/ScoreHeader'
 import RibbonWithImage from '../../../components/RibbonWithImage'
+import { YourScoreProps } from '../../../types'
+import FlippersShare from '../../../pngs/mobox-flippers-share.png'
+import StormShare from '../../../pngs/mobox-storm-share.png'
+import CakersShare from '../../../pngs/mobox-cakers-share.png'
+import ScoreCard from '../../../components/YourScore/ScoreCard'
+import UserRankBox from '../../../components/YourScore/UserRankBox'
 import { LIVE } from '../../../../../config/constants/trading-competition/phases'
 import MoboxUserPrizeGrid from './MoboxUserPrizeGrid'
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  margin: 24px auto 0;
-  max-width: 768px;
-`
-
-const MoboxYourScore: React.FC<React.PropsWithChildren<YourScoreProps>> = ({
-  hasRegistered = false,
-  account,
-  userTradingInformation,
-  profile,
-  isLoading,
-  userLeaderboardInformation,
-  currentPhase,
-  userCanClaimPrizes,
-  finishedAndPrizesClaimed,
   finishedAndNothingToClaim,
   onClaimSuccess,
 }) => {

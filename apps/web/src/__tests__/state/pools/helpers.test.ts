@@ -3,26 +3,16 @@ import { Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import poolsConfig from 'config/constants/pools'
 import { transformPool, transformUserData } from 'state/pools/helpers'
+import { SerializedPool } from 'state/types'
+
+describe('transformUserData', () => {
+  it.each([
+    [
+      {
         allowance: new BigNumber(0),
         stakingTokenBalance: new BigNumber(0),
         stakedBalance: new BigNumber(0),
         pendingReward: new BigNumber(0),
-      },
-      {
-        allowance: 0,
-        stakingTokenBalance: 0,
-        stakedBalance: 0,
-        pendingReward: 0,
-      },
-      {
-        allowance: '0',
-        stakingTokenBalance: '0',
-        stakedBalance: '0',
-        pendingReward: '0',
-      },
-      {
-        allowance: '0',
-        stakingTokenBalance: '0',
       },
       {},
       {

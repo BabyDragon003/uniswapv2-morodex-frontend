@@ -3,26 +3,16 @@ import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";
 import { ClickableElementContainer } from "./styles";
 import { BaseMenuProps } from "./types";
+import getPortalRoot from "../../util/getPortalRoot";
+
+const BaseMenu: React.FC<BaseMenuProps & { children: any }> = ({ component, options, children, isOpen = false }) => {
+  const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
+  const [menuElement, setMenuElement] = useState<HTMLElement | null>(null);
+  const placement = options?.placement ?? "bottom";
   const offset = options?.offset ?? [0, 10];
   const padding = options?.padding ?? { left: 16, right: 16 };
 
   const [isMenuOpen, setIsMenuOpen] = useState(isOpen);
-
-  const toggle = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  const open = () => {
-    setIsMenuOpen(true);
-  };
-
-  const close = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Allow for component to be controlled
-  useEffect(() => {
-    setIsMenuOpen(isOpen);
   }, [isOpen, setIsMenuOpen]);
 
   useEffect(() => {

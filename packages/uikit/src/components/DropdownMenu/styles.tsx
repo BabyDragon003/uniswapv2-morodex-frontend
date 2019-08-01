@@ -3,6 +3,12 @@ import { Colors } from "../../theme";
 import { Text } from "../Text";
 import { StyledDropdownMenuItemProps } from "./types";
 
+const getTextColor = ({
+  $isActive,
+  disabled,
+  theme,
+}: StyledDropdownMenuItemProps & { theme: DefaultTheme; $isActive: boolean }) => {
+  if (disabled) return theme.colors.textDisabled;
   if ($isActive) return theme.colors.secondary;
 
   return theme.colors.textSubtle;

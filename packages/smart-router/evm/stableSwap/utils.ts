@@ -3,26 +3,16 @@ import invariant from 'tiny-invariant'
 
 import { RouteType, RouteWithStableSwap, StableSwapFeeRaw, StableSwapPair, StableSwapFeePercent } from '../types'
 import { BasePair } from '../types/pair'
+import { getOutputToken } from '../utils/pair'
+
+export function createStableSwapPair(pair: Omit<BasePair, 'involvesToken'>, stableSwapAddress = ''): StableSwapPair {
+  return {
+    ...pair,
+    stableSwapAddress,
     // default price & fees are zero, need to get the actual price from chain
     price: new Price(pair.token0, pair.token1, '0', '1'),
     fee: new Percent(0),
     adminFee: new Percent(0),
-    involvesToken: (token) => token.equals(pair.token0) || token.equals(pair.token1),
-  }
-}
-
-export function isStableSwapPair(pair: any): pair is StableSwapPair {
-  return !!(pair as StableSwapPair).stableSwapAddress
-}
-
-export function createRouteWithStableSwap<TInput extends Currency, TOutput extends Currency>({
-  routeType,
-  input,
-  pairs,
-  output,
-}: {
-  routeType: RouteType
-  pairs: (Pair | StableSwapPair)[]
   input: TInput
   output: TOutput
 }): RouteWithStableSwap<TInput, TOutput> {

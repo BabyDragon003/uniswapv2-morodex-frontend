@@ -3,26 +3,16 @@ import { renderWithProvider } from "../../testHelpers";
 import PancakeToggle from "../../components/PancakeToggle/PancakeToggle";
 
 const handleChange = vi.fn();
+
+it("renders correctly", () => {
+  const { asFragment } = renderWithProvider(<PancakeToggle checked onChange={handleChange} scale="md" />);
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c0 {
       position: relative;
       display: inline-block;
     }
 
-    .c0:label:before {
-      content: none;
-    }
-
-    .c0 .pancakes {
-      position: absolute;
-      -webkit-transition: 0.6s cubic-bezier(0.175,0.885,0.32,1.275);
-      transition: 0.6s cubic-bezier(0.175,0.885,0.32,1.275);
-    }
-
-    .c0 .pancake {
-      background: #e27c31;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      position: absolute;
       -webkit-transition: 0.4s ease;
       transition: 0.4s ease;
       top: 2px;

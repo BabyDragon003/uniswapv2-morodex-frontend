@@ -3,6 +3,12 @@ import { getProvider } from '../providers'
 import { APT, APTOS_COIN } from '../constants'
 import { isAccountAddress, isHexStringEquals } from '../utils'
 
+export type FetchCoinArgs = {
+  /** Network name to use for provider */
+  networkName?: string
+  /** resource type */
+  coin?: string
+}
 
 type Vec<T = undefined> = {
   vec: Array<T>

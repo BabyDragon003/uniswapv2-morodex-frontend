@@ -3,26 +3,16 @@ import { Box, Card, CardBody, CardHeader, Flex, Text, Image } from '@pancakeswap
 import { useMemo, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import Trans from 'components/Trans'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { VestingStatus } from './types'
+import NotTokens from './NotTokens'
+import TokenInfo from './VestingPeriod/TokenInfo'
+import VestingEnded from './VestingEnded'
+import useFetchVestingData from '../../hooks/vesting/useFetchVestingData'
 
 const StyleVestingCard = styled(Card)`
   width: 100%;
   max-width: 400px;
-  margin: 24px 0 0 0;
-  align-self: baseline;
-  ${({ theme }) => theme.mediaQueries.xl} {
-    max-width: 350px;
-    /* Aptos IFO page has no pool card. */
-    margin: 0px 12px 0 12px;
-  }
-`
-
-const VestingCardBody = styled(CardBody)`
-  position: relative;
-  z-index: 2;
-  overflow-y: auto;
-  max-height: 570px;
-  padding-bottom: 0;
-  border-radius: 0 0 24px 24px;
 `
 
 const TokenInfoContainer = styled.div`

@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { BNBAmountLabel } from './styles'
 import { CollectionCard } from './index'
 
+interface CollectionCardWithVolumeProps {
+  bgSrc: string
+  avatarSrc?: string
+  collectionName: string
+  url?: string
+  disabled?: boolean
   volume: number
 }
 

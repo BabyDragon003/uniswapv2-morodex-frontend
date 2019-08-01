@@ -3,26 +3,16 @@ import { QueryClient } from '@tanstack/react-query'
 import { Persister, persistQueryClient } from '@tanstack/react-query-persist-client'
 import { AptosClient } from 'aptos'
 import { ClientConfig, createClient as createCoreClient, Client as CoreClient } from '@pancakeswap/awgmi/core'
+import { deserialize, serialize } from './utils'
+
+export type CreateClientConfig<TProvider extends AptosClient> = ClientConfig<TProvider> & {
+  queryClient?: QueryClient
+  persister?: Persister | null
+}
 export function createClient<TProvider extends AptosClient>({
   queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        cacheTime: 1_000 * 60 * 60 * 24, // 24 hours
-        networkMode: 'offlineFirst',
-        refetchOnWindowFocus: false,
-        retry: 0,
-      },
-      mutations: {
-        networkMode: 'offlineFirst',
-      },
-    },
-  }),
-  persister = typeof window !== 'undefined'
-    ? createSyncStoragePersister({
-        key: 'awgmi.cache',
-        storage: window.localStorage,
-        serialize,
-        deserialize,
       })
     : undefined,
   ...config

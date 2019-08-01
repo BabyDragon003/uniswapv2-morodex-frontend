@@ -3,26 +3,16 @@ import { describe, expect, it } from 'vitest'
 import { getAptosAccounts, getAptosClient } from '../test'
 import { Client, createClient, getClient } from './client'
 import { MockConnector } from './connectors/mock'
+import { createStorage } from './storage'
+
+const provider = getAptosClient()
+
+describe('createClient', () => {
+  it('returns client', () => {
     const client = createClient({
       provider,
     })
     expect(client).toBeInstanceOf(Client)
-  })
-
-  describe('config', () => {
-    describe('autoConnect', () => {
-      describe('true', () => {
-        it('disconnected', async () => {
-          const client = createClient({
-            autoConnect: true,
-            provider,
-          })
-          expect(client.status).toMatchInlineSnapshot(`"connecting"`)
-          await client.autoConnect()
-          expect(client.status).toMatchInlineSnapshot(`"disconnected"`)
-        })
-
-        it('connected', async () => {
           const client = createClient({
             autoConnect: true,
             connectors: [

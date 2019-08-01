@@ -3,6 +3,12 @@ import { Text, Flex, Box, Grid, ArrowBackIcon, ArrowForwardIcon } from '@pancake
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
+import NoOrdersMessage from './NoOrdersMessage'
+import { ORDER_CATEGORY } from '../../types'
+import LoadingTable from './LoadingTable'
+
+const Arrow = styled.div`
+  color: ${({ theme }) => theme.colors.primary};
   padding: 0 20px;
   :hover {
     cursor: pointer;

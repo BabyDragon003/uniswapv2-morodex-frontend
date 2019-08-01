@@ -3,26 +3,16 @@ import { renderWithProvider } from "../../testHelpers";
 import Toggle from "../../components/Toggle/Toggle";
 
 const handleChange = vi.fn();
+
+it("renders correctly", () => {
+  const { asFragment } = renderWithProvider(<Toggle checked onChange={handleChange} scale="md" />);
+  expect(asFragment()).toMatchInlineSnapshot(`
+    <DocumentFragment>
+      .c3 {
       background-color: var(--colors-backgroundAlt);
       border-radius: 50%;
       cursor: pointer;
       height: 26px;
-      left: 3px;
-      position: absolute;
-      top: 3px;
-      -webkit-transition: left 200ms ease-in;
-      transition: left 200ms ease-in;
-      width: 26px;
-      z-index: 1;
-    }
-
-    .c1 {
-      cursor: pointer;
-      opacity: 0;
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      z-index: 3;
     }
 
     .c1:checked + .c2 {

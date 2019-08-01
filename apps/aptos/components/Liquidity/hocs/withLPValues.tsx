@@ -3,26 +3,16 @@ import multiplyPriceByAmount from '@pancakeswap/utils/multiplyPriceByAmount'
 import { Coin, JSBI, Pair, Percent, Price } from '@pancakeswap/aptos-swap-sdk'
 import { memo, useMemo } from 'react'
 import { useCurrencyBalance } from 'hooks/Balances'
+import useTotalSupply from 'hooks/useTotalSupply'
+import currencyId from 'utils/currencyId'
+
+// Philip TODO: Replace useBUSDPrice mock
+export function useBUSDPrice(currency?: Coin): Price<Coin, Coin> | undefined {
+  if (!currency) return undefined
 
   return new Price(currency, currency, JSBI.BigInt(0), JSBI.BigInt(0))
 }
 
-const useTokensDeposited = ({ pair, totalPoolTokens, userPoolBalance }) => {
-  return useMemo(() => {
-    return !!pair &&
-      !!totalPoolTokens &&
-      !!userPoolBalance &&
-      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-      JSBI.greaterThanOrEqual(totalPoolTokens.quotient, userPoolBalance.quotient)
-      ? [
-          pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-          pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
-        ]
-      : [undefined, undefined]
-  }, [totalPoolTokens, userPoolBalance, pair])
-}
-
-const useTotalUSDValue = ({ currency0, currency1, token0Deposited, token1Deposited }) => {
   const token0Price = useBUSDPrice(currency0)
   const token1Price = useBUSDPrice(currency1)
 

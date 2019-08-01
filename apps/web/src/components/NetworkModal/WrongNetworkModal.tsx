@@ -3,6 +3,12 @@ import { ChainId } from '@pancakeswap/sdk'
 import { ArrowForwardIcon, Button, Grid, Message, MessageText, Modal, Text, FlexGap } from '@pancakeswap/uikit'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import useAuth from 'hooks/useAuth'
+import { useSessionChainId } from 'hooks/useSessionChainId'
+import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
+import Image from 'next/image'
+import { Chain, useAccount, useNetwork } from 'wagmi'
+import Dots from '../Loader/Dots'
+
 // Where page network is not equal to wallet network
 export function WrongNetworkModal({ currentChain, onDismiss }: { currentChain: Chain; onDismiss: () => void }) {
   const { switchNetworkAsync, isLoading, canSwitch } = useSwitchNetwork()

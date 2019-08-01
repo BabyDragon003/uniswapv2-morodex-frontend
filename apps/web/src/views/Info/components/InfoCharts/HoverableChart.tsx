@@ -3,26 +3,16 @@ import { fromUnixTime } from 'date-fns'
 import { useState, useMemo, memo, useEffect } from 'react'
 import { ChartEntry, ProtocolData } from 'state/info/types'
 import { formatAmount } from 'utils/formatInfoNumbers'
+import BarChart from './BarChart'
+import LineChart from './LineChart'
+
+interface HoverableChartProps {
+  chartData: ChartEntry[]
+  protocolData: ProtocolData
   currentDate: string
   valueProperty: string
   title: string
   ChartComponent: typeof BarChart | typeof LineChart
-}
-
-const HoverableChart = ({
-  chartData,
-  protocolData,
-  currentDate,
-  valueProperty,
-  title,
-  ChartComponent,
-}: HoverableChartProps) => {
-  const [hover, setHover] = useState<number | undefined>()
-  const [dateHover, setDateHover] = useState<string | undefined>()
-
-  // Getting latest data to display on top of chart when not hovered
-  useEffect(() => {
-    setHover(null)
   }, [protocolData])
 
   useEffect(() => {

@@ -3,26 +3,16 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_pancakeProfileAddress",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_cakeTokenAddress",
+        "name": "_bunnyStationAddress",
         "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
+      },
       {
-        "indexed": false,
-        "internalType": "enum TradingCompV1.CompetitionStatus",
-        "name": "status",
-        "type": "uint8"
-      }
+        "internalType": "address",
     ],
     "name": "NewCompetitionStatus",
     "type": "event"

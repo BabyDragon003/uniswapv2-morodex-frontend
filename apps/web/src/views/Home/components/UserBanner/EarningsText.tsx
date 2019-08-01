@@ -3,6 +3,12 @@ import BigNumber from 'bignumber.js'
 
 export const getEarningsText = (
   numFarmsToCollect: number,
+  hasCakePoolToCollect: boolean,
+  earningsBusd: BigNumber,
+  t: ContextApi['t'],
+): string => {
+  const data = {
+    earningsBusd: earningsBusd.toString(),
     count: numFarmsToCollect,
   }
 

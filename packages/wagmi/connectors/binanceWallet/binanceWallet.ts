@@ -3,26 +3,16 @@
 /* eslint-disable class-methods-use-this */
 import {
   Chain,
+  ConnectorNotFoundError,
+  ResourceUnavailableError,
+  RpcError,
+  UserRejectedRequestError,
+  SwitchChainNotSupportedError,
+} from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { hexValue } from '@ethersproject/bytes'
 import type { Ethereum } from '@wagmi/core'
 
-declare global {
-  interface Window {
-    BinanceChain?: {
-      bnbSign?: (address: string, message: string) => Promise<{ publicKey: string; signature: string }>
-      switchNetwork?: (networkId: string) => Promise<string>
-    } & Ethereum
-  }
-}
-
-const mappingNetwork: Record<number, string> = {
-  1: 'eth-mainnet',
-  56: 'bsc-mainnet',
-  97: 'bsc-testnet',
-}
-
-const _binanceChainListener = async () =>
   new Promise<void>((resolve) =>
     Object.defineProperty(window, 'BinanceChain', {
       get() {

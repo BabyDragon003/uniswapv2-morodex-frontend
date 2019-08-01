@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useNftStorage } from 'state/nftMarket/storage'
 import { useGetNftOrdering } from 'state/nftMarket/hooks'
 
+const SortSelect: React.FC<React.PropsWithChildren<{ collectionAddress: string }>> = ({ collectionAddress }) => {
+  const { t } = useTranslation()
+  const { setOrdering } = useNftStorage()
+  const selectedOrder = useGetNftOrdering(collectionAddress)
+  const handleChange = (newOption: OptionProps) => {
+    const { field, direction } = newOption.value
     setOrdering({ collection: collectionAddress, field, direction })
   }
 

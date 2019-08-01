@@ -3,26 +3,16 @@ import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import throttle from "lodash/throttle";
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import styled from "styled-components";
+import BottomNav from "../../components/BottomNav";
+import { Box } from "../../components/Box";
+import Flex from "../../components/Box/Flex";
+import CakePrice from "../../components/CakePrice/CakePrice";
+import Footer from "../../components/Footer";
+import LangSelector from "../../components/LangSelector/LangSelector";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
 import Logo from "./components/Logo";
-import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
-import { MenuContext } from "./context";
-import { NavProps } from "./types";
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  // display: grid;
-  // grid-template-rows: auto 1fr;
-  // background-image: linear-gradient(to bottom, #000, #3bc4ff) !important;
-  justify-content: center;
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;

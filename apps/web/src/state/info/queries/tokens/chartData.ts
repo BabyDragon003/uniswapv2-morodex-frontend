@@ -3,26 +3,16 @@ import { ChartEntry } from 'state/info/types'
 import { fetchChartDataWithAddress, mapDayData } from '../helpers'
 import { TokenDayDatasResponse } from '../types'
 import { getMultiChainQueryEndPointWithStableSwap, MultiChainName, multiChainStartTime } from '../../constant'
+
+const getTokenChartData = async (
+  chainName: MultiChainName,
+  skip: number,
+  address: string,
+): Promise<{ data?: ChartEntry[]; error: boolean }> => {
   try {
     const query = gql`
       query tokenDayDatas($startTime: Int!, $skip: Int!, $address: String!) {
         tokenDayDatas(
-          first: 1000
-          skip: $skip
-          where: { token: $address, date_gt: $startTime }
-          orderBy: date
-          orderDirection: asc
-        ) {
-          date
-          dailyVolumeUSD
-          totalLiquidityUSD
-        }
-      }
-    `
-    const { tokenDayDatas } = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TokenDayDatasResponse>(
-      query,
-      {
-        startTime: multiChainStartTime[chainName],
         skip,
         address,
       },

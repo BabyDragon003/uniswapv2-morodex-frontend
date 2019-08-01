@@ -3,26 +3,16 @@ import { TokenInfo } from '@pancakeswap/token-lists'
 import { Token } from '@pancakeswap/aptos-swap-sdk'
 import { isStructTag } from '@pancakeswap/awgmi'
 
+export function filterTokens(tokens: Token[], search: string): Token[] {
+  if (search.length === 0) return tokens
+
+  if (isStructTag(search)) {
+    return tokens.filter((token) => token.address === search)
+  }
 
   const lowerSearchParts = search
     .toLowerCase()
     .split(/\s+/)
-    .filter((s) => s.length > 0)
-
-  if (lowerSearchParts.length === 0) {
-    return tokens
-  }
-
-  const matchesSearch = (s: string): boolean => {
-    const sParts = s
-      .toLowerCase()
-      .split(/\s+/)
-      .filter((s_) => s_.length > 0)
-
-    return lowerSearchParts.every((p) => p.length === 0 || sParts.some((sp) => sp.startsWith(p) || sp.endsWith(p)))
-  }
-
-  return tokens.filter((token) => {
     const { symbol, name } = token
     return (symbol && matchesSearch(symbol)) || (name && matchesSearch(name))
   })

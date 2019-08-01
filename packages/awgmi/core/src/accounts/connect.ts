@@ -3,26 +3,16 @@ import { getClient } from '../client'
 import { ConnectorAlreadyConnectedError } from '../errors'
 
 export type ConnectArgs = {
+  /** Connector to connect */
+  connector: Connector
+  /** Network to connect */
+  networkName?: string
+}
+
 type Data = ConnectorData
 
 export type ConnectResult = {
   account: Data['account']
-  network: Data['network']
-  connector: Connector
-}
-
-export async function connect({ connector, networkName }: ConnectArgs): Promise<ConnectResult> {
-  const client = getClient()
-  const activeConnector = client.connector
-  if (connector.id === activeConnector?.id) throw new ConnectorAlreadyConnectedError()
-
-  try {
-    client.setState((x) => ({ ...x, status: 'connecting' }))
-
-    const data = await connector.connect({ networkName })
-
-    client.setLastUsedConnector(connector.id)
-    client.setState((x) => ({
       ...x,
       chains: connector.chains,
       connector,

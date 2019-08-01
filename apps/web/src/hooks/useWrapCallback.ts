@@ -3,6 +3,12 @@ import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation } from '@pancakeswap/localization'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
+import { useTransactionAdder } from '../state/transactions/hooks'
+import { useCurrencyBalance } from '../state/wallet/hooks'
+import { useWNativeContract } from './useContract'
+import { useCallWithGasPrice } from './useCallWithGasPrice'
+
+export enum WrapType {
   NOT_APPLICABLE,
   WRAP,
   UNWRAP,

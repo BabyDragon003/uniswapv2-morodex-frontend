@@ -3,26 +3,16 @@ import { Currency, CurrencyAmount, Pair, Price, Trade, TradeType } from '@pancak
 
 import { getBestTradeFromV2ExactIn } from './getBestTradeFromV2'
 import { getStableSwapFee, getStableSwapOutputAmount } from './onchain'
+import { createTradeWithStableSwap, createTradeWithStableSwapFromV2Trade, getFeePercent } from './stableSwap'
+import { BestTradeOptions, RouteType, StableSwapPair } from './types'
+import { getOutputToken, isSamePair } from './utils/pair'
+
+export async function getBestTradeWithStableSwap(
+  baseTrade: Trade<Currency, Currency, TradeType>,
   stableSwapPairs: StableSwapPair[],
   options: BestTradeOptions,
 ) {
   const { provider } = options
-  const { inputAmount, route, tradeType } = baseTrade
-  // Early return if there's no stableswap available
-  if (!stableSwapPairs.length) {
-    return createTradeWithStableSwapFromV2Trade(baseTrade)
-  }
-
-  const findStableSwapPair = (pair: Pair) => stableSwapPairs.find((p) => isSamePair(p, pair))
-
-  let outputAmount: CurrencyAmount<Currency> = inputAmount
-  let outputToken: Currency = inputAmount.currency
-  const shouldRecalculateOutputAmount = () => !outputToken.equals(outputAmount.currency)
-  const getLatestOutputAmount = async () => {
-    // If the output amount is never re-calculated and the output token is the same as base trade route,
-    // means that there's no stable swap pair found in the base route.
-    if (outputAmount.currency.equals(inputAmount.currency) && outputToken.equals(baseTrade.outputAmount.currency)) {
-      return baseTrade.outputAmount
     }
     return shouldRecalculateOutputAmount() ? getOutputAmountFromV2(outputAmount, outputToken, options) : outputAmount
   }

@@ -3,26 +3,16 @@ import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Breadcrumbs,
+  Button,
+  ButtonMenu,
+  ButtonMenuItem,
+  Card,
+  Flex,
+  Heading,
   HelpIcon,
   LinkExternal,
   NextLinkFromReactRouter,
   Spinner,
-  Text,
-  useMatchBreakpoints,
-  useTooltip,
-} from '@pancakeswap/uikit'
-import { CHAIN_QUERY_NAME } from 'config/chains'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import Page from 'components/Layout/Page'
-import { useState, useMemo } from 'react'
-import { checkIsStableSwap, multiChainId, multiChainScan } from 'state/info/constant'
-import { useStableSwapAPR } from 'hooks/useStableSwapAPR'
-import {
-  useGetChainName,
-  useMultiChainPath,
-  usePoolChartDataSWR,
-  usePoolDatasSWR,
-  usePoolTransactionsSWR,
   useStableSwapPath,
 } from 'state/info/hooks'
 import { useWatchlistPools } from 'state/user/hooks'

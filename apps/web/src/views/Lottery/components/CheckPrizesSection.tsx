@@ -3,26 +3,16 @@ import styled from 'styled-components'
 import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { FetchStatus, LotteryStatus } from 'config/constants/types'
+import { useTranslation } from '@pancakeswap/localization'
+import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import ClaimPrizesModal from './ClaimPrizesModal'
+import useGetUnclaimedRewards from '../hooks/useGetUnclaimedRewards'
+
 const TicketImage = styled.img`
   height: 60px;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 100px;
-  }
-`
-
-const TornTicketImage = styled.img`
-  height: 54px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    height: 84px;
-  }
-`
-
-const CheckPrizesSection = () => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const {
-    isTransitioning,
-    currentRound: { status },
   } = useLottery()
   const { fetchAllRewards, unclaimedRewards, fetchStatus } = useGetUnclaimedRewards()
   const userLotteryData = useGetUserLotteriesGraphData()

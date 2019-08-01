@@ -3,6 +3,12 @@
   "timestamp": "2022-01-26T11:45:09Z",
   "version": {
     "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://dapp-frontend-prince.web.app/logo.png",
+  "keywords": ["pancake", "default", "aptos"],
   "schema": "aptos",
   "tokens": [
     {

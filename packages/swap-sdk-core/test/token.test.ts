@@ -3,6 +3,12 @@ import { Token } from '../src'
 enum ChainId {
   ETHEREUM = 1,
   GOERLI = 5,
+  BSC = 56,
+  BSC_TESTNET = 97,
+}
+
+describe('Token', () => {
+  const ADDRESS_ONE = '0x0000000000000000000000000000000000000001'
   const ADDRESS_TWO = '0x0000000000000000000000000000000000000002'
 
   describe('#equals', () => {

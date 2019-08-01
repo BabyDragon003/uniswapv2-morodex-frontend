@@ -3,26 +3,16 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import { createSelector } from '@reduxjs/toolkit'
 import { deserializeFarm, deserializeFarmUserData } from '@pancakeswap/farms'
+import { State } from '../types'
+
+const selectCakeFarm = (state: State) => state.farms.data.find((f) => f.pid === 2)
+const selectFarmByKey = (key: string, value: string | number) => (state: State) =>
+  state.farms.data.find((f) => f[key] === value)
+
 export const makeFarmFromPidSelector = (pid: number) =>
   createSelector([selectFarmByKey('pid', pid)], (farm) => deserializeFarm(farm))
 
 export const makeBusdPriceFromPidSelector = (pid: number) =>
-  createSelector([selectFarmByKey('pid', pid)], (farm) => {
-    return farm && new BigNumber(farm.tokenPriceBusd)
-  })
-
-export const makeUserFarmFromPidSelector = (pid: number) =>
-  createSelector([selectFarmByKey('pid', pid)], (farm) => {
-    const { allowance, tokenBalance, stakedBalance, earnings, proxy } = deserializeFarmUserData(farm)
-    return {
-      allowance,
-      tokenBalance,
-      stakedBalance,
-      earnings,
-      proxy,
-    }
-  })
-
 export const priceCakeFromPidSelector = createSelector([selectCakeFarm], (cakeBnbFarm) => {
   const cakePriceBusdAsString = cakeBnbFarm?.tokenPriceBusd
   return new BigNumber(cakePriceBusdAsString)

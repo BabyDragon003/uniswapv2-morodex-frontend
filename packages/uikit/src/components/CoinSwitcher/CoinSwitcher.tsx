@@ -3,26 +3,16 @@ import styled from "styled-components";
 import { bnb2CakeImages, cake2BnbImages } from "./constant";
 import { SequencePlayer } from "./SequencePlayer";
 
+export const CoinSwitcherWrapper = styled.div`
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  z-index: 31;
+  width: 100%;
   height: 100px;
   overflow: hidden;
   cursor: pointer;
   transform: scale(0.6) translateX(-40px);
-  ${({ theme }) => theme.mediaQueries.lg} {
-    top: -20px;
-    left: -10px;
-    transform: scale(0.9) translateX(-10px);
-  }
-`;
-
-export const SequenceWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  &.hidden {
-    opacity: 0;
-    pointer-events: none;
   }
 `;
 

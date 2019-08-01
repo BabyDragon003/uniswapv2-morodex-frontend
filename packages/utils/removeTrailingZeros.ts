@@ -3,3 +3,5 @@ const removeTrailingZerosRegex = new RegExp(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\
 const removeTrailingZeros = (amount: string): string => {
   return amount.replace(removeTrailingZerosRegex, '$1$2$3')
 }
+
+export default removeTrailingZeros

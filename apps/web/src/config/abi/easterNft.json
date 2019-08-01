@@ -3,26 +3,16 @@
     "inputs": [
       {
         "internalType": "contract BunnyMintingStation",
+        "name": "_bunnyMintingStation",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IBEP20",
+        "name": "_cakeToken",
         "type": "address"
       },
       {
         "internalType": "contract PancakeProfile",
-        "name": "_pancakeProfile",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_thresholdUser",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_endBlock",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
   },
   {
     "anonymous": false,

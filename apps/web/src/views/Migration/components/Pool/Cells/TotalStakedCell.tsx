@@ -3,26 +3,16 @@ import { Flex, Text, Skeleton, Balance, Pool } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { Token } from '@pancakeswap/sdk'
+
+interface TotalStakedCellProps {
+  pool: Pool.DeserializedPool<Token>
+  totalCakeInVault: BigNumber
   cakeInVaults: BigNumber
 }
 
 const StyledCell = styled(Pool.BaseCell)`
-  display: none;
-  flex: 2 0 100px;
-  ${({ theme }) => theme.mediaQueries.lg} {
-    display: block;
-  }
-`
-
-const TotalStakedCell: React.FC<React.PropsWithChildren<TotalStakedCellProps>> = ({
-  pool,
-  totalCakeInVault,
-  cakeInVaults,
-}) => {
-  const { t } = useTranslation()
-  const { sousId, stakingToken, totalStaked, vaultKey } = pool
-
-  const isManualCakePool = sousId === 0
 
   const totalStakedBalance = useMemo(() => {
     if (vaultKey) {

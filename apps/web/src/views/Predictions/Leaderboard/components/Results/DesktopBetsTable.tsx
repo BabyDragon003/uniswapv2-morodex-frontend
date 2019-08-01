@@ -3,6 +3,12 @@ import { Box, Card, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import PreviousBetsTable from '../PreviousBetsTable'
 
+interface DesktopBetsTableProps {
+  account: string
+  token: Token
+  api: string
+}
+
 const DesktopBetsTable: React.FC<React.PropsWithChildren<DesktopBetsTableProps>> = ({ account, token, api }) => {
   const { t } = useTranslation()
 
