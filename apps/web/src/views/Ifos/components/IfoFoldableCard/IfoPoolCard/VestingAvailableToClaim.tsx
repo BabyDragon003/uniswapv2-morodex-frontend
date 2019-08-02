@@ -13,6 +13,22 @@ interface VestingAvailableToClaimProps {
 
 const VestingAvailableToClaim: React.FC<React.PropsWithChildren<VestingAvailableToClaimProps>> = ({
   amountToReceive,
+  percentage,
+  decimals,
+}) => {
+  const { t } = useTranslation()
+
+  const num = useMemo(() => {
+    const vestingaPercentage = BIG_ONE_HUNDRED.minus(percentage).div(100)
+    const total = new BigNumber(amountToReceive).times(vestingaPercentage)
+    return getFullDisplayBalance(total, decimals, 2)
+  }, [amountToReceive, percentage, decimals])
+
+  return (
+    <Text fontSize="14px" color="textSubtle">
+      {t('~%num% available to claim at sales end', { num })}
+    </Text>
+  )
 }
 
 export default VestingAvailableToClaim

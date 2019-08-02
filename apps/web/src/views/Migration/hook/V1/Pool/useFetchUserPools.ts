@@ -13,6 +13,22 @@ export interface PoolsState {
   data: SerializedPool
   userDataLoaded: boolean
 }
+
+const cakeContract = getCakeContract()
+
+const initialData = {
+  data: {
+    sousId: 0,
+    stakingToken: bscTokens.cake.serialize,
+    earningToken: bscTokens.cake.serialize,
+    contractAddress: {
+      97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
+      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '10',
+    isFinished: false,
+    totalStaked: '0',
   },
   userDataLoaded: false,
 }

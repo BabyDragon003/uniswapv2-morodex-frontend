@@ -18,27 +18,6 @@ import Mobile from './Mobile'
 
 function Warnings() {
   const [showDisclaimer] = useUserPredictionChartDisclaimerShow()
-  const [showChainlinkDisclaimer] = useUserPredictionChainlinkChartDisclaimerShow()
-  const isChartPaneOpen = useIsChartPaneOpen()
-  const chartView = useChartView()
-
-  const [onPresentChartDisclaimer] = useModal(<ChartDisclaimer />, false)
-  const [onPresentChainlinkChartDisclaimer] = useModal(<ChainlinkChartDisclaimer />, false)
-
-  // TODO: memoize modal's handlers
-  const onPresentChartDisclaimerRef = useRef(onPresentChartDisclaimer)
-  const onPresentChainlinkChartDisclaimerRef = useRef(onPresentChainlinkChartDisclaimer)
-
-  // Chart Disclaimer
-  useEffect(() => {
-    if (isChartPaneOpen && showDisclaimer && chartView === PredictionsChartView.TradingView) {
-      onPresentChartDisclaimerRef.current()
-    }
-  }, [onPresentChartDisclaimerRef, isChartPaneOpen, showDisclaimer, chartView])
-
-  // Chainlink Disclaimer
-  useEffect(() => {
-    if (isChartPaneOpen && showChainlinkDisclaimer && chartView === PredictionsChartView.Chainlink) {
       onPresentChainlinkChartDisclaimerRef.current()
     }
   }, [onPresentChainlinkChartDisclaimerRef, isChartPaneOpen, showChainlinkDisclaimer, chartView])

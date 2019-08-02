@@ -13,6 +13,22 @@ const FIFTEEN = JSBI.multiply(JSBI.BigInt(15), EIGHTEEN_DECIMALS)
 describe('limitOrders/utils/getRatePercentageDifference', () => {
   describe('18 decimal tokens', () => {
     const marketPrice = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, TEN) // 10 BUSD per 1 CAKE
+    it('returns correct positive percentage', () => {
+      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, FIFTEEN) // 15 BUSD per 1 CAKE
+      const rate = getRatePercentageDifference(marketPrice, price)
+      const expectedRate = new Percent(50, 100)
+      expect(expectedRate.equalTo(rate)).toBe(true)
+    })
+    it('returns correct negative percentage', () => {
+      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, FIVE) // 5 BUSD per 1 CAKE
+      const rate = getRatePercentageDifference(marketPrice, price)
+      const expectedRate = new Percent(-50, 100)
+      expect(expectedRate.equalTo(rate)).toBe(true)
+    })
+    it('returns correct equal percentage', () => {
+      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, TEN) // 50 BUSD per 1 CAKE
+      const rate = getRatePercentageDifference(marketPrice, price)
+      const expectedRate = new Percent(0, 100)
       expect(expectedRate.equalTo(rate)).toBe(true)
     })
   })

@@ -13,14 +13,9 @@ const FinishedRoundsBg = styled(Flex)<{ isDark: boolean }>`
   background: ${({ isDark }) => (isDark ? FINISHED_ROUNDS_BG_DARK : FINISHED_ROUNDS_BG)};
 `
 
-          <OutlineText fontSize="40px" mb="32px" bold textAlign="center">
-            {t('Finished Rounds')}
-          </OutlineText>
-          <AllHistoryCard />
-        </FinishedRoundsContainer>
-      </PageSection>
-    </FinishedRoundsBg>
-  )
-}
-
+const FinishedRoundsContainer = styled(Flex)`
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+`
 export default FinishedRounds

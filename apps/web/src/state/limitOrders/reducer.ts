@@ -13,16 +13,11 @@ export const initialState: OrderState = {
   },
   [Field.OUTPUT]: {
     currencyId: '',
-      if (currencyId === state[otherField].currencyId) {
-        // the case where we have to swap the order
-        return {
-          ...state,
-          independentField: state.independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT,
-          [field]: { currencyId },
-          [otherField]: { currencyId: state[field].currencyId },
-        }
-      }
-      // the normal case
+  },
+  rateType: Rate.MUL,
+}
+
+export default createReducer<OrderState>(initialState, (builder) =>
       return {
         ...state,
         // independentField and typedValue need to be reset to basis field

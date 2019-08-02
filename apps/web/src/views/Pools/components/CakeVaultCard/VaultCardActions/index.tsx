@@ -13,6 +13,22 @@ import { useCheckVaultApprovalStatus } from '../../../hooks/useApprove'
 const InlineText = styled(Text)`
   display: inline;
 `
+
+const CakeVaultCardActions: React.FC<
+  React.PropsWithChildren<{
+    pool: Pool.DeserializedPool<Token>
+    accountHasSharesStaked: boolean
+    isLoading: boolean
+    performanceFee: number
+  }>
+> = ({ pool, accountHasSharesStaked, isLoading, performanceFee }) => {
+  const { stakingToken, userData } = pool
+  const { t } = useTranslation()
+  const stakingTokenBalance = userData?.stakingTokenBalance ? new BigNumber(userData.stakingTokenBalance) : BIG_ZERO
+
+  const { isVaultApproved, setLastUpdated } = useCheckVaultApprovalStatus(pool.vaultKey)
+
+  return (
     <Flex flexDirection="column">
       <Flex flexDirection="column">
         <Box display="inline">

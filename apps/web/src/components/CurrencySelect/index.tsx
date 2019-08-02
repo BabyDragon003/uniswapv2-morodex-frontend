@@ -13,6 +13,22 @@ const DropDownHeader = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+  box-shadow: ${({ theme }) => theme.shadows.inset};
+  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+  // border-radius: 16px;
+  border-radius: 6px;
+  // background: ${({ theme }) => theme.colors.input};
+  transition: border-radius 0.15s;
+`
+
+const DropDownContainer = styled(Button)`
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  background: ${({ theme }) => theme.colors.input};
   // border-radius: 16px;
   border-radius: 6px;
   height: 40px;

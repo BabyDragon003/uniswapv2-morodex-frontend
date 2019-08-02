@@ -13,16 +13,11 @@ const StyledChoiceContainer = styled(Flex)`
   }
 `
 
-  width: 100%;
-  margin: auto;
-  top: -55px;
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    width: 747px;
-  }
-  ${({ theme }) => theme.mediaQueries.xxl} {
-    width: 1139px;
-  }
+const StyledContainer = styled(Flex)<{ isDark: boolean }>`
+  position: relative;
+  border-radius: 24px;
+  padding: 12px 16px;
+  background: ${({ isDark }) =>
 `
 
 const StyledTitleContainer = styled(Box)`

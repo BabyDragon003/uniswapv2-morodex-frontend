@@ -13,16 +13,11 @@
     "inputs": [
       { "name": "guy", "type": "address" },
       { "name": "wad", "type": "uint256" }
-  {
-    "constant": false,
-    "inputs": [
-      { "name": "src", "type": "address" },
-      { "name": "dst", "type": "address" },
-      { "name": "wad", "type": "uint256" }
     ],
-    "name": "transferFrom",
+    "name": "approve",
     "outputs": [{ "name": "", "type": "bool" }],
     "payable": false,
+    "stateMutability": "nonpayable",
     "stateMutability": "nonpayable",
     "type": "function"
   },

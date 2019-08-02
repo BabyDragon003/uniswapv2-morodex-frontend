@@ -13,3 +13,10 @@ export const Dots = styled.span`
       content: ".";
     }
     33% {
+      content: "..";
+    }
+    66% {
+      content: "...";
+    }
+  }
+`;

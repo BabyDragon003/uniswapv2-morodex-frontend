@@ -13,6 +13,22 @@ import { Token } from '@pancakeswap/sdk'
 
 interface NameCellProps {
   pool: Pool.DeserializedPool<Token>
+}
+
+const StyledCell = styled(Pool.BaseCell)`
+  flex: 5;
+  flex-direction: row;
+  padding-left: 12px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex: 1 0 150px;
+    padding-left: 32px;
+  }
+`
+
+const NameCell: React.FC<React.PropsWithChildren<NameCellProps>> = ({ pool }) => {
+  const { t } = useTranslation()
+  const { isMobile } = useMatchBreakpoints()
+  const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey, totalStaked } = pool
   const vaultData = useVaultPoolByKey(pool.vaultKey)
   const {
     userData: { userShares },

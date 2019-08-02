@@ -18,7 +18,3 @@ const QRCode = ({ url, image }: { url: string; image?: string }) => (
           }
         : undefined
     }
-  />
-)
-
-export default QRCode

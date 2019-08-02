@@ -13,12 +13,8 @@ export const StyledArtistBioContainer = styled(Flex)`
   position: relative;
   padding: 48px 36px;
   border-radius: 56px;
-  }
-`
+  background: ${({ theme }) => theme.colors.invertedContrast};
+  box-shadow: ${({ theme }) => theme.shadows.level1};
 
-export const StyledSocialButton = styled(Link)`
-  width: 100%;
-  ${({ theme }) => theme.mediaQueries.md} {
-    width: fit-content;
-  }
-`
+  & > svg {
+    position: absolute;

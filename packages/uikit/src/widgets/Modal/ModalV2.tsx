@@ -13,6 +13,22 @@ export interface ModalV2Props {
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;
 }
+
+export function ModalV2({ isOpen, onDismiss, closeOnOverlayClick, children, ...props }: ModalV2Props & BoxProps) {
+  const animationRef = useRef<HTMLDivElement>(null);
+
+  const handleOverlayDismiss = () => {
+    if (closeOnOverlayClick) {
+      onDismiss?.();
+    }
+  };
+  const portal = getPortalRoot();
+
+  if (portal) {
+    return createPortal(
+      <LazyMotion features={domMax}>
+        <AnimatePresence>
+          {isOpen && (
             <StyledModalWrapper
               ref={animationRef}
               // @ts-ignore

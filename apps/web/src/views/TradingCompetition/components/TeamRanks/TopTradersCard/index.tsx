@@ -18,27 +18,6 @@ import TopTradersGrid from './TopTradersGrid'
 
 const TopTradersCard: React.FC<React.PropsWithChildren<TeamRanksProps & { subgraphName?: string }>> = ({
   team1LeaderboardInformation,
-  team2LeaderboardInformation,
-  team3LeaderboardInformation,
-  globalLeaderboardInformation,
-  isGlobalLeaderboardDataComplete,
-  subgraphName,
-}) => {
-  const { t } = useTranslation()
-  const [activeTab, setActiveTab] = useState(0)
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [topTradersGridData, setTopTradersGridData] = useState(null)
-  const handleItemClick = (index: number) => setActiveTab(index)
-  const tabs = [t('Total'), 'Storm', 'Flippers', 'Cakers']
-
-  useEffect(() => {
-    const getData = () => {
-      if (activeTab === 0) {
-        setTopTradersGridData(globalLeaderboardInformation.data)
-      }
-
-      if (activeTab === 1) {
-        setTopTradersGridData(team1LeaderboardInformation.leaderboardData.data)
       }
 
       if (activeTab === 2) {

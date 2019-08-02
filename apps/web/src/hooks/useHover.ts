@@ -13,3 +13,8 @@ export function useHover<T>(): [(value: T) => void, boolean] {
         node.removeEventListener('mouseover', () => setValue(false))
         node.removeEventListener('mouseout', () => setValue(true))
       }
+    }
+    return undefined
+  }, [ref])
+  return [setRef, value]
+}

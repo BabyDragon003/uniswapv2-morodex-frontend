@@ -13,16 +13,11 @@ export const Wrapper = styled(Flex)`
     width: 320px;
   }
 
-  position: absolute;
-  bottom: -24px;
-  left: 6px;
-
-  ${({ theme }) => theme.mediaQueries.xs} {
-    bottom: -26px;
-  }
-
   ${({ theme }) => theme.mediaQueries.sm} {
-    bottom: -32px;
+    width: 387px;
+  }
+`
+
   }
 `
 

@@ -13,6 +13,22 @@ interface HoverableChartProps {
   valueProperty: string
   title: string
   ChartComponent: typeof BarChart | typeof LineChart
+}
+
+const HoverableChart = ({
+  chartData,
+  protocolData,
+  currentDate,
+  valueProperty,
+  title,
+  ChartComponent,
+}: HoverableChartProps) => {
+  const [hover, setHover] = useState<number | undefined>()
+  const [dateHover, setDateHover] = useState<string | undefined>()
+
+  // Getting latest data to display on top of chart when not hovered
+  useEffect(() => {
+    setHover(null)
   }, [protocolData])
 
   useEffect(() => {

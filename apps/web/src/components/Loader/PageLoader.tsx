@@ -13,3 +13,7 @@ const PageLoader: React.FC<React.PropsWithChildren<unknown>> = () => {
     <Wrapper>
       <Spinner />
     </Wrapper>
+  )
+}
+
+export default PageLoader

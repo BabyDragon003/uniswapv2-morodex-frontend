@@ -13,16 +13,11 @@ export class Price<TBase extends Currency, TQuote extends Currency> extends Frac
 
   public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Token
 
-      ;[baseCurrency, quoteCurrency, denominator, numerator] = args
-    } else {
-      const result = args[0].quoteAmount.divide(args[0].baseAmount)
-      ;[baseCurrency, quoteCurrency, denominator, numerator] = [
-        args[0].baseAmount.currency,
-        args[0].quoteAmount.currency,
-        result.denominator,
-        result.numerator,
-      ]
-    }
+  /**
+   * Construct a price, either with the base and quote currency amount, or the
+   * @param args
+   */
+  public constructor(
     super(numerator, denominator)
 
     this.baseCurrency = baseCurrency
