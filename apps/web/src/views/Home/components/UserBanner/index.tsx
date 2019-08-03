@@ -23,10 +23,3 @@ const UserBanner = () => {
         </Flex>
         <Flex flex="1" width={['100%', null, 'auto']}>
           <HarvestCard />
-        </Flex>
-      </Flex>
-    </StyledCard>
-  )
-}
-
-export default UserBanner

@@ -23,32 +23,6 @@ const MenuItem: React.FC<React.PropsWithChildren<MenuItemProps>> = ({
         href,
       }
     : {
-        as: "div",
-      };
-  useEffect(() => {
-    if (!isMobile || !isActive || !menuItemRef.current || !scrollLayerRef?.current) return;
-    const scrollLayer = scrollLayerRef.current;
-    const menuNode = menuItemRef.current.parentNode as HTMLDivElement;
-    if (!menuNode) return;
-    if (
-      scrollLayer.scrollLeft > menuNode.offsetLeft ||
-      scrollLayer.scrollLeft + scrollLayer.offsetWidth < menuNode.offsetLeft + menuNode.offsetWidth
-    ) {
-      scrollLayer.scrollLeft = menuNode.offsetLeft;
-    }
-  }, [isActive, isMobile, scrollLayerRef]);
-  return (
-    <StyledMenuItemContainer $isActive={isActive} $variant={variant} ref={menuItemRef}>
-      <StyledMenuItem
-        {...itemLinkProps}
-        $isActive={isActive}
-        $isDisabled={isDisabled}
-        $variant={variant}
-        $statusColor={statusColor}
-        {...props}
-      >
-        {children}
-      </StyledMenuItem>
     </StyledMenuItemContainer>
   );
 };

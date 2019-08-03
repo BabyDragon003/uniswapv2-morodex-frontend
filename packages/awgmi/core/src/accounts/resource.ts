@@ -23,4 +23,3 @@ export async function fetchAccountResource<T>({
 
   // @ts-ignore
   return resource as FetchAccountResourceResult
-}

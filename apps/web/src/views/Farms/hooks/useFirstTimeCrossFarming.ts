@@ -18,3 +18,4 @@ export const useFirstTimeCrossFarming = (vaultPid: number) => {
   )
 
   return { isFirstTime: data, refresh: mutate }
+}

@@ -18,16 +18,11 @@ export interface FormattedOrderData {
   invertedExecutionPrice: string
   isOpen: boolean
   isCancelled: boolean
-// Transforms Gelato Order type into types ready to be displayed in UI
-const useFormattedOrderData = (order: Order): FormattedOrderData => {
-  const { chainId } = useActiveChainId()
-  const gelatoLibrary = useGelatoLimitOrdersLib()
-  const inputToken = useCurrency(order.inputToken)
-  const outputToken = useCurrency(order.outputToken)
-
-  const isSubmissionPending = useIsTransactionPending(order.createdTxHash)
-  const isCancellationPending = useIsTransactionPending(order.cancelledTxHash ?? undefined)
-
+  isExecuted: boolean
+  isExpired: boolean
+  isSubmissionPending: boolean
+  isCancellationPending: boolean
+  bscScanUrls: {
   const inputAmount = useMemo(() => {
     if (inputToken && order.inputAmount) {
       return CurrencyAmount.fromRawAmount(inputToken, order.inputAmount)

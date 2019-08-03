@@ -18,6 +18,27 @@ const SearchWrapper = styled(Box)`
     margin-bottom: 0;
     order: 2;
     width: 320px;
+  }
+`
+const FilterWrapper = styled(Box)`
+  position: relative;
+  order: 2;
+  width: 100%;
+  z-index: 1;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    order: 1;
+    width: auto;
+  }
+`
+
+const Filters = () => {
+  const { t } = useTranslation()
+  const dispatch = useLocalDispatch()
+  const { token } = useConfig()
+
+  const orderByOptions = [
+    { label: t('Rounds Played'), value: 'totalBets' },
     { label: t('Net Winnings'), value: `net${token.symbol}` },
     { label: t('Total %symbol%', { symbol: token.symbol }), value: `total${token.symbol}` },
     { label: t('Win Rate'), value: 'winRate' },

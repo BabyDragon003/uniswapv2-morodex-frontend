@@ -18,6 +18,27 @@ export interface ExpandableSectionProps {
 
 const Wrapper = styled.div`
   margin-top: 24px;
+`;
+
+const StyledLinkExternal = styled(LinkExternal)`
+  font-weight: 400;
+`;
+
+export const DetailsSection: React.FC<React.PropsWithChildren<ExpandableSectionProps>> = ({
+  scanAddressLink,
+  infoAddress,
+  removed,
+  totalValueFormatted,
+  lpLabel,
+  addLiquidityUrl,
+  isCommunity,
+  auctionHostingEndDate,
+}) => {
+  const {
+    t,
+    currentLanguage: { locale },
+  } = useTranslation();
+
   return (
     <Wrapper>
       {isCommunity && auctionHostingEndDate && (

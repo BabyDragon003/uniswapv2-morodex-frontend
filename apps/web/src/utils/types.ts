@@ -18,6 +18,27 @@ export interface PredictionsRoundsResponse {
   startTimestamp: BigNumber
   lockTimestamp: BigNumber
   closeTimestamp: BigNumber
+  lockPrice: BigNumber
+  closePrice: BigNumber
+  lockOracleId: BigNumber
+  closeOracleId: BigNumber
+  totalAmount: BigNumber
+  bullAmount: BigNumber
+  bearAmount: BigNumber
+  rewardBaseCalAmount: BigNumber
+  rewardAmount: BigNumber
+  oracleCalled: boolean
+}
+
+// [rounds, ledgers, count]
+export type PredictionsGetUserRoundsResponse = [BigNumber[], PredictionsLedgerResponse[], BigNumber]
+
+export type PredictionsGetUserRoundsLengthResponse = BigNumber
+
+export interface PredictionsContract extends Omit<Predictions, 'getUserRounds' | 'ledger'> {
+  getUserRounds: ContractFunction<PredictionsGetUserRoundsResponse>
+  ledger: ContractFunction<PredictionsLedgerResponse>
+}
 
 // Farm Auction
 

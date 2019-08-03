@@ -18,3 +18,4 @@ const WalletNotConnected = () => {
   )
 }
 
+export default WalletNotConnected

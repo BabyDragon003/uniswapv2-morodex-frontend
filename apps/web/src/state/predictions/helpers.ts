@@ -18,6 +18,27 @@ import predictionsAbi from 'config/abi/predictions.json'
 import { Zero } from '@ethersproject/constants'
 import { PredictionsClaimableResponse, PredictionsLedgerResponse, PredictionsRoundsResponse } from 'utils/types'
 import { getRoundBaseFields, getBetBaseFields, getUserBaseFields } from './queries'
+import { ROUNDS_PER_PAGE } from './config'
+import { transformBetResponseCAKE, transformUserResponseCAKE } from './cakeTransformers'
+import { transformBetResponseBNB, transformUserResponseBNB } from './bnbTransformers'
+import { BetResponse, UserResponse } from './responseType'
+import { BetResponseBNB } from './bnbQueries'
+import { BetResponseCAKE } from './cakeQueries'
+
+export enum Result {
+  WIN = 'win',
+  LOSE = 'lose',
+  CANCELED = 'canceled',
+  HOUSE = 'house',
+  LIVE = 'live',
+}
+
+export const transformBetResponse = (tokenSymbol) =>
+  tokenSymbol === 'MDEX' ? transformBetResponseCAKE : transformBetResponseBNB
+
+export const transformUserResponse = (tokenSymbol) =>
+  tokenSymbol === 'MDEX' ? transformUserResponseCAKE : transformUserResponseBNB
+
 export const getRoundResult = (bet: Bet, currentEpoch: number): Result => {
   const { round } = bet
   if (round.failed) {

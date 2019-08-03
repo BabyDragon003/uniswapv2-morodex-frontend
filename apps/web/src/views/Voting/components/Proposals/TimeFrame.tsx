@@ -18,3 +18,8 @@ const TimeFrame: React.FC<React.PropsWithChildren<TimeFrameProps>> = ({ startDat
   const { t } = useTranslation()
   const textProps = {
     fontSize: '16px',
+    color: 'textSubtle',
+    ml: '8px',
+  }
+
+  if (proposalState === ProposalState.CLOSED) {

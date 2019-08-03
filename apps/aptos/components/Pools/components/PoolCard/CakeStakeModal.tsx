@@ -23,10 +23,3 @@ const CakeStakeModal = ({ pool, ...rest }: Pool.StakeModalPropsType<Coin>) => {
     })
     queryClient.invalidateQueries({
       queryKey: [{ entity: 'accountResources', networkName, address: account }],
-    })
-  }, [account, networkName, queryClient])
-
-  return <StakeModalContainer {...rest} onDone={onDone} onUnstake={onUnstake} onStake={onStake} pool={pool} />
-}
-
-export default CakeStakeModal

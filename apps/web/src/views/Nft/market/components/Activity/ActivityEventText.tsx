@@ -18,4 +18,25 @@ const ActivityEventText: React.FC<React.PropsWithChildren<ActivityEventTextProps
       text: t('Delisted'),
       color: 'textSubtle',
     },
+    [MarketEvent.MODIFY]: {
+      text: t('Modified'),
+      color: 'textSubtle',
+    },
+    [MarketEvent.BUY]: {
+      text: t('Bought'),
+      color: 'success',
+    },
+    [MarketEvent.SELL]: {
+      text: t('Sold'),
+      color: 'failure',
+    },
+  }
+
+  return (
+    <Text {...props} color={events[marketEvent].color}>
+      {events[marketEvent].text}
+    </Text>
+  )
+}
+
 export default ActivityEventText

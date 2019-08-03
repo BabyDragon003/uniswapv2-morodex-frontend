@@ -18,3 +18,6 @@ const PancakeToggle: React.FC<React.PropsWithChildren<PancakeToggleProps>> = ({
       </div>
     </PancakeLabel>
   </PancakeStack>
+);
+
+export default PancakeToggle;

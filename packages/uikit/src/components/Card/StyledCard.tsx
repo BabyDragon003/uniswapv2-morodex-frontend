@@ -18,6 +18,27 @@ const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, them
   if (isWarning) {
     return theme.colors.warning;
   }
+
+  if (isSuccess) {
+    return theme.colors.success;
+  }
+
+  if (isActive) {
+    return `linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary})`;
+  }
+
+  return theme.colors.cardBorder;
+};
+
+// background: ${getBorderColor};
+export const StyledCard = styled.div<StyledCardProps>`  
+  border-radius: ${({ theme }) => theme.radii.card};
+  color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
+  overflow: hidden;
+  position: relative;
+
+  ${({ isActive }) =>
+    isActive &&
     css`
       animation: ${promotedGradient} 3s ease infinite;
       background-size: 400% 400%;

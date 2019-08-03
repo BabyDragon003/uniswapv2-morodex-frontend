@@ -23,32 +23,6 @@ export function useNftStorage() {
   const [nftMarketActivityFilters, setNftMarketActivityFilters] = useAtom(nftMarketActivityFiltersAtom)
   const [tryVideoNftMedia, setTryVideoNftMedia] = useAtom(tryVideoNftMediaAtom)
 
-  const addActivityTypeFilters = useCallback(
-    ({ collection, field }: { collection: string; field: MarketEvent }) => {
-      if (nftMarketActivityFilters[collection]) {
-        nftMarketActivityFilters[collection].typeFilters.push(field)
-      } else {
-        nftMarketActivityFilters[collection] = {
-          ...cloneDeep(initialNftActivityFilterState),
-          typeFilters: [field],
-        }
-      }
-      setNftMarketActivityFilters({ ...nftMarketActivityFilters })
-    },
-    [setNftMarketActivityFilters, nftMarketActivityFilters],
-  )
-
-  const addActivityCollectionFilters = useCallback(
-    ({ collection }: { collection: string }) => {
-      if (nftMarketActivityFilters['']) {
-        nftMarketActivityFilters[''].collectionFilters.push(collection)
-      } else {
-        nftMarketActivityFilters[''] = {
-          ...cloneDeep(initialNftActivityFilterState),
-          collectionFilters: [collection],
-        }
-      }
-      setNftMarketActivityFilters({ ...nftMarketActivityFilters })
     },
     [setNftMarketActivityFilters, nftMarketActivityFilters],
   )

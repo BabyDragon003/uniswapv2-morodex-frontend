@@ -18,6 +18,27 @@ interface BottomDrawerProps {
 
 const BottomDrawer: React.FC<React.PropsWithChildren<BottomDrawerProps>> = ({ content, isOpen, setIsOpen }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldRender = useDelayedUnmount(isOpen, 350);
+  const { isMobile } = useMatchBreakpoints();
+
+  useOnClickOutside(
+    ref?.current,
+    useCallback(() => setIsOpen(false), [setIsOpen])
+  );
+
+  if (!shouldRender || !isMobile) {
+    return null;
+  }
+
+  const portal = getPortalRoot();
+
+  if (portal)
+    return createPortal(
+      <>
+        <Overlay isUnmounting={!isOpen} />
+        <DrawerContainer ref={ref} isUnmounting={!isOpen}>
+          <Box position="absolute" right="16px" top="0">
+            <IconButton variant="text" onClick={() => setIsOpen(false)}>
               <CloseIcon />
             </IconButton>
           </Box>

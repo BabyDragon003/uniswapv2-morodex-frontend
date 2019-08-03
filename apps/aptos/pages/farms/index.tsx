@@ -23,10 +23,3 @@ const FarmsPage = () => {
           removed={false}
         />
       ))}
-    </>
-  )
-}
-
-FarmsPage.Layout = FarmsPageLayout
-
-export default FarmsPage

@@ -18,6 +18,27 @@ const nodeReal = {
   ...(NODE_REAL_API_TESTNET && {
     testnet: NODE_REAL_API_TESTNET,
   }),
+}
+
+export const client = createClient({
+  connectors: [
+    new PetraConnector({ chains }),
+    new MartianConnector({ chains }),
+    new PontemConnector({ chains }),
+    new FewchaConnector({ chains }),
+    new BloctoConnector({ chains, options: { appId: 'e2f2f0cd-3ceb-4dec-b293-bb555f2ed5af' } }),
+    new PetraConnector({ chains, options: { name: 'Trust Wallet', id: 'trustWallet' } }),
+    new SafePalConnector({ chains }),
+  ],
+  provider: ({ networkName }) => {
+    const networkNameLowerCase = networkName?.toLowerCase()
+    if (networkNameLowerCase) {
+      const foundChain = chains.find((c) => c.network === networkNameLowerCase)
+      if (foundChain) {
+        if (foundChain.nodeUrls.nodeReal && nodeReal[networkNameLowerCase]) {
+          return new AptosClient(`${foundChain.nodeUrls.nodeReal}/${nodeReal[networkNameLowerCase]}`, {
+            WITH_CREDENTIALS: false,
+          })
         }
         return new AptosClient(foundChain.nodeUrls.default)
       }

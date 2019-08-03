@@ -23,32 +23,6 @@ const initialState = {
     isPendingTx: false,
     vestingReleased: BIG_ZERO,
     vestingAmountTotal: BIG_ZERO,
-    isVestingInitialized: false,
-    vestingId: '0',
-    vestingComputeReleasableAmount: BIG_ZERO,
-  },
-  poolUnlimited: {
-    amountTokenCommittedInLP: BIG_ZERO,
-    offeringAmountInToken: BIG_ZERO,
-    refundingAmountInLP: BIG_ZERO,
-    taxAmountInLP: BIG_ZERO,
-    hasClaimed: false,
-    isPendingTx: false,
-    vestingReleased: BIG_ZERO,
-    vestingAmountTotal: BIG_ZERO,
-    isVestingInitialized: false,
-    vestingId: '0',
-    vestingComputeReleasableAmount: BIG_ZERO,
-  },
-}
-
-/**
- * Gets all data from an IFO related to a wallet
- */
-const useGetWalletIfoData = (ifo: Ifo): WalletIfoData => {
-  const [state, setState] = useState<WalletIfoState>(initialState)
-  const dispatch = useAppDispatch()
-  const credit = useIfoCredit()
 
   const { address, currency, version } = ifo
 

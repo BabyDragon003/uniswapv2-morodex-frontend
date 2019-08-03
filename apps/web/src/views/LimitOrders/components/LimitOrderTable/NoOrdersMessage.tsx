@@ -18,3 +18,13 @@ const NoOrdersMessage: React.FC<React.PropsWithChildren<{ orderCategory: ORDER_C
         return ''
     }
   }, [orderCategory, t])
+
+  return (
+    <Flex p="24px" justifyContent="center" alignItems="center" flexDirection="column">
+      <BunnyPlaceholderIcon width={64} />
+      <Text color="textDisabled">{NoOrdersText}</Text>
+    </Flex>
+  )
+}
+
+export default NoOrdersMessage

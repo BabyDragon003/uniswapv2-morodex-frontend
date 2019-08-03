@@ -21,6 +21,27 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
   }
 `
 
+const BgWrapper = styled.div`
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+`
+
+const BottomLeftImgWrapper = styled(Flex)`
+  position: absolute;
+  left: 0;
+  bottom: -64px;
+  max-width: 192px;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 100%;
+  }
+`
+
 const TopRightImgWrapper = styled(Flex)`
   position: absolute;
   right: 0;

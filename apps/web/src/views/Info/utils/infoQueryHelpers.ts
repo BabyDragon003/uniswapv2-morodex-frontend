@@ -23,22 +23,3 @@ export const multiQuery = async (
   try {
     while (!allFound) {
       let end = subqueries.length
-      if (skip + skipCount < subqueries.length) {
-        end = skip + skipCount
-      }
-      const subqueriesSlice = subqueries.slice(skip, end)
-      // eslint-disable-next-line no-await-in-loop
-      const result: any = await requestWithTimeout(client, queryConstructor(subqueriesSlice))
-      fetchedData = {
-        ...fetchedData,
-        ...result,
-      }
-      allFound = Object.keys(result).length < skipCount || skip + skipCount > subqueries.length
-      skip += skipCount
-    }
-    return fetchedData
-  } catch (error) {
-    console.error('Failed to fetch info data', error)
-    return null
-  }
-}
