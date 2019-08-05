@@ -1,4 +1,3 @@
-import { useEffect, useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { batch, useSelector } from 'react-redux'

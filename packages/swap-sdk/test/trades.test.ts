@@ -1,4 +1,3 @@
-import { TradeType, Percent, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import JSBI from 'jsbi'
 import { isTradeBetter } from '../src/trade'
 import { Pair, Route, Trade } from '../src/entities'
@@ -23,6 +22,32 @@ describe('isTradeBetter', () => {
     CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(30000)),
     CurrencyAmount.fromRawAmount(token3, JSBI.BigInt(30000))
   )
+
+  it('should return false if tradeB missing', () => {
+    expect(
+      isTradeBetter(
+        new Trade(
+          new Route([pair12], token1, token2),
+          CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(1000)),
+          TradeType.EXACT_INPUT
+        ),
+        undefined
+      )
+    ).toBeFalsy()
+  })
+
+  it('should return true if tradeA missing', () => {
+    expect(
+      isTradeBetter(
+        undefined,
+        new Trade(
+          new Route([pair12], token1, token2),
+          CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(1000)),
+          TradeType.EXACT_INPUT
+        )
+      )
+    ).toBeTruthy()
+  })
 
   it('should return undefined if both trade missing', () => {
     expect(isTradeBetter(undefined, undefined)).toBeUndefined()

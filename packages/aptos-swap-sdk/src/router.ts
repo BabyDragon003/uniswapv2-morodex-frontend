@@ -1,4 +1,3 @@
-import { Percent, TradeType } from '@pancakeswap/swap-sdk-core'
 import {
   routerSwapExactInput,
   routerAddLiquidity,

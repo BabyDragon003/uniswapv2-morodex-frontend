@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Text } from "@pancakeswap/uikit";
 import styled from "styled-components";
 import { useRouter } from "next/router";

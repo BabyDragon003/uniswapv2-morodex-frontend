@@ -1,4 +1,3 @@
-import useSWRImmutable from 'swr/immutable'
 import { ProposalState, Proposal } from 'state/types'
 import request, { gql } from 'graphql-request'
 import { SNAPSHOT_API } from 'config/constants/endpoints'

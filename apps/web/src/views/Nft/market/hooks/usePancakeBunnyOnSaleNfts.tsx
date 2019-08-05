@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react'
 import { NftToken, ApiResponseCollectionTokens } from 'state/nftMarket/types'
 import {
   getNftsMarketData,

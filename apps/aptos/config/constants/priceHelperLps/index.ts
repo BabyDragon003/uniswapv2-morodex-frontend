@@ -1,4 +1,3 @@
-import { ChainId } from '@pancakeswap/aptos-swap-sdk'
 import FarmsMainnetPriceHelper from './farms/1'
 import FarmsTestnetPriceHelper from './farms/2'
 import PoolsMainnetPriceHelper from './pools/1'

@@ -1,4 +1,3 @@
-import { Flex, LinkExternal, Pool, Text, TimerIcon, useTooltip } from '@pancakeswap/uikit'
 import { memo, useMemo } from 'react'
 import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
@@ -23,6 +22,32 @@ interface EndTimeTooltipComponentProps {
 const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {
     t,
+    currentLanguage: { locale },
+  } = useTranslation()
+
+  return (
+    <>
+      <Text bold>{t('End Time')}:</Text>
+      <Text>
+        {new Date(endTime * 1000).toLocaleString(locale, {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        })}
+      </Text>
+    </>
+  )
+}
+
+const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({ pool, showTotalStaked = true }) => {
+  const { t } = useTranslation()
+  const getNow = useLedgerTimestamp()
+
+  const {
+    stakingToken,
     earningToken,
     totalStaked = BIG_ZERO,
     userData: poolUserData,

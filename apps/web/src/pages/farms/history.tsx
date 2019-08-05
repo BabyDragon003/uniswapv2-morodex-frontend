@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { SUPPORT_FARMS } from 'config/constants/supportChains'
 import { FarmsPageLayout, FarmsContext } from 'views/Farms'
 import FarmCard from 'views/Farms/components/FarmCard/FarmCard'

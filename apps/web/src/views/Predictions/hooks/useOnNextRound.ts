@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { useIsomorphicEffect } from '@pancakeswap/uikit'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'

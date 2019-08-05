@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Skeleton, PocketWatchIcon, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'

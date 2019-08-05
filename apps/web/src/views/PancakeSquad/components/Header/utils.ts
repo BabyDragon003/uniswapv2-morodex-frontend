@@ -1,4 +1,3 @@
-import { SaleStatusEnum, UserStatusEnum } from 'views/PancakeSquad/types'
 import { ButtonsEnum } from './types'
 
 type getCurrentButtonType = {

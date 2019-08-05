@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import useSWR from 'swr'
 import { useIfoCreditAddressContract } from 'hooks/useContract'

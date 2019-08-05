@@ -1,4 +1,3 @@
-import { BigNumber } from '@ethersproject/bignumber'
 
 export type Actions =
   | { type: 'next_step' }

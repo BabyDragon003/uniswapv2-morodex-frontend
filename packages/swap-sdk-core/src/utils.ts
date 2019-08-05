@@ -1,4 +1,3 @@
-import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import { ZERO, ONE, TWO, THREE, VMType, VM_TYPE_MAXIMA } from './constants'
 import { Currency } from './currency'

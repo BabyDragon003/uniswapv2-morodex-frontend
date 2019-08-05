@@ -1,4 +1,3 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { SWRConfig } from 'swr'
 import Teams from '../../views/Teams'
 import { getTeams } from '../../state/teams/helpers'
@@ -23,3 +22,20 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         fallback: {
           teams: teamsById,
+        },
+      },
+      revalidate: 1,
+    }
+  }
+
+  return {
+    props: {
+      fallback: {
+        teams: fetchedTeams,
+      },
+    },
+    revalidate: 60 * 60 * 12, // 12 hours
+  }
+}
+
+export default TeamsPage

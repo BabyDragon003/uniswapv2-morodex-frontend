@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { LanguageContext } from './Provider'
 
 const useTranslation = () => {

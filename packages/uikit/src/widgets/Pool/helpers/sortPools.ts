@@ -1,4 +1,3 @@
-import { BigNumber as EthersBigNumber } from "@ethersproject/bignumber";
 import { formatUnits } from "@ethersproject/units";
 
 import orderBy from "lodash/orderBy";

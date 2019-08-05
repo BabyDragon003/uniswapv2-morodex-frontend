@@ -1,4 +1,3 @@
-import { useMemo, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Menu as UikitMenu, NextLinkFromReactRouter, footerLinks } from '@pancakeswap/uikit'
 import { useTranslation, languageList } from '@pancakeswap/localization'

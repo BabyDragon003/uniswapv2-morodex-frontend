@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 
 interface AvatarImageProps {
   src: string

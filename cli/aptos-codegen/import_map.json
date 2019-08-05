@@ -1,4 +1,3 @@
-{
   "imports": {
     "aptos": "https://esm.sh/aptos",
     "camelcase": "https://deno.land/x/camelcase@v2.1.0/mod.ts",

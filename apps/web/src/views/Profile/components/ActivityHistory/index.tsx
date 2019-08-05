@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import { isAddress } from 'utils'
 import { useAppDispatch } from 'state'

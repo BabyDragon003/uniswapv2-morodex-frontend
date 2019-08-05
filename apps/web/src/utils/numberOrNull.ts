@@ -1,4 +1,3 @@
-const numberOrNull = (value: string) => {
   if (value === null) {
     return null
   }

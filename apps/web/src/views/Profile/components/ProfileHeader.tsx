@@ -1,4 +1,3 @@
-import {
   BscScanIcon,
   Flex,
   IconButton,

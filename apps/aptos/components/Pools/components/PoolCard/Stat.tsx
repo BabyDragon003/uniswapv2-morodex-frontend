@@ -1,4 +1,3 @@
-import { Flex, Text, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Coin } from '@pancakeswap/aptos-swap-sdk'

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Box, Flex, Text, Select, OptionProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'

@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { TokenData, Block } from 'state/info/types'

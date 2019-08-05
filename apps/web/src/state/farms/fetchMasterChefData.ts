@@ -1,4 +1,3 @@
-import masterchefABI from 'config/abi/masterchef.json'
 import chunk from 'lodash/chunk'
 import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'

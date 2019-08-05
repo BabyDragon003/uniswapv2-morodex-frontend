@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import UnstakeButton from '../UnstakeButton'
 
@@ -23,3 +22,9 @@ export interface UnstakeProps {
 const Unstake: React.FC<React.PropsWithChildren<UnstakeProps>> = ({ pid }) => {
   return (
     <Container>
+      <UnstakeButton pid={pid} />
+    </Container>
+  )
+}
+
+export default Unstake

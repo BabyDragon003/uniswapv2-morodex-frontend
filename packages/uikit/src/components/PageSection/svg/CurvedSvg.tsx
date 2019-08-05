@@ -1,4 +1,3 @@
-import styled, { css, DefaultTheme } from "styled-components";
 import { Box } from "../../Box";
 import { ClipFill } from "../types";
 

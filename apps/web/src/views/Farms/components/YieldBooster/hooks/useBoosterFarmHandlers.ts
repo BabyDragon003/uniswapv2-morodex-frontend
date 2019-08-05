@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 
 import { BOOSTED_FARM_GAS_LIMIT } from 'config'
 import { useBCakeFarmBoosterContract } from 'hooks/useContract'

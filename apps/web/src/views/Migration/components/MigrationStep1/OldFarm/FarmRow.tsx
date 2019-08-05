@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/farmsV1/hooks'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'
@@ -23,6 +22,32 @@ const StyledRow = styled.div`
 `
 
 const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+  }
+`
+
+const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 24px 0;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+    align-items: center;
+  }
+`
+
+const FarmRow: React.FunctionComponent<React.PropsWithChildren<RowProps>> = ({
+  farm,
+  staked,
+  earned,
+  multiplier,
+  liquidity,
   unstake,
 }) => {
   const { isMobile, isXl, isXxl } = useMatchBreakpoints()

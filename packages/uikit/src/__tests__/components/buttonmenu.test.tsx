@@ -1,4 +1,3 @@
-import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import ButtonMenu from "../../components/ButtonMenu/ButtonMenu";
 import ButtonMenuItem from "../../components/ButtonMenu/ButtonMenuItem";

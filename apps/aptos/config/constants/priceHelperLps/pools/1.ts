@@ -1,4 +1,3 @@
-// import { serializeTokens } from '@pancakeswap/tokens/src/helpers'
 import type { SerializedFarmConfig } from '@pancakeswap/farms'
 // import { mainnetTokens } from 'config/constants/tokens'
 

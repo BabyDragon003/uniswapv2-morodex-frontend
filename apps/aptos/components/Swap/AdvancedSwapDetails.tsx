@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency, Trade, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { QuestionHelper, Text, RowBetween, RowFixed, AutoColumn } from '@pancakeswap/uikit'
 import { BUYBACK_FEE, LP_HOLDERS_FEE, TOTAL_FEE, TREASURY_FEE } from 'config/constants/info'

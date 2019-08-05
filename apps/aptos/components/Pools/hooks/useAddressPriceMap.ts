@@ -1,4 +1,3 @@
-import _uniqBy from 'lodash/uniqBy'
 import { useMemo } from 'react'
 
 import { PairState, usePairs } from 'hooks/usePairs'

@@ -1,4 +1,3 @@
-import { atom } from 'jotai'
 
 export const nftMarketFiltersAtom = atom({})
 export const nftMarketActivityFiltersAtom = atom({})

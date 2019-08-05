@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { Modal, Box } from '@pancakeswap/uikit'
 import _noop from 'lodash/noop'
 import useTheme from 'hooks/useTheme'

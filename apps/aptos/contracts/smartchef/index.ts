@@ -1,4 +1,3 @@
-import { smartChefDeposit, smartChefWithdraw } from '../generated/smartchef'
 
 export abstract class SmartChef {
   public static deposit({

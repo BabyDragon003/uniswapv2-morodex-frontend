@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useState, useCallback, useMemo } from 'react'
 import { Flex, Box, Card, Text, useMatchBreakpoints, Balance, ButtonTabMenu } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

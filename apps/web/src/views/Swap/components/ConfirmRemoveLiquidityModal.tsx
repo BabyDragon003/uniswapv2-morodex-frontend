@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/sdk'
 import {
   AddIcon,

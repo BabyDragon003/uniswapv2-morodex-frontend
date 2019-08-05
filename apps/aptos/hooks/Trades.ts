@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { Pair, Trade, Currency, CurrencyAmount, Token, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'

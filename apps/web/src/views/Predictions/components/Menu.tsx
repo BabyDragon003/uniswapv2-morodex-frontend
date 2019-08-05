@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import Link from 'next/link'
 import { Flex, HelpIcon, Button, PrizeIcon } from '@pancakeswap/uikit'
 import { useGetPredictionsStatus } from 'state/predictions/hooks'

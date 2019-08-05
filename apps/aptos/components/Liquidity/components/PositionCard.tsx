@@ -1,4 +1,3 @@
-import { memo, useState } from 'react'
 import { JSBI, Percent } from '@pancakeswap/swap-sdk-core'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'

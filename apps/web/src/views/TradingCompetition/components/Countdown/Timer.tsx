@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Heading, Text, Link, useTooltip, BscScanIcon } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { useTranslation, ContextApi } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
 `
 
 const Timer = ({ minutes, hours, days, showTooltip, HeadingTextComponent, BodyTextComponent }) => {
+  const { t } = useTranslation()
+
+  return (
+    <StyledTimerFlex alignItems="flex-end" showTooltip={showTooltip}>
+      {Boolean(days) && (
+        <>
+          <HeadingTextComponent mr="2px">{days}</HeadingTextComponent>
+          <BodyTextComponent mr="16px">{t('d')}</BodyTextComponent>
+        </>
+      )}
+      {Boolean(hours) && (
+        <>
+          <HeadingTextComponent mr="2px">{hours}</HeadingTextComponent>
+          <BodyTextComponent mr="16px">{t('h')}</BodyTextComponent>
+        </>
+      )}
+      {Boolean(minutes) && (
+        <>
+          <HeadingTextComponent mr="2px">{minutes}</HeadingTextComponent>
+          <BodyTextComponent>{t('m')}</BodyTextComponent>
+        </>
+      )}
+    </StyledTimerFlex>
+  )
+}
+
 const DefaultHeadingTextComponent = ({ children, ...props }) => (
   <Heading scale="lg" {...props}>
     {children}

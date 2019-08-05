@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { gql } from 'graphql-request'
 import _toLower from 'lodash/toLower'
 import { getDeltaTimestamps } from './getDeltaTimestamps'

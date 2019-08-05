@@ -1,4 +1,3 @@
-[
   {
     "inputs": [
       { "internalType": "address", "name": "_cake", "type": "address" },

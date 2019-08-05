@@ -1,4 +1,3 @@
-import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import { TradeType, Rounding, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { Pair, Route, Trade } from '../src/entities'

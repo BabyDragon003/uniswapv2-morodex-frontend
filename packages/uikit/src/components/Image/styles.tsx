@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { variant as StyledSystemVariant } from "styled-system";
 import { ImageProps, Variant, variants } from "./types";
 import TokenImage from "./TokenImage";

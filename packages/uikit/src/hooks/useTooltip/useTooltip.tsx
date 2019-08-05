@@ -1,4 +1,3 @@
-import { AnimatePresence, Variants, LazyMotion, domAnimation } from "framer-motion";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";

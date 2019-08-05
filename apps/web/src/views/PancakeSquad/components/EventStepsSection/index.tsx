@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Box, Button, Card, CardBody, Flex, Step, Stepper, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { StyledWaveContainer, LandingBodyWrapper } from 'views/PancakeSquad/styles'

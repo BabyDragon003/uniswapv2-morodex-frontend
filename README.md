@@ -1,4 +1,3 @@
-# 🥞 Pancake Frontend
 
 <p align="center">
   <a href="https://dapp-frontend-prince.web.app">

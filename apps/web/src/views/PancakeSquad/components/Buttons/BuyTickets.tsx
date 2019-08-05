@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { BigNumber } from '@ethersproject/bignumber'
 import { MaxUint256 } from '@ethersproject/constants'
 import { ContextApi } from '@pancakeswap/localization'
@@ -23,6 +22,32 @@ type BuyTicketsProps = {
   account: string
   saleStatus: SaleStatusEnum
   userStatus: UserStatusEnum
+  theme: DefaultTheme
+  canClaimForGen0: boolean
+  maxPerAddress: number
+  maxPerTransaction: number
+  numberTicketsOfUser: number
+  numberTicketsForGen0: number
+  numberTicketsUsedForGen0: number
+  cakeBalance: BigNumber
+  pricePerTicket: BigNumber
+  startTimestamp: number
+}
+
+const BuyTicketsButtons: React.FC<React.PropsWithChildren<BuyTicketsProps>> = ({
+  t,
+  account,
+  saleStatus,
+  userStatus,
+  theme,
+  canClaimForGen0,
+  maxPerAddress,
+  maxPerTransaction,
+  numberTicketsOfUser,
+  numberTicketsForGen0,
+  numberTicketsUsedForGen0,
+  cakeBalance,
+  pricePerTicket,
   startTimestamp,
 }) => {
   const [txHashEnablingResult, setTxHashEnablingResult] = useState(null)

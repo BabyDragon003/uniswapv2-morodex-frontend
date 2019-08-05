@@ -1,4 +1,3 @@
-import { createReducer } from '@reduxjs/toolkit'
 import { atomWithReducer } from 'jotai/utils'
 import { typeInput } from './actions'
 import { Field } from '../../type'

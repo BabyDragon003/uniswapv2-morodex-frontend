@@ -1,4 +1,3 @@
-import { HelpIcon, useTooltip, Box, BoxProps, Placement } from "@pancakeswap/uikit";
 import styled from "styled-components";
 
 interface Props extends BoxProps {

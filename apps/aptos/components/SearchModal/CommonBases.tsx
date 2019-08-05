@@ -1,4 +1,3 @@
-import { ChainId, Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import { Text, QuestionHelper, AutoColumn, AutoRow } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import useNativeCurrency from 'hooks/useNativeCurrency'

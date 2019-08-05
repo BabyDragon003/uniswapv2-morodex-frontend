@@ -1,4 +1,3 @@
-import { CardBody, Flex, CardRibbon, Skeleton, Pool } from "@pancakeswap/uikit";
 import { useTranslation } from "@pancakeswap/localization";
 import { ReactElement } from "react";
 import { StyledCard } from "./StyledCard";

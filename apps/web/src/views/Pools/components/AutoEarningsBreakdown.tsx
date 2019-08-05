@@ -1,4 +1,3 @@
-import { Text, Box, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { differenceInHours } from 'date-fns'
 import { useVaultPoolByKey } from 'state/pools/hooks'

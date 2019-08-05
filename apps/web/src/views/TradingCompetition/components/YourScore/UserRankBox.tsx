@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Text, FlexProps } from '@pancakeswap/uikit'
 
 interface UserRankProps extends FlexProps {

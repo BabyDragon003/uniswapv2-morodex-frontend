@@ -1,4 +1,3 @@
-import ItemsMock from "../DropdownMenu/mock";
 
 const MenuItemsMock = [
   {
@@ -23,3 +22,9 @@ const MenuItemsMock = [
   },
   {
     label: "...",
+    href: "/",
+    items: ItemsMock,
+  },
+];
+
+export default MenuItemsMock;

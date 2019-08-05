@@ -1,4 +1,3 @@
-import request, { gql } from 'graphql-request'
 import flatten from 'lodash/flatten'
 import { GRAPH_API_PREDICTION_V1 } from 'config/constants/endpoints'
 

@@ -1,4 +1,3 @@
-import { FixedNumber } from '@ethersproject/bignumber'
 
 export const FIXED_ZERO = FixedNumber.from(0)
 export const FIXED_ONE = FixedNumber.from(1)

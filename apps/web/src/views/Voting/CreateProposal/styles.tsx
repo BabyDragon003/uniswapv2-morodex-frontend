@@ -1,4 +1,3 @@
-import { Box, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 const BaseLabel = styled.label`

@@ -1,4 +1,3 @@
-import { Placement } from "@popperjs/core";
 import { ReactElement, ReactNode } from "react";
 import { FlexProps } from "../../../../components/Box";
 

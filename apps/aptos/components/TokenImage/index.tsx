@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import {
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,

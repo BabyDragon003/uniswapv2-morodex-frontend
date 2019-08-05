@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token } from '@pancakeswap/sdk'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'

@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Link } from '@pancakeswap/uikit'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
