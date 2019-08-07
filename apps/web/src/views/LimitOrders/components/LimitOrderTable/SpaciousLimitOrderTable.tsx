@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Table, Th, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FullRow from './FullRow'
@@ -7,17 +8,6 @@ const SpaciousLimitOrderTable = ({ orders }) => {
 
   return (
     <Table>
-      <>
-        <thead>
-          <tr>
-            <Th>
-              <Text fontSize="12px" bold textTransform="uppercase" color="textSubtle" textAlign="left">
-                {t('From')}
-              </Text>
-            </Th>
-            <Th>
-              <Text fontSize="12px" bold textTransform="uppercase" color="textSubtle" textAlign="left">
-                {t('To')}
               </Text>
             </Th>
             <Th>

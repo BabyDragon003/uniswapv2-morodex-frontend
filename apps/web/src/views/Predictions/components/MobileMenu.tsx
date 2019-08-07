@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import {
   ArrowBackIcon,
@@ -7,17 +8,6 @@ import {
   Cards,
   ChartIcon,
   HistoryIcon,
-  IconButton,
-} from '@pancakeswap/uikit'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import { PredictionStatus } from 'state/types'
-import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
-import { setChartPaneState, setHistoryPaneState } from 'state/predictions'
-import useSwiper from '../hooks/useSwiper'
-
-const ButtonNav = styled.div`
-  flex: none;
-`
 
 const TabNav = styled.div`
   flex: 1;

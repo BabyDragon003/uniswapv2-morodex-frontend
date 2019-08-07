@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { Pool } from '@pancakeswap/uikit'
 import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 import Trans from 'components/Trans'

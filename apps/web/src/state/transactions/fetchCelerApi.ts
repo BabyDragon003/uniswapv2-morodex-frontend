@@ -1,3 +1,4 @@
+import { CELER_API } from 'config/constants/endpoints'
 import { MsgStatus } from './actions'
 
 export const fetchCelerApi = async (hash: string) => {
@@ -7,17 +8,6 @@ export const fetchCelerApi = async (hash: string) => {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-      },
-    })
-
-    const result = await response.json()
-    if (!result.txSearchInfo[0]) {
-      return {
-        destinationTxHash: '',
-        messageStatus: MsgStatus.MS_UNKNOWN,
-      }
-    }
-
     const { message } = result.txSearchInfo[0]
     return {
       destinationTxHash: message[0].execution_tx,

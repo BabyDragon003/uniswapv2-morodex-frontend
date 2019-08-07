@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { Currency, CurrencyAmount, Percent } from '@pancakeswap/sdk'
 import {
@@ -7,17 +8,6 @@ import {
   IconButton,
   ArrowUpDownIcon,
   Skeleton,
-  Flex,
-  Message,
-  MessageText,
-  Swap as SwapUI,
-  PencilIcon,
-  useModal,
-} from '@pancakeswap/uikit'
-import InfoTooltip from '@pancakeswap/uikit/src/components/Timeline/InfoTooltip'
-
-import { useTranslation } from '@pancakeswap/localization'
-import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 
 import CurrencyInputPanel from 'components/CurrencyInputPanel'

@@ -1,3 +1,4 @@
+import { HexString, TxnBuilderTypes, Types, TypeTagParser } from 'aptos'
 import { CoinStoreResult, COIN_STORE_TYPE_PREFIX } from '../coins/coinStore'
 import { getProvider } from '../providers'
 

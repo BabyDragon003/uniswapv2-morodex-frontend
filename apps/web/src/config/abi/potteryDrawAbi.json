@@ -1,3 +1,4 @@
+[
   {
     "inputs": [
       {
@@ -7,17 +8,6 @@
       },
       {
         "internalType": "contract ICakePool",
-        "name": "_cakePool",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
         "name": "vault",

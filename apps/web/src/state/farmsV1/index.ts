@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 import { SerializedFarm, SerializedFarmsState } from '@pancakeswap/farms'
 import type {
   UnknownAsyncThunkFulfilledAction,
@@ -7,17 +8,6 @@ import type {
 } from '@reduxjs/toolkit/dist/matchers'
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit'
 import stringify from 'fast-json-stable-stringify'
-import { getFarmConfig } from '@pancakeswap/farms/constants'
-import type { AppState } from 'state'
-import { getFarmsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
-import fetchFarms from './fetchFarms'
-import getFarmsPrices from './getFarmsPrices'
-import {
-  fetchFarmUserEarnings,
-  fetchFarmUserAllowances,
-  fetchFarmUserTokenBalances,
-  fetchFarmUserStakedBalances,
-} from './fetchFarmUser'
 import { fetchMasterChefFarmPoolLength } from './fetchMasterChefData'
 
 const initialState: SerializedFarmsState = {

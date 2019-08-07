@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { useTranslation } from '@pancakeswap/localization'
 import { ChainId } from '@pancakeswap/sdk'
 import { useToast } from '@pancakeswap/uikit'

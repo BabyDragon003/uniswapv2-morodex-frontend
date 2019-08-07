@@ -1,3 +1,4 @@
+import { SerializedFarmConfig } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
 import { BIG_ZERO, BIG_TWO } from '@pancakeswap/utils/bigNumber'
@@ -7,17 +8,6 @@ import { fetchMasterChefData } from './fetchMasterChefData'
 const fetchFarms = async (farmsToFetch: SerializedFarmConfig[]) => {
   const farmResult = await fetchPublicFarmsData(farmsToFetch)
   const masterChefResult = await fetchMasterChefData(farmsToFetch)
-
-  return farmsToFetch.map((farm, index) => {
-    const [tokenBalanceLP, quoteTokenBalanceLP, lpTokenBalanceMC, lpTotalSupply, tokenDecimals, quoteTokenDecimals] =
-      farmResult[index]
-
-    const [info, totalAllocPoint] = masterChefResult[index]
-
-    const lpTotalSupplyBN = new BigNumber(lpTotalSupply)
-
-    // Ratio in % of LP tokens that are staked in the MC, vs the total number in circulation
-    const lpTokenRatio = new BigNumber(lpTokenBalanceMC).div(lpTotalSupplyBN)
 
     // Raw amount of token in the LP, including those not staked
     const tokenAmountTotal = new BigNumber(tokenBalanceLP).div(getFullDecimalMultiplier(tokenDecimals))

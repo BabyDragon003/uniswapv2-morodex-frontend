@@ -1,3 +1,4 @@
+import React, { PropsWithChildren, useRef } from "react";
 import { useTheme } from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import getThemeValue from "../../util/getThemeValue";

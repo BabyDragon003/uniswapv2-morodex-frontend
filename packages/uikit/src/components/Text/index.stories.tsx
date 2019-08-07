@@ -1,3 +1,4 @@
+import React from "react";
 import Text from "./Text";
 import TooltipText from "./TooltipText";
 
@@ -7,17 +8,6 @@ export default {
   argTypes: {
     bold: {
       name: "bold",
-      table: {
-        type: { summary: "bool", detail: "Bold the text" },
-        defaultValue: { summary: false },
-      },
-      control: {
-        type: null,
-      },
-    },
-    fontSize: {
-      name: "fontSize",
-      table: {
         type: { summary: "string", detail: "Fontsize in px or em" },
         defaultValue: { summary: "16px" },
       },

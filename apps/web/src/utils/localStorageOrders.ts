@@ -1,3 +1,4 @@
+import { Order } from '@gelatonetwork/limit-orders-lib'
 import { get, set, clear } from 'local-storage'
 import orderBy from 'lodash/orderBy'
 
@@ -6,17 +7,6 @@ export const LS_ORDERS = 'gorders_'
 export const hashOrder = (order: Order) => order.id
 
 export const hashOrderSet = (orders: Order[]) => new Set(orders.map(hashOrder))
-
-export function clearOrdersLocalStorage() {
-  return clear()
-}
-
-export function lsKey(key: string, account: string, chainId: number) {
-  return key + account.toString() + chainId.toString()
-}
-
-export function getLSOrders(chainId: number, account: string, pending = false) {
-  const key = pending ? lsKey(`${LS_ORDERS}pending_`, account, chainId) : lsKey(LS_ORDERS, account, chainId)
 
   const orders = get<Order[]>(key)
 

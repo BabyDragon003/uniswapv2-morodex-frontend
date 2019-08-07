@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex, Heading, Skeleton, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Achievement } from 'state/types'
@@ -7,17 +8,6 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 16px;
   grid-template-columns: 1fr;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
-
-const AchievementsList: React.FC<React.PropsWithChildren<{ achievements: Achievement[]; isLoading: boolean }>> = ({
-  achievements,
-  isLoading,
-}) => {
-  const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
 
   if (isLoading) {

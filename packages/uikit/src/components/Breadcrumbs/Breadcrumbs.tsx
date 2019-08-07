@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { Children, isValidElement, ReactNode } from "react";
 import styled from "styled-components";
 import { space } from "styled-system";
@@ -7,17 +8,6 @@ import { BreadcrumbsProps } from "./types";
 const Separator = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.colors.textDisabled};
-  display: flex;
-  justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.md} {
     padding-left: 16px;
     padding-right: 16px;
   }

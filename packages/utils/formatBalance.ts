@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { BigNumber as EthersBigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
 import { getLanguageCodeFromLS } from '@pancakeswap/localization'
@@ -6,17 +7,6 @@ import _trimEnd from 'lodash/trimEnd'
 
 /**
  * Take a formatted amount, e.g. 15 BNB and convert it to full decimal value, e.g. 15000000000000000
- */
-export const getDecimalAmount = (amount: BigNumber, decimals = 18) => {
-  return new BigNumber(amount).times(getFullDecimalMultiplier(decimals))
-}
-
-export const getBalanceAmount = (amount: BigNumber, decimals = 18) => {
-  return new BigNumber(amount).dividedBy(getFullDecimalMultiplier(decimals))
-}
-
-/**
- * This function is not really necessary but is used throughout the site.
  */
 export const getBalanceNumber = (balance: BigNumber, decimals = 18) => {
   return getBalanceAmount(balance, decimals).toNumber()

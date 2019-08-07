@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { ChoosePairView } from '@pancakeswap/uikit/src/widgets/Liquidity'
 import { CommitButton } from 'components/CommitButton'
 import { useContext } from 'react'
@@ -7,17 +8,6 @@ import { CurrencySelect } from './CurrencySelect'
 import LiquidityBridgeWarning from './LiquidityBridgeWarning'
 
 export default function ChoosePair({ onNext }: { onNext: () => void }) {
-  const { error } = useContext(MintPairContext)
-  const { currencyA, currencyB, handleCurrencyASelect, handleCurrencyBSelect } = useContext(CurrencySelectorContext)
-  const { t } = useTranslation()
-
-  return (
-    <ChoosePairView
-      selectCurrencyA={
-        <CurrencySelect
-          onCurrencySelect={handleCurrencyASelect}
-          otherSelectedCurrency={currencyB}
-          selectedCurrency={currencyA}
         />
       }
       selectCurrencyB={

@@ -1,3 +1,4 @@
+import qs from 'qs'
 
 /**
  * Get full Strapi URL from path

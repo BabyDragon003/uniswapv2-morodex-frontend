@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex, Text, TooltipText, useTooltip, Box, Link, BalanceWithLoading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'
@@ -7,17 +8,6 @@ import { getICakeWeekDisplay } from 'views/Pools/helpers'
 const InlineLink = styled(Link)`
   display: inline;
 `
-
-const IfoCakeRow: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-  const credit = useIfoCredit()
-  const ceiling = useIfoCeiling()
-  const weeksDisplay = getICakeWeekDisplay(ceiling)
-
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    <Box>
-      <Text>
-        {t(
           'The number of iCAKE equals the locked staking amount if the staking duration is longer than %weeks% weeks. If the staking duration is less than %weeks% weeks, it will linearly decrease based on the staking duration.',
           {
             weeks: weeksDisplay,

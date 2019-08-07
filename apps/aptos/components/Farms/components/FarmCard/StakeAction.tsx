@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm as FarmUI } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'

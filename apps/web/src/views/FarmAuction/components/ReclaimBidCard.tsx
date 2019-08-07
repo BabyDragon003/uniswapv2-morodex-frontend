@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, useToast } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -7,17 +8,6 @@ import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import { MaxUint256 } from '@ethersproject/constants'
-import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useReclaimAuctionBid from '../hooks/useReclaimAuctionBid'
-
-const StyledReclaimBidCard = styled(Card)`
-  margin-top: 16px;
-  flex: 1;
-`
-
-const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
   const { callWithGasPrice } = useCallWithGasPrice()

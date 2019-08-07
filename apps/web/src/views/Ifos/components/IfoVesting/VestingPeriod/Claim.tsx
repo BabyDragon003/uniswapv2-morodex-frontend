@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { PoolIds } from 'config/constants/types'
@@ -7,17 +8,6 @@ import { useCallback, useMemo } from 'react'
 import { VestingData } from 'views/Ifos/hooks/vesting/fetchUserWalletIfoData'
 
 interface Props {
-  poolId: PoolIds
-  data: VestingData
-  claimableAmount: string
-  isVestingInitialized: boolean
-  fetchUserVestingData: () => void
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({
-  poolId,
-  data,
-  claimableAmount,
   isVestingInitialized,
   fetchUserVestingData,
 }) => {

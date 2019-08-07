@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Flex } from '@pancakeswap/uikit'
 import NextLink from 'next/link'
 import styled from 'styled-components'
@@ -7,17 +8,6 @@ import { Autoplay } from 'swiper'
 import ArticleView from 'views/Blog/components/Article/ArticleView'
 import useSWR from 'swr'
 import { ArticleDataType } from 'views/Blog/utils/transformArticle'
-import 'swiper/css/bundle'
-
-const StyledChefsChoiceContainer = styled(Flex)`
-  margin: 61px auto 48px auto;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin: 120px auto 80px auto;
-  }
-`
-
-const ChefsChoice = () => {
   const { t } = useTranslation()
   const { data: articlesData } = useSWR<ArticleDataType[]>('/chefChoiceArticle')
 

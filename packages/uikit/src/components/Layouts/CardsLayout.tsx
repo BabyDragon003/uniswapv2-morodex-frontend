@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import BaseLayout from "./BaseLayout";
 
 const GridLayout = styled(BaseLayout)`
@@ -7,6 +8,3 @@ const GridLayout = styled(BaseLayout)`
       grid-column: span 4;
     }
   }
-`;
-
-export default GridLayout;

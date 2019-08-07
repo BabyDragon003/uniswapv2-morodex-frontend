@@ -1,3 +1,4 @@
+import { useCallback, memo } from 'react'
 import { Currency, TradeType, CurrencyAmount } from '@pancakeswap/sdk'
 import { InjectedModalProps, LinkExternal, Text, TransactionErrorContent } from '@pancakeswap/uikit'
 import { TransactionSubmittedContent } from 'components/TransactionConfirmationModal'

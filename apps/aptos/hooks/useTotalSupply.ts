@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount } from '@pancakeswap/aptos-swap-sdk'
 import { useCoin } from '@pancakeswap/awgmi'
 import { FetchCoinResult } from '@pancakeswap/awgmi/core'
 import { useMemo } from 'react'

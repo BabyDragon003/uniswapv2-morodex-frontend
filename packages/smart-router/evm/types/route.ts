@@ -1,3 +1,4 @@
+import type { Currency, Pair } from '@pancakeswap/sdk'
 
 import { BasePair } from './pair'
 

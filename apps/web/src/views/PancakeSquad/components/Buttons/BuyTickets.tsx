@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { BigNumber } from '@ethersproject/bignumber'
 import { MaxUint256 } from '@ethersproject/constants'
 import { ContextApi } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useCake, useNftSaleContract } from 'hooks/useContract'
 import { useContext, useEffect, useState } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { requiresApproval } from 'utils/requiresApproval'
-import { PancakeSquadContext } from 'views/PancakeSquad/context'
-import { SaleStatusEnum, UserStatusEnum } from '../../types'
-import ReadyText from '../Header/ReadyText'
-import BuyTicketsModal from '../Modals/BuyTickets'
-import ConfirmModal from '../Modals/Confirm'
-import { BuyButtonsEnum } from './types'
-import { getBuyButton, getBuyButtonText } from './utils'
-
-type BuyTicketsProps = {
   t: ContextApi['t']
   account: string
   saleStatus: SaleStatusEnum

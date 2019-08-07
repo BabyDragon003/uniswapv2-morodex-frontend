@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from 'react'
 import { Modal, Flex, Button, Text, Skeleton, Box } from '@pancakeswap/uikit'
 import { StaticImageData } from 'next/dist/client/image'
 import styled from 'styled-components'
@@ -7,17 +8,6 @@ import MedalSilver from '../pngs/medals/medal-silver.png'
 import MedalBronze from '../pngs/medals/medal-bronze.png'
 import MedalPurple from '../pngs/medals/medal-purple.png'
 import MedalTeal from '../pngs/medals/medal-teal.png'
-
-import { localiseTradingVolume } from '../helpers'
-import { YourScoreProps } from '../types'
-
-const StyledCanvas = styled.canvas`
-  width: 100%;
-`
-
-const StyledButton = styled(Button)`
-  display: none;
-  ${({ theme }) => theme.mediaQueries.sm} {
     display: block;
   }
 `

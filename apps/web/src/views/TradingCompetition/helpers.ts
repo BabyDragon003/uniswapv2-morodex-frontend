@@ -1,3 +1,4 @@
+import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { easterPrizes, PrizesConfig } from 'config/constants/trading-competition/prizes'
 import BigNumber from 'bignumber.js'
 import useBUSDPrice, { useCakeBusdPrice } from 'hooks/useBUSDPrice'
@@ -7,17 +8,6 @@ import { multiplyPriceByAmount } from 'utils/prices'
 export const localiseTradingVolume = (value: number, decimals = 0) => {
   return value.toLocaleString('en-US', { maximumFractionDigits: decimals })
 }
-
-export const useCompetitionCakeRewards = (userCakeReward: string | number) => {
-  const cakeAsBigNumber = new BigNumber(userCakeReward as string)
-  const cakeBalance = getBalanceNumber(cakeAsBigNumber)
-  const cakePriceBusd = useCakeBusdPrice()
-  return {
-    cakeReward: cakeBalance,
-    dollarValueOfCakeReward: multiplyPriceByAmount(cakePriceBusd, cakeBalance),
-  }
-}
-
 export const useFanTokenCompetitionRewards = ({
   userCakeRewards,
   userLazioRewards,

@@ -1,3 +1,4 @@
+import { renderWithProvider, screen } from 'testUtils'
 import Swap from '.'
 
 describe('Swap', () => {
@@ -7,6 +8,3 @@ describe('Swap', () => {
       screen.getByRole('heading', {
         name: /swap/i,
       }),
-    ).toBeInTheDocument()
-  })
-})

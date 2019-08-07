@@ -1,3 +1,4 @@
+import { useAccount, useAccountBalance, APTOS_COIN } from '@pancakeswap/awgmi'
 
 import { useTranslation } from '@pancakeswap/localization'
 import {
@@ -7,17 +8,6 @@ import {
   Flex,
   InjectedModalProps,
   LinkExternal,
-  Message,
-  Skeleton,
-  Text,
-} from '@pancakeswap/uikit'
-import { useAuth } from 'hooks/useAuth'
-
-import { useActiveChainId } from 'hooks/useNetwork'
-import { getBlockExploreLink } from 'utils'
-import useNativeCurrency from 'hooks/useNativeCurrency'
-
-interface WalletInfoProps {
   hasLowNativeBalance: boolean
   onDismiss: InjectedModalProps['onDismiss']
 }

@@ -1,3 +1,4 @@
+name: Fetch and update LP APRs
 
 on:
   workflow_dispatch:
@@ -7,17 +8,6 @@ on:
     - cron: "15 23 * * *"
 
 jobs:
-  updateLPsAPRs:
-    runs-on: ubuntu-latest
-    if: github.repository == 'pancakeswap/pancake-frontend'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile

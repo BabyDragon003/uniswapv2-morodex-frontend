@@ -1,3 +1,4 @@
+import { Flex, FlexProps, PrizeIcon, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 interface PointsLabelProps extends FlexProps {

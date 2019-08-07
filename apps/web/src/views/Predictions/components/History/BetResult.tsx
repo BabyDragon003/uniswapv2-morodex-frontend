@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useAccount } from 'wagmi'
 import { Box, Flex, Heading, Text, PrizeIcon, BlockIcon, LinkExternal, useTooltip, InfoIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'

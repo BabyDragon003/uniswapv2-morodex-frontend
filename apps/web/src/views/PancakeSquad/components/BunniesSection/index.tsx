@@ -1,3 +1,4 @@
+import { Box, Button, Flex, Text, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import ColoredWordHeading from 'views/Home/components/ColoredWordHeading'
 import { LandingBodyWrapper } from 'views/PancakeSquad/styles'
@@ -7,17 +8,6 @@ import bunniesConfig from './config'
 import { StyledBunnySectionContainer, StyledTextContainer } from './styles'
 import BunniesImages from './BunniesImages'
 
-const BunniesSection = () => {
-  const { t } = useTranslation()
-  const { isDark } = useTheme()
-
-  const { headingText, bodyText, subHeadingText, primaryButton, images } = bunniesConfig(t)
-
-  return (
-    <StyledBunnySectionContainer justifyContent={['flex-start', null, null, 'center']}>
-      <LandingBodyWrapper
-        pb={['64px', null, null, '0']}
-        pt={['64px', null, null, '40px']}
         alignItems={['flex-end', null, 'center', null]}
         flexDirection={['column', null, null, 'row']}
       >

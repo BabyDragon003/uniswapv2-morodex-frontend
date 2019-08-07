@@ -1,3 +1,4 @@
+import {
   Button,
   Flex,
   Box,
@@ -7,17 +8,6 @@
   InjectedModalProps,
   Tag,
   Spinner,
-  useMatchBreakpoints,
-  BscScanIcon,
-  TransactionErrorContent,
-} from '@pancakeswap/uikit'
-import { AutoColumn } from 'components/Layout/Column'
-import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
-import { memo, useCallback, useState } from 'react'
-import styled from 'styled-components'
-import { FormattedOrderData } from 'views/LimitOrders/hooks/useFormattedOrderData'
-import useGelatoLimitOrdersHandlers from 'hooks/limitOrders/useGelatoLimitOrdersHandlers'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 import { TransactionSubmittedContent } from 'components/TransactionConfirmationModal'
 import { useActiveChainId } from 'hooks/useActiveChainId'

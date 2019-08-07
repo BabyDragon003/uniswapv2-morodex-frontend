@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const pairDayDatas = gql`
   query pairDayDatas($pairId: Bytes, $first: Int) {
@@ -7,7 +8,3 @@ const pairDayDatas = gql`
       reserve0
       reserve1
       reserveUSD
-    }
-  }
-`
-export default pairDayDatas

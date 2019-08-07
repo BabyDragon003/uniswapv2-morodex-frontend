@@ -1,3 +1,4 @@
+import { useQueries } from '@pancakeswap/awgmi'
 import { isUserTransaction } from '@pancakeswap/awgmi/core'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { useMemo } from 'react'
 import { finalizeTransaction } from './actions'
 import { useAllChainTransactions } from './hooks'
 import { TransactionDetails, useTransactionState } from './reducer'
-
-export function shouldCheck(tx: TransactionDetails): boolean {
-  if (tx.receipt) return false
-  return true
-}
-
-export default function Updater(): null {
-  const { chainId, provider, networkName } = useActiveWeb3React()
-  const { t } = useTranslation()
-
-  const [, dispatch] = useTransactionState()
   const transactions = useAllChainTransactions()
 
   const { toastError, toastSuccess } = useToast()

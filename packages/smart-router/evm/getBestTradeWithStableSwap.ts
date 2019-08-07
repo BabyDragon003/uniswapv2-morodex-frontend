@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop, no-continue */
 import { Currency, CurrencyAmount, Pair, Price, Trade, TradeType } from '@pancakeswap/sdk'
 
 import { getBestTradeFromV2ExactIn } from './getBestTradeFromV2'
@@ -7,17 +8,6 @@ import { BestTradeOptions, RouteType, StableSwapPair } from './types'
 import { getOutputToken, isSamePair } from './utils/pair'
 
 export async function getBestTradeWithStableSwap(
-  baseTrade: Trade<Currency, Currency, TradeType>,
-  stableSwapPairs: StableSwapPair[],
-  options: BestTradeOptions,
-) {
-  const { provider } = options
-  const { inputAmount, route, tradeType } = baseTrade
-  // Early return if there's no stableswap available
-  if (!stableSwapPairs.length) {
-    return createTradeWithStableSwapFromV2Trade(baseTrade)
-  }
-
   const findStableSwapPair = (pair: Pair) => stableSwapPairs.find((p) => isSamePair(p, pair))
 
   let outputAmount: CurrencyAmount<Currency> = inputAmount

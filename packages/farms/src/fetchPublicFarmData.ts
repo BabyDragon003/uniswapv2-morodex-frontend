@@ -1,3 +1,4 @@
+import { MultiCallV2 } from '@pancakeswap/multicall'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { SerializedFarmPublicData, SerializedFarmConfig } from './types'
@@ -7,17 +8,6 @@ const abi = [
   {
     constant: true,
     inputs: [
-      {
-        name: '_owner',
-        type: 'address',
-      },
-    ],
-    name: 'balanceOf',
-    outputs: [
-      {
-        name: 'balance',
-        type: 'uint256',
-      },
     ],
     payable: false,
     stateMutability: 'view',

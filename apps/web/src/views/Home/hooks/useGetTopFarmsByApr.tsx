@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useFarms, usePriceCakeBusd } from 'state/farms/hooks'
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { useAppDispatch } from 'state'
@@ -7,17 +8,6 @@ import orderBy from 'lodash/orderBy'
 import { DeserializedFarm, FarmWithStakedValue } from '@pancakeswap/farms'
 import { FetchStatus } from 'config/constants/types'
 import { getFarmConfig } from '@pancakeswap/farms/constants'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-
-const useGetTopFarmsByApr = (isIntersecting: boolean) => {
-  const dispatch = useAppDispatch()
-  const { data: farms, regularCakePerBlock } = useFarms()
-  const [fetchStatus, setFetchStatus] = useState(FetchStatus.Idle)
-  const [fetched, setFetched] = useState(false)
-  const [topFarms, setTopFarms] = useState<FarmWithStakedValue[]>([null, null, null, null, null])
-  const cakePriceBusd = usePriceCakeBusd()
-  const { chainId } = useActiveChainId()
-  const farmFlag = useFeatureFlag(featureFarmApiAtom)
 
   useEffect(() => {
     const fetchFarmData = async () => {

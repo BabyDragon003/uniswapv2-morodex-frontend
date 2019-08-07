@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot, QuestionHelper } from '@pancakeswap/uikit'
 import { useExpertModeManager } from 'state/user/hooks'
 import GlobalSettings from 'components/Menu/GlobalSettings'
@@ -7,17 +8,6 @@ import { SettingsMode } from '../Menu/GlobalSettings/types'
 
 interface Props {
   title: string
-  subtitle?: string
-  helper?: string
-  backTo?: string | (() => void)
-  noConfig?: boolean
-}
-
-const AppHeaderContainer = styled(Flex)`
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 

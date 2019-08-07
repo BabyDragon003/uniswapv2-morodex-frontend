@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useGetChainName } from 'state/info/hooks'
 import { Block } from 'state/info/types'
 import useSWRImmutable from 'swr/immutable'

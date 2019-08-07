@@ -1,3 +1,4 @@
+import get from 'lodash/get'
 import { AppState } from 'state'
 import { PairDataTimeWindowEnum } from './types'
 

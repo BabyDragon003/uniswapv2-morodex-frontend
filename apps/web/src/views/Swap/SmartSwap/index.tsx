@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, NATIVE, Percent } from '@pancakeswap/sdk'
 import {
   ArrowDownIcon,
@@ -7,17 +8,6 @@ import {
   Flex,
   Message,
   MessageText,
-  Skeleton,
-  Swap as SwapUI,
-  Text,
-  useModal,
-} from '@pancakeswap/uikit'
-import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
-import { useIsTransactionUnsupported } from 'hooks/Trades'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
-import { useStableSwapByDefault } from 'state/user/smartRouter'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import AccessRisk from 'views/Swap/components/AccessRisk'
 

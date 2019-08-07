@@ -1,3 +1,4 @@
+import React from "react";
 import Message, { MessageText } from "./Message";
 import { HelpIcon } from "../Svg";
 

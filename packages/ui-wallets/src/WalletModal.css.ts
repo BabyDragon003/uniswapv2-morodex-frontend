@@ -1,3 +1,4 @@
+import { atoms } from '@pancakeswap/ui/css/atoms'
 import { responsiveStyle } from '@pancakeswap/ui/css/responsiveStyle'
 import { style, keyframes } from '@vanilla-extract/css'
 

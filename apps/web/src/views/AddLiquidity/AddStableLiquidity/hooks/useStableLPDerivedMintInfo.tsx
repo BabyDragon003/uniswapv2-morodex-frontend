@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token } from '@pancakeswap/sdk'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
@@ -7,17 +8,6 @@ import useTotalSupply from 'hooks/useTotalSupply'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
 import { useContext, useMemo } from 'react'
 import { Field } from 'state/mint/actions'
-import { useCurrencyBalances } from 'state/wallet/hooks'
-import { useSingleCallResult } from 'state/multicall/hooks'
-import { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
-import { useEstimatedAmount } from 'views/Swap/StableSwap/hooks/useStableTradeExactIn'
-import { useMintState } from 'state/mint/hooks'
-
-export interface StablePair {
-  liquidityToken: Token | null
-  tokenAmounts: any[]
-  token0: Currency
-  token1: Currency
   priceOf: (token: Currency) => CurrencyAmount<Currency> | Price<Currency, Currency> | Fraction
   token0Price: () => CurrencyAmount<Currency> | Price<Currency, Currency> | Fraction
   token1Price: () => CurrencyAmount<Currency> | Price<Currency, Currency> | Fraction

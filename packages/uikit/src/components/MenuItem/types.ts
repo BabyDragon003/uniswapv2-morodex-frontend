@@ -1,3 +1,4 @@
+import { Colors } from "../../theme";
 
 export type MenuItemVariant = "default" | "subMenu";
 

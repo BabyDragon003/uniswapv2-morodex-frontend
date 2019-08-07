@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Trade, TradeType } from '@pancakeswap/sdk'
 import IPancakeRouter02ABI from 'config/abi/IPancakeRouter02.json'
 import { IPancakeRouter02 } from 'config/abi/types/IPancakeRouter02'
 import {
@@ -7,17 +8,6 @@ import {
   BIPS_BASE,
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
   INPUT_FRACTION_AFTER_FEE,
-  ONE_HUNDRED_PERCENT,
-  ROUTER_ADDRESS,
-} from 'config/constants/exchange'
-
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import { useContract } from 'hooks/useContract'
-import { StableTrade } from 'views/Swap/StableSwap/hooks/useStableTradeExactIn'
-import { Field } from '../state/swap/actions'
-
-// converts a basis points value to a sdk percent
-export function basisPointsToPercent(num: number): Percent {
   return new Percent(JSBI.BigInt(num), BIPS_BASE)
 }
 

@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import styled, { CSSProperties } from 'styled-components'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import EnteredTag from './EnteredTag'
 
 interface MultiplierArrowProps {
   betAmount?: BigNumber
-  multiplier?: string
-  hasEntered?: boolean
-  hasClaimed?: boolean
-  betPosition?: BetPosition
-  isDisabled?: boolean
-  isActive?: boolean
-  isHouse?: boolean
-}
-
-const ArrowWrapper = styled.div`
-  height: 65px;
   margin: 0 auto;
   width: 240px;
 `

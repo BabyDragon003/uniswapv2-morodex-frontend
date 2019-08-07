@@ -1,3 +1,4 @@
+import { Currency, Price } from '@pancakeswap/sdk'
 
 import { RouteWithStableSwap } from '../types'
 import { isStableSwapPair } from './pair'

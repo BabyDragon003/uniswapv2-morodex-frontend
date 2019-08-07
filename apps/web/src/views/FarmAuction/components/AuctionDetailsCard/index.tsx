@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import {
   Text,
   Heading,
@@ -7,17 +8,6 @@ import {
   Flex,
   Spinner,
   Skeleton,
-  Tag,
-  Button,
-  CheckmarkCircleIcon,
-  useModal,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { Auction, AuctionStatus, ConnectedBidder } from 'config/constants/types'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import PlaceBidModal from '../PlaceBidModal'
-import AuctionSchedule from './AuctionSchedule'
-import CannotBidMessage from './CannotBidMessage'
 import AuctionFooter from './AuctionFooter'
 
 const AuctionDetailsCard = styled(Card)`

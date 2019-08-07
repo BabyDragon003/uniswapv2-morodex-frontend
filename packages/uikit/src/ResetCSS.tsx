@@ -1,3 +1,4 @@
+import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */

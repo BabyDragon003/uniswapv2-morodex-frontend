@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Script from 'next/script'
 import styled, { useTheme } from 'styled-components'
 import { Flex, Box } from '@pancakeswap/uikit'

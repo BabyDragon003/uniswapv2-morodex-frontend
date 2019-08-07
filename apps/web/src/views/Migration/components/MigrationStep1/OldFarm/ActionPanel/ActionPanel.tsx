@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import Staked from './Staked'
 import Earned from './Earned'
@@ -7,17 +8,6 @@ import { EarnedProps } from '../../../Farm/Cells/Earned'
 import { FarmProps } from '../../../Farm/Cells/Farm'
 import { MultiplierProps } from '../../../Farm/Cells/Multiplier'
 import { LiquidityProps } from '../../../Farm/Cells/Liquidity'
-
-const expandAnimation = keyframes`
-  from {
-    opacity: 0;
-    max-height: 0px;
-  }
-  to {
-    opacity: 1;
-    max-height: 700px;
-  }
-`
 
 const collapseAnimation = keyframes`
   from {

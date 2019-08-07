@@ -1,3 +1,4 @@
+import { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import debounce from "lodash/debounce";
 import { useTranslation } from "@pancakeswap/localization";
@@ -7,17 +8,6 @@ const StyledInput = styled(Input)`
   border-radius: 16px;
   margin-left: auto;
 `;
-
-const InputWrapper = styled.div`
-  position: relative;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    display: block;
-  }
-`;
-
-interface Props {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
   initialValue?: string;
 }
 

@@ -1,3 +1,4 @@
+import numeral from 'numeral'
 
 // Returns first 2 digits after first non-zero decimal
 // i.e. 0.001286 -> 0.0012, 0.9845 -> 0.98, 0.0102 -> 0.010, etc

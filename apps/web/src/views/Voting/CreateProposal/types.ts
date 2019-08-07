@@ -1,3 +1,4 @@
+import { ChoiceIdValue } from './Choices'
 
 export interface FormState {
   name: string
@@ -7,5 +8,3 @@ export interface FormState {
   startTime: Date
   endDate: Date
   endTime: Date
-  snapshot: number
-}

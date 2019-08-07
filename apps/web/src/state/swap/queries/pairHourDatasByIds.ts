@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const pairHourDatasByIds = gql`
   query pairHourDatasByIds($pairIds: [ID!]) {
@@ -7,7 +8,3 @@ const pairHourDatasByIds = gql`
       reserve0
       reserve1
       reserveUSD
-    }
-  }
-`
-export default pairHourDatasByIds

@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import every from 'lodash/every'
 import {
   Balance,
@@ -7,17 +8,6 @@ import {
   CardBody,
   CheckmarkIcon,
   Container,
-  Flex,
-  FlexGap,
-  Heading,
-  Link,
-  LogoRoundIcon,
-  NextLinkFromReactRouter as RouterLink,
-  Skeleton,
-  Step,
-  StepStatus,
-  Stepper,
-  Text,
   TooltipText,
   useTooltip,
 } from '@pancakeswap/uikit'

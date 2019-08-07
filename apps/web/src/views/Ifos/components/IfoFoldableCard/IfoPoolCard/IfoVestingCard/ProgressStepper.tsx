@@ -1,3 +1,4 @@
+import { useEffect, Fragment, useState } from 'react'
 import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
@@ -7,17 +8,6 @@ import Step from './Step'
 
 const Spacer = styled.div<{ isPastSpacer?: boolean }>`
   width: 100%;
-  height: 2px;
-  border-radius: 4px;
-  margin: 10px 4px auto 4px;
-  background-color: ${({ isPastSpacer, theme }) =>
-    isPastSpacer ? theme.colors.textSubtle : theme.colors.textDisabled};
-`
-
-interface ProgressStepperProps {
-  poolId: PoolIds
-  publicIfoData: PublicIfoData
-}
 
 const ProgressStepper: React.FC<React.PropsWithChildren<ProgressStepperProps>> = ({ poolId, publicIfoData }) => {
   const { t } = useTranslation()

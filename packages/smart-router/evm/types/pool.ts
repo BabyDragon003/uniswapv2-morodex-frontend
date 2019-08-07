@@ -1,3 +1,4 @@
+import type { SerializedWrappedToken } from '@pancakeswap/token-lists'
 
 export interface BasePool {
   lpSymbol: string
@@ -7,6 +8,3 @@ export interface BasePool {
 }
 
 export interface StableSwapPool extends BasePool {
-  stableSwapAddress: string
-  infoStableSwapAddress: string
-}

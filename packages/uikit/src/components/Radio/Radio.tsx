@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { space } from "styled-system";
 import { RadioProps, scales } from "./types";
 

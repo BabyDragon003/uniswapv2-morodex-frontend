@@ -1,3 +1,4 @@
+import { useCallback, memo } from 'react'
 import { Trade, Currency, TradeType, CurrencyAmount } from '@pancakeswap/aptos-swap-sdk'
 import { InjectedModalProps, LinkExternal, Text, TransactionErrorContent } from '@pancakeswap/uikit'
 import { TransactionSubmittedContent } from 'components/TransactionConfirmationModal'
@@ -7,17 +8,6 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import ConfirmationPendingContent from './ConfirmationPendingContent'
 import TransactionConfirmSwapContent from './TransactionConfirmSwapContent'
 import ConfirmSwapModalContainer from './ConfirmSwapModalContainer'
-
-const PancakeRouterSlippageErrorMsg =
-  'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
-
-const SwapTransactionErrorContent = ({ onDismiss, message, openSettingModal }) => {
-  const isSlippagedErrorMsg = message?.includes(PancakeRouterSlippageErrorMsg)
-
-  const handleErrorDismiss = useCallback(() => {
-    onDismiss?.()
-    if (isSlippagedErrorMsg && openSettingModal) {
-      openSettingModal()
     }
   }, [isSlippagedErrorMsg, onDismiss, openSettingModal])
   const { t } = useTranslation()

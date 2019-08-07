@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
@@ -7,17 +8,6 @@ import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import ClaimPrizesModal from './ClaimPrizesModal'
 import useGetUnclaimedRewards from '../hooks/useGetUnclaimedRewards'
-
-const TicketImage = styled.img`
-  height: 60px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    height: 100px;
-  }
-`
-
-const TornTicketImage = styled.img`
-  height: 54px;
-  ${({ theme }) => theme.mediaQueries.sm} {
     height: 84px;
   }
 `

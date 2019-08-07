@@ -1,3 +1,4 @@
+export * from './client'
 export * from './accounts/account'
 export * from './accounts/connect'
 export * from './accounts/disconnect'

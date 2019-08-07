@@ -1,3 +1,4 @@
+import React from 'react'
 import { Currency, Percent, Price } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import { Input, Flex, Text, Button, AutoRenewIcon, SyncAltIcon, HelpIcon, useTooltip } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { Rate } from 'state/limitOrders/types'
 import ExpiredDate from 'views/LimitOrders/components/ExpiredDate'
 import { getRatePercentageMessage, PercentageDirection } from '../utils/getRatePercentageMessage'
 
-const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
-
-const OrderPriceInput = styled(Input)`
-  text-align: right;
-`
-
-const LabelContainer = styled(Flex)`
-  cursor: pointer;
-`
-
-interface LimitOrderPriceProps {
   id: string
   value: string
   onUserInput: (value: string) => void

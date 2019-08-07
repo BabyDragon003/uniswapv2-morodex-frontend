@@ -1,3 +1,4 @@
+import { Box, BunnyPlaceholderIcon, Flex, Text } from '@pancakeswap/uikit'
 import TradingView, { useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from '@pancakeswap/localization'
 import { useDebounce } from '@pancakeswap/hooks'

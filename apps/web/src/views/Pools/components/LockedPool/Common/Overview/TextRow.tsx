@@ -1,3 +1,4 @@
+import { Text, Flex } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import CrossText from './CrossText'
 
@@ -7,17 +8,6 @@ interface DiffTextPropsType {
 }
 
 const DiffText: React.FC<React.PropsWithChildren<DiffTextPropsType>> = ({ value, newValue }) => {
-  if (isUndefinedOrNull(newValue) || isUndefinedOrNull(value) || value === newValue) {
-    return (
-      <Text bold fontSize="16px">
-        {value || '-'}
-      </Text>
-    )
-  }
-
-  return (
-    <>
-      <CrossText bold fontSize="16px" mr="4px">
         {value}
       </CrossText>
       {`->`}

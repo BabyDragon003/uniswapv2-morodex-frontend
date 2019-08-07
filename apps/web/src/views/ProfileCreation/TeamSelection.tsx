@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@pancakeswap/uikit'
 import useSWR from 'swr'
 import shuffle from 'lodash/shuffle'
@@ -7,17 +8,6 @@ import SelectionCard from './SelectionCard'
 import NextStepButton from './NextStepButton'
 import useProfileCreation from './contexts/hook'
 
-const Team: React.FC<React.PropsWithChildren> = () => {
-  const { teamId: currentTeamId, actions } = useProfileCreation()
-  const { t } = useTranslation()
-  const { data: teams } = useSWR('teams', async () => getTeams())
-  const teamValues = useMemo(() => (teams ? shuffle(Object.values(teams)) : []), [teams])
-  const handleTeamSelection = (value: string) => actions.setTeamId(parseInt(value, 10))
-
-  return (
-    <>
-      <Text fontSize="20px" color="textSubtle" bold>
-        {t('Step %num%', { num: 3 })}
       </Text>
       <Heading as="h3" scale="xl" mb="24px">
         {t('Join a Team')}

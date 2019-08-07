@@ -1,3 +1,4 @@
+import { UserResponse, BetResponse, RoundResponse } from './responseType'
 
 export interface UserResponseBNB extends UserResponse<BetResponseBNB> {
   totalBNB: string
@@ -7,17 +8,6 @@ export interface UserResponseBNB extends UserResponse<BetResponseBNB> {
   totalBNBClaimed: string
   netBNB: string
 }
-
-export interface BetResponseBNB extends BetResponse {
-  claimedBNB: string
-  claimedNetBNB: string
-  user?: UserResponseBNB
-  round?: RoundResponseBNB
-}
-
-export type RoundResponseBNB = RoundResponse<BetResponseBNB>
-
-/**
  * Base fields are the all the top-level fields available in the api. Used in multiple queries
  */
 export const roundBaseFields = `

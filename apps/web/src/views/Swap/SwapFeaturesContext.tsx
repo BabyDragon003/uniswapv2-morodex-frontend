@@ -1,3 +1,4 @@
+import React, { createContext, useState, useEffect, useMemo } from 'react'
 import { useMatchBreakpoints } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import { useExchangeChartManager } from 'state/user/hooks'
@@ -7,17 +8,6 @@ export const SwapFeaturesContext = createContext<{
   isChartSupported: boolean
   isStableSupported: boolean
   isAccessTokenSupported: boolean
-  isChartExpanded: boolean
-  isChartDisplayed: boolean
-  setIsChartExpanded: React.Dispatch<React.SetStateAction<boolean>>
-  setIsChartDisplayed: React.Dispatch<React.SetStateAction<boolean>>
-}>({
-  isChartSupported: false,
-  isStableSupported: false,
-  isAccessTokenSupported: false,
-  isChartExpanded: false,
-  isChartDisplayed: false,
-  setIsChartExpanded: null,
   setIsChartDisplayed: null,
 })
 

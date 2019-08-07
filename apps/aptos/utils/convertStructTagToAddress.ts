@@ -1,3 +1,4 @@
+import { HexString } from 'aptos'
 
 export default function convertStructTagToAddress(structTag: string): string {
   try {

@@ -1,3 +1,4 @@
+// used to construct the list of all pairs we consider by default in the frontend
 
 // SDN OFAC addresses
 export const BLOCKED_ADDRESSES: string[] = [

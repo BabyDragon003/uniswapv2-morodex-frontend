@@ -1,3 +1,4 @@
+import { CurrencyAmount, Token } from '@pancakeswap/sdk'
 import {
   BlockIcon,
   Box,

@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 import { WalletConnectorNotFoundError, WalletSwitchChainError } from '@pancakeswap/ui-wallets'
 import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
@@ -7,17 +8,6 @@ import { useAppDispatch } from 'state'
 import {
   ConnectorNotFoundError,
   SwitchChainError,
-  SwitchChainNotSupportedError,
-  useConnect,
-  useDisconnect,
-  useNetwork,
-} from 'wagmi'
-import { clearUserStates } from '../utils/clearUserStates'
-import { useActiveChainId } from './useActiveChainId'
-import { useSessionChainId } from './useSessionChainId'
-
-const useAuth = () => {
-  const dispatch = useAppDispatch()
   const { connectAsync, connectors } = useConnect()
   const { chain } = useNetwork()
   const { disconnectAsync } = useDisconnect()

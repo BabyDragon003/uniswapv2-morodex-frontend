@@ -1,3 +1,4 @@
+import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@pancakeswap/uikit'
 import confetti from 'canvas-confetti'
 import delay from 'lodash/delay'
 import { useTranslation } from '@pancakeswap/localization'

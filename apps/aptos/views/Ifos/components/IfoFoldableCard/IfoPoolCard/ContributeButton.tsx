@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
@@ -7,17 +8,6 @@ import { Ifo, PoolIds } from 'config/constants/types'
 import { useCurrencyBalance } from 'hooks/Balances'
 import { useMemo } from 'react'
 import { getStatus } from 'views/Ifos/hooks/helpers'
-import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import ContributeModal from './ContributeModal'
-import GetTokenModal from './GetTokenModal'
-
-interface Props {
-  poolId: PoolIds
-  ifo: Ifo
-  publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-}
-
 const ContributeButton: React.FC<React.PropsWithChildren<Props>> = ({ poolId, ifo, publicIfoData, walletIfoData }) => {
   const publicPoolCharacteristics = publicIfoData[poolId]
   const userPoolCharacteristics = walletIfoData[poolId]

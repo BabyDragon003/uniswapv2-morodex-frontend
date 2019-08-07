@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import request, { gql } from 'graphql-request'
 
 const useGetParticipants = (subgraphAddress: string): string[] => {

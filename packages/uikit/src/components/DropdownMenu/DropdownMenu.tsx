@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import { usePopper } from "react-popper";
 import { useOnClickOutside } from "../../hooks";

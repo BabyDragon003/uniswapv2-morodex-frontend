@@ -1,3 +1,4 @@
+import { Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { BNBAmountLabel } from './styles'
 import { CollectionCard } from './index'
@@ -7,17 +8,6 @@ interface CollectionCardWithVolumeProps {
   avatarSrc?: string
   collectionName: string
   url?: string
-  disabled?: boolean
-  volume: number
-}
-
-const CollectionCardWithVolume: React.FC<CollectionCardWithVolumeProps> = ({
-  bgSrc,
-  avatarSrc,
-  collectionName,
-  url,
-  volume,
-}) => {
   const { t } = useTranslation()
   return (
     <CollectionCard bgSrc={bgSrc} avatarSrc={avatarSrc} collectionName={collectionName} url={url}>

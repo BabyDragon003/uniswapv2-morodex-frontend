@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import { Flex, TooltipText, useTooltip } from "@pancakeswap/uikit";
 import { useTranslation } from "@pancakeswap/localization";
 

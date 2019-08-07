@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import { getFarmConfig } from '@pancakeswap/farms/constants'

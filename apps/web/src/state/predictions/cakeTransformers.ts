@@ -1,3 +1,4 @@
+import { Bet, PredictionUser } from 'state/types'
 import { transformRoundResponseToken, transformUserResponseToken, transformBetResponseToken } from './tokenTransformers'
 
 export const transformBetResponseCAKE = (betResponse): Bet => {
@@ -7,17 +8,6 @@ export const transformBetResponseCAKE = (betResponse): Bet => {
     claimedBNB: betResponse.claimedCAKE ? parseFloat(betResponse.claimedCAKE) : 0,
     claimedNetBNB: betResponse.claimedNetCAKE ? parseFloat(betResponse.claimedNetCAKE) : 0,
   } as Bet
-
-  if (betResponse.user) {
-    bet.user = transformUserResponseCAKE(betResponse.user)
-  }
-
-  if (betResponse.round) {
-    bet.round = transformRoundResponseToken(betResponse.round, transformBetResponseCAKE)
-  }
-
-  return bet
-}
 
 export const transformUserResponseCAKE = (userResponse): PredictionUser => {
   const baseUserResponse = transformUserResponseToken(userResponse)

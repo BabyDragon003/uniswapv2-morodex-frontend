@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Box, Button, Card, CardBody, Flex, Step, Stepper, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { StyledWaveContainer, LandingBodyWrapper } from 'views/PancakeSquad/styles'
@@ -7,17 +8,6 @@ import EventStepsBottomWave from '../../assets/EventStepsBottomWave'
 import EventStepsTopWave from '../../assets/EventStepsTopWave'
 import stepsConfigBuilder from './config'
 import { StyledBunniesSquadImg, StyledEventStepsSectionContainer } from './styles'
-import { EventStepsProps } from './types'
-
-const EventStepsSection: React.FC<React.PropsWithChildren<EventStepsProps>> = ({
-  eventInfos,
-  userInfos,
-  isLoading,
-  userStatus,
-  account,
-}) => {
-  const { t } = useTranslation()
-  const { theme, isDark } = useTheme()
   const { balance: cakeBalance } = useGetCakeBalance()
   const stepsConfig = stepsConfigBuilder({ t, eventInfos, userInfos, userStatus, account, theme, cakeBalance })
   const isMintingFinished = userInfos && eventInfos && eventInfos.maxSupply === eventInfos.totalSupplyMinted

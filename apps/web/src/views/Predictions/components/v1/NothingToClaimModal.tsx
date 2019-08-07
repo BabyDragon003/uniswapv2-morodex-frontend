@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {
@@ -7,17 +8,6 @@ import {
   ModalHeader,
   InjectedModalProps,
   Text,
-  Heading,
-  ModalCloseButton,
-  Button,
-  AutoRenewIcon,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { getAllV1History } from './helpers'
-
-const Modal = styled(ModalContainer)`
-  overflow: visible;
-`
 
 const BunnyDecoration = styled.div`
   position: absolute;

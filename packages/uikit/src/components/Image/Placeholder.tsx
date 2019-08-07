@@ -1,3 +1,4 @@
+import styled from "styled-components";
 
 const Placeholder = styled.div`
   height: 100%;
@@ -7,4 +8,3 @@ const Placeholder = styled.div`
   width: 100%;
 `;
 
-export default Placeholder;

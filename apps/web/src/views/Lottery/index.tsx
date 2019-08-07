@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Heading, Skeleton, PageSection } from '@pancakeswap/uikit'
 import { LotteryStatus } from 'config/constants/types'
@@ -7,17 +8,6 @@ import { useFetchLottery, useLottery } from 'state/lottery/hooks'
 import {
   TITLE_BG,
   GET_TICKETS_BG,
-  FINISHED_ROUNDS_BG,
-  FINISHED_ROUNDS_BG_DARK,
-  CHECK_PRIZES_BG,
-} from './pageSectionStyles'
-import useGetNextLotteryEvent from './hooks/useGetNextLotteryEvent'
-import useStatusTransitions from './hooks/useStatusTransitions'
-import Hero from './components/Hero'
-import NextDrawCard from './components/NextDrawCard'
-import Countdown from './components/Countdown'
-import HistoryTabMenu from './components/HistoryTabMenu'
-import YourHistoryCard from './components/YourHistoryCard'
 import AllHistoryCard from './components/AllHistoryCard'
 import CheckPrizesSection from './components/CheckPrizesSection'
 import HowToPlay from './components/HowToPlay'

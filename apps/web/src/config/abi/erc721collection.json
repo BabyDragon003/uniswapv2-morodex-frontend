@@ -1,3 +1,4 @@
+[
   {
     "inputs": [
       {
@@ -7,17 +8,6 @@
       },
       {
         "internalType": "string",
-        "name": "_symbol",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_maxSupply",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
   },
   {
     "anonymous": false,

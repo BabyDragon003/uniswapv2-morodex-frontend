@@ -1,3 +1,4 @@
+import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { AptosCoin } from './aptosCoin'
 import { Coin } from './coin'
 import { ChainId } from './constants'

@@ -1,3 +1,4 @@
+import { useCallback, memo } from 'react'
 import { Button, useModal, Skeleton } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { usePool } from 'state/pools/hooks'
@@ -7,17 +8,6 @@ import NotEnoughTokensModal from '../../Modals/NotEnoughTokensModal'
 
 const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
   currentBalance,
-  stakingToken,
-  currentLockedAmount,
-  lockEndTime,
-  lockStartTime,
-  stakingTokenBalance,
-}) => {
-  const {
-    pool: { userDataLoaded },
-  } = usePool(0)
-
-  const { t } = useTranslation()
 
   const [openAddAmountModal] = useModal(
     <AddAmountModal

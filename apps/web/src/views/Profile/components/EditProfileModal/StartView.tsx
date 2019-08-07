@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
@@ -7,17 +8,6 @@ import { useCake } from 'hooks/useContract'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
 import { useCakeEnable } from 'hooks/useCakeEnable'
 import { useTranslation } from '@pancakeswap/localization'
-import useGetProfileCosts from 'views/Profile/hooks/useGetProfileCosts'
-import { FetchStatus } from 'config/constants/types'
-import { requiresApproval } from 'utils/requiresApproval'
-import { useProfile } from 'state/profile/hooks'
-import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
-import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
-import { UseEditProfileResponse } from './reducer'
-
-interface StartPageProps extends InjectedModalProps {
-  goToChange: UseEditProfileResponse['goToChange']
-  goToRemove: UseEditProfileResponse['goToRemove']
   goToApprove: UseEditProfileResponse['goToApprove']
 }
 

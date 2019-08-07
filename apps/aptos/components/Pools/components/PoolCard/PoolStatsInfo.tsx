@@ -1,3 +1,4 @@
+import { Flex, LinkExternal, Pool, Text, TimerIcon, useTooltip } from '@pancakeswap/uikit'
 import { memo, useMemo } from 'react'
 import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
@@ -7,17 +8,6 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 
 import { AprInfo } from './Stat'
-
-interface ExpandedFooterProps {
-  pool: Pool.DeserializedPool<Token> & { stakeLimitEndBlock?: number }
-  account?: string
-  showTotalStaked?: boolean
-  alignLinksToRight?: boolean
-}
-
-interface EndTimeTooltipComponentProps {
-  endTime: number
-}
 
 const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
   const {

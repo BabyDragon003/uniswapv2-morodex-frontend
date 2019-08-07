@@ -1,3 +1,4 @@
+import { useCallback, useMemo, memo } from 'react'
 import { Currency, Trade, TradeType } from '@pancakeswap/sdk'
 import { ConfirmationModalContent } from '@pancakeswap/uikit'
 import { maxAmountSpend } from 'utils/maxAmountSpend'

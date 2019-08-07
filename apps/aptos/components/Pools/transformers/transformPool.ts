@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { AptosCoin, Coin } from '@pancakeswap/aptos-swap-sdk'
 import { Pool } from '@pancakeswap/uikit'
 import { PoolCategory } from 'config/constants/types'
@@ -7,17 +8,6 @@ import _get from 'lodash/get'
 import { FixedNumber } from '@ethersproject/bignumber'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-
-import { PoolResource } from '../types'
-import getSecondsLeftFromNow from '../utils/getSecondsLeftFromNow'
-import splitTypeTag from '../../../utils/splitTypeTag'
-import getTokenByAddress from '../utils/getTokenByAddress'
-import { getPoolApr } from './transformCakePool'
-
-function calcPendingRewardToken({
-  currentTimestamp,
-  lastRewardTimestamp,
-  totalStakedToken,
   userStakedAmount,
   rewardPerSecond,
   currentRewardDebt,

@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import useGetPublicIfoV3Data from 'views/Ifos/hooks/v3/useGetPublicIfoData'
 import useGetWalletIfoV3Data from 'views/Ifos/hooks/v3/useGetWalletIfoData'
 

@@ -1,3 +1,4 @@
+import { Svg, SvgProps } from '@pancakeswap/uikit'
 import * as React from 'react'
 
 const Icon: React.FC<React.PropsWithChildren<SvgProps & { isDark: boolean }>> = ({ isDark, ...props }) => {
@@ -7,8 +8,3 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps & { isDark: boolean }>> = 
         d="M1.416 24.914L17.66 41.157a8 8 0 012.343 5.657V.186a8 8 0 01-2.343 5.657L1.416 22.086a2 2 0 000 2.828z"
         fill={isDark ? '#000' : '#fff'}
       />
-    </Svg>
-  )
-}
-
-export default Icon

@@ -1,3 +1,4 @@
+import { Flex, Text, Button, ArrowUpIcon, LinkExternal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBlockExploreLink } from 'utils'
 import { useActiveChainId } from 'hooks/useActiveChainId'

@@ -1,3 +1,4 @@
+import { Button, Text, useModal, Flex, Skeleton, Heading, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { PoolCategory } from 'config/constants/types'
@@ -7,17 +8,6 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { Token } from '@pancakeswap/sdk'
 
 import { ActionContainer, ActionTitles, ActionContent } from './styles'
-import CollectModal from '../../Modals/CollectModal'
-
-const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Pool.DeserializedPool<Token>>> = ({
-  sousId,
-  poolCategory,
-  earningToken,
-  userData,
-  userDataLoaded,
-  earningTokenPrice,
-}) => {
-  const { t } = useTranslation()
   const { address: account } = useAccount()
 
   const earnings = userData?.pendingReward ? new BigNumber(userData.pendingReward) : BIG_ZERO

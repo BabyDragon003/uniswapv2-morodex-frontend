@@ -1,3 +1,4 @@
+import useSWR from 'swr'
 import { useTranslation } from '@pancakeswap/localization'
 import { getLeastMostPriceInCollection } from 'state/nftMarket/helpers'
 import { StatBoxItem, StatBoxItemProps } from '../components/StatBox'

@@ -1,3 +1,4 @@
+import { parseUnits } from '@ethersproject/units'
 import {
   ButtonMenu,
   ButtonMenuItem,
@@ -7,17 +8,6 @@ import {
   InjectedModalProps,
   ModalBody,
   ModalContainer,
-  ModalHeader as UIKitModalHeader,
-  ModalTitle,
-} from '@pancakeswap/uikit'
-import { useAccount, useBalance } from 'wagmi'
-import { useState, useCallback } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
-import styled from 'styled-components'
-import WalletInfo from './WalletInfo'
-import WalletTransactions from './WalletTransactions'
-import WalletWrongNetwork from './WalletWrongNetwork'
-
 export enum WalletView {
   WALLET_INFO,
   TRANSACTIONS,

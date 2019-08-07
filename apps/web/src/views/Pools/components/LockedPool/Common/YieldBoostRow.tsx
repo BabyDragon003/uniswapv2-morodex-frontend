@@ -1,3 +1,4 @@
+import { Flex, Text, TooltipText, useTooltip, BalanceWithLoading } from '@pancakeswap/uikit'
 import { useVaultApy } from 'hooks/useVaultApy'
 import { useTranslation } from '@pancakeswap/localization'
 

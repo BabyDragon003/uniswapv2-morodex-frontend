@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'

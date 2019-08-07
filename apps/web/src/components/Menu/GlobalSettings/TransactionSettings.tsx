@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { escapeRegExp } from 'utils'
 import { Text, Button, Input, Flex, Box, QuestionHelper } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ enum SlippageError {
   InvalidInput = 'InvalidInput',
   RiskyLow = 'RiskyLow',
   RiskyHigh = 'RiskyHigh',
-}
-
-enum DeadlineError {
-  InvalidInput = 'InvalidInput',
-}
-
-const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
-const THREE_DAYS_IN_SECONDS = 60 * 60 * 24 * 3
-
-const SlippageTabs = () => {
-  const [userSlippageTolerance, setUserSlippageTolerance] = useUserSlippageTolerance()
   const [ttl, setTtl] = useUserTransactionTTL()
   const [slippageInput, setSlippageInput] = useState('')
   const [deadlineInput, setDeadlineInput] = useState('')

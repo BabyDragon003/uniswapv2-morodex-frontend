@@ -1,3 +1,4 @@
+import { ArrowBackIcon, Box, Button, Flex, Heading, NotFound, ReactMarkdown } from '@pancakeswap/uikit'
 import { PageMeta } from 'components/Layout/Page'
 import { getAllVotes, getProposal } from 'state/voting/helpers'
 import { useAccount } from 'wagmi'
@@ -7,17 +8,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from '@pancakeswap/localization'
 import Container from 'components/Layout/Container'
-import PageLoader from 'components/Loader/PageLoader'
-import { FetchStatus } from 'config/constants/types'
-import { isCoreProposal } from '../helpers'
-import { ProposalStateTag, ProposalTypeTag } from '../components/Proposals/tags'
-import Layout from '../components/Layout'
-import Details from './Details'
-import Results from './Results'
-import Vote from './Vote'
-import Votes from './Votes'
-
-const Overview = () => {
   const { query, isFallback } = useRouter()
   const id = query.id as string
   const { t } = useTranslation()

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Skeleton, { SkeletonV2 } from "./Skeleton";
 
 export default {
@@ -7,17 +8,6 @@ export default {
     width: { control: "number" },
     height: { control: "number" },
   },
-};
-
-export const Default: React.FC<React.PropsWithChildren> = (args) => {
-  return <Skeleton {...args} />;
-};
-
-export const Avatar = Default.bind({});
-Avatar.args = {
-  width: 40,
-  height: 40,
-  variant: "circle",
 };
 
 export const Animation = Default.bind({});

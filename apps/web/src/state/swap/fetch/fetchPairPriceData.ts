@@ -1,3 +1,4 @@
+import requestWithTimeout from 'utils/requestWithTimeout'
 import { infoClient } from 'utils/graphql'
 import lastPairDayId from '../queries/lastPairDayId'
 import pairHourDatas from '../queries/pairHourDatas'
@@ -7,17 +8,6 @@ import { timeWindowIdsCountMapping } from './constants'
 import {
   fetchPairDataParams,
   LastPairDayIdResponse,
-  LastPairHourIdResponse,
-  PairDayDatasResponse,
-  PairHoursDatasResponse,
-} from './types'
-import { getIdsByTimeWindow, getPairSequentialId } from './utils'
-import pairDayDatas from '../queries/pairDayDatas'
-import pairHourDatasByIds from '../queries/pairHourDatasByIds'
-import lastPairHourId from '../queries/lastPairHourId'
-
-const fetchPairPriceData = async ({ pairId, timeWindow }: fetchPairDataParams) => {
-  const client = infoClient
 
   try {
     switch (timeWindow) {

@@ -1,3 +1,4 @@
+import { PoolCategory } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import _get from 'lodash/get'

@@ -1,3 +1,4 @@
+import { Percent } from '@pancakeswap/swap-sdk-core'
 import { ERC20Token } from './entities/token'
 
 export enum ChainId {
@@ -7,17 +8,6 @@ export enum ChainId {
   BSC_TESTNET = 97,
 }
 
-export const ZERO_PERCENT = new Percent('0')
-export const ONE_HUNDRED_PERCENT = new Percent('1')
-
-export const FACTORY_ADDRESS = '0xde00bDedf6260954728B9489521A44cE95aE311C'
-
-const FACTORY_ADDRESS_ETH = '0x1097053Fd2ea711dad45caCcc45EfF7548fCB362'
-
-export const FACTORY_ADDRESS_MAP: Record<number, string> = {
-  [ChainId.ETHEREUM]: FACTORY_ADDRESS_ETH,
-  [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
-  [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x5d2eCA8d1c8e8c9b4fA4d15c406e2478e0C69C69',
 }
 export const INIT_CODE_HASH = '0x427820f50f31cb4db05f9649f9252b9355ad7e4bfc4bd51398898cee807db464'

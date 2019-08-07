@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { AutoRenewIcon, HistoryIcon, IconButton } from '@pancakeswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { setHistoryPaneState } from 'state/predictions'

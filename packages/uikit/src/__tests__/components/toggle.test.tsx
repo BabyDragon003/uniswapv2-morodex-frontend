@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import Toggle from "../../components/Toggle/Toggle";
 

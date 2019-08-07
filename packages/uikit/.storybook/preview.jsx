@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { withThemesProvider } from "themeprovider-storybook";
 import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from "next-themes";
 import light from "../src/theme/light";

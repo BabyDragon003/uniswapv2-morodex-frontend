@@ -1,3 +1,4 @@
+import { captureException } from '@sentry/nextjs'
 
 const assignError = (maybeError: any) => {
   if (typeof maybeError === 'string') {
@@ -7,17 +8,6 @@ const assignError = (maybeError: any) => {
     const error = new Error(maybeError?.message ?? String(maybeError))
     if (maybeError?.stack) {
       error.stack = maybeError.stack
-    }
-    if (maybeError?.code) {
-      error.name = maybeError.code
-    }
-    return error
-  }
-  return maybeError
-}
-
-export const isUserRejected = (err) => {
-  // provider user rejected error code
   return typeof err === 'object' && 'code' in err && err.code === 4001
 }
 

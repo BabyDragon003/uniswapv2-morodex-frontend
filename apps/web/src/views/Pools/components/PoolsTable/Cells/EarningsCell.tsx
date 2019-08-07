@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Skeleton, Text, Flex, Box, useModal, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { PoolCategory } from 'config/constants/types'
@@ -7,17 +8,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
 import CollectModal from '../../Modals/CollectModal'
 
-interface EarningsCellProps {
-  pool: Pool.DeserializedPool<Token>
-  account: string
-}
-
-const StyledCell = styled(Pool.BaseCell)`
-  flex: 4.5;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    flex: 1 0 120px;
-  }
-`
 
 const EarningsCell: React.FC<React.PropsWithChildren<EarningsCellProps>> = ({ pool, account }) => {
   const { t } = useTranslation()

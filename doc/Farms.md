@@ -1,3 +1,4 @@
+# Farms documentation
 
 ## How to add a new farm
 

@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import { BSC_BLOCK_TIME } from 'config'
 import { Ifo, IfoStatus, PoolIds } from 'config/constants/types'
@@ -7,17 +8,6 @@ import { multicallv2 } from 'utils/multicall'
 import ifoV1Abi from 'config/abi/ifoV1.json'
 import { PublicIfoData } from '../../types'
 import { getStatus } from '../helpers'
-
-/**
- * Gets all public data of an IFO
- */
-const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
-  const { address } = ifo
-  const lpTokenPriceInUsd = useLpTokenPrice(ifo.currency.symbol)
-  const [state, setState] = useState({
-    isInitialized: false,
-    status: 'idle' as IfoStatus,
-    blocksRemaining: 0,
     secondsUntilStart: 0,
     progress: 5,
     secondsUntilEnd: 0,

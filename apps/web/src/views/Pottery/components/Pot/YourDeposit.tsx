@@ -1,3 +1,4 @@
+import { Box, Text, Skeleton, Balance } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 
 interface YourDepositProps {
   depositBalance?: any
-}
-
-const YourDeposit: React.FC<React.PropsWithChildren<YourDepositProps>> = ({ depositBalance }) => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const cakePriceBusd = usePriceCakeBusd()
-  const { userData } = usePotteryData()
-  const totalDepositBalance = getBalanceAmount(depositBalance).toNumber()
-  const balanceInBusd = new BigNumber(totalDepositBalance).times(cakePriceBusd).toNumber()
-
-  return (
     <Box>
       <Box mb="4px">
         <Text fontSize="12px" color="textSubtle" bold as="span" textTransform="uppercase">

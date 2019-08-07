@@ -1,3 +1,4 @@
+import { vi } from 'vitest'
 import { retry, RetryableError } from './retry'
 
 describe('retry', () => {

@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 
 const NoNftsImage = styled.div`
   background: url('/images/nfts/no-profile-md.png');
@@ -7,10 +8,3 @@ const NoNftsImage = styled.div`
   position: relative;
   width: 96px;
   height: 96px;
-
-  & > img {
-    border-radius: 50%;
-  }
-`
-
-export default NoNftsImage

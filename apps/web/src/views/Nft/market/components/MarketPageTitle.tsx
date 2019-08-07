@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Box, Grid, GridProps, Heading, Message, MessageText } from '@pancakeswap/uikit'
 import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,3 +1,4 @@
+import { Profile } from 'state/types'
 import { PancakeProfile } from 'config/abi/types/PancakeProfile'
 import profileABI from 'config/abi/pancakeProfile.json'
 import { API_PROFILE } from 'config/constants/endpoints'
@@ -7,17 +8,6 @@ import { getNftApi } from 'state/nftMarket/helpers'
 import { multicallv2 } from 'utils/multicall'
 import { getPancakeProfileAddress } from 'utils/addressHelpers'
 
-export interface GetProfileResponse {
-  hasRegistered: boolean
-  profile?: Profile
-}
-
-const transformProfileResponse = (
-  profileResponse: Awaited<ReturnType<PancakeProfile['getUserProfile']>>,
-): Partial<Profile> => {
-  const { 0: userId, 1: numberPoints, 2: teamId, 3: collectionAddress, 4: tokenId, 5: isActive } = profileResponse
-
-  return {
     userId: userId.toNumber(),
     points: numberPoints.toNumber(),
     teamId: teamId.toNumber(),

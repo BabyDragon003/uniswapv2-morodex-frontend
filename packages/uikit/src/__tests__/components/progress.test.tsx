@@ -1,3 +1,4 @@
+import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import Progress from "../../components/Progress/Progress";
 
@@ -7,17 +8,6 @@ it("renders correctly", () => {
     <DocumentFragment>
       .c2 {
       position: absolute;
-      top: 0;
-      left: 0;
-      background: var(--colors-secondary);
-      height: 100%;
-      -webkit-transition: width 200ms ease;
-      transition: width 200ms ease;
-    }
-
-    .c0 {
-      position: relative;
-      background-color: var(--colors-input);
       box-shadow: var(--shadows-inset);
       overflow: hidden;
       border-radius: 32px;

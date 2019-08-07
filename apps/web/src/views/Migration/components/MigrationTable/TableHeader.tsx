@@ -1,3 +1,4 @@
+import React from 'react'
 import { Text, CardHeader } from '@pancakeswap/uikit'
 
 export interface TableHeaderProps {
@@ -7,11 +8,3 @@ export interface TableHeaderProps {
 const TableHeader: React.FC<React.PropsWithChildren<TableHeaderProps>> = ({ title }) => {
   return (
     <CardHeader>
-      <Text fontSize="20px" bold>
-        {title}
-      </Text>
-    </CardHeader>
-  )
-}
-
-export default TableHeader

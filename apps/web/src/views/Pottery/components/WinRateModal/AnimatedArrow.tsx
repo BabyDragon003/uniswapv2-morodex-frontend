@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Flex, ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
 import styled, { keyframes } from 'styled-components'
 import { WinRateCalculatorState } from 'views/Pottery/hooks/useWinRateCalculator'
@@ -7,17 +8,6 @@ const rotate = keyframes`
   0% {
     transform: scale(1);
     stroke-width: 0;
-  }
-  50% {
-    transform: scale(1.3);
-    stroke-width: 2;
-  }
-  100% {
-    transform: scale(1);
-    stroke-width: 0;
-  }
-`
-
 const ArrowContainer = styled(Flex)`
   & > svg {
     animation: 0.2s ${rotate} linear;

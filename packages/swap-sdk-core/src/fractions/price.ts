@@ -1,3 +1,4 @@
+import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 
 import { BigintIsh, Rounding } from '../constants'
@@ -7,17 +8,6 @@ import { CurrencyAmount } from './currencyAmount'
 
 export class Price<TBase extends Currency, TQuote extends Currency> extends Fraction {
   public readonly baseCurrency: TBase // input i.e. denominator
-
-  public readonly quoteCurrency: TQuote // output i.e. numerator
-
-  public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Token
-
-  /**
-   * Construct a price, either with the base and quote currency amount, or the
-   * @param args
-   */
-  public constructor(
-    ...args:
       | [TBase, TQuote, BigintIsh, BigintIsh]
       | [{ baseAmount: CurrencyAmount<TBase>; quoteAmount: CurrencyAmount<TQuote> }]
   ) {

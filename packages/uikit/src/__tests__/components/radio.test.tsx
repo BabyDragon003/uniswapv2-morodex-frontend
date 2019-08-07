@@ -1,3 +1,4 @@
+import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import Radio from "../../components/Radio/Radio";
 

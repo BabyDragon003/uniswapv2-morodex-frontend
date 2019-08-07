@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { CheckboxProps, scales } from "./types";
 
 const getScale = ({ scale }: CheckboxProps) => {

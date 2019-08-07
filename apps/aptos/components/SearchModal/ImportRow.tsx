@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import {
   Button,
@@ -7,17 +8,6 @@ import {
   AutoRow,
   RowFixed,
   AutoColumn,
-  Flex,
-  ListLogo,
-} from '@pancakeswap/uikit'
-import { CurrencyLogo } from 'components/Logo/CurrencyLogo'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useCombinedInactiveList } from 'state/lists/hooks'
-import styled from 'styled-components'
-import { useIsUserAddedToken, useIsTokenActive } from 'hooks/Tokens'
-import { useTranslation } from '@pancakeswap/localization'
-import { APTOS_COIN } from '@pancakeswap/awgmi'
-import { BAD_SRCS } from '../Logo/constants'
 
 const TokenSection = styled.div<{ dim?: boolean }>`
   padding: 4px 20px;

@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import noop from "lodash/noop";
 /* eslint-disable import/no-unresolved */
@@ -7,17 +8,6 @@ import { Text } from "../Text";
 
 const Row = styled.div`
   margin-bottom: 32px;
-`;
-
-export default {
-  title: "Components/Alert",
-  component: Alert,
-  argTypes: {},
-} as Meta;
-
-export const Default: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <div style={{ padding: "32px", width: "400px" }}>
       <Row>
         <Alert title="Info">
           <Text as="p">This is a description</Text>

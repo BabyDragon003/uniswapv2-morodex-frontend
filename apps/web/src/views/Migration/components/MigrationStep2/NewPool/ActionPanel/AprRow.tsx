@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'

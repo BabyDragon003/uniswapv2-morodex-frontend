@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import { FarmWithStakedValue } from '@pancakeswap/farms'
 import TableHeader from './MigrationTable/TableHeader'
 import EmptyText from './MigrationTable/EmptyText'
 import TableStyle from './MigrationTable/StyledTable'
-import NewRow from './MigrationStep2/NewFarm/FarmRow'
-import OldRow from './MigrationStep1/OldFarm/FarmRow'
-import { getDisplayApr } from '../../Farms/components/getDisplayApr'
-import { ColumnsDefTypes, DesktopV2ColumnSchema, RowProps } from './types'
-
-const Container = styled.div`
-  overflow: hidden;
-  margin-bottom: 32px;
-  border-radius: 24px 24px 16px 16px;
-  background-color: ${({ theme }) => theme.colors.disabled};
-  padding: 1px 1px 3px 1px;
 `
 
 export interface ITableProps {

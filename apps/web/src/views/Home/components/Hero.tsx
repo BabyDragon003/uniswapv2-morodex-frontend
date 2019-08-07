@@ -1,3 +1,4 @@
+import { Button, Flex, Heading, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from '@pancakeswap/localization'

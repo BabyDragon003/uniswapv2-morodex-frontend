@@ -1,3 +1,4 @@
+import React, { cloneElement, Children, ReactElement } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
 import { scales, variants } from "../Button/types";
@@ -7,17 +8,6 @@ interface StyledButtonMenuProps extends ButtonMenuProps {
   theme: DefaultTheme;
 }
 
-const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "input" : "tertiary"];
-};
-
-const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return theme.colors[variant === variants.SUBTLE ? "inputSecondary" : "disabled"];
-};
-
-const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
-  background-color: ${getBackgroundColor};
-  border-radius: 16px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};

@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { DEFAULT_GAS_LIMIT } from 'config'
 import { parseUnits } from '@ethersproject/units'
 import { useSousChef } from 'hooks/useContract'

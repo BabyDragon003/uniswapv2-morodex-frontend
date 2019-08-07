@@ -1,3 +1,4 @@
+import { Box, Flex, Skeleton, Text, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 
@@ -7,17 +8,6 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { Token } from '@pancakeswap/sdk'
 
-interface StakedCellProps {
-  pool: Pool.DeserializedPool<Token>
-  account: string
-}
-
-const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, account }) => {
-  const { t } = useTranslation()
-  const { isMobile } = useMatchBreakpoints()
-
-  // vault
-  const vaultData = useVaultPoolByKey(pool.vaultKey)
   const {
     userData: {
       userShares,

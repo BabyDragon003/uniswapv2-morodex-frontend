@@ -1,3 +1,4 @@
+import styled from "styled-components";
 
 export const Dots = styled.span`
   &::after {
@@ -6,16 +7,5 @@ export const Dots = styled.span`
     content: ".";
     width: 1em;
     text-align: left;
-  }
-  @keyframes ellipsis {
-    0% {
-      content: ".";
-    }
-    33% {
-      content: "..";
-    }
-    66% {
-      content: "...";
-    }
   }
 `;

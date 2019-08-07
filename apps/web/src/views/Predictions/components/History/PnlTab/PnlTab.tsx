@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import { Box, Flex, Heading, Text, Button, Link, BscScanIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import { getBlockExploreLink } from 'utils'
 import { multiplyPriceByAmount } from 'utils/prices'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { useGetCurrentEpoch } from 'state/predictions/hooks'
-import { Bet, BetPosition } from 'state/types'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
-
-import { formatBnb, getMultiplier, getNetPayout } from '../helpers'
-import PnlChart from './PnlChart'
-import SummaryRow from './SummaryRow'
-
-interface PnlTabProps {
-  hasBetHistory: boolean
-  bets: Bet[]
-}
 
 interface PnlCategory {
   rounds: number

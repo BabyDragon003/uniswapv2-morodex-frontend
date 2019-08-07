@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, Pair, TradeType } from '@pancakeswap/sdk'
 import { StableSwapPair, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { Field } from 'state/swap/actions'
 import { useCurrencyBalances } from 'state/wallet/hooks'

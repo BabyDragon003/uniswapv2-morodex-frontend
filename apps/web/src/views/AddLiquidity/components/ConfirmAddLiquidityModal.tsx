@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap/sdk'
 import { InjectedModalProps, Button, TransactionErrorContent, ConfirmationModalContent } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import _toNumber from 'lodash/toNumber'
 import { AddLiquidityModalHeader, PairDistribution } from './common'
 
 interface ConfirmAddLiquidityModalProps {
-  title: string
-  customOnDismiss: () => void
-  attemptingTxn: boolean
-  hash: string
-  pendingText: string
-  currencies: { [field in Field]?: Currency }
-  noLiquidity: boolean
-  allowedSlippage: number
-  liquidityErrorMessage: string
-  price: Fraction
-  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
   onAdd: () => void
   poolTokenPercentage: Percent
   liquidityMinted: CurrencyAmount<Token>

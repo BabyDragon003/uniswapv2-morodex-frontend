@@ -1,3 +1,4 @@
+import { useEffect, useState, useRef, useMemo } from 'react'
 import {
   ApiResponseCollectionTokens,
   ApiSingleTokenData,
@@ -7,17 +8,6 @@ import {
 } from 'state/nftMarket/types'
 import { useGetNftFilters, useGetNftOrdering, useGetNftShowOnlyOnSale, useGetCollection } from 'state/nftMarket/hooks'
 import { FetchStatus } from 'config/constants/types'
-import {
-  fetchNftsFiltered,
-  getMarketDataForTokenIds,
-  getNftApi,
-  getNftsFromCollectionApi,
-  getNftsMarketData,
-} from 'state/nftMarket/helpers'
-import useSWRInfinite from 'swr/infinite'
-import isEmpty from 'lodash/isEmpty'
-import uniqBy from 'lodash/uniqBy'
-import fromPairs from 'lodash/fromPairs'
 import { REQUEST_SIZE } from '../Collection/config'
 
 interface ItemListingSettings {

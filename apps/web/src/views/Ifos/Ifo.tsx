@@ -1,3 +1,4 @@
+import { ifosConfig } from 'config/constants'
 import CurrentIfo from './CurrentIfo'
 import SoonIfo from './SoonIfo'
 
@@ -7,7 +8,3 @@ import SoonIfo from './SoonIfo'
 const activeIfo = ifosConfig.find((ifo) => ifo.isActive)
 
 const Ifo = () => {
-  return activeIfo ? <CurrentIfo activeIfo={activeIfo} /> : <SoonIfo />
-}
-
-export default Ifo

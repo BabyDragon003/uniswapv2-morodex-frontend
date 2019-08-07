@@ -1,3 +1,4 @@
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: {
@@ -7,9 +8,3 @@ export default defineConfig({
     'connectors/blocto': 'core/src/connectors/blocto.ts',
     'connectors/petra': 'core/src/connectors/petra.ts',
     'connectors/fewcha': 'core/src/connectors/fewcha.ts',
-    'connectors/pontem': 'core/src/connectors/pontem.ts',
-    'connectors/safePal': 'core/src/connectors/safePal.ts',
-  },
-  format: ['esm', 'cjs'],
-  dts: true,
-})

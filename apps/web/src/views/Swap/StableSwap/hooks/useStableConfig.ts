@@ -1,3 +1,4 @@
+import { useContract } from 'hooks/useContract'
 import stableSwapABI from 'config/abi/stableSwap.json'
 import stableSwapInfoABI from 'config/abi/infoStableSwap.json'
 import stableLPABI from 'config/abi/stableLP.json'

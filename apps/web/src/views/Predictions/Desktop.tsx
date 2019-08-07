@@ -1,3 +1,4 @@
+import { memo, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Split, { SplitInstance } from 'split-grid'
 import { Button, ChartIcon, Flex, Box, Link } from '@pancakeswap/uikit'

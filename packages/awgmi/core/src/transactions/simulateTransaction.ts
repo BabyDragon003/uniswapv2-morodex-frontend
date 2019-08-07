@@ -1,3 +1,4 @@
+import { HexString, TxnBuilderTypes, Types } from 'aptos'
 import { getAccount } from '../accounts/account'
 import { getClient } from '../client'
 import { WalletProviderError, SimulateTransactionError } from '../errors'

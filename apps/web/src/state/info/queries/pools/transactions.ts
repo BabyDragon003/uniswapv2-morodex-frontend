@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { mapBurns, mapMints, mapSwaps } from 'state/info/queries/helpers'
 import { BurnResponse, MintResponse, SwapResponse } from 'state/info/queries/types'
 import { Transaction } from 'state/info/types'
@@ -7,17 +8,6 @@ import { MultiChainName, getMultiChainQueryEndPointWithStableSwap } from '../../
  */
 const POOL_TRANSACTIONS = gql`
   query poolTransactions($address: ID!) {
-    mints(first: 35, orderBy: timestamp, orderDirection: desc, where: { pair: $address }) {
-      id
-      timestamp
-      to
-      amount0
-      amount1
-      amountUSD
-      pair {
-        token0 {
-          id
-          symbol
         }
         token1 {
           id

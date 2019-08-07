@@ -1,3 +1,4 @@
+import Token from 'views/Info/Tokens/TokenPage'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { isAddress } from 'utils'
 import { InfoPageLayout } from 'views/Info'
@@ -7,17 +8,6 @@ const TokenPage = ({ address }: { address: string }) => {
     return null
   }
 
-  return <Token routeAddress={address} />
-}
-
-TokenPage.Layout = InfoPageLayout
-TokenPage.chains = [] // set all
-
-export default TokenPage
-
-export const getStaticPaths: GetStaticPaths = () => {
-  return {
-    paths: [],
     fallback: true,
   }
 }

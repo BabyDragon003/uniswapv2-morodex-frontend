@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Heading, PageHeader, Pool, Text, FlexLayout, ViewMode } from '@pancakeswap/uikit'
 import { Coin } from '@pancakeswap/aptos-swap-sdk'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -6,17 +7,6 @@ import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { TokenPairImage } from 'components/TokenImage'
 import { ConnectWalletButton } from 'components/ConnectWalletButton'
-
-import NoSSR from '../NoSSR'
-import PoolControls from './components/PoolControls'
-import CardActions from './components/PoolCard/CardActions'
-import Apr from './components/PoolCard/Apr'
-import CardFooter from './components/PoolCard/CardFooter'
-import PoolStatsInfo from './components/PoolCard/PoolStatsInfo'
-import CakeCardActions from './components/PoolCard/CakeCardActions'
-import PoolRow from './components/PoolTable/PoolRow'
-import { usePoolsList } from './hooks/usePoolsList'
-import isVaultPool from './utils/isVaultPool'
 
 const CardLayout = styled(FlexLayout)`
   justify-content: center;

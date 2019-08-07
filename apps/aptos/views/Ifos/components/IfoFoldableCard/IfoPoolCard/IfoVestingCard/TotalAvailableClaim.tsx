@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { TokenImage } from 'components/TokenImage'
 import { LightGreyCard } from 'components/Card'
@@ -7,17 +8,6 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 
 interface TotalAvailableClaimProps {
-  ifo: Ifo
-  amountAvailableToClaim: BigNumber
-}
-
-const TotalAvailableClaim: React.FC<React.PropsWithChildren<TotalAvailableClaimProps>> = ({
-  ifo,
-  amountAvailableToClaim,
-}) => {
-  const { t } = useTranslation()
-  const { token } = ifo
-
   const amountAvailable = useMemo(
     () =>
       amountAvailableToClaim.gt(0)

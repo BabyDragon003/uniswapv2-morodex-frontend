@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import {
   Box,
   Button,
@@ -7,17 +8,6 @@ import {
   PageHeader,
   NextLinkFromReactRouter,
   PageSection,
-} from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
-import { useTranslation } from '@pancakeswap/localization'
-import SectionsWithFoldableText from 'components/FoldableSection/SectionsWithFoldableText'
-import { PageMeta } from 'components/Layout/Page'
-import { useGetCollections } from 'state/nftMarket/hooks'
-import { FetchStatus } from 'config/constants/types'
-import PageLoader from 'components/Loader/PageLoader'
-import useTheme from 'hooks/useTheme'
-import orderBy from 'lodash/orderBy'
-import SearchBar from '../components/SearchBar'
 import Collections from './Collections'
 import Newest from './Newest'
 import config from './config'

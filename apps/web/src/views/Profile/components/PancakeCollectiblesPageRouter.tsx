@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import PageLoader from 'components/Loader/PageLoader'
 import PancakeCollectibles from './PancakeCollectibles'
 
@@ -7,8 +8,3 @@ const PancakeCollectiblesPageRouter = () => {
   if (router.isFallback) {
     return <PageLoader />
   }
-
-  return <PancakeCollectibles />
-}
-
-export default PancakeCollectiblesPageRouter

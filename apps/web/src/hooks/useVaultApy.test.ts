@@ -1,3 +1,4 @@
+import { FixedNumber } from '@ethersproject/bignumber'
 import { renderHook } from '@testing-library/react-hooks'
 import BigNumber from 'bignumber.js'
 import { createSWRWrapper } from 'testUtils'

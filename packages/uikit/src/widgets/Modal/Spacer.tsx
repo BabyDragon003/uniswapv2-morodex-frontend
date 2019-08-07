@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 
 interface SpacerProps {

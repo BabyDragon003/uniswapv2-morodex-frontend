@@ -1,3 +1,4 @@
+import JSBI from 'jsbi'
 import { useDispatch, useSelector } from 'react-redux'
 import { ParsedUrlQuery } from 'querystring'
 import { Currency, CurrencyAmount, Trade, Token, Price, Native, TradeType } from '@pancakeswap/sdk'
@@ -7,17 +8,6 @@ import { useRouter } from 'next/router'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 import { useCurrency } from 'hooks/Tokens'
-import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
-import getPriceForOneToken from 'views/LimitOrders/utils/getPriceForOneToken'
-import { isAddress } from 'utils'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
-import { useTranslation } from '@pancakeswap/localization'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-import { useCurrencyBalances } from '../wallet/hooks'
-import { replaceLimitOrdersState, selectCurrency, setRateType, switchCurrencies, typeInput } from './actions'
-import { Field, Rate, OrderState } from './types'
-import { AppState, useAppDispatch } from '..'
-
 // Get desired input amount in output basis mode
 const getDesiredInput = (
   outputValue: string,

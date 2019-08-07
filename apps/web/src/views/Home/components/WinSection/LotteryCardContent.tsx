@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Flex, Text, Skeleton, Button, ArrowForwardIcon, Balance, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useIntersectionObserver } from '@pancakeswap/hooks'
@@ -7,17 +8,6 @@ import { fetchLottery, fetchCurrentLotteryId } from 'state/lottery/helpers'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import { SLOW_INTERVAL } from 'config/constants'
 import useSWRImmutable from 'swr/immutable'
-
-const StyledLink = styled(NextLinkFromReactRouter)`
-  width: 100%;
-`
-
-const StyledBalance = styled(Balance)`
-  background: ${({ theme }) => theme.colors.gradientGold};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`
-
 const LotteryCardContent = () => {
   const { t } = useTranslation()
   const { observerRef, isIntersecting } = useIntersectionObserver()

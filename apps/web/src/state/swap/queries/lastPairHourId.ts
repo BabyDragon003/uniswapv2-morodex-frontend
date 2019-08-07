@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const lastPairHourId = gql`
   query lastPairHourId($pairId: String) {

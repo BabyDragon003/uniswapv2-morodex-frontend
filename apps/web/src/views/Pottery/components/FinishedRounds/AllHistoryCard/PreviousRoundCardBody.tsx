@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { useMemo } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Text, CardBody, CardRibbon, LinkExternal, Skeleton, Balance } from '@pancakeswap/uikit'

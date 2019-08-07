@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { VaultKey } from 'state/types'
 import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'

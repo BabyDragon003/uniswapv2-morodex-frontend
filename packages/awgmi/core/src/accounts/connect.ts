@@ -1,3 +1,4 @@
+import { Connector, ConnectorData } from '../connectors'
 import { getClient } from '../client'
 import { ConnectorAlreadyConnectedError } from '../errors'
 

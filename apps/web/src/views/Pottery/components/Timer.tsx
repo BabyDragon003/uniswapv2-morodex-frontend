@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { Flex, Heading, Text } from '@pancakeswap/uikit'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'

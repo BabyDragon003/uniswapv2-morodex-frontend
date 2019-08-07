@@ -1,3 +1,4 @@
+import { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
@@ -7,17 +8,6 @@ import { Currency, Percent, WNATIVE, ChainId } from '@pancakeswap/sdk'
 import {
   Button,
   Text,
-  AddIcon,
-  ArrowDownIcon,
-  CardBody,
-  Slider,
-  Box,
-  Flex,
-  useModal,
-  Checkbox,
-  TooltipText,
-  useTooltip,
-  useToast,
   useMatchBreakpoints,
   IconButton,
   PencilIcon,

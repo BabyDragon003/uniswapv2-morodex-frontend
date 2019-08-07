@@ -1,3 +1,4 @@
+import { Pool, useToast } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallback } from 'react'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -7,17 +8,6 @@ import { Coin } from '@pancakeswap/aptos-swap-sdk'
 import { TransactionResponse } from '@pancakeswap/awgmi/dist/core'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 
-const StakeModalContainer = ({
-  pool,
-  isRemovingStake,
-  onDismiss,
-  stakingTokenBalance,
-  stakingTokenPrice,
-  onUnstake,
-  onStake,
-  onDone,
-}: Pool.StakeModalPropsType<Coin> & {
-  onDone: () => void
   onStake: (_amount: string) => Promise<TransactionResponse>
   onUnstake: (_amount: string) => Promise<TransactionResponse>
 }) => {

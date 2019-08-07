@@ -1,3 +1,4 @@
+import { useClient, useConnect } from 'wagmi'
 import { useEffect } from 'react'
 
 const SAFE_ID = 'safe'

@@ -1,3 +1,4 @@
+describe('Remove Liquidity', () => {
   it('redirects from address-address to address/address', () => {
     cy.visit('/remove/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
     cy.url().should(
@@ -7,17 +8,6 @@
   })
 
   it('bnb-cake remove', () => {
-    cy.visit('/remove/BNB/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9')
-    cy.get('#remove-liquidity-tokena-symbol').should('contain.text', 'BNB')
-    cy.get('#remove-liquidity-tokenb-symbol').should('contain.text', 'MDEX')
-  })
-
-  it('cake-bnb remove', () => {
-    cy.visit('/remove/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9/BNB')
-    cy.get('#remove-liquidity-tokena-symbol').should('contain.text', 'MDEX')
-    cy.get('#remove-liquidity-tokenb-symbol').should('contain.text', 'BNB')
-  })
-
   it('loads the two correct tokens', () => {
     cy.visit('/remove/0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
     cy.get('#remove-liquidity-tokena-symbol').should('contain.text', 'MDEX')

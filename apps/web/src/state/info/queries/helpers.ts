@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 import fromPairs from 'lodash/fromPairs'
 import chunk from 'lodash/chunk'
 import uniq from 'lodash/uniq'

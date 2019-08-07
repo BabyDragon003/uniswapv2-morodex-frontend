@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import { useCakeEnable } from 'hooks/useCakeEnable'
 import { ENABLE_EXTEND_LOCK_AMOUNT } from '../../../helpers'

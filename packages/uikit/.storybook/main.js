@@ -1,3 +1,4 @@
+const { vanillaExtractPlugin } = require("@vanilla-extract/vite-plugin");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],

@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { Flex, Heading, PocketWatchIcon, Text, Skeleton, Link, TimerIcon } from '@pancakeswap/uikit'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
@@ -7,17 +8,6 @@ import { getStatus } from 'views/Ifos/hooks/helpers'
 interface Props {
   publicIfoData: PublicIfoData
 }
-
-const GradientText = styled(Heading)`
-  background: -webkit-linear-gradient(#ffd800, #eb8c00);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
-`
-
-const FlexGap = styled(Flex)<{ gap: string }>`
-  gap: ${({ gap }) => gap};
 `
 
 export const SoonTimer: React.FC<React.PropsWithChildren<Props>> = ({ publicIfoData }) => {

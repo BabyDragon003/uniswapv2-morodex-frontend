@@ -1,3 +1,4 @@
+import { Variants } from "framer-motion";
 import { keyframes } from "styled-components";
 
 export const appearAnimation = keyframes`

@@ -1,3 +1,4 @@
+import { NftFilter, NftActivityFilter, MarketEvent, NftAttribute } from 'state/nftMarket/types'
 import { useAtom } from 'jotai'
 import cloneDeep from 'lodash/cloneDeep'
 import { nftMarketFiltersAtom, nftMarketActivityFiltersAtom, tryVideoNftMediaAtom } from 'state/nftMarket/atoms'
@@ -7,17 +8,6 @@ const initialNftFilterState: NftFilter = {
   activeFilters: {},
   showOnlyOnSale: true,
   ordering: {
-    field: 'currentAskPrice',
-    direction: 'asc',
-  },
-}
-
-const initialNftActivityFilterState: NftActivityFilter = {
-  typeFilters: [],
-  collectionFilters: [],
-}
-
-export function useNftStorage() {
   const [nftMarketFilters, setNftMarketFilters] = useAtom(nftMarketFiltersAtom)
   const [nftMarketActivityFilters, setNftMarketActivityFilters] = useAtom(nftMarketActivityFiltersAtom)
   const [tryVideoNftMedia, setTryVideoNftMedia] = useAtom(tryVideoNftMediaAtom)

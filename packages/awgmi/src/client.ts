@@ -1,3 +1,4 @@
+import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
 import { QueryClient } from '@tanstack/react-query'
 import { Persister, persistQueryClient } from '@tanstack/react-query-persist-client'
 import { AptosClient } from 'aptos'

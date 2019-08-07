@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { Text } from '@pancakeswap/uikit'
 import { Collection } from 'state/nftMarket/types'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
@@ -7,17 +8,6 @@ import MarketPageHeader from '../components/MarketPageHeader'
 import MarketPageTitle from '../components/MarketPageTitle'
 import StatBox, { StatBoxItem } from '../components/StatBox'
 import BannerHeader from '../components/BannerHeader'
-import AvatarImage from '../components/BannerHeader/AvatarImage'
-import BaseSubMenu from '../components/BaseSubMenu'
-import { nftsBaseUrl } from '../constants'
-import TopBar from './TopBar'
-import LowestPriceStatBoxItem from './LowestPriceStatBoxItem'
-
-interface HeaderProps {
-  collection: Collection
-}
-
-const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({ collection }) => {
   const router = useRouter()
   const collectionAddress = router.query.collectionAddress as string
   const { totalSupply, numberTokensListed, totalVolumeBNB, banner, avatar } = collection

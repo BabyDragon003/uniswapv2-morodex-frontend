@@ -1,3 +1,4 @@
+# @pancakeswap/awgmi
 
 Connect to Aptos with similar [wagmi](https://github.com/wagmi-dev/wagmi) React hooks.
 

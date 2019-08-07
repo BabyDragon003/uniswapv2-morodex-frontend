@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { useEffect, useState } from 'react'
 
 export const getHasWithdrawFee = (lastDepositedTime: number, withdrawalFeePeriod = 259200) => {

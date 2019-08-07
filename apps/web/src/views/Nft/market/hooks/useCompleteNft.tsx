@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { FetchStatus } from 'config/constants/types'
 import { useCallback } from 'react'
 import { useErc721CollectionContract } from 'hooks/useContract'

@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import BigNumber from "bignumber.js";
 import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
@@ -7,17 +8,6 @@ import {
   Flex,
   CalculateIcon,
   Skeleton,
-  FlexProps,
-  Button,
-  RoiCalculatorModal,
-  BalanceWithLoading,
-} from "../../components";
-import { useModal } from "../Modal";
-
-const AprLabelContainer = styled(Flex)`
-  &:hover {
-    opacity: 0.5;
-  }
 `;
 
 interface AprProps<T> extends FlexProps {

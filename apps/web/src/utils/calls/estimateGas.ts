@@ -1,3 +1,4 @@
+import { Contract, PayableOverrides } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { calculateGasMargin } from 'utils'
 import { ContractMethodName, MaybeContract, ContractMethodParams } from 'utils/types'

@@ -1,3 +1,4 @@
+{
   "name": "@pancakeswap/uikit",
   "version": "0.63.1",
   "description": "Set of UI components for pancake projects",
@@ -7,17 +8,6 @@
   ],
   "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
   "license": "MIT",
-  "private": true,
-  "scripts": {
-    "start": "yarn storybook",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "format:check": "prettier --check --loglevel error 'src/**/*.{js,jsx,ts,tsx}'",
-    "format:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
-    "test": "vitest --run",
-    "prepublishOnly": "yarn build"
-  },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

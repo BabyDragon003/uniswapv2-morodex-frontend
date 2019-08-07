@@ -1,3 +1,4 @@
+import ifos from 'config/constants/ifo'
 import campaigns from 'config/constants/campaigns'
 
 describe('Config IFOs', () => {

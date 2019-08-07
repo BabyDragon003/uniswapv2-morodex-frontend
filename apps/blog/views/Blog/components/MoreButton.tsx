@@ -1,3 +1,4 @@
+import { Flex, Button } from '@pancakeswap/uikit'
 import NextLink from 'next/link'
 import { useTranslation } from '@pancakeswap/localization'
 

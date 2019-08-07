@@ -1,3 +1,4 @@
+name: Farm Config
 on:
   pull_request:
     paths:

@@ -1,3 +1,4 @@
+import { Flex, Heading, Skeleton, Text, Balance } from '@pancakeswap/uikit'
 import cakeAbi from 'config/abi/cake.json'
 import { bscTokens } from '@pancakeswap/tokens'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import { usePriceCakeBusd } from 'state/farms/hooks'
 import styled from 'styled-components'
 import { formatBigNumber, formatLocalisedCompactNumber } from '@pancakeswap/utils/formatBalance'
 import { multicallv3 } from 'utils/multicall'
-import { getCakeVaultAddress } from 'utils/addressHelpers'
-import useSWR from 'swr'
-import { SLOW_INTERVAL } from 'config/constants'
-import cakeVaultV2Abi from 'config/abi/cakeVaultV2.json'
-import { BigNumber } from '@ethersproject/bignumber'
-
-const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: boolean }>`
-  flex-direction: column;
-  ${({ noMobileBorder, theme }) =>
-    noMobileBorder
-      ? `${theme.mediaQueries.md} {
            padding: 0 16px;
            border-left: 1px ${theme.colors.inputSecondary} solid;
          }

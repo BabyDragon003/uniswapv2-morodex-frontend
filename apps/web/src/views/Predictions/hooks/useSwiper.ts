@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { SwiperContext } from '../context/SwiperProvider'
 
 const useSwiper = () => {
@@ -7,7 +8,3 @@ const useSwiper = () => {
     throw new Error('Swiper not found')
   }
 
-  return swiperContext
-}
-
-export default useSwiper

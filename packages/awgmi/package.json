@@ -1,3 +1,4 @@
+{
   "name": "@pancakeswap/awgmi",
   "license": "MIT",
   "version": "0.0.11",
@@ -7,17 +8,6 @@
   "sideEffects": false,
   "dependencies": {
     "@ethersproject/units": "^5.7.0",
-    "@tanstack/query-sync-storage-persister": "^4.10.1",
-    "@tanstack/react-query": "^4.10.1",
-    "@tanstack/react-query-persist-client": "^4.10.1",
-    "eventemitter3": "^4.0.7",
-    "use-sync-external-store": "^1.2.0",
-    "zustand": "^4.1.1"
-  },
-  "keywords": [
-    "pancakeswap",
-    "aptos",
-    "wallets"
   ],
   "peerDependencies": {
     "@blocto/sdk": "^0.3.1",

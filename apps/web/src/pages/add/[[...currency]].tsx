@@ -1,3 +1,4 @@
+import { CAKE, USDC } from '@pancakeswap/tokens'
 import { useCurrency } from 'hooks/Tokens'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -7,17 +8,6 @@ import { useAppDispatch } from 'state'
 import { resetMintState } from 'state/mint/actions'
 import { CHAIN_IDS } from 'utils/wagmi'
 import AddLiquidity from 'views/AddLiquidity'
-import AddStableLiquidity from 'views/AddLiquidity/AddStableLiquidity/index'
-import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
-import { useActiveChainId } from 'hooks/useActiveChainId'
-
-const AddLiquidityPage = () => {
-  const router = useRouter()
-  const { chainId } = useActiveChainId()
-  const dispatch = useAppDispatch()
-
-  const native = useNativeCurrency()
-
   const [currencyIdA, currencyIdB] = router.query.currency || [
     native.symbol,
     CAKE[chainId]?.address ?? USDC[chainId]?.address,

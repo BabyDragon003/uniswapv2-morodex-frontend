@@ -1,3 +1,4 @@
+import { Box, BoxProps, Flex } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 const Wrapper = styled(Flex)`
@@ -7,17 +8,6 @@ const Wrapper = styled(Flex)`
   ::-webkit-scrollbar {
     display: none;
   }
-  scrollbar-width: none; /* Firefox */
-`
-
-const Inner = styled(Flex)`
-  justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.input};
-  width: 100%;
-`
-
-interface TabProps extends BoxProps {
-  isActive?: boolean
   onClick?: () => void
 }
 

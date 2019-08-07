@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { useMemo } from 'react'
 import { format } from 'date-fns'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ const sharedFlexStyles = `
   min-width: 86px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-`
-
-const ExpiredWrapper = styled(Flex)`
-  ${sharedFlexStyles}
-
-  svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
-  }
-`
-
 const ActiveWrapper = styled(Flex)`
   ${sharedFlexStyles}
 `

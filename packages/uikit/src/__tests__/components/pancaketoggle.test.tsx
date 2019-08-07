@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import PancakeToggle from "../../components/PancakeToggle/PancakeToggle";
 

@@ -1,3 +1,4 @@
+import { mergeConfig } from 'vite'
 import { defineConfig } from 'vitest/config'
 import defaultConfig from './vitest.config'
 
@@ -7,5 +8,3 @@ export default mergeConfig(
     test: {
       include: ['src/config/__tests__/**'],
     },
-  }),
-)

@@ -1,3 +1,4 @@
+import { AptosClient } from 'aptos'
 import { defaultChains, defaultChain } from './chain'
 import { getClient } from './client'
 

@@ -1,3 +1,4 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { Text } from "../../components";
 
 export function LiquidityNotConnect() {
@@ -7,5 +8,3 @@ export function LiquidityNotConnect() {
     <Text color="textSubtle" textAlign="center">
       {t("Connect to a wallet to view your liquidity.")}
     </Text>
-  );
-}

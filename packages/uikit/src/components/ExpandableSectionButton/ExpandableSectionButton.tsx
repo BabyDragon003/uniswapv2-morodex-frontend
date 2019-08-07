@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { useCallback } from "react";
 import { Text } from "../Text";

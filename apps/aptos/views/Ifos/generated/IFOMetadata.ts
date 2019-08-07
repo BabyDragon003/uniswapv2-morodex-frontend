@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface Id {
   addr: string
   creation_num: string
@@ -7,17 +8,6 @@ export interface Guid {
   id: Id
 }
 
-export interface AdminWithdralEvents {
-  counter: string
-  guid: Guid
-}
-
-export interface OfferingCoinStore {
-  value: string
-}
-
-export interface RaisingCoinStore {
-  value: string
 }
 
 export interface Id2 {

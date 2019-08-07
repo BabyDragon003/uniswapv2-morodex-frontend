@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
@@ -7,17 +8,6 @@ import ifoV2Abi from 'config/abi/ifoV2.json'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import useIfoAllowance from '../useIfoAllowance'
 import { WalletIfoState, WalletIfoData } from '../../types'
-
-const initialState = {
-  isInitialized: false,
-  poolBasic: {
-    amountTokenCommittedInLP: BIG_ZERO,
-    offeringAmountInToken: BIG_ZERO,
-    refundingAmountInLP: BIG_ZERO,
-    taxAmountInLP: BIG_ZERO,
-    hasClaimed: false,
-    isPendingTx: false,
-  },
   poolUnlimited: {
     amountTokenCommittedInLP: BIG_ZERO,
     offeringAmountInToken: BIG_ZERO,

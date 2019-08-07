@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { ContextApi, languageList, useTranslation } from '@pancakeswap/localization'
 import {
   DropdownMenuItems,
@@ -7,17 +8,6 @@ import {
   MenuItemsType,
   MoreIcon,
   NextLinkFromReactRouter,
-  SwapFillIcon,
-  SwapIcon,
-  DropdownMenuItemType,
-  footerLinks,
-} from '@pancakeswap/uikit'
-import { NetworkSwitcher } from 'components/NetworkSwitcher'
-import PhishingWarningBanner from 'components/PhishingWarningBanner'
-import { useCakePrice } from 'hooks/useStablePrice'
-import orderBy from 'lodash/orderBy'
-import { useTheme } from 'next-themes'
-import { useRouter } from 'next/router'
 import { ReactNode, useMemo } from 'react'
 import { usePhishingBanner } from 'state/user'
 import { SettingsButton } from './Settings/SettingsButton'

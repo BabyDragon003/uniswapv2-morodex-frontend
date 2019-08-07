@@ -1,3 +1,4 @@
+import { GraphQLClient } from 'graphql-request'
 
 const requestWithTimeout = <T>(
   graphQLClient: GraphQLClient,
@@ -7,12 +8,3 @@ const requestWithTimeout = <T>(
 ): Promise<T> => {
   return Promise.race([
     variables ? graphQLClient.request<T>(request, variables) : graphQLClient.request<T>(request),
-    new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error(`Request timed out after ${timeout} milliseconds`))
-      }, timeout)
-    }),
-  ]) as Promise<T>
-}
-
-export default requestWithTimeout

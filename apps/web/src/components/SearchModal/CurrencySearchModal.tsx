@@ -1,3 +1,4 @@
+import { useCallback, useState, useRef, useEffect } from 'react'
 import { Currency, Token } from '@pancakeswap/sdk'
 import {
   ModalContainer,

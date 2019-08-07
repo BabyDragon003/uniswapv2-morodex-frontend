@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 // eslint-disable-next-line camelcase
 import { SWRConfig, unstable_serialize } from 'swr'
 import { getCollection } from 'state/nftMarket/helpers'
@@ -7,17 +8,6 @@ const CollectionPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getSta
   return (
     <SWRConfig
       value={{
-        fallback,
-      }}
-    >
-      <CollectionPageRouter />
-    </SWRConfig>
-  )
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    fallback: true,
     paths: [],
   }
 }

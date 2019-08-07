@@ -1,3 +1,4 @@
+import { formatUnits } from '@ethersproject/units'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   AutoRenewIcon,

@@ -1,3 +1,4 @@
+import { Suspense, SuspenseProps, Component } from 'react'
 
 interface State {
   hasError: boolean

@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, JSBI, Pair } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCurrencyBalance } from 'hooks/Balances'
 import { PairState, usePair } from 'hooks/usePairs'
@@ -7,17 +8,6 @@ import { BIG_INT_ZERO } from 'config/constants/exchange'
 import { Field } from '../type'
 
 interface MintPairContextValue {
-  pair?: Pair | null
-  pairState: PairState
-  currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
-  error?: string
-  totalSupply: CurrencyAmount<Currency> | undefined
-  noLiquidity: boolean
-}
-
-export const MintPairContext = createContext<MintPairContextValue>({
-  pair: undefined,
-  pairState: PairState.LOADING,
   currencyBalances: {
     [Field.CURRENCY_A]: undefined,
     [Field.CURRENCY_B]: undefined,

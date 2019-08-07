@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Modal, Grid, Flex, Text, BinanceIcon, Skeleton } from '@pancakeswap/uikit'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
@@ -7,17 +8,6 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
   & > div:last-child {
     padding: 0;
   }
-  & h2:first-of-type {
-    ${({ stage, theme }) =>
-      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
-        ? `color: ${theme.colors.textSubtle}`
-        : null};
-  }
-  & svg:first-of-type {
-    ${({ stage, theme }) =>
-      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
-        ? `fill: ${theme.colors.textSubtle}`
-        : null};
   }
 `
 

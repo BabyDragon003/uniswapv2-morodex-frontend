@@ -1,3 +1,4 @@
+import React, { memo, useMemo } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import CountUp from 'react-countup'
 import { Skeleton, TooltipText } from '@pancakeswap/uikit'

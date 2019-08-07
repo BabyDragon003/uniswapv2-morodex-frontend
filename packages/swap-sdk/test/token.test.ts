@@ -1,3 +1,4 @@
+import { Token } from '@pancakeswap/swap-sdk-core'
 import { ChainId } from '../src/constants'
 
 describe('Token', () => {

@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
@@ -7,17 +8,6 @@ import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 interface Props {
   href: string;
 }
-
-const blink = keyframes`
-  0%,  100% { transform: scaleY(1); }
-  50% { transform:  scaleY(0.1); }
-`;
-
-const StyledLink = styled("a")`
-  display: flex;
-  .mobile-icon {
-    width: 32px;
-    ${({ theme }) => theme.mediaQueries.lg} {
       display: none;
     }
   }

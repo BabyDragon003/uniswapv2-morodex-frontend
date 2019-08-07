@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex, Heading, useMatchBreakpoints, Balance } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ const Container = styled(ActionContainer)`
   flex: 2;
   align-self: stretch;
 `
-
-interface AutoEarningProps {
-  earningTokenBalance: number
-  earningTokenDollarBalance: number
-  earningTokenPrice: number
-}
-
-const AutoEarning: React.FunctionComponent<React.PropsWithChildren<AutoEarningProps>> = ({
-  earningTokenBalance,
-  earningTokenDollarBalance,
-  earningTokenPrice,
 }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()

@@ -1,3 +1,4 @@
+import { Currency, JSBI, Price, Trade } from '@pancakeswap/aptos-swap-sdk'
 import { L0_USDC, CAKE } from 'config/coins'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
@@ -7,17 +8,6 @@ import { useAllCommonPairs } from 'hooks/Trades'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import useNativeCurrency from './useNativeCurrency'
-import { PairState, usePairs } from './usePairs'
-
-/**
- * Returns the price in stable of the input currency
- * @param currency currency to compute the stable price of
- */
-export default function useStablePrice(currency?: Currency): Price<Currency, Currency> | undefined {
-  const { chainId: webChainId } = useActiveWeb3React()
-
-  const chainId = currency?.chainId || webChainId
-
   const native = useNativeCurrency(chainId)
   const wrapped = currency?.wrapped
   const wnative = native.wrapped

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { Coin, Currency, CurrencyAmount, Token } from '@pancakeswap/aptos-swap-sdk'
 import { APTOS_COIN, useAccount, useAccountResources, useCoin, useCoins as useCoins_ } from '@pancakeswap/awgmi'
 import { coinStoreResourcesFilter, unwrapTypeFromString } from '@pancakeswap/awgmi/core'

@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { ChartEntry } from 'state/info/types'
 import { fetchChartDataWithAddress, mapDayData } from '../helpers'
 import { TokenDayDatasResponse } from '../types'

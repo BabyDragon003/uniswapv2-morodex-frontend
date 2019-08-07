@@ -1,3 +1,4 @@
+type BaseStorage = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>
 
 export type ClientStorage = {
   getItem: <T>(key: string, defaultState?: T | null) => T | null
@@ -7,17 +8,6 @@ export type ClientStorage = {
 
 export const noopStorage: BaseStorage = {
   getItem: (_key) => '',
-  setItem: (_key, _value) => null,
-  removeItem: (_key) => null,
-}
-
-export function createStorage({
-  storage,
-  key: prefix = 'awgmi',
-}: {
-  storage: BaseStorage
-  key?: string
-}): ClientStorage {
   return {
     ...storage,
     getItem: (key, defaultState = null) => {

@@ -1,3 +1,4 @@
+import {
   Tag,
   TagProps,
   Text,
@@ -7,17 +8,6 @@
   HotIcon,
   Box,
   FlexGap,
-  FlexGapProps,
-} from '@pancakeswap/uikit'
-import Trans from 'components/Trans'
-import { useTranslation } from '@pancakeswap/localization'
-import { ReactNode, useMemo } from 'react'
-import { DeserializedLockedVaultUser } from 'state/types'
-import { VaultPosition, getVaultPosition } from 'utils/cakePool'
-
-const tagConfig: Record<VaultPosition, TagProps> = {
-  [VaultPosition.None]: {},
-  [VaultPosition.Flexible]: {
     variant: 'success',
   },
   [VaultPosition.Locked]: {

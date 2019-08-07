@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, Flex, HelpIcon, useTooltip } from '@pancakeswap/uikit'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'

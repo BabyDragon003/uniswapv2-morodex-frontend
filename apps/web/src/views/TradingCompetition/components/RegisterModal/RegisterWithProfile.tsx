@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Button, Heading, Text, Flex, Checkbox, AutoRenewIcon, useToast } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractMoD } from 'hooks/useContract'

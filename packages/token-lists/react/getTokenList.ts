@@ -1,3 +1,4 @@
+/* eslint-disable no-continue */
 /* eslint-disable no-await-in-loop */
 import { TokenList } from '@pancakeswap/token-lists'
 import uriToHttp from '@pancakeswap/utils/uriToHttp'
@@ -7,17 +8,6 @@ import schema from '../schema/pancakeswap.json'
 export const tokenListValidator = new Ajv({ allErrors: true }).compile(schema)
 
 /**
- * Contains the logic for resolving a list URL to a validated token list
- * @param listUrl list url
- */
-export default async function getTokenList(listUrl: string): Promise<TokenList> {
-  const urls: string[] = uriToHttp(listUrl)
-
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i]
-    const isLast = i === urls.length - 1
-    let response
-    try {
       response = await fetch(url)
     } catch (error) {
       console.error('Failed to fetch list', listUrl, error)

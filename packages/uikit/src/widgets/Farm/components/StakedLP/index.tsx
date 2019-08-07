@@ -1,3 +1,4 @@
+import { BigNumber } from "bignumber.js";
 import { useMemo } from "react";
 import { formatLpBalance, getBalanceNumber } from "@pancakeswap/utils/formatBalance";
 import { Flex } from "../../../../components/Box";
@@ -7,17 +8,6 @@ import { RefreshIcon } from "../../../../components/Svg";
 
 interface StakedLPProps {
   stakedBalance: BigNumber;
-  tokenSymbol: string;
-  quoteTokenSymbol: string;
-  lpTotalSupply: BigNumber;
-  lpTokenPrice: BigNumber;
-  tokenAmountTotal: BigNumber;
-  quoteTokenAmountTotal: BigNumber;
-  pendingFarmLength?: number;
-  decimals: number;
-  onClickLoadingIcon?: () => void;
-}
-
 const StakedLP: React.FunctionComponent<React.PropsWithChildren<StakedLPProps>> = ({
   stakedBalance,
   quoteTokenSymbol,

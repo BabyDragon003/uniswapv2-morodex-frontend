@@ -1,3 +1,4 @@
+import { TOKEN_BLACKLIST } from 'config/constants/info'
 import { gql } from 'graphql-request'
 import { MultiChainName, multiChainQueryMainToken, getMultiChainQueryEndPointWithStableSwap } from '../../constant'
 
@@ -7,17 +8,6 @@ import { MultiChainName, multiChainQueryMainToken, getMultiChainQueryEndPointWit
 const POOLS_FOR_TOKEN = (chainName: MultiChainName) => {
   const transactionGT = chainName === 'ETH' ? 1 : 100
   return gql`
-  query poolsForToken($address: String!, $blacklist: [String!]) {
-    asToken0: pairs(
-      first: 15
-      orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
-      orderDirection: desc
-      where: { totalTransactions_gt: ${transactionGT}, token0: $address, token1_not_in: $blacklist }
-    ) {
-      id
-    }
-    asToken1: pairs(
-      first: 15
       orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
       orderDirection: desc
       where: { totalTransactions_gt: ${transactionGT}, token1: $address, token0_not_in: $blacklist }

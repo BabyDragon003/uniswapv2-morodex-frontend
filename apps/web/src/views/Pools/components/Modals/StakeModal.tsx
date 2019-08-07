@@ -1,3 +1,4 @@
+import { Pool, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallback, useState, useMemo } from 'react'
@@ -7,17 +8,6 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
-import { useERC20 } from 'hooks/useContract'
-import { getDecimalAmount } from '@pancakeswap/utils/formatBalance'
-import { useApprovePool } from 'views/Pools/hooks/useApprove'
-import { usePool } from 'state/pools/hooks'
-
-import useStakePool from '../../hooks/useStakePool'
-import useUnstakePool from '../../hooks/useUnstakePool'
-
-const StakeModalContainer = ({
-  isBnbPool,
-  pool,
   isRemovingStake,
   onDismiss,
   stakingTokenBalance,

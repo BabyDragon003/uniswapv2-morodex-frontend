@@ -1,3 +1,4 @@
+import { BigintIsh, CurrencyAmount, Currency, JSBI, ZERO, Percent } from '@pancakeswap/sdk'
 import invariant from 'tiny-invariant'
 
 import { getD } from './amm'
@@ -7,17 +8,6 @@ export interface GetLPOutputParams {
   // Token balances of the stable pool
   balances: CurrencyAmount<Currency>[]
   // User input amounts
-  amounts: CurrencyAmount<Currency>[]
-  // Total supply of LP token
-  totalSupply: CurrencyAmount<Currency>
-  // Fee of adding liquidity
-  fee: Percent
-}
-
-export function getLPOutput({
-  amplifier,
-  balances,
-  totalSupply,
   amounts,
   fee,
 }: GetLPOutputParams): CurrencyAmount<Currency> {

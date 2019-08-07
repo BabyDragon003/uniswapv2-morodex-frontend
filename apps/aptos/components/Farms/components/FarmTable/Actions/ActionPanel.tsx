@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   LinkExternal,
   Text,
@@ -7,17 +8,6 @@ import {
   FarmTableMultiplierProps,
 } from '@pancakeswap/uikit'
 import styled, { css, keyframes } from 'styled-components'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { FarmWithStakedValue } from '@pancakeswap/farms'
-
-import Apr, { AprProps } from '../Apr'
-import { HarvestAction, HarvestActionContainer } from './HarvestAction'
-import StakedAction, { StakedContainer } from './StakedAction'
-
-const { Multiplier, Liquidity } = FarmUI.FarmTable
-
-export interface ActionPanelProps {
-  apr: AprProps
   multiplier: FarmTableMultiplierProps
   liquidity: FarmTableLiquidityProps
   details: FarmWithStakedValue

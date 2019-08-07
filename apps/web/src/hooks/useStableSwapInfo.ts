@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { JSBI, Percent } from '@pancakeswap/sdk'
 
 import StableSwapABI from 'config/abi/stableSwap.json'
@@ -7,17 +8,6 @@ import { useMultiContractsMultiMethods, CallState } from 'state/multicall/hooks'
 
 function parseCallStates(states: CallState[]) {
   let balance0: JSBI | undefined
-  let balance1: JSBI | undefined
-  let amplifier: JSBI | undefined
-  let totalSupply: JSBI | undefined
-  let feeNumerator: JSBI | undefined
-  let feeDenominator: JSBI | undefined
-  let loading = false
-  let error = false
-  let valid = true
-  for (const [i, { result, loading: resultLoading, syncing, error: resultError }] of states.entries()) {
-    // Should match info inputs
-    switch (i) {
       case 0:
         balance0 = result && JSBI.BigInt(result[0].toString())
         break

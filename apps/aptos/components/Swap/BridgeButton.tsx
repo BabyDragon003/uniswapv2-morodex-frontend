@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { IconButton, useTooltip, BridgeIcon } from '@pancakeswap/uikit'
 
 interface BridgeInfo {

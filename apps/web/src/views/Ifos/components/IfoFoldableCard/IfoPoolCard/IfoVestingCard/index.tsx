@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Divider from 'components/Divider'

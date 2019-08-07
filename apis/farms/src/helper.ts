@@ -1,3 +1,4 @@
+import { Obj } from 'itty-router'
 import { error } from 'itty-router-extras'
 import { createFarmFetcher } from '@pancakeswap/farms'
 import { createMulticall } from '@pancakeswap/multicall'

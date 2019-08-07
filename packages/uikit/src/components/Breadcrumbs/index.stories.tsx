@@ -1,3 +1,4 @@
+import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter, Link as RouterLink } from "react-router-dom";
 import Text from "../Text/Text";

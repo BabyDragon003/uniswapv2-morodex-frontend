@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Flex, Box, FlexProps } from '@pancakeswap/uikit'
 import Image from 'next/image'
 import StyledBannerImageWrapper from './BannerImage'
@@ -7,17 +8,6 @@ interface BannerHeaderProps extends FlexProps {
   bannerAlt?: string
   avatar?: ReactNode
 }
-
-const BannerHeader: React.FC<React.PropsWithChildren<BannerHeaderProps>> = ({
-  bannerImage,
-  bannerAlt,
-  avatar,
-  children,
-  ...props
-}) => {
-  return (
-    <Flex flexDirection="column" mb="24px" {...props}>
-      <Box position="relative" pb="56px">
         <StyledBannerImageWrapper>
           <Image src={bannerImage} alt={bannerAlt} layout="fill" objectFit="cover" priority />
         </StyledBannerImageWrapper>

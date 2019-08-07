@@ -1,3 +1,4 @@
+import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Box, Flex, Text, ChevronDownIcon, BalanceWithLoading } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { PoolIds } from 'config/constants/types'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
-import { useDelayedUnmount } from '@pancakeswap/hooks'
-import Expand from './Expand'
-
-const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
-  transform: ${({ toggled }) => (toggled ? 'rotate(180deg)' : 'rotate(0)')};
-  height: 24px;
-`
-
-interface TokenInfoProps {
-  index: number
-  data: VestingData
   fetchUserVestingData: () => void
 }
 

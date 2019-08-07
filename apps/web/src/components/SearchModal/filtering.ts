@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { TokenInfo } from '@pancakeswap/token-lists'
 import { Token } from '@pancakeswap/sdk'
 import { isAddress } from 'utils'

@@ -1,3 +1,4 @@
+{
   "data": {
     "pairHourDatas": [
       {
@@ -7,17 +8,6 @@
           "token0": {
             "id": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
           },
-          "token1": {
-            "id": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
-          }
-        },
-        "reserve0": "14468102.261451252810518587",
-        "reserve1": "282466.546265130470976682",
-        "reserveUSD": "231615510.5347037879781993957966"
-      },
-      {
-        "hourStartUnix": 1645171200,
-        "id": "0x0ed7e52944161450477ee417de9cd3a859b14fd0-456992",
         "pair": {
           "token0": {
             "id": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"

@@ -1,3 +1,4 @@
+import { request, gql } from 'graphql-request'
 import { GRAPH_API_LOTTERY } from 'config/constants/endpoints'
 import { LotteryRoundGraphEntity, LotteryResponse } from 'state/types'
 import { getRoundIdsArray, fetchMultipleLotteries } from './helpers'

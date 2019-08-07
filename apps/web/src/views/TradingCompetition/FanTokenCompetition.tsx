@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import { useTradingCompetitionContractFanToken } from 'hooks/useContract'
@@ -7,17 +8,6 @@ import { PageMeta } from 'components/Layout/Page'
 import {
   SmartContractPhases,
   CompetitionPhases,
-  LIVE,
-  FINISHED,
-  CLAIM,
-  OVER,
-  REGISTRATION,
-} from 'config/constants/trading-competition/phases'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { ChainId } from '@pancakeswap/sdk'
-import { DARKBG, MIDBLUEBG, MIDBLUEBG_DARK } from './pageSectionStyles'
-import Countdown from './components/Countdown'
-import FanTokenStormBunny from './pngs/fan-token-storm.png'
 import HowToJoin from './components/HowToJoin'
 import BattleCta from './components/BattleCta'
 import { CompetitionPage, BannerFlex } from './styles'

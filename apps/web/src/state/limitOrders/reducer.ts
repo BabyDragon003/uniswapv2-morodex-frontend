@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit'
 import { replaceLimitOrdersState, selectCurrency, typeInput, switchCurrencies, setRateType } from './actions'
 import { Field, Rate, OrderState } from './types'
 

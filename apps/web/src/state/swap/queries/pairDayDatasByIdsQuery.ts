@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const pairDayDatasByIdsQuery = gql`
   query pairDayDatasByIdsQuery($pairIds: [ID!]) {

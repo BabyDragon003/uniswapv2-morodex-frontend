@@ -1,3 +1,4 @@
+import { useState, useContext } from 'react'
 import styled from 'styled-components'
 import useTheme from 'hooks/useTheme'
 import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { SwapFeaturesContext } from '../SwapFeaturesContext'
 
 export enum SwapType {
   SWAP,
-  STABLE_SWAP,
-}
-
-const Wrapper = styled.div`
-  & > div {
-    width: 100%;
-    background-color: ${({ theme }) => theme.colors.input};
-    border: 0;
-  }
-  & button {
-    border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
   &:hover {

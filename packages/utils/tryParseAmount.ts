@@ -1,3 +1,4 @@
+import { parseUnits } from '@ethersproject/units'
 import { Currency, CurrencyAmount, JSBI } from '@pancakeswap/swap-sdk-core'
 
 // try to parse a user entered amount for a given token

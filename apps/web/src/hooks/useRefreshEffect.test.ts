@@ -1,3 +1,4 @@
+import { act, renderHook } from '@testing-library/react-hooks'
 import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
 import { useState } from 'react'
 import useSWR from 'swr'
@@ -7,17 +8,6 @@ import { useFastRefreshEffect, useSlowRefreshEffect } from './useRefreshEffect'
 
 test('should refresh when deps changes', () => {
   const callback = vi.fn()
-  let deps = [1, 2, () => 1]
-  const { rerender } = renderHook(
-    () => {
-      useFastRefreshEffect(callback, deps)
-    },
-    {
-      wrapper: createWagmiWrapper(),
-    },
-  )
-
-  expect(callback).toHaveBeenCalledTimes(1)
   rerender()
   // no changes
   expect(callback).toHaveBeenCalledTimes(1)

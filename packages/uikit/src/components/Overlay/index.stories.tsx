@@ -1,3 +1,4 @@
+import React from "react";
 import { Overlay } from "./Overlay";
 
 export default {
@@ -7,4 +8,3 @@ export default {
 
 export const Default: React.FC<React.PropsWithChildren> = () => {
   return <Overlay />;
-};

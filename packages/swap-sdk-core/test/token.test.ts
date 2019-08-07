@@ -1,3 +1,4 @@
+import { Token } from '../src'
 
 enum ChainId {
   ETHEREUM = 1,

@@ -1,3 +1,4 @@
+import { Flex, Box, Image, Text, WalletIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTheme from 'hooks/useTheme'
@@ -7,17 +8,6 @@ import useAuth from 'hooks/useAuth'
 const title = {
   dark: '/images/nav-title-dark.png',
   light: '/images/nav-title-light.png',
-}
-const StyledWallet = styled(Flex)<{ isActive: boolean }>`
-  padding: 6px 11px;
-  position: absolute;
-  left: 18px;
-  align-items: center;
-  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.dropdown : 'transparent')};
-  border-radius: 20px;
-`
-const Wallet = () => {
-  const { account } = useActiveWeb3React()
   const { logout } = useAuth()
   const isActive = !!account
   const handleWalletClick = () => {

@@ -1,3 +1,4 @@
+import { BuyButtonsEnum } from 'views/PancakeSquad/components/Buttons/types'
 import { getBuyButton, getBuyButtonText } from 'views/PancakeSquad/components/Buttons/utils'
 import { SaleStatusEnum } from 'views/PancakeSquad/types'
 
@@ -7,17 +8,6 @@ describe('PancakeSquad/buttons/utils/getBuyButtonText', () => {
     const canBuyTickets = false
     const saleStatus = SaleStatusEnum.Sale
     const numberTicketsOfUser = 3
-    const t = (key) => key
-
-    // When
-    const result = getBuyButtonText({ canBuyTickets, saleStatus, numberTicketsOfUser, t })
-
-    // Then
-    expect(result).toEqual('Max purchased')
-  })
-
-  it('Should return Not eligible text', () => {
-    // Given
     const canBuyTickets = false
     const saleStatus = SaleStatusEnum.Sale
     const numberTicketsOfUser = 0

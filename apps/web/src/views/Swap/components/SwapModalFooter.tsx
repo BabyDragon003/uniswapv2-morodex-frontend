@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/sdk'
 import { Button, Text, AutoRenewIcon, QuestionHelper } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { computeTradePriceBreakdown, formatExecutionPrice, warningSeverity } fro
 import { AutoColumn } from 'components/Layout/Column'
 import { AutoRow, RowBetween, RowFixed } from 'components/Layout/Row'
 import { TOTAL_FEE, LP_HOLDERS_FEE, TREASURY_FEE, BUYBACK_FEE } from 'config/constants/info'
-import FormattedPriceImpact from './FormattedPriceImpact'
-import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
-
-const SwapModalFooterContainer = styled(AutoColumn)`
-  margin-top: 24px;
-  padding: 16px;
-  border-radius: ${({ theme }) => theme.radii.default};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  background-color: ${({ theme }) => theme.colors.background};
-`
-
 export default function SwapModalFooter({
   trade,
   slippageAdjustedAmounts,

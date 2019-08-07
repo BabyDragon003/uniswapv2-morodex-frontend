@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Flex, Button } from '@pancakeswap/uikit'
 import { Categories } from 'views/Blog/types'
 import { useTranslation } from '@pancakeswap/localization'

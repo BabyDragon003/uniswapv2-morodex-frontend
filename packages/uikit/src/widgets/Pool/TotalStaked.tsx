@@ -1,3 +1,4 @@
+import BigNumber from "bignumber.js";
 import { getBalanceNumber } from "@pancakeswap/utils/formatBalance";
 import { useTranslation } from "@pancakeswap/localization";
 import { useTooltip } from "../../hooks";
@@ -7,17 +8,6 @@ import { StatWrapper } from "./StatWrapper";
 export const TotalToken = ({
   total,
   tokenDecimals,
-  decimalsToShow,
-  symbol,
-}: {
-  total: BigNumber;
-  tokenDecimals: number;
-  decimalsToShow: number;
-  symbol: string;
-}) => {
-  if (total && total.gte(0)) {
-    return (
-      <Balance small value={getBalanceNumber(total, tokenDecimals)} decimals={decimalsToShow} unit={` ${symbol}`} />
     );
   }
   return <Skeleton width="90px" height="21px" />;

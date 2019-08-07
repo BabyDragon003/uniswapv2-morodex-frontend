@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Flex } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useGetCollection } from 'state/nftMarket/hooks'

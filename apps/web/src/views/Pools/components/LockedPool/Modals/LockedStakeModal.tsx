@@ -1,3 +1,4 @@
+import { useState, useMemo } from 'react'
 import { Modal, Box } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { arrayify } from '@ethersproject/bytes'
 import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, ERC20Token, ChainId } from '@pancakeswap/sdk'
@@ -7,17 +8,6 @@ import { useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 import useSWRImmutable from 'swr/immutable'
 import {
-  combinedTokenMapFromActiveUrlsAtom,
-  combinedTokenMapFromOfficialsUrlsAtom,
-  useUnsupportedTokenList,
-  useWarningTokenList,
-} from '../state/lists/hooks'
-import useUserAddedTokens from '../state/user/hooks/useUserAddedTokens'
-import { isAddress } from '../utils'
-import useNativeCurrency from './useNativeCurrency'
-import { useActiveChainId } from './useActiveChainId'
-import multicall from '../utils/multicall'
-import erc20ABI from '../config/abi/erc20.json'
 import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
 import { FetchStatus } from '../config/constants/types'
 

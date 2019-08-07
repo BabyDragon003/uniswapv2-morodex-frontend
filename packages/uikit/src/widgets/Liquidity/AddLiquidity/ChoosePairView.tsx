@@ -1,3 +1,4 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { AddIcon, Box, CardBody, CardFooter, Text } from "@pancakeswap/uikit";
 

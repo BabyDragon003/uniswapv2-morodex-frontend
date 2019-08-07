@@ -1,3 +1,4 @@
+import React, { ChangeEvent, useCallback } from "react";
 import { Box } from "../Box";
 import {
   BunnySlider,
@@ -7,17 +8,6 @@ import {
   StyledInput,
   SliderLabel,
   SliderLabelContainer,
-} from "./styles";
-import SliderProps from "./types";
-
-const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
-  name,
-  min,
-  max,
-  value,
-  onValueChanged,
-  valueLabel,
-  step = "any",
   disabled = false,
   ...props
 }) => {

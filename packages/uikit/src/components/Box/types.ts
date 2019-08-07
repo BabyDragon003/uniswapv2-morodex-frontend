@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import {
   BackgroundProps,
   BorderProps,

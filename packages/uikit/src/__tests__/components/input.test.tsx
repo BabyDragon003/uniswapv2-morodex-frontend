@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import Input from "../../components/Input/Input";
 
@@ -7,17 +8,6 @@ it("renders correctly", () => {
   const { asFragment } = renderWithProvider(<Input type="text" value="input" onChange={handleChange} />);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
-      .c0 {
-      background-color: var(--colors-input);
-      border-radius: 16px;
-      box-shadow: var(--shadows-inset);
-      color: var(--colors-text);
-      display: block;
-      font-size: 16px;
-      height: 40px;
-      outline: 0;
-      padding: 0 16px;
-      width: 100%;
       border: 1px solid var(--colors-inputSecondary);
     }
 

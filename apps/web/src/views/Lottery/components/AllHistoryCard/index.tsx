@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { Card, Text, Skeleton, CardHeader, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -7,17 +8,6 @@ import { fetchLottery } from 'state/lottery/helpers'
 import { LotteryStatus } from 'config/constants/types'
 import RoundSwitcher from './RoundSwitcher'
 import { getDrawnDate, processLotteryResponse } from '../../helpers'
-import PreviousRoundCardBody from '../PreviousRoundCard/Body'
-import PreviousRoundCardFooter from '../PreviousRoundCard/Footer'
-
-const StyledCard = styled(Card)`
-  width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    width: 756px;
-  }
-`
-
 const StyledCardHeader = styled(CardHeader)`
   z-index: 2;
   background: none;

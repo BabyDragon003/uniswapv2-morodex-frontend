@@ -1,3 +1,4 @@
+import { FetchLedgerArgs as FetchChainIdArgs, FetchLedgerResult } from '@pancakeswap/awgmi/core'
 
 import { QueryConfig } from '../types'
 import { useLedger } from './useLedger'

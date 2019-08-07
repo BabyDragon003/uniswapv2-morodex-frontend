@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import FallingBunnies from "../../components/FallingBunnies/FallingBunnies";
 
@@ -7,17 +8,6 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.spyOn(global.Math, "random").mockRestore();
-});
-
-it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(<FallingBunnies count={1} />);
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      .c1 {
-      -webkit-align-self: center;
-      -ms-flex-item-align: center;
-      align-self: center;
-      fill: var(--colors-text);
       -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
       flex-shrink: 0;

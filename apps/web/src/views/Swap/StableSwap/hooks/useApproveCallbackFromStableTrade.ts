@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useApproveCallback } from 'hooks/useApproveCallback'
 import { Field } from 'state/swap/actions'
 import { computeSlippageAdjustedAmounts } from 'utils/exchange'

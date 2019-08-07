@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Button, Heading, Text, Flex, Link, Breadcrumbs, PageHeader, PageSection } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'

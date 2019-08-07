@@ -1,3 +1,4 @@
+import { Box, Text, Skeleton } from '@pancakeswap/uikit'
 import { fromUnixTime } from 'date-fns'
 import { useState, useMemo, memo, useEffect } from 'react'
 import { ChartEntry, ProtocolData } from 'state/info/types'

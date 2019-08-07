@@ -1,3 +1,4 @@
+import { AnimatePresence, domMax, LazyMotion } from "framer-motion";
 import React, { useRef } from "react";
 import { createPortal } from "react-dom";
 import { BoxProps } from "../../components/Box";

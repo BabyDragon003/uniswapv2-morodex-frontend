@@ -1,3 +1,4 @@
+name: Fetch and update Aptos LP APRs
 
 on:
   workflow_dispatch:

@@ -1,3 +1,4 @@
+export interface UserResponse<BetType> {
   id: string
   createdAt: string
   updatedAt: string
@@ -7,17 +8,6 @@
   totalBetsBear: string
   totalBetsClaimed: string
   winRate: string
-  averageBNB: string
-  bets?: BetType[]
-}
-
-export interface BetResponse {
-  id: string
-  hash: string
-  amount: string
-  position: string
-  claimed: boolean
-  claimedAt: string
   claimedBlock: string
   claimedHash: string
   createdAt: string

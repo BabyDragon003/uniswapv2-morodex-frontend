@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, Image } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

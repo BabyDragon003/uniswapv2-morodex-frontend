@@ -1,3 +1,4 @@
+import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { stringify } from 'querystring'
 import { chains, defaultChain } from 'config/chains'
 import { TokenAddressMap } from 'state/lists/hooks'
@@ -7,17 +8,6 @@ export function getBlockExploreLink(
   data: string | number,
   type: 'transaction' | 'token' | 'address' | 'block',
   chainId?: number,
-): string {
-  const chain = chains.find((c) => c.id === chainId)
-  if (!chain) return defaultChain.blockExplorers?.traceMove.url ?? ''
-  switch (type) {
-    case 'transaction': {
-      return `${chain.blockExplorers?.traceMove.url}/transaction/${data}`
-    }
-    case 'block': {
-      return `${chain.blockExplorers?.traceMove.url}/block/${data}`
-    }
-    case 'token': {
       return `${chain.blockExplorers?.traceMove.url}/coin/${data}`
     }
     default: {

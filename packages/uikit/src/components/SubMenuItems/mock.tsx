@@ -1,3 +1,4 @@
+const SubMenuItemsMock = [
   {
     label: "Overview",
     href: "/",
@@ -7,17 +8,6 @@
     href: "/",
   },
   {
-    label: "Syrup Pools",
-    href: "/",
-  },
-  {
-    label: "Swap",
-    href: "/swap",
-    iconName: "Swap",
-  },
-  {
-    label: "Trading Competition",
-    href: "/",
   },
 ];
 

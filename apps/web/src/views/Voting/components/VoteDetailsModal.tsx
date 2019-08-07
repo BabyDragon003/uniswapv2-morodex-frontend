@@ -1,3 +1,4 @@
+import { Box, Flex, InjectedModalProps, Modal, Button, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import useGetVotingPower from '../hooks/useGetVotingPower'
@@ -7,17 +8,6 @@ interface VoteDetailsModalProps extends InjectedModalProps {
   block: number
 }
 
-const VoteDetailsModal: React.FC<React.PropsWithChildren<VoteDetailsModalProps>> = ({ block, onDismiss }) => {
-  const { t } = useTranslation()
-  const {
-    isLoading,
-    total,
-    cakeBalance,
-    cakeVaultBalance,
-    cakePoolBalance,
-    poolsBalance,
-    cakeBnbLpBalance,
-    ifoPoolBalance,
     lockedCakeBalance,
     lockedEndTime,
   } = useGetVotingPower(block)

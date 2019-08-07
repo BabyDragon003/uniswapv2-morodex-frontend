@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
@@ -7,17 +8,6 @@ const StyledNav = styled.nav`
   margin-bottom: 40px;
 `
 
-const getActiveIndex = (pathname: string): number => {
-  if (
-    pathname.includes('/pool') ||
-    pathname.includes('/create') ||
-    pathname.includes('/add') ||
-    pathname.includes('/remove') ||
-    pathname.includes('/find') ||
-    pathname.includes('/liquidity')
-  ) {
-    return 1
-  }
   return 0
 }
 

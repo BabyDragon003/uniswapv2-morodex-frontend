@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
 import { TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { AutoRenewIcon, Button, QuestionHelper, Text, Link } from '@pancakeswap/uikit'
@@ -7,17 +8,6 @@ import { BUYBACK_FEE, LP_HOLDERS_FEE, TOTAL_FEE, TREASURY_FEE } from 'config/con
 import { useMemo, useState } from 'react'
 import { Field } from 'state/swap/actions'
 import styled from 'styled-components'
-import { warningSeverity } from 'utils/exchange'
-import FormattedPriceImpact from '../../components/FormattedPriceImpact'
-import { StyledBalanceMaxMini, SwapCallbackError } from '../../components/styleds'
-import { formatExecutionPrice, computeTradePriceBreakdown } from '../utils/exchange'
-
-const SwapModalFooterContainer = styled(AutoColumn)`
-  margin-top: 24px;
-  padding: 16px;
-  border-radius: ${({ theme }) => theme.radii.default};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  background-color: ${({ theme }) => theme.colors.background};
 `
 
 export default function SwapModalFooter({

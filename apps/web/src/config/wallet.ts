@@ -1,3 +1,4 @@
+import { WalletConfigV2 } from '@pancakeswap/ui-wallets'
 import { WalletFilledIcon } from '@pancakeswap/uikit'
 import type { ExtendEthereum } from 'global'
 import { isFirefox } from 'react-device-detect'
@@ -7,17 +8,6 @@ import { metaMaskConnector, walletConnectNoQrCodeConnector } from '../utils/wagm
 
 export enum ConnectorNames {
   MetaMask = 'metaMask',
-  Injected = 'injected',
-  WalletConnect = 'walletConnect',
-  BSC = 'bsc',
-  Blocto = 'blocto',
-  WalletLink = 'coinbaseWallet',
-  Ledger = 'ledger',
-  TrustWallet = 'trustWallet',
-}
-
-const delay = (t: number) => new Promise((resolve) => setTimeout(resolve, t))
-
 const createQrCode = (chainId: number, connect) => async () => {
   connect({ connector: walletConnectNoQrCodeConnector, chainId })
 

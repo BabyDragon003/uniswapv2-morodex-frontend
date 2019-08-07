@@ -1,3 +1,4 @@
+import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import { Percent, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { Router } from '../src/router'
@@ -7,17 +8,6 @@ import { ChainId, WNATIVE } from '../src/constants'
 function checkDeadline(deadline: string[] | string): void {
   expect(typeof deadline).toBe('string')
   invariant(typeof deadline === 'string')
-  // less than 5 seconds on the deadline
-  expect(new Date().getTime() / 1000 - parseInt(deadline)).toBeLessThanOrEqual(5)
-}
-
-describe('Router', () => {
-  const ETHER = Native.onChain(ChainId.BSC)
-  const token0 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000001', 18, 't0')
-  const token1 = new Token(ChainId.BSC, '0x0000000000000000000000000000000000000002', 18, 't1')
-
-  const pair01 = new Pair(
-    CurrencyAmount.fromRawAmount(token0, JSBI.BigInt(1000)),
     CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(1000))
   )
 

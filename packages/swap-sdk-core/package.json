@@ -1,3 +1,4 @@
+{
   "name": "@pancakeswap/swap-sdk-core",
   "license": "MIT",
   "version": "0.0.1",
@@ -7,17 +8,6 @@
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pancakeswap/pancake-frontend.git",
-    "directory": "packages/swap-sdk"
-  },
-  "keywords": [
-    "pancakeswap"
-  ],
-  "module": "dist/index.mjs",
-  "scripts": {
-    "lint": "eslint src test",
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "test": "jest",

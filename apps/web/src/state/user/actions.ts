@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit'
 import { SerializedWrappedToken } from '@pancakeswap/token-lists'
 
 export interface SerializedPair {
@@ -7,17 +8,6 @@ export interface SerializedPair {
 
 export enum FarmStakedOnly {
   ON_FINISHED = 'onFinished',
-  TRUE = 'true',
-  FALSE = 'false',
-}
-
-export enum ViewMode {
-  TABLE = 'TABLE',
-  CARD = 'CARD',
-}
-
-export enum ChartViewMode {
-  BASIC = 'BASIC',
   TRADING_VIEW = 'TRADING_VIEW',
 }
 

@@ -1,3 +1,4 @@
+import { Text, Skeleton } from '@pancakeswap/uikit'
 
 interface UserPrizeGridDollarProps {
   dollarValueOfTokensReward: number

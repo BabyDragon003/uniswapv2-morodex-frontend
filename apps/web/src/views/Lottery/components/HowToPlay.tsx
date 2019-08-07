@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Box, Flex, Text, Heading, Link, Image, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
@@ -7,17 +8,6 @@ const Divider = styled.div`
   background-color: ${({ theme }) => theme.colors.cardBorder};
   height: 1px;
   margin: 40px 0;
-  width: 100%;
-`
-
-const BulletList = styled.ul`
-  list-style-type: none;
-  margin-left: 8px;
-  padding: 0;
-  li {
-    margin: 0;
-    padding: 0;
-  }
   li::before {
     content: '•';
     margin-right: 4px;

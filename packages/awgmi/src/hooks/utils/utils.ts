@@ -1,3 +1,4 @@
+import { QueryFunction, QueryKey, QueryObserver, QueryOptions } from '@tanstack/react-query'
 
 function isQueryKey(value: unknown): value is QueryKey {
   return Array.isArray(value)
