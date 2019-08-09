@@ -8,6 +8,17 @@ export const fetchPotteryFinishedRound = async (potteryRoundId: number) => {
       gql`
         query getPotteryVaultRounds($roundId: Int!) {
           potteryVaultRounds(first: 1, where: { roundId: $roundId }) {
+            id
+            roundId
+            drawDate
+            prizePot
+            txid
+            winners
+            vault {
+              totalPlayers
+              lockDate
+            }
+          }
         }
       `,
       { roundId: potteryRoundId },

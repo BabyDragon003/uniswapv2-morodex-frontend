@@ -18,27 +18,6 @@ interface PoolRowProps {
   pool: Pool.DeserializedPool<Token>
   account: string
 }
-
-const StyledRow = styled.div`
-  display: flex;
-  background-color: transparent;
-  cursor: pointer;
-`
-
-const PoolRow: React.FC<React.PropsWithChildren<PoolRowProps>> = ({ pool, account }) => {
-  const { isXl, isXxl, isLg, isTablet, isDesktop } = useMatchBreakpoints()
-  const isLargerScreen = isLg || isXl || isXxl
-  const isXLargerScreen = isXl || isXxl
-  const [expanded, setExpanded] = useState(false)
-  const shouldRenderActionPanel = useDelayedUnmount(expanded, 300)
-
-  const { totalCakeInVault } = useVaultPoolByKey(pool.vaultKey)
-
-  const toggleExpanded = () => {
-    setExpanded((prev) => !prev)
-  }
-
-  return (
     <>
       <StyledRow role="row" onClick={toggleExpanded}>
         <NameCell pool={pool} />

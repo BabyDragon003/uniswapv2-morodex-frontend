@@ -8,26 +8,16 @@ import { useCurrency } from 'hooks/Tokens'
 import { createReduxWrapper } from 'testUtils'
 import { Field } from './actions'
 import { queryParametersToSwapState, useDerivedSwapInfo, useSwapState } from './hooks'
-        [Field.OUTPUT]: { currencyId: '0x6B175474E89094C44Da98b954EedeAC495271d0F' },
-        [Field.INPUT]: { currencyId: 'BNB' },
-        typedValue: '20.5',
-        independentField: Field.OUTPUT,
-        pairDataById: {},
-        derivedPairDataById: {},
-        recipient: null,
-      })
-    })
 
-    test('should return BNB CAKE pair by default', () => {
-      expect(queryParametersToSwapState(parse(''))).toEqual({
-        [Field.OUTPUT]: { currencyId: DEFAULT_OUTPUT_CURRENCY },
-        [Field.INPUT]: { currencyId: 'BNB' },
-        typedValue: '',
-        independentField: Field.INPUT,
-        pairDataById: {},
-        derivedPairDataById: {},
-        recipient: null,
-      })
+describe('hooks', () => {
+  describe('#queryParametersToSwapState', () => {
+    test('BNB to DAI', () => {
+      expect(
+        queryParametersToSwapState(
+          parse(
+            'inputCurrency=BNB&outputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f&exactAmount=20.5&exactField=outPUT',
+          ),
+        ),
     })
 
     test('does not duplicate BNB for invalid output token', () => {

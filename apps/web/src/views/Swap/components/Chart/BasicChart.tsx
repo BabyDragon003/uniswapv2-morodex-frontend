@@ -8,6 +8,17 @@ import NoChartAvailable from './NoChartAvailable'
 import PairPriceDisplay from '../../../../components/PairPriceDisplay'
 import { getTimeWindowChange } from './utils'
 
+const SwapLineChart = dynamic(() => import('./SwapLineChart'), {
+  ssr: false,
+})
+
+const BasicChart = ({
+  token0Address,
+  token1Address,
+  isChartExpanded,
+  inputCurrency,
+  outputCurrency,
+  isMobile,
   currentSwapPrice,
 }) => {
   const [timeWindow, setTimeWindow] = useState<PairDataTimeWindowEnum>(0)

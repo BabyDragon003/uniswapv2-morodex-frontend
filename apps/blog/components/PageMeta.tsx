@@ -8,5 +8,13 @@ interface PageMetaProps {
 
 const PageMeta = ({ title, description, imgUrl }: PageMetaProps) => {
   return (
-
-export default PageMeta
+    <NextSeo
+      title={title}
+      description={description}
+      openGraph={{
+        title,
+        description,
+        images: [{ url: imgUrl }],
+      }}
+    />
+  )

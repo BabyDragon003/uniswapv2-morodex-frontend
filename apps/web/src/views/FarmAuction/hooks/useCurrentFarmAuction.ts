@@ -8,26 +8,16 @@ import { FAST_INTERVAL } from 'config/constants'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { useFarmAuction } from './useFarmAuction'
 
-    data: { auction: currentAuction, bidders },
-    mutate: refreshBidders,
-  } = useFarmAuction(currentAuctionId, { refreshInterval: FAST_INTERVAL })
-  const [connectedBidder, setConnectedBidder] = useState<ConnectedBidder | null>(null)
+export const useCurrentFarmAuction = (account: string) => {
+  const { data: currentAuctionId = null } = useSWR(
+    ['farmAuction', 'currentAuctionId'],
+    async () => {
+      const auctionId = await farmAuctionContract.currentAuctionId()
+      return auctionId.toNumber()
+    },
+    { refreshInterval: FAST_INTERVAL },
+  )
 
-  const farmAuctionContract = useFarmAuctionContract(false)
-
-  // Check if connected wallet is whitelisted
-  useEffect(() => {
-    const checkAccount = async () => {
-      try {
-        const whitelistedStatus = await farmAuctionContract.whitelisted(account)
-        setConnectedBidder({
-          account,
-          isWhitelisted: whitelistedStatus,
-        })
-      } catch (error) {
-        console.error('Failed to check if account is whitelisted', error)
-      }
-    }
     if (account && (!connectedBidder || connectedBidder.account !== account)) {
       checkAccount()
     }

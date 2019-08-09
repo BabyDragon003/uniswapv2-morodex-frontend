@@ -8,3 +8,7 @@ export * from './utils'
 export const StableSwap = {
   getSwapOutput,
   getSwapOutputWithoutFee,
+  getLPOutputWithoutFee,
+  getLPOutput,
+  getD,
+}

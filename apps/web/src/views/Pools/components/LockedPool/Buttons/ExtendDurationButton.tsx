@@ -8,6 +8,17 @@ import { ExtendDurationButtonPropsType } from '../types'
 const ExtendDurationButton: React.FC<React.PropsWithChildren<ExtendDurationButtonPropsType & ButtonProps>> = ({
   modalTitle,
   stakingToken,
+  currentLockedAmount,
+  currentBalance,
+  lockEndTime,
+  lockStartTime,
+  children,
+  isRenew,
+  ...rest
+}) => {
+  const nowInSeconds = Math.floor(Date.now() / 1000)
+  const currentDuration = useMemo(() => Number(lockEndTime) - Number(lockStartTime), [lockEndTime, lockStartTime])
+  const currentDurationLeft = useMemo(
     () => Math.max(Number(lockEndTime) - nowInSeconds, 0),
     [lockEndTime, nowInSeconds],
   )

@@ -8,6 +8,17 @@ import { fetchNodeHistory } from 'state/predictions'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import { useGetCurrentHistoryPage, useGetHasHistoryLoaded, useGetIsFetchingHistory } from 'state/predictions/hooks'
 import HistoricalBet from './HistoricalBet'
+import V1ClaimCheck from '../v1/V1ClaimCheck'
+
+interface RoundsTabProps {
+  hasBetHistory: boolean
+  bets: Bet[]
+}
+
+const RoundsTab: React.FC<React.PropsWithChildren<RoundsTabProps>> = ({ hasBetHistory, bets }) => {
+  const { t } = useTranslation()
+  const dispatch = useLocalDispatch()
+  const { address: account } = useAccount()
   const hasHistoryLoaded = useGetHasHistoryLoaded()
   const currentHistoryPage = useGetCurrentHistoryPage()
   const isFetchingHistory = useGetIsFetchingHistory()

@@ -8,26 +8,16 @@ import { secondsToWeeks, weeksToSeconds } from 'views/Pools/components/utils/for
 
 const DURATIONS = [1, 5, 10, 25, 52]
 
-  currentDurationLeft?: number
-}
+const StyledInput = styled(Input)`
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 55px;
+`
 
-const LockDurationField: React.FC<React.PropsWithChildren<LockDurationFieldProps>> = ({
-  duration,
-  setDuration,
-  isOverMax,
-  currentDuration,
-  currentDurationLeft,
-}) => {
-  const { t } = useTranslation()
-  const theme = useTheme()
-
-  const maxAvailableDuration = currentDurationLeft ? MAX_LOCK_DURATION - currentDurationLeft : MAX_LOCK_DURATION
-
-  // When user extends the duration due to time passed when approving
-  // transaction the extended duration will be a couple of seconds off to max duration,
-  // therefore it is better to compare based on weeks
-  const currentDurationInWeeks = useMemo(() => currentDuration && secondsToWeeks(currentDuration), [currentDuration])
-
+interface LockDurationFieldProps {
+  duration: number
+  setDuration: (duration: number) => void
+  isOverMax: boolean
   const maxDurationInWeeks = useMemo(() => secondsToWeeks(MAX_LOCK_DURATION), [])
 
   return (

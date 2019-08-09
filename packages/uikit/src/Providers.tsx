@@ -8,3 +8,9 @@ export const UIKitProvider: React.FC<React.PropsWithChildren<{ theme: DefaultThe
 }) => {
   return (
     <ThemeProvider theme={theme}>
+      <MatchBreakpointsProvider>
+        <ToastsProvider>{children}</ToastsProvider>
+      </MatchBreakpointsProvider>
+    </ThemeProvider>
+  );
+};

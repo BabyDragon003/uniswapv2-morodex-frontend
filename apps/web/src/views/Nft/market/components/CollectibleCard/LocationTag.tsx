@@ -18,27 +18,6 @@ const LocationTag: React.FC<React.PropsWithChildren<{ nftLocation: NftLocation }
 
   const ForSaleTag = () => {
     return (
-      <Flex justifyContent="center">
-        <SellIcon height="12px" color="failure" />
-        <Text color="failure" fontSize="14px">
-          {t('For sale')}
-        </Text>
-      </Flex>
-    )
-  }
-
-  const ProfilePicTag = () => {
-    return (
-      <Flex justifyContent="center">
-        <CameraIcon height="12px" color="textSubtle" />
-        <Text color="textSubtle" fontSize="14px">
-          {t('Profile')}
-        </Text>
-      </Flex>
-    )
-  }
-
-  const tagsConfig = {
     [NftLocation.WALLET]: WalletTag(),
     [NftLocation.PROFILE]: ProfilePicTag(),
     [NftLocation.FORSALE]: ForSaleTag(),

@@ -18,27 +18,6 @@ const FaqSection = () => {
               <Heading scale="lg" color="secondary">
                 {t('FAQs')}
               </Heading>
-            </CardHeader>
-            <CardBody>
-              {config.map(({ title, description }, i, { length }) => (
-                <FoldableText key={title} id={title} mb={i + 1 === length ? '' : '24px'} title={title}>
-                  {description.map((desc) => {
-                    return typeof desc === 'string' ? (
-                      <Text key={desc} color="textSubtle" as="p">
-                        {desc}
-                      </Text>
-                    ) : (
-                      desc
-                    )
-                  })}
-                </FoldableText>
-              ))}
-            </CardBody>
-          </Card>
-        </StyledDetailsWrapper>
-      </LandingBodyWrapper>
-    </StyledFaqSection>
-  )
 }
 
 export default FaqSection

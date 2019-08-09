@@ -8,26 +8,16 @@ import EmptyText from '../../MigrationTable/EmptyText'
 import TableStyle from '../../MigrationTable/StyledTable'
 import PoolRow from './PoolRow'
 
-  padding: 1px 1px 3px 1px;
-`
+interface PoolsTableProps {
+  pools: Pool.DeserializedPool<Token>[]
+  userDataReady: boolean
+  account: string
+}
 
-const PoolsTable: React.FC<React.PropsWithChildren<PoolsTableProps>> = ({ pools, userDataReady, account }) => {
-  const { t } = useTranslation()
-
-  return (
-    <Container>
-      <TableHeader title={t('Old Pools')} />
-      <TableStyle>
-        {!userDataReady && (
-          <Flex padding="50px 10px" justifyContent="center">
-            <Spinner />
-          </Flex>
-        )}
-        {!account && <EmptyText text={t('Please connect wallet to check your pool status.')} />}
-        {account && userDataReady && pools.length === 0 && (
-          <EmptyText text={t('You are not currently staking in any v1 pools.')} />
-        )}
-        {account &&
+const Container = styled.div`
+  overflow: hidden;
+  margin-bottom: 32px;
+  border-radius: 24px 24px 16px 16px;
           userDataReady &&
           pools.map((pool) => <PoolRow key={pool.vaultKey ?? pool.sousId} pool={pool} account={account} />)}
       </TableStyle>

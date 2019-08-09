@@ -8,26 +8,16 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { perpetualImage, perpetualMobileImage } from './images'
 import * as S from './Styled'
 
-  ${({ theme }) => theme.mediaQueries.lg} {
-    bottom: -2px;
-  }
-`
-const Header = styled(S.StyledHeading)`
-  font-size: 20px;
-  min-height: 44px;
+const RightWrapper = styled.div`
+  position: absolute;
+  min-height: 100%;
+  right: 0;
+  bottom: 0px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 40px;
-    min-height: auto;
+    bottom: 8.2px;
   }
-`
-
-const HEADING_ONE_LINE_HEIGHT = 27
-
-const PerpetualBanner = () => {
-  const {
-    t,
-    currentLanguage: { code },
-  } = useTranslation()
+  ${({ theme }) => theme.mediaQueries.md} {
+    bottom: 9px;
   const { isDesktop, isMobile } = useMatchBreakpoints()
   const { isDark } = useTheme()
   const { chainId } = useActiveChainId()

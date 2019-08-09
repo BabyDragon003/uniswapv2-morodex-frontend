@@ -8,6 +8,17 @@ import RanksIcon from '../svgs/RanksIcon'
 
 const TeamRanksSection: React.FC<React.PropsWithChildren<TeamRanksProps>> = ({
   image,
+  team1LeaderboardInformation,
+  team2LeaderboardInformation,
+  team3LeaderboardInformation,
+  globalLeaderboardInformation,
+}) => {
+  const { theme } = useTheme()
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <PageSection
         containerProps={{ style: { marginTop: '-20px' } }}
         index={3}
         concaveDivider

@@ -8,3 +8,7 @@ const pairDayDatas = gql`
       reserve0
       reserve1
       reserveUSD
+    }
+  }
+`
+export default pairDayDatas

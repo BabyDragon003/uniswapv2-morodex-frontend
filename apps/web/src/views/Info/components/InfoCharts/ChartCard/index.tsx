@@ -8,26 +8,16 @@ import { formatAmount } from 'utils/formatInfoNumbers'
 import { ChartEntry, TokenData, PriceChartEntry } from 'state/info/types'
 import { fromUnixTime } from 'date-fns'
 import dynamic from 'next/dynamic'
-interface ChartCardProps {
-  variant: 'pool' | 'token'
-  chartData: ChartEntry[]
-  tokenData?: TokenData
-  tokenPriceData?: PriceChartEntry[]
-}
 
-const ChartCard: React.FC<React.PropsWithChildren<ChartCardProps>> = ({
-  variant,
-  chartData,
-  tokenData,
-  tokenPriceData,
-}) => {
-  const [view, setView] = useState(ChartView.VOLUME)
-  const [hoverValue, setHoverValue] = useState<number | undefined>()
-  const [hoverDate, setHoverDate] = useState<string | undefined>()
-  const {
-    t,
-    currentLanguage: { locale },
-  } = useTranslation()
+const CandleChart = dynamic(() => import('../CandleChart'), {
+  ssr: false,
+})
+
+enum ChartView {
+  LIQUIDITY,
+  VOLUME,
+  PRICE,
+}
 
   const currentDate = new Date().toLocaleString(locale, { month: 'short', year: 'numeric', day: 'numeric' })
 

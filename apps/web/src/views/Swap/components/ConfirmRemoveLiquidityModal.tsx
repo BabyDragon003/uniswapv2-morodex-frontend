@@ -18,27 +18,6 @@ import { ApprovalState } from 'hooks/useApproveCallback'
 import { ZapErrorMessages } from '../../AddLiquidity/components/ZapErrorMessage'
 
 interface ConfirmRemoveLiquidityModalProps {
-  title: string
-  customOnDismiss: () => void
-  attemptingTxn: boolean
-  pair?: Pair
-  hash: string
-  pendingText: string
-  parsedAmounts: {
-    [Field.LIQUIDITY_PERCENT]: Percent
-    [Field.LIQUIDITY]?: CurrencyAmount<Token>
-    [Field.CURRENCY_A]?: CurrencyAmount<Currency>
-    [Field.CURRENCY_B]?: CurrencyAmount<Currency>
-  }
-  allowedSlippage: number
-  onRemove: () => void
-  liquidityErrorMessage: string
-  approval: ApprovalState
-  signatureData?: any
-  tokenA: Token
-  tokenB: Token
-  currencyA: Currency | null | undefined
-  currencyB: Currency | null | undefined
   isZap?: boolean
   toggleZapMode?: (value: boolean) => void
 }

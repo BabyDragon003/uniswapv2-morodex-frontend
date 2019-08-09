@@ -18,10 +18,3 @@ const useGelatoLimitOrdersLib = (): GelatoLimitOrders | undefined => {
     try {
       return new GelatoLimitOrders(chainId as ChainIdType, providerOrSigner, GELATO_HANDLER, false)
     } catch (error: any) {
-      console.error(`Could not instantiate GelatoLimitOrders: ${error.message}`)
-      return undefined
-    }
-  }, [chainId, providerOrSigner])
-}
-
-export default useGelatoLimitOrdersLib

@@ -9,4 +9,12 @@ export interface ExtendEthereum extends Ethereum {
   isBlocto?: true
 }
 
-export {}
+declare global {
+  interface Window {
+    coin98?: true
+    ethereum?: ExtendEthereum
+    BinanceChain?: {
+      bnbSign?: (address: string, message: string) => Promise<{ publicKey: string; signature: string }>
+      switchNetwork?: (networkId: string) => Promise<string>
+    } & Ethereum
+  }

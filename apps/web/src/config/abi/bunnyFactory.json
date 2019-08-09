@@ -8,26 +8,16 @@
       },
       {
         "internalType": "contract BunnyMintingStation",
-        "type": "uint256"
+        "name": "_bunnyMintingStation",
+        "type": "address"
       },
       {
-        "internalType": "string",
-        "name": "_ipfsHash",
-        "type": "string"
+        "internalType": "contract IBEP20",
+        "name": "_cakeToken",
+        "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_startBlockNumber",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
         "name": "to",

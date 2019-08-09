@@ -8,25 +8,15 @@ const StaticAmount: React.FC<React.PropsWithChildren<StaticAmountPropsType>> = (
   stakingAddress,
   lockedAmount,
   usdValueStaked,
-          <BalanceWithLoading
-            value={usdValueStaked}
-            fontSize="12px"
-            color="textSubtle"
-            decimals={2}
-            prefix="~"
-            unit=" USD"
-          />
-        </Box>
-        <Flex alignItems="center" minWidth="70px">
-          <Image src={`/images/tokens/${stakingAddress}.png`} width={24} height={24} alt={stakingSymbol} />
-          <Text ml="4px" bold>
-            {stakingSymbol}
-          </Text>
-        </Flex>
-      </Flex>
-      <Divider />
-    </>
-  )
-}
+}) => {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
+        {t('Add CAKE to lock')}
+      </Text>
+      <Flex alignItems="center" justifyContent="space-between" mb="16px">
+        <Box>
 
 export default StaticAmount

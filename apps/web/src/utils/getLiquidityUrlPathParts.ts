@@ -8,4 +8,13 @@ const getLiquidityUrlPathParts = ({
   tokenAddress,
   chainId,
 }: {
-export default getLiquidityUrlPathParts
+  quoteTokenAddress: string
+  tokenAddress: string
+  chainId: number
+}): string => {
+  const wNativeAddress = WNATIVE[chainId]
+  const firstPart =
+    !quoteTokenAddress || quoteTokenAddress === wNativeAddress?.address ? NATIVE[chainId].symbol : quoteTokenAddress
+  const secondPart = !tokenAddress || tokenAddress === wNativeAddress?.address ? NATIVE[chainId].symbol : tokenAddress
+  return `${firstPart}/${secondPart}?chain=${CHAIN_QUERY_NAME[chainId]}`
+}

@@ -8,6 +8,17 @@ import { BestTradeOptions, RouteType, StableSwapPair } from './types'
 import { getOutputToken, isSamePair } from './utils/pair'
 
 export async function getBestTradeWithStableSwap(
+  baseTrade: Trade<Currency, Currency, TradeType>,
+  stableSwapPairs: StableSwapPair[],
+  options: BestTradeOptions,
+) {
+  const { provider } = options
+  const { inputAmount, route, tradeType } = baseTrade
+  // Early return if there's no stableswap available
+  if (!stableSwapPairs.length) {
+    return createTradeWithStableSwapFromV2Trade(baseTrade)
+  }
+
   const findStableSwapPair = (pair: Pair) => stableSwapPairs.find((p) => isSamePair(p, pair))
 
   let outputAmount: CurrencyAmount<Currency> = inputAmount

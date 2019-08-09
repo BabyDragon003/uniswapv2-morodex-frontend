@@ -8,6 +8,17 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 
 interface TotalAvailableClaimProps {
+  ifo: Ifo
+  amountAvailableToClaim: BigNumber
+}
+
+const TotalAvailableClaim: React.FC<React.PropsWithChildren<TotalAvailableClaimProps>> = ({
+  ifo,
+  amountAvailableToClaim,
+}) => {
+  const { t } = useTranslation()
+  const { token } = ifo
+
   const amountAvailable = useMemo(
     () =>
       amountAvailableToClaim.gt(0)

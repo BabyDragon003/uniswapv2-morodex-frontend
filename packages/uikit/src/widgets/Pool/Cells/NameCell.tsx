@@ -8,6 +8,17 @@ import { BaseCell, CellContent } from "./BaseCell";
 import { Text, Skeleton } from "../../../components";
 import useMatchBreakpoints from "../../../contexts/MatchBreakpoints/useMatchBreakpoints";
 
+interface NameCellProps<T> {
+  pool: DeserializedPool<T>;
+  userShares?: BigNumber;
+  totalCakeInVault?: BigNumber;
+  tokenPairImage: ReactNode;
+}
+
+const StyledCell = styled(BaseCell)`
+  flex: 5;
+  flex-direction: row;
+  padding-left: 12px;
   ${({ theme }) => theme.mediaQueries.sm} {
     flex: 1 0 150px;
     padding-left: 32px;

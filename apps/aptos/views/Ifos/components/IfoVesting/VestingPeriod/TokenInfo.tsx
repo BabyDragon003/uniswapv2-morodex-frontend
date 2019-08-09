@@ -8,26 +8,16 @@ import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useDelayedUnmount } from '@pancakeswap/hooks'
-  fetchUserVestingData: () => void
-}
+import type { VestingData } from 'views/Ifos/hooks/vesting/useFetchUserWalletIfoData'
+import Expand from './Expand'
 
-const TokenInfo: React.FC<React.PropsWithChildren<TokenInfoProps>> = ({ index, data, fetchUserVestingData }) => {
-  const { vestingTitle, token } = data.ifo
-  const { vestingComputeReleasableAmount } = data.userVestingData[PoolIds.poolUnlimited]
+const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
+  transform: ${({ toggled }) => (toggled ? 'rotate(180deg)' : 'rotate(0)')};
+  height: 24px;
+`
 
-  const [expanded, setExpanded] = useState(false)
-  const shouldRenderExpand = useDelayedUnmount(expanded, 300)
-
-  useEffect(() => {
-    if (index === 0) {
-      setExpanded(true)
-    }
-  }, [index])
-
-  const toggleExpanded = () => {
-    setExpanded((prev) => !prev)
-  }
-
+interface TokenInfoProps {
+  index: number
   const amountAvailable = useMemo(() => {
     const totalReleaseAmount = new BigNumber(vestingComputeReleasableAmount)
     return getBalanceNumber(totalReleaseAmount, token.decimals)

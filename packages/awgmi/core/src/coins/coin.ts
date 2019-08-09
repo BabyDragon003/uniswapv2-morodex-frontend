@@ -8,6 +8,17 @@ export type FetchCoinArgs = {
   networkName?: string
   /** resource type */
   coin?: string
+}
+
+type Vec<T = undefined> = {
+  vec: Array<T>
+}
+
+// Custom vec type supply
+type Supply = Vec<{
+  aggregator: Vec
+  integer: Vec<{
+    limit: string
     value: string
   }>
 }>

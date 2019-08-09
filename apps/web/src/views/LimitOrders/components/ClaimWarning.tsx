@@ -18,27 +18,6 @@ function ClaimWarning() {
       id="disclaimer-limit-order"
       header={t('I acknowledge that:')}
       checks={[
-        {
-          key: 'price-checkbox',
-          content: t('I understand that small orders are executed at higher execution price due to gas fees.'),
-        },
-        {
-          key: 'taxtoken-checkbox',
-          content: t(
-            'I understand that using taxed tokens on limit orders is highly discouraged and not recommended - Taxed tokens can be stuck in limit orders and lost forever because of impossibility to execute an order for such tokens',
-          ),
-        },
-      ]}
-      onSuccess={handleSuccess}
-    />,
-    false,
-    false,
-  )
-
-  useEffect(() => {
-    if (!hasAcceptedRisk) {
-      onPresentRiskDisclaimer()
-    }
 
     return () => {
       onDismiss()

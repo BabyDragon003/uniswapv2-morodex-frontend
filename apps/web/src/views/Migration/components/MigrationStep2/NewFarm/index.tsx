@@ -9,6 +9,17 @@ import { DeserializedFarm, FarmWithStakedValue } from '@pancakeswap/farms'
 import MigrationFarmTable from '../../MigrationFarmTable'
 import { DesktopV2ColumnSchema } from '../../types'
 
+const NewFarmStep2: React.FC<React.PropsWithChildren> = () => {
+  const { t } = useTranslation()
+  const { address: account } = useAccount()
+  const { data: farmsLP, userDataLoaded, regularCakePerBlock } = useFarms()
+  const { data: farmsV1LP } = useFarmsV1()
+  const cakePrice = usePriceCakeBusd()
+
+  usePollFarmsWithUserData()
+
+  const userDataReady = !account || (!!account && userDataLoaded)
+
   const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X')
   const activeFarmsV1 = farmsV1LP.filter((farm) => farm.pid !== 0)
 

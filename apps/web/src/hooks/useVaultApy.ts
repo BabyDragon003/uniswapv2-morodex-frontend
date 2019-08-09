@@ -8,25 +8,15 @@ import { useCakeVault } from 'state/pools/hooks'
 import useSWRImmutable from 'swr/immutable'
 import { getMasterChefAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-  totalCakePoolEmissionPerYear: FixedNumber,
-  pricePerFullShare: FixedNumber,
-  totalShares: FixedNumber,
-) =>
-  totalCakePoolEmissionPerYear
-    .mulUnsafe(FixedNumber.from(WeiPerEther))
-    .divUnsafe(pricePerFullShare)
-    .divUnsafe(totalShares)
-    .mulUnsafe(FixedNumber.from(100))
+import { BOOST_WEIGHT, DURATION_FACTOR, MAX_LOCK_DURATION } from 'config/constants/pools'
+import { multicallv2 } from '../utils/multicall'
 
-const _getBoostFactor = (boostWeight: BigNumber, duration: number, durationFactor: BigNumber) => {
-  return FixedNumber.from(boostWeight)
-    .mulUnsafe(FixedNumber.from(Math.max(duration, 0)))
-    .divUnsafe(FixedNumber.from(durationFactor))
-    .divUnsafe(FixedNumber.from(PRECISION_FACTOR))
-}
+const masterChefAddress = getMasterChefAddress()
 
-const getLockedApy = (flexibleApy: string, boostFactor: FixedNumber) =>
-  FixedNumber.from(flexibleApy).mulUnsafe(boostFactor.addUnsafe(FixedNumber.from('1')))
+// default
+const DEFAULT_PERFORMANCE_FEE_DECIMALS = 2
+
+const PRECISION_FACTOR = BigNumber.from('1000000000000')
 
 const cakePoolPID = 0
 

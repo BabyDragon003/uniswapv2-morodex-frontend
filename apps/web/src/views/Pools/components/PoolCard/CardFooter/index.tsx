@@ -8,6 +8,17 @@ import PoolStatsInfo from '../../PoolStatsInfo'
 import PoolTypeTag from '../../PoolTypeTag'
 
 interface FooterProps {
+  pool: Pool.DeserializedPool<Token>
+  account: string
+  totalCakeInVault?: BigNumber
+  defaultExpanded?: boolean
+  isLocked?: boolean
+}
+
+const ExpandableButtonWrapper = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
+  button {
     padding: 0;
   }
 `

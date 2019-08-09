@@ -8,6 +8,17 @@ import { Field } from '../../state/mint/actions'
 
 function PoolPriceBar({
   currencies,
+  noLiquidity,
+  poolTokenPercentage,
+  price,
+}: {
+  currencies: { [field in Field]?: Currency }
+  noLiquidity?: boolean
+  poolTokenPercentage?: Percent
+  price?: Price<Currency, Currency>
+}) {
+  const { t } = useTranslation()
+
   return (
     <AutoColumn gap="md">
       <AutoRow justify="space-around" gap="4px">

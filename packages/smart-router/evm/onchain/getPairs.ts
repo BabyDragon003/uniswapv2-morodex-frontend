@@ -18,27 +18,6 @@ export enum PairState {
   LOADING,
   NOT_EXISTS,
   EXISTS,
-  INVALID,
-}
-
-interface Options {
-  provider: Provider
-  chainId: ChainId
-}
-
-export async function getPairs(currencyPairs: CurrencyPair[], { provider, chainId }: Options): Promise<Pair[]> {
-  const tokens: [Token | undefined, Token | undefined][] = currencyPairs.map(([currencyA, currencyB]) => [
-    wrappedCurrency(currencyA, chainId),
-    wrappedCurrency(currencyB, chainId),
-  ])
-
-  const pairAddresses = tokens.map(getPairAddress)
-
-  const { multicallv2 } = createMulticall(provider)
-  const reserveCalls: Call[] = pairAddresses.map((address) => ({
-    address: address as string,
-    name: 'getReserves',
-    params: [],
   }))
 
   const results = await multicallv2<PairReserve[]>({

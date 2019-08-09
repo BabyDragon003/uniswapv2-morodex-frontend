@@ -8,26 +8,16 @@ const Divider = styled.div`
   background-color: ${({ theme }) => theme.colors.cardBorder};
   height: 1px;
   margin: 40px 0;
-  li::before {
-    content: '•';
-    margin-right: 4px;
-    color: ${({ theme }) => theme.colors.textSubtle};
-  }
-  li::marker {
-    font-size: 12px;
-  }
-`
-
-const StepContainer = styled(Flex)`
-  gap: 24px;
   width: 100%;
-  flex-direction: column;
-  ${({ theme }) => theme.mediaQueries.md} {
-    flex-direction: row;
-  }
 `
 
-const StyledStepCard = styled(Box)`
+const BulletList = styled.ul`
+  list-style-type: none;
+  margin-left: 8px;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
   display: flex;
   align-self: baseline;
   position: relative;

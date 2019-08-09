@@ -8,6 +8,17 @@ import { usePotteryData } from 'state/pottery/hook'
 import RoundSwitcher from 'views/Lottery/components/AllHistoryCard/RoundSwitcher'
 import { useDebounce } from '@pancakeswap/hooks'
 import { getDrawnDate } from 'views/Lottery/helpers'
+import PreviousRoundCardBody from './PreviousRoundCardBody'
+
+const StyledCard = styled(Card)`
+  width: 100%;
+  margin: auto;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 579px;
+  }
+`
+
 const StyledCardHeader = styled(CardHeader)`
   display: flex;
   flex-direction: column;

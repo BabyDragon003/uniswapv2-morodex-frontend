@@ -8,3 +8,5 @@ const TooltipText = styled(Text)<{ decorationColor?: keyof Colors }>`
     `${theme?.colors && decorationColor ? theme.colors[decorationColor] : theme?.colors?.textSubtle}`};
   text-underline-offset: 0.1em;
 `;
+
+export default TooltipText;

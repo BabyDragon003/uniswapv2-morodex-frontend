@@ -8,6 +8,17 @@ import {
   HelpIcon,
   useTooltip,
   Button,
+  AutoRenewIcon,
+  BunnyPlaceholderIcon,
+  Message,
+  MessageText,
+  ErrorIcon,
+  BalanceWithLoading,
+} from '@pancakeswap/uikit'
+import { useAccount } from 'wagmi'
+import { Token } from '@pancakeswap/sdk'
+import { Ifo, PoolIds } from 'config/constants/types'
+import { bscTokens } from '@pancakeswap/tokens'
 import { cakeBnbLpToken } from 'config/constants/ifo'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'

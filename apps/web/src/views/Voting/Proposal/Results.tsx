@@ -18,27 +18,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { FetchStatus } from 'config/constants/types'
 import { calculateVoteResults, getTotalFromVotes } from '../helpers'
 import TextEllipsis from '../components/TextEllipsis'
-
-interface ResultsProps {
-  choices: string[]
-  votes: Vote[]
-  votesLoadingStatus: FetchStatus
-}
-
-const Results: React.FC<React.PropsWithChildren<ResultsProps>> = ({ choices, votes, votesLoadingStatus }) => {
-  const { t } = useTranslation()
-  const results = calculateVoteResults(votes)
-  const { address: account } = useAccount()
-  const totalVotes = getTotalFromVotes(votes)
-
-  return (
-    <Card>
-      <CardHeader>
-        <Heading as="h3" scale="md">
-          {t('Current Results')}
-        </Heading>
-      </CardHeader>
-      <CardBody>
         {votesLoadingStatus === FetchStatus.Fetched &&
           choices.map((choice, index) => {
             const choiceVotes = results[choice] || []

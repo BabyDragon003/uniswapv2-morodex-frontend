@@ -8,26 +8,16 @@ import type {
 } from '@reduxjs/toolkit/dist/matchers'
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit'
 import stringify from 'fast-json-stable-stringify'
-import { fetchMasterChefFarmPoolLength } from './fetchMasterChefData'
-
-const initialState: SerializedFarmsState = {
-  data: [],
-  loadArchivedFarmsData: false,
-  userDataLoaded: false,
-  loadingKeys: {},
-}
-
-// Async thunks
-export const fetchFarmsPublicDataAsync = createAsyncThunk<
-  [SerializedFarm[], number],
-  number[],
-  {
-    state: AppState
-  }
->(
-  'farmsV1/fetchFarmsPublicDataAsync',
-  async (pids) => {
-    const farmsConfig = await getFarmConfig(ChainId.BSC)
+import { getFarmConfig } from '@pancakeswap/farms/constants'
+import type { AppState } from 'state'
+import { getFarmsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
+import fetchFarms from './fetchFarms'
+import getFarmsPrices from './getFarmsPrices'
+import {
+  fetchFarmUserEarnings,
+  fetchFarmUserAllowances,
+  fetchFarmUserTokenBalances,
+  fetchFarmUserStakedBalances,
     const poolLength = await fetchMasterChefFarmPoolLength()
     const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.v1pid))
     const farmsCanFetch = farmsToFetch.filter((f) => poolLength.gt(f.v1pid))

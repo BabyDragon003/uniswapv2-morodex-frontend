@@ -8,6 +8,17 @@ import {
   clearAllTransactions,
   finalizeTransaction,
   SerializableTransactionReceipt,
+  TransactionType,
+  clearAllChainTransactions,
+  NonBscFarmTransactionType,
+  FarmTransactionStatus,
+} from './actions'
+import { resetUserState } from '../global/actions'
+
+const now = () => new Date().getTime()
+
+export interface TransactionDetails {
+  hash: string
   approval?: { tokenAddress: string; spender: string }
   type?: TransactionType
   order?: Order

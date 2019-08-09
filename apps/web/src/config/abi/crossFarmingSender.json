@@ -8,26 +8,16 @@
       { "internalType": "uint256", "name": "_oracle_eth_update_buffer", "type": "uint256" },
       { "internalType": "uint64", "name": "_chainId", "type": "uint64" }
     ],
-    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "rate", "type": "uint256" }],
-    "name": "CompensationRateUpdated",
-    "type": "event"
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "anonymous": false,
-    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "gaslimit", "type": "uint256" }],
-    "name": "CreateProxyGasLimitUpdated",
+    "inputs": [{ "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }],
+    "name": "BnbChangeUpdated",
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
-      { "indexed": false, "internalType": "address", "name": "sender", "type": "address" },
-      { "indexed": false, "internalType": "uint64", "name": "srcChainId", "type": "uint64" },
-      { "indexed": false, "internalType": "uint64", "name": "nonce", "type": "uint64" },
-      { "indexed": false, "internalType": "enum DataTypes.MessageTypes", "name": "msgType", "type": "uint8" },
-      { "indexed": false, "internalType": "address", "name": "acount", "type": "address" },
-      { "indexed": false, "internalType": "uint256", "name": "pid", "type": "uint256" },
-      { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
     ],
     "name": "FarmingMessageReceived",
     "type": "event"

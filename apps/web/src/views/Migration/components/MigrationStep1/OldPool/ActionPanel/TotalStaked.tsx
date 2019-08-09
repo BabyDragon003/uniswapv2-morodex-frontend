@@ -8,6 +8,17 @@ import { Token } from '@pancakeswap/sdk'
 
 const Containter = styled(Flex)`
   margin-top: 12px;
+  padding: 0;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 0px;
+    padding: 0 12px;
+  }
+`
+
+interface TotalStakedProps {
+  pool: Pool.DeserializedPool<Token>
+  totalCakeInVault: BigNumber
   cakeInVaults: BigNumber
 }
 

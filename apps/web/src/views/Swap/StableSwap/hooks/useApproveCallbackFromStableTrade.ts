@@ -18,6 +18,3 @@ export default function useApproveCallbackFromStableTrade({
     () => (trade ? computeSlippageAdjustedAmounts(trade, allowedSlippage)[Field.INPUT] : undefined),
     [trade, allowedSlippage],
   )
-
-  return useApproveCallback(amountToApprove, swapAddress)
-}

@@ -8,3 +8,12 @@ const TimePicker: React.FC<React.PropsWithChildren<DatePickerProps>> = (props) =
     <DatePicker
       showTimeSelect
       showTimeSelectOnly
+      timeIntervals={15}
+      timeCaption={t('Time')}
+      dateFormat="ppp"
+      {...props}
+    />
+  )
+}
+
+export default TimePicker

@@ -8,6 +8,17 @@ import { CalculatorMode } from '../../types'
 const WinRateWrapper = styled(Box)`
   background: linear-gradient(180deg, #53dee9, #7645d9);
   padding: 1px;
+  width: 100%;
+  border-radius: ${({ theme }) => theme.radii.default};
+`
+
+const WinRateCardInner = styled(Box)`
+  padding: 24px;
+  border-radius: ${({ theme }) => theme.radii.default};
+  background: ${({ theme }) => theme.colors.gradientBubblegum};
+`
+
+const WinRateInputContainer = styled(Box)`
   position: relative;
   & > input {
     padding-right: 28px;

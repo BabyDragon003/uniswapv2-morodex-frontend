@@ -8,3 +8,12 @@ import { useSingleCallResult } from '../state/multicall/hooks'
 export function useTotalSupply(token?: Currency): CurrencyAmount<Token> | undefined {
   const contract = useTokenContract(token?.isToken ? token.address : undefined, false)
 
+  const totalSupplyStr: string | undefined = useSingleCallResult(contract, 'totalSupply')?.result?.[0]?.toString()
+
+  return useMemo(
+    () => (token?.isToken && totalSupplyStr ? CurrencyAmount.fromRawAmount(token, totalSupplyStr) : undefined),
+    [token, totalSupplyStr],
+  )
+}
+
+export default useTotalSupply

@@ -18,27 +18,6 @@ import styled from 'styled-components'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { useDelayedUnmount } from '@pancakeswap/hooks'
 
-import ActionPanel from './Actions/ActionPanel'
-import Apr, { AprProps } from './Apr'
-import Farm from './Farm'
-
-const { FarmAuctionTag, CoreTag } = FarmUI.Tags
-const { CellLayout, Details, Multiplier, Liquidity, Earned } = FarmUI.FarmTable
-
-export interface RowProps {
-  apr: AprProps
-  farm: FarmTableFarmTokenInfoProps
-  earned: FarmTableEarnedProps
-  multiplier: FarmTableMultiplierProps
-  liquidity: FarmTableLiquidityProps
-  details: FarmWithStakedValue
-  type: 'core' | 'community'
-  initialActivity?: boolean
-}
-
-interface RowPropsWithLoading extends RowProps {
-  userDataReady: boolean
-}
 
 const cells = {
   apr: Apr,

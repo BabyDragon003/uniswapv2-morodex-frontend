@@ -8,26 +8,16 @@ import { isStableSwap, V2TradeAndStableSwap } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import { useGasPrice } from 'state/user/hooks'
-  VALID,
-}
+import { logSwap, logTx } from 'utils/log'
 
-interface SwapCall {
-  contract: Contract
-  parameters: SwapParameters
-}
+import { INITIAL_ALLOWED_SLIPPAGE } from '../config/constants'
+import { useTransactionAdder } from '../state/transactions/hooks'
+import { calculateGasMargin, isAddress } from '../utils'
+import { basisPointsToPercent } from '../utils/exchange'
+import { transactionErrorToUserReadableMessage } from '../utils/transactionErrorToUserReadableMessage'
 
-interface SuccessfulCall extends SwapCallEstimate {
-  gasEstimate: BigNumber
-}
-
-interface FailedCall extends SwapCallEstimate {
-  error: string
-}
-
-interface SwapCallEstimate {
-  call: SwapCall
-}
-
+export enum SwapCallbackState {
+  INVALID,
 // returns a function that will execute a swap, if the parameters are all valid
 // and the user has approved the slippage adjusted input amount for the trade
 export function useSwapCallback(

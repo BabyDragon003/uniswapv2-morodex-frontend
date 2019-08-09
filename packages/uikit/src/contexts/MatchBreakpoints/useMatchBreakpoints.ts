@@ -8,3 +8,7 @@ const useMatchBreakpoints = () => {
     throw new Error("Match Breakpoint context is undefined");
   }
 
+  return matchBreakpointContext;
+};
+
+export default useMatchBreakpoints;

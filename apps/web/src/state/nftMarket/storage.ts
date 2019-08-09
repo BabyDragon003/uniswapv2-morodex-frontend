@@ -8,6 +8,17 @@ const initialNftFilterState: NftFilter = {
   activeFilters: {},
   showOnlyOnSale: true,
   ordering: {
+    field: 'currentAskPrice',
+    direction: 'asc',
+  },
+}
+
+const initialNftActivityFilterState: NftActivityFilter = {
+  typeFilters: [],
+  collectionFilters: [],
+}
+
+export function useNftStorage() {
   const [nftMarketFilters, setNftMarketFilters] = useAtom(nftMarketFiltersAtom)
   const [nftMarketActivityFilters, setNftMarketActivityFilters] = useAtom(nftMarketActivityFiltersAtom)
   const [tryVideoNftMedia, setTryVideoNftMedia] = useAtom(tryVideoNftMediaAtom)

@@ -8,26 +8,16 @@
   },
   "tags": {},
   "logoURI": "/logo.png",
-      "name": "BUSD Token",
-      "symbol": "BUSD",
-      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+  "keywords": ["pancake", "default"],
+  "tokens": [
+    {
+      "name": "Wrapped BNB",
+      "symbol": "WBNB",
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
       "chainId": 56,
       "decimals": 18,
-      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/busd.png"
+      "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/bnb.png"
     },
-    {
-      "name": "Ethereum Token",
-      "symbol": "ETH",
-      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-      "chainId": 56,
-      "decimals": 18,
-      "logoURI": "/images/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8.png"
-    },
-    {
-      "name": "BTCB Token",
-      "symbol": "BTCB",
-      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-      "chainId": 56,
       "decimals": 18,
       "logoURI": "https://tokens.dapp-frontend-prince.web.app/images/symbol/wbtc.png"
     },
