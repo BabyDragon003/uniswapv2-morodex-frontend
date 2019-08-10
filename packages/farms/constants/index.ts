@@ -23,10 +23,3 @@ export const getStableConfig = async (chainId: ChainId) => {
 
     return farms.filter(isStableFarm)
   } catch (error) {
-    if (!logged) {
-      console.error('Cannot get stable farm config', error, chainId)
-      logged = true
-    }
-    return []
-  }
-}

@@ -18,6 +18,27 @@ type Props = {
   value: string
   onUserInput: (value: string) => void
   onInputBlur?: () => void
+  currency?: Currency
+  otherCurrency?: Currency
+  onCurrencySelect: (currency: Currency) => void
+  hideBalance?: boolean
+  disableCurrencySelect?: boolean
+  onPercentInput?: (percent: number) => void
+  showQuickInputButton?: boolean
+  onMax?: () => void
+  showMaxButton: boolean
+  maxAmount?: CurrencyAmount<Currency>
+  lpPercent?: string
+  label?: string
+  disabled?: boolean
+  showBridgeWarning?: boolean
+}
+
+const InputRow = styled.div<{ selected: boolean }>`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
 `
 

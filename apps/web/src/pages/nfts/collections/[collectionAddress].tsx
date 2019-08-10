@@ -18,16 +18,11 @@ const CollectionPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getSta
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-          },
-        },
-        revalidate: 60 * 60 * 6, // 6 hours
-      }
-    }
-    return {
-      notFound: true,
-      revalidate: 60,
-    }
-  } catch (error) {
+    fallback: true,
+    paths: [],
+  }
+}
+
     return {
       notFound: true,
       revalidate: 60,

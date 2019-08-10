@@ -18,3 +18,8 @@ export interface LiquidityHandlerReturn {
   attemptingTxn: boolean
   liquidityErrorMessage: string | undefined
   txHash: string | undefined
+  setLiquidityState: Dispatch<
+    SetStateAction<{
+      attemptingTxn: boolean
+      liquidityErrorMessage: string | undefined
+      txHash: string | undefined

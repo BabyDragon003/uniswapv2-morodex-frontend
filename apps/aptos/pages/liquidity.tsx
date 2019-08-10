@@ -23,16 +23,3 @@ const LiquidityPage = () => {
         <LiquidityCard.ListBody>
           <HasAccount fallbackComp={<LiquidityNotConnect />}>
             <LiquidityList />
-          </HasAccount>
-        </LiquidityCard.ListBody>
-        <LiquidityCard.Footer>
-          <GotoAddLiquidityButton />
-        </LiquidityCard.Footer>
-      </LiquidityCard>
-    </>
-  )
-}
-
-LiquidityPage.Layout = ExchangeLayout
-
-export default LiquidityPage

@@ -18,6 +18,27 @@ const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
           totalTx30Days,
           addressCount30Days,
           tvl,
+        },
+      }}
+    >
+      <Home />
+    </SWRConfig>
+  )
+}
+
+// Values fetched from TheGraph and BitQuery jan 24, 2022
+const txCount = 54780336
+const addressCount = 4425459
+
+const tvl = 6082955532.115718
+
+export const getStaticProps: GetStaticProps = async () => {
+  const totalTxQuery = gql`
+    query TotalTransactions($id: ID!, $block: Block_height) {
+      pancakeFactory(id: $id, block: $block) {
+        totalTransactions
+      }
+    }
   `
 
   const days30Ago = sub(new Date(), { days: 30 })

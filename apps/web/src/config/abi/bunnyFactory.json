@@ -18,16 +18,11 @@
       },
       {
         "internalType": "uint256",
-        "indexed": true,
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
+        "name": "_tokenPrice",
+        "type": "uint256"
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
+        "internalType": "string",
       },
       {
         "indexed": true,

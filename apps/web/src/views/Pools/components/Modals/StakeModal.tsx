@@ -23,32 +23,6 @@ const StakeModalContainer = ({
   onDismiss,
   stakingTokenBalance,
   stakingTokenPrice,
-}: Pool.StakeModalPropsType<Token>) => {
-  const { t } = useTranslation()
-
-  const {
-    sousId,
-    earningToken,
-    stakingToken,
-    earningTokenPrice,
-    apr,
-    userData,
-    stakingLimit,
-    enableEmergencyWithdraw,
-  } = pool
-  const { address: account } = useAccount()
-  const { toastSuccess } = useToast()
-  const { pool: singlePool } = usePool(sousId)
-  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
-  const [amount, setAmount] = useState('')
-
-  const { onUnstake } = useUnstakePool(sousId, enableEmergencyWithdraw)
-  const { onStake } = useStakePool(sousId, isBnbPool)
-  const dispatch = useAppDispatch()
-
-  const stakingTokenContract = useERC20(stakingToken.address || '')
-  const { handleApprove, pendingTx: enablePendingTx } = useApprovePool(
-    stakingTokenContract,
     sousId,
     earningToken.symbol,
   )

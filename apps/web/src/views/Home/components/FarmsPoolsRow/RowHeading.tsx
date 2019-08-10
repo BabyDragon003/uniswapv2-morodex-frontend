@@ -18,3 +18,5 @@ const RowHeading: React.FC<React.PropsWithChildren<HeadingProps>> = ({ text, ...
     </Heading>
   )
 }
+
+export default RowHeading

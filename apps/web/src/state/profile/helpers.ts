@@ -23,32 +23,6 @@ const transformProfileResponse = (
     points: numberPoints.toNumber(),
     teamId: teamId.toNumber(),
     tokenId: tokenId.toNumber(),
-    collectionAddress,
-    isActive,
-  }
-}
-
-export const getUsername = async (address: string): Promise<string> => {
-  try {
-    const response = await fetch(`${API_PROFILE}/api/users/${address.toLowerCase()}`)
-
-    if (!response.ok) {
-      return ''
-    }
-
-    const { username = '' } = await response.json()
-
-    return username
-  } catch (error) {
-    return ''
-  }
-}
-
-export const getProfile = async (address: string): Promise<GetProfileResponse> => {
-  try {
-    const profileCalls = ['hasRegistered', 'getUserProfile'].map((method) => {
-      return { address: getPancakeProfileAddress(), name: method, params: [address] }
-    })
     const profileCallsResult = await multicallv2({
       abi: profileABI,
       calls: profileCalls,

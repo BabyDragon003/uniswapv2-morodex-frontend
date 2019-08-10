@@ -18,16 +18,11 @@ export interface TimerProps {
 const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
   ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}
   div:last-of-type {
-      {Boolean(minutes) && (
-        <>
-          <HeadingTextComponent mr="2px">{minutes}</HeadingTextComponent>
-          <BodyTextComponent>{t('m')}</BodyTextComponent>
-        </>
-      )}
-    </StyledTimerFlex>
-  )
-}
+    margin-right: 0;
+  }
+`
 
+const Timer = ({ minutes, hours, days, showTooltip, HeadingTextComponent, BodyTextComponent }) => {
 const DefaultHeadingTextComponent = ({ children, ...props }) => (
   <Heading scale="lg" {...props}>
     {children}

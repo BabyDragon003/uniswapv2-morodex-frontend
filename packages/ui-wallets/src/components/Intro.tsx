@@ -23,32 +23,6 @@ const IntroSteps = [
       </Trans>
     ),
   },
-]
-
-const StepDot = ({ active, place, onClick }: { active: boolean; place: 'left' | 'right'; onClick: () => void }) => (
-  <AtomBox padding="4px" onClick={onClick} cursor="pointer">
-    <AtomBox
-      bgc={active ? 'secondary' : 'inputSecondary'}
-      width="56px"
-      height="8px"
-      borderLeftRadius={place === 'left' ? 'card' : '0'}
-      borderRightRadius={place === 'right' ? 'card' : '0'}
-    />
-  </AtomBox>
-)
-
-export const StepIntro = ({ docLink, docText }: { docLink: string; docText: string }) => {
-  const [step, setStep] = useState(0)
-
-  const introStep = IntroSteps[step]
-
-  return (
-    <AtomBox
-      display="flex"
-      width="full"
-      flexDirection="column"
-      style={{ gap: '24px' }}
-      mx="auto"
       my="48px"
       textAlign="center"
       alignItems="center"

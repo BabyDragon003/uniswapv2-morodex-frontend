@@ -18,16 +18,11 @@ const SwapModalFooterContainer = styled(AutoColumn)`
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   background-color: ${({ theme }) => theme.colors.background};
 `
-  const totalFeePercent = `${(TOTAL_FEE * 100).toFixed(2)}%`
-  const lpHoldersFeePercent = `${(LP_HOLDERS_FEE * 100).toFixed(2)}%`
-  const treasuryFeePercent = `${(TREASURY_FEE * 100).toFixed(4)}%`
-  const buyBackFeePercent = `${(BUYBACK_FEE * 100).toFixed(4)}%`
 
-  return (
-    <>
-      <SwapModalFooterContainer>
-        <RowBetween align="center">
-          <Text fontSize="14px">{t('Price')}</Text>
+export default function SwapModalFooter({
+  trade,
+  slippageAdjustedAmounts,
+  isEnoughInputBalance,
           <Text
             fontSize="14px"
             style={{

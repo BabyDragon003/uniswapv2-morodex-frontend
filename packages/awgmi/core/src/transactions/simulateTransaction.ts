@@ -19,6 +19,27 @@ export type SimulateTransactionArgs = {
 
 export type SimulateTransactionResult = Types.UserTransaction[]
 
+export async function simulateTransaction({
+  networkName,
+  payload,
+  throwOnError = true,
+  options,
+  query,
+}: SimulateTransactionArgs): Promise<SimulateTransactionResult> {
+  const { account } = getAccount()
+  const provider = getProvider({ networkName })
+
+  if (!account) throw new WalletProviderError(4100, 'No Account')
+
+  let { publicKey } = account
+
+  if (!publicKey) {
+    const client = getClient()
+    const activeConnector = client.connector
+    const accountFromActiveConnector = await activeConnector?.account()
+    publicKey = accountFromActiveConnector?.publicKey
+  }
+
   if (!publicKey) throw new WalletProviderError(4100, 'Missing pubic key')
 
   if (Array.isArray(publicKey)) {

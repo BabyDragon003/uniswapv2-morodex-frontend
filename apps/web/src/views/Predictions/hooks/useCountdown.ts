@@ -18,16 +18,11 @@ const useCountdown = (timestamp: number) => {
   const isWindowVisible = useIsWindowVisible()
 
   const pause = useCallback(() => setIsPaused(true), [setIsPaused])
-  }, [isPaused, timestamp, setSecondsRemaining])
+  const unpause = useCallback(() => setIsPaused(false), [setIsPaused])
 
-  // Pause the timer if the tab becomes inactive to avoid it becoming out of sync
   useEffect(() => {
-    if (isWindowVisible) {
-      setSecondsRemaining(getSecondsRemainingToNow(timestamp))
-      unpause()
-    } else {
-      pause()
-    }
+    let cancel
+    if (!isPaused) {
   }, [pause, unpause, timestamp, setSecondsRemaining, isWindowVisible])
 
   return { secondsRemaining, pause, unpause }

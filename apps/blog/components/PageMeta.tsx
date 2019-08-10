@@ -18,3 +18,6 @@ const PageMeta = ({ title, description, imgUrl }: PageMetaProps) => {
       }}
     />
   )
+}
+
+export default PageMeta

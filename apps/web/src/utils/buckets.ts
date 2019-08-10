@@ -18,3 +18,4 @@ export function getBucket<T extends Record<string, number>>(buckets: T, defaultK
 
 function cryptoRandom() {
   return crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)
+}

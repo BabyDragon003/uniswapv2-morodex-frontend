@@ -18,6 +18,27 @@ const multicallAddress = getMulticallAddress()
 
 export const fetchPoolsAllowance = async (account) => {
   const calls = nonBnbPools.map((pool) => ({
+    address: pool.stakingToken.address,
+    name: 'allowance',
+    params: [account, getAddress(pool.contractAddress)],
+  }))
+
+  const allowances = await multicall(erc20ABI, calls)
+  return fromPairs(nonBnbPools.map((pool, index) => [pool.sousId, new BigNumber(allowances[index]).toJSON()]))
+}
+
+export const fetchUserBalances = async (account) => {
+  // Non BNB pools
+  const tokens = uniq(nonBnbPools.map((pool) => pool.stakingToken.address))
+  const tokenBalanceCalls = tokens.map((token) => ({
+    abi: erc20ABI,
+    address: token,
+    name: 'balanceOf',
+    params: [account],
+  }))
+  const bnbBalanceCall = {
+    abi: multiCallAbi,
+    address: multicallAddress,
     name: 'getEthBalance',
     params: [account],
   }
