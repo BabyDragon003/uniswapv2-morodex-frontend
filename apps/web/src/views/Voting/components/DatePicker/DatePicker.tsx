@@ -1,4 +1,3 @@
-import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
 import { Input, InputProps } from '@pancakeswap/uikit'
 
 import 'react-datepicker/dist/react-datepicker.css'

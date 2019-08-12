@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { Types } from 'aptos'
 
 export const ADDRESS = '0x488c277a7dabb9dca5352c573a441f3a41f473f664e469465924af22eb3fd4bd' as const

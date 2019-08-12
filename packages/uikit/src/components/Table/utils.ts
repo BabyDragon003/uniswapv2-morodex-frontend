@@ -1,4 +1,3 @@
-export const byTextAscending =
   <T>(getTextProperty: (object: T) => string) =>
   (objectA: T, objectB: T): number => {
     const upperA = getTextProperty(objectA).toUpperCase();

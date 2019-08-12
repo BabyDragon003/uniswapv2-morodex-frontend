@@ -1,4 +1,3 @@
-{
   "main": "../../dist/connectors/petra.js",
   "module": "../../dist/connectors/petra.mjs"
 }

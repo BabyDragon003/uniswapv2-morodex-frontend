@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { useTableItem, useTableItems, type PayloadTableItem } from '@pancakeswap/awgmi'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { IFO_RESOURCE_ACCOUNT_TYPE_VESTING_METADATA } from 'views/Ifos/constants'

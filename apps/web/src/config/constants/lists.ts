@@ -1,4 +1,3 @@
-export const PANCAKE_EXTENDED = 'https://tokens.dapp-frontend-prince.web.app/pancakeswap-extended.json'
 export const COINGECKO = 'https://tokens.dapp-frontend-prince.web.app/coingecko.json'
 export const COINGECKO_ETH = 'https://tokens.coingecko.com/uniswap/all.json'
 export const CMC = 'https://tokens.dapp-frontend-prince.web.app/cmc.json'

@@ -1,4 +1,3 @@
-import { useCompetitionStatus } from 'components/Menu/hooks/useCompetitionStatus'
 
 const useIsRenderCompetitionBanner = () => {
   const competitionStatus = useCompetitionStatus()

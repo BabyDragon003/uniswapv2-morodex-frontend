@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import erc20ABI from 'config/abi/erc20.json'
 import masterchefABIV1 from 'config/abi/masterchefV1.json'
 import multicall from 'utils/multicall'

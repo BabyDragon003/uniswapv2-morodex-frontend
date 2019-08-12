@@ -1,4 +1,3 @@
-# Pools documentation
 
 ## How to add a new pool
 

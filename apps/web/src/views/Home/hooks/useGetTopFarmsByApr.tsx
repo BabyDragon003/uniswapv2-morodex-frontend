@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useFarms, usePriceCakeBusd } from 'state/farms/hooks'
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { useAppDispatch } from 'state'
@@ -23,6 +22,32 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
   useEffect(() => {
     const fetchFarmData = async () => {
       const farmsConfig = await getFarmConfig(chainId)
+      setFetchStatus(FetchStatus.Fetching)
+      const activeFarms = farmsConfig.filter((farm) => farm.pid !== 0)
+      try {
+        await dispatch(
+          fetchFarmsPublicDataAsync({ pids: activeFarms.map((farm) => farm.pid), chainId, flag: farmFlag }),
+        )
+        setFetchStatus(FetchStatus.Fetched)
+      } catch (e) {
+        console.error(e)
+        setFetchStatus(FetchStatus.Failed)
+      }
+    }
+
+    if (isIntersecting && fetchStatus === FetchStatus.Idle) {
+      fetchFarmData()
+    }
+  }, [dispatch, setFetchStatus, fetchStatus, topFarms, isIntersecting, chainId, farmFlag])
+
+  useEffect(() => {
+    const getTopFarmsByApr = (farmsState: DeserializedFarm[]) => {
+      const farmsWithPrices = farmsState.filter(
+        (farm) =>
+          farm.lpTotalInQuoteToken &&
+          farm.quoteTokenPriceBusd &&
+          farm.pid !== 0 &&
+          farm.multiplier &&
           farm.multiplier !== '0X',
       )
       const farmsWithApr: FarmWithStakedValue[] = farmsWithPrices.map((farm) => {

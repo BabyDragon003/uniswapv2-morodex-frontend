@@ -1,4 +1,3 @@
-name: Test Config
 
 on:
   pull_request:

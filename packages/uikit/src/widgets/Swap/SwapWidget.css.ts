@@ -1,4 +1,3 @@
-import { atoms } from "@pancakeswap/ui/css/atoms";
 import { vars } from "@pancakeswap/ui/css/vars.css";
 import { responsiveStyle } from "@pancakeswap/ui/css/responsiveStyle";
 import { style } from "@vanilla-extract/css";
@@ -23,6 +22,32 @@ export const iconDownClass = style({
       boxShadow: "0 0 0 2px rgba(255, 255, 255, 0.7)",
       color: "rgba(255, 255, 255, 0.7)",
       width: "2.5em",
+    },
+  },
+});
+
+export const iconUpDownClass = style({
+  display: "none",
+  color: "rgb(0, 233, 177)",
+  fill: "rgb(0, 233, 177) !important",
+  width: "2.5em",
+  selectors: {
+    [`${switchButtonClass}:hover &`]: {
+      display: "block",
+      // fill: "white",
+      fill: "rgba(255, 255, 255, 0.7)",
+      borderRadius: "50%",
+      boxShadow: "0 0 0 2px rgba(255, 255, 255, 0.7)",
+      color: "rgba(255, 255, 255, 0.7)",
+      width: "2.5em",
+    },
+  },
+});
+
+export const inputVariants = recipe({
+  base: {
+    width: 0,
+    position: "relative",
     fontWeight: 500,
     outline: "none",
     border: "none",

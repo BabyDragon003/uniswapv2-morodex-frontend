@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { Chain } from '../../chain'
 import { Connector, ConnectorData } from '../base'
 import { Account } from '../types'

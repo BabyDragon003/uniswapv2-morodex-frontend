@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import PancakeToggle from "./PancakeToggle";
 
 export default {

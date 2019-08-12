@@ -1,4 +1,3 @@
-export type ColumnType<T extends DataType> = {
   name: string;
   label?: string;
   hidden?: boolean;

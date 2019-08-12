@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { isAddress } from 'utils'
 import {
   getAllPancakeBunniesLowestPrice,

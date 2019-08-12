@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

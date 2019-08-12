@@ -1,4 +1,3 @@
-import React, { useState, memo } from "react";
 import BottomNavItem from "../BottomNavItem";
 import StyledBottomNav from "./styles";
 import { Box } from "../Box";

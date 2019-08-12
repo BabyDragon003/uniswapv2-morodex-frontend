@@ -1,4 +1,3 @@
-import { Order, GelatoLimitOrders } from '@gelatonetwork/limit-orders-lib'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useSWR from 'swr'
 import { SLOW_INTERVAL } from 'config/constants'

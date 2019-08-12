@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { useCallback } from 'react'
 import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
 import { parseUnits } from '@ethersproject/units'

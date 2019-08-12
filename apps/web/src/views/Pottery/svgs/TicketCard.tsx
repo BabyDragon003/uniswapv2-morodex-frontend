@@ -1,4 +1,3 @@
-import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 const TicketCard: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (

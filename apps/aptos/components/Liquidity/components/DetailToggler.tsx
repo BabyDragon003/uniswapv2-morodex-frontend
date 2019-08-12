@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { RowBetween, Text } from '@pancakeswap/uikit'
 
 // import { useState } from 'react'

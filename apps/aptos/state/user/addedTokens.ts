@@ -1,4 +1,3 @@
-import { SerializedToken } from '@pancakeswap/aptos-swap-sdk'
 import { SerializedWrappedToken, deserializeToken } from '@pancakeswap/token-lists'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { useAtom } from 'jotai'

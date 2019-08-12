@@ -1,4 +1,3 @@
-import { getAddress } from 'utils/addressHelpers'
 
 describe('getAddress', () => {
   const address = {

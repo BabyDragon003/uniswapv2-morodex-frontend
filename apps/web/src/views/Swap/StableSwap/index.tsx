@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useCurrency } from 'hooks/Tokens'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import { Field } from 'state/swap/actions'

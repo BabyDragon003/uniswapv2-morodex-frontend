@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { Currency } from '@pancakeswap/sdk'
 import { Field, selectCurrency, switchCurrencies, typeInput, setRecipient } from './actions'
 import { useAppDispatch } from '../index'

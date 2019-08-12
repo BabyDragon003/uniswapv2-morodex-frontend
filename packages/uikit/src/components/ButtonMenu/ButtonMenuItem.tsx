@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import Button from "../Button/Button";
 import { BaseButtonProps, variants } from "../Button/types";

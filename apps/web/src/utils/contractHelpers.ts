@@ -1,4 +1,3 @@
-import type { Signer } from '@ethersproject/abstract-signer'
 import type { Provider } from '@ethersproject/providers'
 import { provider } from 'utils/wagmi'
 import { Contract } from '@ethersproject/contracts'

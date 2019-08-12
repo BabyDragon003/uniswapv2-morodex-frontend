@@ -1,4 +1,3 @@
-const replaceBrowserHistory = (key: string, value?: string | number | null) => {
   const url = new URL(window.location.href)
   if (!value) {
     url.searchParams.delete(key)

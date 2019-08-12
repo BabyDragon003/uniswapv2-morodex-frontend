@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { AtomBox } from '@pancakeswap/ui'
 import { Text, ArrowDownIcon, AutoColumn, Liquidity, ColumnCenter } from '@pancakeswap/uikit'
 import { LightGreyCard } from 'components/Card'

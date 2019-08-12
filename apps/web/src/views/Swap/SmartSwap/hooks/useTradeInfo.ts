@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { ChainId, Currency, CurrencyAmount, Percent, Price, Trade, TradeType } from '@pancakeswap/sdk'
 import { Pair, RouteType, Trade as SmartRouterTrade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 

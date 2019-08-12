@@ -1,4 +1,3 @@
-import { darkColors, lightColors } from "../../theme/colors";
 
 export type ToggleTheme = {
   handleBackground: string;

@@ -1,4 +1,3 @@
-import { ButtonProps, IconButton } from "../../components/Button";
 import { ArrowDownIcon, ArrowUpDownIcon } from "../../components/Svg";
 import { switchButtonClass, iconDownClass, iconUpDownClass } from "./SwapWidget.css";
 import { CurrencyInputPanel } from "./CurrencyInputPanel";

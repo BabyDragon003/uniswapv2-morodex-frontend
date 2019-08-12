@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react'
 import { Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import {
   Button,

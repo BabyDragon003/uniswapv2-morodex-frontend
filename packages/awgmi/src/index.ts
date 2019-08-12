@@ -1,4 +1,3 @@
-export {
   defaultChain,
   defaultChains,
   APTOS_COIN,

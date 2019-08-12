@@ -1,4 +1,3 @@
-import { Box, Card, CardBody, CardHeader, ExpandableButton, useMatchBreakpoints } from '@pancakeswap/uikit'
 import NoSSR from 'components/NoSSR'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useRouter } from 'next/router'

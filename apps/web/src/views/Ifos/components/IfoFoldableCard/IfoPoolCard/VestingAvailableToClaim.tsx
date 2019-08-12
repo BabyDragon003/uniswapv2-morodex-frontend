@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { BIG_ONE_HUNDRED } from '@pancakeswap/utils/bigNumber'
 import { Text } from '@pancakeswap/uikit'

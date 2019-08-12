@@ -1,4 +1,3 @@
-import shallow from 'zustand/shallow'
 import { getClient } from '../client'
 import type { Chain } from '../chain'
 

@@ -1,4 +1,3 @@
-interface ReleasedChartProps {
   percentage: number
 }
 

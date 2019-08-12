@@ -1,4 +1,3 @@
-import { ChainId, Coin, Currency } from '@pancakeswap/aptos-swap-sdk'
 
 // a list of tokens by chain
 export type ChainMap<T> = {

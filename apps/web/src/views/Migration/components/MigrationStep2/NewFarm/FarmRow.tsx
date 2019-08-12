@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 import Farm from 'views/Migration/components/Farm/Cells/Farm'
 import Staked from 'views/Migration/components/Farm/Cells/Staked'

@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, JSBI } from '@pancakeswap/sdk'
 import { BIG_INT_ZERO, MIN_BNB } from 'config/constants/exchange'
 
 /**

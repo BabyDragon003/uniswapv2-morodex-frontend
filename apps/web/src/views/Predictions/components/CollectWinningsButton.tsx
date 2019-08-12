@@ -1,4 +1,3 @@
-import { Button, ButtonProps, useModal } from '@pancakeswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useCollectWinningModalProps } from 'state/predictions/hooks'
 import { useConfig } from '../context/ConfigProvider'
@@ -23,3 +22,21 @@ const CollectWinningsButton: React.FC<React.PropsWithChildren<CollectWinningsBut
     <CollectRoundWinningsModal
       dispatch={dispatch}
       history={history}
+      isLoadingHistory={isLoadingHistory}
+      onSuccess={onSuccess}
+      predictionsAddress={predictionsAddress}
+      token={token}
+    />,
+    false,
+    true,
+    'CollectRoundWinningsModal',
+  )
+
+  return (
+    <Button onClick={onPresentCollectWinningsModal} disabled={hasClaimed} {...props}>
+      {children}
+    </Button>
+  )
+}
+
+export default CollectWinningsButton

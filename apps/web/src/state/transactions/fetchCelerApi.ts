@@ -1,4 +1,3 @@
-import { CELER_API } from 'config/constants/endpoints'
 import { MsgStatus } from './actions'
 
 export const fetchCelerApi = async (hash: string) => {

@@ -1,4 +1,3 @@
-import { ChainId, Coin } from '@pancakeswap/aptos-swap-sdk'
 import { APT } from '../../coins'
 
 export const testnetTokens = {

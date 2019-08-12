@@ -1,4 +1,3 @@
-// ***********************************************
 // For more comprehensive examples of custom
 // commands please read more here:
 // https://on.cypress.io/custom-commands
@@ -23,6 +22,32 @@ export const TEST_ADDRESS_NEVER_USE = new Wallet(TEST_PRIVATE_KEY).address
 export const TEST_ADDRESS_NEVER_USE_SHORTENED = `0x...${TEST_ADDRESS_NEVER_USE.substring(
   TEST_ADDRESS_NEVER_USE.length - 4,
 )}`
+
+class CustomizedBridge extends Eip1193Bridge {
+  async sendAsync(...args) {
+    console.debug('sendAsync called', ...args)
+    return this.send(...args)
+  }
+
+  async send(...args) {
+    console.debug('send called', ...args)
+    const isCallbackForm = typeof args[0] === 'object' && typeof args[1] === 'function'
+    let callback
+    let method
+    let params
+    if (isCallbackForm) {
+      callback = args[1]
+      // eslint-disable-next-line prefer-destructuring
+      method = args[0].method
+      // eslint-disable-next-line prefer-destructuring
+      params = args[0].params
+    } else {
+      method = args[0]
+      params = args[1]
+    }
+    if (method === 'eth_requestAccounts' || method === 'eth_accounts') {
+      if (isCallbackForm) {
+        return callback({ result: [TEST_ADDRESS_NEVER_USE] })
       }
       return Promise.resolve([TEST_ADDRESS_NEVER_USE])
     }

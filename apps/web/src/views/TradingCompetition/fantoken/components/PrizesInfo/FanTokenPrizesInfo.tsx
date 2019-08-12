@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
 import FanTokenPrizesCard from './FanTokenPrizesCard'
 import FanTokenPrizesText from './FanTokenPrizesText'

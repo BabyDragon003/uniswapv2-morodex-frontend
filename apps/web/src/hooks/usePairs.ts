@@ -1,4 +1,3 @@
-import { CurrencyAmount, Pair, Currency } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import IPancakePairABI from 'config/abi/IPancakePair.json'
 import { Interface } from '@ethersproject/abi'
@@ -23,6 +22,32 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
     () =>
       currencies.map(([currencyA, currencyB]) => [
         wrappedCurrency(currencyA, chainId),
+        wrappedCurrency(currencyB, chainId),
+      ]),
+    [chainId, currencies],
+  )
+
+  const pairAddresses = useMemo(
+    () =>
+      tokens.map(([tokenA, tokenB]) => {
+        try {
+          return tokenA && tokenB && !tokenA.equals(tokenB) ? Pair.getAddress(tokenA, tokenB) : undefined
+        } catch (error: any) {
+          // Debug Invariant failed related to this line
+          console.error(
+            error.msg,
+            `- pairAddresses: ${tokenA?.address}-${tokenB?.address}`,
+            `chainId: ${tokenA?.chainId}`,
+          )
+
+          return undefined
+        }
+      }),
+    [tokens],
+  )
+
+  const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
+
   return useMemo(() => {
     return results.map((result, i) => {
       const { result: reserves, loading } = result

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@pancakeswap/sdk'
 import { Pair } from '@pancakeswap/smart-router/evm'
 import { Modal, ModalV2, QuestionHelper, SearchIcon, Text, Flex, Link } from '@pancakeswap/uikit'

@@ -1,4 +1,3 @@
-import { BalanceWithLoading, Box, ChevronDownIcon, Flex, Text } from '@pancakeswap/uikit'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { TokenImage } from 'components/TokenImage'

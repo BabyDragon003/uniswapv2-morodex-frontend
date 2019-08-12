@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
 import { AutoRenewIcon, Button, QuestionHelper, Text } from '@pancakeswap/uikit'
 import { AutoColumn } from 'components/Layout/Column'

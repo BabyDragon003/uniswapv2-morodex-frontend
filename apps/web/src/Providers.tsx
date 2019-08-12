@@ -1,4 +1,3 @@
-import { ModalProvider, light, dark, UIKitProvider } from '@pancakeswap/uikit'
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
 import { LanguageProvider } from '@pancakeswap/localization'
@@ -23,3 +22,26 @@ const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: Reac
   store,
 }) => {
   return (
+    <WagmiProvider client={client}>
+      <Provider store={store}>
+        <NextThemeProvider>
+          <StyledUIKitProvider>
+            <LanguageProvider>
+              <SWRConfig
+                value={{
+                  use: [fetchStatusMiddleware],
+                }}
+              >
+                <HistoryManagerProvider>
+                  <ModalProvider>{children}</ModalProvider>
+                </HistoryManagerProvider>
+              </SWRConfig>
+            </LanguageProvider>
+          </StyledUIKitProvider>
+        </NextThemeProvider>
+      </Provider>
+    </WagmiProvider>
+  )
+}
+
+export default Providers

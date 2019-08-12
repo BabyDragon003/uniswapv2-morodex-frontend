@@ -1,4 +1,3 @@
-import { MaxUint256 } from '@ethersproject/constants'
 import { useTranslation } from '@pancakeswap/localization'
 import { bscTokens } from '@pancakeswap/tokens'
 import {

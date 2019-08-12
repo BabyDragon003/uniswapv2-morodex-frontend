@@ -1,4 +1,3 @@
-import { Progress, ProgressProps } from '@pancakeswap/uikit'
 
 interface RoundProgressProps extends ProgressProps {
   lockTimestamp: number

@@ -1,4 +1,3 @@
-import { FLAG_FARM } from 'config/flag'
 import { Atom, useAtomValue } from 'jotai'
 import { createJSONStorage } from 'jotai/utils'
 import atomWithStorageWithErrorCatch from 'utils/atomWithStorageWithErrorCatch'

@@ -1,4 +1,3 @@
-import CellLayout from "./CellLayout";
 import Earned from "./Earned";
 import Details from "./Details";
 import Liquidity from "./Liquidity";

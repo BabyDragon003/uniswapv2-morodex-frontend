@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { MenuContext } from "../../widgets/Menu/context";
 import { Flex } from "../Box";
 import AnimatedIconComponent from "../Svg/AnimatedIconComponent";

@@ -1,4 +1,3 @@
-import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useNftStorage } from 'state/nftMarket/storage'
 

@@ -1,4 +1,3 @@
-import { getAddress } from '@ethersproject/address'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   ArrowBackIcon,

@@ -1,4 +1,3 @@
-import { useMemo, useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { Button, AutoRenewIcon, Box, Flex, Message, MessageText, Text } from '@pancakeswap/uikit'
 import _noop from 'lodash/noop'

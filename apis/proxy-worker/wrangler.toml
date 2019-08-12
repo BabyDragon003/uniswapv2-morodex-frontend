@@ -1,4 +1,3 @@
-compatibility_date = "2022-05-20"
 main = "src/index.ts"
 name = "proxy-worker-dev"
 node_compat = true

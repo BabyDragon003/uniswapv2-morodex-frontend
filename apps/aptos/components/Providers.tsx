@@ -1,4 +1,3 @@
-import { ModalProvider, light, dark, UIKitProvider } from '@pancakeswap/uikit'
 import { SWRConfig } from 'swr'
 import { LanguageProvider } from '@pancakeswap/localization'
 import { AwgmiConfig } from '@pancakeswap/awgmi'

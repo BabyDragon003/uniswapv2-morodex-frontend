@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Box } from '@pancakeswap/uikit'
 import { GreyCard } from 'components/Card'
 import { usePotteryData } from 'state/pottery/hook'

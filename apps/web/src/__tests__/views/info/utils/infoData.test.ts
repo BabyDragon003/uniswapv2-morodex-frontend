@@ -1,4 +1,3 @@
-import { getAmountChange, getPercentChange } from 'views/Info/utils/infoDataHelpers'
 import { getLpFeesAndApr } from 'utils/getLpFeesAndApr'
 import { getChangeForPeriod } from 'utils/getChangeForPeriod'
 

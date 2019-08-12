@@ -1,4 +1,3 @@
-import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 const OkNFTIcon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => (
   <Svg width="36" height="31" fill="none" viewBox="0 0 36 31" {...props}>

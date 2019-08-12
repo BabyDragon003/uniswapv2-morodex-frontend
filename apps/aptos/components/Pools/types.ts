@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export interface Resource {
   type: string
   data: Record<string, unknown>

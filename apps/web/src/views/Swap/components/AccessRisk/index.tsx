@@ -1,4 +1,3 @@
-import { Trans, useTranslation } from '@pancakeswap/localization'
 import { ERC20Token, Token } from '@pancakeswap/sdk'
 import {
   Button,

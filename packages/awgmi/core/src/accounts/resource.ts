@@ -1,4 +1,3 @@
-import { Types } from 'aptos'
 import { getProvider } from '../providers'
 
 export type FetchAccountResourceArgs = {
@@ -23,3 +22,4 @@ export async function fetchAccountResource<T>({
 
   // @ts-ignore
   return resource as FetchAccountResourceResult
+}

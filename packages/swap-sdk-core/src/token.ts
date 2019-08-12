@@ -1,4 +1,3 @@
-import invariant from 'tiny-invariant'
 import { BaseCurrency } from './baseCurrency'
 import { Currency } from './currency'
 
@@ -23,6 +22,32 @@ export class Token extends BaseCurrency {
    * The contract address on the chain on which this token lives
    */
   public readonly address: string
+
+  public readonly projectLink?: string
+
+  public constructor(
+    chainId: number,
+    address: string,
+    decimals: number,
+    symbol: string,
+    name?: string,
+    projectLink?: string
+  ) {
+    super(chainId, decimals, symbol, name)
+    this.address = address
+    this.projectLink = projectLink
+  }
+
+  /**
+   * Returns true if the two tokens are equivalent, i.e. have the same chainId and address.
+   * @param other other token to compare
+   */
+  public equals(other: Currency): boolean {
+    return other.isToken && this.chainId === other.chainId && this.address === other.address
+  }
+
+  /**
+   * Returns true if the address of this token sorts before the address of the other token
    * @param other other token to compare
    * @throws if the tokens have the same address
    * @throws if the tokens are on different chains

@@ -1,4 +1,3 @@
-import { Activity, AskOrder, AskOrderType, MarketEvent, Transaction, UserActivity } from 'state/nftMarket/types'
 import orderBy from 'lodash/orderBy'
 
 export const sortUserActivity = (account: string, userActivity: UserActivity): Activity[] => {

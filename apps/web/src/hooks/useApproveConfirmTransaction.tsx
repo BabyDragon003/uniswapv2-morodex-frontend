@@ -1,4 +1,3 @@
-import { useEffect, useReducer, useRef, useCallback } from 'react'
 import noop from 'lodash/noop'
 import { useAccount } from 'wagmi'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'

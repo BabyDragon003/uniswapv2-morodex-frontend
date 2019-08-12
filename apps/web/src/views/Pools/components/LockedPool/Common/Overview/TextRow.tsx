@@ -1,4 +1,3 @@
-import { Text, Flex } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import CrossText from './CrossText'
 
