@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Flex, Heading, Text, Link, useTooltip, BscScanIcon } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { useTranslation, ContextApi } from '@pancakeswap/localization'
 
-export interface TimerProps {
-  prefix?: string
-  suffix?: string
-  minutes?: number
-  hours?: number
-  days?: number
   showTooltip?: boolean
   blockNumber?: number
   HeadingTextComponent?: React.ElementType

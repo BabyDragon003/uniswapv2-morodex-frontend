@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, Flex, Text } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'

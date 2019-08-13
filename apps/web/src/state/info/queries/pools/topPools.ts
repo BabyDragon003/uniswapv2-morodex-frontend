@@ -1,13 +1,8 @@
+import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
 import {
   checkIsStableSwap,
-  getMultiChainQueryEndPointWithStableSwap,
-  MultiChainName,
-  multiChainTokenBlackList,
-} from '../../constant'
-import { useGetChainName } from '../../hooks'
-
 interface TopPoolsResponse {
   pairDayDatas: {
     id: string

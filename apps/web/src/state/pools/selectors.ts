@@ -1,13 +1,8 @@
+import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { createSelector } from '@reduxjs/toolkit'
 import { State, VaultKey } from '../types'
 import { transformPool, transformVault } from './helpers'
-import { initialPoolVaultState } from './index'
-import { getVaultPosition, VaultPosition } from '../../utils/cakePool'
-
-const selectPoolsData = (state: State) => state.pools.data
-const selectPoolData = (sousId) => (state: State) => state.pools.data.find((p) => p.sousId === sousId)
-const selectUserDataLoaded = (state: State) => state.pools.userDataLoaded
 const selectVault = (key: VaultKey) => (state: State) => key ? state.pools[key] : initialPoolVaultState
 const selectIfo = (state: State) => state.pools.ifo
 const selectIfoUserCredit = (state: State) => state.pools.ifo.credit ?? BIG_ZERO

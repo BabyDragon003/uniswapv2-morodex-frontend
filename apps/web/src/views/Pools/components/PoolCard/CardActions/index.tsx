@@ -1,13 +1,8 @@
+import BigNumber from 'bignumber.js'
 
 import styled from 'styled-components'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { Flex, Text, Box, Pool } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { PoolCategory } from 'config/constants/types'
-import { useProfileRequirement } from 'views/Pools/hooks/useProfileRequirement'
-import { Token } from '@pancakeswap/sdk'
-import ApprovalAction from './ApprovalAction'
-import StakeActions from './StakeActions'
 import HarvestActions from './HarvestActions'
 import { ProfileRequirementWarning } from '../../ProfileRequirementWarning'
 

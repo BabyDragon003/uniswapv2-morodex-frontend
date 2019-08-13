@@ -1,13 +1,8 @@
+import BigNumber from 'bignumber.js'
 import { useState, useCallback } from 'react'
 import { BSC_BLOCK_TIME } from 'config'
 import ifoV2Abi from 'config/abi/ifoV2.json'
 import { bscTokens } from '@pancakeswap/tokens'
-import { Ifo, IfoStatus } from 'config/constants/types'
-import { FixedNumber } from '@ethersproject/bignumber'
-
-import { useLpTokenPrice, usePriceCakeBusd } from 'state/farms/hooks'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { multicallv2 } from 'utils/multicall'
 import { PublicIfoData } from '../../types'
 import { getStatus } from '../helpers'
 

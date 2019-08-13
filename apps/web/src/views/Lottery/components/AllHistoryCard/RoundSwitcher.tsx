@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { IconButton, ArrowForwardIcon, ArrowBackIcon, ArrowLastIcon, Flex, Heading, Input } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 const StyledInput = styled(Input)`
-  width: 60px;
-  height: 100%;
-  padding: 4px 16px;
-`
-
-const StyledIconButton = styled(IconButton)`
   width: 32px;
 
   :disabled {

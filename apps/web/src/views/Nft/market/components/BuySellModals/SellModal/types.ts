@@ -1,3 +1,4 @@
+export enum SellingStage {
   // Sell flow
   SELL,
   SET_PRICE,

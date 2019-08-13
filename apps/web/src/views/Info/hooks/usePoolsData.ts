@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { checkIsStableSwap } from 'state/info/constant'
 import { useAllPoolDataSWR, useStableSwapTopPoolsAPR } from 'state/info/hooks'
 

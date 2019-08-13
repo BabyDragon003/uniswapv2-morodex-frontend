@@ -1,3 +1,4 @@
+import { FixedNumber } from '@ethersproject/bignumber'
 import { FarmWithPrices } from './farmPrices'
 
 // copy from src/config, should merge them later

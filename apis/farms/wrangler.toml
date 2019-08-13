@@ -1,13 +1,8 @@
+compatibility_date = "2022-05-20"
 kv_namespaces = [
   {binding = "FARMS", id = "d8c9b05a13174eb59574425beceb2574", preview_id = "4ac09dba355c44fa858a67a22a9a63f1"},
 ]
 main = "src/index.ts"
-name = "farms-dev"
-node_compat = true
-[vars]
-FORCE_UPDATE_KEY = "force"
-KV_CACHE = false
-[triggers]
 crons = []
 
 [env.staging]

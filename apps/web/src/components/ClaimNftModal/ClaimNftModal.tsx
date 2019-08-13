@@ -1,13 +1,8 @@
+import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@pancakeswap/uikit'
 import confetti from 'canvas-confetti'
 import delay from 'lodash/delay'
 import { useTranslation } from '@pancakeswap/localization'
 import { useEffect, useState } from 'react'
-import { useBunnySpecialXmasContract } from 'hooks/useContract'
-
-const showConfetti = () => {
-  confetti({
-    particleCount: 200,
-    startVelocity: 30,
     gravity: 0.5,
     spread: 350,
     origin: {

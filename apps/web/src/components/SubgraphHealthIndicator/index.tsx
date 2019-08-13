@@ -1,3 +1,4 @@
+import { BSC_BLOCK_TIME } from 'config'
 import { useTranslation, TranslateFunction } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { Card, Flex, Box, InfoIcon, Text, useTooltip } from '@pancakeswap/uikit'

@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { ChoosePairView } from '@pancakeswap/uikit/src/widgets/Liquidity'
 import { CommitButton } from 'components/CommitButton'
 import { useContext } from 'react'

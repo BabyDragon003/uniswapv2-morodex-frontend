@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
 

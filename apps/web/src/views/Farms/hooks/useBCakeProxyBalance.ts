@@ -1,13 +1,8 @@
+import useSWR from 'swr'
 import { CAKE } from '@pancakeswap/tokens'
 import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { getFullDisplayBalance, getBalanceAmount } from '@pancakeswap/utils/formatBalance'
-import { FetchStatus } from 'config/constants/types'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useBCakeProxyContract, useCake } from 'hooks/useContract'
-import { useBCakeProxyContractAddress } from './useBCakeProxyContractAddress'
-
-const SMALL_AMOUNT_THRESHOLD = new BigNumber(0.001)
 
 const useBCakeProxyBalance = () => {
   const { account, chainId } = useActiveWeb3React()

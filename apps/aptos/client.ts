@@ -1,3 +1,4 @@
+import { createClient } from '@pancakeswap/awgmi'
 import { PetraConnector } from '@pancakeswap/awgmi/connectors/petra'
 import { MartianConnector } from '@pancakeswap/awgmi/connectors/martian'
 import { BloctoConnector } from '@pancakeswap/awgmi/connectors/blocto'

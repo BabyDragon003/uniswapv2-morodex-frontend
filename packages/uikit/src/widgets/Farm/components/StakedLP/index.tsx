@@ -1,3 +1,4 @@
+import { BigNumber } from "bignumber.js";
 import { useMemo } from "react";
 import { formatLpBalance, getBalanceNumber } from "@pancakeswap/utils/formatBalance";
 import { Flex } from "../../../../components/Box";

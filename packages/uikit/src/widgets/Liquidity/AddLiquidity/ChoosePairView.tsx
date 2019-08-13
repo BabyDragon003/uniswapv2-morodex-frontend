@@ -1,13 +1,8 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { AddIcon, Box, CardBody, CardFooter, Text } from "@pancakeswap/uikit";
 
 export function ChoosePairView({
-  selectCurrencyA,
-  selectCurrencyB,
-  // poolData,
-  footer,
-}: {
-  selectCurrencyA: React.ReactElement;
   selectCurrencyB: React.ReactElement;
   footer: React.ReactElement;
   // poolData: {

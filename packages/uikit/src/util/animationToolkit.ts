@@ -1,13 +1,8 @@
+import { Variants } from "framer-motion";
 import { keyframes } from "styled-components";
 
 export const appearAnimation = keyframes`
   from { opacity:0 }
-  to { opacity:1 }
-`;
-
-export const disappearAnimation = keyframes`
-  from { opacity:1 }
-  to { opacity:0 }
 `;
 
 export const animationHandler = (element: HTMLElement | null) => {

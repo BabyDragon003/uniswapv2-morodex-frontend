@@ -1,12 +1,7 @@
+import { Text } from '@pancakeswap/uikit'
 import { toDate, format } from 'date-fns'
 import { useTranslation } from '@pancakeswap/localization'
 import { ProposalState } from 'state/types'
-
-interface TimeFrameProps {
-  startDate: number
-  endDate: number
-  proposalState: ProposalState
-}
 
 const getFormattedDate = (timestamp: number) => {
   const date = toDate(timestamp * 1000)

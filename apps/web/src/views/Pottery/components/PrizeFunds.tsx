@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Box, Flex, Text, Heading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Divider from 'components/Divider'
 import Image from 'next/image'
-
-const PrizeFundsContainer = styled(Flex)`
-  width: 100%;
-  margin: auto;
-  padding: 0 24px;
-  flex-direction: column;
   align-items: center;
 
   ${({ theme }) => theme.mediaQueries.xl} {

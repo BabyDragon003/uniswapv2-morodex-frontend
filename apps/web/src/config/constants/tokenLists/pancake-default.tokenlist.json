@@ -1,13 +1,8 @@
+{
   "name": "PancakeSwap Default List",
   "timestamp": "2022-01-26T11:45:09Z",
   "version": {
     "major": 4,
-    "minor": 0,
-    "patch": 0
-  },
-  "tags": {},
-  "logoURI": "/logo.png",
-  "keywords": ["pancake", "default"],
   "tokens": [
     {
       "name": "Wrapped BNB",

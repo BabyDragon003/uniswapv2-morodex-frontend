@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 
 import { PoolIds } from 'config/constants/types'
 

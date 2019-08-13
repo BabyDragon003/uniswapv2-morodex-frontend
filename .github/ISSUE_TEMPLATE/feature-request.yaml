@@ -1,13 +1,8 @@
+name: 💡 Feature Request
 description: Share your amazing ideas!
 title: '[Feature Request] <title>'
 labels: [Feature Request, Triage]
 assignees:
-  - Chef-Cheems
-  - chef-jojo
-body:
-  - type: checkboxes
-    attributes:
-      label: Is there an existing issue for this?
       description: Please search to see if an issue already exists for the feature you requested.
       options:
         - label: I have searched the existing issues

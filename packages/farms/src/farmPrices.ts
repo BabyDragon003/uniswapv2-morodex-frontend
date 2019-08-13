@@ -1,13 +1,8 @@
+import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import _toNumber from 'lodash/toNumber'
 import { SerializedFarmPublicData, FarmData, isStableFarm } from './types'
 import { FIXED_ONE, FIXED_TWO, FIXED_ZERO } from './const'
-import { getFullDecimalMultiplier } from './getFullDecimalMultiplier'
-
-// Find BUSD price for token
-// either via direct calculation if farm is X-BNB or X-BUSD
-// or via quoteTokenFarm which is quoteToken-BNB or quoteToken-BUSD farm
-export const getFarmBaseTokenPrice = (
   farm: SerializedFarmPublicData,
   quoteTokenFarm: SerializedFarmPublicData,
   nativePriceUSD: FixedNumber,

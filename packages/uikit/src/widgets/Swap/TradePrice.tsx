@@ -1,13 +1,8 @@
+import { Price, Currency } from "@pancakeswap/swap-sdk-core";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { Text, AutoRenewIcon } from "@pancakeswap/uikit";
 import { useState } from "react";
 import { balanceMaxMiniClass } from "./SwapWidget.css";
-
-interface TradePriceProps {
-  price?: Price<Currency, Currency>;
-}
-
-export function TradePrice({ price }: TradePriceProps) {
   const [showInverted, setShowInverted] = useState<boolean>(false);
   const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6);
 

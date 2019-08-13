@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { useTranslation } from "@pancakeswap/localization";
 import { Text } from "../../../../../components/Text";
 import { IconButton } from "../../../../../components/Button";

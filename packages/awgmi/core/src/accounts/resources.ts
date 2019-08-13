@@ -1,13 +1,8 @@
+import { HexString, TxnBuilderTypes, Types, TypeTagParser } from 'aptos'
 import { CoinStoreResult, COIN_STORE_TYPE_PREFIX } from '../coins/coinStore'
 import { getProvider } from '../providers'
 
 export type FetchAccountResourcesArgs = {
-  /** Address */
-  address: string
-  /** Network to use for provider */
-  networkName?: string
-}
-
 export type FetchAccountResourcesResult = Types.MoveResource[]
 
 export async function fetchAccountResources({

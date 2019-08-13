@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 import { WalletConnectorNotFoundError, WalletSwitchChainError } from '@pancakeswap/ui-wallets'
 import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'

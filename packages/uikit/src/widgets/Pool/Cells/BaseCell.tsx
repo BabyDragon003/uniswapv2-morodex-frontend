@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Flex, Text } from "../../../components";
 
 export const BaseCell = styled(Flex)`

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { AptosCoin, Coin } from '@pancakeswap/aptos-swap-sdk'
 import { Pool } from '@pancakeswap/uikit'
 import { PoolCategory } from 'config/constants/types'

@@ -1,13 +1,8 @@
+[
   {
     "inputs": [
       {
         "internalType": "contract BunnyMintingStation",
-        "name": "_bunnyMintingStation",
-        "type": "address"
-      },
-      {
-        "internalType": "contract IBEP20",
-        "name": "_cakeToken",
         "type": "address"
       },
       {

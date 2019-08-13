@@ -1,13 +1,8 @@
+import { Token } from '@pancakeswap/sdk'
 import { Flex, FlexProps, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
-
-export const Row: React.FC<React.PropsWithChildren<FlexProps>> = ({ children, ...props }) => {
-  return (
-    <Flex alignItems="center" justifyContent="space-between" {...props}>
-      {children}
     </Flex>
   )
 }

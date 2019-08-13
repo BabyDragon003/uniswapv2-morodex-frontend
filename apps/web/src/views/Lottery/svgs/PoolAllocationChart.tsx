@@ -1,13 +1,8 @@
+import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 const PoolAllocationChart: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   return (
     <Svg viewBox="0 0 103 105" {...props}>
-      <svg width="103" height="105" viewBox="0 0 403 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse
-          cx="201.5"
-          cy="202.5"
-          rx="200.5"
-          ry="199.5"
           transform="rotate(-90 201.5 202.5)"
           fill="#BDC2C4"
           stroke="#0E0E0E"

@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Box, Text, Flex, Card, Button, ArrowForwardIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

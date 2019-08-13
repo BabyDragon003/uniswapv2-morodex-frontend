@@ -1,3 +1,4 @@
+import noop from "lodash/noop";
 import { LinkStatus } from "./types";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import {

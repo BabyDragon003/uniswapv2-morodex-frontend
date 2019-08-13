@@ -1,13 +1,8 @@
+import { ReactNode, useCallback } from 'react'
 import styled from 'styled-components'
 import { StaticImageData } from 'next/dist/client/image'
 import {
   Card,
-  CardBody,
-  CardFooter,
-  Flex,
-  Skeleton,
-  Button,
-  LaurelLeftIcon,
   LaurelRightIcon,
   CheckmarkCircleIcon,
   useModal,

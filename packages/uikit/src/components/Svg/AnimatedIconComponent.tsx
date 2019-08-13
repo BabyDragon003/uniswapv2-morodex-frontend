@@ -1,13 +1,8 @@
+import { StyledAnimatedIconComponent, StyledIconContainer } from "./styles";
 import { IconComponentType } from "./types";
 
 const AnimatedIconComponent: React.FC<React.PropsWithChildren<IconComponentType>> = ({
   icon,
-  fillIcon,
-  color = "textSubtle",
-  activeColor = "secondary",
-  activeBackgroundColor,
-  isActive = false,
-  ...props
 }) => {
   const IconElement = icon;
   const IconElementFill = fillIcon;

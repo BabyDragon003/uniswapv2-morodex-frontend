@@ -1,13 +1,8 @@
+import { useMemo } from 'react'
 import { Modal, ModalBody, Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LightGreyCard } from 'components/Card'
 import { useFarmHarvestTransaction } from 'state/global/hooks'
-import { useAllTransactions } from 'state/transactions/hooks'
-import { FarmTransactionStatus, NonBscFarmStepType } from 'state/transactions/actions'
-import FarmInfo from './FarmInfo'
-import FarmDetail from './FarmDetail'
-
-interface FarmTransactionModalProps {
   onDismiss: () => void
 }
 

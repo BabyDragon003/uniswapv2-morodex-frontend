@@ -1,13 +1,8 @@
+import { ReactNode } from 'react'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTheme } from '@pancakeswap/hooks'
 import NoSSR from 'components/NoSSR'
-
-const StyledChoiceContainer = styled(Flex)`
-  width: 100%;
-  flex-direction: column;
-
-  @media screen and (min-width: 1440px) {
     width: 1400px;
   }
 `

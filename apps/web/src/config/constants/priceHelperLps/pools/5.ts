@@ -1,3 +1,4 @@
+import { SerializedFarmConfig } from '../../types'
 
 const priceHelperLps: SerializedFarmConfig[] = []
 

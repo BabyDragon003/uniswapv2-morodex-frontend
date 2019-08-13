@@ -1,3 +1,4 @@
+describe('Predictions Page', () => {
   it('User can get past to disclaimer', () => {
     cy.visit('/prediction')
     cy.get('#predictions-risk-disclaimer').should('be.visible')

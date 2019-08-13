@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Text, Flex, Box } from '@pancakeswap/uikit'
 import { Auction, AuctionStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 
-const ScheduleInner = styled(Flex)`
-  flex-direction: column;
-  padding: 16px;
-  border-radius: ${({ theme }) => theme.radii.default};
-  background-color: ${({ theme }) => theme.colors.background};
-  border: 1px ${({ theme }) => theme.colors.cardBorder} solid;
 `
 
 interface ScheduleProps {

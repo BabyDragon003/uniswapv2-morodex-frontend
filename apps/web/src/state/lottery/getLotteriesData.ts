@@ -1,13 +1,8 @@
+import { request, gql } from 'graphql-request'
 import { GRAPH_API_LOTTERY } from 'config/constants/endpoints'
 import { LotteryRoundGraphEntity, LotteryResponse } from 'state/types'
 import { getRoundIdsArray, fetchMultipleLotteries } from './helpers'
 
-export const MAX_LOTTERIES_REQUEST_SIZE = 100
-
-/* eslint-disable camelcase */
-type LotteriesWhere = { id_in?: string[] }
-
-const applyNodeDataToLotteriesGraphResponse = (
   nodeData: LotteryResponse[],
   graphResponse: LotteryRoundGraphEntity[],
 ): LotteryRoundGraphEntity[] => {

@@ -1,13 +1,8 @@
+import { useAccount, useNetwork } from '@pancakeswap/awgmi'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import { chains, defaultChain } from 'config/chains'
 import { atom, useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
-import { isChainSupported } from 'utils'
-
-const queryNetworkAtom = atom('')
-
-queryNetworkAtom.onMount = (set) => {
   const params = new URL(window.location.href).searchParams
   const n = params.get('network')
   if (n && isChainSupported(n)) {

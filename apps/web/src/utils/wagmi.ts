@@ -1,3 +1,4 @@
+import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
 import { BloctoConnector } from '@pancakeswap/wagmi/connectors/blocto'
 import { TrustWalletConnector } from '@pancakeswap/wagmi/connectors/trustWallet'
 import { bsc, bscTestnet, goerli, mainnet } from 'wagmi/chains'

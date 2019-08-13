@@ -1,13 +1,8 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   Button,
   Flex,
   Heading,
-  TooltipText,
-  useToast,
-  useTooltip,
-  useModal,
-  Balance,
-  FARMS_SMALL_AMOUNT_THRESHOLD,
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'

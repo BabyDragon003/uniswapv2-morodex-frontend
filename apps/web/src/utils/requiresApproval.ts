@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { Cake, Erc20 } from 'config/abi/types'
 
 export const requiresApproval = async (

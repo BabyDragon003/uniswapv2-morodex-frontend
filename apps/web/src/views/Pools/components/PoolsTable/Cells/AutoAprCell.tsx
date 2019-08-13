@@ -1,13 +1,8 @@
+import {
   Skeleton,
   Text,
   Flex,
   Button,
-  CalculateIcon,
-  useModal,
-  useMatchBreakpoints,
-  FlexGap,
-  Balance,
-  Pool,
   useTooltip,
   TooltipText,
 } from '@pancakeswap/uikit'

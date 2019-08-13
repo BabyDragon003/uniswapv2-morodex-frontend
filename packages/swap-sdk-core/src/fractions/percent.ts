@@ -1,3 +1,4 @@
+import JSBI from 'jsbi'
 import { BigintIsh, Rounding } from '../constants'
 import { Fraction } from './fraction'
 

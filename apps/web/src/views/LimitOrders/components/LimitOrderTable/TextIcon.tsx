@@ -1,3 +1,4 @@
+import { Flex, Text } from '@pancakeswap/uikit'
 import { ReactElement } from 'react'
 
 interface TextIconProps {

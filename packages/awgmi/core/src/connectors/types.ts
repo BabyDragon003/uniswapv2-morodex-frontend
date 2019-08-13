@@ -1,3 +1,4 @@
+import { AptosClient, Types } from 'aptos'
 import { Address } from '../types'
 
 // https://aptos.dev/guides/building-your-own-wallet/#dapp-api

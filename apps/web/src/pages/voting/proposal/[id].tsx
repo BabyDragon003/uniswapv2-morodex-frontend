@@ -1,13 +1,8 @@
+// eslint-disable-next-line camelcase
 import { SWRConfig, unstable_serialize } from 'swr'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getProposal } from 'state/voting/helpers'
 import { ProposalState } from 'state/types'
-import Overview from 'views/Voting/Proposal/Overview'
-
-const ProposalPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <SWRConfig
-      value={{
         fallback,
       }}
     >

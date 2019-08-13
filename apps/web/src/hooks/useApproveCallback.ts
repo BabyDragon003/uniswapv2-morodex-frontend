@@ -1,3 +1,4 @@
+import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'

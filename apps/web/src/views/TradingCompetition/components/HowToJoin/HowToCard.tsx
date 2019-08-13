@@ -1,13 +1,8 @@
+import styled from 'styled-components'
 import { Heading, Card, CardBody } from '@pancakeswap/uikit'
 
 interface HowToCardProps {
   number?: number
-  title?: string
-}
-
-const Inner = styled.div`
-  display: grid;
-  grid-gap: 16px;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
 `

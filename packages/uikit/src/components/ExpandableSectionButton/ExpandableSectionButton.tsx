@@ -1,13 +1,8 @@
+import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { useCallback } from "react";
 import { Text } from "../Text";
 import { ChevronDownIcon, ChevronUpIcon } from "../Svg";
-
-export interface ExpandableSectionButtonProps {
-  onClick?: () => void;
-  expanded?: boolean;
-}
-
 const Wrapper = styled.div`
   display: flex;
   align-items: center;

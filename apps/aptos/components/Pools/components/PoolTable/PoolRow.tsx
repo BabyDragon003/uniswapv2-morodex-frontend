@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
 import { Coin } from '@pancakeswap/aptos-swap-sdk'
 import { TokenPairImage } from 'components/TokenImage'

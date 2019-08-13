@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Box, Text } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
 import { useRouter } from 'next/router'
