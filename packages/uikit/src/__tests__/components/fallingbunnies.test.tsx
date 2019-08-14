@@ -3,16 +3,11 @@ import { renderWithProvider } from "../../testHelpers";
 import FallingBunnies from "../../components/FallingBunnies/FallingBunnies";
 
 beforeEach(() => {
+  vi.spyOn(global.Math, "random").mockReturnValue(0.5);
+});
 
-it("renders correctly", () => {
-  const { asFragment } = renderWithProvider(<FallingBunnies count={1} />);
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      .c1 {
-      -webkit-align-self: center;
-      -ms-flex-item-align: center;
-      align-self: center;
-      fill: var(--colors-text);
+afterEach(() => {
+  vi.spyOn(global.Math, "random").mockRestore();
       -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
       flex-shrink: 0;

@@ -3,6 +3,12 @@ import { TokenInfo, TokenList } from './types'
 
 export interface SerializedWrappedToken extends SerializedToken {
   chainId: number
+  address: string
+  decimals: number
+  symbol: string
+  name?: string
+  projectLink?: string
+  logoURI?: string
 }
 
 /**

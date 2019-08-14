@@ -3,16 +3,11 @@ export async function getScores(
   strategies: any[],
   network: string,
   addresses: string[],
-      network,
-      snapshot,
-      strategies,
-      addresses,
-    }
-    const res = await fetch(scoreApiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ params }),
-    })
+  snapshot: number | string = 'latest',
+  scoreApiUrl = 'https://score.snapshot.org/api/scores',
+) {
+  try {
+    const params = {
     const obj = await res.json()
     return obj.result.scores
   } catch (e) {

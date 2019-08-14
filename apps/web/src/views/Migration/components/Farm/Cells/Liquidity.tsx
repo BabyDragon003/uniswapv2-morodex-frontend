@@ -8,17 +8,6 @@ const StyledCell = styled(Pool.BaseCell)`
   flex: 1 0 100px;
 `
 
-const ReferenceElement = styled.div`
-  display: inline-block;
-`
-
-const LiquidityWrapper = styled.div`
-  min-width: 110px;
-  font-weight: 600;
-  text-align: right;
-  margin-right: 14px;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
     text-align: left;
     margin-right: 0;
   }

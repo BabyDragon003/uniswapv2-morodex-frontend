@@ -3,6 +3,12 @@ import { space } from "styled-system";
 import { RadioProps, scales } from "./types";
 
 const getScale = ({ scale }: RadioProps) => {
+  switch (scale) {
+    case scales.SM:
+      return "24px";
+    case scales.MD:
+    default:
+      return "32px";
   }
 };
 

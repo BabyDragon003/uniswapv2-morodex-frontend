@@ -3,16 +3,11 @@ import { campaignMap } from 'config/constants/campaigns'
 import { TranslateFunction } from '@pancakeswap/localization'
 import { GRAPH_API_PROFILE } from 'config/constants/endpoints'
 import { Achievement } from 'state/types'
-}
+import { getAchievementTitle, getAchievementDescription } from 'utils/achievements'
 
-/**
- * Gets all user point increase events on the profile filtered by wallet address
- */
-export const getUserPointIncreaseEvents = async (account: string): Promise<UserPointIncreaseEvent[]> => {
-  try {
-    const { user } = await request(
-      GRAPH_API_PROFILE,
-      gql`
+interface UserPointIncreaseEvent {
+  campaignId: string
+  id: string // wallet address
         query getUserPointIncreaseEvents($account: ID!) {
           user(id: $account) {
             points {

@@ -3,6 +3,12 @@ import { ButtonMenu, ButtonMenuItem, useMatchBreakpoints } from '@pancakeswap/ui
 import { memo, useState, useMemo } from 'react'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { ChainId, Currency } from '@pancakeswap/sdk'
+
+import styled from 'styled-components'
+import TokenTable from './SwapTokenTable'
+import { useTokenHighLightList } from './useList'
+
+const Wrapper = styled.div`
   padding-top: 10px;
   ${({ theme }) => theme.mediaQueries.lg} {
     width: 725px;

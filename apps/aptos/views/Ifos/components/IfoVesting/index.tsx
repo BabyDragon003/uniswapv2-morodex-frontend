@@ -3,6 +3,12 @@ import { Box, Card, CardBody, CardHeader, Flex, Text, Image } from '@pancakeswap
 import { useMemo, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import Trans from 'components/Trans'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { VestingStatus } from './types'
+import NotTokens from './NotTokens'
+import TokenInfo from './VestingPeriod/TokenInfo'
+import VestingEnded from './VestingEnded'
+import useFetchVestingData from '../../hooks/vesting/useFetchVestingData'
 
 const StyleVestingCard = styled(Card)`
   width: 100%;

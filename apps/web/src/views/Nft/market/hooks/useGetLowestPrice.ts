@@ -3,16 +3,11 @@ import { getNftsMarketData, getNftsUpdatedMarketData } from 'state/nftMarket/hel
 import { formatBigNumber } from '@pancakeswap/utils/formatBalance'
 import { NftToken } from 'state/nftMarket/types'
 import useSWR from 'swr'
-}
+import { isAddress } from 'utils'
+import { pancakeBunniesAddress } from '../constants'
 
-const getBunnyIdFromNft = (nft: NftToken): string => {
-  const bunnyId = nft.attributes?.find((attr) => attr.traitType === 'bunnyId')?.value
-  return bunnyId ? bunnyId.toString() : null
-}
-
-export const getLowestUpdatedToken = async (collectionAddress: string, nftsMarketTokenIds: string[]) => {
-  const updatedMarketData = await getNftsUpdatedMarketData(collectionAddress.toLowerCase(), nftsMarketTokenIds)
-
+export interface LowestNftPrice {
+  isFetching: boolean
   if (!updatedMarketData) return null
 
   return updatedMarketData

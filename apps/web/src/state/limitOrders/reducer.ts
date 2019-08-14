@@ -3,6 +3,12 @@ import { replaceLimitOrdersState, selectCurrency, typeInput, switchCurrencies, s
 import { Field, Rate, OrderState } from './types'
 
 export const initialState: OrderState = {
+  independentField: Field.INPUT,
+  basisField: Field.INPUT,
+  typedValue: '',
+  inputValue: '',
+  outputValue: '',
+  [Field.INPUT]: {
     currencyId: '',
   },
   [Field.OUTPUT]: {

@@ -8,17 +8,6 @@ import { Pair } from '@pancakeswap/aptos-swap-sdk'
 import splitTypeTag from '../../../utils/splitTypeTag'
 import getTokenByAddress from '../utils/getTokenByAddress'
 import { getPriceInUSDC } from '../utils/getPriceInUSDC'
-
-function getPossibleLPAddresses({ pools, chainId }) {
-  if (!pools?.length) return []
-
-  const coinAddresses = pools.reduce((list, resource) => {
-    const [stakingAddress, earningAddress] = splitTypeTag(resource.type)
-
-    const updatedList = list
-
-    if (!updatedList.includes(stakingAddress)) {
-      updatedList.push(stakingAddress)
     }
 
     if (!updatedList.includes(earningAddress)) {

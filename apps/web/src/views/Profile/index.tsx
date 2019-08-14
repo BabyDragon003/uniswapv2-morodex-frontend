@@ -8,17 +8,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import MarketPageHeader from '../Nft/market/components/MarketPageHeader'
 import ProfileHeader from './components/ProfileHeader'
-import NoNftsImage from '../Nft/market/components/Activity/NoNftsImage'
-import TabMenu from './components/TabMenu'
-import { useNftsForAddress } from '../Nft/market/hooks/useNftsForAddress'
-
-const TabMenuWrapper = styled(Box)`
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
-
-  ${({ theme }) => theme.mediaQueries.sm} {
     left: auto;
     transform: none;
   }

@@ -8,17 +8,6 @@ import useSubgraphHealth, { SubgraphStatus } from 'hooks/useSubgraphHealth'
 const StyledCard = styled(Card)`
   border-radius: 8px;
   > div {
-    border-radius: 8px;
-  }
-  user-select: none;
-`
-
-const IndicatorWrapper = styled(Flex)`
-  gap: 7px;
-`
-
-const Dot = styled(Box)<{ $color: string }>`
-  width: 12px;
   height: 12px;
   border-radius: 50%;
   background: ${({ $color, theme }) => theme.colors[$color]};

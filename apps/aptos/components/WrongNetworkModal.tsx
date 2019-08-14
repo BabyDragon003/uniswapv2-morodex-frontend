@@ -8,17 +8,6 @@ const StyledLink = styled(Link)`
   width: 100%;
   &:hover {
     text-decoration: initial;
-  }
-`
-
-export const WrongNetworkModal: React.FC = () => {
-  const { t } = useTranslation()
-  const { isWrongNetwork } = useActiveNetwork()
-  const { disconnect } = useDisconnect()
-
-  return (
-    <ModalV2 isOpen={isWrongNetwork}>
-      <Modal title={t('Wrong Network')} hideCloseButton>
         <Text>{t('You’re connected to the wrong network.')}</Text>
         <Text mb="24px">
           {t('Please check your wallet app and make sure ’%network%’ is selected.', { network: 'Aptos Mainnet' })}

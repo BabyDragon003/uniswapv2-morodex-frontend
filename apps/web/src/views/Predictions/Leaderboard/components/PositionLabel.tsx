@@ -3,16 +3,11 @@ import { ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
 
-  background-color: ${({ theme, bgColor }) => theme.colors[bgColor]};
-  border-radius: 4px;
-  display: inline-flex;
-  justify-content: center;
-  height: 32px;
-  min-width: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-`
+interface PositionLabelProps {
+  position: BetPosition
+}
 
+const StyledPositionLabel = styled.div<{ bgColor: string }>`
 const Label = styled.div`
   color: #fff;
   display: none;

@@ -3,7 +3,8 @@ import PageLoader from 'components/Loader/PageLoader'
 import PancakeCollectibles from './PancakeCollectibles'
 
 const PancakeCollectiblesPageRouter = () => {
-  return <PancakeCollectibles />
-}
+  const router = useRouter()
 
-export default PancakeCollectiblesPageRouter
+  if (router.isFallback) {
+    return <PageLoader />
+  }

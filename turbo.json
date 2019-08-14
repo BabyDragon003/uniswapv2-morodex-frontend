@@ -3,16 +3,11 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-    },
-    "test:config": {
-      "dependsOn": ["^build"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false,
       "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
       "persistent": true
     },
     "start": {

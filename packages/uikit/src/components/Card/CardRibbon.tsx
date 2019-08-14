@@ -3,6 +3,12 @@ import styled, { DefaultTheme } from "styled-components";
 import { CardRibbonProps } from "./types";
 
 interface StyledCardRibbonProps extends CardRibbonProps {
+  theme: DefaultTheme;
+}
+
+const StyledCardRibbon = styled.div<Partial<StyledCardRibbonProps>>`
+  z-index: ${({ theme }) => theme.zIndices.ribbon};
+  background-color: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
   color: white;
   margin: 0;
   padding: 8px 0;

@@ -8,17 +8,6 @@ import { UnstakeProps } from './MigrationStep1/OldFarm/Cells/Unstake'
 
 export interface RowProps {
   farm: FarmProps
-  earned: EarnedProps
-  staked: StakedProps
-  multiplier: MultiplierProps
-  liquidity: LiquidityProps
-  unstake?: UnstakeProps
-  apr?: AprProps
-}
-
-export type ColumnsDefTypes = {
-  id: number
-  label: string
   name: string
   sortable: boolean
 }

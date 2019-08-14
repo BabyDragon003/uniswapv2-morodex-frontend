@@ -3,6 +3,12 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_pancakeSquad",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_maxReserveSupply",
         "type": "uint256"
       },
       {

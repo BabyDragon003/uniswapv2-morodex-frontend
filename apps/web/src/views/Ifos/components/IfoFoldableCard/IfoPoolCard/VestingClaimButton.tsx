@@ -8,17 +8,6 @@ import { useCallback } from 'react'
 import { WalletIfoData } from 'views/Ifos/types'
 
 interface Props {
-  poolId: PoolIds
-  amountAvailableToClaim: BigNumber
-  walletIfoData: WalletIfoData
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({ poolId, amountAvailableToClaim, walletIfoData }) => {
-  const userPoolCharacteristics = walletIfoData[poolId]
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError } = useCatchTxError()
-
   const setPendingTx = useCallback(
     (isPending: boolean) => {
       return walletIfoData.setPendingTx(isPending, poolId)

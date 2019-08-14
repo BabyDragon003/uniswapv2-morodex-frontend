@@ -3,6 +3,12 @@
   {
     "anonymous": false,
     "inputs": [
+      { "indexed": false, "internalType": "address", "name": "tokenAddress", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "amountTokens", "type": "uint256" }
+    ],
+    "name": "AdminTokenRecovery",
+    "type": "event"
+  },
   {
     "anonymous": false,
     "inputs": [

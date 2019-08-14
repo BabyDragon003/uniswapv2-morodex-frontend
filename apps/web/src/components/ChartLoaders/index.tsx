@@ -3,16 +3,11 @@ import { Box, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import LineChartLoaderSVG from './LineChartLoaderSVG'
 import BarChartLoaderSVG from './BarChartLoaderSVG'
-  top: 50%;
-  left: 0;
-  right: 0;
-  text-align: center;
-`
+import CandleChartLoaderSVG from './CandleChartLoaderSVG'
 
-const LoadingIndicator = styled(Box)`
-  height: 100%;
-  position: relative;
-`
+const LoadingText = styled(Box)`
+  position: absolute;
+  margin-left: auto;
 
 export const BarChartLoader: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()

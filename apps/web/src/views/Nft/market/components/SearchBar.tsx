@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 
 const SearchBar: React.FC<React.PropsWithChildren> = (props) => {
   const router = useRouter()
-}
 
-export default SearchBar
+  const handleAddressClick = (value: string) => {
+    router.push(`/profile/${value}`)
+  }
+

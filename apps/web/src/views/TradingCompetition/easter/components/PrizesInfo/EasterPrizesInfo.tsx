@@ -3,16 +3,11 @@ import { Flex } from '@pancakeswap/uikit'
 import EasterPrizesCard from './EasterPrizesCard'
 import EasterPrizesText from './EasterPrizesText'
 
-    align-items: center;
-  }
-`
+const Wrapper = styled(Flex)`
+  flex-direction: column-reverse;
 
-const EasterPrizesInfo = () => {
-  return (
-    <Wrapper flexDirection="column">
-      <EasterPrizesCard />
-      <EasterPrizesText />
-    </Wrapper>
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-direction: row;
   )
 }
 

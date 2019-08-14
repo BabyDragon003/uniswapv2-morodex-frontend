@@ -3,6 +3,12 @@ import noop from 'lodash/noop'
 import { useAccount } from 'wagmi'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'
 import useCatchTxError from './useCatchTxError'
+
+type LoadingState = 'idle' | 'loading' | 'success' | 'fail'
+
+type Action =
+  | { type: 'approve_sending' }
+  | { type: 'approve_receipt' }
   | { type: 'approve_error' }
   | { type: 'confirm_sending' }
   | { type: 'confirm_receipt' }

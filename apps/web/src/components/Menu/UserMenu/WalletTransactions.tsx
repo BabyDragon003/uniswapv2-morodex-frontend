@@ -3,6 +3,12 @@ import { Box, Button, Flex, Text } from '@pancakeswap/uikit'
 import { useAppDispatch } from 'state'
 import { useAllSortedRecentTransactions } from 'state/transactions/hooks'
 import { useTranslation } from '@pancakeswap/localization'
+import { clearAllTransactions } from 'state/transactions/actions'
+import isEmpty from 'lodash/isEmpty'
+import TransactionRow from './TransactionRow'
+import { chains } from '../../../utils/wagmi'
+
+const TransactionsContainer = styled(Box)`
   max-height: 300px;
   overflow-y: auto;
 `

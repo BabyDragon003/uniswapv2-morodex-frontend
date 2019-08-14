@@ -8,17 +8,6 @@ import { fetchLottery } from 'state/lottery/helpers'
 import { LotteryStatus } from 'config/constants/types'
 import RoundSwitcher from './RoundSwitcher'
 import { getDrawnDate, processLotteryResponse } from '../../helpers'
-import PreviousRoundCardBody from '../PreviousRoundCard/Body'
-import PreviousRoundCardFooter from '../PreviousRoundCard/Footer'
-
-const StyledCard = styled(Card)`
-  width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    width: 756px;
-  }
-`
-
 const StyledCardHeader = styled(CardHeader)`
   z-index: 2;
   background: none;

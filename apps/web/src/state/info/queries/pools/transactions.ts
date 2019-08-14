@@ -8,17 +8,6 @@ import { MultiChainName, getMultiChainQueryEndPointWithStableSwap } from '../../
  */
 const POOL_TRANSACTIONS = gql`
   query poolTransactions($address: ID!) {
-    mints(first: 35, orderBy: timestamp, orderDirection: desc, where: { pair: $address }) {
-      id
-      timestamp
-      to
-      amount0
-      amount1
-      amountUSD
-      pair {
-        token0 {
-          id
-          symbol
         }
         token1 {
           id

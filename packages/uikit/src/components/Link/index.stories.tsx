@@ -3,16 +3,11 @@ import { PancakeRoundIcon } from "../Svg";
 import { Link, LinkExternal } from "./index";
 
 export default {
-        type: { summary: "string", detail: "Fontsize in px or em" },
-        defaultValue: { summary: "16px" },
-      },
-      control: {
-        type: null,
-      },
-    },
-  },
-};
-
+  title: "Components/Link",
+  component: Link,
+  argTypes: {
+    fontSize: {
+      name: "fontSize",
 export const Default: React.FC<React.PropsWithChildren> = () => {
   return (
     <div>

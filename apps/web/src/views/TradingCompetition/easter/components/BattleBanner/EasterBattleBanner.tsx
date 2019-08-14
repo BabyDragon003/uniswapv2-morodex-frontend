@@ -3,6 +3,12 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
+import EasterAllBunniesImage from '../../../pngs/fan-token-all-bunnies.png'
+import { Heading1Text, Heading2Text } from '../../../components/CompetitionHeadingText'
+
+const TextStyles = (theme) => `
+  text-align: center;
+  ${theme.mediaQueries.md} {
     text-align: left;
   }
 `

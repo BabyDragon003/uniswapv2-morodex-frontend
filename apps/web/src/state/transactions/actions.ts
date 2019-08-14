@@ -3,6 +3,12 @@ import { ChainId } from '@pancakeswap/sdk'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 
 export type TransactionType =
+  | 'approve'
+  | 'swap'
+  | 'wrap'
+  | 'add-liquidity'
+  | 'remove-liquidity'
+  | 'limit-order-submission'
   | 'limit-order-cancellation'
   | 'limit-order-approval'
   | 'non-bsc-farm'

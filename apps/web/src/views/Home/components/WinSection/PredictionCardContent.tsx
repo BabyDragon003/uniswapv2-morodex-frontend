@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { ArrowForwardIcon, Button, Flex, Heading, Skeleton, Text, NextLinkFromReactRouter } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatLocalisedCompactNumber } from '@pancakeswap/utils/formatBalance'
+import { useIntersectionObserver } from '@pancakeswap/hooks'
+import { getTotalWon } from 'state/predictions/helpers'
+import { useBNBBusdPrice, useCakeBusdPrice } from 'hooks/useBUSDPrice'
+import { multiplyPriceByAmount } from 'utils/prices'
+import useSWR from 'swr'
+import { SLOW_INTERVAL } from 'config/constants'
 
 const StyledLink = styled(NextLinkFromReactRouter)`
   width: 100%;

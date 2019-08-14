@@ -3,6 +3,12 @@ import { Button, Text, useModal, confirmPriceImpactWithoutFee } from '@pancakesw
 import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
 
 import { GreyCard } from 'components/Card'
+import { CommitButton } from 'components/CommitButton'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { WrapType } from 'hooks/useWrapCallback'
+import { AutoRow, RowBetween } from 'components/Layout/Row'
+import { ApprovalState } from 'hooks/useApproveCallback'
+import CircleLoader from 'components/Loader/CircleLoader'
 import { Field } from 'state/swap/actions'
 import SettingsModal, { withCustomOnDismiss } from 'components/Menu/GlobalSettings/SettingsModal'
 import { SettingsMode } from 'components/Menu/GlobalSettings/types'

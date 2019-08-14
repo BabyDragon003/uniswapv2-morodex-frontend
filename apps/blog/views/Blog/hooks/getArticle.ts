@@ -3,6 +3,12 @@ import { ResponseArticleType, ResponseArticleDataType, ResponseCategoriesType, C
 import { transformArticle, ArticleType, ArticleDataType } from 'views/Blog/utils/transformArticle'
 
 interface GetArticleProps {
+  url: string
+  urlParamsObject?: Record<string, any>
+}
+
+export const getArticle = async ({ url, urlParamsObject = {} }: GetArticleProps): Promise<ArticleType> => {
+  try {
     const response: ResponseArticleType = await fetchAPI(url, urlParamsObject)
     return {
       data: response.data.map((i: ResponseArticleDataType) => transformArticle(i)) ?? [],

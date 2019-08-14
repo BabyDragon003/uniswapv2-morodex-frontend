@@ -3,16 +3,11 @@ import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { useTranslation } from '@pancakeswap/localization'
-import { VaultPositionTagWithLabel } from '../Vault/VaultPositionTag'
-import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
-import RecentCakeProfitRow from './RecentCakeProfitRow'
-import { StakingApy } from './StakingApy'
-import VaultCardActions from './VaultCardActions'
-import LockedStakingApy from '../LockedPool/LockedStakingApy'
+import { useVaultPoolByKey } from 'state/pools/hooks'
+import { VaultKey, DeserializedLockedCakeVault, DeserializedCakeVault } from 'state/types'
+import styled from 'styled-components'
+import { Token } from '@pancakeswap/sdk'
 
-const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
-  min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
-`
 
 interface CakeVaultProps extends CardProps {
   pool: Pool.DeserializedPool<Token>

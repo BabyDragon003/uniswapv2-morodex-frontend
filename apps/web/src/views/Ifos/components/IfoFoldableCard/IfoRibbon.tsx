@@ -3,6 +3,12 @@ import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 import { PublicIfoData } from '../../types'
 import LiveTimer, { SoonTimer } from './Timer'
+
+const BigCurve = styled(Box)<{ $status: PublicIfoData['status'] }>`
+  width: 150%;
+  position: absolute;
+  top: -150%;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 

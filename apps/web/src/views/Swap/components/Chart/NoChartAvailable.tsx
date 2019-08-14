@@ -8,17 +8,6 @@ interface NoChartAvailableProps {
   isMobile: boolean
 }
 
-const NoChartAvailable: React.FC<React.PropsWithChildren<NoChartAvailableProps>> = ({
-  token0Address,
-  token1Address,
-  pairAddress,
-  isMobile,
-}) => {
-  const { t } = useTranslation()
-  return (
-    <>
-      <Flex justifyContent="center" alignItems="center" height="100%" flexDirection="column">
-        <Text mb={['8px', '8px', '0px']}>{t('Failed to load price chart for this pair')}</Text>
         <Text
           textAlign={isMobile ? 'center' : 'left'}
           mb={['8px', '8px', '0px']}

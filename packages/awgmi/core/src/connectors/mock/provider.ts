@@ -8,17 +8,6 @@ import { Account, Aptos, SignMessagePayload, SignMessageResponse } from '../type
 export type MockProviderOptions = {
   chainId?: number
   flags?: {
-    isAuthorized?: boolean
-    failConnect?: boolean
-    failSwitchChain?: boolean
-    noSwitchChain?: boolean
-  }
-  account?: AptosAccount
-}
-
-const aptosAccountToAccount = (acc: AptosAccount): Account => {
-  return {
-    address: acc.address().toShortString() as Address,
     publicKey: acc.pubKey().toShortString(),
   }
 }

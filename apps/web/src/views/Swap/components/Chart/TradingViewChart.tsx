@@ -3,6 +3,12 @@ import TradingView, { useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from '@pancakeswap/localization'
 import { useDebounce } from '@pancakeswap/hooks'
 import { useCallback, useEffect, useMemo, useState, memo } from 'react'
+import styled from 'styled-components'
+import { BarChartLoader } from 'components/ChartLoaders'
+
+interface TradingViewChartProps {
+  outputSymbol: string
+  inputSymbol: string
   isDark: boolean
   onTwChartSymbol?: (symbol: string) => void
 }

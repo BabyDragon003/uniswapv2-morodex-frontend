@@ -8,17 +8,6 @@ describe('Coin', () => {
   const ADDRESS_BUSD = '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBUSD'
   const ADDRESS_BNB = '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBNB'
 
-  describe('#equals', () => {
-    it('fails if address differs', () => {
-      expect(
-        new Coin(ChainId.TESTNET, ADDRESS_ONE, 18, 'MDEX').equals(new Coin(ChainId.TESTNET, ADDRESS_TWO, 18, 'MDEX'))
-      ).toBe(false)
-    })
-
-    it('false if chain id differs', () => {
-      expect(
-        new Coin(ChainId.MAINNET, ADDRESS_ONE, 18, 'MDEX').equals(new Coin(ChainId.TESTNET, ADDRESS_ONE, 18, 'MDEX'))
-      ).toBe(false)
     })
 
     it('true if only decimals differs', () => {

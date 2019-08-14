@@ -3,16 +3,11 @@ import { useGetBetByEpoch, useGetCurrentEpoch } from 'state/predictions/hooks'
 import { BetPosition, NodeRound } from 'state/types'
 import { getMultiplierV2 } from '../../helpers'
 import ExpiredRoundCard from './ExpiredRoundCard'
-  isActive?: boolean
-}
+import LiveRoundCard from './LiveRoundCard'
+import OpenRoundCard from './OpenRoundCard'
+import SoonRoundCard from './SoonRoundCard'
 
-const RoundCard: React.FC<React.PropsWithChildren<RoundCardProps>> = ({ round, isActive }) => {
-  const { epoch, lockPrice, closePrice, totalAmount, bullAmount, bearAmount } = round
-  const currentEpoch = useGetCurrentEpoch()
-  const { address: account } = useAccount()
-  const ledger = useGetBetByEpoch(account, epoch)
-  const hasEntered = ledger ? ledger.amount.gt(0) : false
-  const hasEnteredUp = hasEntered && ledger.position === BetPosition.BULL
+interface RoundCardProps {
   const hasEnteredDown = hasEntered && ledger.position === BetPosition.BEAR
   const hasClaimedUp = hasEntered && ledger.claimed && ledger.position === BetPosition.BULL
   const hasClaimedDown = hasEntered && ledger.claimed && ledger.position === BetPosition.BEAR

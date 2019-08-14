@@ -3,16 +3,11 @@ import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useERC20, useIfoV3Contract } from 'hooks/useContract'
-import useIfoAllowance from '../useIfoAllowance'
-import { WalletIfoState, WalletIfoData } from '../../types'
-
-const initialState = {
-  isInitialized: false,
-  poolBasic: {
-    amountTokenCommittedInLP: BIG_ZERO,
-    offeringAmountInToken: BIG_ZERO,
-    refundingAmountInLP: BIG_ZERO,
-    taxAmountInLP: BIG_ZERO,
+import { multicallv2 } from 'utils/multicall'
+import ifoV3Abi from 'config/abi/ifoV3.json'
+import { fetchCakeVaultUserData } from 'state/pools'
+import { useAppDispatch } from 'state'
+import { useIfoCredit } from 'state/pools/hooks'
     hasClaimed: false,
     isPendingTx: false,
     vestingReleased: BIG_ZERO,

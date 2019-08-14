@@ -3,6 +3,12 @@ import { useEffect, useReducer } from 'react'
 import { parseRetrievedNumber } from '../../helpers'
 import generateTicketNumbers from './generateTicketNumbers'
 
+export interface Ticket {
+  id: number
+  numbers: string[]
+  duplicateWith: number[]
+  isComplete: boolean
+}
 
 export interface TicketsState {
   tickets: Ticket[]

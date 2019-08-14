@@ -3,16 +3,11 @@ import { Flex, Link, Text, TimerIcon, Balance } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
-  currentBlock: number
-  stakingLimitEndBlock: number
-  stakingToken: Token
-  hasPoolStarted: boolean
-}
+import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+import { Token } from '@pancakeswap/sdk'
 
-const MaxStakeRow: React.FC<React.PropsWithChildren<MaxStakeRowProps>> = ({
-  small = false,
-  stakingLimit,
-  currentBlock,
+interface MaxStakeRowProps {
+  small?: boolean
   stakingLimitEndBlock,
   stakingToken,
   hasPoolStarted,

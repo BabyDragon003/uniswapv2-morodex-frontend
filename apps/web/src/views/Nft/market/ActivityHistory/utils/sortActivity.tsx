@@ -8,17 +8,6 @@ export const sortActivity = ({
   askOrders?: AskOrder[]
   transactions?: Transaction[]
 }): Activity[] => {
-  const getAskOrderEvent = (orderType: AskOrderType): MarketEvent => {
-    switch (orderType) {
-      case AskOrderType.CANCEL:
-        return MarketEvent.CANCEL
-      case AskOrderType.MODIFY:
-        return MarketEvent.MODIFY
-      case AskOrderType.NEW:
-        return MarketEvent.NEW
-      default:
-        return MarketEvent.MODIFY
-    }
   }
 
   const transformTransactions = (transactionsHistory: Transaction[]): Activity[] => {

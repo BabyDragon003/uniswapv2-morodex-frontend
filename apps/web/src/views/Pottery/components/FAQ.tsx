@@ -3,16 +3,11 @@ import { Card, CardBody, CardHeader, Heading, Text, Flex, Link } from '@pancakes
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
 
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    flex-direction: row;
-    max-width: 1140px;
-  }
-`
-const HoneyImage = styled.div`
-  width: 200px;
-  height: 224.67px;
-  margin: 40px auto auto auto;
+const Wrapper = styled(Flex)`
+  width: 100%;
+  margin: auto;
+  padding: 0 24px 72px 24px;
+  flex-direction: column-reverse;
   align-self: flex-start;
   background: url(/images/pottery/honey.png);
   background-size: contain;

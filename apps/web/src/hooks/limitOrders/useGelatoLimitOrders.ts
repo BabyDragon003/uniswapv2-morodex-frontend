@@ -3,15 +3,10 @@ import { OrderState } from 'state/limitOrders/types'
 import useGelatoLimitOrdersHandlers, { GelatoLimitOrdersHandlers } from './useGelatoLimitOrdersHandlers'
 
 const useGelatoLimitOrders = (): {
-  const orderState = useOrderState()
-
-  const handlers = useGelatoLimitOrdersHandlers()
-
-  return {
-    handlers,
-    derivedOrderInfo,
-    orderState,
-  }
-}
+  handlers: GelatoLimitOrdersHandlers
+  derivedOrderInfo: DerivedOrderInfo
+  orderState: OrderState
+} => {
+  const derivedOrderInfo = useDerivedOrderInfo()
 
 export default useGelatoLimitOrders

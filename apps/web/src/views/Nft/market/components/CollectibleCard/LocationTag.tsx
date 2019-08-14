@@ -3,6 +3,12 @@ import { Text, Flex, WalletFilledIcon, CameraIcon, SellIcon } from '@pancakeswap
 import { useTranslation } from '@pancakeswap/localization'
 
 const LocationTag: React.FC<React.PropsWithChildren<{ nftLocation: NftLocation }>> = ({ nftLocation }) => {
+  const { t } = useTranslation()
+
+  const WalletTag = () => {
+    return (
+      <Flex justifyContent="center">
+        <WalletFilledIcon height="12px" color="secondary" />
         <Text color="secondary" fontSize="14px">
           {t('Wallet')}
         </Text>

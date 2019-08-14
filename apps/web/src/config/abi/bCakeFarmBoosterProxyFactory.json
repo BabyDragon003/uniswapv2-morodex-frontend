@@ -8,17 +8,6 @@
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
-  {
-    "anonymous": false,
-    "inputs": [{ "indexed": true, "internalType": "address", "name": "farmBoosterProxyAddress", "type": "address" }],
-    "name": "NewFarmBoosterProxyContract",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "Farm_Booster",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "stateMutability": "view",
     "type": "function"
   },
   {

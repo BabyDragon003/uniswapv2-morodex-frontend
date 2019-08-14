@@ -3,16 +3,11 @@ import { describe, expect, it } from 'vitest'
 import { deserialize } from './deserialize'
 
 describe('deserialize', () => {
-          many: [
-            { many: 'many', manymany: 'many' },
-            { many: 'many' },
-            { many: 'many' },
-            {
-              many: {
-                properties: {
-                  ones: {
-                    that: {
-                      have: {
+  it('deserializes', () => {
+    const deserializedCache = deserialize(
+      JSON.stringify({
+        some: 'complex',
+        object: {
                         functions: () => null,
                       },
                     },

@@ -3,6 +3,12 @@ import { FarmWithStakedValue } from '@pancakeswap/farms'
 import {
   Box,
   Farm as FarmUI,
+  FarmTableEarnedProps,
+  FarmTableFarmTokenInfoProps,
+  FarmTableLiquidityProps,
+  FarmTableMultiplierProps,
+  Flex,
+  Skeleton,
   useMatchBreakpoints,
   MobileColumnSchema,
   DesktopColumnSchema,

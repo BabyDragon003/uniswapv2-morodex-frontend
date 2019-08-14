@@ -3,6 +3,12 @@ import { responsiveStyle } from '@pancakeswap/ui/css/responsiveStyle'
 import { style, keyframes } from '@vanilla-extract/css'
 
 const promotedGradientKf = keyframes({
+  '0%': {
+    backgroundPosition: '50% 0%',
+  },
+  '50%': {
+    backgroundPosition: '50% 100%',
+  },
   '100%': {
     backgroundPosition: '50% 0%',
   },

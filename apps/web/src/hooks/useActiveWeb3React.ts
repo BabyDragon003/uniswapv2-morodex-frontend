@@ -3,16 +3,11 @@ import { useRouter, NextRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { EXCHANGE_PAGE_PATHS } from 'config/constants/exchange'
 import { isChainSupported } from 'utils/wagmi'
-const getHashFromRouter = (router: NextRouter) => {
-  return router.asPath.match(/#([a-z0-9]+)/gi)
-}
-
-export function useNetworkConnectorUpdater() {
-  const { chainId } = useActiveChainId()
-  const previousChainIdRef = useRef(chainId)
-  const [loading] = useSwitchNetworkLoading()
-  const router = useRouter()
-
+import { useProvider } from 'wagmi'
+import { ChainId } from '@pancakeswap/sdk'
+import { getChainId, CHAIN_QUERY_NAME } from 'config/chains'
+import { useActiveChainId } from './useActiveChainId'
+import { useSwitchNetworkLoading } from './useSwitchNetworkLoading'
   useEffect(() => {
     const setPrevChainId = () => {
       previousChainIdRef.current = chainId

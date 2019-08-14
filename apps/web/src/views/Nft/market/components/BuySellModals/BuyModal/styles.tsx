@@ -3,16 +3,11 @@ import { Modal, Grid, Flex, Text, BinanceIcon, Skeleton } from '@pancakeswap/uik
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { BuyingStage } from './types'
-    ${({ stage, theme }) =>
-      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
-        ? `color: ${theme.colors.textSubtle}`
-        : null};
+
+export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
+  & > div:last-child {
+    padding: 0;
   }
-  & svg:first-of-type {
-    ${({ stage, theme }) =>
-      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
-        ? `fill: ${theme.colors.textSubtle}`
-        : null};
   }
 `
 

@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, Image } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
+import config from './config'
+
+const ImageWrapper = styled.div`
+  flex: none;
+  order: 2;
+  max-width: 414px;
   width: 100%;
 
   ${({ theme }) => theme.mediaQueries.md} {
