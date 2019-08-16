@@ -8,3 +8,6 @@ const GridLayout = styled(BaseLayout)`
       grid-column: span 4;
     }
   }
+`;
+
+export default GridLayout;

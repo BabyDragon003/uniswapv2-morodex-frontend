@@ -8,6 +8,17 @@ import { useIntersectionObserver } from '@pancakeswap/hooks'
 import useGetTopFarmsByApr from 'views/Home/hooks/useGetTopFarmsByApr'
 import useGetTopPoolsByApr from 'views/Home/hooks/useGetTopPoolsByApr'
 import { vaultPoolConfig } from 'config/constants/pools'
+import { useVaultApy } from 'hooks/useVaultApy'
+import TopFarmPool from './TopFarmPool'
+import RowHeading from './RowHeading'
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, auto);
   }
 
   ${({ theme }) => theme.mediaQueries.md} {

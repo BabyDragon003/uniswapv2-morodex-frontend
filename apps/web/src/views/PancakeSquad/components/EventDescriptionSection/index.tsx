@@ -8,6 +8,17 @@ import {
   StyledBunnyAccessoriesContainer,
   StyledBunnyAccessory,
   StyledEventDescriptionSectionContainer,
+} from './styles'
+
+const EventDescriptionSection = () => {
+  const { t } = useTranslation()
+
+  const { headingText, subHeadingText, bodyTextHeader, bodyText, primaryButton, image, accessoriesImages } =
+    eventDescriptionConfigBuilder({ t })
+
+  return (
+    <StyledEventDescriptionSectionContainer justifyContent={['flex-start', null, null, 'center']}>
+      <LandingBodyWrapper
         alignItems={['flex-end', null, 'center', null]}
         flexDirection={['column', null, null, 'row']}
         pt={['64px', null, '104px']}

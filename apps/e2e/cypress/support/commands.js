@@ -8,6 +8,17 @@ import { JsonRpcProvider } from '@ethersproject/providers'
 import { Wallet } from '@ethersproject/wallet'
 import { Eip1193Bridge } from '@ethersproject/experimental/lib/eip1193-bridge'
 
+/**
+ * This is random key from https://asecuritysite.com/encryption/ethadd
+ * One test in swap.test.ts requires to have some BNB amount available to test swap confirmation modal
+ * Seems that there are some problems with using Cypress.env('INTEGRATION_TEST_PRIVATE_KEY') in CI
+ * And sharing some key here is not safe as somebody can empty it and test will fail
+ * For now that test is skipped
+ */
+const TEST_PRIVATE_KEY = '0x60aec29d4b415dfeff21e7f7d07ff2aca0e26f129fe52fc4e86f1b943748ff96'
+
+// address of the above key
+export const TEST_ADDRESS_NEVER_USE = new Wallet(TEST_PRIVATE_KEY).address
 
 export const TEST_ADDRESS_NEVER_USE_SHORTENED = `0x...${TEST_ADDRESS_NEVER_USE.substring(
   TEST_ADDRESS_NEVER_USE.length - 4,

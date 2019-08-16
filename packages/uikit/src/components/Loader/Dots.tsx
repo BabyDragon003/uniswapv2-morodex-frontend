@@ -8,4 +8,15 @@ export const Dots = styled.span`
     width: 1em;
     text-align: left;
   }
+  @keyframes ellipsis {
+    0% {
+      content: ".";
+    }
+    33% {
+      content: "..";
+    }
+    66% {
+      content: "...";
+    }
+  }
 `;

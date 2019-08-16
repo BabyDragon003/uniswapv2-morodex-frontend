@@ -8,6 +8,17 @@ export const RoundedImage = styled(Image)`
 
 export const Divider = styled.div`
   margin: 16px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
+export const HorizontalDivider = styled.div`
+  border-right: 1px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
+export const StepIndicator = styled(Flex)<{ success: boolean; disabled?: boolean }>`
+  border-radius: 50%;
+  background-color: ${({ theme, success, disabled }) => {
+    if (disabled) {
       return 'none'
     }
     return success ? theme.colors.success : theme.colors.secondary

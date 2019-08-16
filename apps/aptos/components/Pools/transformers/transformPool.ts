@@ -8,26 +8,16 @@ import _get from 'lodash/get'
 import { FixedNumber } from '@ethersproject/bignumber'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-  userStakedAmount,
-  rewardPerSecond,
-  currentRewardDebt,
-  tokenPerShare,
-  precisionFactor,
-  endTime,
-  isFinished,
-}): FixedNumber {
-  const pendingSeconds = Math.max(
-    isFinished ? endTime - lastRewardTimestamp : getSecondsLeftFromNow(lastRewardTimestamp, currentTimestamp),
-    0,
-  )
 
-  if (pendingSeconds === 0) {
-    return FixedNumber.from(0)
-  }
+import { PoolResource } from '../types'
+import getSecondsLeftFromNow from '../utils/getSecondsLeftFromNow'
+import splitTypeTag from '../../../utils/splitTypeTag'
+import getTokenByAddress from '../utils/getTokenByAddress'
+import { getPoolApr } from './transformCakePool'
 
-  const multiplier = FixedNumber.from(pendingSeconds)
-
-  const rewardPendingToken = FixedNumber.from(rewardPerSecond).mulUnsafe(multiplier)
+function calcPendingRewardToken({
+  currentTimestamp,
+  lastRewardTimestamp,
 
   const totalStake = FixedNumber.from(totalStakedToken)
 

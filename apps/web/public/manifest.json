@@ -8,6 +8,13 @@
   "theme_color": "#1FC7D4",
   "background_color": "#ffffff",
   "orientation": "portrait",
-  ],
-  "iconPath": "/images/cake.svg"
-}
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "256x256"

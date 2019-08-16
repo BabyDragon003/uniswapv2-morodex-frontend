@@ -8,6 +8,17 @@ import {
   AutoRenewIcon,
   ChevronRightIcon,
   Message,
+  Flex,
+  RocketIcon,
+} from '@pancakeswap/uikit'
+import { useTranslation } from '@pancakeswap/localization'
+import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
+import TextEllipsis from '../TextEllipsis'
+import { VotingBoxBorder, VotingBoxCardInner, ModalInner } from './styles'
+import { CastVoteModalProps } from './types'
+
+interface MainViewProps {
   vote: {
     label: string
     value: number

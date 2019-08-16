@@ -8,26 +8,16 @@ export const BIG_INT_20 = JSBI.BigInt(20)
 
 // used to ensure the user doesn't send so much APT so they end up with <0.00000002
 export const MIN_APT: JSBI = JSBI.multiply(JSBI.exponentiate(BIG_INT_TEN, JSBI.BigInt(6)), JSBI.BigInt(2)) // .02 APT
-    APT[ChainId.TESTNET],
-    new Coin(
-      ChainId.TESTNET,
-      '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBNB',
-      8,
-      'BNB',
-    ),
-    new Coin(
-      ChainId.TESTNET,
-      '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetETH',
-      8,
-      'ETH',
-    ),
-  ],
-  [ChainId.MAINNET]: [APT[ChainId.MAINNET], L0_USDC[ChainId.MAINNET], CE_USDC_MAINNET, WH_USDC_MAINNET],
-}
 
-/**
- * Additional bases for specific tokens
- * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
+// default allowed slippage, in bips
+export const INITIAL_ALLOWED_SLIPPAGE = 50
+// 20 minutes, denominated in seconds
+export const DEFAULT_DEADLINE_FROM_NOW = 60 * 20
+
+export const SUGGESTED_BASES = {}
+
+// used to construct intermediary pairs for trading
+export const BASES_TO_CHECK_TRADES_AGAINST = {
  */
 export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {}
 

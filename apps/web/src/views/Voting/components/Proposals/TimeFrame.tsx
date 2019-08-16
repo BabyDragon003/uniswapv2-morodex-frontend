@@ -8,18 +8,13 @@ interface TimeFrameProps {
   endDate: number
   proposalState: ProposalState
 }
-    ml: '8px',
-  }
 
-  if (proposalState === ProposalState.CLOSED) {
-    return <Text {...textProps}>{t('Ended %date%', { date: getFormattedDate(endDate) })}</Text>
-  }
-
-  if (proposalState === ProposalState.PENDING) {
-    return <Text {...textProps}>{t('Starts %date%', { date: getFormattedDate(startDate) })}</Text>
-  }
-
-  return <Text {...textProps}>{t('Ends %date%', { date: getFormattedDate(endDate) })}</Text>
+const getFormattedDate = (timestamp: number) => {
+  const date = toDate(timestamp * 1000)
+  return format(date, 'MMM do, yyyy HH:mm')
 }
 
-export default TimeFrame
+const TimeFrame: React.FC<React.PropsWithChildren<TimeFrameProps>> = ({ startDate, endDate, proposalState }) => {
+  const { t } = useTranslation()
+  const textProps = {
+    fontSize: '16px',

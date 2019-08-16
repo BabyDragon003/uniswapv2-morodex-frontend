@@ -8,6 +8,13 @@ const SubMenu: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
 
   const subMenuItems = useMemo(() => {
-}
+    return [
+      { label: t('Latest'), href: '/competition' },
+      { label: t('Finished'), href: '/competition/finished' },
+    ]
+  }, [t])
 
-export default SubMenu
+  const activeSubItem = useMemo(() => {
+    return subMenuItems.find((subMenuItem) => subMenuItem.href === pathname)?.href
+  }, [subMenuItems, pathname])
+

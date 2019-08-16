@@ -8,26 +8,16 @@ import { Activity, NftToken } from 'state/nftMarket/types'
 import { useTranslation } from '@pancakeswap/localization'
 import TableLoader from 'components/TableLoader'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-  const dispatch = useAppDispatch()
-  const accountAddress = useRouter().query.accountAddress as string
-  const { theme } = useTheme()
-  const { t } = useTranslation()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [maxPage, setMaxPages] = useState(1)
-  const [activitiesSlice, setActivitiesSlice] = useState<Activity[]>([])
-  const [nftMetadata, setNftMetadata] = useState<NftToken[]>([])
-  const [sortedUserActivities, setSortedUserActivities] = useState<Activity[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const bnbBusdPrice = useBNBBusdPrice()
-  const { isXs, isSm } = useMatchBreakpoints()
+import useTheme from 'hooks/useTheme'
+import { useRouter } from 'next/router'
+import { sortUserActivity } from '../../utils/sortUserActivity'
+import NoNftsImage from '../../../Nft/market/components/Activity/NoNftsImage'
+import ActivityRow from '../../../Nft/market/components/Activity/ActivityRow'
+import { fetchActivityNftMetadata } from '../../../Nft/market/ActivityHistory/utils/fetchActivityNftMetadata'
 
-  useEffect(() => {
-    const fetchAddressActivity = async () => {
-      try {
-        const addressActivity = await getUserActivity(accountAddress.toLowerCase())
-        setSortedUserActivities(sortUserActivity(accountAddress, addressActivity))
-        setIsLoading(false)
-      } catch (error) {
+const MAX_PER_PAGE = 8
+
+const ActivityHistory = () => {
         console.error('Failed to fetch address activity', error)
       }
     }

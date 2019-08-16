@@ -8,26 +8,16 @@ import { useCombinedInactiveList } from 'state/lists/hooks'
 import styled from 'styled-components'
 import { useIsUserAddedToken, useIsTokenActive } from 'hooks/Tokens'
 import { useTranslation } from '@pancakeswap/localization'
+import { BAD_SRCS } from '../Logo/constants'
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    grid-gap: 16px;
-  }
-`
+const TokenSection = styled.div<{ dim?: boolean }>`
+  padding: 4px 20px;
+  height: 56px;
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1fr) auto;
+  grid-gap: 10px;
+  align-items: center;
 
-const CheckIcon = styled(CheckmarkCircleIcon)`
-  height: 16px;
-  width: 16px;
-  margin-right: 6px;
-  stroke: ${({ theme }) => theme.colors.success};
-`
-
-const NameOverflow = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 140px;
-  font-size: 12px;
-`
 
 export default function ImportRow({
   token,

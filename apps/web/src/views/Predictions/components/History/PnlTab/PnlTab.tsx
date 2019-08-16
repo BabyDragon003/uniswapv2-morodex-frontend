@@ -8,26 +8,16 @@ import { getBlockExploreLink } from 'utils'
 import { multiplyPriceByAmount } from 'utils/prices'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { useGetCurrentEpoch } from 'state/predictions/hooks'
+import { Bet, BetPosition } from 'state/types'
+import { useConfig } from 'views/Predictions/context/ConfigProvider'
 
-interface PnlCategory {
-  rounds: number
-  amount: number
-}
+import { formatBnb, getMultiplier, getNetPayout } from '../helpers'
+import PnlChart from './PnlChart'
+import SummaryRow from './SummaryRow'
 
-interface PnlSummary {
-  won: PnlCategory & { payout: number; bestRound: { id: string; payout: number; multiplier: number } }
-  lost: PnlCategory
-  entered: PnlCategory
-}
-
-const Divider = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgroundDisabled};
-  height: 1px;
-  margin: 24px auto;
-  width: 100%;
-`
-
-const initialPnlSummary: PnlSummary = {
+interface PnlTabProps {
+  hasBetHistory: boolean
+  bets: Bet[]
   won: {
     rounds: 0,
     amount: 0,

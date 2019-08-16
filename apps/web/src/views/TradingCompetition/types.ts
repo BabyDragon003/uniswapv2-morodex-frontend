@@ -8,26 +8,16 @@ export interface CompetitionProps extends UserRewardsProps {
   profile?: Profile
   isCompetitionLive?: boolean
   hasCompetitionEnded?: boolean
-  index?: number
-  text?: string
+  userCanClaimPrizes?: boolean
+  finishedAndPrizesClaimed?: boolean
+  finishedAndNothingToClaim?: boolean
+  isLoading?: boolean
+  onDismiss?: () => void
+  onRegisterSuccess?: () => void
+  onClaimSuccess?: () => void
+  coinDecoration?: React.ReactNode
 }
 
-export interface CompetitionPhaseProps {
-  state?: string
-  ends?: number | null
-  step?: CompetitionStepProps
-}
-
-export interface CountdownProps {
-  steps?: Array<{ text: string }>
-  activeStepIndex?: number
-  stepText?: string
-  index?: number
-}
-
-interface LeaderboardData {
-  total?: number
-  volume?: number
   data?: LeaderboardDataItem[]
 }
 

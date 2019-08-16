@@ -8,18 +8,13 @@ const options = {
   gasLimit: DEFAULT_GAS_LIMIT,
 }
 
-        })
-      }
+const useUnstakeFarms = (pid: number) => {
+  const masterChefContract = useMasterchefV1()
+  const gasPrice = useGasPrice()
 
-      return masterChefContract.withdraw(pid, value, {
-        ...options,
-        gasPrice,
-      })
-    },
-    [masterChefContract, pid, gasPrice],
-  )
-
-  return { onUnstake: handleUnstake }
-}
-
-export default useUnstakeFarms
+  const handleUnstake = useCallback(
+    async (amount: string) => {
+      const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
+      if (pid === 0) {
+        return masterChefContract.leaveStaking(value, {
+          ...options,

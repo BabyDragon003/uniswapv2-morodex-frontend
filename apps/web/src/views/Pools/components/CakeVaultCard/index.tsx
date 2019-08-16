@@ -8,6 +8,17 @@ import { VaultKey, DeserializedLockedCakeVault, DeserializedCakeVault } from 'st
 import styled from 'styled-components'
 import { Token } from '@pancakeswap/sdk'
 
+import CardFooter from '../PoolCard/CardFooter'
+import { VaultPositionTagWithLabel } from '../Vault/VaultPositionTag'
+import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
+import RecentCakeProfitRow from './RecentCakeProfitRow'
+import { StakingApy } from './StakingApy'
+import VaultCardActions from './VaultCardActions'
+import LockedStakingApy from '../LockedPool/LockedStakingApy'
+
+const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
+  min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
+`
 
 interface CakeVaultProps extends CardProps {
   pool: Pool.DeserializedPool<Token>

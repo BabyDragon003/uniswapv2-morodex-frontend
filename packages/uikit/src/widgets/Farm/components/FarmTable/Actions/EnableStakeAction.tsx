@@ -8,15 +8,13 @@ interface EnableStakeActionProps {
   handleApprove: () => void;
 }
 
-        </Text>
-      </ActionTitles>
-      <ActionContent>
-        <Button width="100%" disabled={pendingTx} onClick={handleApprove} variant="secondary">
-          {t("Enable")}
-        </Button>
-      </ActionContent>
-    </StyledActionContainer>
-  );
-};
+const EnableStakeAction: React.FunctionComponent<React.PropsWithChildren<EnableStakeActionProps>> = ({
+  pendingTx,
+  handleApprove,
+}) => {
+  const { t } = useTranslation();
 
-export default EnableStakeAction;
+  return (
+    <StyledActionContainer>
+      <ActionTitles>
+        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">

@@ -8,6 +8,17 @@ const Wrapper = styled(Flex)`
   ::-webkit-scrollbar {
     display: none;
   }
+  scrollbar-width: none; /* Firefox */
+`
+
+const Inner = styled(Flex)`
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.input};
+  width: 100%;
+`
+
+interface TabProps extends BoxProps {
+  isActive?: boolean
   onClick?: () => void
 }
 

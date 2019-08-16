@@ -8,6 +8,17 @@ import { useCallback, useMemo } from 'react'
 import { VestingData } from 'views/Ifos/hooks/vesting/fetchUserWalletIfoData'
 
 interface Props {
+  poolId: PoolIds
+  data: VestingData
+  claimableAmount: string
+  isVestingInitialized: boolean
+  fetchUserVestingData: () => void
+}
+
+const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({
+  poolId,
+  data,
+  claimableAmount,
   isVestingInitialized,
   fetchUserVestingData,
 }) => {

@@ -8,3 +8,7 @@ const MenuButton = styled(Button)`
 `;
 MenuButton.defaultProps = {
   variant: "text",
+  size: "sm",
+};
+
+export default MenuButton;

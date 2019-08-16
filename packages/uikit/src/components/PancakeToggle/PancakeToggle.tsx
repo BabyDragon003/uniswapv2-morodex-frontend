@@ -8,5 +8,13 @@ const PancakeToggle: React.FC<React.PropsWithChildren<PancakeToggleProps>> = ({
   ...props
 }) => (
   <PancakeStack scale={scale}>
-
-export default PancakeToggle;
+    <PancakeInput id={props.id || "pancake-toggle"} scale={scale} type="checkbox" checked={checked} {...props} />
+    <PancakeLabel scale={scale} checked={checked} htmlFor={props.id || "pancake-toggle"}>
+      <div className="pancakes">
+        <div className="pancake" />
+        <div className="pancake" />
+        <div className="pancake" />
+        <div className="butter" />
+      </div>
+    </PancakeLabel>
+  </PancakeStack>

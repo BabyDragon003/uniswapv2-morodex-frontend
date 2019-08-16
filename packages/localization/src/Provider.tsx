@@ -9,25 +9,15 @@ import { EN, languages } from './config/languages'
 import { ContextApi, ProviderState, TranslateFunction } from './types'
 import { LS_KEY, fetchLocale, getLanguageCodeFromLS } from './helpers'
 
-const getRegExpForDataKey = memoize((dataKey: string): RegExp => {
-  return new RegExp(`%${dataKey}%`, 'g')
-})
+const initialState: ProviderState = {
+  isFetching: true,
+  currentLanguage: EN,
+}
 
-// Export the translations directly
-const languageMap = new Map<Language['locale'], Record<string, string>>()
-languageMap.set(EN.locale, {})
+const includesVariableRegex = new RegExp(/%\S+?%/, 'gm')
 
-export const LanguageContext = createContext<ContextApi | undefined>(undefined)
-
-export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
-  const [state, setState] = useState<ProviderState>(() => {
-    const codeFromStorage = getLanguageCodeFromLS()
-
-    return {
-      ...initialState,
-      currentLanguage: languages[codeFromStorage] || EN,
-    }
+const translatedTextIncludesVariable = memoize((translatedText: string): boolean => {
+  return !!translatedText?.match(includesVariableRegex)
   })
   const { currentLanguage } = state
 

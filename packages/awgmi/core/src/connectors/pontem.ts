@@ -8,6 +8,17 @@ import { SignMessagePayload, SignMessageResponse } from './types'
 type NetworkInfo = {
   api: string
   name: string
+  chainId: string
+}
+
+declare global {
+  interface Window {
+    pontem?: {
+      connect: () => Promise<any>
+      account(): Promise<Address>
+      publicKey(): Promise<string>
+      signAndSubmit(
+        transaction: Types.TransactionPayload,
         options?: any,
       ): Promise<{
         success: boolean

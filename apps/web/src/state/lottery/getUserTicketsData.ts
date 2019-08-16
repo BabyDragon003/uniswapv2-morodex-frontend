@@ -8,6 +8,17 @@ const lotteryContract = getLotteryV2Contract()
 export const processRawTicketsResponse = (
   ticketsResponse: Awaited<ReturnType<LotteryV2['viewUserInfoForLotteryId']>>,
 ): LotteryTicket[] => {
+  const [ticketIds, ticketNumbers, ticketStatuses] = ticketsResponse
+
+  if (ticketIds?.length > 0) {
+    return ticketIds.map((ticketId, index) => {
+      return {
+        id: ticketId.toString(),
+        number: ticketNumbers[index].toString(),
+        status: ticketStatuses[index],
+      }
+    })
+  }
   return []
 }
 

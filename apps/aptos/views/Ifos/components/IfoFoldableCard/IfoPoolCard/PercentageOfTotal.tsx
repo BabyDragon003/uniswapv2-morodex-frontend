@@ -18,9 +18,3 @@ const PercentageOfTotal: React.FC<React.PropsWithChildren<PercentageOfTotalProps
 
   return (
     <Text fontSize="14px" color="textSubtle" {...props}>
-      {t('%num% of total', { num: `${percentOfUserDisplay}%` })}
-    </Text>
-  )
-}
-
-export default PercentageOfTotal

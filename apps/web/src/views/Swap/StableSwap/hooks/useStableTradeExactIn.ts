@@ -8,6 +8,17 @@ export interface StableTrade {
   inputAmount: CurrencyAmount<Currency>
   outputAmount: CurrencyAmount<Currency>
   executionPrice: Price<Currency, Currency>
+  priceImpact: null
+  maximumAmountIn: (slippaged: Percent) => CurrencyAmount<Currency>
+  minimumAmountOut: (slippaged: Percent) => CurrencyAmount<Currency>
+}
+
+export const maximumAmountInFactory = (currencyAmountIn: CurrencyAmount<Currency>, slippageTolerance: number) => {
+  const slippageAdjustedAmountIn = new Fraction(ONE).add(slippageTolerance).multiply(currencyAmountIn.quotient).quotient
+
+  return CurrencyAmount.fromRawAmount(currencyAmountIn.currency, slippageAdjustedAmountIn)
+}
+
 export const minimumAmountOutFactory = (currencyAmountOut: CurrencyAmount<Currency>, slippageTolerance: number) => {
   const slippageAdjustedAmountOut = new Fraction(ONE)
     .add(slippageTolerance)

@@ -8,6 +8,17 @@ import { PredictionsChartView } from 'state/types'
 import { TabToggleGroup, TabToggle } from 'components/TabToggle'
 import { useTranslation } from '@pancakeswap/localization'
 import Menu from './components/Menu'
+import TradingView from './components/TradingView'
+
+const ChainlinkChart = dynamic(() => import('./components/ChainlinkChart'), { ssr: false })
+
+const MenuWrapper = styled.div`
+  flex: none;
+`
+
+const ChartWrapper = styled.div`
+  flex: 1;
+  height: 100%;
   background-color: ${({ theme }) => theme.card.background};
 `
 

@@ -8,6 +8,17 @@ import invariant from 'tiny-invariant'
  */
 export interface TradeOptions {
   /**
+   * How much the execution price is allowed to move unfavorably from the trade execution price.
+   */
+  allowedSlippage: Percent
+  /**
+   * How long the swap is valid until it expires, in seconds.
+   * This will be used to produce a `deadline` parameter which is computed from when the swap call parameters
+   * are generated.
+   */
+  ttl: number
+  /**
+   * The account that should receive the output of the swap.
    */
   recipient: string
 

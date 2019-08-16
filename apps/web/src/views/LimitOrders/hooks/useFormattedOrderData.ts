@@ -8,26 +8,16 @@ import { useIsTransactionPending } from 'state/transactions/hooks'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import getPriceForOneToken from '../utils/getPriceForOneToken'
 import { LimitOrderStatus } from '../types'
-  isExpired: boolean
-  isSubmissionPending: boolean
-  isCancellationPending: boolean
-  bscScanUrls: {
-    created: string
-    executed: string
-    cancelled: string
-  }
-}
 
-const formatForDisplay = (amount: Fraction) => {
-  if (!amount) {
-    return undefined
-  }
-  return parseFloat(amount.toSignificant(18)).toLocaleString(undefined, {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 8,
-  })
-}
-
+export interface FormattedOrderData {
+  inputToken: Currency | Token
+  outputToken: Currency | Token
+  inputAmount: string
+  outputAmount: string
+  executionPrice: string
+  invertedExecutionPrice: string
+  isOpen: boolean
+  isCancelled: boolean
 // Transforms Gelato Order type into types ready to be displayed in UI
 const useFormattedOrderData = (order: Order): FormattedOrderData => {
   const { chainId } = useActiveChainId()

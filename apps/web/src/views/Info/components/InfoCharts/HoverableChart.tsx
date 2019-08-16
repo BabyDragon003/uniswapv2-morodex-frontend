@@ -8,6 +8,17 @@ import LineChart from './LineChart'
 
 interface HoverableChartProps {
   chartData: ChartEntry[]
+  protocolData: ProtocolData
+  currentDate: string
+  valueProperty: string
+  title: string
+  ChartComponent: typeof BarChart | typeof LineChart
+}
+
+const HoverableChart = ({
+  chartData,
+  protocolData,
+  currentDate,
   valueProperty,
   title,
   ChartComponent,

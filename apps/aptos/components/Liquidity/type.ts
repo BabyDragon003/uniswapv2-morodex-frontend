@@ -8,10 +8,13 @@ export enum Field {
 }
 
 export enum ApprovalState {
-    SetStateAction<{
-      attemptingTxn: boolean
-      liquidityErrorMessage: string | undefined
-      txHash: string | undefined
-    }>
-  >
+  UNKNOWN,
+  NOT_APPROVED,
+  PENDING,
+  APPROVED,
 }
+
+export interface LiquidityHandlerReturn {
+  attemptingTxn: boolean
+  liquidityErrorMessage: string | undefined
+  txHash: string | undefined

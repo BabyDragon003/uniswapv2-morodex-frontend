@@ -8,6 +8,17 @@ import useSWR from 'swr'
 import { ArticleDataType } from 'views/Blog/utils/transformArticle'
 import NoSSR from 'components/NoSSR'
 
+const StyledBackground = styled(Box)`
+  position: relative;
+  padding: 45px 16px 0 16px;
+`
+
+const StyledGradientBg = styled('div')<{ isDark: boolean }>`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 65%;
   background: ${({ isDark }) => (isDark ? NEW_BLOG_BG_DARK : NEW_BLOG_BG)};
   border-bottom-left-radius: 50% 5%;

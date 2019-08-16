@@ -8,26 +8,16 @@ import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import AddressSearch from '../AddressSearch'
 
 const SearchWrapper = styled(Box)`
-`
-const FilterWrapper = styled(Box)`
   position: relative;
-  order: 2;
+  margin-bottom: 8px;
+  order: 1;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    order: 1;
-    width: auto;
-  }
-`
-
-const Filters = () => {
-  const { t } = useTranslation()
-  const dispatch = useLocalDispatch()
-  const { token } = useConfig()
-
-  const orderByOptions = [
-    { label: t('Rounds Played'), value: 'totalBets' },
+    margin-bottom: 0;
+    order: 2;
+    width: 320px;
     { label: t('Net Winnings'), value: `net${token.symbol}` },
     { label: t('Total %symbol%', { symbol: token.symbol }), value: `total${token.symbol}` },
     { label: t('Win Rate'), value: 'winRate' },

@@ -8,6 +8,17 @@ const HoverIcon = styled.div`
   justify-content: center;
   align-items: center;
   :hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+`
+
+const SaveIcon: React.FC<React.PropsWithChildren<{ fill: boolean } & HTMLAttributes<HTMLDivElement>>> = ({
+  fill = false,
+  ...rest
+}) => {
+  const { theme } = useTheme()
+  return (
     <HoverIcon {...rest}>
       {fill ? (
         <StarFillIcon stroke={theme.colors.warning} color={theme.colors.warning} />

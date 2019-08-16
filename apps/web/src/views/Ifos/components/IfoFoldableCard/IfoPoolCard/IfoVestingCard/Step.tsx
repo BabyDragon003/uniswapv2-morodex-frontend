@@ -8,6 +8,17 @@ const sharedFlexStyles = `
   min-width: 86px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+`
+
+const ExpiredWrapper = styled(Flex)`
+  ${sharedFlexStyles}
+
+  svg {
+    fill: ${({ theme }) => theme.colors.textSubtle};
+  }
+`
+
 const ActiveWrapper = styled(Flex)`
   ${sharedFlexStyles}
 `

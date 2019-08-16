@@ -8,26 +8,16 @@ import ConfirmRemoveLiquidityModal from './ConfirmRemoveLiquidityModal'
 
 export default function RemoveLiquidityButton({ error, parsedAmounts, currencyA, currencyB, tokenA, tokenB }) {
   const { t } = useTranslation()
-    if (txHash) {
-      onUserInput(Field.LIQUIDITY_PERCENT, '0')
-    }
-  }, [onUserInput, txHash])
 
-  const [onPresentRemoveLiquidity] = useModal(
-    <ConfirmRemoveLiquidityModal
-      title={t('You will receive')}
-      customOnDismiss={handleDismissConfirmation}
-      attemptingTxn={attemptingTxn}
-      hash={txHash || ''}
-      onRemove={onRemove}
-      tokenA={tokenA}
-      tokenB={tokenB}
-      liquidityErrorMessage={liquidityErrorMessage ?? ''}
-      parsedAmounts={parsedAmounts}
-      currencyA={currencyA}
-      currencyB={currencyB}
-    />,
-    true,
+  const { attemptingTxn, txHash, liquidityErrorMessage, onRemove, setLiquidityState } = useRemoveLiquidityHandler({
+    parsedAmounts,
+    currencyA,
+    currencyB,
+  })
+
+  const { onUserInput } = useBurnActionHandlers()
+
+  const handleDismissConfirmation = useCallback(() => {
     true,
     'removeLiquidityModal',
   )

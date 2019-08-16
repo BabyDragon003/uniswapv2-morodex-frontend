@@ -18,27 +18,6 @@ const flyingAnim = () => keyframes`
     transform: translate(-5px, -5px);
   }
   to {
-    transform: translate(0, 0px);
-  }
-`
-
-const fading = () => keyframes`
-  from {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 0.9;
-  }
-`
-
-const BgWrapper = styled.div`
-  z-index: -1;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
   height: 100%;
   bottom: 0px;
   left: 0px;

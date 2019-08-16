@@ -8,3 +8,5 @@ const RibbonDownMid: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
     </Svg>
   )
 }
+
+export default RibbonDownMid

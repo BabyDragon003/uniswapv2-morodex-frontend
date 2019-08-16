@@ -8,6 +8,17 @@ interface ApprovalActionProps {
   setLastUpdated: () => void
   isLoading?: boolean
 }
+
+const VaultApprovalAction: React.FC<React.PropsWithChildren<ApprovalActionProps>> = ({
+  vaultKey,
+  isLoading = false,
+  setLastUpdated,
+}) => {
+  const { t } = useTranslation()
+
+  const { handleApprove, pendingTx } = useVaultApprove(vaultKey, setLastUpdated)
+
+  return (
     <>
       {isLoading ? (
         <Skeleton width="100%" height="52px" />

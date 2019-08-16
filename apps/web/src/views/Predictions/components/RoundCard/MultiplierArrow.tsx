@@ -8,26 +8,16 @@ import EnteredTag from './EnteredTag'
 
 interface MultiplierArrowProps {
   betAmount?: BigNumber
-  margin: 0 auto;
-  width: 240px;
-`
+  multiplier?: string
+  hasEntered?: boolean
+  hasClaimed?: boolean
+  betPosition?: BetPosition
+  isDisabled?: boolean
+  isActive?: boolean
+  isHouse?: boolean
+}
 
-const Content = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  height: 100%;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-`
-
-const EnteredTagWrapper = styled.div`
-  position: absolute;
-  z-index: 10;
-`
+const ArrowWrapper = styled.div`
 
 const getTextColor =
   (fallback = 'textSubtle') =>

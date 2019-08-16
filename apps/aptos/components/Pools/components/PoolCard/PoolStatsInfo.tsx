@@ -9,25 +9,15 @@ import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 
 import { AprInfo } from './Stat'
 
-const EndTimeTooltipComponent: React.FC<React.PropsWithChildren<EndTimeTooltipComponentProps>> = ({ endTime }) => {
-  const {
-    t,
-    currentLanguage: { locale },
-  } = useTranslation()
+interface ExpandedFooterProps {
+  pool: Pool.DeserializedPool<Token> & { stakeLimitEndBlock?: number }
+  account?: string
+  showTotalStaked?: boolean
+  alignLinksToRight?: boolean
+}
 
-  return (
-    <>
-      <Text bold>{t('End Time')}:</Text>
-      <Text>
-        {new Date(endTime * 1000).toLocaleString(locale, {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: '2-digit',
-          hour12: true,
-        })}
-      </Text>
+interface EndTimeTooltipComponentProps {
+  endTime: number
     </>
   )
 }

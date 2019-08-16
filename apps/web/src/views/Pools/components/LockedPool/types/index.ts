@@ -8,26 +8,16 @@ type VoidFn = () => void
 
 export type PrepConfirmArg = (arg: ValidatorArg) => ValidatorReturn
 
-export interface ValidatorReturn {
-  finalLockedAmount?: number
-  finalDuration?: number
-}
-
-export interface ExtendDurationModal {
-  stakingToken: Token
-  currentLockedAmount: number
+export interface GenericModalProps {
   onDismiss?: VoidFn
-  modalTitle?: string
-  currentDuration: number
-  currentDurationLeft: number
-  currentBalance?: BigNumber
-  lockStartTime: string
-  isRenew?: boolean
+  stakingToken: Token
+  currentBalance: BigNumber
+  stakingTokenBalance: BigNumber
 }
 
-export interface AddButtonProps {
-  currentBalance: BigNumber
-  stakingToken: Token
+export interface ValidatorArg {
+  duration: number
+}
   currentLockedAmount: BigNumber
   lockEndTime: string
   lockStartTime: string

@@ -8,11 +8,13 @@ import { verifyBscNetwork } from 'utils/verifyBscNetwork'
 const useApproveFarm = (lpContract: Contract, chainId: number) => {
   const isBscNetwork = verifyBscNetwork(chainId)
   const contractAddress = isBscNetwork ? getMasterChefAddress(chainId) : getNonBscVaultAddress(chainId)
-export const useApproveBoostProxyFarm = (lpContract: Contract, proxyAddress?: string) => {
+
   const { callWithGasPrice } = useCallWithGasPrice()
   const handleApprove = useCallback(async () => {
-    return proxyAddress && callWithGasPrice(lpContract, 'approve', [proxyAddress, MaxUint256])
-  }, [lpContract, proxyAddress, callWithGasPrice])
+    return callWithGasPrice(lpContract, 'approve', [contractAddress, MaxUint256])
+  }, [lpContract, contractAddress, callWithGasPrice])
 
   return { onApprove: handleApprove }
 }
+
+export default useApproveFarm

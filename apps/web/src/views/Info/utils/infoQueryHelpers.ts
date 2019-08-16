@@ -8,6 +8,17 @@ import requestWithTimeout from 'utils/requestWithTimeout'
  * @param subqueries individual queries
  * @param endpoint GraphQL endpoint
  * @param skipCount how many subqueries to fire at a time
+ * @returns
+ */
+export const multiQuery = async (
+  queryConstructor: (subqueries: string[]) => string,
+  subqueries: string[],
+  endpoint: string,
+  skipCount = 1000,
+) => {
+  let fetchedData = {}
+  let allFound = false
+  let skip = 0
   const client = new GraphQLClient(endpoint, { headers: getGQLHeaders(endpoint) })
   try {
     while (!allFound) {

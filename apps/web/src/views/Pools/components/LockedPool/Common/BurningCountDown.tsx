@@ -8,6 +8,17 @@ import differenceInSeconds from 'date-fns/differenceInSeconds'
 import { convertTimeToSeconds } from 'utils/timeHelper'
 
 interface PropsType {
+  lockEndTime: string
+}
+
+const BurningCountDown: React.FC<React.PropsWithChildren<PropsType>> = ({ lockEndTime }) => {
+  const [remainingSeconds, setRemainingSeconds] = useState(0)
+
+  // 1 week after lockEndTime
+  const burnDate = useMemo(() => addSeconds(convertTimeToSeconds(lockEndTime), UNLOCK_FREE_DURATION), [lockEndTime])
+
+  const updateRemainingSeconds = useCallback(() => {
+    setRemainingSeconds(differenceInSeconds(burnDate, new Date()))
   }, [burnDate])
 
   // Update every minute

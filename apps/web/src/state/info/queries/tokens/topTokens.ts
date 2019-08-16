@@ -8,6 +8,17 @@ import {
   getMultiChainQueryEndPointWithStableSwap,
   checkIsStableSwap,
   multiChainTokenBlackList,
+  multiChainTokenWhiteList,
+} from '../../constant'
+
+interface TopTokensResponse {
+  tokenDayDatas: {
+    id: string
+  }[]
+}
+
+/**
+ * Tokens to display on Home page
  * The actual data is later requested in tokenData.ts
  * Note: dailyTxns_gt: 300 is there to prevent fetching incorrectly priced tokens with high dailyVolumeUSD
  */

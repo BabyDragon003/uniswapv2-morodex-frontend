@@ -8,5 +8,16 @@ import ItemsMock from "./mock";
 export default {
   title: "Components/Menu/DropdownMenu",
   component: DropdownMenu,
+};
+
+export const Default: React.FC<React.PropsWithChildren> = () => {
+  return (
+    <BrowserRouter>
+      <Box width="300px">
+        <DropdownMenu items={ItemsMock} activeItem="/swap">
+          Wallet
+        </DropdownMenu>
+      </Box>
+    </BrowserRouter>
   );
 };

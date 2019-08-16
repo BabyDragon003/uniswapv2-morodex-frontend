@@ -8,6 +8,17 @@ import { getStatus } from 'views/Ifos/hooks/helpers'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { CardConfigReturn } from '../types'
 import IfoCardActions from './IfoCardActions'
+import IfoCardDetails from './IfoCardDetails'
+import IfoCardTokens from './IfoCardTokens'
+import IfoVestingCard from './IfoVestingCard'
+
+const StyledCard = styled(Card)`
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 3px 0;
+  height: fit-content;
+`
+
 interface IfoCardProps {
   poolId: PoolIds
   ifo: Ifo

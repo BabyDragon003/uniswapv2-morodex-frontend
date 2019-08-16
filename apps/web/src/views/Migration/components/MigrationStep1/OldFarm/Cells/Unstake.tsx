@@ -8,6 +8,17 @@ const Container = styled.div`
   margin: 30px 14px 0 0;
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    margin: 0 14px 0 0;
+    align-items: center;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-right: 32px;
+  }
+`
+export interface UnstakeProps {
+  pid: number
+}
 
 const Unstake: React.FC<React.PropsWithChildren<UnstakeProps>> = ({ pid }) => {
   return (

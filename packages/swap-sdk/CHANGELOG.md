@@ -8,7 +8,13 @@
 
 ## 3.1.3
 
+### Patch Changes
+
+- d83530d6b: Remove duplicate isTradeBetter util
+
+## 3.1.2
 
 ### Patch Changes
 
-- 8ddd5956f: Export missing token classes
+- da105c1eb: Remove duplicate util functions
+

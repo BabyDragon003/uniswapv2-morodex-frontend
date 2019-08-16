@@ -8,6 +8,17 @@ import PageMeta from 'components/PageMeta'
 
 export async function getStaticPaths() {
   return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps = async (context: any) => {
+  const params = context.params.slug
+  const article = await getSingleArticle({
+    url: `/articles/${params}`,
+    urlParamsObject: { populate: 'categories,image' },
+  })
 
   const similarArticles = await getArticle({
     url: '/articles',

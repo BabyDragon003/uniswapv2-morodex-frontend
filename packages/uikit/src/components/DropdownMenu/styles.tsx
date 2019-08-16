@@ -8,6 +8,17 @@ const getTextColor = ({
   disabled,
   theme,
 }: StyledDropdownMenuItemProps & { theme: DefaultTheme; $isActive: boolean }) => {
+  if (disabled) return theme.colors.textDisabled;
+  if ($isActive) return theme.colors.secondary;
+
+  return theme.colors.textSubtle;
+};
+
+export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & { $isActive: boolean }>`
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: ${({ theme, disabled, $isActive }) => getTextColor({ theme, disabled, $isActive })};
   cursor: pointer;
   font-weight: ${({ $isActive = false }) => ($isActive ? "600" : "400")};
   display: flex;

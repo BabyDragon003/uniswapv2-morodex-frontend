@@ -8,26 +8,16 @@ const SecondaryCard = styled(Text)`
 `
 
 SecondaryCard.defaultProps = {
-  icon: Icon,
-  title,
-  subtitle,
-  isDisabled = false,
-  ...props
-}) => {
-  return (
-    <SecondaryCard {...props}>
-      <Flex alignItems="start">
-        <Icon width="44px" mr="24px" color={isDisabled ? 'textDisabled' : 'currentColor'} />
-        <div>
-          <Heading as="h3" scale="xl" color={isDisabled ? 'textDisabled' : 'text'}>
-            {title}
-          </Heading>
-          <Text textTransform="uppercase" color={isDisabled ? 'textDisabled' : 'textSubtle'} fontSize="12px" bold>
-            {subtitle}
-          </Text>
-        </div>
-      </Flex>
-    </SecondaryCard>
+  p: '24px',
+}
+
+interface IconStatBoxProps extends TextProps {
+  icon: ElementType
+  title: ReactNode
+  subtitle: ReactNode
+  isDisabled?: boolean
+}
+
   )
 }
 

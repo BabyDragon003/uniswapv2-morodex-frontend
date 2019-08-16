@@ -8,6 +8,17 @@
  * - Run `wrangler publish src/index.ts --name my-worker` to publish your worker
  *
  * Learn more at https://developers.cloudflare.com/workers/
+ */
+
+import { Router } from 'itty-router'
+import { error, json, missing } from 'itty-router-extras'
+import { wrapCorsHeader, handleCors } from '@pancakeswap/worker-utils'
+import { fetchCakePrice, saveFarms, saveLPsAPR } from './handler'
+import { farmFetcher, requireChainId } from './helper'
+import { FarmKV } from './kv'
+
+const router = Router()
+
 const allowedOrigin =
   /^(?:[^\w](pancake\.run)|(localhost:3000)|(localhost:3002)|(dapp-frontend-prince.web.app)|(pancakeswap.com))$/
 

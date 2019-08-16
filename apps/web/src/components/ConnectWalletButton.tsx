@@ -8,6 +8,17 @@ import useAuth from 'hooks/useAuth'
 // @ts-ignore
 // eslint-disable-next-line import/extensions
 import { useActiveHandle } from 'hooks/useEagerConnect.bmp.ts'
+import { useMemo, useState } from 'react'
+import { useConnect } from 'wagmi'
+import Trans from './Trans'
+import { variants } from '@pancakeswap/uikit/src/components/Button/types'
+
+const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {
+  const handleActive = useActiveHandle()
+  const { login } = useAuth()
+  const {
+    t,
+    currentLanguage: { code },
   } = useTranslation()
   const { connectAsync } = useConnect()
   const { chainId } = useActiveChainId()

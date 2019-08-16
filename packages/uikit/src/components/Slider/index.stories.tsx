@@ -18,27 +18,6 @@ const Col = styled(Flex)`
 `;
 
 const SliderVariant = ({ initialValue }: { initialValue: number }) => {
-  const [value, setValue] = useState(initialValue);
-  const min = 0;
-  const max = 10;
-
-  const percentage = (value / max) * 100;
-
-  return (
-    <Slider
-      name="slider"
-      min={min}
-      max={max}
-      value={value}
-      onValueChanged={setValue}
-      valueLabel={value === max ? "MAX" : `${percentage}%`}
-    />
-  );
-};
-
-export const Default: React.FC<React.PropsWithChildren> = () => {
-  return (
-    <Col>
       <SliderVariant initialValue={5} />
     </Col>
   );

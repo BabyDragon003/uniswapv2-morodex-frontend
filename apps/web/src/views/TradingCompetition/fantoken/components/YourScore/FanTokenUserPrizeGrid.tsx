@@ -8,26 +8,16 @@ import { fanTokenPrizes } from '../../../../../config/constants/trading-competit
 import UserPrizeGridDollar from '../../../components/YourScore/UserPrizeGridDollar'
 import AchievementPoints from '../../../components/YourScore/AchievementPoints'
 
-    userLazioRewards,
-    userPortoRewards,
-    userSantosRewards,
-    userPointReward,
-    canClaimNFT,
-  } = userTradingInformation
-  const { cakeReward, lazioReward, portoReward, santosReward, dollarValueOfTokensReward } =
-    useFanTokenCompetitionRewards({
-      userCakeRewards,
-      userLazioRewards,
-      userPortoRewards,
-      userSantosRewards,
-    })
+const StyledThead = styled.thead`
+  border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
+`
 
-  const achievement = getRewardGroupAchievements(fanTokenPrizes, userRewardGroup, userPointReward)
-
-  return (
-    <StyledPrizeTable>
-      <StyledThead>
-        <tr>
+const FanTokenUserPrizeGrid: React.FC<React.PropsWithChildren<{ userTradingInformation? }>> = ({
+  userTradingInformation,
+}) => {
+  const { t } = useTranslation()
+  const {
+    userRewardGroup,
           <th>{t('Token Prizes')}</th>
           <th>{t('Achievements')}</th>
           <th>{t('NFT')}</th>

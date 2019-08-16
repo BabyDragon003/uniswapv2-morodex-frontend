@@ -9,6 +9,17 @@ import ButtonMenuItem from "./ButtonMenuItem";
 const Row = styled.div`
   margin-bottom: 32px;
 
+  & > button + button {
+    margin-left: 16px;
+  }
+`;
+
+export default {
+  title: "Components/Button Menu",
+  component: ButtonMenu,
+  argTypes: {},
+} as Meta;
+
 export const Default: React.FC<React.PropsWithChildren> = () => {
   const [index, setIndex] = useState(0);
   const [index1, setIndex1] = useState(1);

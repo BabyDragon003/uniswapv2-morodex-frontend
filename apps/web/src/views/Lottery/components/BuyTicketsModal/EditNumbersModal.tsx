@@ -8,6 +8,17 @@ import { UpdateTicketAction, Ticket } from './useTicketsReducer'
 
 const StyledModal = styled(Modal)`
   max-height: 552px;
+  & div:nth-child(2) {
+    padding: 0;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 280px;
+  }
+`
+
+const ScrollableContainer = styled.div`
+  height: 310px;
   overflow-y: scroll;
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.cardBorder}`};
   padding: 24px;

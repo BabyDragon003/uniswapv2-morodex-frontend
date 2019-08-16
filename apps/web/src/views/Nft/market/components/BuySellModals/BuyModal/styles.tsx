@@ -8,26 +8,16 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
   & > div:last-child {
     padding: 0;
   }
+  & h2:first-of-type {
+    ${({ stage, theme }) =>
+      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
+        ? `color: ${theme.colors.textSubtle}`
+        : null};
   }
-`
-
-export const BorderedBox = styled(Grid)`
-  margin: 16px 0;
-  padding: 16px;
-  background-color: ${({ theme }) => theme.colors.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: ${({ theme }) => theme.radii.default};
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 8px;
-`
-
-interface BnbAmountCellProps {
-  bnbAmount: number
-  isLoading?: boolean
-  isInsufficient?: boolean
-}
-
-export const BnbAmountCell: React.FC<React.PropsWithChildren<BnbAmountCellProps>> = ({
+  & svg:first-of-type {
+    ${({ stage, theme }) =>
+      stage === BuyingStage.APPROVE_AND_CONFIRM || stage === BuyingStage.CONFIRM
+        ? `fill: ${theme.colors.textSubtle}`
   bnbAmount,
   isLoading,
   isInsufficient,

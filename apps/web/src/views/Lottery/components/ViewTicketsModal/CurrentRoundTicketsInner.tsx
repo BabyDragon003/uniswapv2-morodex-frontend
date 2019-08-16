@@ -8,6 +8,17 @@ import TicketNumber from '../TicketNumber'
 import BuyTicketsButton from '../BuyTicketsButton'
 
 const ScrollBox = styled(Box)`
+  max-height: 300px;
+  overflow-y: scroll;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 20px;
+`
+
+const CurrentRoundTicketsInner = () => {
+  const { t } = useTranslation()
+  const { theme } = useTheme()
   const {
     isTransitioning,
     currentRound: { status, userTickets },

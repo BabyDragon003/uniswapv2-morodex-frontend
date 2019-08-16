@@ -8,18 +8,13 @@ const disableWhenNotChristmas = () => {
   const day = today.getDate()
 
   if (month !== 12) {
-  const { pathname } = useRouter()
-  const { initialize, teardown } = useParticleBurst({
-    imgSrc: '/images/bunny-santa.svg',
-    disableWhen: disableWhenNotChristmas,
-    debounceDuration: 1000,
-  })
+    return true
+  }
 
-  useEffect(() => {
-    initialize()
+  if (![24, 25].includes(day)) {
+    return true
+  }
 
-    return () => teardown()
-  }, [pathname, initialize, teardown])
+  return false
 }
 
-export default useMerryChristmas

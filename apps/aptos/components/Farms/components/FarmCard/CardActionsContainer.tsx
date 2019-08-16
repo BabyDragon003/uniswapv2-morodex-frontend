@@ -8,6 +8,17 @@ import { StakedContainer } from '../FarmTable/Actions/StakedAction'
 import HarvestAction from './HarvestAction'
 import StakeAction from './StakeAction'
 
+const Action = styled.div`
+  padding-top: 16px;
+`
+
+interface FarmCardActionsProps {
+  farm: FarmWithStakedValue
+  account?: string
+  addLiquidityUrl?: string
+  lpLabel?: string
+  displayApr?: string
+}
 
 const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   farm,

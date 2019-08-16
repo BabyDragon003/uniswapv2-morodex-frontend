@@ -8,6 +8,17 @@
   "module": "dist/index.mjs",
   "files": [
     "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pancakeswap/pancake-frontend.git",
+    "directory": "packages/atpos-swap-sdk"
+  },
+  "keywords": [
+    "pancakeswap",
+    "aptos"
+  ],
+  "scripts": {
     "lint": "eslint src",
     "build": "tsup",
     "dev": "tsup --watch",

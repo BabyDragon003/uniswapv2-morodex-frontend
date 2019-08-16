@@ -8,11 +8,13 @@ interface ClaimButtonProps {
 }
 
 const ClaimButton: React.FC<React.PropsWithChildren<ClaimButtonProps>> = ({ rewardToken }) => {
-      onClick={handleClaim}
-    >
-      {t('Claim')}
-    </Button>
-  )
-}
+  const { t } = useTranslation()
+  const { isPending, handleClaim } = useClaimPottery()
 
-export default ClaimButton
+  const isDisabledButton = useMemo(() => rewardToken === 0 || isPending, [rewardToken, isPending])
+
+  return (
+    <Button
+      width={['110px', '110px', '162px']}
+      ml="auto"
+      disabled={isDisabledButton}
