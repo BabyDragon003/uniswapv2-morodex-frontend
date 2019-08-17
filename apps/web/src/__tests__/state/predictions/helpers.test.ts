@@ -18,6 +18,27 @@ describe('makeFutureRoundResponse', () => {
     expect(makeFutureRoundResponse(200, 1626243374)).toEqual({
       epoch: 200,
       startTimestamp: 1626243374,
+      lockTimestamp: null,
+      closeTimestamp: null,
+      lockPrice: null,
+      closePrice: null,
+      totalAmount: { hex: '0x00', type: 'BigNumber' },
+      bullAmount: { hex: '0x00', type: 'BigNumber' },
+      bearAmount: { hex: '0x00', type: 'BigNumber' },
+      rewardBaseCalAmount: { hex: '0x00', type: 'BigNumber' },
+      rewardAmount: { hex: '0x00', type: 'BigNumber' },
+      oracleCalled: false,
+      lockOracleId: null,
+      closeOracleId: null,
+    })
+  })
+})
+
+describe('transformUserResponse', () => {
+  const userResponse = {
+    averageBNB: '0.0101753905736882928',
+    block: '9316304',
+    createdAt: '1626767110',
     id: '0x54f292760e248cfe64191c7d85260f9ddaa01f2b',
     netBNB: '0.057914277602874121',
     totalBNB: '0.050876952868441464',

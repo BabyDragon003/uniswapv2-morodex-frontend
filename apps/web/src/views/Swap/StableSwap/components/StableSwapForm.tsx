@@ -23,32 +23,6 @@ import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { AutoRow, RowBetween } from 'components/Layout/Row'
-import { AutoColumn } from 'components/Layout/Column'
-
-import { useCurrency } from 'hooks/Tokens'
-import { ApprovalState } from 'hooks/useApproveCallback'
-
-import { Field } from 'state/swap/actions'
-import { useSwapState } from 'state/swap/hooks'
-import { useExpertModeManager, useUserSlippageTolerance } from 'state/user/hooks'
-
-import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
-import { currencyId } from 'utils/currencyId'
-
-import { useAccount } from 'wagmi'
-import CurrencyInputHeader from '../../components/CurrencyInputHeader'
-import useRefreshBlockNumberID from '../../hooks/useRefreshBlockNumber'
-import { Wrapper } from '../../components/styleds'
-import StableSwapCommitButton from './StableSwapCommitButton'
-import { useDerivedStableSwapInfo } from '../hooks/useDerivedStableSwapInfo'
-import useApproveCallbackFromStableTrade from '../hooks/useApproveCallbackFromStableTrade'
-import { StableConfigContext, useStableFarms } from '../hooks/useStableConfig'
-import SettingsModal from '../../../../components/Menu/GlobalSettings/SettingsModal'
-import { SettingsMode } from '../../../../components/Menu/GlobalSettings/types'
-
-const Label = styled(Text)`
-  font-size: 12px;
-  font-weight: bold;
   color: ${({ theme }) => theme.colors.secondary};
 `
 

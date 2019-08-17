@@ -23,32 +23,6 @@ export default function PoolPriceBar({
     <AutoColumn gap="md">
       <AutoRow justifyContent="space-around" gap="4px">
         <AutoColumn justify="center">
-          <Text>{price ? formatAmountDisplay(price) : '-'}</Text>
-          <Text fontSize="14px" pt={1}>
-            {t('%assetA% per %assetB%', {
-              assetA: currencyB?.symbol ?? '',
-              assetB: currencyA?.symbol ?? '',
-            })}
-          </Text>
-        </AutoColumn>
-        <AutoColumn justify="center">
-          <Text>{price?.invert() ? formatAmountDisplay(price?.invert()) : '-'}</Text>
-          <Text fontSize="14px" pt={1}>
-            {t('%assetA% per %assetB%', {
-              assetA: currencyA?.symbol ?? '',
-              assetB: currencyB?.symbol ?? '',
-            })}
-          </Text>
-        </AutoColumn>
-        <AutoColumn justify="center">
-          <Text>
-            {noLiquidity && price
-              ? '100'
-              : (poolTokenPercentage?.lessThan(ONE_BIPS) ? '<0.01' : poolTokenPercentage?.toFixed(2)) ?? '0'}
-            %
-          </Text>
-          <Text fontSize="14px" pt={1}>
-            {t('Share in Trading Pair')}
           </Text>
         </AutoColumn>
       </AutoRow>

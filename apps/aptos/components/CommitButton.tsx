@@ -23,12 +23,3 @@ export const CommitButton = (props: ButtonProps) => {
   return (
     <Button
       {...props}
-      onClick={(e) => {
-        if (!isWrongNetwork) {
-          props.onClick?.(e)
-        }
-      }}
-      {...(isWrongNetwork && wrongNetworkProps)}
-    />
-  )
-}

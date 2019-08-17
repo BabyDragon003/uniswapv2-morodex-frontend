@@ -18,16 +18,11 @@ function pointsToRem(size: number) {
   return `${size / 1000}rem`
 }
 
-    light: '#BFBFBF',
-    main: darkColors.primary,
-    dark: '#EFEFEF',
-    contrastText: darkColors.invertedContrast,
-  },
-  info: {
-    main: darkColors.primary,
-    light: darkColors.invertedContrast,
-  },
-  success: {
+// theme definition
+
+export const FontFamily = {
+  KANIT: "'Kanit', sans-serif",
+}
     main: darkColors.success,
   },
   error: {

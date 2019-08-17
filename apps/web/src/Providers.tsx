@@ -23,26 +23,3 @@ const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: Reac
   store,
 }) => {
   return (
-    <WagmiProvider client={client}>
-      <Provider store={store}>
-        <NextThemeProvider>
-          <StyledUIKitProvider>
-            <LanguageProvider>
-              <SWRConfig
-                value={{
-                  use: [fetchStatusMiddleware],
-                }}
-              >
-                <HistoryManagerProvider>
-                  <ModalProvider>{children}</ModalProvider>
-                </HistoryManagerProvider>
-              </SWRConfig>
-            </LanguageProvider>
-          </StyledUIKitProvider>
-        </NextThemeProvider>
-      </Provider>
-    </WagmiProvider>
-  )
-}
-
-export default Providers

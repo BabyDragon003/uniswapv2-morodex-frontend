@@ -18,3 +18,12 @@ export const CurrencyInputHeader = ({ title, subtitle }: Props) => {
     </AtomBox>
   );
 };
+
+export const CurrencyInputHeaderTitle = ({ children }: { children: ReactNode }) => (
+  <Heading as="h2">{children}</Heading>
+);
+export const CurrencyInputHeaderSubTitle = ({ children }: { children: ReactNode }) => (
+  <Text color="textSubtle" fontSize="14px" textAlign="center">
+    {children}
+  </Text>
+);

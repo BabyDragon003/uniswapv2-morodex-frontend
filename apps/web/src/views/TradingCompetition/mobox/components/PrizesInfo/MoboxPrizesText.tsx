@@ -18,6 +18,27 @@ const ImageWrapper = styled.div`
     display: block;
   }
 `
+
+const MoboxPrizesText = () => {
+  const { t } = useTranslation()
+
+  return (
+    <StyledFlex flexDirection="column" mb="32px">
+      <Text mb="24px">{t('Every eligible participant will win prizes at the end of the competition.')}</Text>
+      <Heading color="secondary" mb="24px" scale="lg">
+        {t('The better your team performs, the better prizes you will get!')}
+      </Heading>
+      <Text>
+        {t(
+          'The final winning team will be the team with the highest total volume score at the end of the competition period.',
+        )}
+      </Text>
+      <Text mt="8px">
+        {t('In addition to token prizes there are NFT rewards (estimated worth of ~$40,000 at the time of writing):')}
+      </Text>
+      <Flex>
+        <NftIcon width="32px" mr="16px" color="textSubtle" />
+        <Text mt="8px">
           {t(
             '300 Mobox Avatars NFT + 300 PancakeSwap newly designed NFT to the top 100 traders in each of the three teams.',
           )}

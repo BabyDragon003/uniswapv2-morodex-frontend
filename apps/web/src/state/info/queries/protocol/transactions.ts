@@ -18,16 +18,11 @@ const GLOBAL_TRANSACTIONS = gql`
           symbol
         }
         token1 {
+          id
+          symbol
+        }
       }
-      from
-      amount0In
-      amount1In
-      amount0Out
-      amount1Out
-      amountUSD
-    }
-    burns: burns(first: 33, orderBy: timestamp, orderDirection: desc) {
-      id
+      to
       timestamp
       pair {
         token0 {

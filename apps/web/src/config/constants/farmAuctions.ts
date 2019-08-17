@@ -23,32 +23,6 @@ export const whitelistedBidders: FarmAuctionBidderConfig[] = [
   {
     account: '0xB8614FABf4bbA416b9dB620e12272AD63b14387E', // Auction #20
     farmName: '8PAY-BUSD',
-    tokenAddress: '0xfeea0bdd3d07eb6fe305938878c0cadbfa169042',
-    quoteToken: bscTokens.busd,
-    tokenName: '8PAY',
-    projectSite: 'https://8pay.network/',
-  },
-  // Below farms was the latest.
-  {
-    account: '0xF0a693994b40a645DD99D83844BEBc29370e6126',
-    farmName: 'SPIN-BNB',
-    tokenAddress: '0x6AA217312960A21aDbde1478DC8cBCf828110A67',
-    quoteToken: bscTokens.wbnb,
-    tokenName: 'Spintop',
-    projectSite: 'https://spintop.network/',
-  },
-  {
-    account: '0x75db63125A4f04E59A1A2Ab4aCC4FC1Cd5Daddd5',
-    farmName: 'BNBx-BNB',
-    tokenAddress: '0x1bdd3Cf7F79cfB8EdbB955f20ad99211551BA275',
-    quoteToken: bscTokens.wbnb,
-    tokenName: 'BNBx',
-    projectSite: 'https://binance.staderlabs.com/liquid-staking/bnbx',
-  },
-  {
-    account: '0x901cc1A23BFc4B4a3C11b0c7873457240B0E7A8c',
-    farmName: 'HAY-BUSD',
-    tokenAddress: '0x0782b6d8c4551B9760e74c0545a9bCD90bdc41E5',
     quoteToken: bscTokens.busd,
     tokenName: 'Helio Protocol',
     projectSite: 'https://helio.money/',

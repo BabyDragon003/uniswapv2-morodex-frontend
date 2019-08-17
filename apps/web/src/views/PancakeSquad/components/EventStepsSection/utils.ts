@@ -23,11 +23,3 @@ export const getStepperStatus = ({
 }: getStepperStatusType): StepStatus => {
   if (!hasProfileActivated) return 'future'
   if (currentSaleStatus === SaleStatusEnum.Claim && numberTicketsOfUser === 0 && !isLastPhase) return 'past'
-
-  const status = getEventStepStatus({
-    saleStatus: currentSaleStatus,
-    eventStatus,
-  })
-
-  return eventStatusMapping[status]
-}

@@ -18,7 +18,8 @@ interface IconStatBoxProps extends TextProps {
   isDisabled?: boolean
 }
 
-  )
-}
-
-export default IconStatBox
+const IconStatBox: React.FC<React.PropsWithChildren<IconStatBoxProps>> = ({
+  icon: Icon,
+  title,
+  subtitle,
+  isDisabled = false,

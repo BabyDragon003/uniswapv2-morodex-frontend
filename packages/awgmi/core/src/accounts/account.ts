@@ -18,6 +18,27 @@ export type GetAccountResult =
     }
   | {
       account: Data['account']
+      connector: Client['connector']
+      isConnected: boolean
+      isConnecting: false
+      isDisconnected: false
+      isReconnecting: true
+      status: 'reconnecting'
+    }
+  | {
+      account: undefined
+      connector: undefined
+      isConnected: false
+      isReconnecting: false
+      isConnecting: true
+      isDisconnected: false
+      status: 'connecting'
+    }
+  | {
+      account: undefined
+      connector: undefined
+      isConnected: false
+      isReconnecting: false
       isConnecting: false
       isDisconnected: true
       status: 'disconnected'

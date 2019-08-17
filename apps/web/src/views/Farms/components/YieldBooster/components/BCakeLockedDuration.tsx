@@ -18,16 +18,11 @@ interface LockDurationFieldProps {
   duration: number
   setDuration: (duration: number) => void
   isOverMax: boolean
-  const maxDurationInWeeks = useMemo(() => secondsToWeeks(MAX_LOCK_DURATION), [])
+  currentDuration?: number
+  currentDurationLeft?: number
+}
 
-  return (
-    <>
-      <Box mb="16px" mt="16px">
-        <Flex mb="8px">
-          <Text fontSize="12px" color="textSubtle" bold textTransform="uppercase">
-            {t('locked for')}
-          </Text>
-        </Flex>
+const LockDurationField: React.FC<React.PropsWithChildren<LockDurationFieldProps>> = ({
         <Flex flexWrap="wrap" justifyContent="space-between">
           {DURATIONS.map((week) => {
             const weekSeconds = weeksToSeconds(week)

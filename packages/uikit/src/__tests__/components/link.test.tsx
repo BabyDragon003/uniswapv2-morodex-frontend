@@ -18,6 +18,27 @@ it("renders link correctly", () => {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+    }
+
+    .c1:hover {
+      -webkit-text-decoration: underline;
+      text-decoration: underline;
+    }
+
+    <a
+        class="c0 c1"
+        color="primary"
+        font-size="16px"
+        href="https://dapp-frontend-prince.web.app"
+      >
+        Link
       </a>
     </DocumentFragment>
   `);

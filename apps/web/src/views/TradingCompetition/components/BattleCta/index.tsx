@@ -18,6 +18,27 @@ import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 import { CompetitionProps } from '../../types'
+import ClaimModal from '../ClaimModal'
+import { Heading2Text } from '../CompetitionHeadingText'
+import RegisterModal from '../RegisterModal'
+
+const StyledCard = styled(Card)`
+  display: inline-flex;
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(180deg, #7645d9 0%, #452a7a 100%);
+
+  > div {
+    background: transparent;
+  }
+
+  .text-decorator {
+    margin-bottom: 6px;
+    height: 32px;
+    width: auto;
+    fill: ${({ theme }) => theme.colors.warning};
+  }
+`
 
 const StyledButton = styled(Button)`
   margin: 16px 20px 0;

@@ -18,3 +18,8 @@ export function useBurnActionHandlers(): {
       dispatch(typeInput({ field, typedValue }))
     },
     [dispatch],
+  )
+
+  return {
+    onUserInput,
+  }

@@ -23,32 +23,6 @@ const Inner = styled(Flex)`
   flex-direction: column;
 
   svg {
-    height: auto;
-    width: 100%;
-  }
-`
-
-const LeftBox = styled(Box)`
-  position: absolute;
-  bottom: -24px;
-  left: 6px;
-
-  ${({ theme }) => theme.mediaQueries.xs} {
-    bottom: -26px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    bottom: -32px;
-  }
-`
-
-const MiddleBox = styled(Box)`
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translate(-50%, 0);
-`
-
 const RightBox = styled(Box)`
   position: absolute;
   bottom: -34px;
