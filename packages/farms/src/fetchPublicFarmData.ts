@@ -1,4 +1,3 @@
-import { MultiCallV2 } from '@pancakeswap/multicall'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { SerializedFarmPublicData, SerializedFarmConfig } from './types'

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Heading, Skeleton, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Achievement } from 'state/types'

@@ -1,4 +1,3 @@
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useSWRContract } from 'hooks/useSWRContract'
 import { getCakeContract } from 'utils/contractHelpers'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'

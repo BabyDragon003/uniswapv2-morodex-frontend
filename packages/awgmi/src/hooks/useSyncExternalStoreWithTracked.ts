@@ -1,4 +1,3 @@
-import * as React from 'react'
 // eslint-disable-next-line import/extensions
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector.js'
 import { deepEqual } from '../utils'

@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'

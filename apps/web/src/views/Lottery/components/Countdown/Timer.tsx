@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Heading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

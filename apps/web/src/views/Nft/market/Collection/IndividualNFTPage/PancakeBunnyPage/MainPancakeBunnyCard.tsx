@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { Flex, Box, Card, CardBody, Text, Button, BinanceIcon, Skeleton, useModal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'

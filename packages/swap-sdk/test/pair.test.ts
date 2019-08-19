@@ -1,4 +1,3 @@
-import { Token, CurrencyAmount, Price } from '@pancakeswap/swap-sdk-core'
 import { Pair } from '../src/entities'
 import { ChainId, WNATIVE } from '../src/constants'
 

@@ -1,4 +1,3 @@
-import { getFarmsPrices, FarmWithPrices } from './farmPrices'
 
 describe('getFarmPrices tests', () => {
   it('Should return farm with prices', async () => {

@@ -1,4 +1,3 @@
-import { useState, useMemo, useContext } from 'react'
 import { Currency, CurrencyAmount, JSBI, Pair, Percent } from '@pancakeswap/sdk'
 import {
   Button,
@@ -23,6 +22,32 @@ import { multiplyPriceByAmount } from 'utils/prices'
 import { useAccount } from 'wagmi'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
 import { useGetRemovedTokenAmounts } from 'views/RemoveLiquidity/RemoveStableLiquidity/hooks/useStableDerivedBurnInfo'
+import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
+
+import { useLPApr } from 'state/swap/useLPApr'
+import { useTokenBalance } from '../../state/wallet/hooks'
+import { currencyId } from '../../utils/currencyId'
+import { unwrappedToken } from '../../utils/wrappedCurrency'
+
+import { LightCard } from '../Card'
+import { AutoColumn } from '../Layout/Column'
+import CurrencyLogo from '../Logo/CurrencyLogo'
+import { DoubleCurrencyLogo } from '../Logo'
+import { RowBetween, RowFixed } from '../Layout/Row'
+import Dots from '../Loader/Dots'
+import { formatAmount } from '../../utils/formatInfoNumbers'
+
+const FixedHeightRow = styled(RowBetween)`
+  height: 24px;
+`
+
+interface PositionCardProps extends CardProps {
+  pair: Pair
+  showUnwrapped?: boolean
+  currency0: Currency
+  currency1: Currency
+  token0Deposited: CurrencyAmount<Currency>
+  token1Deposited: CurrencyAmount<Currency>
   totalUSDValue: number
   userPoolBalance: CurrencyAmount<Currency>
   poolTokenPercentage: Percent

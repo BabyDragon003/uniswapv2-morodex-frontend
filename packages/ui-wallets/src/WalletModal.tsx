@@ -1,4 +1,3 @@
-import { usePreloadImages } from '@pancakeswap/hooks'
 import { useTranslation } from '@pancakeswap/localization'
 import { AtomBox } from '@pancakeswap/ui/components/AtomBox'
 import {

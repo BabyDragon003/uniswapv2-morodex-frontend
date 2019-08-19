@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Flex, Text, TooltipText, useTooltip, Box, Link, BalanceWithLoading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'

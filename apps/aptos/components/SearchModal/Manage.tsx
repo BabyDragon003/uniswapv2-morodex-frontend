@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Token } from '@pancakeswap/aptos-swap-sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
 import styled from 'styled-components'

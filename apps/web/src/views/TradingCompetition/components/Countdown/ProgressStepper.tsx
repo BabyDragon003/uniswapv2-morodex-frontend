@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import _uniqueId from 'lodash/uniqueId'
 import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'

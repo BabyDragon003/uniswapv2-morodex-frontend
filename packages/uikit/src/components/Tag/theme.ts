@@ -1,4 +1,3 @@
-import { scales, variants } from "./types";
 
 export const scaleVariants = {
   [scales.MD]: {

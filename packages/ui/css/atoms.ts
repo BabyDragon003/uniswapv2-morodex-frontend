@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 
 import * as resetStyles from './reset.css'
 import { Sprinkles, sprinkles } from './sprinkles.css'

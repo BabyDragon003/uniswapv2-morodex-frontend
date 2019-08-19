@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Text from "../Text/Text";
 import { tags, scales, HeadingProps } from "./types";
 

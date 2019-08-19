@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import styled from "styled-components";
 import { Text } from "../../../../components/Text";
 import { HelpIcon } from "../../../../components/Svg";

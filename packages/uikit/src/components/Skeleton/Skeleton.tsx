@@ -1,4 +1,3 @@
-import { AnimatePresence, domAnimation, LazyMotion, m as Motion } from "framer-motion";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { layout, space, borderRadius } from "styled-system";

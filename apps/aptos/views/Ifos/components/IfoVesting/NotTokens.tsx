@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, BunnyPlaceholderIcon } from '@pancakeswap/uikit'
 
 const NotTokens: React.FC<React.PropsWithChildren> = () => {

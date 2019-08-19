@@ -1,4 +1,3 @@
-import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import BalanceInput from "../../components/BalanceInput/BalanceInput";
 

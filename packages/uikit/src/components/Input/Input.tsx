@@ -1,4 +1,3 @@
-import styled, { DefaultTheme } from "styled-components";
 import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {

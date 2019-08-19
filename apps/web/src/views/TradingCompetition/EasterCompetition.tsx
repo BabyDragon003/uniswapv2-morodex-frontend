@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
 import styled from 'styled-components'

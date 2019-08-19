@@ -1,4 +1,3 @@
-export const INFO_BUCKETS = {
   sf: 0.1,
   nr: 0.9,
 }

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 import { Text, Card, Flex, Box, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

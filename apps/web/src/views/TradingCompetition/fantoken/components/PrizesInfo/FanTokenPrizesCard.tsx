@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Card, CardHeader, Box, Heading, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import PrizesGrid from '../../../components/PrizesInfo/PrizesGrid/PrizesGrid'
@@ -23,3 +22,20 @@ const FanTokenPrizesCard = () => {
         <Text color="textSubtle" fontSize="14px">
           {t('Higher trading volume = higher rank!')}
         </Text>
+      </CardHeader>
+      <PrizesGrid prizesConfig={fanTokenPrizes} />
+      <Box p="24px">
+        <Text color="textSubtle" fontSize="14px">
+          {t(
+            'Prizes to be distributed in CAKE, LAZIO, PORTO and SANTOS in a distribution of 3:1:1:1 and shared by all members of each respective tier.',
+          )}{' '}
+          {t(
+            'The price of token prizes (CAKE, LAZIO, PORTO and SANTOS) in USD will be determined as per their BUSD pair price during the tally period.',
+          )}
+        </Text>
+      </Box>
+    </StyledCard>
+  )
+}
+
+export default FanTokenPrizesCard

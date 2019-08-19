@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Box, Text, Flex, Link, useTooltip, LightBulbIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TransactionDetails } from 'state/transactions/reducer'

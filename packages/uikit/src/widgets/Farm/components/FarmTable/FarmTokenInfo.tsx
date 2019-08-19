@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import { getBalanceNumber } from "@pancakeswap/utils/formatBalance";
 import { Text } from "../../../../components/Text";

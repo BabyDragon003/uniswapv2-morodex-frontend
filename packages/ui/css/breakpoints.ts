@@ -1,4 +1,3 @@
-export const breakpoints = {
   xs: 370,
   sm: 576,
   md: 852,

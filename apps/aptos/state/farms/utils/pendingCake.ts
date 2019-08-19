@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import { MapFarmResource, FarmResourcePoolInfo } from 'state/farms/types'
 
 const ACC_CAKE_PRECISION = 1000000000000

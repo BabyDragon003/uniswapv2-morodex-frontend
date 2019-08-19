@@ -1,4 +1,3 @@
-import React from "react";
 import { PancakeStack, PancakeInput, PancakeLabel } from "./StyledPancakeToggle";
 import { PancakeToggleProps, scales } from "./types";
 

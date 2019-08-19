@@ -1,4 +1,3 @@
-import { Box, CardBody, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { isAddress } from 'utils'

@@ -1,4 +1,3 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useAccount } from '@pancakeswap/awgmi'
 import { getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'

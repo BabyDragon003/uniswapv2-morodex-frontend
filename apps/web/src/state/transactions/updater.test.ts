@@ -1,4 +1,3 @@
-import { shouldCheck } from './updater'
 import { TransactionDetails } from './reducer'
 
 describe('transactions updater', () => {

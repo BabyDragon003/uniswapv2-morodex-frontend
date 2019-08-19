@@ -1,4 +1,3 @@
-import { TagProps, Farm as FarmUI } from '@pancakeswap/uikit'
 import { ProposalState } from 'state/types'
 
 const { ClosedTag, CommunityTag, CoreTag, SoonTag, VoteNowTag } = FarmUI.Tags

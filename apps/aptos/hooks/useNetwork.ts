@@ -1,4 +1,3 @@
-import { useAccount, useNetwork } from '@pancakeswap/awgmi'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import { chains, defaultChain } from 'config/chains'
 import { atom, useAtomValue } from 'jotai'
@@ -23,6 +22,32 @@ function useLocalNetwork() {
   const { query } = useRouter()
 
   const network = query.network || queryNetwork
+
+  if (typeof network === 'string' && isChainSupported(network)) {
+    return network
+  }
+
+  return undefined
+}
+
+export function useActiveNetwork() {
+  const localNetworkName = useLocalNetwork()
+  const { chain } = useNetwork()
+  const { isConnected } = useAccount()
+  const queryNetwork = useAtomValue(queryNetworkAtom)
+  const isWrongNetwork = (isConnected && !chain) || chain?.unsupported
+
+  // until wallet support switch network, we follow wallet chain instead of routing
+  return useMemo(() => {
+    let networkName: string | undefined
+
+    if (queryNetwork === '') {
+      return {
+        networkName,
+      }
+    }
+
+    networkName = chain?.network ?? localNetworkName
 
     return {
       networkName,

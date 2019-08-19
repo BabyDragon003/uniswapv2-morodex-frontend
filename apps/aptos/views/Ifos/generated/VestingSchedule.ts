@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export interface RootObject {
   beneficiary: string
   pid: string

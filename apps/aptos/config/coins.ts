@@ -1,4 +1,3 @@
-import { AptosCoin, ChainId, Coin } from '@pancakeswap/aptos-swap-sdk'
 
 export const APT = {
   [ChainId.TESTNET]: AptosCoin.onChain(ChainId.TESTNET),

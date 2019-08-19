@@ -1,4 +1,3 @@
-export const accurateTimer = (callback, time = 1000) => {
   let nextAt
   let timeout
   nextAt = new Date().getTime() + time

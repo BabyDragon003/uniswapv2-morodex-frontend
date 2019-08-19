@@ -1,4 +1,3 @@
-import React from "react";
 import { scales, TagProps } from "./types";
 import { StyledTag } from "./StyledTag";
 

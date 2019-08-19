@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 
 export function useHover<T>(): [(value: T) => void, boolean] {
   const [value, setValue] = useState<boolean>(false)

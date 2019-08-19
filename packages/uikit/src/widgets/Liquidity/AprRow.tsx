@@ -1,4 +1,3 @@
-import { useTranslation } from "@pancakeswap/localization";
 import { RowBetween, TooltipText, Text, useTooltip } from "@pancakeswap/uikit";
 import { formatAmount } from "@pancakeswap/utils/formatInfoNumbers";
 
@@ -23,3 +22,4 @@ export default function AprRow({ lpApr7d }: { lpApr7d: number }) {
       </Text>
     </RowBetween>
   );
+}

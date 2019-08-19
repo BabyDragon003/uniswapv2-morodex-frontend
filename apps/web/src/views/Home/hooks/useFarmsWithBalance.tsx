@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { multicallv3 } from 'utils/multicall'
 import masterChefABI from 'config/abi/masterchef.json'

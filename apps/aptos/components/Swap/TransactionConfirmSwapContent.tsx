@@ -1,4 +1,3 @@
-import { useCallback, useMemo, memo } from 'react'
 import { Currency, Trade, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import { ConfirmationModalContent } from '@pancakeswap/uikit'
 import { maxAmountSpend } from 'utils/maxAmountSpend'

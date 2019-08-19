@@ -1,4 +1,3 @@
-import { SubMenuItems } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 const BaseSubMenu = styled(SubMenuItems)`

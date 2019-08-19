@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { isAddress } from 'utils'
 import { useAchievementsForAddress, useProfileForAddress } from 'state/profile/hooks'

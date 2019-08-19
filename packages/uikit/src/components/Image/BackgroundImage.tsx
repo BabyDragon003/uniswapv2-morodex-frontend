@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import observerOptions from "./options";
 import Wrapper from "./Wrapper";

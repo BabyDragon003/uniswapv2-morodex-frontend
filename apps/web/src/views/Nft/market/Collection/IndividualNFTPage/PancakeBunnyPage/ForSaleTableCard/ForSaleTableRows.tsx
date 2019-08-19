@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 import { Price, Currency } from '@pancakeswap/sdk'
 import { Button, Grid, Text, Flex, Box, BinanceIcon, useModal, Skeleton } from '@pancakeswap/uikit'

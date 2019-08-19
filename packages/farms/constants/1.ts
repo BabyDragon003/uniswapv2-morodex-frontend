@@ -1,4 +1,3 @@
-import { ethereumTokens } from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '@pancakeswap/farms'
 
 const farms: SerializedFarmConfig[] = [

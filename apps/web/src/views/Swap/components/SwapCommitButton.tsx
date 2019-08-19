@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { Button, Text, useModal, confirmPriceImpactWithoutFee } from '@pancakeswap/uikit'
 import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
 

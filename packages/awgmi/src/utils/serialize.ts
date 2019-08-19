@@ -1,4 +1,3 @@
-/**
  * @function getReferenceKey
  *
  * @description

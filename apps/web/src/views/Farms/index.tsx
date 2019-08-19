@@ -1,4 +1,3 @@
-import { useTranslation } from '@pancakeswap/localization'
 import { LinkExternal, ModalV2 } from '@pancakeswap/uikit'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { ConnectorNames, getDocLink } from 'config/wallet'
@@ -23,6 +22,32 @@ export function useIsBloctoETH() {
 
 // Blocto EVM address is different across chains
 function BloctoWarning() {
+  const isBloctoETH = useIsBloctoETH()
+  const {
+    t,
+    currentLanguage: { code },
+  } = useTranslation()
+
+  const [close, setClose] = useState(false)
+
+  const handleSuccess = useCallback(() => {
+    setClose(true)
+  }, [])
+
+  return (
+    <ModalV2 isOpen={isBloctoETH && !close} closeOnOverlayClick={false}>
+      <DisclaimerModal
+        id="blocto-eth"
+        modalHeader={t('Unsupported Wallet')}
+        header={
+          <>
+            {t(
+              'Crosschain farming on Ethereum does NOT support Blocto wallet, as you won’t be able to harvest CAKE rewards.',
+            )}
+            <LinkExternal href={getDocLink(code)} mt="4px">
+              {t('Check out our wallet guide for the list of supported wallets.')}
+            </LinkExternal>
+          </>
         }
         subtitle={t('If you have previously deposited any LP tokens, please unstake.')}
         checks={[

@@ -1,4 +1,3 @@
-import { renderWithProvider } from "../../testHelpers";
 import { Spinner } from "../../components/Spinner";
 
 it("renders correctly", () => {
@@ -23,3 +22,28 @@ it("renders correctly", () => {
       display: block;
       padding-top: 119.7%;
     }
+
+    .c2 {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    <div
+        class="c0"
+        height="153.216"
+        width="128"
+      >
+        <div
+          class="c1"
+        >
+          <div
+            class="c2"
+          />
+        </div>
+      </div>
+    </DocumentFragment>
+  `);
+});

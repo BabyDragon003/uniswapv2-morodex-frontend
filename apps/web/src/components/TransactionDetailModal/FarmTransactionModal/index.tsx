@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Modal, ModalBody, Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LightGreyCard } from 'components/Card'

@@ -1,4 +1,3 @@
-import { InputHTMLAttributes, ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { InputProps } from "../Input";
 

@@ -1,4 +1,3 @@
-import { JSBI, Price, ERC20Token } from '@pancakeswap/sdk'
 import getRatePercentageDifference from './getRatePercentageDifference'
 import { getRatePercentageMessage, PercentageDirection } from './getRatePercentageMessage'
 
@@ -23,6 +22,32 @@ const mockT = (key: string, data?: { percentage?: string }) => {
 }
 
 describe('limitOrders/utils/getRatePercentageMessage', () => {
+  describe.each([
+    [
+      getRatePercentageDifference(SEVEN_BUSD_PER_CAKE, ELEVEN_BUSD_PER_CAKE),
+      ['57.14% above market', PercentageDirection.ABOVE],
+    ],
+    [
+      getRatePercentageDifference(SEVEN_BUSD_PER_CAKE, FIVE_BUSD_PER_CAKE),
+      ['-28.57% below market', PercentageDirection.BELOW],
+    ],
+    [
+      getRatePercentageDifference(SEVEN_BUSD_PER_CAKE, SEVEN_HUNDRED_BUSD_PER_CAKE),
+      ['9,900% above market', PercentageDirection.ABOVE],
+    ],
+    [
+      getRatePercentageDifference(SEVEN_BUSD_PER_CAKE, ONE_BUSD_PER_CAKE),
+      ['-85.71% below market', PercentageDirection.BELOW],
+    ],
+    [
+      getRatePercentageDifference(SEVEN_BUSD_PER_CAKE, SEVEN_BUSD_PER_CAKE),
+      ['at market price', PercentageDirection.MARKET],
+    ],
+  ])('returns correct message and direction', (percent, expected) => {
+    it(`for ${percent.toSignificant(6)} Percent`, () => {
+      const [message, direction] = getRatePercentageMessage(percent, mockT)
+      expect(message).toBe(expected[0])
+      expect(direction).toBe(expected[1])
     })
   })
 })

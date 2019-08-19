@@ -1,4 +1,3 @@
-import { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {
   AutoRenewIcon,
@@ -23,6 +22,32 @@ import { NftLocation } from 'state/nftMarket/types'
 import { useProfile } from 'state/profile/hooks'
 import SelectionCard from './SelectionCard'
 import NextStepButton from './NextStepButton'
+import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
+import multicall from '../../utils/multicall'
+import profileABI from '../../config/abi/pancakeProfile.json'
+import { useNftsForAddress } from '../Nft/market/hooks/useNftsForAddress'
+
+const Link = styled(NextLinkFromReactRouter)`
+  color: ${({ theme }) => theme.colors.primary};
+`
+
+const NftWrapper = styled.div`
+  margin-bottom: 24px;
+`
+
+const ProfilePicture: React.FC = () => {
+  const { address: account } = useAccount()
+  const [isApproved, setIsApproved] = useState(false)
+  const [isProfileNftsLoading, setIsProfileNftsLoading] = useState(true)
+  const [userProfileCreationNfts, setUserProfileCreationNfts] = useState(null)
+  const { selectedNft, actions } = useContext(ProfileCreationContext)
+  const profileContract = useProfileContract(false)
+  const { isLoading: isProfileLoading, profile } = useProfile()
+  const { nfts, isLoading: isUserNftLoading } = useNftsForAddress(account, profile, isProfileLoading)
+
+  useEffect(() => {
+    const fetchUserPancakeCollectibles = async () => {
+      try {
         const nftsByCollection = Array.from(
           nfts.reduce((acc, value) => {
             acc.add(value.collectionAddress)

@@ -1,4 +1,3 @@
-import times from 'lodash/times'
 import { PairDataTimeWindowEnum } from '../types'
 import { timeWindowGapMapping } from './constants'
 import { PairDayDatasResponse, PairHoursDatasResponse } from './types'
