@@ -1,3 +1,4 @@
+import { Token } from '@pancakeswap/sdk'
 import { Flex, Message, MessageText, useMatchBreakpoints, SkeletonV2 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { memo } from 'react'

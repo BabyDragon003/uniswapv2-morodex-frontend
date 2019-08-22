@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 
 import { StableSwapPool } from '../../types/pool'
 import { pools as ethereumPools } from './1'

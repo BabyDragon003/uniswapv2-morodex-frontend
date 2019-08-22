@@ -1,3 +1,4 @@
+import { Flex, Text, Message } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import styled from 'styled-components'
 

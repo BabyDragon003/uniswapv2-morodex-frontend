@@ -1,3 +1,4 @@
+import { useTranslation } from "@pancakeswap/localization";
 import { useTheme } from "@pancakeswap/hooks";
 import { useState } from "react";
 import styled from "styled-components";

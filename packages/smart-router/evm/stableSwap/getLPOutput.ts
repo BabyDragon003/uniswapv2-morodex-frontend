@@ -1,3 +1,4 @@
+import { BigintIsh, CurrencyAmount, Currency, JSBI, ZERO, Percent } from '@pancakeswap/sdk'
 import invariant from 'tiny-invariant'
 
 import { getD } from './amm'
@@ -12,22 +13,6 @@ export interface GetLPOutputParams {
   totalSupply: CurrencyAmount<Currency>
   // Fee of adding liquidity
   fee: Percent
-}
-
-export function getLPOutput({
-  amplifier,
-  balances,
-  totalSupply,
-  amounts,
-  fee,
-}: GetLPOutputParams): CurrencyAmount<Currency> {
-  const lpToken = totalSupply.currency
-  const lpTotalSupply = totalSupply.quotient
-  // No liquidity in pool
-  if (JSBI.equal(lpTotalSupply, ZERO) || !balances.length || balances.every((b) => JSBI.equal(b.quotient, ZERO))) {
-    const d = getD({ amplifier, balances: amounts.map((a) => a.quotient) })
-    return CurrencyAmount.fromRawAmount(lpToken, d)
-  }
 
   const currentBalances: JSBI[] = []
   const newBalances: JSBI[] = []

@@ -1,3 +1,4 @@
+import { Farm as FarmUI, FarmTableFarmTokenInfoProps } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { TokenPairImage } from 'components/TokenImage'

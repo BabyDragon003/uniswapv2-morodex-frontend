@@ -1,3 +1,4 @@
+import { getAddress } from '@ethersproject/address'
 import { Contract } from '@ethersproject/contracts'
 import {
   Currency,
@@ -12,22 +13,6 @@ import {
 import { isStableSwapPair, Trade, TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { INITIAL_ALLOWED_SLIPPAGE } from 'config/constants'
 import { BIPS_BASE } from 'config/constants/exchange'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import useTransactionDeadline from 'hooks/useTransactionDeadline'
-import { useMemo } from 'react'
-import invariant from 'tiny-invariant'
-import { useSmartRouterContract } from '../utils/exchange'
-
-const NATIVE_CURRENCY_ADDRESS = getAddress('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE')
-
-export interface SwapCall {
-  contract: Contract
-  parameters: SwapParameters
-}
-
-/**
- * Returns the swap calls that can be used to make the trade
- * @param trade trade to execute
  * @param allowedSlippage user allowed slippage
  * @param recipientAddressOrName
  */

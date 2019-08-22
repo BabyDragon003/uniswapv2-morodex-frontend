@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { BigNumber } from '@ethersproject/bignumber'
 import { ContextApi } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useModal, useToast } from '@pancakeswap/uikit'
@@ -12,22 +13,6 @@ import ConfirmModal from '../Modals/Confirm'
 type PreEventProps = {
   t: ContextApi['t']
   theme: DefaultTheme
-  saleStatus: SaleStatusEnum
-  numberTicketsOfUser: number
-  numberTokensOfUser: number
-  ticketsOfUser: BigNumber[]
-}
-
-const MintButton: React.FC<React.PropsWithChildren<PreEventProps>> = ({
-  t,
-  theme,
-  saleStatus,
-  numberTicketsOfUser,
-  ticketsOfUser,
-}) => {
-  const { callWithGasPrice } = useCallWithGasPrice()
-  const nftSaleContract = useNftSaleContract()
-  const [txHashMintingResult, setTxHashMintingResult] = useState(null)
   const canMintTickets = saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isLoading } = useCatchTxError()

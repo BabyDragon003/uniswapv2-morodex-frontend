@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Text } from '@pancakeswap/uikit'
 
 const FREEWarning = () => {

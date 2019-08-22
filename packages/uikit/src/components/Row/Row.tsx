@@ -1,3 +1,4 @@
+import { AtomBox, AtomBoxProps } from "@pancakeswap/ui";
 
 export const Row = ({
   width = "100%",

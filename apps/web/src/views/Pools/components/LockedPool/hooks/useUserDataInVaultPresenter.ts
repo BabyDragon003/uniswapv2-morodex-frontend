@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { convertTimeToSeconds, distanceToNowStrict } from 'utils/timeHelper'
 import formatSecondsToWeeks from '../../utils/formatSecondsToWeeks'
 
@@ -12,22 +13,6 @@ interface UserDataInVaultPresenter {
   remainingTime: string
   lockEndDate: string
   secondDuration: number
-  burnStartTime?: string
-}
-
-type UserDataInVaultPresenterFn = (args: UserData) => UserDataInVaultPresenter
-
-const useUserDataInVaultPresenter: UserDataInVaultPresenterFn = ({ lockEndTime, lockStartTime }) => {
-  const {
-    currentLanguage: { locale },
-  } = useTranslation()
-  const secondDuration = Number(lockEndTime) - Number(lockStartTime)
-
-  const lockEndTimeSeconds = convertTimeToSeconds(lockEndTime)
-
-  let lockEndDate = ''
-  let burnStartTime = ''
-
   try {
     const _lockEndDate = new Date(lockEndTimeSeconds)
     lockEndDate = _lockEndDate.toLocaleString(locale, {

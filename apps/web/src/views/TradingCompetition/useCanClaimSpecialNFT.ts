@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { useEffect, useState } from 'react'
 import { API_PROFILE } from 'config/constants/endpoints'
 

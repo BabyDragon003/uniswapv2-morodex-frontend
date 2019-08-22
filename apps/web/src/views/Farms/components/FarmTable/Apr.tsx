@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import ApyButton from 'views/Farms/components/FarmCard/ApyButton'
 import BigNumber from 'bignumber.js'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
@@ -12,22 +13,6 @@ export interface AprProps {
   lpLabel: string
   lpSymbol: string
   lpRewardsApr: number
-  lpTokenPrice: BigNumber
-  tokenAddress?: string
-  quoteTokenAddress?: string
-  cakePrice: BigNumber
-  originalValue: number
-  hideButton?: boolean
-  strikethrough?: boolean
-  useTooltipText?: boolean
-  boosted?: boolean
-  stableSwapAddress?: string
-  stableLpFee?: number
-}
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
   color: ${({ theme }) => theme.colors.text};
 
   button {

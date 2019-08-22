@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import SwiperCore, { Keyboard, Mousewheel, FreeMode } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'

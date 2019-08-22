@@ -1,3 +1,4 @@
+[
   {
     "inputs": [
       { "internalType": "address", "name": "_cake", "type": "address" },
@@ -12,22 +13,6 @@
   },
   {
     "anonymous": false,
-    "inputs": [
-      { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
-      { "indexed": false, "internalType": "address", "name": "proxy", "type": "address" },
-      { "indexed": false, "internalType": "uint256", "name": "pid", "type": "uint256" }
-    ],
-    "name": "ActiveFarmPool",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
-      { "indexed": false, "internalType": "address", "name": "proxy", "type": "address" },
-      { "indexed": false, "internalType": "uint256", "name": "pid", "type": "uint256" }
-    ],
-    "name": "DeactiveFarmPool",
     "type": "event"
   },
   {

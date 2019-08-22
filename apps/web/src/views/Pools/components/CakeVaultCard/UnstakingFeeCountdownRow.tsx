@@ -1,3 +1,4 @@
+import { Flex, Text, TooltipText, useTooltip } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import useWithdrawalFeeTimer from 'views/Pools/hooks/useWithdrawalFeeTimer'
@@ -12,22 +13,6 @@ interface UnstakingFeeCountdownRowProps {
   vaultKey: VaultKey
 }
 
-const UnstakingFeeCountdownRow: React.FC<React.PropsWithChildren<UnstakingFeeCountdownRowProps>> = ({
-  isTableVariant,
-  vaultKey,
-}) => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const {
-    userData: { lastDepositedTime, userShares },
-    fees: { withdrawalFee, withdrawalFeePeriod },
-  } = useVaultPoolByKey(vaultKey)
-
-  const feeAsDecimal = withdrawalFee / 100 || '-'
-  const withdrawalDayPeriod = withdrawalFeePeriod ? secondsToDay(withdrawalFeePeriod) : '-'
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    <>
-      <Text bold mb="4px">
         {t('Unstaking fee: %fee%%', { fee: feeAsDecimal })}
       </Text>
       <Text>

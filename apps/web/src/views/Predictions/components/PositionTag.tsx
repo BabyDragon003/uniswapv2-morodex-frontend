@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import styled from 'styled-components'
 import {
   ArrowUpIcon,
@@ -12,22 +13,6 @@ import {
 import { BetPosition } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
 
-interface TagProps extends FlexProps {
-  startIcon?: ReactNode
-}
-
-const StyledTag = styled(Flex)`
-  display: inline-flex;
-`
-
-export const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
-  bg = 'success',
-  startIcon,
-  children,
-  onClick,
-  ...props
-}) => {
-  const icon = startIcon || <ArrowUpIcon color="white" />
 
   return (
     <StyledTag

@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { WalletModalV2 } from '@pancakeswap/ui-wallets'
 import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { createWallets, getDocLink } from 'config/wallet'

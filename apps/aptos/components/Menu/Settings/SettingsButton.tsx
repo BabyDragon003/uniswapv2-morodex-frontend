@@ -1,3 +1,4 @@
+import { BoxProps, CogIcon, Flex, IconButton, NotificationDot, useModal } from '@pancakeswap/uikit'
 import { useIsExpertMode } from 'state/user/expertMode'
 import { SettingsModal } from './SettingsModal'
 

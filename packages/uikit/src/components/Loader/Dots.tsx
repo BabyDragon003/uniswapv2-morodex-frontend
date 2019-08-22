@@ -1,3 +1,4 @@
+import styled from "styled-components";
 
 export const Dots = styled.span`
   &::after {
@@ -12,10 +13,3 @@ export const Dots = styled.span`
       content: ".";
     }
     33% {
-      content: "..";
-    }
-    66% {
-      content: "...";
-    }
-  }
-`;

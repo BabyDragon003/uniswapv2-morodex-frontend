@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useToast } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
 import { ifoRelease } from 'views/Ifos/generated/ifo'
@@ -12,22 +13,6 @@ import { HexString } from 'aptos'
 interface Props {
   poolId: PoolIds
   data: VestingData
-  claimableAmount: string
-  fetchUserVestingData: () => void
-}
-
-const ClaimButton: React.FC<React.PropsWithChildren<Props>> = ({
-  poolId,
-  data,
-  claimableAmount,
-  fetchUserVestingData,
-}) => {
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const { token } = data.ifo
-  const [isPending, setIsPending] = useState(false)
-  const executeTransaction = useSimulationAndSendTransaction()
-  const ifo = useIfoPool(data.ifo)
 
   const handleClaim = useCallback(async () => {
     setIsPending(true)

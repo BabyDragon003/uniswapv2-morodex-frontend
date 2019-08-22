@@ -1,3 +1,4 @@
+import { UserResponse, BetResponse, RoundResponse } from './responseType'
 
 export interface UserResponseBNB extends UserResponse<BetResponseBNB> {
   totalBNB: string

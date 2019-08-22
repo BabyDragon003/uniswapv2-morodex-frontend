@@ -1,3 +1,4 @@
+import { EventStatus } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
 import formatTimePeriod from 'utils/formatTimePeriod'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
@@ -12,22 +13,6 @@ type getUserStatusType = {
 export type getEventStepStatusType = {
   eventStatus: SaleStatusEnum[]
   saleStatus: SaleStatusEnum
-  startTimestamp?: number
-}
-
-type getEventTextType = {
-  t: ContextApi['t']
-  saleStatus: SaleStatusEnum
-  eventStatus: SaleStatusEnum[]
-  startTimestamp?: number
-}
-
-type getTimePeriodFromTimeStampType = {
-  startTimestamp?: number
-  timestampOffsetInSeconds?: number
-}
-
-type getAltTextType = {
   t: ContextApi['t']
   saleStatus: SaleStatusEnum
   eventStatus: SaleStatusEnum[]

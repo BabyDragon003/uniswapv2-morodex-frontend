@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Box, Flex, HelpIcon, CardHeader, CardBody, Text, useTooltip } from '@pancakeswap/uikit'
 
 import { StyledCard } from '../IfoCardStyles'

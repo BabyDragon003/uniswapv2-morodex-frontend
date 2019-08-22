@@ -1,3 +1,4 @@
+import { createReducer } from '@reduxjs/toolkit'
 import { replaceLimitOrdersState, selectCurrency, typeInput, switchCurrencies, setRateType } from './actions'
 import { Field, Rate, OrderState } from './types'
 
@@ -12,22 +13,6 @@ export const initialState: OrderState = {
   },
   [Field.OUTPUT]: {
     currencyId: '',
-  },
-  rateType: Rate.MUL,
-}
-
-export default createReducer<OrderState>(initialState, (builder) =>
-  builder
-    .addCase(replaceLimitOrdersState, (state, { payload }) => {
-      return payload
-    })
-    .addCase(selectCurrency, (state, { payload: { currencyId, field } }) => {
-      const otherField = field === Field.INPUT ? Field.OUTPUT : Field.INPUT
-      if (field === Field.PRICE)
-        return {
-          ...state,
-        }
-
       if (currencyId === state[otherField].currencyId) {
         // the case where we have to swap the order
         return {

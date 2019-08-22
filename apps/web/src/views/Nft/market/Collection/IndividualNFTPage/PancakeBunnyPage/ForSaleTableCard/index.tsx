@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import chunk from 'lodash/chunk'
 import BigNumber from 'bignumber.js'
@@ -12,22 +13,6 @@ import {
   Spinner,
   useMatchBreakpoints,
   PaginationButton,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
-import { ApiResponseCollectionTokens } from 'state/nftMarket/types'
-import ForSaleTableRows from './ForSaleTableRows'
-import { StyledSortButton, TableHeading } from '../../shared/styles'
-import UpdateIndicator from './UpdateIndicator'
-import { usePancakeBunnyOnSaleNfts } from '../../../../hooks/usePancakeBunnyOnSaleNfts'
-
-const ITEMS_PER_PAGE_DESKTOP = 10
-const ITEMS_PER_PAGE_MOBILE = 5
-
-const StyledCard = styled(Card)<{ hasManyPages: boolean }>`
-  width: 100%;
-  & > div:first-child {
-    ${({ hasManyPages }) => (hasManyPages ? 'min-height: 480px;' : null)}
     display: flex;
     flex-direction: column;
     ${({ theme }) => theme.mediaQueries.md} {

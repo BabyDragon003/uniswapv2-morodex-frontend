@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, useToast } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -12,22 +13,6 @@ import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConf
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useReclaimAuctionBid from '../hooks/useReclaimAuctionBid'
 
-const StyledReclaimBidCard = styled(Card)`
-  margin-top: 16px;
-  flex: 1;
-`
-
-const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const { callWithGasPrice } = useCallWithGasPrice()
-
-  const [reclaimableAuction, checkForNextReclaimableAuction] = useReclaimAuctionBid()
-
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
-  const farmAuctionContract = useFarmAuctionContract()
-
-  const { toastSuccess } = useToast()
 
   const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm } = useApproveConfirmTransaction({
     onRequiresApproval: async () => {

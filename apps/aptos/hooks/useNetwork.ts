@@ -1,3 +1,4 @@
+import { useAccount, useNetwork } from '@pancakeswap/awgmi'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import { chains, defaultChain } from 'config/chains'
 import { atom, useAtomValue } from 'jotai'

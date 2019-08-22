@@ -1,3 +1,4 @@
+import { Flex, Text, TooltipText, useTooltip, Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
 import { isLocked, isStaked } from 'utils/cakePool'

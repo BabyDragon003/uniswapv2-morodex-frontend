@@ -1,3 +1,4 @@
+import { Box, BoxProps, Flex } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 const Wrapper = styled(Flex)`

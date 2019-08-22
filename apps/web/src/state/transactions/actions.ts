@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit'
 import { ChainId } from '@pancakeswap/sdk'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 
@@ -12,22 +13,6 @@ export type TransactionType =
   | 'limit-order-approval'
   | 'non-bsc-farm'
 
-export interface SerializableTransactionReceipt {
-  to: string
-  from: string
-  contractAddress: string
-  transactionIndex: number
-  blockHash: string
-  transactionHash: string
-  blockNumber: number
-  status?: number
-}
-
-export enum MsgStatus {
-  MS_UNKNOWN = 0,
-  MS_WAITING_FOR_SGN_CONFIRMATIONS = 1,
-  MS_WAITING_FOR_DESTINATION_EXECUTION = 2,
-  MS_COMPLETED = 3,
   MS_FAIL = 4,
   MS_FALLBACK = 5,
 }

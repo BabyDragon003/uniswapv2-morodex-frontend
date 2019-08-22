@@ -1,3 +1,4 @@
+const docLangCodeMapping: Record<string, string> = {
   it: 'italian',
   ja: 'japanese',
   fr: 'french',

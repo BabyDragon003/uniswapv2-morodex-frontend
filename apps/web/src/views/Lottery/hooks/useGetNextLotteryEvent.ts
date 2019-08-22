@@ -1,3 +1,4 @@
+import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { useMemo } from 'react'
 

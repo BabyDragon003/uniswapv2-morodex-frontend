@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { SwiperContext } from '../context/SwiperProvider'
 
 const useSwiper = () => {

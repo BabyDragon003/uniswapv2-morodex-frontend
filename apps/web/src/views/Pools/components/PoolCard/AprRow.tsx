@@ -1,3 +1,4 @@
+import { Pool } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import Apr from 'views/Pools/components/Apr'
 import { Token } from '@pancakeswap/sdk'

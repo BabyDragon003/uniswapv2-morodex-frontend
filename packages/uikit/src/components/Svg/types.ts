@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ElementType, SVGAttributes } from "react";
 import { DefaultTheme } from "styled-components";
 import { SpaceProps } from "styled-system";

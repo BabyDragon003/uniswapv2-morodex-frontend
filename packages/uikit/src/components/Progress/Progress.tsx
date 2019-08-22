@@ -1,3 +1,4 @@
+import React from "react";
 import StyledProgress, { Bar } from "./StyledProgress";
 import ProgressBunnyWrapper from "./ProgressBunnyWrapper";
 import { ProgressBunny } from "../Svg";
@@ -12,22 +13,6 @@ const stepGuard = (step: number) => {
     return 100;
   }
 
-  return step;
-};
-
-const Progress: React.FC<React.PropsWithChildren<ProgressProps>> = ({
-  variant = variants.ROUND,
-  scale = scales.MD,
-  primaryStep = 0,
-  secondaryStep = null,
-  showProgressBunny = false,
-  useDark = true,
-  children,
-}) => {
-  return (
-    <StyledProgress $useDark={useDark} variant={variant} scale={scale}>
-      {children || (
-        <>
           {showProgressBunny && (
             <ProgressBunnyWrapper style={{ left: `${stepGuard(primaryStep)}%` }}>
               <ProgressBunny />

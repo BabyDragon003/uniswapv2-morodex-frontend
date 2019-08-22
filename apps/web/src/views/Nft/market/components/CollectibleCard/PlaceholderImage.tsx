@@ -1,3 +1,4 @@
+const PlaceholderImage = () => (
   <img
     style={{ borderRadius: '8px', height: '100%', left: 0, position: 'absolute', top: 0, width: '100%' }}
     alt="nft placeholder"

@@ -1,3 +1,4 @@
+import createBreakpoints from '@material-ui/core/styles/createBreakpoints'
 import { alpha } from '@material-ui/core/styles/colorManipulator'
 import createTypography from '@material-ui/core/styles/createTypography'
 import createPalette from '@material-ui/core/styles/createPalette'

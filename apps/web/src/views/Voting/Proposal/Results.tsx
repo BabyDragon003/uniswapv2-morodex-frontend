@@ -1,3 +1,4 @@
+import {
   Box,
   Text,
   Flex,
@@ -12,22 +13,6 @@
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { Vote } from 'state/types'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import { useTranslation } from '@pancakeswap/localization'
-import { FetchStatus } from 'config/constants/types'
-import { calculateVoteResults, getTotalFromVotes } from '../helpers'
-import TextEllipsis from '../components/TextEllipsis'
-
-interface ResultsProps {
-  choices: string[]
-  votes: Vote[]
-  votesLoadingStatus: FetchStatus
-}
-
-const Results: React.FC<React.PropsWithChildren<ResultsProps>> = ({ choices, votes, votesLoadingStatus }) => {
-  const { t } = useTranslation()
-  const results = calculateVoteResults(votes)
-  const { address: account } = useAccount()
   const totalVotes = getTotalFromVotes(votes)
 
   return (

@@ -1,3 +1,4 @@
+import { ADDRESS as _SMARTCHEF_ADDRESS, SMART_CHEF_MODULE_NAME } from '../generated/smartchef'
 
 export const SMARTCHEF_ADDRESS = _SMARTCHEF_ADDRESS
 

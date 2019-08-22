@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Box, Text, Balance } from '@pancakeswap/uikit'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -12,22 +13,6 @@ import { addDays } from 'date-fns'
 interface AvailableWithdrawProps {
   withdrawData: PotteryWithdrawAbleData
 }
-
-const AvailableWithdraw: React.FC<React.PropsWithChildren<AvailableWithdrawProps>> = ({ withdrawData }) => {
-  const {
-    t,
-    currentLanguage: { locale },
-  } = useTranslation()
-  const cakePriceBusd = usePriceCakeBusd()
-  const { previewRedeem, lockedDate, shares, status, potteryVaultAddress, totalSupply, totalLockCake, balanceOf } =
-    withdrawData
-
-  const cakeNumber = useMemo(() => new BigNumber(previewRedeem), [previewRedeem])
-  const amountAsBn = calculateCakeAmount({
-    status,
-    previewRedeem,
-    shares,
-    totalSupply: new BigNumber(totalSupply),
     totalLockCake: new BigNumber(totalLockCake),
   })
 

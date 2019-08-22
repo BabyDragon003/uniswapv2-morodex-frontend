@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import BigNumber from 'bignumber.js'

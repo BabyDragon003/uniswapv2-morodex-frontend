@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Card, CardBody, CardHeader, Heading, Text, Flex, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
@@ -12,22 +13,6 @@ const Wrapper = styled(Flex)`
   ${({ theme }) => theme.mediaQueries.xl} {
     flex-direction: row;
     max-width: 1140px;
-  }
-`
-const HoneyImage = styled.div`
-  width: 200px;
-  height: 224.67px;
-  margin: 40px auto auto auto;
-  align-self: flex-start;
-  background: url(/images/pottery/honey.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    width: 291px;
-    min-width: 291px;
-    height: 326.89px;
     min-height: 326.89px;
     margin: 40px 40px 0 0;
   }

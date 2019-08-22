@@ -1,3 +1,4 @@
+import { useMemo, useRef } from 'react'
 import isEmpty from 'lodash/isEmpty'
 import { useGetCollections } from 'state/nftMarket/hooks'
 import { NftLocation, ApiCollections } from 'state/nftMarket/types'
@@ -12,22 +13,6 @@ export const useNftsForAddress = (account: string, profile: Profile, isProfileFe
   const { data: collections } = useGetCollections()
 
   const { nfts, isLoading, refresh } = useCollectionsNftsForAddress(account, profile, isProfileFetching, collections)
-  return { nfts, isLoading, refresh }
-}
-
-export const useCollectionsNftsForAddress = (
-  account: string,
-  profile: Profile,
-  isProfileFetching: boolean,
-  collections: ApiCollections,
-) => {
-  const resetLaggyRef = useRef(null)
-  const previousAccount = usePreviousValue(account)
-
-  if (resetLaggyRef.current && previousAccount !== account) {
-    resetLaggyRef.current()
-  }
-  const hasProfileNft = profile?.tokenId
   const profileNftTokenId = profile?.tokenId?.toString()
   const profileNftCollectionAddress = profile?.collectionAddress
 

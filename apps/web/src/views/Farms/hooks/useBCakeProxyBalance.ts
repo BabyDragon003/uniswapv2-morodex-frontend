@@ -1,3 +1,4 @@
+import useSWR from 'swr'
 import { CAKE } from '@pancakeswap/tokens'
 import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'

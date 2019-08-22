@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { SpaceProps } from "styled-system";
 import { BaseButtonProps, Scale, variants } from "../Button/types";
 

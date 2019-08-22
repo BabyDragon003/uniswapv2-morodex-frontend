@@ -1,3 +1,4 @@
+import { Flex, Box, Image, Text, WalletIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTheme from 'hooks/useTheme'

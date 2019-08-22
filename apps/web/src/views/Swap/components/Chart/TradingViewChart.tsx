@@ -1,3 +1,4 @@
+import { Box, BunnyPlaceholderIcon, Flex, Text } from '@pancakeswap/uikit'
 import TradingView, { useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from '@pancakeswap/localization'
 import { useDebounce } from '@pancakeswap/hooks'
@@ -12,22 +13,6 @@ interface TradingViewChartProps {
   onTwChartSymbol?: (symbol: string) => void
 }
 
-const TradingViewWrapper = styled.div<{ $show: boolean }>`
-  opacity: ${({ $show }) => ($show ? 1 : 0)};
-  transition: opacity 0.2s ease-in;
-  height: 100%;
-`
-
-const LoadingWrapper = styled.div<{ $isDark: boolean }>`
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: ${({ theme }) => theme.colors.backgroundAlt};
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    background: ${({ $isDark }) => ($isDark ? '#2E2E42' : '#F4FCFF')};
-  }
-`
 
 const bnbToWBNBSymbol = (sym: string) => (sym === 'BNB' ? 'WBNB' : sym)
 

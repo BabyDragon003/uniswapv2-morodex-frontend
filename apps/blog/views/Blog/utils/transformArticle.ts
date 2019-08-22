@@ -1,3 +1,4 @@
+import { ResponseArticleDataType, PaginationType } from 'views/Blog/types'
 
 export interface ArticleDataType {
   id: number

@@ -1,3 +1,4 @@
+import invariant from 'tiny-invariant'
 import { Token, Currency, Price } from '@pancakeswap/swap-sdk-core'
 
 import { Pair } from './pair'
@@ -12,22 +13,6 @@ export class Route<TInput extends Currency, TOutput extends Currency> {
     invariant(pairs.length > 0, 'PAIRS')
     const chainId: number = pairs[0].chainId
     invariant(
-      pairs.every((pair) => pair.chainId === chainId),
-      'CHAIN_IDS'
-    )
-
-    const wrappedInput = input.wrapped
-    invariant(pairs[0].involvesToken(wrappedInput), 'INPUT')
-    invariant(typeof output === 'undefined' || pairs[pairs.length - 1].involvesToken(output.wrapped), 'OUTPUT')
-
-    const path: Token[] = [wrappedInput]
-    for (const [i, pair] of pairs.entries()) {
-      const currentInput = path[i]
-      invariant(currentInput.equals(pair.token0) || currentInput.equals(pair.token1), 'PATH')
-      const output = currentInput.equals(pair.token0) ? pair.token1 : pair.token0
-      path.push(output)
-    }
-
     this.pairs = pairs
     this.path = path
     this.input = input

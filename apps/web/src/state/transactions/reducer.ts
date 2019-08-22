@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 import { confirmOrderCancellation, confirmOrderSubmission, saveOrder } from 'utils/localStorageOrders'
@@ -12,22 +13,6 @@ import {
   NonBscFarmTransactionType,
   FarmTransactionStatus,
 } from './actions'
-import { resetUserState } from '../global/actions'
-
-const now = () => new Date().getTime()
-
-export interface TransactionDetails {
-  hash: string
-  approval?: { tokenAddress: string; spender: string }
-  type?: TransactionType
-  order?: Order
-  summary?: string
-  translatableSummary?: { text: string; data?: Record<string, string | number> }
-  claim?: { recipient: string }
-  receipt?: SerializableTransactionReceipt
-  lastCheckedBlockNumber?: number
-  addedTime: number
-  confirmedTime?: number
   from: string
   nonBscFarm?: NonBscFarmTransactionType
 }

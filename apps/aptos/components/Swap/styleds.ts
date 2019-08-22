@@ -1,3 +1,4 @@
+import { AutoColumn, Text } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 export const SwapShowAcceptChanges = styled(AutoColumn)`

@@ -1,3 +1,4 @@
+import { SMARTCHEF_ADDRESS } from 'contracts/smartchef/constants'
 
 const poolRelatedQueries = (account) => (query) => {
   const queryObject = query.queryKey?.[0]

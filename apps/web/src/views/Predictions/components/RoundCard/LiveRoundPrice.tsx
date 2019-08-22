@@ -1,3 +1,4 @@
+import React, { memo, useMemo } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import CountUp from 'react-countup'
 import { Skeleton, TooltipText } from '@pancakeswap/uikit'
@@ -11,22 +12,6 @@ interface LiveRoundPriceProps {
 
 const LiveRoundPrice: React.FC<React.PropsWithChildren<LiveRoundPriceProps>> = ({ betPosition, price }) => {
   const priceAsNumber = useMemo(() => parseFloat(formatBigNumberToFixed(price, 4, 8)), [price])
-
-  const priceColor = useMemo(() => {
-    switch (betPosition) {
-      case BetPosition.BULL:
-        return 'success'
-      case BetPosition.BEAR:
-        return 'failure'
-      case BetPosition.HOUSE:
-      default:
-        return 'textDisabled'
-    }
-  }, [betPosition])
-
-  if (!Number.isFinite(priceAsNumber)) {
-    return null
-  }
 
   if (price.lt(0)) {
     return <Skeleton height="36px" width="94px" />

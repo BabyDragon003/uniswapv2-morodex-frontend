@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { memo } from "react";
 import { useTranslation } from "@pancakeswap/localization";
 import { escapeRegExp } from "@pancakeswap/utils/escapeRegExp";

@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
 import { useTranslation } from '@pancakeswap/localization'
 import {

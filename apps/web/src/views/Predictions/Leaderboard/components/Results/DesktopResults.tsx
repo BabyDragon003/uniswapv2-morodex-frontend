@@ -1,3 +1,4 @@
+import { Card, Table, Th } from '@pancakeswap/uikit'
 import { PredictionUser } from 'state/types'
 import Container from 'components/Layout/Container'
 import { useTranslation } from '@pancakeswap/localization'

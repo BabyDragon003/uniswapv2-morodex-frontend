@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber'
 import { formatRoundTime, padTime, formatTokenv2, formatUsdv2 } from 'views/Predictions/helpers'
 
 describe('padTime', () => {

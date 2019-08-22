@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex, Box } from '@pancakeswap/uikit'
 import Image from 'next/image'
 import orderBy from 'lodash/orderBy'
@@ -12,22 +13,6 @@ const Wrapper = styled(Flex)`
     flex-direction: row;
   }
 `
-
-const StyledPodiumWrapper = styled(Flex)`
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    flex: 1;
-    margin-right: 40px;
-    margin-bottom: 0;
-  }
-`
-
-const BunnyImageWrapper = styled(Box)`
-  display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: flex;

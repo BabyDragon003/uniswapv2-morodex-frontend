@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
 import { TradeWithStableSwap } from '@pancakeswap/smart-router/evm'
 import { AutoRenewIcon, Button, QuestionHelper, Text, Link } from '@pancakeswap/uikit'

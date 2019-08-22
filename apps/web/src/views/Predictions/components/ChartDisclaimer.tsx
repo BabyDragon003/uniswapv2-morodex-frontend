@@ -1,3 +1,4 @@
+import {
   ModalContainer,
   ModalBody,
   Text,
@@ -12,22 +13,6 @@
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
-import { useUserPredictionChartDisclaimerShow } from 'state/user/hooks'
-
-const Ul = styled.ul`
-  color: ${({ theme }) => theme.colors.textSubtle};
-  list-style-position: outside;
-  margin-left: 16px;
-
-  & > li {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-`
-
-const ChartDisclaimer: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ onDismiss }) => {
-  const [showDisclaimer, setShowDisclaimer] = useUserPredictionChartDisclaimerShow()
-  const { t } = useTranslation()
 
   const handleConfirm = () => {
     onDismiss?.()

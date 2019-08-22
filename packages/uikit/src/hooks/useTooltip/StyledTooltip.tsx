@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { m as Motion } from "framer-motion";
 
 export const Arrow = styled.div`

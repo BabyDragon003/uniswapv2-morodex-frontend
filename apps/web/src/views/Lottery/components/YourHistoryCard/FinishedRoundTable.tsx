@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Text, Box, Flex, Button } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LotteryStatus } from 'config/constants/types'
@@ -12,22 +13,6 @@ const Grid = styled(Box)`
 interface FinishedRoundTableProps {
   handleHistoryRowClick: (string) => void
   handleShowMoreClick: () => void
-  numUserRoundsRequested: number
-}
-
-const FinishedRoundTable: React.FC<React.PropsWithChildren<FinishedRoundTableProps>> = ({
-  handleShowMoreClick,
-  numUserRoundsRequested,
-  handleHistoryRowClick,
-}) => {
-  const { t } = useTranslation()
-  const userLotteryData = useGetUserLotteriesGraphData()
-
-  const filteredForClaimable = userLotteryData?.rounds.filter((round) => {
-    return round.status.toLowerCase() === LotteryStatus.CLAIMABLE
-  })
-
-  const sortedByRoundId = filteredForClaimable?.sort((roundA, roundB) => {
     return parseInt(roundB.lotteryId, 10) - parseInt(roundA.lotteryId, 10)
   })
 

@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Button,
@@ -12,22 +13,6 @@ import {
   ThemeSwitcher,
   Toggle,
 } from '@pancakeswap/uikit'
-import { escapeRegExp } from '@pancakeswap/utils/escapeRegExp'
-import { useTheme } from 'next-themes'
-import { useCallback, useState } from 'react'
-import { useAudioPlay, useUserSlippage } from 'state/user'
-import { useExpertMode, useUserExpertModeAcknowledgement } from 'state/user/expertMode'
-import { useUserSingleHopOnly } from 'state/user/singleHop'
-import styled from 'styled-components'
-
-export const withCustomOnDismiss =
-  (Component) =>
-  ({ onDismiss, customOnDismiss, ...props }: { onDismiss?: () => void; customOnDismiss: () => void }) => {
-    const handleDismiss = useCallback(() => {
-      onDismiss?.()
-      if (customOnDismiss) {
-        customOnDismiss()
-      }
     }, [customOnDismiss, onDismiss])
 
     return <Component {...props} onDismiss={handleDismiss} />

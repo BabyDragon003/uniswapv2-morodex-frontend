@@ -1,3 +1,4 @@
+import useSWR from 'swr'
 import { useAccount } from 'wagmi'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { ifosConfig, FAST_INTERVAL } from 'config/constants'
@@ -12,22 +13,6 @@ const useFetchVestingData = () => {
   const { data, mutate } = useSWR(
     account ? ['vestingData'] : null,
     async () => {
-      const allData = await Promise.all(
-        allVestingIfo.map(async (ifo) => {
-          const response = await fetchUserWalletIfoData(ifo, account)
-          return response
-        }),
-      )
-
-      const currentTimeStamp = new Date().getTime()
-
-      return allData.filter(
-        // eslint-disable-next-line array-callback-return, consistent-return
-        (ifo) => {
-          const { userVestingData } = ifo
-          if (
-            userVestingData[PoolIds.poolBasic].offeringAmountInToken.gt(0) ||
-            userVestingData[PoolIds.poolUnlimited].offeringAmountInToken.gt(0)
           ) {
             if (
               userVestingData[PoolIds.poolBasic].vestingComputeReleasableAmount.gt(0) ||

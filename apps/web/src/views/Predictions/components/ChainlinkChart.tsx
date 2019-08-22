@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from 'react'
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area, Dot } from 'recharts'
 import useTheme from 'hooks/useTheme'
 import { LineChartLoader } from 'components/ChartLoaders'

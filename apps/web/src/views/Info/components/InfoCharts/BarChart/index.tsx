@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import { BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Bar } from 'recharts'
 import useTheme from 'hooks/useTheme'
 import { formatAmount } from 'utils/formatInfoNumbers'

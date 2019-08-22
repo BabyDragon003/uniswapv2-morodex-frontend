@@ -1,3 +1,4 @@
+import { parseUnits } from '@ethersproject/units'
 import { Call, MultiCallV2 } from '@pancakeswap/multicall'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
@@ -12,22 +13,6 @@ const stableSwapAbi = [
     type: 'function',
   },
   {
-    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
-    name: 'balances',
-    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [
-      { internalType: 'uint256', name: 'i', type: 'uint256' },
-      { internalType: 'uint256', name: 'j', type: 'uint256' },
-      { internalType: 'uint256', name: 'dx', type: 'uint256' },
-    ],
-    name: 'get_dy',
-    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
-    stateMutability: 'view',
-    type: 'function',
   },
 ]
 

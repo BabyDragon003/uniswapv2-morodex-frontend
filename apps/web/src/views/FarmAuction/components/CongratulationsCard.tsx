@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/uikit'
 import { Auction, Bidder } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
@@ -12,22 +13,6 @@ const StyledReclaimBidCard = styled(Card)`
 
 const CongratulationsCard: React.FC<React.PropsWithChildren<{ currentAuction: Auction; bidders: Bidder[] }>> = ({
   currentAuction,
-  bidders,
-}) => {
-  const { t } = useTranslation()
-  const wonAuction = useCongratulateAuctionWinner(currentAuction, bidders)
-
-  if (!wonAuction) {
-    return null
-  }
-
-  const { auction, bidderData } = wonAuction
-  const { amount, position } = bidderData
-  return (
-    <StyledReclaimBidCard mb={['24px', null, null, '0']}>
-      <CardHeader>
-        <Heading>{t('Congratulations!')}</Heading>
-      </CardHeader>
       <CardBody>
         <Text mb="16px">{t('Your bid in Auction #%auctionId% was successful.', { auctionId: auction.id })}</Text>
         <Text>{t('Your Farm will be launched as follows:')}</Text>

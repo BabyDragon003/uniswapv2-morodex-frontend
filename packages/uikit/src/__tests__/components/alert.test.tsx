@@ -1,3 +1,4 @@
+import React from "react";
 import { renderWithProvider } from "../../testHelpers";
 import { Alert } from "../../components/Alert";
 
@@ -12,22 +13,6 @@ it("renders correctly", () => {
       align-self: center;
       fill: currentColor;
       -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-    }
-
-    .c5 {
-      color: var(--colors-text);
-      font-weight: 600;
-      line-height: 1.5;
-      font-size: 16px;
-    }
-
-    .c6 {
-      color: var(--colors-text);
-      font-weight: 400;
-      line-height: 1.5;
-      font-size: 16px;
     }
 
     .c0 {

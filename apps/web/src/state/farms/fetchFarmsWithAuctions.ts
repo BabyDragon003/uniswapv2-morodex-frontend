@@ -1,3 +1,4 @@
+import farmAuctionAbi from 'config/abi/farmAuction.json'
 import { getFarmAuctionContract } from 'utils/contractHelpers'
 import { multicallv2 } from 'utils/multicall'
 import { ethersToBigNumber } from '@pancakeswap/utils/bigNumber'
@@ -12,22 +13,6 @@ const fetchFarmsWithAuctions = async (
   const farmAuctionContract = getFarmAuctionContract()
   const currentAuctionId = await farmAuctionContract.currentAuctionId()
   const [auctionData, [auctionBidders]] = await multicallv2({
-    abi: farmAuctionAbi,
-    calls: [
-      {
-        address: farmAuctionContract.address,
-        name: 'auctions',
-        params: [currentAuctionId],
-      },
-      {
-        address: farmAuctionContract.address,
-        name: 'viewBidsPerAuction',
-        params: [currentAuctionId, 0, 500],
-      },
-    ],
-    options: { requireSuccess: false },
-  })
-  const blocksSinceEnd = currentBlock - auctionData.endBlock.toNumber()
   if (blocksSinceEnd > 0) {
     const secondsSinceEnd = blocksSinceEnd * BSC_BLOCK_TIME
     if (secondsSinceEnd > FARM_AUCTION_HOSTING_IN_SECONDS) {

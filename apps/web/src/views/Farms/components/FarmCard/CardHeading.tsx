@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Tag, Flex, Heading, Box, Skeleton, Farm as FarmUI } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 import { TokenPairImage } from 'components/TokenImage'
@@ -12,22 +13,6 @@ export interface ExpandableSectionProps {
   token: Token
   quoteToken: Token
   boosted?: boolean
-  isStable?: boolean
-}
-
-const Wrapper = styled(Flex)`
-  svg {
-    margin-right: 4px;
-  }
-`
-
-const MultiplierTag = styled(Tag)`
-  margin-left: 4px;
-`
-
-const CardHeading: React.FC<React.PropsWithChildren<ExpandableSectionProps>> = ({
-  lpLabel,
-  multiplier,
   isCommunityFarm,
   token,
   quoteToken,

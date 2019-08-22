@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { NextSeo } from "next-seo";
 import { Button, Heading, Text, LogoIcon } from "@pancakeswap/uikit";
 import { useTranslation } from "@pancakeswap/localization";

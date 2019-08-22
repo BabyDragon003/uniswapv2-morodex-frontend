@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text, Balance, Pool } from '@pancakeswap/uikit'
@@ -12,22 +13,6 @@ import UnstakeButton from '../UnstakeButton'
 
 const Container = styled(ActionContainer)`
   flex: 3;
-`
-
-interface StackedActionProps {
-  pool: Pool.DeserializedPool<Token>
-}
-
-const Staked: React.FC<React.PropsWithChildren<StackedActionProps>> = ({ pool }) => {
-  const { stakingToken, userData, stakingTokenPrice, vaultKey } = pool
-  const { t } = useTranslation()
-
-  const stakedBalance = userData?.stakedBalance ? new BigNumber(userData.stakedBalance) : BIG_ZERO
-
-  const stakedTokenBalance = getBalanceNumber(stakedBalance, stakingToken.decimals)
-  const stakedTokenDollarBalance = getBalanceNumber(
-    stakedBalance.multipliedBy(stakingTokenPrice),
-    stakingToken.decimals,
   )
 
   const { vaultPoolData } = useVaultPoolByKeyV1(pool.vaultKey)

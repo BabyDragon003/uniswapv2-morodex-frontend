@@ -1,3 +1,4 @@
+import { Address } from '../types'
 
 export enum PancakeCollectionKey {
   PANCAKE = 'pancake',
@@ -12,5 +13,3 @@ export type PancakeCollection = {
 }
 
 export type PancakeCollections = {
-  [key in PancakeCollectionKey]: PancakeCollection
-}

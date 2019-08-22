@@ -1,3 +1,4 @@
+import { Progress, ProgressProps } from '@pancakeswap/uikit'
 import { useCurrentBlock } from 'state/block/hooks'
 
 interface BlockProgressProps extends ProgressProps {
@@ -12,5 +13,3 @@ const BlockProgress: React.FC<React.PropsWithChildren<BlockProgressProps>> = ({ 
 
   return <Progress primaryStep={progress} {...props} />
 }
-
-export default BlockProgress

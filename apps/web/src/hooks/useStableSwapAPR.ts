@@ -1,3 +1,4 @@
+import useSWRImmutable from 'swr/immutable'
 import { SWRConfiguration } from 'swr'
 import { getAprsForStableFarm } from 'utils/getAprsForStableFarm'
 import BigNumber from 'bignumber.js'

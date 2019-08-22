@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Box, PageSection } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,3 +1,4 @@
+import { useEffect, useMemo } from 'react'
 import { ExtendEthereum } from 'global'
 import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
 import { ConnectorData } from 'wagmi'

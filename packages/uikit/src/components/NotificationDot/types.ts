@@ -1,3 +1,4 @@
+import { Colors } from "../../theme/types";
 
 export interface NotificationDotProps {
   show?: boolean;

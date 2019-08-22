@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { Currency, Token } from '@pancakeswap/sdk'
 import { Button, Text, CheckmarkCircleIcon, useMatchBreakpoints, Flex, ListLogo } from '@pancakeswap/uikit'
 import { AutoRow, RowFixed } from 'components/Layout/Row'

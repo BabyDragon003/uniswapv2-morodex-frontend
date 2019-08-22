@@ -1,3 +1,4 @@
+/* eslint-disable no-continue */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-else-return */
 import invariant from 'tiny-invariant'
@@ -12,22 +13,6 @@ import {
   Percent,
   Price,
   computePriceImpact,
-  sortedInsert,
-} from '@pancakeswap/swap-sdk-core'
-
-import { Pair } from './pair'
-import { Route } from './route'
-import { Currency } from './currency'
-import { ZERO_PERCENT, ONE_HUNDRED_PERCENT } from './constants'
-
-// minimal interface so the input output comparator may be shared across types
-interface InputOutput<TInput extends Currency, TOutput extends Currency> {
-  readonly inputAmount: CurrencyAmount<TInput>
-  readonly outputAmount: CurrencyAmount<TOutput>
-}
-
-// comparator function that allows sorting trades by their output amounts, in decreasing order, and then input amounts
-// in increasing order. i.e. the best trades have the most outputs for the least inputs and are sorted first
 export function inputOutputComparator<TInput extends Currency, TOutput extends Currency>(
   a: InputOutput<TInput, TOutput>,
   b: InputOutput<TInput, TOutput>

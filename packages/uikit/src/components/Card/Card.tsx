@@ -1,3 +1,4 @@
+import React from "react";
 import { StyledCard, StyledCardInner } from "./StyledCard";
 import { CardProps } from "./types";
 

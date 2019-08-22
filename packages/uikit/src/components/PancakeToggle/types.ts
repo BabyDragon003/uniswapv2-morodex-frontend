@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from "react";
 
 export type PancakeToggleTheme = {
   handleBackground: string;

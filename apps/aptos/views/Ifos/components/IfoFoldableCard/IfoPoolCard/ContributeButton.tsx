@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
@@ -12,22 +13,6 @@ import ContributeModal from './ContributeModal'
 import GetTokenModal from './GetTokenModal'
 
 interface Props {
-  poolId: PoolIds
-  ifo: Ifo
-  publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-}
-
-const ContributeButton: React.FC<React.PropsWithChildren<Props>> = ({ poolId, ifo, publicIfoData, walletIfoData }) => {
-  const publicPoolCharacteristics = publicIfoData[poolId]
-  const userPoolCharacteristics = walletIfoData[poolId]
-  const { isPendingTx, amountTokenCommittedInLP } = userPoolCharacteristics
-  const { limitPerUserInLP } = publicPoolCharacteristics
-  const { t } = useTranslation()
-  const { toastSuccess } = useToast()
-  const currencyBalance = useCurrencyBalance(ifo.currency.address)
-  const { startTime, endTime } = publicIfoData
-
   const currentTime = Date.now() / 1000
 
   const status = getStatus(currentTime, startTime, endTime)

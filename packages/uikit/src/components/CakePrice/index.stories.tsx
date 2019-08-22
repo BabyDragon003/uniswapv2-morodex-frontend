@@ -1,3 +1,4 @@
+import React from "react";
 import { CakePrice, CakePriceProps } from ".";
 import { Flex } from "../Box";
 
@@ -12,9 +13,3 @@ const Template: React.FC<React.PropsWithChildren<CakePriceProps>> = ({ ...args }
       <CakePrice {...args} />
     </Flex>
   );
-};
-
-export const Default = Template.bind({});
-Default.args = {
-  cakePriceUsd: 20.0,
-};

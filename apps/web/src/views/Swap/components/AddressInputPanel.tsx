@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import styled from 'styled-components'
 import { ChainId } from '@pancakeswap/sdk'
 import { Text, Link, BscScanIcon } from '@pancakeswap/uikit'
@@ -12,22 +13,6 @@ const InputPanel = styled.div`
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-  border-radius: 1.25rem;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  z-index: 1;
-  width: 100%;
-`
-
-const ContainerRow = styled.div<{ error: boolean }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1.25rem;
-  border: 1px solid ${({ error, theme }) => (error ? theme.colors.failure : theme.colors.background)};
-  transition: border-color 300ms ${({ error }) => (error ? 'step-end' : 'step-start')},
-    color 500ms ${({ error }) => (error ? 'step-end' : 'step-start')};
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
-`
 
 const InputContainer = styled.div`
   flex: 1;

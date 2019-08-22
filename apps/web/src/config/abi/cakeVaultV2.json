@@ -1,3 +1,4 @@
+[
   {
     "inputs": [
       { "internalType": "contract IERC20", "name": "_token", "type": "address" },

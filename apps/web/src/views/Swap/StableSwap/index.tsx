@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useCurrency } from 'hooks/Tokens'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import { Field } from 'state/swap/actions'
@@ -12,22 +13,6 @@ const StableSwapFormContainer = () => {
 
   const stableTokenPair = stableFarms?.length ? stableFarms[0] : null
 
-  useEffect(() => {
-    if (stableTokenPair) {
-      onCurrencySelection(Field.INPUT, stableTokenPair.token0)
-      onCurrencySelection(Field.OUTPUT, stableTokenPair.token1)
-    }
-  }, [onCurrencySelection, stableTokenPair])
-
-  const {
-    [Field.INPUT]: { currencyId: inputCurrencyId },
-    [Field.OUTPUT]: { currencyId: outputCurrencyId },
-  } = useSwapState()
-
-  const inputCurrency = useCurrency(inputCurrencyId)
-  const outputCurrency = useCurrency(outputCurrencyId)
-
-  const stableConfig = useStableConfig({ tokenA: inputCurrency, tokenB: outputCurrency })
 
   return stableTokenPair ? (
     <StableConfigContext.Provider value={stableConfig}>

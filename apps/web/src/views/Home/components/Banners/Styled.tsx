@@ -1,3 +1,4 @@
+import { Flex, Heading } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
 export const StyledSubheading = styled(Heading)`
@@ -12,22 +13,6 @@ export const StyledSubheading = styled(Heading)`
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     -webkit-text-stroke: unset;
-  }
-  margin-bottom: 8px;
-`
-
-export const StyledHeading = styled(Heading)`
-  color: #ffffff;
-  background: -webkit-linear-gradient(#7645d9 0%, #452a7a 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 6px transparent;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 16px;
-  }
 `
 export const Wrapper = styled.div`
   border-radius: 32px;

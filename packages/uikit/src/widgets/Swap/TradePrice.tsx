@@ -1,3 +1,4 @@
+import { Price, Currency } from "@pancakeswap/swap-sdk-core";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { Text, AutoRenewIcon } from "@pancakeswap/uikit";
 import { useState } from "react";

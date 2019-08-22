@@ -1,3 +1,4 @@
+import { APTOS_COIN } from '@pancakeswap/awgmi'
 import { createAction, createReducer } from '@reduxjs/toolkit'
 import { TxnBuilderTypes } from 'aptos'
 import { CAKE } from 'config/coins'

@@ -1,3 +1,4 @@
+import {
   Button,
   Heading,
   Text,
@@ -12,22 +13,6 @@
 import _isEmpty from 'lodash/isEmpty'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-
-const Container = styled.div`
-  margin-right: 4px;
-`
-
-interface ActionButtonPropsType extends ButtonProps {
-  title: string
-  description: string
-  button?: ReactNode
-}
-
-const BoosterTooltip = () => {
-  const { t } = useTranslation()
-
-  return (
     <>
       {t(
         `Boost multiplier is calculated based on the staking conditions from both Farms and fixed-term CAKE syrup pool and will be automatically updated upon user actions.`,

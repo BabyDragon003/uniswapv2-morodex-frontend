@@ -1,3 +1,4 @@
+import { Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
 import { StyledPriceChart } from './styles'

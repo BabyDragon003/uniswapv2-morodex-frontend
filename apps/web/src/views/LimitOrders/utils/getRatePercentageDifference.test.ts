@@ -1,3 +1,4 @@
+import { JSBI, Price, ERC20Token, Percent } from '@pancakeswap/sdk'
 import getRatePercentageDifference from './getRatePercentageDifference'
 
 const CAKE = new ERC20Token(56, '0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9', 18, 'MDEX', 'MORODEX')
@@ -12,22 +13,6 @@ const FIFTEEN = JSBI.multiply(JSBI.BigInt(15), EIGHTEEN_DECIMALS)
 describe('limitOrders/utils/getRatePercentageDifference', () => {
   describe('18 decimal tokens', () => {
     const marketPrice = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, TEN) // 10 BUSD per 1 CAKE
-    it('returns correct positive percentage', () => {
-      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, FIFTEEN) // 15 BUSD per 1 CAKE
-      const rate = getRatePercentageDifference(marketPrice, price)
-      const expectedRate = new Percent(50, 100)
-      expect(expectedRate.equalTo(rate)).toBe(true)
-    })
-    it('returns correct negative percentage', () => {
-      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, FIVE) // 5 BUSD per 1 CAKE
-      const rate = getRatePercentageDifference(marketPrice, price)
-      const expectedRate = new Percent(-50, 100)
-      expect(expectedRate.equalTo(rate)).toBe(true)
-    })
-    it('returns correct equal percentage', () => {
-      const price = new Price(CAKE, BUSD, EIGHTEEN_DECIMALS, TEN) // 50 BUSD per 1 CAKE
-      const rate = getRatePercentageDifference(marketPrice, price)
-      const expectedRate = new Percent(0, 100)
       expect(expectedRate.equalTo(rate)).toBe(true)
     })
   })

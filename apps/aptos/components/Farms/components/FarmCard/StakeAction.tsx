@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast, Farm as FarmUI } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
@@ -12,22 +13,6 @@ import { FARM_DEFAULT_DECIMALS } from 'components/Farms/constants'
 import { FarmWithStakedValue } from '@pancakeswap/farms'
 
 const IconButtonWrapper = styled.div`
-  display: flex;
-  svg {
-    width: 20px;
-  }
-`
-
-interface FarmCardActionsProps extends FarmWithStakedValue {
-  lpLabel?: string
-  addLiquidityUrl?: string
-  displayApr?: string
-  onStake: (value: string) => Promise<TransactionResponse>
-  onUnstake: (value: string) => Promise<TransactionResponse>
-}
-
-const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
-  pid,
   quoteToken,
   token,
   lpSymbol,

@@ -1,3 +1,4 @@
+import { Pool } from '@pancakeswap/uikit'
 import { Coin } from '@pancakeswap/aptos-swap-sdk'
 import { ConnectWalletButton } from 'components/ConnectWalletButton'
 import CollectModal from '../PoolCard/CollectModal'

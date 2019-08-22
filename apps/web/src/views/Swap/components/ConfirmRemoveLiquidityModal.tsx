@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Pair, Percent, Token } from '@pancakeswap/sdk'
 import {
   AddIcon,
@@ -12,22 +13,6 @@ import TransactionConfirmationModal from 'components/TransactionConfirmationModa
 import { AutoColumn } from 'components/Layout/Column'
 import { RowBetween, RowFixed } from 'components/Layout/Row'
 import { Field } from 'state/burn/actions'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-import { ApprovalState } from 'hooks/useApproveCallback'
-import { ZapErrorMessages } from '../../AddLiquidity/components/ZapErrorMessage'
-
-interface ConfirmRemoveLiquidityModalProps {
-  title: string
-  customOnDismiss: () => void
-  attemptingTxn: boolean
-  pair?: Pair
-  hash: string
-  pendingText: string
-  parsedAmounts: {
-    [Field.LIQUIDITY_PERCENT]: Percent
-    [Field.LIQUIDITY]?: CurrencyAmount<Token>
-    [Field.CURRENCY_A]?: CurrencyAmount<Currency>
-    [Field.CURRENCY_B]?: CurrencyAmount<Currency>
   }
   allowedSlippage: number
   onRemove: () => void

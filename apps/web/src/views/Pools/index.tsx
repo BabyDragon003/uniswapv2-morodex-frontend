@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 
 import { useAccount } from 'wagmi'
 import { Heading, Flex, Image, Text, Link, FlexLayout, PageHeader, Loading, Pool, ViewMode } from '@pancakeswap/uikit'

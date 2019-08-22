@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop, no-continue */
 import { Currency, CurrencyAmount, Pair, Price, Trade, TradeType } from '@pancakeswap/sdk'
 
 import { getBestTradeFromV2ExactIn } from './getBestTradeFromV2'
@@ -12,22 +13,6 @@ export async function getBestTradeWithStableSwap(
   options: BestTradeOptions,
 ) {
   const { provider } = options
-  const { inputAmount, route, tradeType } = baseTrade
-  // Early return if there's no stableswap available
-  if (!stableSwapPairs.length) {
-    return createTradeWithStableSwapFromV2Trade(baseTrade)
-  }
-
-  const findStableSwapPair = (pair: Pair) => stableSwapPairs.find((p) => isSamePair(p, pair))
-
-  let outputAmount: CurrencyAmount<Currency> = inputAmount
-  let outputToken: Currency = inputAmount.currency
-  const shouldRecalculateOutputAmount = () => !outputToken.equals(outputAmount.currency)
-  const getLatestOutputAmount = async () => {
-    // If the output amount is never re-calculated and the output token is the same as base trade route,
-    // means that there's no stable swap pair found in the base route.
-    if (outputAmount.currency.equals(inputAmount.currency) && outputToken.equals(baseTrade.outputAmount.currency)) {
-      return baseTrade.outputAmount
     }
     return shouldRecalculateOutputAmount() ? getOutputAmountFromV2(outputAmount, outputToken, options) : outputAmount
   }

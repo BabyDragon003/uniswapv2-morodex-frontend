@@ -1,3 +1,4 @@
+import { ChainId } from '@pancakeswap/sdk'
 import { useAccount } from 'wagmi'
 import { FetchStatus } from 'config/constants/types'
 import useSWRImmutable from 'swr/immutable'

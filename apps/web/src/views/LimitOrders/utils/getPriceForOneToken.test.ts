@@ -1,3 +1,4 @@
+import { JSBI, ERC20Token, CurrencyAmount } from '@pancakeswap/sdk'
 import getPriceForOneToken from './getPriceForOneToken'
 
 const CAKE = new ERC20Token(56, '0x43018838ABca94148Fb67A9F61f8b06fAb8F76C9', 18, 'MDEX', 'MORODEX')

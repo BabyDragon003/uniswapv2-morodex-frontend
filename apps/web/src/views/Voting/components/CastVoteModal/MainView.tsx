@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import {
   IconButton,
@@ -12,22 +13,6 @@ import {
 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
-import TextEllipsis from '../TextEllipsis'
-import { VotingBoxBorder, VotingBoxCardInner, ModalInner } from './styles'
-import { CastVoteModalProps } from './types'
-
-interface MainViewProps {
-  vote: {
-    label: string
-    value: number
-  }
-  isLoading: boolean
-  isPending: boolean
-  isError: boolean
-  total: number
-  disabled?: boolean
-  lockedCakeBalance: number
   lockedEndTime: number
   onConfirm: () => void
   onViewDetails: () => void

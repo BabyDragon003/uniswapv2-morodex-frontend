@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { CalculatorMode, RoiCalculatorReducerState } from "./useRoiCalculatorReducer";
 import { Flex } from "../Box";

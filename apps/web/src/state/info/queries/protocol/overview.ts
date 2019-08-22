@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { Block, ProtocolData } from 'state/info/types'
 import { getChangeForPeriod } from 'utils/getChangeForPeriod'

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
@@ -12,22 +13,6 @@
 import { Router } from 'itty-router'
 import { error, json, missing } from 'itty-router-extras'
 import { wrapCorsHeader, handleCors } from '@pancakeswap/worker-utils'
-import { fetchCakePrice, saveFarms, saveLPsAPR } from './handler'
-import { farmFetcher, requireChainId } from './helper'
-import { FarmKV } from './kv'
-
-const router = Router()
-
-const allowedOrigin =
-  /^(?:[^\w](pancake\.run)|(localhost:3000)|(localhost:3002)|(dapp-frontend-prince.web.app)|(pancakeswap.com))$/
-
-router.get('/price/cake', async (_, event) => {
-  const cache = caches.default
-  const cacheResponse = await cache.match(event.request)
-  let response
-  if (!cacheResponse) {
-    const price = await fetchCakePrice()
-    response = json(
       { price, updatedAt: new Date().toISOString() },
       {
         headers: {

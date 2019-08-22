@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, Trade, TradeType } from '@pancakeswap/sdk'
 import { CAKE, USDC } from '@pancakeswap/tokens'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'

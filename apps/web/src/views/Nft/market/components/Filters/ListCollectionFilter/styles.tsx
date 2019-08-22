@@ -1,3 +1,4 @@
+import { Checkbox, Flex, Text } from '@pancakeswap/uikit'
 import { StyledItemRow } from '../ListFilter/styles'
 
 interface CollectionItemRowProps {
@@ -12,14 +13,3 @@ interface CollectionItem {
 }
 
 export const CollectionItemRow: React.FC<React.PropsWithChildren<CollectionItemRowProps>> = ({
-  item,
-  isSelected,
-  onClick,
-}) => (
-  <StyledItemRow alignItems="center" px="16px" py="8px">
-    <Text style={{ flex: 1 }}>{item.label}</Text>
-    <Flex ml="24px">
-      <Checkbox name="item-select" scale="sm" onChange={onClick} checked={isSelected} value={item.collectionAddress} />
-    </Flex>
-  </StyledItemRow>
-)

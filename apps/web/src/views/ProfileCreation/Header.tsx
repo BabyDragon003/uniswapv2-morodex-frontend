@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
 import { Breadcrumbs, Heading, Text, Link, Button } from '@pancakeswap/uikit'
 import { useTranslation, TranslateFunction } from '@pancakeswap/localization'
@@ -12,22 +13,6 @@ const Wrapper = styled.div`
 
 const steps = (t: TranslateFunction) => [
   t('Get Starter Collectible'),
-  t('Set Profile Picture'),
-  t('Join Team'),
-  t('Set Name'),
-]
-
-const Header: React.FC<React.PropsWithChildren> = () => {
-  const { t } = useTranslation()
-  const { currentStep } = useContext(ProfileCreationContext)
-
-  return (
-    <Wrapper>
-      <Heading as="h1" scale="xxl" color="secondary" mb="8px" id="profile-setup-title">
-        {t('Profile Setup')}
-      </Heading>
-      <Heading as="h2" scale="lg" mb="8px">
-        {t('Show off your stats and collectibles with your unique profile')}
       </Heading>
       <Text color="textSubtle" mb="8px">
         {t('Total cost: 1.5 CAKE')}

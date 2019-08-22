@@ -1,3 +1,4 @@
+{
   "$schema": "https://unpkg.com/@changesets/config@2.2.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
@@ -12,12 +13,3 @@
     "@pancakeswap/localization",
     "@pancakeswap/ui",
     "@pancakeswap/ui-wallets",
-    "@pancakeswap/uikit",
-    "farms-api",
-    "aptos-web",
-    "blog",
-    "bridge",
-    "e2e",
-    "web"
-  ]
-}

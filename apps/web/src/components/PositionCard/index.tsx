@@ -1,3 +1,4 @@
+import { useState, useMemo, useContext } from 'react'
 import { Currency, CurrencyAmount, JSBI, Pair, Percent } from '@pancakeswap/sdk'
 import {
   Button,
@@ -12,22 +13,6 @@ import {
   TooltipText,
   useTooltip,
   NextLinkFromReactRouter,
-  Link,
-} from '@pancakeswap/uikit'
-import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import useTotalSupply from 'hooks/useTotalSupply'
-import useBUSDPrice from 'hooks/useBUSDPrice'
-import { multiplyPriceByAmount } from 'utils/prices'
-import { useAccount } from 'wagmi'
-import { BIG_INT_ZERO } from 'config/constants/exchange'
-import { useGetRemovedTokenAmounts } from 'views/RemoveLiquidity/RemoveStableLiquidity/hooks/useStableDerivedBurnInfo'
-import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
-
-import { useLPApr } from 'state/swap/useLPApr'
-import { useTokenBalance } from '../../state/wallet/hooks'
-import { currencyId } from '../../utils/currencyId'
-import { unwrappedToken } from '../../utils/wrappedCurrency'
 
 import { LightCard } from '../Card'
 import { AutoColumn } from '../Layout/Column'

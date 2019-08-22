@@ -1,3 +1,4 @@
+import { useAccount } from '@pancakeswap/awgmi'
 import { ConnectWalletButton } from 'components/ConnectWalletButton'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useMemo } from 'react'

@@ -1,3 +1,4 @@
+export const CORS_ALLOW = /[^\w](?:pancake\.run|localhost:3000|pancakeswap\.finance|pancakeswap\.com)$/
 
 function isString(s: any): s is string {
   return typeof s === 'string' || s instanceof String
@@ -12,22 +13,6 @@ export function isOriginAllowed(origin: string | null, allowedOrigin: any) {
     }
     return false
   }
-  if (isString(allowedOrigin)) {
-    return origin === allowedOrigin
-  }
-  if (origin && allowedOrigin instanceof RegExp) {
-    return allowedOrigin.test(origin)
-  }
-  return !!allowedOrigin
-}
-
-export const wrapCorsHeader = (request: Request, response: Response, options: any = {}) => {
-  const { allowedOrigin = '*' } = options
-  const reqOrigin = request.headers.get('origin')
-  const isAllowed = isOriginAllowed(reqOrigin, allowedOrigin)
-  const newResponse = new Response(response.body, response)
-
-  newResponse.headers.set('Access-Control-Allow-Origin', isAllowed ? reqOrigin || '' : '')
 
   return newResponse
 }

@@ -1,3 +1,4 @@
+import { darkColors, lightColors } from "../../theme/colors";
 
 export interface NavThemeType {
   background: string;

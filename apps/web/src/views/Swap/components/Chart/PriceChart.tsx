@@ -1,3 +1,4 @@
+import {
   // Button,
   ExpandIcon,
   Flex,
@@ -12,22 +13,6 @@
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 // import { TradingViewLabel } from 'components/TradingView'
 // import { useTranslation } from '@pancakeswap/localization'
-import { ChartViewMode } from 'state/user/actions'
-import { useExchangeChartViewManager } from 'state/user/hooks'
-// import styled from 'styled-components'
-import BasicChart from './BasicChart'
-import { StyledPriceChart } from './styles'
-// import TradingViewChart from './TradingViewChart'
-// import PairPriceDisplay from '../../../../components/PairPriceDisplay'
-
-// const ChartButton = styled(Button)`
-//   background-color: ${({ $active, theme }) => $active && `${theme.colors.primary}0f`};
-//   padding: 4px 8px;
-//   border-radius: 6px;
-// `
-
-const PriceChart = ({
-  inputCurrency,
   outputCurrency,
   onSwitchTokens,
   isDark,

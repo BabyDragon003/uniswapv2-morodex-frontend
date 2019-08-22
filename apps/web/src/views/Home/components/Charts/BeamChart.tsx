@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area, CartesianAxis, CartesianGrid } from 'recharts'
 import useTheme from 'hooks/useTheme'
 import { formatAmount } from 'utils/formatInfoNumbers'
@@ -12,22 +13,6 @@ export type BeamChartProps = {
 
 /**
  * Note: remember that it needs to be mounted inside the container with fixed height
- */
-const BeamChart = ({ data, setHoverValue, setHoverDate }: BeamChartProps) => {
-  const {
-    currentLanguage: { locale },
-  } = useTranslation()
-  const { theme } = useTheme()
-  if (!data || data.length === 0) {
-    return <LineChartLoader />
-  }
-  return (
-    <ResponsiveContainer>
-      <AreaChart
-        data={data}
-        width={300}
-        height={308}
-        margin={{
           top: 0,
           right: 0,
           left: 0,

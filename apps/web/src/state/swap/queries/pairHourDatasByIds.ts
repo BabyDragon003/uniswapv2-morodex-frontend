@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 
 const pairHourDatasByIds = gql`
   query pairHourDatasByIds($pairIds: [ID!]) {

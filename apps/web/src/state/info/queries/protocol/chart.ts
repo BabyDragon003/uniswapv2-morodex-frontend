@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { ChartEntry } from 'state/info/types'
@@ -12,22 +13,6 @@ import { useGetChainName } from '../../hooks'
 const PANCAKE_DAY_DATAS = gql`
   query overviewCharts($startTime: Int!, $skip: Int!) {
     pancakeDayDatas(first: 1000, skip: $skip, where: { date_gt: $startTime }, orderBy: date, orderDirection: asc) {
-      date
-      dailyVolumeUSD
-      totalLiquidityUSD
-    }
-  }
-`
-
-const getOverviewChartData = async (
-  chainName: MultiChainName,
-  skip: number,
-): Promise<{ data?: ChartEntry[]; error: boolean }> => {
-  try {
-    const { pancakeDayDatas } = await getMultiChainQueryEndPointWithStableSwap(
-      chainName,
-    ).request<PancakeDayDatasResponse>(PANCAKE_DAY_DATAS, {
-      startTime: multiChainStartTime[chainName],
       skip,
     })
     const data = pancakeDayDatas.map(mapDayData)

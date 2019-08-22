@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 
 const mapCriteriasToQualifications = {
   needQualifiedNFT: 'isQualifiedNFT',
@@ -12,14 +13,3 @@ export default function useCriterias(userBasicPoolInfo, ifoCriterias) {
         .map((key) => ({
           type: mapCriteriasToQualifications[key],
           value: Boolean(userBasicPoolInfo[mapCriteriasToQualifications[key]]),
-        })),
-    [ifoCriterias, userBasicPoolInfo],
-  )
-
-  const isEligible = useMemo(() => criterias.some((criteria) => criteria?.value), [criterias])
-
-  return {
-    isEligible,
-    criterias,
-  }
-}

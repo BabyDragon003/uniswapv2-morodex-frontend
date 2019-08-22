@@ -1,3 +1,4 @@
+import { TransactionResponse } from '@pancakeswap/awgmi/core'
 import { useTranslation } from '@pancakeswap/localization'
 import { Skeleton, useToast, Farm as FarmUI } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'

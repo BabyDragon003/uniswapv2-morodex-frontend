@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex, Text, Heading, NftIcon, BunnyPlaceholderIcon } from '@pancakeswap/uikit'
 import Image from 'next/image'
 import { useTranslation } from '@pancakeswap/localization'

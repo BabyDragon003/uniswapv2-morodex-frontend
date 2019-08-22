@@ -1,3 +1,4 @@
+import { useBCakeProxyContract } from 'hooks/useContract'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'

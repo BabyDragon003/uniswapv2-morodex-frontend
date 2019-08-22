@@ -1,3 +1,4 @@
+import { SWRConfig } from 'swr'
 import { useRouter } from 'next/router'
 import { NotFound } from '@pancakeswap/uikit'
 import SingleArticle from 'views/Blog/components/Article/SingleArticle'
@@ -12,22 +13,6 @@ export async function getStaticPaths() {
   }
 }
 
-export const getStaticProps = async (context: any) => {
-  const params = context.params.slug
-  const article = await getSingleArticle({
-    url: `/articles/${params}`,
-    urlParamsObject: { populate: 'categories,image' },
-  })
-
-  const similarArticles = await getArticle({
-    url: '/articles',
-    urlParamsObject: {
-      locale: article.locale,
-      sort: 'createAt:desc',
-      populate: 'categories,image',
-      pagination: { limit: 6 },
-      filters: {
-        id: {
           $not: params,
         },
         categories: {

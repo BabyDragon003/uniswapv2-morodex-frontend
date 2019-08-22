@@ -1,3 +1,4 @@
+{
   "name": "proxy-worker",
   "version": "0.0.0",
   "dependencies": {
@@ -12,8 +13,3 @@
     "wrangler": "2.0.6"
   },
   "private": true,
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler publish"
-  }
-}

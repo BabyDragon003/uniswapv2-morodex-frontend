@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
@@ -12,22 +13,6 @@ const StyledPositionLabel = styled.div<{ bgColor: string }>`
   border-radius: 4px;
   display: inline-flex;
   justify-content: center;
-  height: 32px;
-  min-width: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-`
-
-const Label = styled.div`
-  color: #fff;
-  display: none;
-  text-transform: uppercase;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    display: block;
-    margin-left: 4px;
-  }
-`
 
 const PositionLabel: React.FC<React.PropsWithChildren<PositionLabelProps>> = ({ position }) => {
   const { t } = useTranslation()

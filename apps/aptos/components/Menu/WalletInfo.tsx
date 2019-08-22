@@ -1,3 +1,4 @@
+import { useAccount, useAccountBalance, APTOS_COIN } from '@pancakeswap/awgmi'
 
 import { useTranslation } from '@pancakeswap/localization'
 import {
@@ -12,22 +13,6 @@ import {
   Text,
 } from '@pancakeswap/uikit'
 import { useAuth } from 'hooks/useAuth'
-
-import { useActiveChainId } from 'hooks/useNetwork'
-import { getBlockExploreLink } from 'utils'
-import useNativeCurrency from 'hooks/useNativeCurrency'
-
-interface WalletInfoProps {
-  hasLowNativeBalance: boolean
-  onDismiss: InjectedModalProps['onDismiss']
-}
-
-const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss }) => {
-  const { t } = useTranslation()
-  const { account } = useAccount()
-  const chainId = useActiveChainId()
-  const native = useNativeCurrency()
-  const { data, isFetched } = useAccountBalance({ address: account?.address, coin: APTOS_COIN })
 
   const { logout } = useAuth()
 

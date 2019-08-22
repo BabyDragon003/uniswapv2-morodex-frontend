@@ -1,3 +1,4 @@
+import { vars } from "@pancakeswap/ui/css/vars.css";
 import { darkColors, lightColors } from "../../theme/colors";
 import { TooltipTheme } from "./types";
 

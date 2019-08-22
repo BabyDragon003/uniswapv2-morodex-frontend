@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Text, ChevronDownIcon, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

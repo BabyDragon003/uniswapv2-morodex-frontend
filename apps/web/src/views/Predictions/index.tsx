@@ -1,3 +1,4 @@
+import { useModal, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { PageMeta } from 'components/Layout/Page'
 import { useEffect, useRef } from 'react'
 import { useChartView, useIsChartPaneOpen } from 'state/predictions/hooks'

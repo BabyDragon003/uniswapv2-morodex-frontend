@@ -1,3 +1,4 @@
+import { bscTestnetTokens } from '@pancakeswap/tokens'
 import tryParseAmount from './tryParseAmount'
 
 describe('utils/tryParseAmount', () => {

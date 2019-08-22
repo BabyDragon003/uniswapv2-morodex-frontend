@@ -1,3 +1,4 @@
+import { Box, CardBody, CardProps, Flex, Text, TokenPairImage, FlexGap, Skeleton, Pool } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { vaultPoolConfig } from 'config/constants/pools'
@@ -12,22 +13,6 @@ import { VaultPositionTagWithLabel } from '../Vault/VaultPositionTag'
 import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
 import RecentCakeProfitRow from './RecentCakeProfitRow'
 import { StakingApy } from './StakingApy'
-import VaultCardActions from './VaultCardActions'
-import LockedStakingApy from '../LockedPool/LockedStakingApy'
-
-const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
-  min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
-`
-
-interface CakeVaultProps extends CardProps {
-  pool: Pool.DeserializedPool<Token>
-  showStakedOnly: boolean
-  defaultFooterExpanded?: boolean
-  showICake?: boolean
-  showSkeleton?: boolean
-}
-
-interface CakeVaultDetailProps {
   isLoading?: boolean
   account: string
   pool: Pool.DeserializedPool<Token>

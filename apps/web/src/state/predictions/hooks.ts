@@ -1,3 +1,4 @@
+import { useEffect, useMemo } from 'react'
 import { isAddress } from 'utils'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import useSelector from 'contexts/LocalRedux/useSelector'
@@ -12,22 +13,6 @@ import {
   makeGetIsClaimableSelector,
   getMinBetAmountSelector,
   getSortedRoundsCurrentEpochSelector,
-  getCurrentRoundCloseTimestampSelector,
-} from './selectors'
-
-export const useGetRoundsByCloseOracleId = () => {
-  return useSelector(getRoundsByCloseOracleIdSelector)
-}
-
-export const useGetSortedRounds = () => {
-  return useSelector(getSortedRoundsSelector)
-}
-
-export const useGetSortedRoundsCurrentEpoch = () => {
-  return useSelector(getSortedRoundsCurrentEpochSelector)
-}
-
-export const useGetBetByEpoch = (account: string, epoch: number) => {
   const getBetByEpochSelector = useMemo(() => makeGetBetByEpochSelector(account, epoch), [account, epoch])
   return useSelector(getBetByEpochSelector)
 }

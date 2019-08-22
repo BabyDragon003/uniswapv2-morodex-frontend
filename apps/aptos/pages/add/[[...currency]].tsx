@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { AutoColumn, Liquidity as LiquidityUI } from '@pancakeswap/uikit'
 import { PageMeta } from 'components/Layout/Page'
 
@@ -12,22 +13,6 @@ import { useIsTransactionUnsupported, useIsTransactionWarning } from 'hooks/Trad
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { PairState } from 'hooks/usePairs'
-import { useCallback, useMemo, useState } from 'react'
-import { MinimalPositionCard } from 'components/Liquidity/components/PositionCard'
-import { SettingsButton } from 'components/Menu/Settings/SettingsButton'
-
-enum Steps {
-  Choose,
-  Add,
-}
-
-const MinimalPositionCardContainer = withLPValues(MinimalPositionCard)
-
-const AddLiquidityPage = () => {
-  const { t } = useTranslation()
-  const [steps, setSteps] = useState(Steps.Choose)
-  const native = useNativeCurrency()
-  const activeChainId = useActiveChainId()
 
   const defaultCurrencies = useMemo(() => [native.address, CAKE[activeChainId].address], [native, activeChainId])
 

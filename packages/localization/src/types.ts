@@ -1,3 +1,4 @@
+import { Language } from '@pancakeswap/uikit'
 
 import translations from './config/translations.json'
 

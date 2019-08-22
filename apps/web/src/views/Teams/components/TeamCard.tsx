@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Card, CardHeader, CardBody, CommunityIcon, Heading, PrizeIcon, Text, Skeleton } from '@pancakeswap/uikit'
 import { FetchStatus } from 'config/constants/types'
 import useSWR from 'swr'
@@ -12,22 +13,6 @@ interface TeamCardProps {
 
 const Wrapper = styled.div`
   padding-top: 16px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    padding-top: 24px;
-  }
-`
-
-const Avatar = styled.img`
-  border-radius: 50%;
-  height: 64px;
-  margin-top: -12px;
-  width: 64px;
-  border: solid 2px white;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    height: 128px;
-    margin-top: -24px;
     width: 128px;
   }
 `

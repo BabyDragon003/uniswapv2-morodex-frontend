@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 
 // Forked from @gnosis.pm/safe-apps-wagmi for esm
 import { Web3Provider } from '@ethersproject/providers'
@@ -12,22 +13,6 @@ function normalizeChainId(chainId: string | number) {
 
     return Number.parseInt(chainId, isHex === '0x' ? 16 : 10)
   }
-  return chainId
-}
-
-const __IS_SERVER__ = typeof window === 'undefined'
-const __IS_IFRAME__ = !__IS_SERVER__ && window?.parent !== window
-
-class SafeConnector extends Connector<SafeAppProvider, SafeOpts | undefined> {
-  readonly id = 'safe'
-  readonly name = 'Safe'
-  ready = !__IS_SERVER__ && __IS_IFRAME__
-
-  provider?: SafeAppProvider
-  sdk: SafeAppsSDK
-  safe?: SafeInfo
-
-  constructor(config: { chains?: Chain[]; options?: SafeOpts }) {
     super({ ...config, options: config?.options })
 
     this.sdk = new SafeAppsSDK(config.options)

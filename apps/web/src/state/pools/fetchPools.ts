@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js'
 import fromPairs from 'lodash/fromPairs'
 import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import poolsConfig from 'config/constants/pools'

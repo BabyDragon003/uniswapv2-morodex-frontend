@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Box, Button, Flex, Text } from '@pancakeswap/uikit'
 import { useAppDispatch } from 'state'
 import { useAllSortedRecentTransactions } from 'state/transactions/hooks'

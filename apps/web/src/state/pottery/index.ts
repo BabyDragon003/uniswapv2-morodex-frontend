@@ -1,3 +1,4 @@
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AppState } from 'state'
 import {
   PotteryState,
@@ -12,22 +13,6 @@ import {
   fetchLastVaultAddress,
   fetchPublicPotteryValue,
   fetchTotalLockedValue,
-  fetchLatestRoundId,
-} from './fetchPottery'
-import {
-  fetchPotterysAllowance,
-  fetchVaultUserData,
-  fetchUserDrawData,
-  fetchWithdrawAbleData,
-} from './fetchUserPottery'
-
-const initialState: PotteryState = Object.freeze({
-  lastVaultAddress: '',
-  publicData: {
-    lastDrawId: '',
-    totalPrize: null,
-    getStatus: PotteryDepositStatus.BEFORE_LOCK,
-    totalLockCake: null,
     totalSupply: null,
     lockStartTime: '',
     lockTime: 0,

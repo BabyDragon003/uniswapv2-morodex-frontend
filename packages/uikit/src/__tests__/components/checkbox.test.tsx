@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { renderWithProvider } from "../../testHelpers";
 import Checkbox from "../../components/Checkbox/Checkbox";
 

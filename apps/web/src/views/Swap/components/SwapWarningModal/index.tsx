@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { ModalBody, ModalContainer, Message, ModalHeader, Box, Heading } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
@@ -12,22 +13,6 @@ import BTTWarning from './BTTWarning'
 import RugPullWarning from './RugPullWarning'
 import FREEWarning from './FREEWarning'
 import GalaWarning from './GalaWarning'
-import ABNBWarning from './ABNBWarning'
-
-const StyledModalContainer = styled(ModalContainer)`
-  max-width: 440px;
-`
-
-const MessageContainer = styled(Message)`
-  align-items: flex-start;
-  justify-content: flex-start;
-`
-
-interface SwapWarningModalProps {
-  swapCurrency: WrappedTokenInfo
-  onDismiss?: () => void
-}
-
 const SwapWarningModal: React.FC<React.PropsWithChildren<SwapWarningModalProps>> = ({ swapCurrency, onDismiss }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()

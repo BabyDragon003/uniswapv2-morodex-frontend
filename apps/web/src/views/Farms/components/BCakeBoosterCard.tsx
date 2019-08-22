@@ -1,3 +1,4 @@
+import {
   Box,
   Button,
   Card,
@@ -12,22 +13,6 @@
   useMatchBreakpoints,
   MessageText,
   Message,
-} from '@pancakeswap/uikit'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from '@pancakeswap/localization'
-import Image from 'next/legacy/image'
-import NextLink from 'next/link'
-import styled, { useTheme } from 'styled-components'
-import { useBCakeProxyContractAddress } from '../hooks/useBCakeProxyContractAddress'
-import useBCakeProxyBalance from '../hooks/useBCakeProxyBalance'
-import { useUserBoosterStatus } from '../hooks/useUserBoosterStatus'
-import { useUserLockedCakeStatus } from '../hooks/useUserLockedCakeStatus'
-import boosterCardImage from '../images/boosterCardImage.png'
-import CreateProxyButton from './YieldBooster/components/CreateProxyButton'
-
-export const CardWrapper = styled.div`
-  position: relative;
   width: 100%;
   margin-top: 10px;
   ${({ theme }) => theme.mediaQueries.sm} {

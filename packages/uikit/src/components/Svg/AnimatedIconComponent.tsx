@@ -1,3 +1,4 @@
+import { StyledAnimatedIconComponent, StyledIconContainer } from "./styles";
 import { IconComponentType } from "./types";
 
 const AnimatedIconComponent: React.FC<React.PropsWithChildren<IconComponentType>> = ({

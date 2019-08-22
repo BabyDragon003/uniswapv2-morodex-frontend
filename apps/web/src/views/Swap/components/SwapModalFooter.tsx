@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Trade, TradeType, CurrencyAmount, Currency } from '@pancakeswap/sdk'
 import { Button, Text, AutoRenewIcon, QuestionHelper } from '@pancakeswap/uikit'

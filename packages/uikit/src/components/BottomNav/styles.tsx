@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Flex } from "../Box";
 
 const StyledBottomNav = styled(Flex)`
@@ -12,6 +13,3 @@ const StyledBottomNav = styled(Flex)`
     padding-bottom: 45px;
   }
   z-index: 20;
-`;
-
-export default StyledBottomNav;

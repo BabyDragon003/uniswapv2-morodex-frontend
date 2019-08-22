@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Text } from '@pancakeswap/uikit'
 
@@ -12,22 +13,6 @@ const Circle = styled.div`
   font-size: 21px;
   color: #ffffff;
   border-radius: 50%;
-  background: linear-gradient(180deg, #8051d6 0%, #492286 100%);
-  z-index: 1;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    width: 48px;
-    min-width: 48px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 32px;
-  }
-`
-
-const Step = styled.div<{ confirmed?: boolean; disabled?: boolean; canHover?: boolean }>`
-  position: relative;
-  display: flex;
-  flex-direction: row;
   align-items: flex-start;
   margin-top: 28px;
   &:before {

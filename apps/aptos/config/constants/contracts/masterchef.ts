@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Types } from 'aptos'
 
 export const ADDRESS = '0x7968a225eba6c99f5f1070aeec1b405757dee939eabcfda43ba91588bf5fccf3' as const
@@ -12,22 +13,6 @@ export const masterchefAddPool = (
 ): Types.TransactionPayload_EntryFunctionPayload => {
   return {
     type: 'entry_function_payload',
-    type_arguments: typeArgs,
-    arguments: args,
-    function: `${ADDRESS}::${MASTERCHEF_MODULE_NAME}::add_pool`,
-  }
-}
-
-export type MasterchefDepositArgs = [bigint | string]
-
-export const masterchefDeposit = (
-  args: MasterchefDepositArgs,
-  typeArgs: [string],
-): Types.TransactionPayload_EntryFunctionPayload => {
-  return {
-    type: 'entry_function_payload',
-    type_arguments: typeArgs,
-    arguments: args,
     function: `${ADDRESS}::${MASTERCHEF_MODULE_NAME}::deposit`,
   }
 }

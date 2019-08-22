@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Token } from '@pancakeswap/sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
 import styled from 'styled-components'
@@ -12,22 +13,6 @@ const StyledButtonMenu = styled(ButtonMenu)`
 `
 
 export default function Manage({
-  setModalView,
-  setImportList,
-  setImportToken,
-  setListUrl,
-}: {
-  setModalView: (view: CurrencyModalView) => void
-  setImportToken: (token: Token) => void
-  setImportList: (list: TokenList) => void
-  setListUrl: (url: string) => void
-}) {
-  const [showLists, setShowLists] = useState(true)
-
-  const { t } = useTranslation()
-
-  return (
-    <ModalBody style={{ overflow: 'visible' }}>
       <StyledButtonMenu
         activeIndex={showLists ? 0 : 1}
         onItemClick={() => setShowLists((prev) => !prev)}

@@ -1,3 +1,4 @@
+import { BigNumber, FixedNumber } from '@ethersproject/bignumber'
 import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
 import _toNumber from 'lodash/toNumber'
 import { SerializedFarmPublicData, FarmData, isStableFarm } from './types'
@@ -12,22 +13,6 @@ export const getFarmBaseTokenPrice = (
   quoteTokenFarm: SerializedFarmPublicData,
   nativePriceUSD: FixedNumber,
   wNative: string,
-  stable: string,
-  quoteTokenInBusd,
-): FixedNumber => {
-  const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
-
-  if (farm.quoteToken.symbol === stable) {
-    return hasTokenPriceVsQuote ? FixedNumber.from(farm.tokenPriceVsQuote) : FIXED_ONE
-  }
-
-  if (farm.quoteToken.symbol === wNative) {
-    return hasTokenPriceVsQuote ? nativePriceUSD.mulUnsafe(FixedNumber.from(farm.tokenPriceVsQuote)) : FIXED_ONE
-  }
-
-  // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
-  if (!quoteTokenFarm) {
-    return FIXED_ZERO
   }
 
   // Possible alternative farm quoteTokens:

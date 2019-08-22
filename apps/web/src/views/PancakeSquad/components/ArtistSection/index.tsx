@@ -1,3 +1,4 @@
+import { Box, Button, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { LandingBodyWrapper, StyledWaveContainer } from 'views/PancakeSquad/styles'
 import { useTheme } from '@pancakeswap/hooks'

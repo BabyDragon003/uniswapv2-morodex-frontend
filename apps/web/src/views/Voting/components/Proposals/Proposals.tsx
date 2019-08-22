@@ -1,3 +1,4 @@
+import { Box, Breadcrumbs, Card, Flex, Heading, Text } from '@pancakeswap/uikit'
 import Link from 'next/link'
 import { useTranslation } from '@pancakeswap/localization'
 import Container from 'components/Layout/Container'

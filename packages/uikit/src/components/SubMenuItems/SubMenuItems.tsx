@@ -1,3 +1,4 @@
+import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import { useIsomorphicLayoutEffect } from "framer-motion";
 import debounce from "lodash/debounce";
 import React, { useCallback, useRef } from "react";
@@ -12,22 +13,6 @@ import StyledSubMenuItems, {
   SubMenuItemWrapper,
 } from "./styles";
 import { SubMenuItemsProps } from "./types";
-
-const SUBMENU_CHEVRON_CLICK_MOVE_PX = 100;
-const SUBMENU_SCROLL_DEVIATION = 3;
-
-const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
-  items = [],
-  activeItem,
-  isMobileOnly = false,
-  ...props
-}) => {
-  const scrollLayerRef = useRef<HTMLDivElement>(null);
-  const chevronLeftRef = useRef<HTMLDivElement>(null);
-  const chevronRightRef = useRef<HTMLDivElement>(null);
-  const layerController = useCallback(() => {
-    if (!scrollLayerRef.current || !chevronLeftRef.current || !chevronRightRef.current) return;
-    const scrollLayer = scrollLayerRef.current;
     if (scrollLayer.scrollLeft !== 0) chevronLeftRef.current.classList.add("show");
     else chevronLeftRef.current.classList.remove("show");
     if (scrollLayer.scrollLeft + scrollLayer.offsetWidth < scrollLayer.scrollWidth - SUBMENU_SCROLL_DEVIATION)

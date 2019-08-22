@@ -1,3 +1,4 @@
+import { useIsMounted } from "@pancakeswap/hooks";
 import { AtomBox } from "@pancakeswap/ui/components/AtomBox";
 import throttle from "lodash/throttle";
 import React, { useEffect, useRef, useState, useMemo } from "react";
@@ -12,22 +13,6 @@ import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
 import Logo from "./components/Logo";
-import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
-import { MenuContext } from "./context";
-import { NavProps } from "./types";
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  // display: grid;
-  // grid-template-rows: auto 1fr;
-  // background-image: linear-gradient(to bottom, #000, #3bc4ff) !important;
-  justify-content: center;
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;

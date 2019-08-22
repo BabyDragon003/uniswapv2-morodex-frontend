@@ -1,3 +1,4 @@
+import { GraphQLClient } from 'graphql-request'
 
 const requestWithTimeout = <T>(
   graphQLClient: GraphQLClient,

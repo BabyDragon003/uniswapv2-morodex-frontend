@@ -1,3 +1,4 @@
+name: Test Config Pass
 
 on:
   pull_request:
@@ -12,5 +13,3 @@ jobs:
       matrix:
         node: [16]
     name: Config (Jest)
-    steps:
-      - run: 'echo "No Test Config required" '

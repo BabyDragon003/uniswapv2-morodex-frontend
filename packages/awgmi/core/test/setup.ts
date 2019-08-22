@@ -1,3 +1,4 @@
+import { vi } from 'vitest'
 
 Object.defineProperty(window, 'localStorage', {
   value: {

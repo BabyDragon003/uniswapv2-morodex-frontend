@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {

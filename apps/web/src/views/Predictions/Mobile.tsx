@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Link } from '@pancakeswap/uikit'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
@@ -12,22 +13,6 @@ import Menu from './components/Menu'
 import LoadingSection from './components/LoadingSection'
 
 const StyledMobile = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-height: 100%;
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    display: none;
-  }
-`
-
-const PowerLinkStyle = styled(Link)`
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 16px;
-`
-
 const getView = (isHistoryPaneOpen: boolean, isChartPaneOpen: boolean): PageView => {
   if (isHistoryPaneOpen) {
     return PageView.HISTORY

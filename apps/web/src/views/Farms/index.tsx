@@ -1,3 +1,4 @@
+import { useTranslation } from '@pancakeswap/localization'
 import { LinkExternal, ModalV2 } from '@pancakeswap/uikit'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { ConnectorNames, getDocLink } from 'config/wallet'

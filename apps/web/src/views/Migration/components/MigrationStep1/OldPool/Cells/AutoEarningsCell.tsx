@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex, Box, useMatchBreakpoints, Balance, Pool } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

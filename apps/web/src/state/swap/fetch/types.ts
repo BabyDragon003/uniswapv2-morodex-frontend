@@ -1,3 +1,4 @@
+import { PairDataTimeWindowEnum } from '../types'
 
 export type fetchPairDataParams = {
   pairId: string

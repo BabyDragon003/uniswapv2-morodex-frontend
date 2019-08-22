@@ -1,3 +1,4 @@
+import { Box, Card, CardBody, CardHeader, ExpandableButton, useMatchBreakpoints } from '@pancakeswap/uikit'
 import NoSSR from 'components/NoSSR'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useRouter } from 'next/router'
@@ -12,22 +13,6 @@ import { IfoRibbon } from './IfoRibbon'
 interface IfoFoldableCardProps {
   ifo: Ifo
   publicIfoData: PublicIfoData
-  walletIfoData: WalletIfoData
-}
-
-const StyledCard = styled(Card)<{ $isCurrent?: boolean }>`
-  width: 100%;
-  margin: auto;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-
-  ${({ $isCurrent }) =>
-    $isCurrent &&
-    `
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  > div {
-    border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   `}

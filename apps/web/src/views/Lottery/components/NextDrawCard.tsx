@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import {
   Card,
@@ -12,22 +13,6 @@ import {
   Box,
   CardFooter,
   ExpandableLabel,
-  Balance,
-} from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
-import { LotteryStatus } from 'config/constants/types'
-import { useTranslation } from '@pancakeswap/localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
-import { useLottery } from 'state/lottery/hooks'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
-import ViewTicketsModal from './ViewTicketsModal'
-import BuyTicketsButton from './BuyTicketsButton'
-import { dateTimeOptions } from '../helpers'
-import RewardBrackets from './RewardBrackets'
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: auto;
 
   ${({ theme }) => theme.mediaQueries.md} {
     grid-column-gap: 32px;

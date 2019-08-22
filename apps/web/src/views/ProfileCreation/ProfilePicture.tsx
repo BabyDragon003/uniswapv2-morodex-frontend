@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {
   AutoRenewIcon,
@@ -12,22 +13,6 @@ import {
 } from '@pancakeswap/uikit'
 import { useAccount, useSigner } from 'wagmi'
 import { getPancakeProfileAddress } from 'utils/addressHelpers'
-import { getErc721Contract } from 'utils/contractHelpers'
-import { useTranslation } from '@pancakeswap/localization'
-import { useProfileContract } from 'hooks/useContract'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import { NftLocation } from 'state/nftMarket/types'
-import { useProfile } from 'state/profile/hooks'
-import SelectionCard from './SelectionCard'
-import NextStepButton from './NextStepButton'
-import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
-import multicall from '../../utils/multicall'
-import profileABI from '../../config/abi/pancakeProfile.json'
-import { useNftsForAddress } from '../Nft/market/hooks/useNftsForAddress'
-
-const Link = styled(NextLinkFromReactRouter)`
   color: ${({ theme }) => theme.colors.primary};
 `
 

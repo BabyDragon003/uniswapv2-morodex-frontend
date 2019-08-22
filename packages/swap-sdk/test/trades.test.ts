@@ -1,3 +1,4 @@
+import { TradeType, Percent, Token, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import JSBI from 'jsbi'
 import { isTradeBetter } from '../src/trade'
 import { Pair, Route, Trade } from '../src/entities'

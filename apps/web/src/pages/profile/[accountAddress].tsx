@@ -1,3 +1,4 @@
+import { useAccount } from 'wagmi'
 import { useRouter } from 'next/router'
 import { useProfileForAddress } from 'state/profile/hooks'
 import { NftProfileLayout } from 'views/Profile'

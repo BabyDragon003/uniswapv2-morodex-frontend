@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { isAddress } from 'utils'
 import { useAppDispatch } from 'state'
 import { Box, Button, Flex, Table, Text, Th, useMatchBreakpoints, PaginationButton } from '@pancakeswap/uikit'
@@ -12,22 +13,6 @@ import { useLastUpdated } from '@pancakeswap/hooks'
 import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
 import NoNftsImage from '../components/Activity/NoNftsImage'
 import ActivityFilters from './ActivityFilters'
-import ActivityRow from '../components/Activity/ActivityRow'
-import { sortActivity } from './utils/sortActivity'
-import { fetchActivityNftMetadata } from './utils/fetchActivityNftMetadata'
-
-const MAX_PER_PAGE = 8
-
-const MAX_PER_QUERY = 100
-
-interface ActivityHistoryProps {
-  collection?: Collection
-}
-
-const ActivityHistory: React.FC<React.PropsWithChildren<ActivityHistoryProps>> = ({ collection }) => {
-  const dispatch = useAppDispatch()
-  const { address: collectionAddress } = collection || { address: '' }
-  const nftActivityFilters = useGetNftActivityFilters(collectionAddress)
   const { theme } = useTheme()
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)

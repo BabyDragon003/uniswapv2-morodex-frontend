@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Flex, Text, Pool } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'

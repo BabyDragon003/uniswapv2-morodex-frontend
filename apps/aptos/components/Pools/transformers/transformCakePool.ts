@@ -1,3 +1,4 @@
+import { PoolCategory } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import _get from 'lodash/get'
@@ -12,22 +13,6 @@ export const getPoolApr = ({ rewardTokenPrice, stakingTokenPrice, tokenPerSecond
   const totalRewardPricePerYear = new BigNumber(rewardTokenPrice).times(tokenPerSecond).times(SECONDS_IN_YEAR)
   const totalStakingTokenInPool = new BigNumber(stakingTokenPrice).times(totalStaked)
   const apr = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
-  return apr.isNaN() || !apr.isFinite() ? null : apr.toNumber()
-}
-
-export function getRewardPerSecondOfCakeFarm({
-  cakePerSecond,
-  specialRate,
-  regularRate,
-  allocPoint,
-  specialAllocPoint,
-}) {
-  const fSpecialRate = FixedNumber.from(specialRate)
-  const fRegularRate = FixedNumber.from(regularRate)
-
-  const cakeRate = fSpecialRate.divUnsafe(fSpecialRate.addUnsafe(fRegularRate))
-
-  return FixedNumber.from(cakePerSecond)
     .mulUnsafe(cakeRate.mulUnsafe(FixedNumber.from(allocPoint)).divUnsafe(FixedNumber.from(specialAllocPoint)))
     .toString()
 }

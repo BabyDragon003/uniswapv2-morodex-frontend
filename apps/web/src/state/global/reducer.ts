@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit'
 import { ChainId } from '@pancakeswap/sdk'
 import { toggleFarmTransactionModal, pickFarmTransactionTx } from './actions'

@@ -1,3 +1,4 @@
+import { SerializedToken } from '@pancakeswap/aptos-swap-sdk'
 import { SerializedWrappedToken, deserializeToken } from '@pancakeswap/token-lists'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { useAtom } from 'jotai'
@@ -12,22 +13,6 @@ type UserAddedTokens = {
   }
 }
 
-const userAddTokensAtom = atomWithStorage<UserAddedTokens>(USER_ADD_TOKENS, {})
-
-export const useRemoveUserAddedToken = () => {
-  const [, set] = useAtom(userAddTokensAtom)
-
-  return useCallback(
-    (chainId: number, address: string) => {
-      set((s) => {
-        if (!s) {
-          return {}
-        }
-        if (s?.[chainId]?.[address]) {
-          // eslint-disable-next-line no-param-reassign
-          delete s[chainId][address]
-        }
-        return { ...s }
       })
     },
     [set],

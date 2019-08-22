@@ -1,3 +1,4 @@
+import { TransactionResponse } from '@ethersproject/providers'
 import { useTranslation } from '@pancakeswap/localization'
 import { useModal, useToast, Farm as FarmUI } from '@pancakeswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'

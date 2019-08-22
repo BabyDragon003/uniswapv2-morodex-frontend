@@ -1,3 +1,4 @@
+import styled, { keyframes } from 'styled-components'
 import { Flex, Button, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TicketCard } from '../../svgs'

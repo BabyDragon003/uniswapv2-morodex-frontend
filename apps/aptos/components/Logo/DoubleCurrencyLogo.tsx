@@ -1,3 +1,4 @@
+import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import styled from 'styled-components'
 import { CurrencyLogo } from './CurrencyLogo'
 

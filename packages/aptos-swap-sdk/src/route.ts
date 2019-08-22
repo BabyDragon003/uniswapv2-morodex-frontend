@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import invariant from 'tiny-invariant'
 import { Price } from '@pancakeswap/swap-sdk-core'
 import { Pair } from './pair'

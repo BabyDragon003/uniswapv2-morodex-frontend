@@ -1,3 +1,4 @@
+export const PROPOSALS_TO_SHOW = 10
 export const ADMINS = [
   '0x842B508681eE336E74600974B4623B709477d29D', // TARO cake.eth
   '0x977e0c1005dff8749f8cac22f4df0bd5f013d1a7', // CHUNGUS cake.eth

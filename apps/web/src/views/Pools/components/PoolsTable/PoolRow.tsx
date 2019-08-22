@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react'
 import { useMatchBreakpoints, Pool } from '@pancakeswap/uikit'
 import { usePool, useDeserializedPoolByVaultKey, useVaultPoolByKey } from 'state/pools/hooks'
 import { VaultKey } from 'state/types'
@@ -12,22 +13,6 @@ import ActionPanel from './ActionPanel/ActionPanel'
 import AutoEarningsCell from './Cells/AutoEarningsCell'
 import AutoAprCell from './Cells/AutoAprCell'
 import StakedCell from './Cells/StakedCell'
-
-export const VaultPoolRow: React.FC<
-  React.PropsWithChildren<{ vaultKey: VaultKey; account: string; initialActivity?: boolean }>
-> = memo(({ vaultKey, account, initialActivity }) => {
-  const { isLg, isXl, isXxl } = useMatchBreakpoints()
-  const isLargerScreen = isLg || isXl || isXxl
-  const isXLargerScreen = isXl || isXxl
-  const pool = useDeserializedPoolByVaultKey(vaultKey)
-  const { totalCakeInVault } = useVaultPoolByKey(vaultKey)
-
-  const { stakingToken, totalStaked } = pool
-
-  const totalStakedBalance = useMemo(() => {
-    return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
-  }, [stakingToken.decimals, totalCakeInVault])
-
   return (
     <Pool.ExpandRow initialActivity={initialActivity} panel={<ActionPanel account={account} pool={pool} expanded />}>
       <NameCell pool={pool} />

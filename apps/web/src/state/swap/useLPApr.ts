@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { Pair, ChainId } from '@pancakeswap/sdk'
 import useSWRImmutable from 'swr/immutable'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
@@ -12,22 +13,6 @@ interface PoolReserveVolume {
   volumeUSD: string
 }
 
-interface PoolReserveVolumeResponse {
-  now: PoolReserveVolume[]
-  oneDayAgo: PoolReserveVolume[]
-  twoDaysAgo: PoolReserveVolume[]
-  oneWeekAgo: PoolReserveVolume[]
-  twoWeeksAgo: PoolReserveVolume[]
-}
-
-export const useLPApr = (pair?: Pair) => {
-  const { data: poolData } = useSWRImmutable(
-    pair && pair.chainId === ChainId.BSC ? ['LP7dApr', pair.liquidityToken.address] : null,
-    async () => {
-      const timestampsArray = getDeltaTimestamps()
-      const blocks = await getBlocksFromTimestamps(timestampsArray, 'desc', 1000)
-      const [, , block7d] = blocks ?? []
-      const { error, data } = await fetchPoolVolumeAndReserveData(
         block7d.number,
         pair.liquidityToken.address.toLowerCase(),
       )

@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Text, Flex, AccountIcon, TeamBattleIcon, Box, useTooltip, LinkExternal } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
@@ -12,22 +13,6 @@ const NotOkNFT = ({ admissionProfile }) => {
   const keyword = '%Pancake Squad NFT%'
 
   const rawText = t(`Set %Pancake Squad NFT% as Pancake Profile avatar`)
-
-  return (
-    <TransWithElement
-      text={rawText}
-      keyword={keyword}
-      element={
-        <>
-          <LinkExternal
-            style={{ display: 'inline' }}
-            href={`https://dapp-frontend-prince.web.app/nfts/collections/${admissionProfile}`}
-          >
-            {t('Pancake Squad NFT')}
-          </LinkExternal>
-          <br />
-        </>
-      }
     />
   )
 }

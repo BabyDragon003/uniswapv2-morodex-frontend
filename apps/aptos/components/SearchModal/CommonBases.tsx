@@ -1,3 +1,4 @@
+import { ChainId, Currency, Token } from '@pancakeswap/aptos-swap-sdk'
 import { Text, QuestionHelper, AutoColumn, AutoRow } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import useNativeCurrency from 'hooks/useNativeCurrency'
@@ -12,22 +13,6 @@ const ButtonWrapper = styled.div`
   vertical-align: top;
   margin-right: 10px;
 `
-
-const BaseWrapper = styled.div<{ disable?: boolean }>`
-  border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
-  border-radius: 10px;
-  display: flex;
-  padding: 6px;
-  align-items: center;
-  :hover {
-    cursor: ${({ disable }) => !disable && 'pointer'};
-    background-color: ${({ theme, disable }) => !disable && theme.colors.background};
-  }
-  background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
-  opacity: ${({ disable }) => disable && '0.4'};
-`
-
-const RowWrapper = styled.div`
   white-space: nowrap;
   overflow-x: auto;
   scroll-snap-type: x mandatory;

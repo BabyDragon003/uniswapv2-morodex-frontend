@@ -1,3 +1,4 @@
+import { Flex, Grid, Text, Button, Input, BinanceIcon, ErrorIcon } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { NftToken } from 'state/nftMarket/types'
@@ -12,22 +13,6 @@ interface TransferStageProps {
   setTransferAddress: React.Dispatch<React.SetStateAction<string>>
   isInvalidTransferAddress: boolean
   continueToNextStage: () => void
-}
-
-const TransferStage: React.FC<React.PropsWithChildren<TransferStageProps>> = ({
-  nftToSell,
-  lowestPrice,
-  transferAddress,
-  setTransferAddress,
-  isInvalidTransferAddress,
-  continueToNextStage,
-}) => {
-  const { t } = useTranslation()
-  const { address: account } = useAccount()
-  const transferAddressEqualsConnectedAddress = isAddress(transferAddress) === isAddress(account)
-  const getErrorText = () => {
-    if (isInvalidTransferAddress) {
-      return t('That’s not a BNB Smart Chain wallet address.')
     }
     if (transferAddressEqualsConnectedAddress) {
       return t('This address is the one that is currently connected')

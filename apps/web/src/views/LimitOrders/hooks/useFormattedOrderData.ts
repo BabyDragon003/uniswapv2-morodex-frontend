@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Order } from '@gelatonetwork/limit-orders-lib'
 import { Currency, CurrencyAmount, Fraction, Token } from '@pancakeswap/sdk'
 import { useCurrency } from 'hooks/Tokens'
@@ -12,22 +13,6 @@ export interface FormattedOrderData {
   inputToken: Currency | Token
   outputToken: Currency | Token
   inputAmount: string
-  outputAmount: string
-  executionPrice: string
-  invertedExecutionPrice: string
-  isOpen: boolean
-  isCancelled: boolean
-  isExecuted: boolean
-  isExpired: boolean
-  isSubmissionPending: boolean
-  isCancellationPending: boolean
-  bscScanUrls: {
-    created: string
-    executed: string
-    cancelled: string
-  }
-}
-
 const formatForDisplay = (amount: Fraction) => {
   if (!amount) {
     return undefined

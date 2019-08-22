@@ -1,3 +1,4 @@
+import { Text, Flex, Skeleton, Heading, Box, useMatchBreakpoints, BalanceWithLoading, Pool } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
 import { getCakeVaultEarnings } from 'views/Pools/helpers'
 import { useTranslation } from '@pancakeswap/localization'

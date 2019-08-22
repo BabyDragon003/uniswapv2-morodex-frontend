@@ -1,3 +1,4 @@
+import React from "react";
 import { SpaceProps } from "styled-system";
 
 export const variants = {

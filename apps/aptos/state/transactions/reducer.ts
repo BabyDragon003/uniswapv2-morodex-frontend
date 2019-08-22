@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit'
 import { atomWithStorage, createJSONStorage, useReducerAtom } from 'jotai/utils'
 import {

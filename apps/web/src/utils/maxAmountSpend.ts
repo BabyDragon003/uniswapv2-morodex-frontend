@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, JSBI } from '@pancakeswap/sdk'
 import { BIG_INT_ZERO, MIN_BNB } from 'config/constants/exchange'
 
 /**
@@ -12,5 +13,3 @@ export function maxAmountSpend(currencyAmount?: CurrencyAmount<Currency>): Curre
     }
     return CurrencyAmount.fromRawAmount(currencyAmount.currency, BIG_INT_ZERO)
   }
-  return currencyAmount
-}

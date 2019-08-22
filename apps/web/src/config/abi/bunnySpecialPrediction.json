@@ -1,3 +1,4 @@
+[
   {
     "inputs": [
       {
@@ -12,22 +13,6 @@
       },
       {
         "internalType": "address",
-        "name": "_pancakeProfile",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_endBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_thresholdRound",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_numberPoints",
         "type": "uint256"
       },
       {

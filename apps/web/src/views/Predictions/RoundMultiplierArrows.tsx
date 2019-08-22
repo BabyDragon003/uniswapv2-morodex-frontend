@@ -1,3 +1,4 @@
+import { useTheme } from '@pancakeswap/hooks'
 import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 interface MultiplierProps extends SvgProps {

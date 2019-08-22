@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { useTranslation } from "@pancakeswap/localization";
 import throttle from "lodash/throttle";
@@ -12,22 +13,6 @@ const FixedContainer = styled.div`
 
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
-  const { t } = useTranslation();
-
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 400,
-      behavior: "auto",
-    });
-  }, []);
-
-  useEffect(() => {
-    const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 700) {
-        setVisible(true);
-      } else if (scrolled <= 700) {
-        setVisible(false);
       }
     };
 

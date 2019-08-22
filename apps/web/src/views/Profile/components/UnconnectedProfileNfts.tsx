@@ -1,3 +1,4 @@
+import { Grid, Text, Flex } from '@pancakeswap/uikit'
 import { NftToken } from 'state/nftMarket/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { CollectibleLinkCard } from '../../Nft/market/components/CollectibleCard'

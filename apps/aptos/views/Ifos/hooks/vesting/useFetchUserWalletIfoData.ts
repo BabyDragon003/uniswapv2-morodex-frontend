@@ -1,3 +1,4 @@
+import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 import { Ifo, PoolIds } from 'config/constants/types'
@@ -12,22 +13,6 @@ import { useIfoUserInfoList } from '../useIfoUserInfo'
 import { useVestingCharacteristicsList } from './useVestingCharacteristics'
 
 export interface VestingData {
-  ifo: Ifo
-  userVestingData: {
-    vestingStartTime: number
-    [PoolIds.poolUnlimited]: VestingCharacteristics & {
-      offeringAmountInToken: BigNumber
-    }
-  }
-}
-
-export const useFetchUserWalletIfoData = (): VestingData[] => {
-  const userIfoList = useIfoUserInfoList()
-
-  const userIfoListWithAmount = userIfoList?.data?.filter(({ data }) => _toNumber(data.amount))
-
-  const poolList = useIfoResourcesListByUserInfoType(userIfoListWithAmount?.map(({ type }) => type))
-
   const poolListArray = useMemo(() => {
     const poolListData = poolList?.data || {}
 

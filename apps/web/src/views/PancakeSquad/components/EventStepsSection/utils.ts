@@ -1,3 +1,4 @@
+import { EventStatus, StepStatus } from '@pancakeswap/uikit'
 import { SaleStatusEnum } from 'views/PancakeSquad/types'
 import { getEventStepStatus, getEventStepStatusType } from 'views/PancakeSquad/utils'
 

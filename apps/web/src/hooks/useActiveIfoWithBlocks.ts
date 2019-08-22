@@ -1,3 +1,4 @@
+import useSWRImmutable from 'swr/immutable'
 import ifoV3Abi from '../config/abi/ifoV3.json'
 import { multicallv2 } from '../utils/multicall'
 import { ifosConfig } from '../config/constants'

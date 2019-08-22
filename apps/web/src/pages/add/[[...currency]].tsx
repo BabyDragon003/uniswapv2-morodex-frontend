@@ -1,3 +1,4 @@
+import { CAKE, USDC } from '@pancakeswap/tokens'
 import { useCurrency } from 'hooks/Tokens'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { GetStaticPaths, GetStaticProps } from 'next'

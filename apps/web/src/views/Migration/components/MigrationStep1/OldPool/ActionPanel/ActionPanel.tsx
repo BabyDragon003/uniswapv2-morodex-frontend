@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import { VaultKey } from 'state/types'
 import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'

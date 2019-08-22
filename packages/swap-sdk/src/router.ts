@@ -1,3 +1,4 @@
+import { TradeType, Token, CurrencyAmount, Currency, Percent } from '@pancakeswap/swap-sdk-core'
 import { Trade } from './entities'
 import { validateAndParseAddress } from './utils'
 import invariant from 'tiny-invariant'
@@ -12,22 +13,6 @@ export interface TradeOptions {
   allowedSlippage: Percent
   /**
    * How long the swap is valid until it expires, in seconds.
-   * This will be used to produce a `deadline` parameter which is computed from when the swap call parameters
-   * are generated.
-   */
-  ttl: number
-  /**
-   * The account that should receive the output of the swap.
-   */
-  recipient: string
-
-  /**
-   * Whether any of the tokens in the path are fee on transfer tokens, which should be handled with special methods
-   */
-  feeOnTransfer?: boolean
-}
-
-export interface TradeOptionsDeadline extends Omit<TradeOptions, 'ttl'> {
   /**
    * When the transaction expires.
    * This is an atlernate to specifying the ttl, for when you do not want to use local time.

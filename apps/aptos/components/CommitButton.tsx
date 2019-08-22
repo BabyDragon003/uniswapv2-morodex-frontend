@@ -1,3 +1,4 @@
+import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { useAccount } from '@pancakeswap/awgmi'
 import { useIsMounted } from '@pancakeswap/hooks'
 import { useActiveNetwork } from 'hooks/useNetwork'
