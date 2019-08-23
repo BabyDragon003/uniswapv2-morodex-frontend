@@ -13,6 +13,22 @@ const blocksPage = process.env.NODE_ENV === 'production' ? ['/ifo', '/ifo/histor
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    transpilePackages: [
+      '@pancakeswap/ui',
+      '@pancakeswap/uikit',
+      '@pancakeswap/localization',
+      '@pancakeswap/hooks',
+      '@pancakeswap/utils',
+      '@pancakeswap/tokens',
+      '@pancakeswap/farms',
+    ],
+  },
+  async redirects() {
     return [
       {
         source: '/',

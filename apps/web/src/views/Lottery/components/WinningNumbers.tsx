@@ -13,16 +13,11 @@ interface WinningNumbersProps extends FlexProps {
   rotateText?: boolean
 }
 
-  }, [rotateText, numAsArray, rotationValues])
-
-  return (
-    <Flex justifyContent="space-between" {...containerProps}>
-      {numAsArray.map((num, index) => {
-        return (
-          <BallWithNumber
-            key={uniqueId()}
-            rotationTransform={rotateText && rotationValues[index]}
-            size={size}
+const WinningNumbers: React.FC<React.PropsWithChildren<WinningNumbersProps>> = ({
+  number,
+  size = '32px',
+  fontSize = '16px',
+  rotateText,
             fontSize={fontSize}
             color={colors[index]}
             number={num}

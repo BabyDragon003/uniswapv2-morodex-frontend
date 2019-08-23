@@ -18,25 +18,4 @@ const generateTicketNumbers = (
         })
       : []
   const generatedTicketNumbers = [...existingTicketNumbers]
-
-  for (let count = 0; count < numberOfTickets; count++) {
-    let randomNumber = random(minNumber, maxNumber)
-    while (generatedTicketNumbers.includes(randomNumber)) {
-      // Catch for duplicates - generate a new number until the array doesn't include the random number generated
-      randomNumber = random(minNumber, maxNumber)
-    }
-    generatedTicketNumbers.push(randomNumber)
-  }
-
-  // Filter out the users' existing tickets
-  const ticketsToBuy =
-    userCurrentTickets?.length > 0
-      ? generatedTicketNumbers.filter((ticketNumber) => {
-          return !existingTicketNumbers.includes(ticketNumber)
-        })
-      : generatedTicketNumbers
-
-  return ticketsToBuy
-}
-
 export default generateTicketNumbers

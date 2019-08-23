@@ -18,27 +18,6 @@ import {
   fetchFarmUserAllowances,
   fetchFarmUserTokenBalances,
   fetchFarmUserStakedBalances,
-} from './fetchFarmUser'
-import { fetchMasterChefFarmPoolLength } from './fetchMasterChefData'
-
-const initialState: SerializedFarmsState = {
-  data: [],
-  loadArchivedFarmsData: false,
-  userDataLoaded: false,
-  loadingKeys: {},
-}
-
-// Async thunks
-export const fetchFarmsPublicDataAsync = createAsyncThunk<
-  [SerializedFarm[], number],
-  number[],
-  {
-    state: AppState
-  }
->(
-  'farmsV1/fetchFarmsPublicDataAsync',
-  async (pids) => {
-    const farmsConfig = await getFarmConfig(ChainId.BSC)
     const poolLength = await fetchMasterChefFarmPoolLength()
     const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.v1pid))
     const farmsCanFetch = farmsToFetch.filter((f) => poolLength.gt(f.v1pid))

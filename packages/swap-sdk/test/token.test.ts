@@ -13,16 +13,11 @@ describe('Token', () => {
     })
 
     it('false if chain id differs', () => {
-
-    it('true on reference equality', () => {
-      const token = new Token(ChainId.BSC, ADDRESS_ONE, 18, 'A')
-      expect(token.equals(token)).toBe(true)
+      expect(
+        new Token(ChainId.BSC_TESTNET, ADDRESS_ONE, 18, 'A').equals(new Token(ChainId.BSC, ADDRESS_ONE, 18, 'B'))
+      ).toBe(false)
     })
 
-    it('true even if name/symbol/decimals/projectLink differ', () => {
-      const tokenA = new Token(ChainId.BSC, ADDRESS_ONE, 9, 'abc', 'def', 'https://www.binance.org/')
-      const tokenB = new Token(ChainId.BSC, ADDRESS_ONE, 18, 'ghi', 'jkl', 'https://coinmarketcap.com/')
-      expect(tokenA.equals(tokenB)).toBe(true)
     })
   })
 })

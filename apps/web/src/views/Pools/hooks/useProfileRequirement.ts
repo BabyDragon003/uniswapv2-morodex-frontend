@@ -18,8 +18,3 @@ export function useProfileRequirement(profileRequirement: Pool.DeserializedPool<
     [profileRequirement, profile],
   )
 
-  return {
-    notMeetRequired,
-    notMeetThreshold,
-  }
-}

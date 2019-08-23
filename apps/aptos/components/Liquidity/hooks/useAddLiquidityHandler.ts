@@ -18,27 +18,6 @@ interface UseAddLiquidityHandlerReturn extends LiquidityHandlerReturn {
 }
 
 export default function useAddLiquidityHandler({
-  parsedAmounts,
-  noLiquidity,
-}: {
-  noLiquidity: boolean
-  parsedAmounts: { [field in Field]?: CurrencyAmount<Currency> }
-}): UseAddLiquidityHandlerReturn {
-  const { currencyA, currencyB } = useContext(CurrencySelectorContext)
-  const { t } = useTranslation()
-  const addTransaction = useTransactionAdder()
-
-  const [allowedSlippage] = useUserSlippage() // custom from users
-  const executeTransaction = useSimulationAndSendTransaction()
-
-  const [{ attemptingTxn, liquidityErrorMessage, txHash }, setLiquidityState] = useState<{
-    attemptingTxn: boolean
-    liquidityErrorMessage: string | undefined
-    txHash: string | undefined
-  }>({
-    attemptingTxn: false,
-    liquidityErrorMessage: undefined,
-    txHash: undefined,
   })
 
   const { [Field.CURRENCY_A]: parsedAAmount, [Field.CURRENCY_B]: parsedBAmount } = parsedAmounts

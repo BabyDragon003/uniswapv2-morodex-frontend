@@ -13,16 +13,11 @@ const getSecondsRemainingToNow = (timestamp: number) => {
  */
 const useCountdown = (timestamp: number) => {
   const timerCancelRef = useRef(null)
-          return prevSecondsRemaining
-        })
-      })
-      cancel = timerCancel
-      timerCancelRef.current = timerCancel
-    }
+  const [secondsRemaining, setSecondsRemaining] = useState(() => getSecondsRemainingToNow(timestamp))
+  const [isPaused, setIsPaused] = useState(false)
+  const isWindowVisible = useIsWindowVisible()
 
-    return () => {
-      cancel?.()
-    }
+  const pause = useCallback(() => setIsPaused(true), [setIsPaused])
   }, [isPaused, timestamp, setSecondsRemaining])
 
   // Pause the timer if the tab becomes inactive to avoid it becoming out of sync

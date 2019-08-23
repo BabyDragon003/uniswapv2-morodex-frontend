@@ -18,11 +18,3 @@ const ImportTokenWarningModal: React.FC<React.PropsWithChildren<Props>> = ({ tok
         onCancel()
       }}
     >
-      <Box maxWidth="380px">
-        <ImportToken tokens={tokens} handleCurrencySelect={onDismiss} />
-      </Box>
-    </Modal>
-  )
-}
-
-export default ImportTokenWarningModal

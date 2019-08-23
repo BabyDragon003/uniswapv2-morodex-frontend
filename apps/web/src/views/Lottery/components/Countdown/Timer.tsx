@@ -13,6 +13,22 @@ export interface TimerProps {
 const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
   ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}
   div:last-of-type {
+    margin-right: 0;
+  }
+`
+
+const StyledTimerText = styled(Heading)`
+  background: ${({ theme }) => theme.colors.gradientGold};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
+const Wrapper: React.FC<React.PropsWithChildren<TimerProps>> = ({
+  minutes,
+  hours,
+  days,
+  seconds,
+  wrapperClassName,
 }) => {
   const { t } = useTranslation()
 

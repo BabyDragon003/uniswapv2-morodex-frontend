@@ -13,6 +13,22 @@ export function calcRewardCakePerShare(masterChef: MapFarmResource, pid: string 
   const poolInfo: FarmResourcePoolInfo = masterChef.pool_info[pid]
   const currentTimestamp = getNow() / 1000
   const lastRewardTimestamp = Number(poolInfo?.last_reward_timestamp)
+  const endTimestamp = Number(masterChef.end_timestamp)
+  const lastUpkeepTimestamp = Number(masterChef.last_upkeep_timestamp)
+
+  if (poolInfo) {
+    let cakeReward = 0
+    let accCakePerShare = Number(poolInfo.acc_cake_per_share)
+
+    if (currentTimestamp > lastRewardTimestamp) {
+      let totalAllocPoint = 0
+      let cakeRate = 0
+
+      if (poolInfo.is_regular) {
+        totalAllocPoint = Number(masterChef.total_regular_alloc_point)
+        cakeRate = Number(masterChef.cake_rate_to_regular)
+      } else {
+        totalAllocPoint = Number(masterChef.total_special_alloc_point)
         cakeRate = Number(masterChef.cake_rate_to_special)
       }
 

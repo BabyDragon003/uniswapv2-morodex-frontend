@@ -13,6 +13,22 @@ import { useSwitchNetworkLoading } from './useSwitchNetworkLoading'
 export function useSwitchNetworkLocal() {
   const [, setSessionChainId] = useSessionChainId()
   return useCallback(
+    (chainId: number) => {
+      setSessionChainId(chainId)
+      replaceBrowserHistory('chain', chainId === ChainId.BSC ? null : CHAIN_QUERY_NAME[chainId])
+    },
+    [setSessionChainId],
+  )
+}
+
+export function useSwitchNetwork() {
+  const [loading, setLoading] = useSwitchNetworkLoading()
+  const {
+    switchNetworkAsync: _switchNetworkAsync,
+    isLoading: _isLoading,
+    switchNetwork: _switchNetwork,
+    ...switchNetworkArgs
+  } = useSwitchNetworkWallet()
   const { t } = useTranslation()
   const { toastError } = useToast()
   const { isConnected, connector } = useAccount()

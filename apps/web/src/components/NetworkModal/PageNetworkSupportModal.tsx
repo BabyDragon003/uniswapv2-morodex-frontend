@@ -13,16 +13,11 @@ import { getActiveMenuItem, getActiveSubMenuItem } from 'components/Menu/utils'
 import { useRouter } from 'next/router'
 import useAuth from 'hooks/useAuth'
 
-    const activeMenuItem = getActiveMenuItem({ menuConfig: menuItems, pathname })
-    const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
-
-    return {
-      title: activeSubMenuItem?.disabled ? activeSubMenuItem?.label : activeMenuItem?.label,
-      image: activeSubMenuItem?.image || activeMenuItem?.image,
-    }
-  }, [menuItems, pathname])
-
-  return (
+export function PageNetworkSupportModal() {
+  const { t } = useTranslation()
+  const { switchNetworkAsync, isLoading, canSwitch } = useSwitchNetwork()
+  const switchNetworkLocal = useSwitchNetworkLocal()
+  const { chainId, isConnected, isWrongNetwork } = useActiveWeb3React()
     <Modal title={title || t('Check your network')} hideCloseButton headerBackground="gradientCardHeader">
       <Grid style={{ gap: '16px' }} maxWidth="360px">
         <Text bold>{t('It’s a BNB Smart Chain only feature')}</Text>

@@ -13,6 +13,22 @@ export const useTeamInformation = (competitionId: number) => {
 
   useEffect(() => {
     const fetchGlobalLeaderboardStats = async () => {
+      const res = await fetch(`${API_PROFILE}/api/leaderboard/${competitionId}/global`)
+      const data = await res.json()
+      setGlobalLeaderboardInformation(data)
+    }
+
+    const fetchTeamsLeaderboardStats = async (teamId: number, callBack: (data: any) => void) => {
+      try {
+        const res = await fetch(`${API_PROFILE}/api/leaderboard/${competitionId}/team/${teamId}`)
+        const data = await res.json()
+        callBack(data)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+
+    fetchTeamsLeaderboardStats(1, (data) =>
       setTeam1LeaderboardInformation((prevState) => {
         return { ...prevState, leaderboardData: data }
       }),

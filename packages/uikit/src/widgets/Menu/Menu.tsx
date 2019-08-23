@@ -13,16 +13,11 @@ import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
 import Logo from "./components/Logo";
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: ${MENU_HEIGHT}px;
-  // background-color: ${({ theme }) => theme.nav.background};
-  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  transform: translate3d(0, 0, 0);
+import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
+import { MenuContext } from "./context";
+import { NavProps } from "./types";
 
-  padding-left: 16px;
-  padding-right: 16px;
+const Wrapper = styled.div`
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number; showMenuBottom: boolean }>`

@@ -13,16 +13,11 @@ export interface GetLPOutputParams {
   totalSupply: CurrencyAmount<Currency>
   // Fee of adding liquidity
   fee: Percent
+}
 
-  const currentBalances: JSBI[] = []
-  const newBalances: JSBI[] = []
-  for (const [i, balance] of balances.entries()) {
-    const amount = amounts[i] || CurrencyAmount.fromRawAmount(balance.currency, 0)
-    invariant(
-      amount.currency.equals(balance.currency),
-      'User input currency should be the same as pool balance currency.',
-    )
-    currentBalances.push(balance.quotient)
+export function getLPOutput({
+  amplifier,
+  balances,
     newBalances.push(JSBI.add(balance.quotient, amount.quotient))
   }
 

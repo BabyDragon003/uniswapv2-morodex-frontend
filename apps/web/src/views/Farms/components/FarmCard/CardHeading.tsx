@@ -13,6 +13,22 @@ export interface ExpandableSectionProps {
   token: Token
   quoteToken: Token
   boosted?: boolean
+  isStable?: boolean
+}
+
+const Wrapper = styled(Flex)`
+  svg {
+    margin-right: 4px;
+  }
+`
+
+const MultiplierTag = styled(Tag)`
+  margin-left: 4px;
+`
+
+const CardHeading: React.FC<React.PropsWithChildren<ExpandableSectionProps>> = ({
+  lpLabel,
+  multiplier,
   isCommunityFarm,
   token,
   quoteToken,

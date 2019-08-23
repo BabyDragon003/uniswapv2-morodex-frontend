@@ -13,6 +13,22 @@ const ScrollBox = styled(Box)`
   margin-left: -24px;
   margin-right: -24px;
   padding-left: 24px;
+  padding-right: 20px;
+`
+
+const CurrentRoundTicketsInner = () => {
+  const { t } = useTranslation()
+  const { theme } = useTheme()
+  const {
+    isTransitioning,
+    currentRound: { status, userTickets },
+  } = useLottery()
+  const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
+
+  return (
+    <>
+      <Flex flexDirection="column">
+        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" mb="16px">
           {t('Your tickets')}
         </Text>
         <ScrollBox>

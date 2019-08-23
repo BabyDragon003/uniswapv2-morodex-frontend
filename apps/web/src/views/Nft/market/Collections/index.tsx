@@ -13,16 +13,11 @@ import {
   Th,
   Card,
   Skeleton,
-import Page from 'components/Layout/Page'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import PageLoader from 'components/Loader/PageLoader'
-import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
-import CollectionCardWithVolume from '../components/CollectibleCard/CollectionCardWithVolume'
-
-export const ITEMS_PER_PAGE = 9
-
-const SORT_FIELD = {
-  createdAt: 'createdAt',
+  useMatchBreakpoints,
+  PageHeader,
+  Select,
+  OptionProps,
+  NextLinkFromReactRouter,
   volumeBNB: 'totalVolumeBNB',
   items: 'numberTokensListed',
   supply: 'totalSupply',

@@ -13,6 +13,22 @@ export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
       {
         label: t("Brand"),
         href: "https://docs.dapp-frontend-prince.web.app/brand",
+      },
+      {
+        label: t("Blog"),
+        href: "https://medium.com/pancakeswap",
+      },
+      {
+        label: t("Community"),
+        href: "https://docs.dapp-frontend-prince.web.app/contact-us/telegram",
+      },
+      {
+        label: t("Litepaper"),
+        href: "https://v2litepaper.dapp-frontend-prince.web.app/",
+      },
+    ],
+  },
+  {
     label: t("Help"),
     items: [
       {

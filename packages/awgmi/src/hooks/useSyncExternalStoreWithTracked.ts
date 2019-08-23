@@ -13,6 +13,22 @@ export function useSyncExternalStoreWithTracked<Snapshot extends Selection, Sele
 ) {
   const trackedKeys = React.useRef<string[]>([])
   const result = useSyncExternalStoreWithSelector(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+    (x) => x,
+    (a, b) => {
+      if (isPlainObject(a) && isPlainObject(b)) {
+        for (const key of trackedKeys.current) {
+          const equal = isEqual((a as { [key: string]: any })[key], (b as { [key: string]: any })[key])
+          if (!equal) return false
+        }
+        return true
+      }
+      return isEqual(a, b)
+    },
+  )
+
   if (isPlainObject(result)) {
     const trackedResult = { ...result }
     Object.defineProperties(

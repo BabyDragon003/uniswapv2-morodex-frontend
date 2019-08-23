@@ -18,27 +18,6 @@ type WhereClause = Record<string, string | number | boolean | string[]>
 const fetchCheapestBunny = async (
   whereClause: WhereClause = {},
   nftMetadata: ApiResponseCollectionTokens,
-): Promise<NftToken> => {
-  const nftsMarket = await getNftsMarketData(whereClause, 100, 'currentAskPrice', 'asc')
-
-  if (!nftsMarket.length) return null
-
-  const nftsMarketTokenIds = nftsMarket.map((marketData) => marketData.tokenId)
-  const lowestPriceUpdatedBunny = await getLowestUpdatedToken(pancakeBunniesAddress.toLowerCase(), nftsMarketTokenIds)
-
-  const cheapestBunnyOfAccount = nftsMarket
-    .filter((marketData) => marketData.tokenId === lowestPriceUpdatedBunny?.tokenId)
-    .map((marketData) => {
-      const apiMetadata = getMetadataWithFallback(nftMetadata.data, marketData.otherId)
-      const attributes = getPancakeBunniesAttributesField(marketData.otherId)
-      const bunnyToken = combineApiAndSgResponseToNftToken(apiMetadata, marketData, attributes)
-      const updatedPrice = formatBigNumber(lowestPriceUpdatedBunny.currentAskPrice)
-      return {
-        ...bunnyToken,
-        marketData: { ...bunnyToken.marketData, ...lowestPriceUpdatedBunny, currentAskPrice: updatedPrice },
-      }
-    })
-  return cheapestBunnyOfAccount.length > 0 ? cheapestBunnyOfAccount[0] : null
 }
 
 export const usePancakeBunnyCheapestNft = (bunnyId: string, nftMetadata: ApiResponseCollectionTokens) => {

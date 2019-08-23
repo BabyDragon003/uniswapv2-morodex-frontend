@@ -13,3 +13,13 @@ const useCMCLink = (address: string): string | undefined => {
   const { data: cmcPageUrl } = useSWRImmutable(address ? ['cmcLink', address] : null, async () => {
     const response = await fetch(`${CMC_ENDPOINT}${address}`)
 
+    if (response.ok) {
+      return (await response.json()).data.url
+    }
+    return undefined
+  })
+
+  return cmcPageUrl
+}
+
+export default useCMCLink

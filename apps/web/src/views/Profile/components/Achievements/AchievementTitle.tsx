@@ -13,3 +13,8 @@ const AchievementTitle: React.FC<React.PropsWithChildren<AchievementTitleProps>>
     return (
       <Text bold {...props}>
         {title}
+      </Text>
+    )
+  }
+
+  const { key, data = {} } = title

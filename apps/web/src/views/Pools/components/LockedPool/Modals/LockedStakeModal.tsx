@@ -13,6 +13,22 @@ import LockedBodyModal from '../Common/LockedModalBody'
 import RoiCalculatorModalProvider from './RoiCalculatorModalProvider'
 import { useCheckVaultApprovalStatus } from '../../../hooks/useApprove'
 
+const LockedStakeModal: React.FC<React.PropsWithChildren<GenericModalProps>> = ({
+  onDismiss,
+  currentBalance,
+  stakingToken,
+  stakingTokenBalance,
+}) => {
+  const { theme } = useTheme()
+  const [lockedAmount, setLockedAmount] = useState('')
+  const { t } = useTranslation()
+
+  const usdValueStaked = useBUSDCakeAmount(_toNumber(lockedAmount))
+
+  const { allowance } = useCheckVaultApprovalStatus(VaultKey.CakeVault)
+  const needApprove = useMemo(() => {
+    const amount = getDecimalAmount(new BigNumber(lockedAmount))
+    return amount.gt(allowance)
   }, [allowance, lockedAmount])
 
   return (

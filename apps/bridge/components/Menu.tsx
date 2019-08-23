@@ -13,16 +13,11 @@ import {
   Text,
   ThemeSwitcher,
   useModal,
-  display: flex;
-  align-items: center;
-
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
-  font-size: 14px;
-  font-weight: ${({ $isActive }) => ($isActive ? '600' : '400')};
-
-  padding: 0 6px;
-  height: 48px;
-
+  UserMenu,
+  UserMenuDivider,
+  UserMenuItem,
+} from '@pancakeswap/uikit'
+import { useRouter } from 'next/router'
   &:hover {
     opacity: 0.65;
   }

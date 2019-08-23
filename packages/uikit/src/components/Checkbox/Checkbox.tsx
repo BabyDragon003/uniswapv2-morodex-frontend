@@ -13,6 +13,22 @@ const getScale = ({ scale }: CheckboxProps) => {
 
 const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   appearance: none;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: ${getScale};
+  width: ${getScale};
+  vertical-align: middle;
+  transition: background-color 0.2s ease-in-out;
+  border: 0;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.input};
+  box-shadow: ${({ theme }) => theme.shadows.inset};
+
+  &:after {
+    content: "";
+    position: absolute;
     border-bottom: 2px solid;
     border-left: 2px solid;
     border-color: transparent;

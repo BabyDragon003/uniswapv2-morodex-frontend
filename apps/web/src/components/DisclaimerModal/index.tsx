@@ -18,27 +18,6 @@ import styled from 'styled-components'
 interface CheckType {
   key: string
   value?: boolean
-  content: string
-}
-
-interface RiskDisclaimerProps extends InjectedModalProps {
-  onSuccess: () => void
-  checks: CheckType[]
-  header: ReactNode
-  modalHeader?: string
-  id: string
-  subtitle?: ReactNode
-  hideConfirm?: boolean
-}
-
-const GradientModalHeader = styled(ModalHeader)`
-  background: ${({ theme }) => theme.colors.gradientBubblegum};
-  padding-bottom: 24px;
-  padding-top: 24px;
-`
-
-// TODO: Copy from src/views/Predictions/components/RiskDisclaimer.tsx
-// Will replace that with this modal.
 
 const DisclaimerModal: React.FC<React.PropsWithChildren<RiskDisclaimerProps>> = ({
   id,

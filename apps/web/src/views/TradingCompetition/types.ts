@@ -18,27 +18,6 @@ export interface CompetitionProps extends UserRewardsProps {
   coinDecoration?: React.ReactNode
 }
 
-export interface CompetitionStepProps {
-  index?: number
-  text?: string
-}
-
-export interface CompetitionPhaseProps {
-  state?: string
-  ends?: number | null
-  step?: CompetitionStepProps
-}
-
-export interface CountdownProps {
-  steps?: Array<{ text: string }>
-  activeStepIndex?: number
-  stepText?: string
-  index?: number
-}
-
-interface LeaderboardData {
-  total?: number
-  volume?: number
   data?: LeaderboardDataItem[]
 }
 

@@ -13,16 +13,11 @@ import { Pool } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import { fetchFarmsPublicDataAsync } from '../farms'
 import {
-  makePoolWithUserDataLoadingSelector,
-  makeVaultPoolByKey,
-  poolsWithVaultSelector,
-  ifoCreditSelector,
-  ifoCeilingSelector,
-  makeVaultPoolWithKeySelector,
-} from './selectors'
-
+  fetchPoolsPublicDataAsync,
+  fetchPoolsUserDataAsync,
+  fetchCakeVaultPublicData,
+  fetchCakeVaultUserData,
 const lPoolAddresses = livePools.filter(({ sousId }) => sousId !== 0).map(({ earningToken }) => earningToken.address)
 
 // Only fetch farms for live pools

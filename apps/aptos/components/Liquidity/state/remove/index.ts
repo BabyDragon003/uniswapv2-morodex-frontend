@@ -13,3 +13,8 @@ export function useBurnActionHandlers(): {
 } {
   const [, dispatch] = useAtom(burnReducerAtom)
 
+  const onUserInput = useCallback(
+    (field: Field, typedValue: string) => {
+      dispatch(typeInput({ field, typedValue }))
+    },
+    [dispatch],

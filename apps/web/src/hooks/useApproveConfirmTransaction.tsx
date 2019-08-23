@@ -13,6 +13,22 @@ type Action =
   | { type: 'confirm_sending' }
   | { type: 'confirm_receipt' }
   | { type: 'confirm_error' }
+
+interface State {
+  approvalState: LoadingState
+  confirmState: LoadingState
+}
+
+const initialState: State = {
+  approvalState: 'idle',
+  confirmState: 'idle',
+}
+
+const reducer = (state: State, actions: Action): State => {
+  switch (actions.type) {
+    case 'approve_sending':
+      return {
+        ...state,
         approvalState: 'loading',
       }
     case 'approve_receipt':

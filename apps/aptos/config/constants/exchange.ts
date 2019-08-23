@@ -18,27 +18,6 @@ export const SUGGESTED_BASES = {}
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST = {
-  [ChainId.TESTNET]: [
-    APT[ChainId.TESTNET],
-    new Coin(
-      ChainId.TESTNET,
-      '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetBNB',
-      8,
-      'BNB',
-    ),
-    new Coin(
-      ChainId.TESTNET,
-      '0x8c805723ebc0a7fc5b7d3e7b75d567918e806b3461cb9fa21941a9edc0220bf::devnet_coins::DevnetETH',
-      8,
-      'ETH',
-    ),
-  ],
-  [ChainId.MAINNET]: [APT[ChainId.MAINNET], L0_USDC[ChainId.MAINNET], CE_USDC_MAINNET, WH_USDC_MAINNET],
-}
-
-/**
- * Additional bases for specific tokens
- * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
  */
 export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {}
 

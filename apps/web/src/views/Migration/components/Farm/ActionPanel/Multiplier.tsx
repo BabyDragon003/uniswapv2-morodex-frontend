@@ -13,16 +13,11 @@ const Containter = styled(Flex)`
     padding: 0 12px;
   }
 `
+
+const ReferenceElement = styled.div`
+  display: inline-block;
+  align-self: center;
 `
-
-const TotalStaked: React.FC<React.PropsWithChildren<MultiplierProps>> = ({ multiplier }) => {
-  const { t } = useTranslation()
-  const displayMultiplier = multiplier ? multiplier.toLowerCase() : '0x'
-
-  const tooltipContent = (
-    <>
-      <Text>
-        {t(
           'The Multiplier represents the proportion of CAKE rewards each farm receives, as a proportion of the CAKE produced each block.',
         )}
       </Text>
