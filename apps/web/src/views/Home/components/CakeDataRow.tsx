@@ -18,6 +18,27 @@ const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: 
   flex-direction: column;
   ${({ noMobileBorder, theme }) =>
     noMobileBorder
+      ? `${theme.mediaQueries.md} {
+           padding: 0 16px;
+           border-left: 1px ${theme.colors.inputSecondary} solid;
+         }
+       `
+      : `border-left: 1px ${theme.colors.inputSecondary} solid;
+         padding: 0 8px;
+         ${theme.mediaQueries.sm} {
+           padding: 0 16px;
+         }
+       `}
+
+  ${({ noDesktopBorder, theme }) =>
+    noDesktopBorder &&
+    `${theme.mediaQueries.md} {
+           padding: 0;
+           border-left: none;
+         }
+       `}
+`
+
 const Grid = styled.div`
   display: grid;
   grid-gap: 16px 8px;

@@ -18,6 +18,27 @@ export interface FooterEntryProps {
   label: string
   value: string
 }
+
+const FooterEntry: React.FC<React.PropsWithChildren<FooterEntryProps>> = ({ label, value }) => {
+  return (
+    <Flex justifyContent="space-between" alignItems="center">
+      <Text bold fontSize="12px" color="textSubtle" textTransform="uppercase">
+        {label}
+      </Text>
+      {value ? (
+        <Text bold small textAlign="right">
+          {value}
+        </Text>
+      ) : (
+        <Skeleton height={21} width={80} />
+      )}
+    </Flex>
+  )
+}
+
+interface IfoVestingFooterProps {
+  ifo: Ifo
+  poolId: PoolIds
   publicIfoData: PublicIfoData
   walletIfoData: WalletIfoData
 }

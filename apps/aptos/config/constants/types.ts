@@ -18,6 +18,27 @@ interface IfoPoolInfo {
   saleAmount: string
   raiseAmount: string
   cakeToBurn: string
+  distributionRatio: number // Range [0-1]
+}
+
+export interface Ifo {
+  id: string
+  isActive: boolean
+  address: string
+  name: string
+  currency: Currency
+  token: Currency
+  releaseTime: number
+  articleUrl: string
+  campaignId: string
+  tokenOfferingPrice: number
+  description?: string
+  twitterUrl?: string
+  telegramUrl?: string
+  version: number
+  vestingTitle?: string
+  cIFO?: boolean
+  // [PoolIds.poolBasic]?: IfoPoolInfo
   [PoolIds.poolUnlimited]: IfoPoolInfo
 }
 

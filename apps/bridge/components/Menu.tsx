@@ -18,6 +18,27 @@ import {
   UserMenuItem,
 } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'
+import { useTheme as useNextTheme } from 'next-themes'
+import Image from 'next/image'
+import NextLink from 'next/link'
+import { useEffect, useReducer, useRef, useState } from 'react'
+import styled, { useTheme } from 'styled-components'
+import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
+import { CHAINS_STARGATE } from './stargate/config'
+import { findChainByStargateId } from './stargate/network'
+
+const StyledMenuItem = styled('div')<{ $isActive?: boolean }>`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
+  font-size: 14px;
+  font-weight: ${({ $isActive }) => ($isActive ? '600' : '400')};
+
+  padding: 0 6px;
+  height: 48px;
+
   &:hover {
     opacity: 0.65;
   }

@@ -18,6 +18,27 @@ export const CurrencyLogo: React.FC<
   React.PropsWithChildren<{
     address?: string
     size?: string
+    chainName?: 'ETH' | 'BSC'
+  }>
+> = ({ address, size = '24px', chainName = 'BSC', ...rest }) => {
+  const src = useMemo(() => {
+    return getTokenLogoURL(new Token(multiChainId[chainName], address, 18, ''))
+  }, [address, chainName])
+
+  return <StyledLogo size={size} src={src} alt="token logo" {...rest} />
+}
+
+const DoubleCurrencyWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 32px;
+`
+
+interface DoubleCurrencyLogoProps {
+  address0?: string
+  address1?: string
   size?: number
   chainName?: 'ETH' | 'BSC'
 }

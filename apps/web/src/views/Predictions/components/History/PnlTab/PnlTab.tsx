@@ -18,6 +18,27 @@ import SummaryRow from './SummaryRow'
 interface PnlTabProps {
   hasBetHistory: boolean
   bets: Bet[]
+}
+
+interface PnlCategory {
+  rounds: number
+  amount: number
+}
+
+interface PnlSummary {
+  won: PnlCategory & { payout: number; bestRound: { id: string; payout: number; multiplier: number } }
+  lost: PnlCategory
+  entered: PnlCategory
+}
+
+const Divider = styled.div`
+  background-color: ${({ theme }) => theme.colors.backgroundDisabled};
+  height: 1px;
+  margin: 24px auto;
+  width: 100%;
+`
+
+const initialPnlSummary: PnlSummary = {
   won: {
     rounds: 0,
     amount: 0,

@@ -18,6 +18,27 @@ export const Wrapper = styled(Flex)`
   }
 `
 
+export const Inner = styled(Flex)`
+  width: 100%;
+  flex-direction: column;
+
+  svg {
+    height: auto;
+    width: 100%;
+  }
+`
+
+export const LeftBox = styled(Box)`
+  position: absolute;
+  bottom: -24px;
+  left: 6px;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    bottom: -26px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    bottom: -32px;
   }
 `
 

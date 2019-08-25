@@ -18,6 +18,27 @@ export const ToastsProvider: React.FC<React.PropsWithChildren> = ({ children }) 
 
         return [
           {
+            id,
+            title,
+            description,
+            type,
+          },
+          ...currentToasts,
+        ];
+      });
+    },
+    [setToasts]
+  );
+
+  const toastError = useCallback(
+    (title: ToastData["title"], description?: ToastData["description"]) => {
+      return toast({ title, description, type: toastTypes.DANGER });
+    },
+    [toast]
+  );
+
+  const toastInfo = useCallback(
+    (title: ToastData["title"], description?: ToastData["description"]) => {
       return toast({ title, description, type: toastTypes.INFO });
     },
     [toast]

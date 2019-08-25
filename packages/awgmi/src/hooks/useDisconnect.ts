@@ -18,6 +18,27 @@ export type UseDisconnectConfig = {
 
 export const mutationKey = [{ entity: 'disconnect' }] as const
 
+const mutationFn = () => disconnectCore()
+
+export function useDisconnect({ onError, onMutate, onSettled, onSuccess }: UseDisconnectConfig = {}) {
+  const {
+    error,
+    isError,
+    isIdle,
+    isLoading,
+    isSuccess,
+    mutate: disconnect,
+    mutateAsync: disconnectAsync,
+    reset,
+    status,
+  } = useMutation<void, Error>(mutationKey, mutationFn, {
+    ...(onError
+      ? {
+          onError(error, _variables, context) {
+            onError(error, context)
+          },
+        }
+      : {}),
     onMutate,
     ...(onSettled
       ? {

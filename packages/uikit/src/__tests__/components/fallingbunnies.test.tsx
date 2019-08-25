@@ -18,6 +18,27 @@ it("renders correctly", () => {
       -webkit-align-self: center;
       -ms-flex-item-align: center;
       align-self: center;
+      fill: var(--colors-text);
+      -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+    }
+
+    .c0 {
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      position: fixed;
+      top: 0;
+      left: 50vw;
+      -webkit-transform: translate3d(0,-100%,0);
+      -ms-transform: translate3d(0,-100%,0);
+      transform: translate3d(0,-100%,0);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       pointer-events: none;
       z-index: 99999;
       -webkit-animation-name: dphWuA;

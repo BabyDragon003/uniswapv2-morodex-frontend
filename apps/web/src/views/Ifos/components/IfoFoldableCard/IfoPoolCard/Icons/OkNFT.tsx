@@ -18,3 +18,8 @@ const OkNFTIcon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => (
       fill="#ECF8FF"
       stroke="white"
       strokeWidth="1.64103"
+    />
+  </Svg>
+)
+
+export default OkNFTIcon

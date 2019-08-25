@@ -18,6 +18,27 @@ import HoverableChart from '../components/InfoCharts/HoverableChart'
 import { usePoolsData } from '../hooks/usePoolsData'
 
 export const ChartCardsContainer = styled(Flex)`
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  gap: 1em;
+
+  & > * {
+    width: 100%;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-direction: row;
+  }
+`
+
+const Overview: React.FC<React.PropsWithChildren> = () => {
+  const {
+    t,
+    currentLanguage: { locale },
+  } = useTranslation()
+
   const protocolData = useProtocolDataSWR()
   const chartData = useProtocolChartDataSWR()
   const transactions = useProtocolTransactionsSWR()

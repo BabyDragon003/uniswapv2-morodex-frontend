@@ -18,6 +18,27 @@ const TeamAvatar = styled.img`
   height: 37.5%;
   z-index: 5;
 
+  ${({ theme }) => theme.mediaQueries.sm} {
+    border-width: 2px;
+  }
+`
+
+const AvatarWrapper = styled.div<{ bg: string }>`
+  background: url('${({ bg }) => bg}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & > img {
+    border-radius: 50%;
+  }
+`
+// TODO: replace with no profile avatar icon
+const AvatarInactive = styled(NoProfileAvatarIcon)`
+  width: 100%;
   height: 100%;
 `
 

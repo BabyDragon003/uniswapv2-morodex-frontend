@@ -18,6 +18,27 @@ const ButtonWrapper = styled.div`
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
   // border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  :hover {
+    cursor: ${({ disable }) => !disable && 'pointer'};
+    // background-color: ${({ theme, disable }) => !disable && theme.colors.background};
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  // background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: ${({ disable }) => disable && '0.4'};
+`
+
+const RowWrapper = styled.div`
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none; /* IE and Edge */

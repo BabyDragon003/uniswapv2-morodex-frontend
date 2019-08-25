@@ -18,3 +18,6 @@ export const getPoolsPriceHelperLpFiles = (chainId: ChainId) => {
     case ChainId.GOERLI:
       return PoolsGoerliPriceHelper
     default:
+      return []
+  }
+}
